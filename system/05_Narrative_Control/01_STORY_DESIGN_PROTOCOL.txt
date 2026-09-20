@@ -1,0 +1,110 @@
+Edit dengan apl Dokumen
+Membuat penyesuaian, memberi komentar, dan berbagi dengan yang lain agar dapat mengedit secara bersamaan.
+LAIN KALIGUNAKAN APLIKASI
+
+01_STORY_DESIGN_PROTOCOL
+
+================================================================================
+
+POCER — STORY DESIGN PROTOCOL
+
+(PROTOKOL PERANCANGAN ALUR CERITA)
+
+================================================================================
+
+
+STATUS: ACTIVE / AUTHORITATIVE
+
+LOKASI: /Pocer/00 — SYSTEM/05_NARRATIVE_CONTROL/01_STORY_DESIGN/
+
+TUJUAN: Mengatur bagaimana AI Worker merancang alur cerita sebelum menulis narasi
+
+CATATAN: Tahap ini bersifat internal. Hasilnya tidak ditampilkan ke pengguna.
+
+
+--------------------------------------------------------------------------------
+
+1. DEFINISI
+
+--------------------------------------------------------------------------------
+
+
+Story Design adalah tahap perancangan logika cerita.
+
+Pada tahap ini AI HANYA merancang struktur kejadian, bukan menulis narasi.
+
+
+AI DILARANG menulis dialog, deskripsi adegan, atau kalimat naratif
+
+pada tahap ini.
+
+
+--------------------------------------------------------------------------------
+
+2. KEWAJIBAN PERANCANGAN
+
+--------------------------------------------------------------------------------
+
+
+Sebelum masuk ke tahap penulisan, AI WAJIB menyelesaikan poin-poin berikut:
+
+
+1. Tentukan Universe Date dan Day Sequence yang akan diproduksi.
+
+2. Tentukan karakter POV utama (satu karakter atau paralel).
+
+3. Tentukan Event inti hari itu.
+
+   - Minimal satu event yang memiliki nilai kausalitas.
+
+   - Event harus dapat dicatat dalam format Event Type resmi.
+
+4. Tentukan titik Retakan Kecil.
+
+   - Satu momen di mana kendali karakter sempat gagal selama beberapa detik.
+
+5. Tentukan perubahan State yang akan terjadi.
+
+   - Lokasi, Possession, Knowledge, Status fisik/mental, atau relasi.
+
+6. Verifikasi bahwa seluruh rancangan tidak melanggar:
+
+   - Knowledge Graph karakter terkait
+
+   - Hukum Ownership / Possession
+
+   - History yang sudah berstatus STORED
+
+   - Hukum kausalitas dan temporal
+
+
+--------------------------------------------------------------------------------
+
+3. LARANGAN
+
+--------------------------------------------------------------------------------
+
+
+- Dilarang merancang event yang membutuhkan pengetahuan di luar Knowledge Graph.
+
+- Dilarang merancang resolusi emosional yang terlalu rapi atau terlalu cepat.
+
+- Dilarang merancang ending yang berisi kesimpulan moral atau filosofis.
+
+- Dilarang melompat ke penulisan narasi sebelum seluruh poin di atas selesai.
+
+
+--------------------------------------------------------------------------------
+
+4. OUTPUT TAHAP INI
+
+--------------------------------------------------------------------------------
+
+
+Output tahap Story Design bersifat internal (tidak ditampilkan).
+
+Ia hanya berfungsi sebagai cetak biru untuk tahap Narrative Rendering.
+
+
+================================================================================
+
