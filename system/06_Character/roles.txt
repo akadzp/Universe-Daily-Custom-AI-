@@ -1,17 +1,18 @@
 ================================================================================
-POCER — CHARACTER LEVEL & GROUP SYSTEM
-(SISTEM LEVEL DAN GRUP KARAKTER)
+POCER — CHARACTER & ENTITY ROLE SYSTEM
+(SISTEM LEVEL DAN GRUP AKTOR)
 
 STATUS: ACTIVE
-TUJUAN: Mengatur hierarki kepentingan karakter dan pengelompokannya dalam cerita
+TUJUAN: Mengatur hierarki kepentingan, pengelompokan, dan klasifikasi aktor
+yang tercatat dalam Universe.
 
 ---
 
-1. SISTEM LEVEL KARAKTER
+1. SISTEM LEVEL AKTOR
 
 ---
 
-Setiap karakter yang dicatat dalam universe WAJIB memiliki satu Level.
+Setiap aktor yang dicatat dalam Universe WAJIB memiliki satu Level.
 
 LEVEL 1 — CORE CHARACTER
 
@@ -38,8 +39,18 @@ LEVEL 4 — PERIPHERAL CHARACTER
 - Pengaruhnya terhadap alur utama relatif kecil.
 - Fungsinya lebih sebagai pelengkap dunia cerita.
 
+LEVEL 5 — ENTITY
+
+- Merupakan aktor non-manusia atau entitas non-manusia yang memiliki
+  identitas dan dapat berinteraksi secara bermakna dengan Universe.
+- Dapat berupa hewan, AI, robot, makhluk supernatural, atau bentuk entitas
+  lain yang memenuhi fungsi sebagai aktor.
+- Dapat memiliki perilaku, pengetahuan, state, style, hubungan, dan
+  perkembangan yang relevan terhadap cerita.
+- Wajib memiliki satu Group.
+
 CATATAN:
-Karakter yang hanya muncul sekali dan tidak memberikan pengaruh berarti
+Aktor yang hanya muncul sekali dan tidak memberikan pengaruh berarti
 TIDAK PERLU dicatat.
 
 ---
@@ -48,42 +59,86 @@ TIDAK PERLU dicatat.
 
 ---
 
-Grup digunakan untuk mengelompokkan karakter berdasarkan keterikatan naratif.
+Grup digunakan untuk mengelompokkan aktor berdasarkan keterikatan naratif.
 
 ATURAN DASAR:
 
-- Satu karakter HANYA boleh memiliki 1 Grup.
-- Tidak ada karakter yang masuk ke lebih dari satu grup.
+- Satu aktor HANYA boleh memiliki 1 Grup apabila Level aktor tersebut
+  mengizinkan penggunaan Grup.
+- Aktor yang berada pada Level yang melarang Grup TIDAK BOLEH memiliki Grup.
 
 ATURAN PER LEVEL:
 
 - CORE CHARACTER (Level 1)
-  → Wajib memiliki 1 Grup.
+  → WAJIB memiliki tepat 1 Grup.
   → Biasanya hanya ada satu grup utama dalam sebuah cerita.
 
 - MAJOR CHARACTER (Level 2)
-  → Wajib memiliki 1 Grup.
+  → WAJIB memiliki tepat 1 Grup.
   → Boleh terdapat banyak grup berbeda dalam level ini.
 
 - IMPACT CHARACTER (Level 3)
-  → Tidak wajib memiliki Grup.
+  → DILARANG memiliki Grup.
 
 - PERIPHERAL CHARACTER (Level 4)
-  → Tidak wajib memiliki Grup.
+  → DILARANG memiliki Grup.
+
+- ENTITY (Level 5)
+  → WAJIB memiliki tepat 1 Grup.
+  → Tidak boleh memiliki lebih dari 1 Grup.
 
 ---
 
-3. PRINSIP PENCATATAN
+3. KLASIFIKASI ENTITY
 
 ---
 
-1. Setiap karakter yang muncul dan memiliki pengaruh (meski kecil)
-   WAJIB disimpan ke dalam data universe.
+ENTITY_TYPE digunakan untuk menjelaskan bentuk atau jenis entitas.
 
-2. Karakter selewat yang tidak memberikan pengaruh apa pun
+Kategori ENTITY_TYPE dapat mencakup:
+
+- Animal
+- AI
+- Robot
+- Supernatural
+- Creature
+- Other
+
+ENTITY_TYPE bukan pengganti GROUP.
+
+ENTITY_TYPE menjelaskan bentuk atau jenis entitas,
+sedangkan GROUP menjelaskan keterikatan atau pengelompokan naratifnya.
+
+---
+
+4. PRINSIP PENCATATAN
+
+---
+
+1. Setiap aktor yang muncul dan memiliki pengaruh (meski kecil)
+   WAJIB disimpan ke dalam data Universe.
+
+2. Aktor selewat yang tidak memberikan pengaruh apa pun
    tidak perlu dibuat profilnya.
 
-3. Level dan Grup bersifat tetap, kecuali ada keputusan resmi
-   untuk menaikkan atau mengubah status karakter.
+3. Setiap aktor WAJIB memiliki tepat satu Level.
+
+4. Level menentukan apakah aktor WAJIB, BOLEH, atau DILARANG memiliki Group.
+
+5. Setiap aktor Level 1, Level 2, dan Level 5 WAJIB memiliki tepat satu Group.
+
+6. Setiap aktor Level 3 dan Level 4 DILARANG memiliki Group.
+
+7. Level dan Group bersifat tetap, kecuali ada keputusan resmi
+   untuk menaikkan, menurunkan, atau mengubah status aktor.
+
+8. Perubahan Level atau Group tidak membuat aktor baru.
+   Identitas aktor tetap sama.
+
+9. Level 5 menggunakan sistem aktor yang sama dengan Level 1–4.
+
+10. Entity tidak dibuat sebagai sistem karakter yang terpisah.
+    Entity menggunakan sistem data aktor yang sama selama aspek tersebut
+    relevan terhadap entitas tersebut.
 
 ================================================================================
