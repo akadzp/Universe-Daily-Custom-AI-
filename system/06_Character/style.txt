@@ -1,0 +1,179 @@
+================================================================================
+UNIVERSE — CHARACTER STYLE SYSTEM
+(SISTEM GAYA BAHASA DAN EKSPRESI KARAKTER)
+
+STATUS: ACTIVE
+TUJUAN: Menyimpan gaya bahasa, pola ekspresi, dan karakteristik komunikasi
+yang membentuk feel karakter ketika hadir dalam cerita.
+
+---
+
+1. IDENTITAS STYLE
+
+---
+
+STYLE_ID              :
+CHARACTER_ID          :
+
+---
+
+2. GAYA BAHASA
+
+---
+
+LANGUAGE_STYLE        :
+WORD_CHOICE           :
+FORMALITY_LEVEL       :
+SENTENCE_PATTERN      :
+SPEECH_RHYTHM         :
+
+---
+
+3. EKSPRESI
+
+---
+
+EMOTIONAL_EXPRESSION  :
+HUMOR_STYLE            :
+REACTION_STYLE         :
+EMPHASIS_STYLE         :
+
+---
+
+4. CIRI KHAS KOMUNIKASI
+
+---
+
+VERBAL_SIGNATURE      :
+COMMON_EXPRESSIONS    :
+DIALOGUE_TENDENCY     :
+COMMUNICATION_HABITS  :
+
+---
+
+5. GAYA DALAM KONTEKS
+
+---
+
+CASUAL_STYLE          :
+SERIOUS_STYLE         :
+CONFLICT_STYLE        :
+EMOTIONAL_STYLE       :
+
+---
+
+6. PERUBAHAN STYLE
+
+---
+
+STYLE_CHANGE          :
+CHANGE_TRIGGER        :
+CHANGE_DATE           :
+PREVIOUS_STYLE        :
+CURRENT_STYLE         :
+
+---
+
+7. CATATAN
+
+---
+
+NOTES                 :
+
+================================================================================
+ATURAN SISTEM
+
+1. Setiap style yang dicatat memiliki STYLE_ID tersendiri.
+
+2. Setiap STYLE_ID hanya berlaku untuk satu CHARACTER_ID.
+
+3. LANGUAGE_STYLE menjelaskan karakteristik umum bahasa yang digunakan
+   karakter dalam komunikasi.
+
+4. WORD_CHOICE menjelaskan kecenderungan pemilihan kata yang membedakan
+   karakter dari karakter lain.
+
+5. FORMALITY_LEVEL menjelaskan tingkat formalitas bahasa karakter.
+
+6. SENTENCE_PATTERN menjelaskan kecenderungan struktur kalimat yang digunakan
+   karakter.
+
+7. SPEECH_RHYTHM menjelaskan tempo dan pola aliran komunikasi karakter.
+
+8. EMOTIONAL_EXPRESSION menjelaskan bagaimana emosi diekspresikan melalui
+   bahasa atau dialog.
+
+9. HUMOR_STYLE menjelaskan karakteristik humor yang digunakan apabila relevan.
+
+10. REACTION_STYLE menjelaskan bentuk ekspresi verbal ketika karakter
+    memberikan respons terhadap situasi atau perkataan orang lain.
+
+11. EMPHASIS_STYLE menjelaskan cara karakter memberikan penekanan terhadap
+    kata, kalimat, atau gagasan.
+
+12. VERBAL_SIGNATURE menyimpan ciri komunikasi yang secara konsisten
+    membedakan karakter tersebut.
+
+13. COMMON_EXPRESSIONS menyimpan ungkapan atau pola verbal yang berulang
+    apabila benar-benar menjadi ciri karakter.
+
+14. DIALOGUE_TENDENCY menjelaskan kecenderungan karakter dalam percakapan,
+    seperti lebih banyak berbicara, menjawab singkat, bertanya, menghindari
+    topik tertentu, atau pola komunikasi lain yang telah terbukti.
+
+15. COMMUNICATION_HABITS menyimpan kebiasaan komunikasi yang berulang.
+
+16. Gaya karakter dapat berbeda berdasarkan konteks.
+
+17. CASUAL_STYLE menjelaskan gaya ketika berada dalam situasi santai.
+
+18. SERIOUS_STYLE menjelaskan gaya ketika berada dalam situasi serius.
+
+19. CONFLICT_STYLE menjelaskan gaya komunikasi ketika menghadapi konflik.
+
+20. EMOTIONAL_STYLE menjelaskan gaya komunikasi ketika berada dalam kondisi
+    emosional.
+
+21. Style tidak menentukan personality karakter.
+    Personality merupakan bagian dari SIMS SYSTEM.
+
+22. Style tidak menentukan tindakan karakter.
+    Pola tindakan merupakan bagian dari BEHAVIOR SYSTEM.
+
+23. Style tidak menentukan kondisi emosional karakter.
+    Kondisi emosional saat ini merupakan bagian dari STATE SYSTEM.
+
+24. Style hanya menjelaskan bagaimana karakter mengekspresikan sesuatu,
+    bukan apa yang karakter ketahui.
+
+25. Style tidak menentukan isi informasi yang diketahui karakter.
+    Pengetahuan merupakan bagian dari KNOWLEDGE SYSTEM.
+
+26. Style dapat berkembang berdasarkan perkembangan karakter dalam cerita.
+
+27. Perubahan style harus memiliki dasar dari perkembangan atau pengalaman
+    yang terjadi dalam cerita.
+
+28. Perubahan style tidak menghapus sejarah style sebelumnya.
+
+29. PREVIOUS_STYLE menyimpan gaya sebelum perubahan.
+
+30. CURRENT_STYLE menyimpan gaya yang berlaku setelah perubahan.
+
+31. CHANGE_TRIGGER menjelaskan kejadian atau pengalaman yang menyebabkan
+    perubahan style.
+
+32. CHANGE_DATE mencatat kapan perubahan terjadi apabila diketahui.
+
+33. Gaya yang hanya muncul satu kali tidak otomatis dianggap sebagai
+    karakteristik style.
+
+34. Ciri style tidak boleh dibuat hanya untuk membuat semua karakter
+    terdengar berbeda. Setiap ciri harus memiliki dasar dari karakter
+    atau perkembangan cerita.
+
+35. Style harus digunakan secara konsisten ketika karakter muncul dalam
+    dialog atau komunikasi, kecuali konteks cerita memberikan alasan
+    yang jelas untuk perubahan.
+
+================================================================================
