@@ -1,0 +1,1967 @@
+================================================================================
+WRITING VALIDATION
+(VALIDASI AKHIR HASIL PENULISAN)
+================================================================================
+
+STATUS: ACTIVE
+TYPE: NARRATOR / WRITING
+AUTHORITY: WRITING VALIDATION LAYER
+
+TUJUAN:
+
+Memeriksa STORY TEXT yang telah dihasilkan oleh NARRATIVE RENDERING untuk
+memastikan bahwa hasil penulisan:
+
+1. tetap setia kepada FINAL STORY BLUEPRINT;
+2. tetap sesuai dengan WRITING PLAN;
+3. tidak merusak Canon;
+4. tidak menciptakan fakta baru;
+5. tidak melanggar identity, relationship, object, state, knowledge, atau
+   timeline;
+6. tetap konsisten antarbagian;
+7. jelas;
+8. natural;
+9. mudah diikuti;
+10. nyaman dibaca;
+11. memenuhi kebutuhan penyampaian yang telah dirancang.
+
+WRITING VALIDATION adalah GERBANG TERAKHIR sebelum STORY TEXT diberikan
+sebagai hasil produksi.
+
+
+================================================================================
+1. DEFINISI
+================================================================================
+
+Writing Validation adalah proses pemeriksaan akhir terhadap STORY TEXT setelah
+NARRATIVE RENDERING selesai.
+
+Writing Validation membandingkan:
+
+- FINAL STORY BLUEPRINT;
+- WRITING PLAN;
+- STORY TEXT;
+- data Universe yang relevan.
+
+
+Writing Validation tidak menulis ulang cerita secara otomatis.
+
+Writing Validation tidak membuat Canon.
+
+Writing Validation tidak merancang ulang alur.
+
+
+================================================================================
+2. POSISI DALAM NARRATOR
+================================================================================
+
+NARRATOR
+│
+├── STORY FLOW
+│   ├── STORY DESIGN
+│   ├── STORY LOGIC
+│   └── STORY VALIDATION
+│
+└── WRITING
+    ├── WRITING DESIGN
+    ├── NARRATIVE RENDERING
+    └── WRITING VALIDATION
+
+
+URUTAN PRODUKSI:
+
+FINAL STORY BLUEPRINT
+        ↓
+WRITING DESIGN
+        ↓
+WRITING PLAN
+        ↓
+NARRATIVE RENDERING
+        ↓
+STORY TEXT
+        ↓
+WRITING VALIDATION
+        ↓
+FINAL OUTPUT
+
+
+================================================================================
+3. TUJUAN VALIDASI
+================================================================================
+
+Writing Validation harus memastikan bahwa STORY TEXT:
+
+- menyampaikan seluruh bagian alur yang diperlukan;
+- tidak menyampaikan kejadian yang tidak direncanakan;
+- tidak mengubah fakta;
+- tidak kehilangan perubahan penting;
+- tidak membingungkan identitas;
+- tidak melanggar POV;
+- tidak melanggar knowledge boundary;
+- menjaga continuity;
+- mengikuti Writing Plan;
+- dapat dibaca secara natural;
+- mempunyai struktur yang jelas;
+- memiliki pacing yang sesuai;
+- tidak mengandung filler berlebihan;
+- tidak membebani pembaca secara tidak perlu.
+
+
+================================================================================
+4. SUMBER KEBENARAN
+================================================================================
+
+Urutan sumber kebenaran:
+
+1. Canon dan Universe Data;
+2. FINAL STORY BLUEPRINT;
+3. WRITING PLAN;
+4. STORY TEXT.
+
+
+STORY TEXT tidak boleh mengalahkan sumber di atas.
+
+Jika STORY TEXT bertentangan dengan Blueprint atau Canon, STORY TEXT yang
+dianggap salah.
+
+
+================================================================================
+5. BATAS KEWENANGAN
+================================================================================
+
+Writing Validation berwenang memeriksa:
+
+- fidelity;
+- continuity;
+- POV;
+- knowledge boundary;
+- identity clarity;
+- event coverage;
+- state coverage;
+- relationship consistency;
+- object consistency;
+- timeline presentation;
+- readability;
+- naturalness;
+- pacing;
+- dialogue;
+- description;
+- transition;
+- paragraph flow;
+- sentence quality;
+- repetition;
+- information flow;
+- narrative clarity.
+
+
+Writing Validation tidak berwenang:
+
+- mengubah Canon;
+- mengubah Actor Data;
+- mengubah Relationship Data;
+- mengubah Object Data;
+- mengubah State;
+- mengubah Knowledge;
+- mengubah Story Blueprint secara diam-diam.
+
+
+================================================================================
+6. PRINSIP FINAL TEXT FIDELITY
+================================================================================
+
+STORY TEXT harus mempertahankan fakta yang ditetapkan oleh Story Blueprint.
+
+Pemeriksaan meliputi:
+
+- siapa melakukan apa;
+- apa yang terjadi;
+- kapan terjadi;
+- di mana terjadi;
+- siapa mengetahui apa;
+- relationship yang berlaku;
+- object yang terlibat;
+- state yang berubah;
+- consequence yang dihasilkan.
+
+
+Perubahan pada bentuk penyampaian diperbolehkan.
+
+Perubahan pada fakta tidak diperbolehkan.
+
+
+================================================================================
+7. BLUEPRINT COVERAGE
+================================================================================
+
+Writing Validation harus memastikan bahwa bagian penting Blueprint benar-benar
+terwakili dalam STORY TEXT.
+
+Periksa:
+
+- initial state;
+- trigger;
+- event;
+- event sequence;
+- actor involvement;
+- relationship involvement;
+- object involvement;
+- knowledge changes;
+- state changes;
+- location changes;
+- consequences;
+- ending state.
+
+
+Tidak semua detail Blueprint harus muncul secara eksplisit apabila tidak
+diperlukan untuk pembaca.
+
+Namun fakta penting tidak boleh hilang sehingga membuat alur berubah atau
+tidak dapat dipahami.
+
+
+================================================================================
+8. EXTRA CONTENT CHECK
+================================================================================
+
+Writing Validation harus mengidentifikasi informasi atau kejadian yang tidak
+berasal dari:
+
+- Canon;
+- Story Blueprint;
+- Writing Plan;
+- inference yang sah.
+
+
+Tambahan dapat dianggap bermasalah apabila menambahkan:
+
+- actor baru;
+- object baru;
+- relationship baru;
+- event baru;
+- state baru;
+- knowledge baru;
+- lokasi baru;
+- kepemilikan baru;
+- fakta historis baru.
+
+
+================================================================================
+9. FACTUAL DRIFT
+================================================================================
+
+Factual Drift terjadi ketika STORY TEXT secara bertahap menyimpang dari fakta
+yang telah ditetapkan.
+
+Drift dapat terjadi pada:
+
+- identity;
+- age;
+- location;
+- ownership;
+- possession;
+- knowledge;
+- relationship;
+- object;
+- state;
+- timeline;
+- behavior.
+
+
+Semua drift harus ditandai.
+
+
+================================================================================
+10. IDENTITY DRIFT
+================================================================================
+
+Writing Validation harus memastikan setiap actor dan object tetap merupakan
+entitas yang sama sepanjang teks.
+
+Periksa:
+
+- nama;
+- alias;
+- pronoun;
+- atribut identitas;
+- referensi;
+- hubungan dengan actor lain;
+- object identity.
+
+
+Variasi penyebutan diperbolehkan apabila tetap jelas.
+
+
+================================================================================
+11. ACTOR CONSISTENCY
+================================================================================
+
+Writing Validation memeriksa apakah actor dalam STORY TEXT tetap sesuai
+dengan data Universe yang relevan.
+
+Periksa:
+
+- identity;
+- role;
+- behavior;
+- state;
+- knowledge;
+- relationship;
+- location;
+- tujuan yang relevan.
+
+
+STORY TEXT tidak boleh membuat actor bertindak berdasarkan data yang tidak
+tersedia kepadanya.
+
+
+================================================================================
+12. BEHAVIOR FIDELITY
+================================================================================
+
+Writing Validation memeriksa apakah tindakan yang ditulis tetap berada dalam
+ruang behavior actor.
+
+Perbedaan dari pola behavior tidak otomatis salah.
+
+Yang perlu ditandai adalah tindakan yang:
+
+- bertentangan secara material;
+- tidak memiliki dasar;
+- mengubah karakter secara diam-diam;
+- membutuhkan perubahan behavior yang belum terjadi.
+
+
+================================================================================
+13. KNOWLEDGE FIDELITY
+================================================================================
+
+Writing Validation harus memastikan actor tidak:
+
+- mengatakan sesuatu yang belum diketahui;
+- berpikir mengenai fakta yang belum diketahui;
+- bertindak berdasarkan informasi yang belum diperoleh;
+- merespons event yang tidak dapat diketahuinya.
+
+
+Validasi harus mempertimbangkan titik waktu pengetahuan.
+
+
+================================================================================
+14. KNOWLEDGE LEAK
+================================================================================
+
+Knowledge Leak terjadi ketika informasi yang hanya diketahui:
+
+- Narrator;
+- pembaca;
+- actor lain;
+- sistem Universe;
+
+secara tidak sah masuk ke:
+
+- dialog actor;
+- inner thought actor;
+- keputusan actor;
+- tindakan actor.
+
+
+Knowledge Leak harus ditandai.
+
+
+================================================================================
+15. RELATIONSHIP FIDELITY
+================================================================================
+
+Writing Validation memastikan seluruh interaksi antar-actor tetap sesuai
+relationship yang berlaku pada saat cerita.
+
+Periksa:
+
+- status;
+- arah;
+- kedekatan;
+- history;
+- perubahan yang telah terjadi;
+- batas sosial;
+- knowledge masing-masing actor tentang relationship.
+
+
+Teks tidak boleh mengubah relationship hanya melalui cara penyampaian.
+
+
+================================================================================
+16. OBJECT FIDELITY
+================================================================================
+
+Setiap object yang muncul harus merujuk pada identity yang benar.
+
+Periksa:
+
+- OBJECT_ID;
+- name/reference;
+- category;
+- attributes;
+- owner;
+- holder;
+- user;
+- wearer;
+- location;
+- state.
+
+
+Object yang sama tidak boleh berubah menjadi object lain hanya karena
+penyebutan berbeda.
+
+
+================================================================================
+17. OWNERSHIP FIDELITY
+================================================================================
+
+Tulisan harus mempertahankan ownership sesuai keadaan temporal.
+
+Periksa:
+
+- siapa owner;
+- kapan ownership berlaku;
+- apakah ownership berubah;
+- apakah perubahan telah terjadi pada saat object digunakan dalam cerita.
+
+
+Writing style tidak boleh mengaburkan ownership ketika ownership penting
+terhadap alur.
+
+
+================================================================================
+18. POSSESSION DAN USAGE FIDELITY
+================================================================================
+
+Validasi harus membedakan:
+
+- owner;
+- holder;
+- user;
+- wearer;
+- access.
+
+
+Tidak boleh terjadi penyamaan status secara implisit jika hal tersebut
+mengubah fakta.
+
+
+================================================================================
+19. STATE FIDELITY
+================================================================================
+
+Writing Validation harus memastikan state actor dan object tetap benar.
+
+Periksa:
+
+- keadaan sebelum event;
+- perubahan;
+- keadaan sesudah event;
+- posisi perubahan dalam scene;
+- posisi perubahan dalam timeline.
+
+
+Perubahan state tidak boleh muncul sebelum event penyebabnya.
+
+
+================================================================================
+20. TIMELINE FIDELITY
+================================================================================
+
+STORY TEXT harus menjaga urutan temporal.
+
+Periksa:
+
+- event sequence;
+- time transition;
+- duration;
+- simultaneous event;
+- flashback;
+- temporal reference;
+- ending time.
+
+
+Presentation order boleh berbeda dari event order apabila Writing Plan
+mengaturnya.
+
+Namun hasil akhirnya tidak boleh menghasilkan contradiction.
+
+
+================================================================================
+21. LOCATION FIDELITY
+================================================================================
+
+Periksa apakah:
+
+- actor berada di lokasi yang benar;
+- object berada di lokasi yang benar;
+- perpindahan terjadi pada waktu yang benar;
+- scene transition tidak menghilangkan perpindahan yang diperlukan.
+
+
+Tidak boleh ada perubahan lokasi yang tidak memiliki dasar.
+
+
+================================================================================
+22. EVENT FIDELITY
+================================================================================
+
+Writing Validation membandingkan event yang ditulis dengan event pada
+Blueprint.
+
+Periksa:
+
+- event tidak hilang;
+- event tidak berubah;
+- event tidak tertukar;
+- event tidak terjadi terlalu cepat;
+- event tidak terjadi terlalu lambat;
+- event tidak mendapatkan hasil berbeda.
+
+
+================================================================================
+23. EVENT OMISSION
+================================================================================
+
+Jika event penting hilang dari STORY TEXT sehingga perkembangan cerita
+berubah, validation harus menghasilkan ERROR.
+
+Jika event bersifat administratif atau tidak perlu tampil secara eksplisit,
+ketidakhadirannya dapat diterima selama konsekuensinya tetap tersampaikan.
+
+
+================================================================================
+24. EVENT INVENTION
+================================================================================
+
+Jika STORY TEXT menghasilkan event yang tidak terdapat pada Blueprint dan
+tidak merupakan konsekuensi penyampaian yang sah, event tersebut harus
+ditandai.
+
+Writing tidak boleh menciptakan event hanya untuk memperindah cerita.
+
+
+================================================================================
+25. CAUSAL FIDELITY
+================================================================================
+
+Hubungan sebab dan akibat harus tetap terbaca secara benar.
+
+Periksa:
+
+- cause;
+- effect;
+- timing;
+- dependency;
+- consequence.
+
+
+Teks tidak boleh membuat pembaca memahami hubungan sebab-akibat yang berbeda
+dari Story Blueprint.
+
+
+================================================================================
+26. CONSEQUENCE FIDELITY
+================================================================================
+
+Konsekuensi yang telah ditetapkan harus muncul sesuai tingkat pentingnya.
+
+Konsekuensi tidak boleh:
+
+- hilang jika penting;
+- muncul terlalu dini;
+- memiliki hasil berbeda;
+- diberikan kepada actor yang salah.
+
+
+================================================================================
+27. WRITING PLAN FIDELITY
+================================================================================
+
+STORY TEXT harus mengikuti Writing Plan dalam hal:
+
+- POV;
+- narrative distance;
+- presentation order;
+- scene sequence;
+- focus;
+- information flow;
+- pacing;
+- dialogue distribution;
+- description;
+- transition;
+- opening;
+- closing;
+- tone.
+
+
+Penyimpangan kecil dapat diterima jika meningkatkan naturalitas tanpa
+mengubah tujuan Writing Plan.
+
+
+================================================================================
+28. POV VALIDATION
+================================================================================
+
+Writing Validation memeriksa apakah seluruh teks mempertahankan POV yang
+telah ditentukan.
+
+Periksa:
+
+- source of perception;
+- access to thought;
+- access to information;
+- location awareness;
+- knowledge boundary.
+
+
+POV drift harus ditandai.
+
+
+================================================================================
+29. POV DRIFT
+================================================================================
+
+POV Drift terjadi ketika teks tiba-tiba memberikan:
+
+- pikiran actor lain;
+- pengamatan yang tidak tersedia;
+- informasi di lokasi lain;
+- pengetahuan yang tidak dimiliki POV.
+
+
+POV Drift adalah error apabila bertentangan dengan Writing Plan.
+
+
+================================================================================
+30. NARRATIVE DISTANCE VALIDATION
+================================================================================
+
+Jarak antara pembaca dan actor harus relatif konsisten dengan Writing Plan.
+
+Perubahan jarak diperbolehkan jika dirancang atau diperlukan secara alami.
+
+Perubahan mendadak yang mengacaukan perspektif harus ditandai.
+
+
+================================================================================
+31. SCENE STRUCTURE VALIDATION
+================================================================================
+
+Setiap scene harus:
+
+- memiliki fungsi;
+- tetap sesuai urutan;
+- memiliki entry yang dapat dipahami;
+- memiliki development;
+- memiliki exit yang jelas.
+
+
+Scene yang tidak mempunyai fungsi dan hanya memperpanjang teks harus ditandai
+sebagai quality issue.
+
+
+================================================================================
+32. SCENE CONTINUITY
+================================================================================
+
+Periksa continuity antar-scene:
+
+- actor;
+- object;
+- location;
+- state;
+- knowledge;
+- relationship;
+- time.
+
+
+Scene berikutnya harus berangkat dari keadaan yang dihasilkan scene
+sebelumnya.
+
+
+================================================================================
+33. OPENING VALIDATION
+================================================================================
+
+Opening harus sesuai Opening Plan.
+
+Periksa:
+
+- immediate clarity;
+- orientation;
+- POV;
+- focus;
+- relevance;
+- naturalness.
+
+
+Opening tidak boleh menjadi:
+
+- rekap yang tidak diperlukan;
+- exposition dump;
+- fakta baru;
+- konteks yang bertentangan dengan Blueprint.
+
+
+================================================================================
+34. CLOSING VALIDATION
+================================================================================
+
+Closing harus sesuai Closing Plan dan ending state.
+
+Periksa:
+
+- fungsi akhir alur;
+- continuity;
+- state akhir;
+- tone;
+- kelengkapan.
+
+
+Closing tidak boleh:
+
+- menambahkan event baru;
+- mengubah hasil;
+- membuat moral yang tidak dirancang;
+- membuat kesimpulan faktual baru.
+
+
+================================================================================
+35. INFORMATION FLOW VALIDATION
+================================================================================
+
+Periksa kapan informasi diberikan kepada pembaca.
+
+Validasi harus memastikan:
+
+- informasi tidak bocor terlalu awal;
+- informasi penting tidak hilang;
+- informasi tidak diulang berlebihan;
+- urutan informasi tetap dapat dipahami.
+
+
+================================================================================
+36. READER KNOWLEDGE VALIDATION
+================================================================================
+
+Writing Validation harus memastikan perbedaan antara:
+
+- apa yang benar;
+- apa yang diketahui actor;
+- apa yang diketahui pembaca;
+- apa yang belum diketahui.
+
+Teks tidak boleh secara tidak sengaja merusak information boundary.
+
+
+================================================================================
+37. REFERENCE CLARITY
+================================================================================
+
+Pembaca harus dapat menentukan referensi untuk:
+
+- actor;
+- object;
+- tempat;
+- waktu;
+- relationship;
+- event.
+
+
+Jika pronoun, alias, atau sebutan menyebabkan ambiguity yang mengganggu
+pemahaman, harus ditandai.
+
+
+================================================================================
+38. AMBIGUITY VALIDATION
+================================================================================
+
+Ambiguitas dapat diterima apabila:
+
+- disengaja;
+- tidak mengubah fakta;
+- tidak mengganggu pemahaman;
+- sesuai Writing Plan.
+
+
+Ambiguitas menjadi masalah apabila menyebabkan pembaca dapat menginterpretasi
+fakta yang salah.
+
+
+================================================================================
+39. DIALOGUE VALIDATION
+================================================================================
+
+Dialogue harus diperiksa terhadap:
+
+- actor;
+- style;
+- knowledge;
+- relationship;
+- context;
+- intention;
+- state.
+
+
+Dialogue tidak boleh terasa seperti:
+
+- laporan sistem;
+- exposition dump;
+- penjelasan yang hanya ditujukan kepada pembaca.
+
+
+================================================================================
+40. SPEECH STYLE VALIDATION
+================================================================================
+
+Setiap actor harus tetap memiliki style yang kompatibel dengan Actor System.
+
+Periksa:
+
+- language;
+- formality;
+- rhythm;
+- expression;
+- verbal tendency;
+- response style.
+
+
+Perubahan style yang material harus memiliki dasar atau diarahkan ke Actor
+System untuk diperiksa.
+
+
+================================================================================
+41. DIALOGUE NATURALNESS
+================================================================================
+
+Dialogue harus terdengar seperti komunikasi yang memiliki tujuan.
+
+Periksa:
+
+- relevansi jawaban;
+- timing respons;
+- hubungan antar-kalimat;
+- pergantian topik;
+- pengulangan;
+- exposition;
+- respons emosional.
+
+
+Naturalness tidak boleh dicapai dengan mengubah fakta.
+
+
+================================================================================
+42. INNER THOUGHT VALIDATION
+================================================================================
+
+Inner thought harus sesuai:
+
+- POV;
+- knowledge;
+- state;
+- behavior;
+- information boundary.
+
+
+Inner thought tidak boleh menjadi suara Narrator yang menyamar sebagai
+pikiran actor.
+
+
+================================================================================
+43. SHOW / TELL VALIDATION
+================================================================================
+
+Validasi tidak memaksakan SHOW atau TELL sebagai satu-satunya metode.
+
+Yang diperiksa:
+
+- apakah metode yang digunakan efektif;
+- apakah informasi jelas;
+- apakah metode sesuai Writing Plan;
+- apakah tidak terjadi over-explanation.
+
+
+================================================================================
+44. DESCRIPTION VALIDATION
+================================================================================
+
+Deskripsi diperiksa berdasarkan:
+
+- relevance;
+- accuracy;
+- POV;
+- clarity;
+- proportion;
+- atmosphere;
+- object fidelity.
+
+
+Deskripsi yang menambah fakta tidak tersedia harus ditandai.
+
+
+================================================================================
+45. SENSORY VALIDATION
+================================================================================
+
+Informasi sensorik harus sesuai:
+
+- POV;
+- lokasi;
+- kemampuan persepsi;
+- keadaan scene;
+- informasi Universe.
+
+
+Sensorik yang tidak memiliki dasar atau bertentangan dengan keadaan harus
+ditandai.
+
+
+================================================================================
+46. PACING VALIDATION
+================================================================================
+
+Periksa apakah pacing:
+
+- sesuai Writing Plan;
+- tidak terlalu lambat;
+- tidak terlalu cepat;
+- memberikan ruang yang cukup pada bagian penting;
+- tidak menghabiskan ruang pada transisi yang tidak penting.
+
+
+Pacing issue adalah writing issue selama tidak mengubah temporal fact.
+
+
+================================================================================
+47. RHYTHM VALIDATION
+================================================================================
+
+Periksa:
+
+- variasi panjang kalimat;
+- rhythm paragraf;
+- distribusi dialog;
+- jeda;
+- kepadatan informasi;
+- perubahan tempo.
+
+
+Rhythm harus membantu aliran membaca.
+
+
+================================================================================
+48. PARAGRAPH VALIDATION
+================================================================================
+
+Periksa apakah paragraf:
+
+- terlalu padat;
+- terlalu pendek tanpa fungsi;
+- mencampur fokus;
+- membuat referensi sulit diikuti;
+- memutus action;
+- mengganggu transition.
+
+
+Paragraph problem tidak boleh diselesaikan dengan mengubah fakta.
+
+
+================================================================================
+49. SENTENCE VALIDATION
+================================================================================
+
+Periksa:
+
+- grammar;
+- syntax;
+- clarity;
+- completeness;
+- naturalness;
+- ambiguity;
+- repetition.
+
+
+Kesalahan bahasa adalah writing issue.
+
+
+================================================================================
+50. REPETITION VALIDATION
+================================================================================
+
+Identifikasi pengulangan yang tidak memiliki fungsi.
+
+Periksa pengulangan:
+
+- informasi;
+- nama;
+- deskripsi;
+- emosi;
+- tindakan;
+- dialog;
+- exposition.
+
+
+Pengulangan yang memiliki fungsi tidak otomatis dianggap error.
+
+
+================================================================================
+51. NARRATIVE ECONOMY VALIDATION
+================================================================================
+
+Periksa apakah setiap bagian memberikan fungsi terhadap:
+
+- progression;
+- characterization;
+- information;
+- atmosphere;
+- relationship;
+- action;
+- transition;
+- consequence.
+
+
+Bagian yang tidak memberikan fungsi dapat dikurangi atau diperbaiki pada
+Rendering.
+
+
+================================================================================
+52. COGNITIVE LOAD VALIDATION
+================================================================================
+
+Periksa apakah pembaca dapat mengikuti:
+
+- siapa;
+- di mana;
+- kapan;
+- apa yang berubah;
+- informasi yang baru;
+- hubungan actor;
+- object yang relevan.
+
+
+Cognitive load yang terlalu tinggi merupakan masalah penyampaian apabila
+tidak merupakan hasil yang disengaja.
+
+
+================================================================================
+53. TRANSITION VALIDATION
+================================================================================
+
+Periksa perpindahan:
+
+- scene;
+- lokasi;
+- waktu;
+- POV;
+- focus;
+- intensity.
+
+
+Transisi harus cukup jelas tetapi tidak berlebihan.
+
+
+================================================================================
+54. NATURAL FLOW VALIDATION
+================================================================================
+
+Story Text harus mengalir tanpa:
+
+- lompatan logika;
+- lompatan perspektif;
+- pengulangan struktur;
+- transition patah;
+- dialog yang kaku;
+- deskripsi yang menghambat.
+
+
+Natural flow diperiksa sebagai kualitas writing, bukan sebagai perubahan
+story logic.
+
+
+================================================================================
+55. TONE VALIDATION
+================================================================================
+
+Tone harus:
+
+- sesuai Writing Plan;
+- sesuai konteks;
+- konsisten dalam scene;
+- mampu berubah ketika story membutuhkan perubahan.
+
+
+Perubahan tone tidak boleh menyebabkan perubahan fakta.
+
+
+================================================================================
+56. STYLE COMPATIBILITY VALIDATION
+================================================================================
+
+Writing Validation memastikan:
+
+- narrative style;
+- actor style;
+- tone;
+- POV;
+- readability;
+
+tetap kompatibel.
+
+Style tidak boleh membuat actor terdengar sebagai actor lain.
+
+
+================================================================================
+57. SUBTEXT VALIDATION
+================================================================================
+
+Jika subtext digunakan, periksa:
+
+- apakah makna implisit masih dapat ditangkap;
+- apakah tidak bertentangan dengan fakta;
+- apakah tidak membuat actor mengetahui sesuatu yang tidak diketahui;
+- apakah tidak menciptakan interpretation conflict yang tidak disengaja.
+
+
+================================================================================
+58. EMOTIONAL PRESENTATION VALIDATION
+================================================================================
+
+Periksa apakah emotional presentation:
+
+- sesuai state;
+- sesuai behavior;
+- sesuai relationship;
+- sesuai event;
+- sesuai POV;
+- tidak berlebihan tanpa dasar;
+- tidak terlalu datar ketika Writing Plan membutuhkan penekanan.
+
+
+Validation tidak menetapkan emotional state baru.
+
+
+================================================================================
+59. NATURALITY VALIDATION
+================================================================================
+
+Periksa apakah teks terasa sebagai cerita alami.
+
+Tanda masalah:
+
+- struktur terlalu mekanis;
+- seluruh paragraf mengikuti pola yang identik;
+- dialog terlalu sempurna;
+- narasi terlalu menjelaskan;
+- informasi terasa dipaksakan;
+- perpindahan tidak alami.
+
+
+Naturalitas adalah kualitas writing, bukan alasan mengubah Canon.
+
+
+================================================================================
+60. READER COMFORT VALIDATION
+================================================================================
+
+Periksa kenyamanan pembaca:
+
+- mudah memahami subjek;
+- mudah mengikuti perubahan;
+- tidak tersesat dalam waktu;
+- tidak tersesat dalam lokasi;
+- tidak terbebani informasi;
+- tidak terganggu pengulangan;
+- dapat mengikuti dialog.
+
+
+================================================================================
+61. ACCESSIBILITY OF CONTEXT
+================================================================================
+
+Pembaca harus memiliki informasi yang cukup untuk memahami bagian yang sedang
+dibaca.
+
+Tidak semua lore harus dijelaskan.
+
+Hanya konteks yang diperlukan untuk memahami scene yang harus tersedia.
+
+
+================================================================================
+62. NO EXPOSITION DUMP
+================================================================================
+
+Validasi harus mengidentifikasi bagian yang menyampaikan terlalu banyak
+informasi secara tidak alami.
+
+Masalah exposition dump harus diperbaiki pada Writing.
+
+Informasi yang benar tidak boleh dihapus jika dibutuhkan oleh story.
+
+
+================================================================================
+63. NO FILLER
+================================================================================
+
+Bagian yang hanya menambah panjang tanpa fungsi harus ditandai.
+
+Filler dapat berupa:
+
+- repetisi;
+- detail tidak relevan;
+- dialogue tanpa fungsi;
+- reaction berulang;
+- exposition yang tidak dibutuhkan.
+
+
+================================================================================
+64. NO ARTIFICIAL DRAMA
+================================================================================
+
+Writing Validation harus menandai dramatisasi yang:
+
+- tidak ada dalam Blueprint;
+- mengubah intensitas event;
+- menciptakan konflik baru;
+- memberikan reaction yang tidak didukung;
+- mengubah hasil event.
+
+
+Dramatisasi tidak boleh digunakan untuk memperbaiki cerita dengan mengorbankan
+fidelity.
+
+
+================================================================================
+65. NO ARTIFICIAL RESOLUTION
+================================================================================
+
+Writing Validation harus memastikan teks tidak menyelesaikan masalah yang
+tidak dirancang untuk selesai.
+
+Jangan menambahkan:
+
+- emotional resolution;
+- relationship resolution;
+- conflict resolution;
+- information resolution;
+
+apabila tidak ada dalam Story Blueprint.
+
+
+================================================================================
+66. FUTURE COMPATIBILITY
+================================================================================
+
+STORY TEXT tidak boleh secara tidak sengaja mengunci Universe masa depan
+melalui detail yang tidak diperlukan.
+
+Jika sebuah detail tidak dibutuhkan dan belum ditetapkan, hindari penyebutan
+yang membuatnya menjadi Canon.
+
+
+================================================================================
+67. CANON LEAK VALIDATION
+================================================================================
+
+Periksa apakah STORY TEXT mengandung fakta baru yang tidak melalui Story Flow.
+
+Jika ditemukan:
+
+- actor baru;
+- object baru;
+- relationship baru;
+- ownership baru;
+- lokasi baru;
+- sejarah baru;
+- knowledge baru;
+- status baru;
+
+harus ditandai jika fakta tersebut tidak berasal dari Blueprint atau sumber
+Canon yang sah.
+
+
+================================================================================
+68. PROCESS LEAK VALIDATION
+================================================================================
+
+STORY TEXT tidak boleh mengandung:
+
+- Story Design;
+- Story Logic;
+- Story Validation;
+- Writing Design;
+- Writing Plan;
+- sistem internal;
+- metadata proses;
+- instruksi AI;
+
+kecuali format produksi secara eksplisit memerlukannya.
+
+
+================================================================================
+69. OUTPUT INTEGRITY
+================================================================================
+
+Output harus berisi STORY TEXT yang sesuai format produksi.
+
+Diagnostic:
+
+- validation result;
+- issue log;
+- internal notes;
+
+tidak boleh tercampur ke dalam Story Text.
+
+
+================================================================================
+70. ERROR CLASSIFICATION
+================================================================================
+
+Setiap masalah diklasifikasikan sebagai:
+
+FACTUAL
+    Fakta cerita berubah.
+
+CONTINUITY
+    Hubungan antar-keadaan bermasalah.
+
+IDENTITY
+    Actor/object/reference bermasalah.
+
+TEMPORAL
+    Waktu atau urutan bermasalah.
+
+KNOWLEDGE
+    Pengetahuan actor bermasalah.
+
+RELATIONSHIP
+    Relationship tidak sesuai.
+
+OBJECT
+    Object tidak sesuai.
+
+STATE
+    State tidak sesuai.
+
+POV
+    Sudut pandang bermasalah.
+
+STRUCTURE
+    Struktur tulisan bermasalah.
+
+PACING
+    Tempo penyampaian bermasalah.
+
+READABILITY
+    Sulit dibaca atau diikuti.
+
+DIALOGUE
+    Dialog tidak natural atau tidak konsisten.
+
+STYLE
+    Style tidak sesuai.
+
+LANGUAGE
+    Grammar atau bahasa bermasalah.
+
+REPETITION
+    Pengulangan tidak diperlukan.
+
+OTHER
+    Masalah lain yang relevan.
+
+
+================================================================================
+71. SEVERITY
+================================================================================
+
+INFO
+    Catatan tanpa masalah yang menghalangi.
+
+WARNING
+    Masalah kualitas ringan.
+
+ERROR
+    Masalah yang harus diperbaiki.
+
+CRITICAL
+    Masalah yang membuat Story Text tidak dapat diterima.
+
+
+Aturan:
+
+CRITICAL:
+    Story Text tidak boleh dipublikasikan.
+
+ERROR:
+    Story Text harus direvisi sebelum final.
+
+WARNING:
+    Dapat direvisi berdasarkan prioritas.
+
+INFO:
+    Tidak memblokir output.
+
+
+================================================================================
+72. ERROR OWNERSHIP
+================================================================================
+
+Setiap issue harus diarahkan kepada sistem yang tepat.
+
+FACTUAL / CONTINUITY
+    → STORY FLOW atau sistem Universe terkait.
+
+IDENTITY
+    → ACTOR / OBJECT SYSTEM.
+
+RELATIONSHIP
+    → RELATIONSHIP SYSTEM.
+
+STATE
+    → STATE SYSTEM / STORY FLOW.
+
+KNOWLEDGE
+    → ACTOR KNOWLEDGE SYSTEM / STORY FLOW.
+
+POV
+    → WRITING DESIGN / NARRATIVE RENDERING.
+
+STRUCTURE
+    → WRITING DESIGN.
+
+PACING
+    → WRITING DESIGN / RENDERING.
+
+READABILITY
+    → WRITING / RENDERING.
+
+DIALOGUE
+    → WRITING / ACTOR STYLE.
+
+LANGUAGE
+    → NARRATIVE RENDERING.
+
+
+================================================================================
+73. REVISION ROUTING
+================================================================================
+
+Jika issue ditemukan:
+
+1. klasifikasikan;
+2. tentukan severity;
+3. tentukan owner;
+4. kembalikan ke tahap yang sesuai;
+5. render ulang bagian yang terdampak;
+6. validasi kembali.
+
+
+Writing Validation tidak memperbaiki masalah faktual sendiri.
+
+
+================================================================================
+74. LOCAL REVISION
+================================================================================
+
+Jika masalah hanya terdapat pada bagian tertentu dan tidak mengubah
+Blueprint, revisi dapat dilakukan secara lokal.
+
+Local revision tidak boleh merusak:
+
+- scene sebelumnya;
+- scene berikutnya;
+- state;
+- timeline;
+- knowledge;
+- relationship;
+- object.
+
+
+================================================================================
+75. GLOBAL REVISION
+================================================================================
+
+Jika issue memengaruhi:
+
+- event;
+- structure;
+- POV;
+- knowledge;
+- relationship;
+- object;
+- state;
+- timeline;
+
+maka revisi dapat membutuhkan pengulangan tahap sebelumnya.
+
+
+================================================================================
+76. REVALIDATION
+================================================================================
+
+Setelah revisi:
+
+1. Story Text diperbarui;
+2. Validation dijalankan kembali;
+3. Issue lama diverifikasi;
+4. Issue baru dicari;
+5. status diperbarui.
+
+
+Story Text yang berubah tidak boleh tetap dianggap valid berdasarkan
+validation lama tanpa pemeriksaan ulang.
+
+
+================================================================================
+77. VALIDATION RECORD
+================================================================================
+
+Hasil validation minimal dapat mencatat:
+
+VALIDATION_ID
+STORY_ID
+VALIDATION_DATE
+VALIDATION_STATUS
+BLUEPRINT_REFERENCE
+WRITING_PLAN_REFERENCE
+ISSUE_COUNT
+CRITICAL_COUNT
+ERROR_COUNT
+WARNING_COUNT
+VALIDATOR
+NOTES
+
+
+Validation Record adalah metadata proses.
+
+Validation Record bukan bagian dari STORY TEXT.
+
+
+================================================================================
+78. READY STATUS
+================================================================================
+
+Status READY hanya boleh diberikan apabila:
+
+1. tidak ada CRITICAL;
+2. tidak ada ERROR;
+3. seluruh fakta utama sesuai Blueprint;
+4. Writing Plan telah dijalankan;
+5. POV konsisten;
+6. knowledge boundary konsisten;
+7. continuity valid;
+8. readability memadai;
+9. tidak ada unresolved issue yang memengaruhi pemahaman cerita.
+
+
+================================================================================
+79. REVISION REQUIRED
+================================================================================
+
+Status REVISION_REQUIRED diberikan apabila terdapat issue yang harus
+diperbaiki sebelum output final.
+
+Issue dapat berada pada:
+
+- factual;
+- structural;
+- stylistic;
+- readability;
+- pacing;
+- dialogue;
+- continuity.
+
+
+Jenis issue menentukan tahap tujuan revisi.
+
+
+================================================================================
+80. BLOCKED
+================================================================================
+
+Status BLOCKED diberikan apabila:
+
+- Canon rusak;
+- identity conflict tidak terselesaikan;
+- temporal conflict fundamental;
+- Story Blueprint dilanggar secara material;
+- knowledge boundary rusak;
+- object/relationship/state berubah;
+- story text tidak dapat dipercaya sebagai representasi Blueprint.
+
+
+================================================================================
+81. QUALITY SEPARATION
+================================================================================
+
+Writing Validation harus memisahkan:
+
+FACTUAL VALIDITY
+    Apakah teks benar terhadap Universe?
+
+dengan:
+
+WRITING QUALITY
+    Apakah teks ditulis dengan baik?
+
+
+Teks dapat:
+
+- faktual benar tetapi buruk secara writing;
+- bagus secara writing tetapi salah secara fakta.
+
+
+Kedua dimensi harus dinilai secara terpisah.
+
+
+================================================================================
+82. WRITING QUALITY DIMENSIONS
+================================================================================
+
+Kualitas tulisan dapat ditinjau melalui:
+
+- clarity;
+- coherence;
+- readability;
+- naturalness;
+- pacing;
+- rhythm;
+- dialogue;
+- description;
+- transition;
+- focus;
+- economy;
+- tone;
+- consistency.
+
+
+Tidak ada satu dimensi yang boleh menghapus kebutuhan terhadap factual
+accuracy.
+
+
+================================================================================
+83. STORY FIDELITY DIMENSIONS
+================================================================================
+
+Fidelity terhadap cerita meliputi:
+
+- event fidelity;
+- actor fidelity;
+- relationship fidelity;
+- object fidelity;
+- state fidelity;
+- knowledge fidelity;
+- timeline fidelity;
+- location fidelity;
+- causal fidelity;
+- consequence fidelity.
+
+
+================================================================================
+84. READER EXPERIENCE
+================================================================================
+
+Validation dapat mempertimbangkan apakah pembaca:
+
+- mengetahui siapa yang relevan;
+- mengetahui konteks yang dibutuhkan;
+- dapat mengikuti perubahan;
+- tidak tersesat dalam scene;
+- dapat memahami dialog;
+- dapat mengikuti emotional progression;
+- memahami ending.
+
+
+Penilaian reader experience tidak boleh mengubah Canon.
+
+
+================================================================================
+85. NO FORMULA CHECK
+================================================================================
+
+Writing Validation tidak boleh memaksakan checklist formula seperti:
+
+- harus ada hook;
+- harus ada twist;
+- harus ada micro-expression;
+- harus ada cliffhanger;
+- harus ada moral;
+- harus ada konflik;
+- harus ada jenis ending tertentu.
+
+
+Yang dinilai adalah efektivitas terhadap Writing Plan dan kebutuhan cerita.
+
+
+================================================================================
+86. NO AUTOMATIC REWRITE
+================================================================================
+
+Validation hanya mendeteksi dan mengklasifikasikan masalah.
+
+Validation tidak boleh:
+
+- menulis ulang seluruh cerita secara otomatis;
+- mengubah alur;
+- mengubah fakta;
+- menambahkan event;
+- mengubah actor;
+- mengubah object;
+- mengubah relationship.
+
+
+Perbaikan dilakukan oleh tahap yang sesuai.
+
+
+================================================================================
+87. FINAL STORY GATE
+================================================================================
+
+STORY TEXT hanya dapat menjadi FINAL OUTPUT apabila:
+
+[ ] Story Blueprint tetap utuh
+[ ] Writing Plan tetap dipatuhi
+[ ] Semua event penting tersampaikan
+[ ] Tidak ada event baru yang tidak sah
+[ ] Semua actor konsisten
+[ ] Semua object konsisten
+[ ] Semua relationship konsisten
+[ ] Semua state konsisten
+[ ] Semua knowledge boundary konsisten
+[ ] Timeline konsisten
+[ ] Location konsisten
+[ ] Ownership konsisten
+[ ] Possession konsisten
+[ ] POV konsisten
+[ ] Presentation order valid
+[ ] Information flow valid
+[ ] Dialog valid
+[ ] Description valid
+[ ] Transition valid
+[ ] Pacing memadai
+[ ] Readability memadai
+[ ] Naturalness memadai
+[ ] Tidak ada Canon leak
+[ ] Tidak ada process leak
+[ ] Tidak ada critical issue
+[ ] Tidak ada error yang belum diperbaiki
+[ ] Ending sesuai Blueprint
+[ ] Output bersih dari diagnostic internal
+
+
+================================================================================
+88. FINAL OUTPUT CONTRACT
+================================================================================
+
+Jika validation menghasilkan READY:
+
+WRITING VALIDATION
+        ↓
+FINAL STORY
+        ↓
+OUTPUT
+
+
+FINAL STORY harus:
+
+- merupakan representasi sah dari Story Blueprint;
+- mengikuti Writing Plan;
+- telah melewati Narrative Rendering;
+- telah melewati Writing Validation;
+- tidak membawa diagnostic internal.
+
+
+================================================================================
+89. RETURN PATH
+================================================================================
+
+Jika validation gagal:
+
+FACT ERROR
+    → STORY FLOW / UNIVERSE SYSTEM
+
+WRITING PLAN ERROR
+    → WRITING DESIGN
+
+RENDERING ERROR
+    → NARRATIVE RENDERING
+
+LANGUAGE ERROR
+    → NARRATIVE RENDERING
+
+STYLE ERROR
+    → WRITING DESIGN / ACTOR STYLE
+
+POV ERROR
+    → WRITING DESIGN / NARRATIVE RENDERING
+
+
+Setelah perbaikan, validation harus dijalankan kembali.
+
+
+================================================================================
+90. PRINCIPLE OF TRUTH
+================================================================================
+
+Kebenaran Universe lebih tinggi daripada keindahan tulisan.
+
+
+================================================================================
+91. PRINCIPLE OF READABILITY
+================================================================================
+
+Kebenaran Universe harus disampaikan dengan cara yang sejelas dan senatural
+mungkin tanpa mengubah isinya.
+
+
+================================================================================
+92. PRINCIPLE OF SEPARATION
+================================================================================
+
+Story Flow menentukan:
+
+APA YANG TERJADI.
+
+
+Writing Flow menentukan:
+
+BAGAIMANA HAL TERSEBUT DISAMPAIKAN.
+
+
+Writing Validation memastikan keduanya tetap terhubung tanpa mencampur
+kewenangan.
+
+
+================================================================================
+93. PRINCIPLE OF TRACEABILITY
+================================================================================
+
+Setiap fakta penting dalam STORY TEXT harus dapat ditelusuri ke sumber yang
+sah:
+
+- Canon;
+- Story Blueprint;
+- atau inference yang diperbolehkan.
+
+
+Jika fakta tidak dapat ditelusuri, fakta tersebut harus diperiksa.
+
+
+================================================================================
+94. PRINCIPLE OF RESTRAINT
+================================================================================
+
+Validasi tidak boleh menuntut penjelasan tambahan hanya karena informasi
+tersebut tersedia di Universe.
+
+Story Text hanya perlu menyampaikan informasi yang diperlukan untuk cerita.
+
+
+================================================================================
+95. PRINCIPLE OF CONSISTENCY
+================================================================================
+
+Kualitas tulisan harus konsisten dengan:
+
+- Universe;
+- Blueprint;
+- Writing Plan;
+- Actor System;
+- Relationship System;
+- Object System;
+- State;
+- Knowledge.
+
+
+================================================================================
+96. PRINCIPLE OF FUTURE COMPATIBILITY
+================================================================================
+
+Story Text tidak boleh menambahkan detail yang tidak diperlukan namun dapat
+mengunci perkembangan Universe di masa depan.
+
+Ketika detail belum ditentukan dan tidak diperlukan untuk memahami cerita,
+biarkan detail tersebut tetap tidak ditentukan.
+
+
+================================================================================
+97. PRINCIPLE OF FINALITY
+================================================================================
+
+Writing Validation adalah pemeriksaan terakhir sebelum output.
+
+Setelah status READY diberikan, Story Text dapat diberikan kepada pembaca
+tanpa membutuhkan perbaikan faktual tambahan.
+
+
+================================================================================
+98. ATURAN UTAMA
+================================================================================
+
+1. Writing Validation adalah final gate Writing Flow.
+
+2. Writing Validation memeriksa STORY TEXT, bukan menciptakan cerita.
+
+3. Canon adalah sumber kebenaran tertinggi.
+
+4. Story Blueprint adalah sumber kebenaran alur.
+
+5. Writing Plan adalah sumber kebenaran bentuk penyampaian.
+
+6. Story Text harus mempertahankan fakta.
+
+7. Event tidak boleh berubah.
+
+8. Actor tidak boleh berubah.
+
+9. Relationship tidak boleh berubah.
+
+10. Object tidak boleh berubah.
+
+11. State tidak boleh berubah.
+
+12. Knowledge tidak boleh berubah.
+
+13. Timeline tidak boleh berubah.
+
+14. Ownership dan possession tidak boleh berubah.
+
+15. POV harus konsisten.
+
+16. Information boundary harus dijaga.
+
+17. Dialog harus sesuai actor.
+
+18. Description harus sesuai fakta.
+
+19. Pacing harus mendukung alur.
+
+20. Readability harus dijaga.
+
+21. Naturalness harus dijaga.
+
+22. Ambiguitas kritis harus diselesaikan.
+
+23. Unsupported factual addition harus ditolak.
+
+24. Canon leak harus ditolak.
+
+25. Process leak harus ditolak.
+
+26. Validation tidak melakukan automatic rewrite.
+
+27. Masalah faktual dikembalikan ke Story Flow atau Universe System.
+
+28. Masalah Writing dikembalikan ke Writing.
+
+29. Setiap revisi harus divalidasi kembali.
+
+30. READY berarti Story Text aman untuk diberikan sebagai hasil produksi.
+
+
+================================================================================
+END OF WRITING VALIDATION
+================================================================================
