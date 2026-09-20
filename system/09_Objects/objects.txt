@@ -1,0 +1,780 @@
+================================================================================
+UNIVERSE — OBJECT SYSTEM
+(SISTEM OBJEK UNTUK CERITA BERKELANJUTAN)
+================================================================================
+
+STATUS: ACTIVE
+
+TUJUAN:
+Mengatur seluruh objek yang memiliki keberadaan, identitas, fungsi, kepemilikan,
+penggunaan, perubahan, atau relevansi naratif di dalam Universe.
+
+OBJECT SYSTEM adalah SISTEM ATURAN.
+OBJECT SYSTEM bukan DATABASE OBJEK.
+OBJECT SYSTEM bukan CANON.
+OBJECT SYSTEM tidak menentukan objek apa yang harus ada di dalam cerita.
+
+
+================================================================================
+1. RUANG LINGKUP
+================================================================================
+
+OBJECT SYSTEM mengatur:
+
+- identitas objek
+- klasifikasi objek
+- struktur kategori objek
+- atribut objek
+- kepemilikan objek
+- penguasaan objek
+- penggunaan objek
+- pemakaian objek
+- lokasi objek
+- kondisi objek
+- status objek
+- perpindahan objek
+- perubahan kepemilikan
+- perubahan atribut
+- perubahan kondisi
+- sejarah objek
+- hubungan objek dengan actor
+- hubungan objek dengan objek lain
+- resolusi referensi objek
+- validasi kontinuitas objek
+
+
+================================================================================
+2. DEFINISI OBJEK
+================================================================================
+
+Objek adalah sesuatu yang memiliki identitas yang dapat dibedakan dan memiliki
+relevansi terhadap Universe.
+
+Objek dapat berupa sesuatu yang bersifat fisik maupun digital.
+
+Tidak semua benda atau entitas yang disebut dalam narasi wajib menjadi objek
+yang tercatat.
+
+Pencatatan objek ditentukan oleh relevansi terhadap kontinuitas, interaksi,
+kepemilikan, penggunaan, perubahan, atau kebutuhan naratif.
+
+
+================================================================================
+3. IDENTITAS OBJEK
+================================================================================
+
+Setiap objek yang tercatat harus memiliki:
+
+OBJECT_ID
+    Identitas unik objek.
+
+OBJECT_NAME
+    Nama utama objek apabila telah diketahui atau ditetapkan.
+
+OBJECT_ALIASES
+    Sebutan lain yang merujuk kepada objek yang sama.
+
+OBJECT_TYPE
+    Klasifikasi dasar objek.
+
+CATEGORY_PATH
+    Jalur klasifikasi objek dari tingkat umum menuju tingkat khusus.
+
+IDENTITY_STATUS
+    Status identitas objek di dalam Universe.
+
+
+ATURAN:
+
+1. OBJECT_ID harus unik.
+
+2. OBJECT_ID tidak berubah selama identitas objek tetap sama.
+
+3. Perubahan nama tidak menciptakan objek baru.
+
+4. Perubahan pemilik tidak menciptakan objek baru.
+
+5. Perubahan lokasi tidak menciptakan objek baru.
+
+6. Perubahan kondisi tidak menciptakan objek baru.
+
+7. Perubahan penggunaan tidak menciptakan objek baru.
+
+8. Perubahan atribut tidak menciptakan objek baru selama identitas objek
+   tetap sama.
+
+9. Objek baru hanya dibuat apabila Universe menetapkan bahwa identitas yang
+   muncul memang merupakan objek yang berbeda.
+
+
+================================================================================
+4. TIPE OBJEK
+================================================================================
+
+OBJECT_TYPE harus membedakan sekurang-kurangnya:
+
+PHYSICAL
+    Objek dengan keberadaan fisik.
+
+DIGITAL
+    Objek dengan keberadaan digital atau virtual.
+
+
+Sistem dapat mendukung tipe tambahan apabila kebutuhan Universe memerlukannya.
+
+OBJECT_TYPE tidak boleh diperlakukan sebagai daftar objek tetap.
+
+OBJECT_TYPE hanya menentukan struktur klasifikasi dasar.
+
+
+================================================================================
+5. KATEGORI OBJEK
+================================================================================
+
+Setiap objek dapat memiliki CATEGORY_PATH.
+
+CATEGORY_PATH membentuk hierarki dari kategori umum menuju kategori yang
+lebih spesifik.
+
+Struktur kategori harus bersifat:
+
+- hierarkis
+- fleksibel
+- dapat berkembang
+- tidak terbatas pada kategori yang telah ditentukan sebelumnya
+- konsisten dalam penggunaannya
+
+Kategori menjelaskan klasifikasi objek.
+
+Kategori tidak menentukan identitas unik objek.
+
+Dua objek dapat memiliki CATEGORY_PATH yang sama tetapi tetap merupakan objek
+yang berbeda.
+
+
+================================================================================
+6. ATRIBUT OBJEK
+================================================================================
+
+Atribut menjelaskan karakteristik objek.
+
+Atribut dapat mencakup informasi yang relevan terhadap identitas, tampilan,
+fungsi, spesifikasi, kondisi, atau karakteristik objek.
+
+Tidak semua objek harus memiliki atribut yang sama.
+
+Atribut dapat bertambah ketika informasi baru diketahui.
+
+Atribut dapat berubah apabila kondisi Universe menyebabkan perubahan tersebut.
+
+Perubahan atribut harus dibedakan dari perubahan identitas.
+
+
+================================================================================
+7. STATUS OBJEK
+================================================================================
+
+CURRENT_STATE menunjukkan keadaan objek pada titik waktu saat ini.
+
+CURRENT_STATE harus selalu menggambarkan kondisi terbaru yang telah
+dikonfirmasi oleh Universe.
+
+Status objek dapat berubah sepanjang cerita.
+
+Perubahan status tidak menghapus status sebelumnya dari sejarah apabila
+perubahan tersebut memiliki relevansi kontinuitas.
+
+
+================================================================================
+8. KEPEMILIKAN
+================================================================================
+
+OWNER menunjukkan actor atau pihak yang memiliki objek berdasarkan keadaan
+yang diakui Universe.
+
+Kepemilikan adalah data terpisah dari:
+
+- possession
+- holding
+- usage
+- access
+- wearing
+- location
+
+
+Perubahan OWNER merupakan perubahan keadaan objek dan harus mengikuti
+peristiwa atau dasar naratif yang valid.
+
+Perubahan OWNER tidak mengubah OBJECT_ID.
+
+
+================================================================================
+9. PENGUASAAN OBJEK
+================================================================================
+
+CURRENT_HOLDER menunjukkan actor atau pihak yang sedang memegang,
+membawa, menyimpan, atau menguasai objek secara aktual apabila informasi
+tersebut relevan.
+
+CURRENT_HOLDER tidak secara otomatis berarti OWNER.
+
+
+================================================================================
+10. PENGGUNAAN OBJEK
+================================================================================
+
+CURRENT_USER menunjukkan actor atau pihak yang sedang menggunakan objek.
+
+Penggunaan tidak secara otomatis berarti kepemilikan.
+
+Satu objek dapat memiliki owner dan user yang berbeda.
+
+
+================================================================================
+11. PEMAKAIAN OBJEK
+================================================================================
+
+Objek yang digunakan langsung pada tubuh actor dapat memiliki status
+pemakaian khusus.
+
+Sistem harus dapat membedakan:
+
+- objek dimiliki
+- objek dikuasai
+- objek digunakan
+- objek dikenakan
+- objek disimpan
+- objek berada di lokasi tertentu
+
+Pemakaian tidak mengubah identitas objek.
+
+
+================================================================================
+12. LOKASI OBJEK
+================================================================================
+
+CURRENT_LOCATION menunjukkan lokasi objek pada keadaan terbaru yang diketahui.
+
+Lokasi objek dapat berubah.
+
+Perubahan lokasi tidak mengubah OBJECT_ID.
+
+Jika lokasi tidak diketahui, sistem tidak boleh mengarang lokasi.
+
+Keadaan lokasi yang tidak diketahui harus tetap dibedakan dari objek yang
+memang tidak memiliki lokasi relevan.
+
+
+================================================================================
+13. HUBUNGAN OBJEK DENGAN ACTOR
+================================================================================
+
+Objek dapat memiliki hubungan operasional dengan actor.
+
+Hubungan tersebut dapat mencakup:
+
+- ownership
+- possession
+- usage
+- access
+- wearing
+- storage
+- control
+- responsibility
+- association
+
+
+Jenis hubungan harus ditentukan berdasarkan fakta Universe.
+
+Sistem tidak boleh menyamakan satu jenis hubungan dengan jenis hubungan
+lainnya.
+
+
+================================================================================
+14. HUBUNGAN ANTAROBJEK
+================================================================================
+
+Objek dapat memiliki hubungan dengan objek lain.
+
+Hubungan tersebut dapat bersifat:
+
+- bagian dari
+- terhubung dengan
+- berada di dalam
+- melekat pada
+- bergantung pada
+- merupakan komponen dari
+- berada bersama
+- memiliki hubungan fungsional
+
+
+Hubungan antarobjek hanya dicatat apabila relevan terhadap Universe.
+
+Hubungan antarobjek tidak boleh diasumsikan hanya berdasarkan kategori.
+
+
+================================================================================
+15. PERUBAHAN KEPEMILIKAN
+================================================================================
+
+Kepemilikan dapat berubah sepanjang timeline.
+
+Setiap perubahan kepemilikan harus:
+
+1. memiliki dasar naratif;
+2. memiliki waktu yang dapat ditempatkan dalam timeline;
+3. memperbarui OWNER saat ini;
+4. mempertahankan riwayat kepemilikan sebelumnya apabila relevan;
+5. mempertahankan OBJECT_ID yang sama.
+
+
+================================================================================
+16. RIWAYAT OBJEK
+================================================================================
+
+Objek yang mengalami perubahan penting harus mempertahankan HISTORY.
+
+HISTORY dapat mencatat perubahan terhadap:
+
+- identitas
+- nama
+- kategori
+- atribut
+- owner
+- holder
+- user
+- wearer
+- lokasi
+- kondisi
+- status
+- hubungan dengan actor
+- hubungan dengan objek lain
+- peristiwa penting
+
+
+CURRENT DATA menunjukkan keadaan terbaru.
+
+HISTORY menunjukkan perubahan yang telah terjadi.
+
+CURRENT DATA tidak boleh digunakan untuk menghapus fakta historis yang masih
+diperlukan oleh kontinuitas.
+
+
+================================================================================
+17. RESOLUSI REFERENSI OBJEK
+================================================================================
+
+Referensi objek dalam narasi tidak harus menggunakan OBJECT_NAME secara
+lengkap.
+
+Sistem harus dapat menentukan objek yang dimaksud berdasarkan konteks.
+
+Resolusi referensi dapat menggunakan:
+
+- kategori
+- atribut
+- owner
+- holder
+- user
+- wearer
+- lokasi
+- status
+- hubungan
+- waktu
+- konteks percakapan
+- pengetahuan actor
+- objek yang sedang menjadi fokus narasi
+
+
+Resolusi harus mencari objek yang paling sesuai berdasarkan informasi yang
+tersedia.
+
+Resolusi tidak boleh membuat objek baru hanya karena nama atau sebutan
+berbeda.
+
+
+================================================================================
+18. REFERENSI UMUM DAN SPESIFIK
+================================================================================
+
+Referensi objek dapat memiliki tingkat spesifikasi berbeda.
+
+Sistem harus dapat bergerak dari:
+
+umum
+→ lebih spesifik
+→ sangat spesifik
+
+
+Semakin banyak informasi tersedia, semakin sempit kandidat objek.
+
+Referensi yang masih memiliki lebih dari satu kandidat tidak boleh dipaksakan
+menjadi satu objek tanpa dasar yang cukup.
+
+
+================================================================================
+19. AMBIGUITAS
+================================================================================
+
+Apabila beberapa objek memenuhi referensi yang sama dan konteks belum cukup,
+status referensi harus dianggap ambigu.
+
+Sistem tidak boleh:
+
+- memilih secara acak;
+- memilih berdasarkan preferensi;
+- menciptakan fakta baru;
+- mengubah objek yang sudah ada;
+- menggabungkan beberapa objek menjadi satu.
+
+
+Ambiguitas harus diselesaikan hanya apabila terdapat informasi yang cukup.
+
+
+================================================================================
+20. OBJEK YANG BELUM TERIDENTIFIKASI
+================================================================================
+
+Sesuatu dapat muncul dalam narasi sebelum identitas objeknya diketahui.
+
+Dalam kondisi tersebut, sistem dapat mempertahankan status sementara sampai
+informasi yang cukup tersedia untuk menentukan apakah sesuatu tersebut
+merupakan objek yang harus dicatat secara permanen.
+
+Identitas tidak boleh dipaksakan sebelum memiliki dasar yang cukup.
+
+
+================================================================================
+21. PEMBUATAN OBJEK BARU
+================================================================================
+
+Objek baru hanya dibuat apabila:
+
+1. terdapat indikasi keberadaan objek baru;
+2. objek tersebut dapat dibedakan dari objek yang telah ada;
+3. objek tersebut memiliki relevansi yang cukup;
+4. tidak terdapat OBJECT_ID yang sudah mewakili objek tersebut.
+
+
+Sebelum membuat objek baru, sistem harus melakukan pemeriksaan terhadap
+objek yang sudah ada untuk mencegah duplikasi.
+
+
+================================================================================
+22. DUPLIKASI OBJEK
+================================================================================
+
+Sistem harus selalu membedakan:
+
+OBJEK YANG SAMA
+dengan
+OBJEK YANG SERUPA.
+
+
+Kesamaan:
+
+- nama
+- kategori
+- atribut
+- tipe
+- fungsi
+- pemilik
+
+tidak secara otomatis membuktikan bahwa dua objek adalah objek yang sama.
+
+Sebaliknya, perbedaan nama atau deskripsi tidak secara otomatis membuktikan
+bahwa objek tersebut berbeda.
+
+
+================================================================================
+23. OBJEK YANG HILANG
+================================================================================
+
+Objek yang kehilangan lokasi diketahui tetap mempertahankan identitasnya.
+
+OBJECT_ID tidak dihapus hanya karena objek tidak ditemukan.
+
+Status lokasi dan status objek harus dibedakan dari keberadaan identitas objek.
+
+
+================================================================================
+24. OBJEK YANG RUSAK
+================================================================================
+
+Kerusakan merupakan perubahan kondisi objek.
+
+Kerusakan tidak otomatis menciptakan objek baru.
+
+Perbaikan juga tidak otomatis menciptakan objek baru.
+
+Identitas objek tetap dipertahankan selama kontinuitas identitasnya tetap sama.
+
+
+================================================================================
+25. OBJEK YANG TIDAK LAGI ADA
+================================================================================
+
+Objek yang tidak lagi memiliki keberadaan fisik atau digital dapat tetap
+dipertahankan dalam data apabila memiliki relevansi historis atau kontinuitas.
+
+Penghapusan keberadaan objek tidak sama dengan penghapusan sejarah objek.
+
+
+================================================================================
+26. OBJEK DIGITAL
+================================================================================
+
+OBJECT SYSTEM yang sama berlaku untuk objek digital.
+
+Objek digital dapat memiliki:
+
+- identity
+- type
+- category
+- attributes
+- owner
+- access
+- user
+- location
+- state
+- history
+- relationships
+
+
+Kepemilikan objek digital harus dibedakan dari hak akses terhadap objek
+digital.
+
+Hak akses tidak otomatis berarti kepemilikan.
+
+
+================================================================================
+27. INFORMASI YANG BELUM DIKETAHUI
+================================================================================
+
+Informasi objek yang belum diketahui harus tetap dianggap UNKNOWN.
+
+UNKNOWN tidak sama dengan:
+
+- tidak ada
+- kosong
+- tidak relevan
+- tidak dimiliki
+- tidak terjadi
+
+
+Sistem tidak boleh mengisi UNKNOWN berdasarkan asumsi.
+
+
+================================================================================
+28. SUMBER INFORMASI
+================================================================================
+
+Informasi objek dapat diperoleh dari:
+
+- narasi
+- tindakan actor
+- dialog
+- observasi
+- peristiwa
+- perubahan keadaan
+- sistem Universe lainnya
+
+
+Setiap informasi baru harus diperiksa terhadap data objek yang sudah ada.
+
+Informasi baru tidak otomatis menggantikan informasi lama apabila terdapat
+konflik.
+
+
+================================================================================
+29. KONFLIK DATA
+================================================================================
+
+Apabila informasi baru bertentangan dengan data objek yang sudah ada:
+
+1. identifikasi konflik;
+2. tentukan sumber informasi;
+3. periksa timeline;
+4. periksa konteks;
+5. jangan langsung menimpa data;
+6. selesaikan berdasarkan aturan continuity;
+7. pertahankan sejarah perubahan apabila data memang berubah.
+
+
+================================================================================
+30. PEMBARUAN DATA
+================================================================================
+
+Objek yang sama selalu diperbarui pada identitas data yang sama.
+
+Tidak membuat salinan identitas hanya karena objek mengalami perubahan.
+
+Perubahan keadaan harus memperbarui data terkini.
+
+Perubahan penting harus mempertahankan HISTORY.
+
+
+================================================================================
+31. VALIDASI OBJECT SYSTEM
+================================================================================
+
+Sebelum objek digunakan atau diperbarui, validasi:
+
+[ ] OBJECT_ID valid
+[ ] Identitas tidak duplikat
+[ ] OBJECT_TYPE valid
+[ ] CATEGORY_PATH konsisten
+[ ] Atribut konsisten
+[ ] OWNER konsisten
+[ ] HOLDER konsisten
+[ ] USER konsisten
+[ ] WEARER konsisten apabila relevan
+[ ] LOCATION konsisten
+[ ] CURRENT_STATE konsisten
+[ ] Timeline konsisten
+[ ] HISTORY konsisten
+[ ] Hubungan actor konsisten
+[ ] Hubungan antarobjek konsisten
+[ ] Tidak terdapat konflik yang belum diselesaikan
+[ ] Referensi objek tidak ambigu tanpa alasan
+[ ] Tidak ada informasi yang diisi berdasarkan asumsi
+
+
+================================================================================
+32. HUBUNGAN DENGAN SISTEM UNIVERSE LAIN
+================================================================================
+
+OBJECT SYSTEM tidak menggantikan sistem actor.
+
+OBJECT SYSTEM tidak menentukan:
+
+- identitas actor
+- kepribadian actor
+- perilaku actor
+- pengetahuan actor
+- hubungan actor
+- peran actor
+- gaya bicara actor
+- keputusan actor
+
+
+Sistem lain dapat menggunakan OBJECT SYSTEM sebagai sumber data objek.
+
+OBJECT SYSTEM dapat menerima informasi dari sistem lain selama informasi
+tersebut tidak melanggar sumber kebenaran masing-masing sistem.
+
+
+================================================================================
+33. ATURAN SUMBER KEBENARAN
+================================================================================
+
+OBJECT SYSTEM menjadi sumber kebenaran untuk:
+
+- identitas objek
+- klasifikasi objek
+- atribut objek
+- ownership
+- possession
+- usage
+- wearing
+- lokasi objek
+- keadaan objek
+- status objek
+- sejarah objek
+- hubungan objek dengan actor
+- hubungan objek dengan objek lain
+
+
+Sistem lain tidak boleh membuat data objek yang bertentangan dengan
+OBJECT SYSTEM.
+
+
+================================================================================
+34. KONTINUITAS OBJEK
+================================================================================
+
+OBJECT_ID harus tetap konsisten sepanjang timeline selama identitas objek
+tetap sama.
+
+Semua perubahan harus dapat ditempatkan pada timeline.
+
+Tidak boleh terdapat keadaan objek pada suatu waktu yang bertentangan dengan
+peristiwa yang telah terjadi sebelumnya.
+
+Object continuity harus diperiksa bersama continuity system Universe.
+
+
+================================================================================
+35. LARANGAN ASUMSI
+================================================================================
+
+OBJECT SYSTEM tidak boleh:
+
+- menciptakan objek tanpa dasar;
+- menentukan owner tanpa dasar;
+- menentukan lokasi tanpa dasar;
+- menentukan pengguna tanpa dasar;
+- menentukan kondisi tanpa dasar;
+- menentukan atribut tanpa dasar;
+- menganggap objek serupa sebagai objek yang sama;
+- menganggap objek berbeda hanya karena perbedaan nama;
+- mengubah OBJECT_ID tanpa alasan identitas;
+- menghapus sejarah perubahan;
+- menyelesaikan ambiguitas secara sembarangan;
+- menggunakan contoh atau pola sistem sebagai canon.
+
+
+================================================================================
+36. ATURAN DINAMIS
+================================================================================
+
+OBJECT SYSTEM tidak membatasi Universe pada daftar objek, kategori, atribut,
+atau hubungan yang telah diketahui sebelumnya.
+
+Struktur sistem harus mampu menerima objek baru, kategori baru, atribut baru,
+dan hubungan baru selama tetap memenuhi aturan identitas, kontinuitas,
+konsistensi, dan validasi.
+
+
+================================================================================
+37. PRINSIP UTAMA
+================================================================================
+
+1. OBJECT_ID menentukan identitas objek.
+
+2. CATEGORY_PATH menentukan klasifikasi objek.
+
+3. ATTRIBUTE menentukan karakteristik objek.
+
+4. OWNER menentukan kepemilikan.
+
+5. HOLDER menentukan penguasaan aktual.
+
+6. USER menentukan penggunaan.
+
+7. WEARER menentukan pemakaian pada tubuh apabila relevan.
+
+8. LOCATION menentukan keberadaan lokasi terkini.
+
+9. STATE menentukan kondisi atau keadaan terkini.
+
+10. HISTORY mempertahankan perubahan penting.
+
+11. CONTEXT menentukan referensi objek dalam narasi.
+
+12. UNKNOWN harus tetap UNKNOWN sampai terdapat informasi yang cukup.
+
+13. Objek yang sama tetap memiliki identitas yang sama meskipun keadaan,
+    pemilik, lokasi, atau pengguna berubah.
+
+14. Objek baru hanya dibuat apabila identitasnya memang berbeda.
+
+15. OBJECT SYSTEM mengatur mekanisme objek, bukan menentukan isi Universe.
+
+16. Tidak ada contoh konkret dalam system file yang boleh diperlakukan
+    sebagai canon atau pola wajib.
+
+
+================================================================================
+END OF OBJECT SYSTEM
+================================================================================
