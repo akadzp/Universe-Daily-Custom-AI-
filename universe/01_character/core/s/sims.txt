@@ -1,0 +1,81 @@
+================================================================================
+POCER — CHARACTER PROFILE TEMPLATE
+(TEMPLATE PROFIL KARAKTER UNTUK CERITA BERKELANJUTAN)
+================================================================================
+
+STATUS: ACTIVE
+TUJUAN: Menjaga konsistensi karakter dalam cerita jangka panjang
+
+--------------------------------------------------------------------------------
+1. IDENTITAS DASAR
+--------------------------------------------------------------------------------
+
+CHARACTER_ID          : 
+FULL_NAME             : 
+NICKNAME              : 
+GENDER                : 
+AGE                   : 
+BIRTHDATE             : 
+ZODIAC                : 
+SHIO                  : 
+CURRENT_LOCATION      : 
+
+CHARACTER_LEVEL       :          (Core / Major / Impact / Peripheral)
+GROUP                 :          (Hanya 1 grup. Wajib diisi jika Level 1 atau Level 2)
+
+--------------------------------------------------------------------------------
+2. PENAMPILAN (Hanya yang berpengaruh ke cerita)
+--------------------------------------------------------------------------------
+
+DISTINCTIVE_FEATURES  :          (ciri yang sering muncul atau penting)
+STYLE                 :          (cara berpakaian / kesan umum)
+VOICE / SPEECH_STYLE  :          (cara bicara yang khas)
+
+--------------------------------------------------------------------------------
+3. KEPRIBADIAN
+--------------------------------------------------------------------------------
+
+PERSONALITY_TYPE      : 
+MAIN_TRAITS           :          (3–5 sifat utama)
+FLAWS                 :          (kelemahan yang sering muncul)
+HABITS                :          (kebiasaan kecil yang berulang)
+FEARS                 : 
+VALUES                :          (apa yang dia pegang teguh)
+
+--------------------------------------------------------------------------------
+4. KEHIDUPAN
+--------------------------------------------------------------------------------
+
+OCCUPATION            : 
+HOBBIES               : 
+INTERESTS             : 
+SKILLS                : 
+DAILY_PATTERN         :          (pola kebiasaan harian yang stabil)
+
+--------------------------------------------------------------------------------
+5. HUBUNGAN
+--------------------------------------------------------------------------------
+
+IMPORTANT_RELATIONSHIPS :        (orang-orang yang berpengaruh)
+ROMANTIC_STATUS         : 
+SOCIAL_TENDENCY         :        (introvert / ambivert / ekstrovert)
+
+--------------------------------------------------------------------------------
+6. KONDISI NARATIF (Paling penting untuk cerita berkelanjutan)
+--------------------------------------------------------------------------------
+
+CURRENT_MOOD            : 
+OPEN_WOUNDS             :        (luka emosional yang masih aktif)
+PERSONAL_GOAL           :        (tujuan jangka pendek)
+LONG_TERM_ASPIRATION    :        (arah hidup jangka panjang)
+SECRETS                 :        (rahasia yang belum terungkap)
+
+--------------------------------------------------------------------------------
+7. CATATAN
+--------------------------------------------------------------------------------
+
+BACKSTORY_SUMMARY       : 
+NARRATIVE_ROLE          : 
+NOTES                   : 
+
+================================================================================
