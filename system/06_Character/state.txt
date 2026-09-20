@@ -1,0 +1,120 @@
+================================================================================
+UNIVERSE — CHARACTER STATE SYSTEM
+(SISTEM KONDISI KARAKTER)
+
+STATUS: ACTIVE
+TUJUAN: Menyimpan kondisi karakter pada suatu titik waktu serta perubahan
+kondisi yang terjadi sepanjang perkembangan cerita.
+
+---
+
+1. IDENTITAS STATE
+
+---
+
+STATE_ID              :
+CHARACTER_ID          :
+
+---
+
+2. KONDISI SAAT INI
+
+---
+
+CURRENT_LOCATION      :
+CURRENT_ACTIVITY      :
+CURRENT_MOOD          :
+CURRENT_CONDITION     :
+CURRENT_GOAL          :
+CURRENT_STATUS        :
+
+---
+
+3. STATE TIMELINE
+
+---
+
+STATE_DATE            :
+STATE_EVENT           :
+PREVIOUS_STATE        :
+CURRENT_STATE         :
+
+---
+
+4. PERUBAHAN STATE
+
+---
+
+STATE_CHANGE          :
+CHANGE_TRIGGER        :
+CHANGE_DATE           :
+
+---
+
+5. CATATAN
+
+---
+
+NOTES                 :
+
+================================================================================
+ATURAN SISTEM
+
+1. Setiap state yang dicatat memiliki STATE_ID tersendiri.
+
+2. Setiap STATE_ID hanya berlaku untuk satu CHARACTER_ID.
+
+3. State menggambarkan kondisi karakter pada titik waktu tertentu.
+
+4. State bersifat dinamis dan dapat berubah akibat perkembangan cerita.
+
+5. CURRENT_LOCATION menyimpan lokasi karakter saat ini apabila diketahui.
+
+6. CURRENT_ACTIVITY menyimpan aktivitas yang sedang dilakukan karakter
+   pada kondisi saat ini.
+
+7. CURRENT_MOOD menyimpan kondisi emosional karakter saat ini.
+
+8. CURRENT_CONDITION menyimpan kondisi lain yang sedang memengaruhi
+   karakter dan relevan terhadap cerita.
+
+9. CURRENT_GOAL menyimpan tujuan aktif karakter pada saat tersebut.
+
+10. CURRENT_STATUS menyimpan keadaan khusus karakter yang sedang berlaku.
+
+11. Setiap perubahan state harus memiliki dasar dari kejadian, tindakan,
+    atau perkembangan yang terjadi dalam cerita.
+
+12. Perubahan state tidak menghapus state sebelumnya.
+
+13. STATE_DATE mencatat waktu state berlaku apabila diketahui.
+
+14. STATE_EVENT menjelaskan kejadian yang menghasilkan atau menetapkan
+    state tersebut.
+
+15. PREVIOUS_STATE menyimpan kondisi sebelum perubahan.
+
+16. CURRENT_STATE menyimpan kondisi setelah perubahan.
+
+17. STATE_CHANGE menjelaskan apa yang berubah.
+
+18. CHANGE_TRIGGER menjelaskan penyebab perubahan.
+
+19. CHANGE_DATE mencatat kapan perubahan terjadi apabila diketahui.
+
+20. State tidak boleh digunakan untuk mengubah identitas dasar karakter.
+
+21. State tidak boleh digunakan untuk mengubah personality, backstory,
+    atau karakteristik permanen tanpa adanya proses perubahan yang sah
+    dalam sistem karakter.
+
+22. State tidak menentukan apa yang diketahui karakter.
+    Pengetahuan merupakan bagian dari KNOWLEDGE SYSTEM.
+
+23. State tidak menentukan pola perilaku karakter.
+    Pola perilaku merupakan bagian dari BEHAVIOR SYSTEM.
+
+24. State harus mengikuti urutan waktu Universe dan tidak boleh
+    menciptakan keadaan yang bertentangan dengan kejadian sebelumnya.
+
+================================================================================
