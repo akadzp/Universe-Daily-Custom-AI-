@@ -1,0 +1,1011 @@
+================================================================================
+STORY DESIGN
+(PROTOKOL PERANCANGAN ALUR CERITA)
+================================================================================
+
+STATUS: ACTIVE
+TYPE: NARRATOR / STORY FLOW
+AUTHORITY: STORY DESIGN LAYER
+
+TUJUAN:
+
+Mengatur bagaimana AI merancang alur sebuah cerita sebelum proses penulisan
+dimulai.
+
+STORY DESIGN bertugas menentukan struktur kejadian yang akan membentuk cerita.
+
+STORY DESIGN TIDAK bertugas:
+
+- menulis narasi;
+- menentukan gaya penulisan;
+- menentukan bentuk kalimat;
+- menentukan gaya dialog;
+- memvalidasi seluruh kontinuitas Universe;
+- mengubah Canon secara langsung.
+
+
+================================================================================
+1. DEFINISI
+================================================================================
+
+Story Design adalah proses internal untuk mengubah keadaan Universe,
+instruksi produksi, dan kebutuhan cerita menjadi rancangan alur yang dapat
+dieksekusi oleh Writing System.
+
+Story Design merupakan tahap perencanaan.
+
+Story Design menghasilkan BLUEPRINT CERITA.
+
+Blueprint bukan cerita final.
+
+Blueprint bukan Canon.
+
+Blueprint merupakan rancangan kerja sementara yang harus divalidasi sebelum
+masuk ke proses penulisan.
+
+
+================================================================================
+2. POSISI DALAM NARRATOR
+================================================================================
+
+NARRATOR
+│
+├── STORY FLOW
+│   ├── STORY DESIGN
+│   ├── STORY LOGIC
+│   └── STORY VALIDATION
+│
+└── WRITING
+    ├── WRITING DESIGN
+    ├── NARRATIVE RENDERING
+    └── WRITING VALIDATION
+
+
+Story Design berada pada tahap awal STORY FLOW.
+
+Urutan kerja:
+
+UNIVERSE DATA
+        ↓
+STORY DESIGN
+        ↓
+STORY LOGIC
+        ↓
+STORY VALIDATION
+        ↓
+WRITING DESIGN
+        ↓
+NARRATIVE RENDERING
+        ↓
+WRITING VALIDATION
+
+
+================================================================================
+3. TUJUAN STORY DESIGN
+================================================================================
+
+Story Design harus menghasilkan alur yang:
+
+1. mempunyai arah;
+2. mempunyai fokus;
+3. mempunyai perkembangan;
+4. mempunyai hubungan antar-kejadian yang dapat dipahami;
+5. sesuai dengan kondisi Universe;
+6. menggunakan actor secara relevan;
+7. menggunakan relationship secara konsisten;
+8. menggunakan object secara konsisten;
+9. menghormati knowledge dan state;
+10. mempunyai struktur yang cukup untuk ditulis;
+11. tidak mengunci penulis pada bentuk kalimat tertentu;
+12. tidak menciptakan Canon hanya demi kebutuhan struktur cerita.
+
+
+================================================================================
+4. SUMBER INPUT
+================================================================================
+
+Story Design dapat menggunakan informasi dari:
+
+- instruksi produksi;
+- Universe Date;
+- timeline Universe;
+- actor data;
+- actor state;
+- actor behavior;
+- actor knowledge;
+- actor role;
+- relationship data;
+- object data;
+- lokasi;
+- event sebelumnya;
+- konsekuensi sebelumnya;
+- kondisi dunia;
+- kebutuhan kesinambungan cerita;
+- konteks cerita yang sedang dikembangkan.
+
+
+Story Design tidak boleh menganggap informasi yang belum tersedia sebagai fakta.
+
+Informasi yang belum diketahui tetap diperlakukan sebagai UNKNOWN sampai
+sistem lain memberikan dasar yang sah.
+
+
+================================================================================
+5. PRINSIP SUMBER KEBENARAN
+================================================================================
+
+Story Design tidak menjadi sumber kebenaran untuk:
+
+- identitas actor;
+- identitas object;
+- relationship;
+- knowledge;
+- state;
+- timeline;
+- ownership;
+- behavior;
+- canon.
+
+
+Story Design hanya menggunakan informasi tersebut untuk membentuk rancangan
+alur.
+
+Apabila Story Design memerlukan perubahan terhadap data Universe, perubahan
+tersebut harus diproses melalui mekanisme sistem yang memiliki kewenangan
+atas data tersebut.
+
+Story Design tidak boleh mengubah Canon secara langsung untuk menyelesaikan
+kebutuhan plot.
+
+
+================================================================================
+6. PENENTUAN FOKUS CERITA
+================================================================================
+
+Setiap cerita harus memiliki FOKUS.
+
+Fokus adalah pusat perhatian naratif yang menentukan informasi dan kejadian
+mana yang memperoleh prioritas.
+
+Fokus dapat berada pada:
+
+- actor;
+- hubungan;
+- kejadian;
+- perubahan keadaan;
+- konflik;
+- tujuan;
+- situasi;
+- atau kombinasi yang sah.
+
+
+Fokus tidak harus tetap sama sepanjang cerita.
+
+Perubahan fokus diperbolehkan apabila memiliki dasar dalam perkembangan alur.
+
+
+================================================================================
+7. PENENTUAN SUBJEK CERITA
+================================================================================
+
+Story Design harus menentukan actor atau entitas yang menjadi subjek utama
+cerita apabila cerita memerlukan subjek tertentu.
+
+Subjek utama:
+
+- tidak selalu merupakan actor dengan level tertinggi;
+- tidak harus selalu muncul di seluruh cerita;
+- dapat berubah sesuai struktur cerita;
+- harus sesuai dengan konteks Universe.
+
+
+Pemilihan subjek tidak boleh dilakukan hanya berdasarkan frekuensi
+kemunculan sebelumnya.
+
+Pemilihan harus berdasarkan kebutuhan alur.
+
+
+================================================================================
+8. PENENTUAN RENTANG WAKTU
+================================================================================
+
+Story Design harus menentukan rentang waktu cerita.
+
+Rentang waktu harus:
+
+- sesuai dengan Universe Date;
+- sesuai dengan timeline;
+- konsisten dengan event sebelumnya;
+- konsisten dengan state actor;
+- konsisten dengan lokasi;
+- konsisten dengan perubahan yang sudah terjadi.
+
+
+Cerita dapat mencakup:
+
+- satu momen;
+- beberapa momen;
+- satu bagian hari;
+- beberapa bagian hari;
+- rentang waktu yang lebih panjang;
+
+selama struktur waktunya jelas dan tidak bertentangan dengan Universe.
+
+
+================================================================================
+9. PENENTUAN TITIK AWAL
+================================================================================
+
+Story Design harus menentukan keadaan awal cerita.
+
+Keadaan awal menjawab:
+
+- cerita dimulai dari keadaan apa;
+- siapa yang relevan;
+- informasi apa yang tersedia;
+- kondisi apa yang sudah terjadi;
+- situasi apa yang menjadi dasar perkembangan berikutnya.
+
+
+Titik awal harus berasal dari keadaan Universe yang sah atau dari perubahan
+yang secara sah ditetapkan oleh proses produksi.
+
+
+================================================================================
+10. PENENTUAN PEMICU
+================================================================================
+
+Story Design harus menentukan faktor yang menyebabkan alur mulai bergerak
+apabila cerita memerlukan perkembangan.
+
+Pemicu dapat berasal dari:
+
+- tindakan;
+- informasi;
+- perubahan keadaan;
+- keputusan;
+- interaksi;
+- kondisi lingkungan;
+- konsekuensi kejadian sebelumnya;
+- peristiwa lain yang memiliki dasar.
+
+
+Tidak setiap cerita wajib memiliki pemicu dramatis.
+
+Cerita dapat bergerak melalui perkembangan alami selama perubahan tersebut
+memiliki hubungan dengan keadaan Universe.
+
+
+================================================================================
+11. PENENTUAN EVENT
+================================================================================
+
+Event adalah kejadian yang mempunyai relevansi terhadap perkembangan cerita.
+
+Story Design menentukan event yang diperlukan berdasarkan kebutuhan alur.
+
+Jumlah event tidak ditentukan secara tetap.
+
+Tidak ada kewajiban bahwa setiap cerita harus memiliki jumlah event tertentu.
+
+Setiap event yang dimasukkan ke blueprint harus mempunyai fungsi yang jelas.
+
+Fungsi event dapat berupa:
+
+- memulai perkembangan;
+- memperluas informasi;
+- mengubah keadaan;
+- menciptakan konsekuensi;
+- mempertemukan actor;
+- memisahkan actor;
+- mengubah hubungan;
+- memperkenalkan kondisi;
+- menyelesaikan bagian alur;
+- membuka perkembangan berikutnya.
+
+
+Event tidak boleh dibuat hanya untuk menambah panjang cerita.
+
+
+================================================================================
+12. URUTAN EVENT
+================================================================================
+
+Event harus disusun berdasarkan hubungan temporal dan kausal yang sesuai.
+
+Story Design harus membedakan:
+
+- apa yang terjadi lebih dahulu;
+- apa yang terjadi sesudahnya;
+- apa yang menyebabkan perubahan;
+- apa yang merupakan akibat;
+- apa yang berjalan paralel;
+- apa yang hanya menjadi latar.
+
+
+Urutan tidak boleh ditentukan hanya berdasarkan daya tarik dramatis.
+
+Urutan harus tetap dapat dipertanggungjawabkan terhadap timeline Universe.
+
+
+================================================================================
+13. KAUSALITAS
+================================================================================
+
+Story Design harus memetakan hubungan sebab dan akibat ketika hubungan tersebut
+menjadi bagian penting dari alur.
+
+Setiap perubahan penting harus memiliki dasar.
+
+Tidak boleh terdapat perubahan yang muncul hanya karena cerita membutuhkannya
+tanpa dasar yang dapat ditempatkan dalam alur.
+
+
+Story Design tidak wajib membuat semua kejadian menjadi kausal.
+
+Kejadian yang bersifat kebetulan, latar, simultan, atau tidak berpengaruh dapat
+tetap digunakan apabila sesuai dengan Universe.
+
+
+================================================================================
+14. PERKEMBANGAN CERITA
+================================================================================
+
+Story Design harus memastikan bahwa cerita mempunyai perkembangan.
+
+Perkembangan adalah perubahan yang membuat keadaan pada akhir alur tidak
+sepenuhnya identik dengan keadaan pada awal alur.
+
+Perkembangan dapat terjadi pada:
+
+- informasi;
+- keadaan;
+- tujuan;
+- keputusan;
+- hubungan;
+- lokasi;
+- kepemilikan;
+- kondisi;
+- persepsi actor;
+- konsekuensi;
+- situasi.
+
+
+Tidak semua cerita memerlukan perubahan besar.
+
+Perubahan kecil tetap sah apabila relevan.
+
+
+================================================================================
+15. KONFLIK DAN TEKANAN
+================================================================================
+
+Konflik dapat digunakan apabila dibutuhkan oleh cerita.
+
+Konflik bukan kewajiban setiap cerita.
+
+Story Design tidak boleh menciptakan konflik secara otomatis hanya untuk
+membuat cerita lebih dramatis.
+
+Jika konflik digunakan, sumber konflik harus dapat dijelaskan berdasarkan
+keadaan Universe.
+
+
+================================================================================
+16. TUJUAN DAN MOTIVASI
+================================================================================
+
+Story Design dapat menetapkan tujuan naratif suatu actor untuk kebutuhan
+alur selama tujuan tersebut konsisten dengan data actor dan keadaan saat itu.
+
+Tujuan naratif tidak boleh menggantikan:
+
+- personal goal;
+- long-term aspiration;
+- behavior;
+- knowledge;
+- current state.
+
+Apabila sebuah tujuan perlu menjadi fakta karakter yang menetap, perubahan
+harus diproses melalui sistem actor yang berwenang.
+
+
+================================================================================
+17. KNOWLEDGE DALAM STORY DESIGN
+================================================================================
+
+Story Design wajib menghormati batas pengetahuan actor.
+
+Actor hanya dapat bertindak berdasarkan:
+
+- pengetahuan yang dimiliki;
+- informasi yang baru diperoleh dalam alur;
+- observasi yang tersedia;
+- inferensi yang secara wajar dapat dilakukan;
+- informasi yang diberikan secara sah.
+
+
+Story Design tidak boleh menggunakan pengetahuan yang belum dimiliki actor
+sebagai dasar keputusan actor.
+
+Narrator mengetahui Universe secara lebih luas daripada actor, tetapi actor
+tidak otomatis mengetahui apa yang diketahui Narrator.
+
+
+================================================================================
+18. STATE DALAM STORY DESIGN
+================================================================================
+
+Story Design harus menggunakan state sebagai keadaan aktual actor dan object
+pada titik waktu yang relevan.
+
+State dapat berubah melalui event.
+
+Story Design tidak boleh mengubah state secara langsung hanya karena blueprint
+membutuhkannya.
+
+Setiap perubahan state harus mempunyai posisi yang jelas dalam alur.
+
+
+================================================================================
+19. RELATIONSHIP DALAM STORY DESIGN
+================================================================================
+
+Story Design harus memperlakukan relationship sebagai data yang memiliki
+keadaan dan sejarah tersendiri.
+
+Apabila hubungan berubah selama cerita:
+
+1. perubahan harus memiliki dasar;
+2. perubahan harus memiliki posisi temporal;
+3. perubahan harus konsisten dengan history;
+4. perubahan harus diteruskan ke Relationship System untuk pencatatan Canon
+   apabila perubahan tersebut memang menjadi fakta Universe.
+
+
+Story Design tidak boleh membuat hubungan baru hanya karena hubungan tersebut
+membantu alur.
+
+
+================================================================================
+20. OBJECT DALAM STORY DESIGN
+================================================================================
+
+Story Design harus memperlakukan object sebagai entitas yang memiliki
+identitas sendiri.
+
+Apabila cerita menggunakan object:
+
+- periksa keberadaan object;
+- periksa identitasnya;
+- periksa kondisi;
+- periksa lokasi;
+- periksa ownership;
+- periksa possession;
+- periksa usage;
+- periksa status lainnya yang relevan.
+
+
+Story Design tidak boleh mengganti identitas object hanya karena kebutuhan
+alur.
+
+
+================================================================================
+21. LOKASI
+================================================================================
+
+Lokasi harus diperlakukan sebagai bagian dari logika alur.
+
+Perpindahan lokasi harus memiliki dasar temporal dan naratif.
+
+Story Design harus memperhatikan:
+
+- lokasi awal;
+- perpindahan;
+- waktu perpindahan;
+- actor yang berpindah;
+- object yang berpindah;
+- pihak yang tertinggal;
+- konsekuensi perpindahan.
+
+
+Perpindahan tidak boleh terjadi hanya karena cerita membutuhkan karakter
+berada di tempat lain.
+
+
+================================================================================
+22. KONSEKUENSI
+================================================================================
+
+Story Design harus mempertimbangkan konsekuensi dari event yang mempunyai
+dampak terhadap alur.
+
+Konsekuensi dapat:
+
+- langsung;
+- tertunda;
+- diketahui;
+- tidak diketahui oleh actor;
+- kecil;
+- besar;
+- sementara;
+- permanen.
+
+
+Tidak semua event membutuhkan konsekuensi jangka panjang.
+
+
+================================================================================
+23. INFORMASI YANG DIPERKENALKAN
+================================================================================
+
+Story Design dapat mengatur kapan informasi baru diperkenalkan kepada
+pembaca.
+
+Namun informasi baru tidak boleh bertentangan dengan informasi Canon.
+
+Story Design harus membedakan:
+
+- informasi yang diketahui pembaca;
+- informasi yang diketahui actor;
+- informasi yang belum diketahui siapa pun;
+- informasi yang sengaja ditahan.
+
+
+Pengaturan informasi kepada pembaca tidak boleh mengubah fakta Universe.
+
+
+================================================================================
+24. MISTERI DAN INFORMASI TERSEMBUNYI
+================================================================================
+
+Informasi dapat disembunyikan dari actor maupun pembaca apabila sesuai dengan
+struktur cerita.
+
+Penyembunyian informasi tidak boleh digunakan untuk mengubah fakta Canon.
+
+Informasi yang belum diungkap kepada pembaca tetap harus konsisten dengan
+data Universe apabila informasi tersebut sudah menjadi Canon.
+
+
+================================================================================
+25. TEMPO ALUR
+================================================================================
+
+Story Design menentukan tingkat perkembangan alur secara konseptual.
+
+Story Design dapat menentukan apakah bagian tertentu:
+
+- berkembang perlahan;
+- berkembang cepat;
+- membutuhkan transisi;
+- membutuhkan waktu observasi;
+- membutuhkan fokus pada event.
+
+
+Tempo Story Flow berbeda dari tempo kalimat.
+
+Tempo kalimat merupakan kewenangan Writing System.
+
+
+================================================================================
+26. TRANSISI
+================================================================================
+
+Story Design harus menentukan transisi ketika perpindahan antar-kejadian,
+waktu, lokasi, atau fokus memerlukan struktur.
+
+Transisi harus menjaga kesinambungan.
+
+Story Design tidak menentukan bentuk kalimat transisi.
+
+
+================================================================================
+27. AWAL DAN AKHIR ALUR
+================================================================================
+
+Story Design harus mengetahui:
+
+- dari keadaan apa cerita dimulai;
+- perkembangan apa yang terjadi;
+- pada keadaan apa alur berhenti.
+
+
+Akhir alur tidak harus:
+
+- menyelesaikan semua masalah;
+- menyelesaikan semua konflik;
+- memberikan jawaban terhadap semua informasi;
+- memberikan kesimpulan moral;
+- menghasilkan perubahan besar.
+
+
+Cerita dapat berakhir ketika fungsi alur yang ditetapkan telah tercapai.
+
+
+================================================================================
+28. CERITA TERBUKA
+================================================================================
+
+Story Design dapat menghasilkan alur yang menyisakan:
+
+- pertanyaan;
+- konsekuensi;
+- perkembangan yang belum selesai;
+- hubungan yang belum berubah;
+- informasi yang belum terungkap;
+- situasi yang masih berjalan.
+
+
+Cerita terbuka tidak dianggap tidak selesai selama alur yang dirancang memang
+berakhir pada titik yang valid.
+
+
+================================================================================
+29. MULTI-ACTOR
+================================================================================
+
+Cerita dapat melibatkan satu atau lebih actor.
+
+Jika terdapat banyak actor, Story Design harus menentukan fungsi masing-masing
+dalam alur.
+
+Actor yang hadir tidak otomatis menjadi fokus.
+
+Kemunculan actor harus memiliki alasan naratif atau fungsi yang dapat
+dipertanggungjawabkan.
+
+
+================================================================================
+30. MULTI-PLOT
+================================================================================
+
+Story Design dapat menggunakan lebih dari satu jalur cerita apabila
+diperlukan.
+
+Setiap jalur harus:
+
+- memiliki identitas yang jelas;
+- mempunyai hubungan temporal yang dapat dipahami;
+- tidak saling bertentangan;
+- memiliki fungsi dalam keseluruhan cerita.
+
+
+Jalur cerita yang tidak relevan tidak boleh ditambahkan hanya untuk
+menambah kompleksitas.
+
+
+================================================================================
+31. INFORMASI YANG TIDAK DIGUNAKAN
+================================================================================
+
+Tidak semua data Universe harus dimasukkan ke dalam cerita.
+
+Story Design harus memilih hanya informasi yang relevan terhadap alur.
+
+Data yang tidak digunakan tetap menjadi bagian dari Universe.
+
+Ketidakhadiran informasi dari cerita tidak berarti informasi tersebut
+tidak ada di Universe.
+
+
+================================================================================
+32. KREATIVITAS
+================================================================================
+
+Story Design memiliki kewenangan kreatif dalam membentuk alur selama tidak
+bertentangan dengan Canon.
+
+Kreativitas dapat digunakan untuk:
+
+- memilih kejadian;
+- mengatur urutan;
+- membentuk interaksi;
+- membentuk perkembangan;
+- menentukan fokus;
+- menentukan konflik;
+- menentukan transisi;
+- menentukan konsekuensi yang masih mungkin terjadi.
+
+
+Kreativitas tidak memberi kewenangan untuk:
+
+- mengubah Canon secara diam-diam;
+- mengabaikan knowledge;
+- mengabaikan state;
+- mengubah identity;
+- mengubah relationship tanpa dasar;
+- mengubah object tanpa dasar;
+- menghapus history.
+
+
+================================================================================
+33. PERBEDAAN RENCANA DAN FAKTA
+================================================================================
+
+Semua hasil Story Design adalah RENCANA sampai divalidasi dan dieksekusi.
+
+Perbedaan harus dijaga antara:
+
+PLAN
+    apa yang dirancang akan terjadi.
+
+CANON
+    apa yang benar-benar telah menjadi fakta Universe.
+
+Story Design tidak boleh memperlakukan PLAN sebagai CANON.
+
+
+================================================================================
+34. KETIDAKPASTIAN
+================================================================================
+
+Jika Story Design tidak dapat menentukan suatu detail secara sah, detail
+tersebut harus tetap tidak ditentukan.
+
+AI tidak boleh mengisi kekosongan hanya karena blueprint membutuhkan
+kepastian.
+
+Ketidakpastian dapat diselesaikan pada tahap berikutnya apabila informasi
+yang diperlukan tersedia.
+
+
+================================================================================
+35. PEMILIHAN DETAIL
+================================================================================
+
+Story Design harus menentukan tingkat detail yang diperlukan untuk alur.
+
+Detail yang:
+
+- tidak memengaruhi cerita;
+- tidak memengaruhi continuity;
+- tidak memengaruhi karakter;
+- tidak memengaruhi state;
+- tidak memengaruhi hubungan;
+- tidak memengaruhi object;
+
+tidak wajib dirancang secara khusus.
+
+
+Detail tambahan hanya dibuat apabila memiliki fungsi.
+
+
+================================================================================
+36. KEBEBASAN NARATIF
+================================================================================
+
+Tidak ada satu struktur plot yang wajib digunakan untuk seluruh cerita.
+
+Story Design harus mampu menghasilkan:
+
+- alur sederhana;
+- alur kompleks;
+- alur linear;
+- alur dengan paralel;
+- alur yang berpusat pada event;
+- alur yang berpusat pada interaksi;
+- alur yang berpusat pada perkembangan;
+- alur yang berhenti pada konsekuensi;
+- bentuk alur lain yang sah.
+
+
+Struktur ditentukan berdasarkan kebutuhan cerita, bukan berdasarkan template
+tetap.
+
+
+================================================================================
+37. LARANGAN FORMULA
+================================================================================
+
+Story Design tidak boleh memaksakan elemen tertentu hanya karena elemen
+tersebut digunakan pada cerita sebelumnya.
+
+Tidak ada kewajiban universal untuk selalu memiliki:
+
+- konflik;
+- twist;
+- retakan emosional;
+- perubahan besar;
+- moral;
+- kejutan;
+- resolusi;
+- cliffhanger;
+- jumlah event tertentu;
+- jumlah actor tertentu;
+- jumlah scene tertentu.
+
+
+Elemen-elemen tersebut hanya digunakan apabila dibutuhkan oleh cerita.
+
+
+================================================================================
+38. BLUEPRINT CERITA
+================================================================================
+
+Hasil Story Design harus menghasilkan blueprint internal yang minimal
+memiliki struktur konseptual:
+
+- STORY_ID
+- UNIVERSE_DATE
+- TIME_RANGE
+- PRIMARY_FOCUS
+- PRIMARY_SUBJECT
+- INITIAL_STATE
+- STORY_TRIGGER
+- EVENT_SEQUENCE
+- ACTOR_INVOLVEMENT
+- RELATIONSHIP_INVOLVEMENT
+- OBJECT_INVOLVEMENT
+- KNOWLEDGE_CHANGES
+- STATE_CHANGES
+- LOCATION_CHANGES
+- CONSEQUENCES
+- INFORMATION_FLOW
+- STORY_END_STATE
+
+
+Field hanya digunakan apabila relevan.
+
+Field yang tidak relevan tidak perlu dipaksakan.
+
+
+================================================================================
+39. STORY DESIGN GATE
+================================================================================
+
+Sebelum blueprint diteruskan ke STORY LOGIC, Story Design harus memastikan:
+
+[ ] Fokus cerita jelas
+[ ] Titik awal jelas
+[ ] Rentang waktu jelas
+[ ] Subjek relevan telah ditentukan apabila diperlukan
+[ ] Event tersusun
+[ ] Urutan temporal dapat dipahami
+[ ] Perkembangan cerita dapat diidentifikasi
+[ ] Actor yang digunakan relevan
+[ ] Relationship yang digunakan relevan
+[ ] Object yang digunakan relevan
+[ ] Perubahan state dapat diidentifikasi
+[ ] Knowledge actor dihormati
+[ ] Tidak ada kebutuhan Canon yang tidak memiliki dasar
+[ ] Blueprint belum dianggap sebagai Canon
+[ ] Tidak ada formula naratif yang dipaksakan
+[ ] Detail yang tidak diperlukan tidak dipaksakan
+
+
+Jika belum terpenuhi:
+
+Story Design harus diperbaiki sebelum masuk ke Story Logic.
+
+
+================================================================================
+40. HUBUNGAN DENGAN STORY LOGIC
+================================================================================
+
+STORY DESIGN:
+
+    merancang apa yang akan terjadi.
+
+
+STORY LOGIC:
+
+    memeriksa apakah rancangan tersebut dapat terjadi.
+
+
+STORY DESIGN tidak menggantikan STORY LOGIC.
+
+Jika Story Logic menemukan konflik:
+
+1. blueprint dikembalikan ke Story Design;
+2. bagian yang bermasalah diperbaiki;
+3. blueprint kembali diuji.
+
+
+================================================================================
+41. HUBUNGAN DENGAN STORY VALIDATION
+================================================================================
+
+Story Design menghasilkan rencana.
+
+Story Logic memeriksa keteraturan logika.
+
+Story Validation memastikan rancangan siap masuk ke Writing.
+
+Tidak boleh melewati urutan tersebut secara normal.
+
+
+================================================================================
+42. HUBUNGAN DENGAN WRITING
+================================================================================
+
+Story Design tidak menentukan:
+
+- pilihan kata;
+- bentuk paragraf;
+- ritme kalimat;
+- bentuk dialog;
+- gaya narator;
+- panjang kalimat;
+- teknik deskripsi;
+- teknik penulisan emosional.
+
+
+Semua hal tersebut berada di dalam Writing System.
+
+
+================================================================================
+43. HUBUNGAN DENGAN CANON
+================================================================================
+
+Story Design dapat menyebabkan calon perubahan terhadap Universe.
+
+Namun calon perubahan tersebut baru menjadi Canon apabila:
+
+1. terjadi dalam cerita;
+2. memenuhi aturan Universe;
+3. diproses melalui sistem data yang sesuai;
+4. diterima oleh mekanisme continuity;
+5. disimpan pada data Universe yang relevan.
+
+
+Story Design tidak boleh menulis perubahan langsung ke Canon.
+
+
+================================================================================
+44. ATURAN UTAMA
+================================================================================
+
+1. Story Design adalah tahap perancangan.
+
+2. Blueprint bukan Canon.
+
+3. Story Design menentukan struktur alur.
+
+4. Story Design tidak menentukan bentuk penulisan.
+
+5. Story Design menggunakan Universe sebagai dasar.
+
+6. Story Design tidak mengarang fakta Canon untuk mengisi kebutuhan alur.
+
+7. Setiap event harus mempunyai fungsi.
+
+8. Tidak ada jumlah event wajib.
+
+9. Tidak ada konflik yang wajib.
+
+10. Tidak ada retakan emosional yang wajib.
+
+11. Tidak ada perubahan state yang wajib apabila cerita tidak membutuhkannya.
+
+12. Tidak ada struktur plot tunggal yang wajib digunakan.
+
+13. Actor hanya digunakan sesuai kebutuhan cerita.
+
+14. Relationship hanya digunakan sesuai keadaan Universe.
+
+15. Object hanya digunakan sesuai identitas dan keadaan aktualnya.
+
+16. Knowledge actor harus dihormati.
+
+17. Timeline harus dihormati.
+
+18. Perubahan harus memiliki dasar.
+
+19. Ketidakpastian tidak boleh diisi berdasarkan asumsi.
+
+20. Semua konflik dikembalikan ke tahap yang memiliki kewenangan untuk
+    menyelesaikannya.
+
+21. Story Design harus menghasilkan blueprint yang dapat diuji.
+
+22. Story Design tidak boleh mengubah Canon secara langsung.
+
+23. Writing System tidak boleh mengambil alih keputusan Story Design.
+
+24. Story Design tidak boleh mengambil alih keputusan Writing System.
+
+
+================================================================================
+END OF STORY DESIGN
+================================================================================
