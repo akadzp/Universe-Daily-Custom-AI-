@@ -1,0 +1,113 @@
+================================================================================
+UNIVERSE — CHARACTER KNOWLEDGE SYSTEM
+(SISTEM PENGETAHUAN KARAKTER)
+
+STATUS: ACTIVE
+TUJUAN: Menyimpan pengetahuan yang dimiliki karakter dan perkembangan
+pengetahuan tersebut sepanjang cerita.
+
+---
+
+1. IDENTITAS PENGETAHUAN
+
+---
+
+KNOWLEDGE_ID          :
+CHARACTER_ID          :
+
+---
+
+2. PENGETAHUAN
+
+---
+
+KNOWN_FACT            :
+KNOWLEDGE_STATUS      :
+KNOWLEDGE_SOURCE      :
+ACQUIRED_DATE         :
+
+---
+
+3. PERUBAHAN PENGETAHUAN
+
+---
+
+KNOWLEDGE_CHANGE      :
+CHANGE_TRIGGER        :
+CHANGE_DATE           :
+PREVIOUS_KNOWLEDGE    :
+CURRENT_KNOWLEDGE     :
+
+---
+
+4. CATATAN
+
+---
+
+NOTES                 :
+
+================================================================================
+ATURAN SISTEM
+
+1. Setiap pengetahuan yang dicatat memiliki KNOWLEDGE_ID tersendiri.
+
+2. Setiap KNOWLEDGE_ID hanya berlaku untuk satu CHARACTER_ID.
+
+3. KNOWN_FACT menyimpan informasi yang diketahui oleh karakter.
+
+4. KNOWLEDGE_STATUS menunjukkan status pengetahuan karakter terhadap fakta
+   tersebut.
+
+5. KNOWLEDGE_SOURCE mencatat bagaimana karakter memperoleh pengetahuan
+   tersebut.
+
+6. ACQUIRED_DATE mencatat kapan karakter memperoleh pengetahuan tersebut
+   apabila waktunya diketahui.
+
+7. Pengetahuan dapat diperoleh melalui pengalaman langsung, informasi dari
+   karakter lain, pengamatan, dokumen, atau sumber lain yang terjadi dalam
+   cerita.
+
+8. Karakter tidak otomatis mengetahui seluruh fakta yang diketahui oleh
+   Universe.
+
+9. Pengetahuan satu karakter tidak otomatis menjadi pengetahuan karakter lain.
+
+10. KNOWLEDGE_STATUS dapat berubah apabila pemahaman karakter terhadap
+    suatu fakta mengalami perkembangan.
+
+11. Perubahan pengetahuan harus memiliki dasar dari kejadian atau informasi
+    yang terjadi dalam cerita.
+
+12. Perubahan pengetahuan tidak menghapus riwayat sebelumnya.
+
+13. PREVIOUS_KNOWLEDGE menyimpan keadaan pengetahuan sebelum perubahan.
+
+14. CURRENT_KNOWLEDGE menyimpan keadaan pengetahuan setelah perubahan.
+
+15. CHANGE_TRIGGER menjelaskan kejadian atau informasi yang menyebabkan
+    perubahan pengetahuan.
+
+16. CHANGE_DATE mencatat kapan perubahan terjadi apabila diketahui.
+
+17. File ini tidak menentukan fakta objektif Universe.
+    Fakta Universe berasal dari Canon/Universe System.
+
+18. File ini tidak menyimpan hubungan antar karakter.
+    Fakta hubungan disimpan dalam RELATIONSHIP SYSTEM.
+
+19. File ini tidak menyimpan perilaku karakter.
+    Perilaku disimpan dalam BEHAVIOR SYSTEM.
+
+20. Karakter dapat memiliki pengetahuan yang salah, tidak lengkap,
+    atau berbeda dari fakta objektif Universe.
+
+21. Ketidaksesuaian antara pengetahuan karakter dan fakta Universe
+    tidak boleh dianggap sebagai kesalahan sistem apabila perbedaan tersebut
+    memiliki dasar naratif.
+
+22. Pengetahuan yang belum diperoleh karakter tidak boleh digunakan
+    karakter dalam tindakan, dialog, atau keputusan seolah-olah karakter
+    telah mengetahuinya.
+
+================================================================================
