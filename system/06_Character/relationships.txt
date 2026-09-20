@@ -1,54 +1,98 @@
 ================================================================================
 UNIVERSE — CHARACTER RELATIONSHIP SYSTEM
-================================================================================
+(SISTEM HUBUNGAN ANTAR KARAKTER)
 
 STATUS: ACTIVE
-TUJUAN: Mengatur hubungan antar karakter dan perubahan hubungan
-        sepanjang perkembangan cerita
+TUJUAN: Menyimpan fakta hubungan antar karakter, kondisi hubungan saat ini,
+dan riwayat perubahan hubungan sepanjang perkembangan cerita.
 
---------------------------------------------------------------------------------
-1. RELATIONSHIP IDENTITY
---------------------------------------------------------------------------------
+---
+
+1. IDENTITAS HUBUNGAN
+
+---
 
 RELATIONSHIP_ID       :
 CHARACTER_A           :
 CHARACTER_B           :
 
---------------------------------------------------------------------------------
-2. CURRENT RELATIONSHIP
---------------------------------------------------------------------------------
+---
+
+2. HUBUNGAN SAAT INI
+
+---
 
 RELATIONSHIP_TYPE     :
 RELATIONSHIP_STATUS   :
-CLOSENESS             :
-DYNAMIC               :
+RELATIONSHIP_DYNAMIC  :
+START_DATE            :
+CURRENT_SINCE         :
 
---------------------------------------------------------------------------------
-3. RELATIONSHIP HISTORY
---------------------------------------------------------------------------------
+---
+
+3. RIWAYAT HUBUNGAN
+
+---
 
 HISTORY               :
 
---------------------------------------------------------------------------------
-4. RELATIONSHIP KNOWLEDGE
---------------------------------------------------------------------------------
+---
 
-KNOWN_BY              :
-UNKNOWN_BY            :
-MISUNDERSTOOD_BY      :
+4. CATATAN
 
---------------------------------------------------------------------------------
-5. RELATIONSHIP STATE
---------------------------------------------------------------------------------
-
-PUBLIC_STATUS         :
-PRIVATE_STATUS        :
-SECRET_STATUS         :
-
---------------------------------------------------------------------------------
-6. NOTES
---------------------------------------------------------------------------------
+---
 
 NOTES                 :
+
+================================================================================
+ATURAN SISTEM
+
+1. Setiap hubungan antar dua karakter memiliki satu RELATIONSHIP_ID.
+
+2. CHARACTER_A dan CHARACTER_B merupakan dua karakter yang terhubung
+   dalam satu hubungan.
+
+3. RELATIONSHIP_TYPE menjelaskan jenis hubungan yang terjadi.
+
+4. RELATIONSHIP_STATUS menjelaskan kondisi hubungan saat ini.
+
+5. RELATIONSHIP_DYNAMIC menjelaskan dinamika hubungan saat ini,
+   bukan riwayat hubungan.
+
+6. START_DATE menunjukkan kapan hubungan tersebut mulai berlaku,
+   jika tanggalnya diketahui.
+
+7. CURRENT_SINCE menunjukkan sejak kapan status hubungan saat ini berlaku,
+   jika waktunya diketahui.
+
+8. HISTORY menyimpan perubahan hubungan yang telah terjadi secara kronologis.
+
+9. Setiap perubahan status hubungan yang memiliki dasar dari alur cerita
+   dapat ditambahkan ke HISTORY.
+
+10. Riwayat hubungan tidak dihapus ketika hubungan berubah.
+    Perubahan baru ditambahkan sebagai bagian dari sejarah hubungan.
+
+11. Hubungan yang sudah berakhir tetap disimpan apabila hubungan tersebut
+    memiliki pengaruh terhadap perkembangan cerita.
+
+12. RELATIONSHIP_STATUS hanya menunjukkan kondisi hubungan SAAT INI.
+    Riwayat kondisi sebelumnya disimpan di HISTORY.
+
+13. File ini hanya menyimpan fakta hubungan dalam Universe.
+
+14. Informasi mengenai siapa yang mengetahui, tidak mengetahui,
+    salah memahami, atau menyembunyikan suatu hubungan
+    TIDAK disimpan dalam file ini.
+
+15. Pengetahuan karakter mengenai suatu hubungan merupakan tanggung jawab
+    KNOWLEDGE SYSTEM.
+
+16. Hubungan tidak boleh dibuat berdasarkan asumsi hanya karena dua karakter
+    sering muncul bersama. Harus terdapat dasar naratif yang menetapkan
+    adanya hubungan.
+
+17. Perubahan hubungan harus memiliki dasar dari kejadian, keputusan,
+    atau perkembangan yang terjadi dalam cerita.
 
 ================================================================================
