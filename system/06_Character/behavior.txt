@@ -1,0 +1,131 @@
+================================================================================
+UNIVERSE — CHARACTER BEHAVIOR SYSTEM
+(SISTEM PERILAKU KARAKTER)
+
+STATUS: ACTIVE
+TUJUAN: Menyimpan pola perilaku karakter, pemicu perilaku, respons karakter,
+dan perubahan perilaku yang terbentuk sepanjang perkembangan cerita.
+
+---
+
+1. IDENTITAS PERILAKU
+
+---
+
+BEHAVIOR_ID           :
+CHARACTER_ID          :
+
+---
+
+2. POLA PERILAKU
+
+---
+
+BEHAVIOR_PATTERN      :
+BEHAVIOR_CONTEXT      :
+BEHAVIOR_FREQUENCY    :
+
+---
+
+3. PEMICU
+
+---
+
+TRIGGERS              :
+TRIGGER_CONTEXT       :
+
+---
+
+4. RESPONS
+
+---
+
+TYPICAL_RESPONSE      :
+ALTERNATIVE_RESPONSE  :
+RESPONSE_INTENSITY    :
+
+---
+
+5. PERUBAHAN PERILAKU
+
+---
+
+BEHAVIOR_CHANGE       :
+CHANGE_TRIGGER        :
+CHANGE_DATE           :
+PREVIOUS_PATTERN      :
+CURRENT_PATTERN       :
+
+---
+
+6. CATATAN
+
+---
+
+NOTES                 :
+
+================================================================================
+ATURAN SISTEM
+
+1. Setiap pola perilaku yang dicatat memiliki BEHAVIOR_ID tersendiri.
+
+2. Setiap BEHAVIOR_ID hanya berlaku untuk satu CHARACTER_ID.
+
+3. BEHAVIOR_PATTERN menjelaskan pola tindakan yang berulang atau konsisten
+   pada karakter.
+
+4. BEHAVIOR_CONTEXT menjelaskan keadaan atau konteks ketika pola tersebut
+   biasanya muncul.
+
+5. BEHAVIOR_FREQUENCY menjelaskan seberapa sering pola tersebut muncul
+   berdasarkan kejadian yang telah diketahui.
+
+6. TRIGGERS berisi kondisi atau kejadian yang dapat memicu pola perilaku.
+
+7. TRIGGER_CONTEXT menjelaskan konteks yang membuat pemicu tersebut
+   relevan terhadap perilaku.
+
+8. TYPICAL_RESPONSE menyimpan respons yang biasanya diberikan karakter
+   ketika pemicu terjadi.
+
+9. ALTERNATIVE_RESPONSE menyimpan respons lain yang telah terbukti
+   dilakukan karakter dalam kondisi tertentu.
+
+10. RESPONSE_INTENSITY menjelaskan tingkat kekuatan respons apabila
+    relevan terhadap perilaku tersebut.
+
+11. Perilaku tidak boleh dianggap sebagai pola hanya karena terjadi
+    satu kali, kecuali kejadian tersebut secara naratif menetapkan
+    perubahan perilaku yang signifikan.
+
+12. Perubahan perilaku harus memiliki dasar dari kejadian atau pengalaman
+    yang terjadi dalam cerita.
+
+13. Perubahan perilaku tidak menghapus pola sebelumnya dari sejarah.
+    Perubahan dicatat sebagai perkembangan perilaku.
+
+14. PREVIOUS_PATTERN menyimpan pola sebelum perubahan.
+
+15. CURRENT_PATTERN menyimpan pola yang berlaku setelah perubahan.
+
+16. CHANGE_TRIGGER menjelaskan kejadian atau pengalaman yang menyebabkan
+    perubahan perilaku.
+
+17. CHANGE_DATE mencatat kapan perubahan tersebut terjadi apabila diketahui.
+
+18. File ini tidak menentukan kepribadian dasar karakter.
+    Kepribadian merupakan bagian dari SIMS SYSTEM.
+
+19. File ini tidak menyimpan kondisi karakter saat ini.
+    Kondisi saat ini merupakan bagian dari STATE SYSTEM.
+
+20. File ini tidak menyimpan pengetahuan karakter.
+    Pengetahuan merupakan bagian dari KNOWLEDGE SYSTEM.
+
+21. File ini tidak menyimpan hubungan antar karakter.
+    Hubungan merupakan bagian dari RELATIONSHIP SYSTEM.
+
+22. Perilaku tidak boleh dibuat hanya untuk memenuhi kebutuhan alur.
+    Perilaku harus memiliki dasar dari karakter atau perkembangan cerita.
+
+================================================================================
