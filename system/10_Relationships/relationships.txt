@@ -1,0 +1,69 @@
+================================================================================
+UNIVERSE — RELATIONSHIP DATA
+
+RELATIONSHIP_ID       : R001
+
+---
+
+1. IDENTITAS
+
+---
+
+CHARACTER_A           :
+CHARACTER_B           :
+
+RELATIONSHIP_TYPE     :
+RELATIONSHIP_STATUS   :
+RELATIONSHIP_DIRECTION:
+
+---
+
+2. STATUS SAAT INI
+
+---
+
+CURRENT_SINCE         :
+CURRENT_DYNAMIC       :
+PUBLIC_STATUS         :
+
+---
+
+3. RIWAYAT PERUBAHAN
+
+---
+
+HISTORY:
+
+[DATE]
+EVENT                 :
+PREVIOUS_TYPE         :
+NEW_TYPE              :
+PREVIOUS_STATUS       :
+NEW_STATUS            :
+PREVIOUS_DIRECTION    :
+NEW_DIRECTION         :
+TRIGGER               :
+SOURCE_EVENT          :
+
+---
+
+4. METADATA
+
+---
+
+CREATED_DATE          :
+LAST_UPDATED          :
+CREATED_BY            :
+LAST_UPDATED_BY       :
+SOURCE                :
+CONFIDENCE            :
+
+---
+
+5. CATATAN
+
+---
+
+NOTES                 :
+
+================================================================================
