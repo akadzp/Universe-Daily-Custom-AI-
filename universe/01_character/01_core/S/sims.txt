@@ -1,6 +1,5 @@
 ================================================================================
-POCER — CHARACTER PROFILE TEMPLATE
-(TEMPLATE PROFIL KARAKTER UNTUK CERITA BERKELANJUTAN)
+CHARACTER PROFILE
 ================================================================================
 
 STATUS: ACTIVE
@@ -10,72 +9,112 @@ TUJUAN: Menjaga konsistensi karakter dalam cerita jangka panjang
 1. IDENTITAS DASAR
 --------------------------------------------------------------------------------
 
-CHARACTER_ID          : 
-FULL_NAME             : 
-NICKNAME              : 
-GENDER                : 
-AGE                   : 
-BIRTHDATE             : 
-ZODIAC                : 
-SHIO                  : 
-CURRENT_LOCATION      : 
+CHARACTER_ID          : S001
+FULL_NAME             : S
+NICKNAME              :
+GENDER                :
+AGE                   :
+BIRTHDATE             :
+ZODIAC                :
+SHIO                  :
+CURRENT_LOCATION      :
 
-CHARACTER_LEVEL       :          (Core / Major / Impact / Peripheral)
-GROUP                 :          (Hanya 1 grup. Wajib diisi jika Level 1 atau Level 2)
+CHARACTER_LEVEL       :
+GROUP                 :
 
 --------------------------------------------------------------------------------
-2. PENAMPILAN (Hanya yang berpengaruh ke cerita)
+2. PENAMPILAN
 --------------------------------------------------------------------------------
 
-DISTINCTIVE_FEATURES  :          (ciri yang sering muncul atau penting)
-STYLE                 :          (cara berpakaian / kesan umum)
-VOICE / SPEECH_STYLE  :          (cara bicara yang khas)
+DISTINCTIVE_FEATURES  :
+STYLE                 :
+VOICE / SPEECH_STYLE  :
 
 --------------------------------------------------------------------------------
 3. KEPRIBADIAN
 --------------------------------------------------------------------------------
 
-PERSONALITY_TYPE      : 
-MAIN_TRAITS           :          (3–5 sifat utama)
-FLAWS                 :          (kelemahan yang sering muncul)
-HABITS                :          (kebiasaan kecil yang berulang)
-FEARS                 : 
-VALUES                :          (apa yang dia pegang teguh)
+PERSONALITY_TYPE      : Independen / Analitis / Reflektif
+
+MAIN_TRAITS           :
+- Mandiri
+- Tegas
+- Rasional
+- Introspektif
+- Observatif
+- Detail-oriented
+- Penasaran
+- Persisten
+- Tidak mudah percaya begitu saja
+- Memiliki standar pribadi yang cukup tinggi
+- Cenderung serius ketika sesuatu dianggap penting
+- Tidak terlalu menyukai basa-basi
+- Lebih menyukai kejelasan daripada ambiguitas
+- Memiliki rasa ingin tahu yang kuat
+- Cenderung berpikir mendalam sebelum menerima suatu kesimpulan
+
+FLAWS                 :
+- Overthinking
+- Terlalu kritis
+- Sulit menerima ambiguitas
+- Cenderung over-analyze
+- Keras kepala secara intelektual
+- Sensitif terhadap ketidakadilan dan ketidakseimbangan
+- Bisa terlalu mandiri
+- Cenderung menyimpan proses internal terlalu lama
+- Intensitas berpikir tinggi
+
+HABITS                :
+- Cenderung memeriksa sesuatu secara mendalam sebelum menerima kesimpulan
+- Cenderung mempertanyakan informasi yang belum cukup jelas
+- Cenderung menyimpan dan memproses pertimbangan internal sebelum mengungkapkannya
+- Cenderung mencari konsistensi antara perkataan, tindakan, dan prinsip
+
+FEARS                 :
+
+VALUES                :
+- Integritas pribadi
+- Kejujuran
+- Kejelasan
+- Konsistensi
+- Tanggung jawab
+- Keadilan
+- Prinsip pribadi
 
 --------------------------------------------------------------------------------
 4. KEHIDUPAN
 --------------------------------------------------------------------------------
 
-OCCUPATION            : 
-HOBBIES               : 
-INTERESTS             : 
-SKILLS                : 
-DAILY_PATTERN         :          (pola kebiasaan harian yang stabil)
+OCCUPATION            :
+HOBBIES               :
+INTERESTS             :
+SKILLS                :
+DAILY_PATTERN         :
 
 --------------------------------------------------------------------------------
 5. HUBUNGAN
 --------------------------------------------------------------------------------
 
-IMPORTANT_RELATIONSHIPS :        (orang-orang yang berpengaruh)
-ROMANTIC_STATUS         : 
-SOCIAL_TENDENCY         :        (introvert / ambivert / ekstrovert)
+IMPORTANT_RELATIONSHIPS :
+ROMANTIC_STATUS         :
+SOCIAL_TENDENCY         :
 
 --------------------------------------------------------------------------------
-6. KONDISI NARATIF (Paling penting untuk cerita berkelanjutan)
+6. KONDISI NARATIF
 --------------------------------------------------------------------------------
 
-CURRENT_MOOD            : 
-OPEN_WOUNDS             :        (luka emosional yang masih aktif)
-PERSONAL_GOAL           :        (tujuan jangka pendek)
-LONG_TERM_ASPIRATION    :        (arah hidup jangka panjang)
-SECRETS                 :        (rahasia yang belum terungkap)
+CURRENT_MOOD            :
+OPEN_WOUNDS             :
+PERSONAL_GOAL           :
+LONG_TERM_ASPIRATION    :
+SECRETS                 :
 
 --------------------------------------------------------------------------------
 7. CATATAN
 --------------------------------------------------------------------------------
 
-BACKSTORY_SUMMARY       : 
-NARRATIVE_ROLE          : 
-NOTES                   : 
+BACKSTORY_SUMMARY       :
+NARRATIVE_ROLE          :
+NOTES                   :
 
 ================================================================================
