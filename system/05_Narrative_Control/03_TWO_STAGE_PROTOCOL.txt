@@ -1,0 +1,157 @@
+03_TWO_STAGE_PROTOCOL
+
+================================================================================
+
+POCER — TWO-STAGE PRODUCTION PROTOCOL
+
+(PROTOKOL PEMISAHAN DUA TAHAP PRODUKSI CERITA)
+
+================================================================================
+
+
+STATUS: ACTIVE / AUTHORITATIVE
+
+LOKASI: /Pocer/00 — SYSTEM/05_NARRATIVE_CONTROL/03_TWO_STAGE_PROTOCOL/
+
+TUJUAN: Memaksa AI Worker memisahkan perancangan alur dari eksekusi penulisan
+
+LINGKUP: Berlaku untuk produksi Daily Story dan Daily Page
+
+CATATAN: Protokol ini berada di atas Fase 4 (Narrative Rendering System)
+
+         dan tidak menggantikan aturan yang sudah ada.
+
+
+--------------------------------------------------------------------------------
+
+PRINSIP DASAR
+
+--------------------------------------------------------------------------------
+
+
+AI Worker DILARANG langsung menulis narasi begitu ide muncul.
+
+
+Setiap produksi cerita WAJIB melalui dua tahap berurutan dan terpisah:
+
+
+1. TAHAP 1 — STORY DESIGN (Perancangan Alur)
+
+2. TAHAP 2 — NARRATIVE RENDERING (Eksekusi Penulisan)
+
+
+AI tidak boleh mencampuradukkan kedua tahap dalam satu proses berpikir.
+
+
+--------------------------------------------------------------------------------
+
+TAHAP 1: STORY DESIGN (PERANCANGAN ALUR)
+
+--------------------------------------------------------------------------------
+
+
+Pada tahap ini AI HANYA merancang logika cerita.
+
+Dilarang menulis narasi, dialog, atau deskripsi adegan.
+
+
+AI WAJIB menyelesaikan poin-poin berikut sebelum masuk ke Tahap 2:
+
+
+1. Tentukan Universe Date dan Day Sequence yang akan diproduksi.
+
+2. Tentukan karakter POV utama (satu atau paralel).
+
+3. Tentukan Event inti hari itu (minimal satu event yang memiliki nilai kausalitas).
+
+4. Tentukan titik Retakan Kecil (satu momen kegagalan kendali karakter).
+
+5. Tentukan perubahan State yang akan terjadi (lokasi, possession, knowledge, status).
+
+6. Verifikasi bahwa seluruh rancangan tidak melanggar:
+
+   - Knowledge Graph
+
+   - Ownership / Possession
+
+   - History yang sudah STORED
+
+   - Hukum kausalitas dan temporal
+
+
+Output Tahap 1 bersifat internal (tidak ditampilkan ke pengguna)
+
+dan hanya berfungsi sebagai cetak biru.
+
+
+--------------------------------------------------------------------------------
+
+TAHAP 2: NARRATIVE RENDERING (EKSEKUSI PENULISAN)
+
+--------------------------------------------------------------------------------
+
+
+Baru setelah Tahap 1 selesai, AI diperbolehkan menulis narasi.
+
+
+Pada tahap ini AI WAJIB mematuhi seluruh pagar yang tercantum dalam
+
+file 02_NARRATIVE_RENDERING_RULES.txt, meliputi:
+
+
+- Hook
+
+- Show, Don't Tell
+
+- POV & Batasan Kesadaran
+
+- Inner Thought
+
+- Retakan Kecil
+
+- Pacing
+
+- Quiet Ending
+
+- Subtext
+
+
+Serta mematuhi format penulisan resmi sistem dan Fase 4 Narrative Rendering.
+
+
+--------------------------------------------------------------------------------
+
+GERBANG PENGAMAN ANTAR TAHAP
+
+--------------------------------------------------------------------------------
+
+
+AI DILARANG melanjutkan ke Tahap 2 jika salah satu poin di Tahap 1
+
+belum diselesaikan dengan jelas.
+
+
+Jika saat menulis (Tahap 2) AI menyadari bahwa alur yang dirancang
+
+melanggar aturan sistem, AI WAJIB kembali ke Tahap 1 dan memperbaiki
+
+rancangan terlebih dahulu, bukan memaksa narasi.
+
+
+--------------------------------------------------------------------------------
+
+OUTPUT AKHIR
+
+--------------------------------------------------------------------------------
+
+
+Hanya hasil dari Tahap 2 (narasi yang sudah dieksekusi)
+
+yang ditampilkan kepada pengguna, lengkap dengan blok Delta.
+
+
+Tahap 1 tidak boleh muncul di output akhir.
+
+
+================================================================================
+
