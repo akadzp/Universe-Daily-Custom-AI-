@@ -1,0 +1,191 @@
+================================================================================
+UNIVERSE — CHARACTER CONTINUITY SYSTEM
+(SISTEM KONTINUITAS KARAKTER)
+
+STATUS: ACTIVE
+TUJUAN: Menjaga kesinambungan identitas, perkembangan, hubungan, perilaku,
+pengetahuan, kondisi, dan gaya karakter sepanjang cerita berkelanjutan.
+
+---
+
+1. IDENTITAS CONTINUITY
+
+---
+
+CONTINUITY_ID         :
+CHARACTER_ID          :
+
+---
+
+2. KONTROL KONSISTENSI
+
+---
+
+IDENTITY_CHECK        :
+ROLE_CHECK            :
+RELATIONSHIP_CHECK    :
+BEHAVIOR_CHECK        :
+KNOWLEDGE_CHECK       :
+STATE_CHECK           :
+STYLE_CHECK           :
+
+---
+
+3. PERUBAHAN KARAKTER
+
+---
+
+CHANGE_ID             :
+CHANGE_TYPE           :
+CHANGE_TRIGGER        :
+PREVIOUS_STATE        :
+CURRENT_STATE         :
+CHANGE_DATE           :
+SOURCE_EVENT          :
+
+---
+
+4. KONFLIK KONTINUITAS
+
+---
+
+CONFLICT_ID           :
+CONFLICT_TYPE         :
+CONFLICT_DESCRIPTION  :
+AFFECTED_DATA         :
+RESOLUTION_STATUS     :
+RESOLUTION            :
+
+---
+
+5. RIWAYAT VALIDASI
+
+---
+
+VALIDATION_DATE       :
+VALIDATION_RESULT     :
+VALIDATED_BY          :
+VALIDATION_NOTES      :
+
+---
+
+6. CATATAN
+
+---
+
+NOTES                 :
+
+================================================================================
+ATURAN SISTEM
+
+1. Setiap continuity record memiliki CONTINUITY_ID tersendiri.
+
+2. Setiap CONTINUITY_ID hanya berlaku untuk satu CHARACTER_ID.
+
+3. CONTINUITY SYSTEM berfungsi sebagai sistem pemeriksaan dan validasi,
+   bukan sebagai pengganti data pada SIMS, ROLES, RELATIONSHIPS, BEHAVIOR,
+   KNOWLEDGE, STATE, atau STYLE SYSTEM.
+
+4. IDENTITAS KARAKTER harus tetap konsisten dengan data yang tercatat
+   dalam SIMS SYSTEM.
+
+5. ROLE karakter harus tetap konsisten dengan ROLES SYSTEM kecuali terdapat
+   keputusan resmi untuk mengubahnya.
+
+6. Hubungan karakter harus konsisten dengan RELATIONSHIP SYSTEM.
+
+7. Perilaku karakter harus konsisten dengan BEHAVIOR SYSTEM dan perkembangan
+   perilaku yang telah terjadi.
+
+8. Tindakan dan dialog karakter tidak boleh menggunakan pengetahuan yang
+   belum dimiliki karakter menurut KNOWLEDGE SYSTEM.
+
+9. Kondisi karakter harus konsisten dengan STATE SYSTEM dan urutan waktu
+   dalam Universe.
+
+10. Gaya bahasa dan ekspresi karakter harus konsisten dengan STYLE SYSTEM
+    kecuali terdapat dasar naratif untuk perubahan.
+
+11. Perubahan karakter harus memiliki dasar yang dapat ditelusuri
+    ke kejadian, pengalaman, keputusan, atau perkembangan yang terjadi
+    dalam cerita.
+
+12. Perubahan tidak boleh muncul hanya karena kebutuhan cerita tanpa dasar
+    yang dapat dijelaskan.
+
+13. Perubahan karakter tidak boleh menghapus sejarah perkembangan sebelumnya.
+
+14. CHANGE_TYPE harus menunjukkan aspek karakter yang mengalami perubahan.
+
+15. CHANGE_TRIGGER menjelaskan penyebab perubahan.
+
+16. PREVIOUS_STATE menyimpan keadaan sebelum perubahan.
+
+17. CURRENT_STATE menyimpan keadaan setelah perubahan.
+
+18. SOURCE_EVENT menunjukkan kejadian cerita yang menjadi dasar perubahan,
+    apabila diketahui.
+
+19. Konflik kontinuitas harus dicatat apabila terdapat dua atau lebih
+    informasi yang tidak dapat berlaku secara bersamaan.
+
+20. CONFLICT_DESCRIPTION menjelaskan perbedaan atau pertentangan yang ditemukan.
+
+21. AFFECTED_DATA menunjukkan sistem atau data karakter yang terdampak.
+
+22. Konflik tidak boleh diselesaikan dengan mengubah data secara otomatis
+    hanya untuk membuat cerita terlihat konsisten.
+
+23. RESOLUTION_STATUS menunjukkan apakah konflik belum terselesaikan,
+    sedang ditinjau, atau telah diselesaikan.
+
+24. RESOLUTION mencatat keputusan resmi yang digunakan untuk menyelesaikan
+    konflik apabila telah ditetapkan.
+
+25. Continuity validation harus membedakan antara:
+    
+    - perubahan karakter yang sah,
+    - informasi baru,
+    - perkembangan karakter,
+    - dan kontradiksi kontinuitas.
+
+26. Informasi baru tidak boleh dianggap sebagai kontradiksi hanya karena
+    sebelumnya belum tercatat.
+
+27. Perubahan karakter tidak boleh dianggap sebagai kontradiksi apabila
+    perubahan tersebut memiliki dasar naratif yang sah.
+
+28. Data yang tidak diketahui tidak boleh dianggap sebagai data yang tidak ada.
+
+29. Data yang belum tercatat tidak boleh dianggap sebagai fakta yang salah
+    atau tidak pernah terjadi tanpa pemeriksaan terhadap sumber cerita.
+
+30. VALIDATION_RESULT mencatat hasil pemeriksaan kontinuitas.
+
+31. VALIDATION_DATE mencatat kapan pemeriksaan dilakukan apabila diketahui.
+
+32. VALIDATED_BY mencatat sumber atau sistem yang melakukan validasi.
+
+33. VALIDATION_NOTES mencatat alasan atau temuan penting dari proses validasi.
+
+34. Continuity System tidak boleh menciptakan fakta baru untuk menyelesaikan
+    konflik.
+
+35. Continuity System tidak boleh mengubah Canon secara otomatis.
+
+36. Apabila terdapat konflik yang membutuhkan keputusan Canon,
+    konflik harus tetap dicatat sampai terdapat keputusan resmi.
+
+37. Semua pemeriksaan harus mempertimbangkan urutan waktu Universe.
+
+38. Keadaan karakter pada masa lalu tidak boleh digunakan sebagai keadaan
+    saat ini apabila telah terjadi perubahan yang sah.
+
+39. Karakter tidak boleh mengetahui, memiliki, mengalami, atau melakukan
+    sesuatu sebelum waktunya apabila hal tersebut belum terjadi dalam
+    timeline karakter.
+
+40. Continuity System harus memastikan bahwa perkembangan karakter dari
+    satu cerita ke cerita berikutnya tetap dapat ditelusuri.
+
+================================================================================
