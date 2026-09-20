@@ -1,0 +1,1541 @@
+================================================================================
+STORY LOGIC
+(SISTEM LOGIKA DAN KELAYAKAN ALUR CERITA)
+================================================================================
+
+STATUS: ACTIVE
+TYPE: NARRATOR / STORY FLOW
+AUTHORITY: STORY LOGIC LAYER
+
+TUJUAN:
+
+Memeriksa apakah BLUEPRINT yang dihasilkan oleh STORY DESIGN dapat terjadi
+secara logis berdasarkan seluruh informasi, keadaan, hubungan, objek, waktu,
+pengetahuan, dan aturan Universe yang berlaku.
+
+STORY LOGIC bertugas menjawab:
+
+"APAKAH ALUR YANG DIRENCANAKAN DAPAT TERJADI?"
+
+STORY LOGIC TIDAK bertugas:
+
+- merancang ulang cerita dari nol;
+- menulis narasi;
+- menentukan gaya penulisan;
+- menetapkan Canon baru secara langsung;
+- mengubah data Universe secara langsung.
+
+
+================================================================================
+1. DEFINISI
+================================================================================
+
+Story Logic adalah lapisan pemeriksaan yang menguji kelayakan logis sebuah
+Story Blueprint sebelum blueprint tersebut diteruskan ke Story Validation
+dan Writing.
+
+Story Logic memeriksa hubungan antara:
+
+- waktu;
+- ruang;
+- actor;
+- knowledge;
+- behavior;
+- relationship;
+- object;
+- state;
+- event;
+- causalitas;
+- konsekuensi;
+- informasi;
+- perubahan.
+
+
+Story Logic menghasilkan status kelayakan blueprint.
+
+Status tersebut harus menunjukkan apakah blueprint:
+
+- dapat dilanjutkan;
+- memerlukan perbaikan;
+- memiliki konflik yang belum terselesaikan;
+- mengandung informasi yang tidak dapat dibuktikan.
+
+
+================================================================================
+2. POSISI DALAM NARRATOR
+================================================================================
+
+NARRATOR
+│
+├── STORY FLOW
+│   ├── STORY DESIGN
+│   ├── STORY LOGIC
+│   └── STORY VALIDATION
+│
+└── WRITING
+    ├── WRITING DESIGN
+    ├── NARRATIVE RENDERING
+    └── WRITING VALIDATION
+
+
+Urutan normal:
+
+UNIVERSE DATA
+        ↓
+STORY DESIGN
+        ↓
+STORY LOGIC
+        ↓
+STORY VALIDATION
+        ↓
+WRITING DESIGN
+        ↓
+NARRATIVE RENDERING
+        ↓
+WRITING VALIDATION
+
+
+Story Logic tidak boleh dilewati apabila blueprint memuat perubahan,
+interaksi, atau ketergantungan yang membutuhkan pemeriksaan logika.
+
+
+================================================================================
+3. TUJUAN STORY LOGIC
+================================================================================
+
+Story Logic harus memastikan bahwa blueprint:
+
+1. dapat ditempatkan pada timeline;
+2. dapat terjadi pada lokasi yang ditentukan;
+3. melibatkan actor yang benar-benar tersedia;
+4. menghormati identitas actor;
+5. menghormati behavior actor;
+6. menghormati knowledge actor;
+7. menghormati relationship;
+8. menghormati object;
+9. menghormati state;
+10. menghormati ownership;
+11. menghormati possession;
+12. menghormati penggunaan object;
+13. menghormati urutan kejadian;
+14. memiliki hubungan sebab-akibat yang masuk akal;
+15. tidak memiliki konflik internal;
+16. tidak memiliki konflik dengan Universe;
+17. tidak membutuhkan asumsi yang tidak sah;
+18. tidak menciptakan perubahan tanpa dasar;
+19. tidak memperlakukan rencana sebagai fakta;
+20. tetap dapat diteruskan ke tahap berikutnya.
+
+
+================================================================================
+4. SUMBER KEBENARAN
+================================================================================
+
+Story Logic harus membaca data dari sistem yang memiliki kewenangan atas
+masing-masing jenis informasi.
+
+Sumber utama meliputi:
+
+- Actor System;
+- Relationship System;
+- Object System;
+- State;
+- Knowledge;
+- Behavior;
+- Timeline;
+- Canon;
+- data lokasi;
+- history;
+- sistem continuity yang relevan.
+
+
+Story Logic tidak boleh menggantikan sumber kebenaran tersebut.
+
+Apabila terjadi perbedaan antara blueprint dan data Universe, data Universe
+menjadi dasar pemeriksaan.
+
+
+================================================================================
+5. HIRARKI PEMERIKSAAN
+================================================================================
+
+Pemeriksaan dilakukan dari kondisi dasar menuju hubungan yang lebih kompleks.
+
+Urutan umum:
+
+1. IDENTITAS
+2. EXISTENCE
+3. TIME
+4. LOCATION
+5. AVAILABILITY
+6. STATE
+7. KNOWLEDGE
+8. BEHAVIOR
+9. RELATIONSHIP
+10. OBJECT
+11. EVENT DEPENDENCY
+12. CAUSALITY
+13. INFORMATION
+14. CONSEQUENCE
+15. CROSS-SYSTEM CONSISTENCY
+
+
+Pemeriksaan dapat dilakukan secara iteratif apabila satu konflik menyebabkan
+konflik pada lapisan berikutnya.
+
+
+================================================================================
+6. IDENTITAS
+================================================================================
+
+Story Logic harus memastikan setiap actor dan object yang digunakan dalam
+blueprint merujuk kepada identitas yang benar.
+
+Pemeriksaan meliputi:
+
+- identity resolution;
+- OBJECT_ID;
+- CHARACTER_ID;
+- nama;
+- alias;
+- referensi;
+- identitas ganda;
+- duplikasi;
+- perubahan identitas.
+
+
+Tidak boleh ada satu entitas yang digunakan sebagai dua entitas berbeda
+tanpa dasar yang sah.
+
+Tidak boleh ada dua entitas yang digabungkan hanya karena kemiripan.
+
+
+================================================================================
+7. EXISTENCE
+================================================================================
+
+Setiap actor, object, lokasi, relationship, dan elemen lain yang diperlukan
+oleh blueprint harus memiliki dasar keberadaan pada saat yang relevan.
+
+Story Logic harus memeriksa:
+
+- apakah entitas telah ada;
+- apakah entitas masih ada;
+- apakah entitas sudah berakhir;
+- apakah entitas telah diketahui;
+- apakah entitas tersedia pada waktu tersebut;
+- apakah entitas baru akan muncul melalui event yang valid.
+
+
+Sesuatu yang belum memiliki keberadaan yang sah tidak boleh digunakan sebagai
+fakta yang sudah tersedia.
+
+
+================================================================================
+8. TIME
+================================================================================
+
+Story Logic harus memeriksa seluruh dimensi temporal.
+
+Pemeriksaan meliputi:
+
+- Universe Date;
+- tanggal;
+- waktu;
+- urutan waktu;
+- durasi;
+- interval;
+- event sebelumnya;
+- event sesudahnya;
+- simultaneity;
+- perubahan yang terjadi di antara dua event;
+- history;
+- batas temporal actor;
+- batas temporal object.
+
+
+Tidak boleh terjadi keadaan yang menuntut sesuatu terjadi sebelum dasar
+terjadinya tersedia.
+
+
+================================================================================
+9. TEMPORAL ORDER
+================================================================================
+
+Setiap event harus memiliki posisi temporal yang dapat ditempatkan.
+
+Story Logic harus membedakan:
+
+- before;
+- after;
+- simultaneous;
+- overlapping;
+- unknown.
+
+
+Jika hubungan temporal belum diketahui, sistem tidak boleh memaksakan urutan.
+
+
+Perubahan state tidak boleh diperlakukan sebagai sudah terjadi apabila
+event yang menyebabkannya belum terjadi.
+
+
+================================================================================
+10. DURATION
+================================================================================
+
+Story Logic harus mempertimbangkan apakah rentang waktu yang tersedia cukup
+untuk mendukung event yang dirancang.
+
+Pemeriksaan dilakukan terhadap:
+
+- perjalanan;
+- pergantian lokasi;
+- interaksi;
+- tindakan;
+- perubahan state;
+- event berurutan.
+
+
+Durasi tidak boleh ditetapkan secara sembarangan hanya untuk membuat
+blueprint berhasil.
+
+
+================================================================================
+11. LOCATION
+================================================================================
+
+Story Logic harus memeriksa konsistensi lokasi.
+
+Setiap perpindahan actor atau object harus konsisten dengan:
+
+- lokasi sebelumnya;
+- waktu;
+- tujuan;
+- proses perpindahan;
+- event yang terjadi di antaranya.
+
+
+Actor tidak dapat diperlakukan sebagai berada di dua lokasi yang saling
+tidak mungkin pada waktu yang sama kecuali blueprint secara eksplisit
+menggunakan mekanisme Universe yang mengizinkannya.
+
+
+================================================================================
+12. AVAILABILITY
+================================================================================
+
+Availability menunjukkan apakah actor, object, atau sumber daya yang
+diperlukan tersedia pada saat tertentu.
+
+Pemeriksaan dapat mencakup:
+
+- keberadaan;
+- lokasi;
+- state;
+- kepemilikan;
+- possession;
+- penggunaan;
+- komitmen terhadap event lain;
+- kondisi fisik;
+- kondisi operasional;
+- batasan lain yang telah ditetapkan Universe.
+
+
+Ketersediaan tidak boleh diasumsikan hanya karena entitas ada di Universe.
+
+
+================================================================================
+13. ACTOR CONSISTENCY
+================================================================================
+
+Story Logic harus memastikan actor tetap sesuai dengan data actor.
+
+Pemeriksaan meliputi:
+
+- identity;
+- role;
+- behavior;
+- knowledge;
+- state;
+- relationship;
+- location;
+- current goal;
+- kondisi relevan lainnya.
+
+
+Actor tidak boleh melakukan tindakan yang secara langsung bertentangan dengan
+data yang sudah tersimpan tanpa adanya event yang menjelaskan perubahan.
+
+
+================================================================================
+14. BEHAVIOR CONSISTENCY
+================================================================================
+
+Behavior menunjukkan pola kecenderungan actor.
+
+Story Logic harus membedakan:
+
+- behavior sebagai pola;
+- tindakan aktual;
+- keputusan;
+- keadaan sesaat.
+
+
+Behavior tidak menjadikan actor robotik.
+
+Actor tetap dapat melakukan tindakan yang berbeda dari pola biasanya selama
+terdapat dasar yang memadai dalam konteks cerita.
+
+
+Story Logic tidak boleh memaksa actor mengikuti pola lama jika data Universe
+menunjukkan adanya perubahan.
+
+
+================================================================================
+15. ACTION DAN DECISION
+================================================================================
+
+Story Logic harus membedakan:
+
+ACTION
+    tindakan yang benar-benar dilakukan.
+
+DECISION
+    keputusan atau pilihan untuk melakukan sesuatu.
+
+INTENTION
+    keinginan atau maksud.
+
+PLAN
+    rancangan tindakan yang belum terjadi.
+
+
+Keempatnya tidak boleh diperlakukan sebagai fakta yang sama.
+
+Keputusan tidak otomatis berarti tindakan sudah dilakukan.
+
+Rencana tidak otomatis berarti keputusan final.
+
+Intention tidak otomatis berarti tindakan akan terjadi.
+
+
+================================================================================
+16. KNOWLEDGE CONSISTENCY
+================================================================================
+
+Story Logic harus memeriksa batas pengetahuan setiap actor.
+
+Actor hanya boleh:
+
+- mengetahui apa yang telah diketahui;
+- memperoleh informasi melalui event yang tersedia;
+- melakukan inferensi berdasarkan informasi yang dimiliki;
+- bereaksi terhadap sesuatu yang benar-benar dapat diketahui.
+
+
+Story Logic harus membedakan:
+
+KNOWS
+    informasi diketahui.
+
+UNKNOWN
+    informasi belum diketahui.
+
+MISUNDERSTANDS
+    informasi diketahui secara tidak tepat.
+
+FALSE BELIEF
+    actor memiliki keyakinan yang salah.
+
+
+Kesalahan pengetahuan actor tidak boleh otomatis diubah menjadi fakta Universe.
+
+
+================================================================================
+17. KNOWLEDGE ACQUISITION
+================================================================================
+
+Jika blueprint memerlukan actor mengetahui informasi baru, Story Logic harus
+memeriksa bagaimana informasi tersebut diperoleh.
+
+Sumber pengetahuan harus memiliki posisi temporal yang valid.
+
+Pengetahuan tidak boleh muncul sebelum event yang menyebabkannya.
+
+
+================================================================================
+18. RELATIONSHIP CONSISTENCY
+================================================================================
+
+Story Logic harus memeriksa relationship yang terlibat.
+
+Pemeriksaan meliputi:
+
+- relationship existence;
+- type;
+- status;
+- direction apabila berlaku;
+- current state;
+- history;
+- perubahan sebelumnya;
+- perubahan yang direncanakan.
+
+
+Relationship yang telah berubah tidak boleh digunakan menggunakan status lama
+tanpa alasan temporal yang tepat.
+
+
+================================================================================
+19. RELATIONSHIP CHANGE
+================================================================================
+
+Apabila blueprint merencanakan perubahan relationship, Story Logic harus
+memeriksa:
+
+1. kondisi relationship sebelum perubahan;
+2. event yang memicu perubahan;
+3. posisi temporal perubahan;
+4. actor yang terlibat;
+5. perubahan yang dihasilkan;
+6. konsistensi dengan history.
+
+
+Perubahan tidak boleh muncul tanpa event atau dasar yang relevan.
+
+
+================================================================================
+20. OBJECT CONSISTENCY
+================================================================================
+
+Story Logic harus memastikan seluruh object digunakan secara konsisten.
+
+Pemeriksaan meliputi:
+
+- OBJECT_ID;
+- identity;
+- category;
+- attribute;
+- location;
+- owner;
+- holder;
+- user;
+- wearer;
+- state;
+- history;
+- relationship dengan actor;
+- hubungan dengan object lain.
+
+
+Object yang sama tidak boleh memiliki dua keadaan yang tidak kompatibel pada
+waktu yang sama.
+
+
+================================================================================
+21. OWNERSHIP
+================================================================================
+
+Ownership harus diperiksa secara temporal.
+
+Jika blueprint menggunakan object sebagai milik actor tertentu, Story Logic
+harus memeriksa status ownership pada waktu yang relevan.
+
+Perubahan ownership harus memiliki dasar dan tidak boleh terjadi di luar
+urutan timeline.
+
+
+================================================================================
+22. POSSESSION, USAGE, DAN ACCESS
+================================================================================
+
+Story Logic harus membedakan:
+
+- ownership;
+- possession;
+- holding;
+- usage;
+- access;
+- wearing;
+- control.
+
+
+Satu hubungan tidak boleh dianggap sebagai hubungan lain tanpa dasar.
+
+Kondisi object harus konsisten dengan hubungan tersebut.
+
+
+================================================================================
+23. STATE CONSISTENCY
+================================================================================
+
+State harus diperiksa pada setiap titik penting dalam blueprint.
+
+Story Logic harus mempertimbangkan:
+
+- current state;
+- previous state;
+- transition;
+- trigger;
+- resulting state.
+
+
+Tidak boleh ada perubahan state tanpa jalur perubahan yang dapat dijelaskan.
+
+
+================================================================================
+24. STATE TRANSITION
+================================================================================
+
+Setiap perubahan state harus memiliki:
+
+- state awal;
+- trigger;
+- event;
+- state baru;
+- waktu.
+
+
+Jika salah satu elemen penting tidak memiliki dasar, blueprint harus
+ditandai untuk diperiksa kembali.
+
+
+================================================================================
+25. EVENT DEPENDENCY
+================================================================================
+
+Event dapat bergantung pada event lain.
+
+Story Logic harus membentuk dependency chain apabila diperlukan.
+
+Pemeriksaan meliputi:
+
+- prerequisite;
+- dependency;
+- trigger;
+- result;
+- downstream effect.
+
+
+Event tidak boleh dieksekusi sebelum prerequisite yang diperlukan terpenuhi.
+
+
+================================================================================
+26. CAUSALITY
+================================================================================
+
+Story Logic harus memastikan hubungan sebab-akibat tidak terbalik.
+
+Pemeriksaan:
+
+- penyebab tersedia sebelum akibat;
+- perubahan memiliki pemicu;
+- keputusan memiliki konteks;
+- konsekuensi mengikuti event;
+- informasi mengikuti sumbernya.
+
+
+Kausalitas tidak boleh dipaksakan pada kejadian yang memang tidak mempunyai
+hubungan sebab-akibat.
+
+
+================================================================================
+27. CAUSAL GAP
+================================================================================
+
+Jika blueprint mengandung perubahan besar tetapi tidak memiliki event yang
+menjelaskan perubahan tersebut, Story Logic harus menandainya sebagai
+CAUSAL GAP.
+
+Causal Gap tidak boleh ditutup dengan asumsi.
+
+Blueprint harus dikembalikan ke Story Design untuk diperbaiki.
+
+
+================================================================================
+28. CONTRADICTION
+================================================================================
+
+Story Logic harus mendeteksi kontradiksi.
+
+Kontradiksi dapat terjadi pada:
+
+- identity;
+- location;
+- time;
+- ownership;
+- possession;
+- knowledge;
+- relationship;
+- state;
+- object;
+- event;
+- history.
+
+
+Kontradiksi tidak boleh langsung dihapus.
+
+Kontradiksi harus diidentifikasi dan ditelusuri sumbernya.
+
+
+================================================================================
+29. CONFLICT RESOLUTION
+================================================================================
+
+Jika blueprint bertentangan dengan data Universe:
+
+1. identifikasi konflik;
+2. tentukan sistem sumber kebenaran;
+3. tentukan waktu konflik;
+4. tentukan apakah blueprint yang salah;
+5. tentukan apakah Universe memang berubah;
+6. jangan melakukan perubahan Canon secara otomatis.
+
+
+Jika perubahan Universe memang diperlukan, perubahan harus melalui sistem
+yang berwenang.
+
+
+================================================================================
+30. HISTORY
+================================================================================
+
+Story Logic harus memeriksa history ketika keadaan masa lalu memengaruhi
+blueprint saat ini.
+
+History digunakan untuk menjawab:
+
+- bagaimana state sebelumnya terbentuk;
+- bagaimana relationship berubah;
+- bagaimana ownership berpindah;
+- bagaimana knowledge diperoleh;
+- bagaimana object berubah;
+- bagaimana event sebelumnya memengaruhi kondisi sekarang.
+
+
+History tidak boleh diperlakukan sebagai data statis tanpa timeline.
+
+
+================================================================================
+31. CONTINUITY ACROSS EVENTS
+================================================================================
+
+Keadaan akhir sebuah event menjadi salah satu input untuk event berikutnya.
+
+Story Logic harus memastikan bahwa event berikutnya menggunakan keadaan
+yang benar.
+
+Perubahan tidak boleh hilang di antara event tanpa dasar.
+
+
+================================================================================
+32. PARALLEL EVENTS
+================================================================================
+
+Beberapa event dapat berjalan paralel.
+
+Story Logic harus memeriksa:
+
+- temporal overlap;
+- actor availability;
+- object availability;
+- location;
+- information propagation;
+- conflict.
+
+
+Event paralel tidak boleh dipaksa menjadi linear jika hal tersebut merusak
+logika temporal.
+
+
+================================================================================
+33. INFORMATION PROPAGATION
+================================================================================
+
+Informasi dapat berpindah dari satu actor ke actor lain melalui event.
+
+Story Logic harus memeriksa:
+
+- sumber informasi;
+- penerima;
+- waktu;
+- cara memperoleh;
+- isi informasi;
+- kemungkinan salah tafsir.
+
+
+Informasi tidak boleh menyebar secara otomatis ke seluruh actor.
+
+
+================================================================================
+34. REFERENCE CONSISTENCY
+================================================================================
+
+Semua referensi actor, relationship, object, lokasi, dan event harus tetap
+mengarah kepada entitas yang benar sepanjang blueprint.
+
+Perubahan sebutan tidak boleh dianggap sebagai perubahan identitas.
+
+
+Jika referensi ambigu, Story Logic harus mempertahankan ambiguitas tersebut
+sampai informasi yang tersedia cukup untuk menyelesaikannya.
+
+
+================================================================================
+35. PERSPECTIVE LOGIC
+================================================================================
+
+Story Logic harus memisahkan:
+
+- apa yang benar di Universe;
+- apa yang diketahui actor;
+- apa yang diketahui pembaca dalam rancangan;
+- apa yang dirahasiakan dari actor;
+- apa yang dirahasiakan dari pembaca.
+
+
+Perbedaan informasi tidak boleh dianggap sebagai kontradiksi.
+
+
+================================================================================
+36. CONSEQUENCE LOGIC
+================================================================================
+
+Setiap event yang memiliki dampak harus diperiksa terhadap konsekuensinya.
+
+Pemeriksaan meliputi:
+
+- immediate consequence;
+- delayed consequence;
+- known consequence;
+- unknown consequence;
+- state impact;
+- relationship impact;
+- knowledge impact;
+- object impact;
+- timeline impact.
+
+
+Story Logic tidak wajib menciptakan consequence baru.
+
+Ia wajib memastikan consequence yang sudah dirancang tidak bertentangan.
+
+
+================================================================================
+37. NEGATIVE CONDITIONS
+================================================================================
+
+Ketiadaan sesuatu juga dapat menjadi kondisi logis yang relevan.
+
+Story Logic harus membedakan:
+
+- tidak ada;
+- belum diketahui;
+- belum terjadi;
+- tidak tersedia;
+- sudah berakhir;
+- tidak relevan.
+
+
+Ketiadaan tidak boleh otomatis diubah menjadi keberadaan.
+
+
+================================================================================
+38. UNKNOWN
+================================================================================
+
+UNKNOWN adalah keadaan informasi yang belum diketahui.
+
+UNKNOWN bukan:
+
+- FALSE;
+- NONE;
+- IMPOSSIBLE;
+- ABSENT;
+- NOT OCCURRED.
+
+
+Story Logic tidak boleh mengubah UNKNOWN menjadi fakta tanpa dasar.
+
+
+================================================================================
+39. ASSUMPTION CONTROL
+================================================================================
+
+Story Logic harus mengidentifikasi asumsi yang diperlukan oleh blueprint.
+
+Asumsi dibedakan menjadi:
+
+- asumsi yang didukung data;
+- inferensi yang valid;
+- detail yang belum ditentukan;
+- asumsi yang tidak memiliki dasar.
+
+
+Asumsi tanpa dasar tidak boleh digunakan untuk meloloskan blueprint.
+
+
+================================================================================
+40. POSSIBILITY VS CERTAINTY
+================================================================================
+
+Story Logic harus membedakan:
+
+POSSIBLE
+    dapat terjadi.
+
+PROBABLE
+    memiliki dukungan kuat dalam konteks.
+
+CERTAIN
+    ditentukan oleh fakta atau aturan Universe.
+
+
+Kemungkinan tidak boleh diperlakukan sebagai kepastian.
+
+
+================================================================================
+41. NARRATIVE POSSIBILITY
+================================================================================
+
+Story Logic boleh menguji apakah suatu perkembangan cerita masih berada dalam
+ruang kemungkinan Universe.
+
+Story Logic tidak boleh menyatakan suatu perkembangan sebagai Canon sebelum
+perkembangan tersebut benar-benar terjadi dan diproses oleh sistem Universe.
+
+
+================================================================================
+42. EDGE CONDITIONS
+================================================================================
+
+Story Logic harus mampu menangani kondisi yang tidak biasa tanpa langsung
+menolaknya.
+
+Kondisi tidak biasa harus diperiksa berdasarkan:
+
+- aturan Universe;
+- identity;
+- state;
+- timeline;
+- knowledge;
+- causality;
+- consistency.
+
+
+Keanehan tidak otomatis berarti kesalahan.
+
+
+================================================================================
+43. MULTI-ACTOR LOGIC
+================================================================================
+
+Dalam cerita dengan banyak actor, Story Logic harus memeriksa setiap actor
+secara individual dan kemudian memeriksa hubungan antar-actor.
+
+Pemeriksaan meliputi:
+
+- lokasi;
+- waktu;
+- knowledge;
+- state;
+- relationship;
+- availability;
+- tindakan;
+- dependency.
+
+
+Kehadiran bersama tidak otomatis berarti actor saling mengetahui tindakan,
+informasi, atau tujuan satu sama lain.
+
+
+================================================================================
+44. MULTI-OBJECT LOGIC
+================================================================================
+
+Jika beberapa object digunakan dalam satu alur, Story Logic harus menjaga
+identitas setiap object secara terpisah.
+
+Object yang serupa tidak boleh digabung.
+
+Object yang sama tidak boleh diduplikasi.
+
+
+================================================================================
+45. WORLD CONSISTENCY
+================================================================================
+
+Story Logic harus memeriksa apakah alur tetap konsisten dengan keadaan dunia
+yang sudah diketahui.
+
+Pemeriksaan dapat mencakup:
+
+- lokasi;
+- waktu;
+- aturan keberadaan;
+- objek;
+- actor;
+- relationship;
+- sistem lain yang relevan.
+
+
+Jika Universe memiliki aturan khusus, aturan tersebut harus dihormati.
+
+
+================================================================================
+46. TEMPORAL PARADOX
+================================================================================
+
+Story Logic harus mengidentifikasi situasi ketika sebuah event membutuhkan
+dirinya sendiri atau hasil akhirnya sebagai prerequisite.
+
+Temporal dependency yang bersifat melingkar harus ditandai.
+
+
+================================================================================
+47. CIRCULAR CAUSALITY
+================================================================================
+
+Hubungan sebab-akibat yang berputar harus diperiksa secara khusus.
+
+Tidak boleh ada event yang menjadi penyebab dirinya sendiri tanpa mekanisme
+Universe yang secara eksplisit mengizinkannya.
+
+
+================================================================================
+48. DECISION LOGIC
+================================================================================
+
+Keputusan actor harus memiliki konteks yang tersedia pada waktu keputusan.
+
+Story Logic harus memeriksa:
+
+- knowledge;
+- state;
+- behavior;
+- goal;
+- relationship;
+- available options;
+- event context.
+
+
+Keputusan tidak boleh diberikan kepada actor berdasarkan informasi yang baru
+diperoleh setelah keputusan tersebut dibuat.
+
+
+================================================================================
+49. MOTIVATION LOGIC
+================================================================================
+
+Motivasi yang digunakan untuk mendukung tindakan harus konsisten dengan data
+actor atau terbentuk secara sah melalui alur.
+
+Story Logic tidak boleh menciptakan motivasi permanen hanya untuk menjelaskan
+satu tindakan tanpa dasar.
+
+
+================================================================================
+50. REACTION LOGIC
+================================================================================
+
+Respons actor terhadap event harus konsisten dengan:
+
+- knowledge;
+- state;
+- behavior;
+- relationship;
+- context.
+
+
+Respons tidak harus mengikuti pola standar secara mutlak.
+
+Yang diperiksa adalah apakah respons tersebut masih berada dalam ruang
+perilaku yang dapat diterima oleh Universe.
+
+
+================================================================================
+51. EMOTIONAL LOGIC
+================================================================================
+
+Keadaan emosional actor dapat berubah.
+
+Story Logic harus memastikan perubahan tersebut memiliki konteks dan waktu
+yang sesuai.
+
+Story Logic tidak menentukan cara emosi ditulis.
+
+Story Logic hanya memeriksa kelogisan keadaan yang menjadi dasar tindakan.
+
+
+================================================================================
+52. EVENT SCALE
+================================================================================
+
+Story Logic harus mampu memeriksa event dengan skala berbeda.
+
+Skala event tidak menentukan apakah event valid.
+
+Yang diperiksa adalah:
+
+- consistency;
+- causality;
+- availability;
+- consequence;
+- timeline.
+
+
+================================================================================
+53. STORY INTERNAL CONSISTENCY
+================================================================================
+
+Selain memeriksa Universe, Story Logic harus memeriksa apakah blueprint
+konsisten dengan dirinya sendiri.
+
+Blueprint tidak boleh:
+
+- menyatakan dua keadaan yang saling bertentangan;
+- memindahkan actor tanpa transisi yang diperlukan;
+- mengubah object tanpa event;
+- memberikan knowledge sebelum acquisition;
+- menggunakan relationship yang belum terbentuk;
+- menggunakan state yang sudah berubah sebelum waktunya.
+
+
+================================================================================
+54. CROSS-SYSTEM CONSISTENCY
+================================================================================
+
+Story Logic harus memeriksa hubungan antar-system.
+
+Minimal:
+
+ACTOR
+    ↔ STATE
+
+ACTOR
+    ↔ KNOWLEDGE
+
+ACTOR
+    ↔ BEHAVIOR
+
+ACTOR
+    ↔ RELATIONSHIP
+
+ACTOR
+    ↔ OBJECT
+
+RELATIONSHIP
+    ↔ TIMELINE
+
+OBJECT
+    ↔ STATE
+
+OBJECT
+    ↔ LOCATION
+
+EVENT
+    ↔ TIMELINE
+
+EVENT
+    ↔ STATE
+
+EVENT
+    ↔ KNOWLEDGE
+
+EVENT
+    ↔ RELATIONSHIP
+
+
+Konflik antar-system harus ditandai.
+
+
+================================================================================
+55. LOGICAL REPAIR
+================================================================================
+
+Jika blueprint memiliki masalah, Story Logic tidak boleh langsung melakukan
+perubahan Canon.
+
+Story Logic dapat memberikan:
+
+- diagnosis;
+- conflict location;
+- affected entity;
+- affected event;
+- reason;
+- required revision.
+
+
+Perbaikan blueprint harus kembali ke Story Design.
+
+
+================================================================================
+56. NO SILENT REPAIR
+================================================================================
+
+Story Logic dilarang melakukan perbaikan diam-diam yang mengubah maksud
+Story Design.
+
+Perubahan terhadap:
+
+- event;
+- actor;
+- relationship;
+- object;
+- state;
+- knowledge;
+- timeline;
+
+harus dapat dilacak sebagai revisi blueprint.
+
+
+================================================================================
+57. PRIORITAS KONFLIK
+================================================================================
+
+Jika terdapat beberapa konflik, prioritas pemeriksaan:
+
+1. identity conflict;
+2. existence conflict;
+3. temporal conflict;
+4. location conflict;
+5. knowledge conflict;
+6. ownership/possession conflict;
+7. relationship conflict;
+8. state conflict;
+9. causal conflict;
+10. presentation-level issue.
+
+
+Konflik dengan tingkat lebih tinggi harus diselesaikan lebih dahulu.
+
+
+================================================================================
+58. STATUS HASIL PEMERIKSAAN
+================================================================================
+
+Story Logic dapat menghasilkan status:
+
+VALID
+    Tidak ditemukan konflik logika yang menghalangi blueprint.
+
+REVISION_REQUIRED
+    Ditemukan masalah yang harus diperbaiki pada Story Design.
+
+UNRESOLVED
+    Ditemukan ketidakpastian atau konflik yang belum dapat diselesaikan.
+
+BLOCKED
+    Blueprint tidak dapat diteruskan karena melanggar kondisi fundamental.
+
+
+Status ini bersifat evaluatif terhadap blueprint.
+
+Status bukan Canon.
+
+
+================================================================================
+59. LOG HASIL PEMERIKSAAN
+================================================================================
+
+Setiap masalah yang ditemukan minimal harus dapat diidentifikasi melalui:
+
+ISSUE_ID
+    Identitas masalah.
+
+CATEGORY
+    Jenis konflik.
+
+SEVERITY
+    Tingkat masalah.
+
+EVENT_REFERENCE
+    Event yang terdampak.
+
+ENTITY_REFERENCE
+    Entity yang terdampak.
+
+DESCRIPTION
+    Penjelasan masalah.
+
+SOURCE
+    Sumber data yang menjadi dasar.
+
+REQUIRED_ACTION
+    Tindakan perbaikan yang diperlukan.
+
+
+================================================================================
+60. SEVERITY
+================================================================================
+
+Minimal terdapat empat tingkat:
+
+INFO
+    Informasi atau catatan tanpa masalah logika.
+
+WARNING
+    Kondisi yang perlu diperiksa tetapi belum memblokir alur.
+
+ERROR
+    Masalah logika yang harus diperbaiki.
+
+CRITICAL
+    Pelanggaran fundamental yang menyebabkan blueprint tidak dapat
+    dilanjutkan.
+
+
+================================================================================
+61. ITERATIVE LOGIC CHECK
+================================================================================
+
+Story Logic dapat dijalankan berulang.
+
+Setelah Story Design memperbaiki blueprint:
+
+1. blueprint diperiksa kembali;
+2. konflik lama diverifikasi;
+3. konflik baru diperiksa;
+4. hasil baru disimpan sebagai status terbaru.
+
+
+Pemeriksaan berikutnya tidak boleh menghapus sejarah pemeriksaan sebelumnya
+jika sistem membutuhkan audit trail.
+
+
+================================================================================
+62. BATASAN TERHADAP KREATIVITAS
+================================================================================
+
+Story Logic bukan pembunuh kreativitas.
+
+Tugasnya bukan menolak perkembangan hanya karena tidak biasa.
+
+Tugasnya adalah memastikan bahwa perkembangan tersebut:
+
+- mempunyai dasar;
+- konsisten;
+- dapat ditempatkan dalam timeline;
+- sesuai dengan data Universe;
+- tidak membutuhkan asumsi ilegal.
+
+
+Ketika terdapat lebih dari satu solusi logis, Story Logic tidak menentukan
+solusi kreatif terbaik.
+
+Story Design yang memilih.
+
+
+================================================================================
+63. PEMISAHAN LOGIKA DAN GAYA
+================================================================================
+
+Story Logic tidak memeriksa:
+
+- kualitas kalimat;
+- keindahan bahasa;
+- ritme paragraf;
+- gaya dialog;
+- pilihan kata;
+- hook;
+- subtext;
+- panjang paragraf;
+- teknik deskripsi.
+
+
+Hal tersebut berada di dalam Writing System.
+
+
+================================================================================
+64. PEMISAHAN LOGIKA DAN CANON
+================================================================================
+
+Story Logic hanya memeriksa blueprint terhadap Canon.
+
+Story Logic tidak mengubah Canon agar blueprint menjadi valid.
+
+Jika blueprint tidak sesuai Canon:
+
+BLUEPRINT → REVISION
+
+bukan:
+
+CANON → FORCE UPDATE
+
+
+================================================================================
+65. STORY LOGIC GATE
+================================================================================
+
+Sebelum blueprint masuk ke STORY VALIDATION, Story Logic wajib memastikan:
+
+[ ] Identity valid
+[ ] Existence valid
+[ ] Timeline valid
+[ ] Temporal order valid
+[ ] Duration masuk akal
+[ ] Location valid
+[ ] Availability valid
+[ ] Actor consistency valid
+[ ] Behavior consistency valid
+[ ] Knowledge consistency valid
+[ ] Relationship consistency valid
+[ ] Object consistency valid
+[ ] Ownership valid
+[ ] Possession valid
+[ ] Usage valid
+[ ] State transition valid
+[ ] Event dependency valid
+[ ] Causality valid
+[ ] No unresolved causal gap
+[ ] No unresolved contradiction
+[ ] History konsisten
+[ ] Information propagation valid
+[ ] Consequence valid
+[ ] Internal consistency valid
+[ ] Cross-system consistency valid
+[ ] No silent repair
+[ ] No unsupported assumption
+[ ] Blueprint tetap merupakan PLAN, bukan CANON
+
+
+Jika pemeriksaan gagal, blueprint tidak boleh diteruskan sebagai blueprint
+final ke Story Validation.
+
+
+================================================================================
+66. HUBUNGAN DENGAN STORY DESIGN
+================================================================================
+
+STORY DESIGN bertugas:
+
+"MERANCANG."
+
+
+STORY LOGIC bertugas:
+
+"MEMERIKSA APAKAH RANCANGAN DAPAT TERJADI."
+
+
+Jika Story Logic menemukan masalah:
+
+STORY LOGIC
+    ↓
+DIAGNOSIS
+    ↓
+STORY DESIGN
+    ↓
+REVISI BLUEPRINT
+    ↓
+STORY LOGIC KEMBALI
+
+
+Story Logic tidak mengambil alih fungsi Story Design.
+
+
+================================================================================
+67. HUBUNGAN DENGAN STORY VALIDATION
+================================================================================
+
+Story Logic berfokus pada:
+
+LOGICAL FEASIBILITY.
+
+
+Story Validation berfokus pada:
+
+READINESS FOR EXECUTION.
+
+
+Story Logic memastikan blueprint dapat terjadi.
+
+Story Validation memastikan blueprint telah memenuhi seluruh persyaratan
+untuk diteruskan ke Writing.
+
+
+================================================================================
+68. HUBUNGAN DENGAN WRITING
+================================================================================
+
+Writing System menerima blueprint yang telah lolos Story Flow.
+
+Writing tidak boleh memperbaiki kesalahan logika dengan mengubah fakta.
+
+Jika masalah logika ditemukan pada tahap Writing:
+
+WRITING
+    ↓
+ISSUE DETECTED
+    ↓
+RETURN TO STORY FLOW
+    ↓
+STORY LOGIC
+    ↓
+STORY DESIGN
+
+
+================================================================================
+69. PRINSIP UTAMA
+================================================================================
+
+1. Story Logic memeriksa, bukan menciptakan Canon.
+
+2. Universe Data adalah sumber kebenaran.
+
+3. Blueprint adalah rencana, bukan fakta.
+
+4. Identitas harus konsisten.
+
+5. Existence harus konsisten.
+
+6. Timeline harus konsisten.
+
+7. Location harus konsisten.
+
+8. Availability harus konsisten.
+
+9. Actor harus konsisten.
+
+10. Knowledge harus konsisten.
+
+11. Behavior harus konsisten.
+
+12. Relationship harus konsisten.
+
+13. Object harus konsisten.
+
+14. Ownership dan possession harus dibedakan.
+
+15. State harus memiliki transisi yang dapat dijelaskan.
+
+16. Event harus memiliki dependency yang valid.
+
+17. Causality harus dapat dipertanggungjawabkan.
+
+18. Consequence harus konsisten dengan event.
+
+19. UNKNOWN tidak boleh diubah menjadi fakta tanpa dasar.
+
+20. Ambiguitas tidak boleh dipaksakan.
+
+21. Konflik tidak boleh diperbaiki secara diam-diam.
+
+22. Story Logic tidak boleh memaksa satu solusi kreatif jika tersedia beberapa
+    solusi yang sama-sama valid.
+
+23. Masalah blueprint dikembalikan ke Story Design.
+
+24. Story Logic tidak mengatur gaya penulisan.
+
+25. Story Logic tidak mengatur kualitas bahasa.
+
+26. Story Logic tidak mengubah Canon demi menyelamatkan cerita.
+
+27. Semua pemeriksaan harus dapat ditelusuri ke sumber data atau aturan.
+
+28. Blueprint hanya dapat diteruskan setelah memenuhi batas logika yang
+    diperlukan.
+
+
+================================================================================
+END OF STORY LOGIC
+================================================================================
