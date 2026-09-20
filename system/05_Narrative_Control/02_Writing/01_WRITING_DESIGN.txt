@@ -1,0 +1,1610 @@
+================================================================================
+WRITING DESIGN
+(PROTOKOL PERANCANGAN BENTUK PENULISAN CERITA)
+================================================================================
+
+STATUS: ACTIVE
+TYPE: NARRATOR / WRITING
+AUTHORITY: WRITING DESIGN LAYER
+
+TUJUAN:
+
+Mengatur bagaimana FINAL BLUEPRINT dari STORY FLOW diterjemahkan menjadi
+rancangan penyampaian sebelum proses NARRATIVE RENDERING dimulai.
+
+WRITING DESIGN menentukan:
+
+- cara cerita disampaikan;
+- sudut pandang;
+- struktur penyampaian;
+- pembagian scene;
+- distribusi informasi;
+- tempo;
+- tingkat detail;
+- urutan pengungkapan;
+- posisi dialog;
+- posisi deskripsi;
+- transisi;
+- fokus pembaca;
+- bentuk pembukaan;
+- bentuk penutupan;
+- ritme penyampaian.
+
+WRITING DESIGN TIDAK menentukan:
+
+- fakta Universe;
+- event baru;
+- identity;
+- relationship;
+- object;
+- state;
+- knowledge;
+- Canon.
+
+
+================================================================================
+1. DEFINISI
+================================================================================
+
+Writing Design adalah tahap perancangan bentuk penyampaian cerita sebelum
+proses penulisan aktual.
+
+Writing Design menerima FINAL BLUEPRINT dari Story Flow.
+
+Writing Design mengubah blueprint tersebut menjadi WRITING PLAN.
+
+WRITING PLAN adalah rancangan bagaimana fakta dan alur yang telah ditetapkan
+akan disampaikan kepada pembaca.
+
+WRITING PLAN bukan:
+
+- Story Blueprint;
+- Canon;
+- narasi final;
+- fakta baru;
+- perubahan Universe.
+
+
+================================================================================
+2. POSISI DALAM NARRATOR
+================================================================================
+
+NARRATOR
+│
+├── STORY FLOW
+│   ├── STORY DESIGN
+│   ├── STORY LOGIC
+│   └── STORY VALIDATION
+│
+└── WRITING
+    ├── WRITING DESIGN
+    ├── NARRATIVE RENDERING
+    └── WRITING VALIDATION
+
+
+URUTAN:
+
+FINAL STORY BLUEPRINT
+        ↓
+WRITING DESIGN
+        ↓
+WRITING PLAN
+        ↓
+NARRATIVE RENDERING
+        ↓
+WRITING VALIDATION
+        ↓
+FINAL STORY
+
+
+================================================================================
+3. TUJUAN WRITING DESIGN
+================================================================================
+
+Writing Design harus menghasilkan rancangan penulisan yang:
+
+1. mudah diikuti;
+2. sesuai dengan alur;
+3. menjaga informasi pada posisi yang tepat;
+4. menjaga konsistensi perspektif;
+5. menjaga ritme;
+6. memberikan detail yang sesuai;
+7. membuat perpindahan antarbagian terasa alami;
+8. menjaga fokus pembaca;
+9. tidak membebani teks dengan informasi yang tidak diperlukan;
+10. tidak mengubah fakta Story Blueprint;
+11. memberikan instruksi yang cukup bagi Narrative Rendering;
+12. tidak mengunci rendering pada formula kalimat yang kaku.
+
+
+================================================================================
+4. INPUT
+================================================================================
+
+Writing Design menerima:
+
+- FINAL STORY BLUEPRINT;
+- Story Validation Result;
+- actor references yang relevan;
+- relationship references yang relevan;
+- object references yang relevan;
+- state;
+- knowledge boundaries;
+- timeline;
+- lokasi;
+- event sequence;
+- konsekuensi;
+- informasi yang akan tersedia kepada pembaca.
+
+
+Writing Design harus menggunakan blueprint yang telah berstatus READY.
+
+Jika blueprint belum READY, Writing Design tidak boleh menganggapnya sebagai
+blueprint final.
+
+
+================================================================================
+5. SUMBER KEBENARAN
+================================================================================
+
+Writing Design tidak menjadi sumber kebenaran untuk:
+
+- actor;
+- relationship;
+- object;
+- state;
+- knowledge;
+- behavior;
+- timeline;
+- ownership;
+- Canon.
+
+
+Writing Design hanya menentukan bagaimana fakta tersebut disampaikan.
+
+Jika Writing Design memerlukan perubahan fakta, permintaan tersebut harus
+dikembalikan ke Story Flow atau sistem sumber kebenaran yang relevan.
+
+
+================================================================================
+6. PRINCIPLE OF FACT PRESERVATION
+================================================================================
+
+Writing Design wajib menjaga seluruh fakta Story Blueprint.
+
+Hal yang boleh berubah:
+
+- cara penyampaian;
+- urutan presentasi informasi;
+- struktur scene;
+- tingkat detail;
+- tempo penyampaian;
+- fokus pembaca;
+- bentuk narasi;
+- bentuk dialog;
+- bentuk transisi.
+
+
+Hal yang tidak boleh berubah:
+
+- event;
+- identity;
+- relationship;
+- object;
+- ownership;
+- knowledge;
+- state;
+- location;
+- temporal facts;
+- causal facts.
+
+
+================================================================================
+7. PRESENTATION ORDER VS EVENT ORDER
+================================================================================
+
+Writing Design harus membedakan:
+
+EVENT ORDER
+    urutan kejadian sebenarnya dalam Universe.
+
+PRESENTATION ORDER
+    urutan informasi diberikan kepada pembaca.
+
+
+Keduanya dapat berbeda selama:
+
+1. fakta tetap sama;
+2. tidak menghasilkan kesalahpahaman faktual yang tidak disengaja;
+3. temporal logic tetap dapat dipahami;
+4. seluruh informasi tetap konsisten.
+
+
+Writing Design menentukan presentation order.
+
+Story Flow menentukan event order.
+
+
+================================================================================
+8. PENENTUAN POV
+================================================================================
+
+Writing Design harus menentukan POV yang digunakan untuk penyampaian.
+
+POV dapat dipilih berdasarkan:
+
+- kebutuhan cerita;
+- batas informasi;
+- fokus actor;
+- struktur event;
+- kebutuhan pembaca;
+- kontinuitas penyampaian.
+
+
+POV harus konsisten dalam bagian yang menggunakannya.
+
+Perubahan POV harus:
+
+- memiliki struktur yang jelas;
+- menjaga identitas subjek;
+- tidak mencampur informasi kesadaran actor secara tidak sah;
+- tidak menciptakan omniscience tanpa dasar.
+
+
+================================================================================
+9. BATAS KESADARAN
+================================================================================
+
+Writing Design harus menetapkan batas informasi yang dapat diketahui narrator
+dalam POV yang dipilih.
+
+Informasi dapat berasal dari:
+
+- observasi;
+- suara;
+- tindakan;
+- pikiran;
+- pengetahuan yang sah;
+- informasi yang telah ditetapkan tersedia kepada narrator.
+
+
+Narrative Rendering tidak boleh melampaui batas POV yang telah ditetapkan
+kecuali Writing Design memang mengizinkannya.
+
+
+================================================================================
+10. MULTI-POV
+================================================================================
+
+Jika cerita menggunakan lebih dari satu POV, Writing Design harus menentukan:
+
+- subjek masing-masing POV;
+- urutan POV;
+- batas masing-masing POV;
+- titik perpindahan;
+- alasan perpindahan;
+- informasi yang tersedia dalam masing-masing perspektif.
+
+
+Perpindahan POV harus dapat dikenali tanpa menimbulkan kebingungan.
+
+
+================================================================================
+11. NARRATIVE DISTANCE
+================================================================================
+
+Writing Design dapat menentukan jarak naratif:
+
+- sangat dekat;
+- dekat;
+- sedang;
+- lebih observasional;
+- atau bentuk lain yang sesuai.
+
+
+Jarak naratif menentukan seberapa dekat pembaca ditempatkan terhadap:
+
+- persepsi;
+- pikiran;
+- tindakan;
+- lingkungan;
+- informasi.
+
+
+Narrative distance harus konsisten dengan POV.
+
+
+================================================================================
+12. STRUKTUR CERITA DALAM PENYAMPAIAN
+================================================================================
+
+Writing Design menentukan bagaimana Story Blueprint dibagi menjadi unit
+penyampaian.
+
+Unit dapat berupa:
+
+- scene;
+- sequence;
+- transition;
+- segment;
+- section.
+
+
+Pembagian dilakukan berdasarkan kebutuhan penyampaian.
+
+Jumlah unit tidak ditentukan secara tetap.
+
+
+================================================================================
+13. SCENE DESIGN
+================================================================================
+
+Setiap scene yang dibuat harus memiliki:
+
+- fungsi;
+- fokus;
+- entry point;
+- informasi yang relevan;
+- event atau perkembangan yang relevan;
+- exit condition.
+
+
+Scene tidak dibuat hanya untuk menambah panjang teks.
+
+Scene tidak boleh menciptakan event baru.
+
+
+================================================================================
+14. SCENE TRANSITION
+================================================================================
+
+Writing Design harus menentukan kebutuhan transisi antar-scene.
+
+Transisi mempertimbangkan:
+
+- perubahan waktu;
+- perubahan lokasi;
+- perubahan POV;
+- perubahan fokus;
+- perubahan tingkat intensitas;
+- perubahan informasi.
+
+
+Transisi tidak boleh digunakan untuk menyembunyikan ketidakkonsistenan
+story flow.
+
+
+================================================================================
+15. FOCUS MANAGEMENT
+================================================================================
+
+Writing Design harus menentukan fokus utama pembaca pada setiap bagian.
+
+Fokus dapat diarahkan melalui:
+
+- actor;
+- tindakan;
+- objek;
+- informasi;
+- konflik;
+- perubahan keadaan;
+- dialog;
+- detail lingkungan.
+
+
+Fokus tidak boleh mengubah pentingnya event yang telah ditetapkan dalam
+Story Blueprint secara arbitrer.
+
+
+================================================================================
+16. INFORMATION DISTRIBUTION
+================================================================================
+
+Writing Design menentukan:
+
+- informasi yang diberikan segera;
+- informasi yang ditunda;
+- informasi yang diungkap bertahap;
+- informasi yang tetap berada di luar teks.
+
+
+Distribusi informasi harus mempertahankan kebenaran.
+
+Menunda informasi tidak sama dengan mengubah informasi.
+
+
+================================================================================
+17. READER KNOWLEDGE
+================================================================================
+
+Writing Design harus membedakan:
+
+- Universe Truth;
+- Actor Knowledge;
+- Reader Knowledge;
+- Narrator-accessible Information.
+
+
+Pembaca boleh mengetahui lebih sedikit, sama, atau lebih banyak dari actor
+apabila struktur cerita mengizinkannya.
+
+Perbedaan tersebut harus disengaja dan dapat dilacak.
+
+
+================================================================================
+18. INFORMATION DISCLOSURE
+================================================================================
+
+Writing Design mengatur kapan informasi menjadi terlihat oleh pembaca.
+
+Pengungkapan harus mempertimbangkan:
+
+- konteks;
+- POV;
+- relevansi;
+- tempo;
+- misteri;
+- kesinambungan.
+
+
+Informasi yang belum boleh diketahui pembaca tidak boleh muncul melalui
+narrator secara tidak sengaja.
+
+
+================================================================================
+19. INFORMATION WITHHOLDING
+================================================================================
+
+Informasi dapat ditahan dari pembaca apabila Story Blueprint mengizinkan.
+
+Penahanan informasi harus:
+
+- tidak merubah fakta;
+- tidak membuat narrator berbohong tentang fakta;
+- tidak menghasilkan contradiction;
+- dapat dipahami setelah informasi akhirnya tersedia.
+
+
+================================================================================
+20. PENGATURAN DETAIL
+================================================================================
+
+Writing Design harus menentukan tingkat detail yang sesuai dengan fungsi
+bagian cerita.
+
+Detail dapat difokuskan pada:
+
+- actor;
+- action;
+- environment;
+- object;
+- dialogue;
+- internal processing;
+- sensory information.
+
+
+Detail harus proporsional terhadap kepentingan bagian tersebut.
+
+
+================================================================================
+21. DETAIL RELEVANSI
+================================================================================
+
+Detail diprioritaskan berdasarkan fungsi.
+
+Prioritas tinggi:
+
+- detail yang memengaruhi alur;
+- detail yang membantu orientasi;
+- detail yang memperjelas tindakan;
+- detail yang memperjelas hubungan;
+- detail yang memperjelas keadaan.
+
+
+Detail yang tidak memberikan fungsi tidak perlu diperpanjang.
+
+
+================================================================================
+22. SENSORIAL DESIGN
+================================================================================
+
+Writing Design dapat menentukan jenis pengalaman sensorik yang digunakan.
+
+Informasi sensorik dapat berasal dari:
+
+- visual;
+- suara;
+- sentuhan;
+- bau;
+- rasa;
+- kondisi fisik lainnya.
+
+
+Pemilihan sensorik harus sesuai dengan POV dan keadaan scene.
+
+
+================================================================================
+23. ACTION PRESENTATION
+================================================================================
+
+Writing Design menentukan tingkat fokus terhadap action.
+
+Action penting dapat memperoleh:
+
+- detail lebih tinggi;
+- tempo lebih lambat;
+- urutan lebih jelas;
+- fokus pembaca lebih kuat.
+
+
+Action transisional dapat disampaikan secara lebih ringkas apabila tidak
+mengandung nilai naratif yang perlu diperbesar.
+
+
+================================================================================
+24. DIALOGUE DESIGN
+================================================================================
+
+Writing Design menentukan fungsi dialog dalam scene.
+
+Dialog dapat digunakan untuk:
+
+- menyampaikan informasi;
+- melakukan tindakan sosial;
+- memperlihatkan hubungan;
+- menghasilkan perubahan;
+- menyembunyikan informasi;
+- mengungkapkan sikap;
+- menghasilkan konflik;
+- menggerakkan event.
+
+
+Dialog tidak boleh digunakan untuk mengulang seluruh informasi yang sudah
+jelas dari tindakan atau konteks.
+
+
+================================================================================
+25. DIALOGUE DISTRIBUTION
+================================================================================
+
+Writing Design menentukan bagian mana yang memerlukan dialog dan bagian mana
+yang lebih baik disampaikan melalui:
+
+- tindakan;
+- observasi;
+- narasi;
+- internal thought;
+- informasi lingkungan.
+
+
+Dialog bukan kewajiban setiap scene.
+
+
+================================================================================
+26. SPEECH CONSISTENCY
+================================================================================
+
+Writing Design harus menghormati style actor yang telah ditentukan oleh
+Actor System.
+
+Writing Design tidak boleh menciptakan gaya bicara baru yang bertentangan
+dengan style actor.
+
+Jika actor style belum menentukan detail tertentu, Narrative Rendering dapat
+menggunakan variasi yang tetap konsisten dengan seluruh data actor.
+
+
+================================================================================
+27. INNER THOUGHT
+================================================================================
+
+Writing Design menentukan apakah inner thought diperlukan.
+
+Inner thought hanya digunakan apabila mempunyai fungsi naratif.
+
+Fungsinya dapat mencakup:
+
+- kalkulasi;
+- observasi internal;
+- keraguan;
+- konflik pemikiran;
+- evaluasi;
+- keputusan internal.
+
+
+Inner thought tidak boleh menjadi saluran untuk memasukkan informasi yang
+seharusnya belum diketahui actor.
+
+
+================================================================================
+28. EMOTIONAL PRESENTATION
+================================================================================
+
+Writing Design menentukan bagaimana perkembangan emosional disampaikan.
+
+Penyampaian dapat memanfaatkan:
+
+- tindakan;
+- dialog;
+- pause;
+- perubahan tempo;
+- perubahan fokus;
+- respons fisik;
+- internal processing;
+- lingkungan;
+- subtext.
+
+
+Writing Design tidak boleh mengubah emotional state yang berasal dari
+Universe.
+
+
+================================================================================
+29. SHOW AND TELL BALANCE
+================================================================================
+
+Writing Design menentukan keseimbangan antara:
+
+SHOW
+    memperlihatkan melalui tindakan, dialog, persepsi, dan detail.
+
+TELL
+    memberikan informasi secara langsung.
+
+
+Tidak ada larangan mutlak terhadap salah satunya.
+
+Pilihan ditentukan berdasarkan:
+
+- kebutuhan informasi;
+- pacing;
+- POV;
+- kompleksitas;
+- fungsi scene;
+- readability.
+
+
+================================================================================
+30. PACING DESIGN
+================================================================================
+
+Writing Design mengatur pacing pada tingkat penyampaian.
+
+Pacing dapat:
+
+- melambat;
+- meningkat;
+- berpindah secara bertahap;
+- tetap stabil.
+
+
+Pacing ditentukan berdasarkan kebutuhan perhatian pembaca dan struktur event.
+
+Pacing tidak mengubah durasi event dalam Universe.
+
+
+================================================================================
+31. MICRO-PACING
+================================================================================
+
+Writing Design dapat menentukan perubahan tempo di dalam scene.
+
+Perubahan dapat diterapkan pada:
+
+- action;
+- dialog;
+- observation;
+- internal processing;
+- transition.
+
+
+Micro-pacing adalah keputusan presentasi, bukan perubahan timeline Canon.
+
+
+================================================================================
+32. PARAGRAPH FLOW
+================================================================================
+
+Writing Design menentukan bagaimana informasi dikelompokkan dalam paragraf.
+
+Paragraf harus memiliki hubungan yang jelas terhadap:
+
+- satu fokus;
+- satu perkembangan;
+- satu rangkaian tindakan;
+- satu unit informasi;
+- atau satu fungsi penyampaian.
+
+
+Paragraph division tidak boleh mengaburkan hubungan event.
+
+
+================================================================================
+33. SENTENCE RHYTHM
+================================================================================
+
+Writing Design menentukan karakter umum ritme kalimat sesuai kebutuhan scene.
+
+Ritme dapat diatur melalui:
+
+- panjang kalimat;
+- variasi struktur;
+- jeda;
+- kepadatan informasi;
+- perpindahan antara dialog dan narasi.
+
+
+Sentence rhythm adalah kewenangan Writing dan tidak mengubah fakta.
+
+
+================================================================================
+34. READABILITY
+================================================================================
+
+Writing Design harus mengutamakan keterbacaan.
+
+Keterbacaan mencakup:
+
+- kejelasan referensi;
+- urutan informasi;
+- distribusi paragraf;
+- kesinambungan;
+- beban informasi;
+- kejelasan subjek;
+- transisi.
+
+
+Tulisan tidak boleh dibuat kompleks hanya demi terlihat literer.
+
+
+================================================================================
+35. COGNITIVE LOAD
+================================================================================
+
+Writing Design harus mengendalikan beban informasi pembaca.
+
+Beban dapat meningkat karena:
+
+- terlalu banyak actor;
+- terlalu banyak object;
+- terlalu banyak informasi baru;
+- perubahan lokasi;
+- perubahan waktu;
+- perubahan POV;
+- dialog padat;
+- struktur kompleks.
+
+
+Jika beban terlalu tinggi, penyampaian harus diatur ulang tanpa mengubah
+fakta cerita.
+
+
+================================================================================
+36. REFERENCE CLARITY
+================================================================================
+
+Writing Design harus memastikan pembaca dapat memahami referensi terhadap:
+
+- actor;
+- object;
+- lokasi;
+- event;
+- waktu;
+- relationship.
+
+
+Pengulangan nama atau sebutan hanya digunakan sesuai kebutuhan kejelasan.
+
+
+================================================================================
+37. REPETITION CONTROL
+================================================================================
+
+Writing Design harus mengendalikan pengulangan informasi.
+
+Pengulangan dapat dipertahankan jika:
+
+- diperlukan untuk orientasi;
+- mempunyai fungsi penekanan;
+- membantu pemahaman.
+
+
+Pengulangan yang tidak memiliki fungsi sebaiknya dikurangi.
+
+
+================================================================================
+38. TRANSITION CONTROL
+================================================================================
+
+Transisi harus menjaga pembaca tetap memahami:
+
+- kapan;
+- di mana;
+- siapa;
+- apa yang sedang terjadi;
+- perubahan fokus.
+
+
+Transisi tidak boleh menjadi sumber fakta baru.
+
+
+================================================================================
+39. OPENING DESIGN
+================================================================================
+
+Writing Design menentukan cara cerita dimulai.
+
+Opening harus mempertimbangkan:
+
+- fokus;
+- konteks minimum;
+- kejelasan;
+- daya tarik;
+- kebutuhan POV;
+- kesinambungan dengan keadaan awal.
+
+
+Opening tidak boleh menambahkan event yang tidak terdapat dalam Story
+Blueprint.
+
+
+================================================================================
+40. CLOSING DESIGN
+================================================================================
+
+Writing Design menentukan cara cerita berakhir.
+
+Closing harus sesuai dengan:
+
+- ending state;
+- event terakhir;
+- tingkat penyelesaian;
+- kesinambungan dengan cerita berikutnya.
+
+
+Closing tidak boleh menambahkan kesimpulan moral atau fakta baru kecuali
+memang telah ditetapkan sebagai bagian dari Story Blueprint.
+
+
+================================================================================
+41. SUBTEXT DESIGN
+================================================================================
+
+Writing Design dapat menentukan keberadaan subtext.
+
+Subtext digunakan untuk:
+
+- mempertahankan makna implisit;
+- memperlihatkan perbedaan antara ucapan dan maksud;
+- memperlihatkan ketegangan;
+- memperkaya hubungan;
+- menjaga informasi tidak selalu disampaikan langsung.
+
+
+Subtext tidak boleh bertentangan dengan fakta actor atau knowledge.
+
+
+================================================================================
+42. NARRATIVE EMPHASIS
+================================================================================
+
+Writing Design menentukan bagian mana yang menerima:
+
+- detail lebih tinggi;
+- ruang lebih besar;
+- tempo lebih lambat;
+- fokus pembaca lebih kuat.
+
+
+Emphasis harus mempertimbangkan kepentingan event dan fokus cerita.
+
+
+================================================================================
+43. SCENE WEIGHT
+================================================================================
+
+Tidak semua scene harus memperoleh bobot penyampaian yang sama.
+
+Scene weight dapat ditentukan berdasarkan:
+
+- pentingnya event;
+- pentingnya perubahan;
+- pentingnya actor;
+- pentingnya relationship;
+- pentingnya object;
+- dampak terhadap cerita.
+
+
+Scene yang tidak memiliki nilai tinggi tidak perlu memperoleh porsi yang
+berlebihan.
+
+
+================================================================================
+44. TRANSITIONAL COMPRESSION
+================================================================================
+
+Writing Design dapat memadatkan bagian cerita yang hanya berfungsi
+menghubungkan dua bagian penting.
+
+Compression tidak boleh menghilangkan fakta yang dibutuhkan untuk memahami
+causal chain.
+
+
+================================================================================
+45. TEMPORAL PRESENTATION
+================================================================================
+
+Writing Design menentukan bagaimana perubahan waktu disampaikan.
+
+Perubahan waktu dapat disampaikan melalui:
+
+- transition;
+- contextual cues;
+- direct temporal information;
+- structural separation.
+
+
+Presentasi waktu harus tetap konsisten dengan Story Blueprint.
+
+
+================================================================================
+46. FLASHBACK DAN NON-LINEAR PRESENTATION
+================================================================================
+
+Writing Design dapat menggunakan presentasi non-linear apabila sesuai dengan
+Story Blueprint.
+
+Jika digunakan, Writing Design harus menjaga:
+
+- temporal clarity;
+- POV clarity;
+- information clarity;
+- transition clarity.
+
+
+Perubahan urutan presentasi tidak boleh mengubah urutan fakta Universe.
+
+
+================================================================================
+47. SCENE ENTRY
+================================================================================
+
+Setiap scene harus memiliki cara masuk yang sesuai dengan:
+
+- lokasi;
+- waktu;
+- POV;
+- keadaan actor;
+- fokus scene.
+
+
+Pembukaan scene tidak boleh membutuhkan fakta tambahan yang tidak tersedia
+dalam blueprint.
+
+
+================================================================================
+48. SCENE EXIT
+================================================================================
+
+Setiap scene harus memiliki kondisi keluar yang jelas.
+
+Exit dapat terjadi karena:
+
+- event selesai;
+- fokus berpindah;
+- waktu berubah;
+- lokasi berubah;
+- consequence dimulai;
+- fungsi scene selesai.
+
+
+Scene exit tidak boleh mengubah ending state yang sudah ditetapkan.
+
+
+================================================================================
+49. NARRATIVE ECONOMY
+================================================================================
+
+Writing Design harus menggunakan ruang teks secara efisien.
+
+Setiap bagian tulisan sebaiknya mempunyai fungsi.
+
+Fungsi dapat berupa:
+
+- progress;
+- information;
+- characterization;
+- atmosphere;
+- relationship;
+- transition;
+- consequence.
+
+
+Writing tidak boleh dipenuhi kalimat yang tidak memiliki fungsi.
+
+
+================================================================================
+50. NATURALNESS
+================================================================================
+
+Writing Design harus mengarahkan rendering menuju penyampaian yang terasa
+alami.
+
+Naturalness mencakup:
+
+- aliran informasi;
+- dialog;
+- pergantian topik;
+- respons;
+- transisi;
+- tempo.
+
+
+Naturalness tidak boleh dicapai dengan mengubah Canon.
+
+
+================================================================================
+51. AUDIENCE ORIENTATION
+================================================================================
+
+Writing Design harus mempertimbangkan kemampuan pembaca untuk memahami
+cerita tanpa memerlukan data internal Universe.
+
+Pembaca harus memperoleh informasi yang diperlukan melalui teks.
+
+Namun Writing tidak harus menjelaskan seluruh Universe.
+
+
+================================================================================
+52. EXPOSITION CONTROL
+================================================================================
+
+Eksposisi harus diberikan hanya sebanyak yang diperlukan untuk memahami
+cerita.
+
+Eksposisi tidak boleh:
+
+- membanjiri pembaca;
+- mengulang data yang tidak relevan;
+- mengambil alih event;
+- menggantikan interaksi.
+
+
+Eksposisi harus tetap sesuai POV dan information boundary.
+
+
+================================================================================
+53. DESCRIPTION CONTROL
+================================================================================
+
+Deskripsi harus memiliki fungsi yang jelas.
+
+Fungsi dapat mencakup:
+
+- orientasi;
+- atmosfer;
+- karakterisasi;
+- penekanan;
+- foreshadowing yang sah;
+- pemahaman object;
+- pemahaman aksi.
+
+
+Deskripsi tidak boleh mengarang detail fakta yang bertentangan dengan Universe.
+
+
+================================================================================
+54. FORESHADOWING
+================================================================================
+
+Writing Design dapat mengatur foreshadowing apabila blueprint mendukungnya.
+
+Foreshadowing harus:
+
+- berasal dari fakta yang sah;
+- tidak menciptakan false canon;
+- tidak memberikan kepastian yang belum terjadi;
+- tidak memaksakan pembaca pada interpretasi tertentu.
+
+
+================================================================================
+55. EMOTIONAL PACING
+================================================================================
+
+Bagian yang memiliki emotional significance dapat diberikan ruang yang lebih
+besar jika sesuai dengan Story Blueprint.
+
+Ruang tambahan dapat digunakan melalui:
+
+- observasi;
+- reaksi;
+- dialog;
+- pause;
+- inner thought;
+- detail.
+
+
+Writing Design tidak boleh menciptakan emotional event baru.
+
+
+================================================================================
+56. ACTION PACING
+================================================================================
+
+Action dengan tingkat kepentingan tinggi dapat memperoleh penyampaian yang
+lebih terperinci.
+
+Action dengan fungsi transisi dapat dikompresi.
+
+Pacing hanya memengaruhi penyampaian, bukan kecepatan waktu dalam Universe.
+
+
+================================================================================
+57. BALANCE
+================================================================================
+
+Writing Design harus menyeimbangkan:
+
+- action;
+- dialogue;
+- description;
+- thought;
+- information;
+- transition.
+
+
+Tidak ada rasio tetap yang wajib digunakan.
+
+Keseimbangan ditentukan oleh kebutuhan masing-masing cerita.
+
+
+================================================================================
+58. STYLE COMPATIBILITY
+================================================================================
+
+Writing Design harus kompatibel dengan:
+
+- Story Blueprint;
+- Actor Style;
+- Universe tone;
+- format produksi;
+- konteks cerita.
+
+
+Style tidak boleh menggantikan fakta.
+
+Style tidak boleh mengubah behavior actor.
+
+
+================================================================================
+59. TONE
+================================================================================
+
+Writing Design dapat menentukan tone penyampaian.
+
+Tone harus konsisten dengan:
+
+- konteks;
+- event;
+- actor;
+- setting;
+- bentuk cerita.
+
+
+Tone tidak boleh memaksa seluruh cerita menggunakan satu tingkat intensitas.
+
+
+================================================================================
+60. INTENSITY CONTROL
+================================================================================
+
+Writing Design menentukan tingkat intensitas penyampaian.
+
+Intensitas dapat berubah berdasarkan:
+
+- konflik;
+- importance;
+- emotional significance;
+- event scale;
+- consequence.
+
+
+Intensitas penulisan tidak sama dengan skala event Universe.
+
+
+================================================================================
+61. STRUCTURAL VARIATION
+================================================================================
+
+Writing Design tidak boleh memaksa semua cerita menggunakan struktur
+penyampaian yang sama.
+
+Variasi diperbolehkan selama:
+
+- clarity tetap terjaga;
+- facts tetap terjaga;
+- POV tetap jelas;
+- Story Blueprint tetap dipatuhi.
+
+
+================================================================================
+62. FORMULA AVOIDANCE
+================================================================================
+
+Tidak ada kewajiban universal untuk selalu menggunakan:
+
+- hook tertentu;
+- opening tertentu;
+- jumlah scene tertentu;
+- jumlah dialog tertentu;
+- jenis ending tertentu;
+- tingkat emosi tertentu;
+- teknik subtext tertentu;
+- jenis POV tertentu.
+
+
+Writing Design memilih teknik berdasarkan kebutuhan cerita.
+
+
+================================================================================
+63. WRITING PLAN
+================================================================================
+
+Hasil Writing Design harus menghasilkan WRITING PLAN.
+
+Minimal mencakup:
+
+WRITING_ID
+STORY_ID
+POV
+NARRATIVE_DISTANCE
+PRESENTATION_ORDER
+SCENE_SEQUENCE
+FOCUS_MAP
+INFORMATION_FLOW
+DIALOGUE_PLAN
+DESCRIPTION_PLAN
+INNER_THOUGHT_PLAN
+PACING_PLAN
+TRANSITION_PLAN
+OPENING_PLAN
+CLOSING_PLAN
+STYLE_COMPATIBILITY
+TONE
+INTENSITY
+READABILITY_CONSIDERATION
+
+
+Field hanya digunakan apabila relevan.
+
+
+================================================================================
+64. WRITING DESIGN GATE
+================================================================================
+
+Sebelum masuk ke NARRATIVE RENDERING:
+
+[ ] Story Blueprint berstatus READY
+[ ] POV ditentukan
+[ ] Narrative distance ditentukan apabila diperlukan
+[ ] Presentation order ditentukan
+[ ] Scene structure jelas
+[ ] Fokus setiap bagian dapat diidentifikasi
+[ ] Information flow jelas
+[ ] Knowledge boundary tetap terjaga
+[ ] Dialogue plan tersedia apabila diperlukan
+[ ] Description plan tersedia apabila diperlukan
+[ ] Inner thought plan tersedia apabila diperlukan
+[ ] Pacing plan tersedia
+[ ] Transition plan tersedia
+[ ] Opening plan tersedia
+[ ] Closing plan tersedia
+[ ] Tone sesuai konteks
+[ ] Style actor tetap kompatibel
+[ ] Tidak ada fakta baru yang dibuat
+[ ] Tidak ada event baru yang dibuat
+[ ] Tidak ada perubahan Canon
+[ ] Writing Plan dapat diberikan kepada Narrative Rendering
+
+
+================================================================================
+65. HUBUNGAN DENGAN NARRATIVE RENDERING
+================================================================================
+
+WRITING DESIGN bertugas:
+
+"MERANCANG BAGAIMANA CERITA AKAN DISAMPAIKAN."
+
+
+NARRATIVE RENDERING bertugas:
+
+"MENULIS CERITA BERDASARKAN RANCANGAN TERSEBUT."
+
+
+Rendering tidak boleh mengubah fakta Story Blueprint.
+
+Jika Rendering menemukan bahwa Writing Plan tidak dapat menjalankan
+blueprint dengan benar, masalah harus ditangani tanpa mengubah Canon.
+
+
+================================================================================
+66. HUBUNGAN DENGAN WRITING VALIDATION
+================================================================================
+
+Writing Design menghasilkan Writing Plan.
+
+Narrative Rendering menghasilkan Draft/Story Text.
+
+Writing Validation memeriksa apakah hasil rendering:
+
+- mengikuti Writing Plan;
+- mempertahankan Story Blueprint;
+- mudah dibaca;
+- konsisten;
+- tidak menghasilkan fakta baru;
+- tidak merusak struktur.
+
+
+================================================================================
+67. REVISION BOUNDARY
+================================================================================
+
+Jika Writing Design menemukan masalah faktual:
+
+→ kembali ke Story Flow.
+
+Jika Writing Design menemukan masalah logika:
+
+→ kembali ke Story Logic.
+
+Jika Writing Design menemukan masalah kesiapan blueprint:
+
+→ kembali ke Story Validation.
+
+Jika Writing Design menemukan masalah murni penyampaian:
+
+→ tetap di Writing.
+
+
+================================================================================
+68. NO CANON CREATION
+================================================================================
+
+Writing Design dilarang menciptakan Canon.
+
+Rencana mengenai:
+
+- kalimat;
+- struktur;
+- fokus;
+- scene;
+- pacing;
+- dialog;
+- deskripsi;
+
+tidak menjadi fakta Universe.
+
+
+================================================================================
+69. NO FACTUAL INFERENCE
+================================================================================
+
+Writing Design tidak boleh mengisi detail faktual yang belum tersedia hanya
+karena detail tersebut membuat tulisan lebih mudah.
+
+Informasi yang belum diketahui tetap UNKNOWN.
+
+Narrative Rendering juga tidak boleh mengubah UNKNOWN menjadi fakta hanya
+karena Writing Plan membutuhkan detail.
+
+
+================================================================================
+70. NO STORY REWRITE
+================================================================================
+
+Writing Design tidak boleh mengubah Story Blueprint hanya untuk membuat
+penyampaian lebih dramatis.
+
+Jika struktur story terasa sulit ditulis:
+
+1. identifikasi masalah;
+2. tentukan apakah masalah presentation atau story;
+3. jika presentation, perbaiki Writing Plan;
+4. jika story, kembalikan ke Story Flow.
+
+
+================================================================================
+71. NO STYLE OVER FACT
+================================================================================
+
+Style tidak boleh mengalahkan fakta.
+
+Jika gaya penulisan yang diinginkan bertentangan dengan:
+
+- knowledge;
+- state;
+- behavior;
+- relationship;
+- object;
+- timeline;
+
+maka fakta Universe dipertahankan.
+
+
+================================================================================
+72. NO READABILITY AT THE EXPENSE OF TRUTH
+================================================================================
+
+Keterbacaan tidak boleh dicapai dengan:
+
+- menghapus fakta penting;
+- mengubah event;
+- menggabungkan actor;
+- mengubah object;
+- mengubah relationship;
+- mengubah state;
+- mengubah timeline.
+
+
+Keterbacaan harus dicapai melalui teknik penyampaian.
+
+
+================================================================================
+73. PRINCIPLE OF FLEXIBLE EXECUTION
+================================================================================
+
+Writing Design memberikan arahan.
+
+Narrative Rendering tetap memiliki fleksibilitas pada:
+
+- pemilihan kata;
+- variasi kalimat;
+- phrasing;
+- dialog wording;
+- deskripsi;
+- ritme mikro.
+
+
+Fleksibilitas tersebut tidak boleh mengubah fakta yang telah ditentukan.
+
+
+================================================================================
+74. PRINCIPLE OF READER COMFORT
+================================================================================
+
+Writing Design harus mempertimbangkan kenyamanan pembaca.
+
+Kenyamanan mencakup:
+
+- tidak mudah tersesat;
+- tidak kelebihan informasi;
+- tidak kehilangan subjek;
+- tidak kehilangan waktu;
+- tidak kehilangan lokasi;
+- dapat mengikuti perubahan;
+- dapat memahami maksud scene.
+
+
+Reader comfort harus diperoleh tanpa mengorbankan continuity.
+
+
+================================================================================
+75. PRINCIPLE OF NARRATIVE CLARITY
+================================================================================
+
+Setiap bagian tulisan harus cukup jelas untuk menjawab kebutuhan konteks
+pembaca:
+
+- siapa;
+- di mana;
+- kapan;
+- apa yang terjadi;
+- apa yang berubah;
+- mengapa bagian tersebut relevan.
+
+
+Tidak semua informasi harus dijelaskan secara eksplisit.
+
+Kejelasan dapat dicapai melalui struktur penyampaian.
+
+
+================================================================================
+76. PRINCIPLE OF NATURAL FLOW
+================================================================================
+
+Writing Plan harus menghasilkan aliran yang:
+
+- tidak tersendat;
+- tidak meloncat tanpa alasan;
+- tidak terlalu padat;
+- tidak terlalu kosong;
+- tidak terlalu menjelaskan;
+- tidak terlalu menyembunyikan;
+- tetap mengikuti Story Blueprint.
+
+
+================================================================================
+77. FINAL HANDOFF
+================================================================================
+
+Jika Writing Plan berstatus READY:
+
+WRITING DESIGN
+      ↓
+WRITING PLAN
+      ↓
+NARRATIVE RENDERING
+
+
+Writing Plan menjadi instruksi penyampaian bagi Narrative Rendering.
+
+Writing Plan bukan Canon.
+
+Story Blueprint tetap menjadi sumber kebenaran alur.
+
+
+================================================================================
+78. ATURAN UTAMA
+================================================================================
+
+1. Writing Design merancang cara penyampaian cerita.
+
+2. Writing Design tidak merancang event.
+
+3. Writing Design tidak menciptakan Canon.
+
+4. Story Blueprint adalah sumber kebenaran alur.
+
+5. Writing Plan adalah rancangan penyampaian.
+
+6. Event order dan presentation order harus dibedakan.
+
+7. POV harus jelas.
+
+8. Batas kesadaran harus dihormati.
+
+9. Information flow harus dikendalikan.
+
+10. Scene harus memiliki fungsi.
+
+11. Dialogue harus memiliki fungsi.
+
+12. Description harus memiliki fungsi.
+
+13. Pacing adalah alat penyampaian.
+
+14. Pacing tidak mengubah waktu Universe.
+
+15. Style harus kompatibel dengan Actor System.
+
+16. Knowledge boundary harus dipertahankan.
+
+17. Readability harus dijaga.
+
+18. Naturalness harus dijaga.
+
+19. Tidak ada formula penulisan universal.
+
+20. Tidak ada teknik naratif yang wajib digunakan pada setiap cerita.
+
+21. Writing Design tidak boleh memperbaiki masalah factual dengan cara
+    mengubah fakta.
+
+22. Writing Design tidak boleh memperbaiki masalah logika dengan cara
+    menyembunyikan logika tersebut.
+
+23. Masalah story dikembalikan ke Story Flow.
+
+24. Masalah penyampaian diperbaiki di Writing.
+
+25. Narrative Rendering harus menerima Writing Plan yang dapat dijalankan.
+
+26. Writing Plan harus menjaga fakta Story Blueprint tetap utuh.
+
+27. Kualitas penyampaian harus meningkatkan pengalaman pembaca tanpa
+    mengubah kebenaran Universe.
+
+
+================================================================================
+END OF WRITING DESIGN
+================================================================================
