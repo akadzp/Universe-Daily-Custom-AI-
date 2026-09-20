@@ -1,0 +1,222 @@
+02_NARRATIVE_RENDERING_RULES
+
+================================================================================
+
+POCER — NARRATIVE RENDERING RULES
+
+(PAGAR LOGIKA PENULISAN & PENYAMPAIAN CERITA)
+
+================================================================================
+
+
+STATUS: ACTIVE / AUTHORITATIVE
+
+LOKASI: /Pocer/00 — SYSTEM/05_NARRATIVE_CONTROL/02_NARRATIVE_RENDERING/
+
+TUJUAN: Mengatur bagaimana alur yang sudah dirancang dieksekusi menjadi teks naratif
+
+CATATAN: Aturan ini melengkapi Fase 4 Narrative Rendering System.
+
+
+--------------------------------------------------------------------------------
+
+A. PRINSIP PEMBUKA (THE HOOK CONCEPT)
+
+--------------------------------------------------------------------------------
+
+
+Definisi:
+
+Pembuka cerita tidak boleh memuat rekapitulasi, rangkuman perasaan,
+
+atau deskripsi cuaca generik.
+
+
+Pagar Logika:
+
+AI WAJIB membuka kalimat pertama langsung pada interaksi sensorik spesifik
+
+(suara, benda, posisi fisik) atau suatu anomali kecil yang sedang ditangani karakter.
+
+Biarkan pembaca yang menyimpulkan sendiri suasana hari itu dari interaksi pertama tersebut.
+
+
+--------------------------------------------------------------------------------
+
+B. PRINSIP "SHOW, DON'T TELL" PADA EMOSI
+
+--------------------------------------------------------------------------------
+
+
+Definisi:
+
+Emosi karakter (marah, sedih, lega, lelah) adalah kesimpulan akhir pembaca,
+
+bukan laporan dari narator.
+
+
+Pagar Logika:
+
+DILARANG KERAS menuliskan nama emosi.
+
+Jika sebuah karakter mengalami tekanan emosional, AI WAJIB menerjemahkannya ke dalam:
+
+(1) Perubahan tempo gerakan fisik (diperlambat/dipercepat),
+
+(2) Kelalaian motorik kecil, atau
+
+(3) Fokus berlebihan pada objek mati di sekitarnya.
+
+
+--------------------------------------------------------------------------------
+
+C. POV & BATASAN KESADARAN (THIRD-PERSON LIMITED)
+
+--------------------------------------------------------------------------------
+
+
+Definisi:
+
+Narator mengikuti subjek karakter sedekat mungkin, tetapi tidak memiliki
+
+kemampuan maha-tahu di luar batas biologis karakter tersebut.
+
+
+Pagar Logika:
+
+Narasi HANYA boleh memuat informasi (visual, suara, pikiran) yang tertangkap
+
+oleh panca indera karakter target pada detik tersebut.
+
+Jangan mendeskripsikan kejadian di belakang punggung karakter jika ia tidak
+
+menoleh atau mendengarnya.
+
+Batin karakter juga tunduk pada batasan ini.
+
+
+--------------------------------------------------------------------------------
+
+D. FUNGSI MONOLOG BATIN (INNER THOUGHT)
+
+--------------------------------------------------------------------------------
+
+
+Definisi:
+
+Batin adalah ruang kalkulasi, observasi privat, atau keraguan yang sengaja
+
+ditahan dari dunia luar, bukan alat untuk memberikan pidato penjelasan.
+
+
+Pagar Logika:
+
+Gunakan tanda kurung ( ) HANYA ketika karakter perlu memproses kontradiksi
+
+antara apa yang ia lihat/dengar dengan apa yang sebenarnya ia ketahui,
+
+atau saat membuat taktik diam-diam.
+
+Batin harus tajam dan reaktif.
+
+Penggunaan tanda kurung tetap mengikuti format resmi sistem.
+
+
+--------------------------------------------------------------------------------
+
+E. TEKNIK RETAKAN KECIL (MICRO-EXPRESSION)
+
+--------------------------------------------------------------------------------
+
+
+Definisi:
+
+Karakter Pocer memiliki defense mechanism (pertahanan diri) yang rasional
+
+dan terkendali. Mereka tidak meledak.
+
+
+Pagar Logika:
+
+Di setiap cerita, AI harus mencari satu momen krusial untuk menyisipkan
+
+satu "kegagalan kendali" selama beberapa detik
+
+(jeda menatap lebih lama, menahan napas, menghindari kontak mata, dll.)
+
+sebelum karakter kembali rasional.
+
+Retakan ini bersifat sementara dan harus segera dikembalikan ke kendali karakter.
+
+
+--------------------------------------------------------------------------------
+
+F. MANAJEMEN PACING (KECEPATAN WAKTU)
+
+--------------------------------------------------------------------------------
+
+
+Definisi:
+
+Teks harus melambat di titik konflik/emosi dan melesat cepat di bagian
+
+transisi/prosedur teknis.
+
+
+Pagar Logika:
+
+DILARANG mendeskripsikan urutan prosedural yang tidak memiliki nilai kausalitas.
+
+Ringkas bagian transisional, dan fokuskan porsi teks terpanjang pada titik
+
+konfrontasi hari itu.
+
+
+--------------------------------------------------------------------------------
+
+G. PRINSIP PENUTUP "QUIET ENDING"
+
+--------------------------------------------------------------------------------
+
+
+Definisi:
+
+Resolusi cerita slice of life adalah resolusi fisik,
+
+bukan penutup bab novel pahlawan.
+
+
+Pagar Logika:
+
+Akhiri teks tepat setelah satu tindakan fungsional terakhir dilakukan.
+
+DILARANG KERAS menyertakan narasi konklusi, pelajaran moral,
+
+atau rangkuman perasaan di akhir cerita.
+
+
+--------------------------------------------------------------------------------
+
+H. PENERAPAN SUBTEXT
+
+--------------------------------------------------------------------------------
+
+
+Definisi:
+
+Makna sebenarnya dari sebuah dialog atau aksi justru terletak pada
+
+apa yang tidak diucapkan.
+
+
+Pagar Logika:
+
+Ketika karakter memiliki motif tersembunyi, buat dialog mereka membahas
+
+topik lain sementara aksi fisiknya mengkhianati maksud asli mereka.
+
+Biarkan makna utamanya tetap berada di bawah permukaan.
+
+
+================================================================================
+
