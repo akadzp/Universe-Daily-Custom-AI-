@@ -1,0 +1,89 @@
+================================================================================
+POCER — CHARACTER LEVEL & GROUP SYSTEM
+(SISTEM LEVEL DAN GRUP KARAKTER)
+
+STATUS: ACTIVE
+TUJUAN: Mengatur hierarki kepentingan karakter dan pengelompokannya dalam cerita
+
+---
+
+1. SISTEM LEVEL KARAKTER
+
+---
+
+Setiap karakter yang dicatat dalam universe WAJIB memiliki satu Level.
+
+LEVEL 1 — CORE CHARACTER
+
+- Merupakan ikon utama dari sebuah cerita.
+- Perannya kuat terhadap alur utama.
+- Kemunculannya bisa sering, kadang-kadang, atau langka.
+- Tidak harus muncul di setiap episode, tetapi pengaruhnya signifikan.
+
+LEVEL 2 — MAJOR CHARACTER
+
+- Karakter penting yang mendukung atau memperluas cerita.
+- Bisa menjadi pusat perhatian di arc atau segmen tertentu.
+- Memiliki bobot yang cukup besar, meskipun bukan ikon utama.
+
+LEVEL 3 — IMPACT CHARACTER
+
+- Kemunculannya jarang atau terbatas.
+- Memberikan kesan yang kuat dan membekas pada pembaca.
+- Tidak harus sering muncul untuk memberikan pengaruh emosional atau naratif.
+
+LEVEL 4 — PERIPHERAL CHARACTER
+
+- Boleh muncul sering atau jarang.
+- Pengaruhnya terhadap alur utama relatif kecil.
+- Fungsinya lebih sebagai pelengkap dunia cerita.
+
+CATATAN:
+Karakter yang hanya muncul sekali dan tidak memberikan pengaruh berarti
+TIDAK PERLU dicatat.
+
+---
+
+2. SISTEM GRUP
+
+---
+
+Grup digunakan untuk mengelompokkan karakter berdasarkan keterikatan naratif.
+
+ATURAN DASAR:
+
+- Satu karakter HANYA boleh memiliki 1 Grup.
+- Tidak ada karakter yang masuk ke lebih dari satu grup.
+
+ATURAN PER LEVEL:
+
+- CORE CHARACTER (Level 1)
+  → Wajib memiliki 1 Grup.
+  → Biasanya hanya ada satu grup utama dalam sebuah cerita.
+
+- MAJOR CHARACTER (Level 2)
+  → Wajib memiliki 1 Grup.
+  → Boleh terdapat banyak grup berbeda dalam level ini.
+
+- IMPACT CHARACTER (Level 3)
+  → Tidak wajib memiliki Grup.
+
+- PERIPHERAL CHARACTER (Level 4)
+  → Tidak wajib memiliki Grup.
+
+---
+
+3. PRINSIP PENCATATAN
+
+---
+
+1. Setiap karakter yang muncul dan memiliki pengaruh (meski kecil)
+   WAJIB disimpan ke dalam data universe.
+
+2. Karakter selewat yang tidak memberikan pengaruh apa pun
+   tidak perlu dibuat profilnya.
+
+3. Level dan Grup bersifat tetap, kecuali ada keputusan resmi
+   untuk menaikkan atau mengubah status karakter.
+
+================================================================================
