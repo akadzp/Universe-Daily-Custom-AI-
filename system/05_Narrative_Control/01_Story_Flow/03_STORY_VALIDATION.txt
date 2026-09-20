@@ -1,0 +1,1230 @@
+================================================================================
+STORY VALIDATION
+(VALIDASI AKHIR ALUR SEBELUM PENULISAN)
+================================================================================
+
+STATUS: ACTIVE
+TYPE: NARRATOR / STORY FLOW
+AUTHORITY: STORY VALIDATION LAYER
+
+TUJUAN:
+
+Memastikan BLUEPRINT yang telah melalui STORY DESIGN dan STORY LOGIC berada
+dalam kondisi yang cukup lengkap, konsisten, teridentifikasi, dan siap
+diserahkan kepada WRITING SYSTEM.
+
+STORY VALIDATION adalah GATE FINAL pada STORY FLOW.
+
+STORY VALIDATION menjawab:
+
+"APAKAH BLUEPRINT INI SUDAH SIAP DITULIS?"
+
+
+STORY VALIDATION TIDAK bertugas:
+
+- merancang ulang alur;
+- memperbaiki logika secara kreatif;
+- menulis narasi;
+- menentukan gaya penulisan;
+- membuat Canon baru;
+- mengubah data Universe secara diam-diam.
+
+
+================================================================================
+1. DEFINISI
+================================================================================
+
+Story Validation adalah proses pemeriksaan akhir terhadap Story Blueprint
+setelah Story Design dan Story Logic selesai.
+
+Validation memastikan bahwa:
+
+1. blueprint lengkap untuk dieksekusi;
+2. seluruh referensi utama dapat diidentifikasi;
+3. seluruh dependensi penting tersedia;
+4. hasil Story Logic telah ditangani;
+5. tidak terdapat konflik terbuka yang menghalangi penulisan;
+6. batas pengetahuan actor tetap jelas;
+7. perubahan yang direncanakan mempunyai posisi temporal;
+8. hubungan actor, relationship, object, dan state dapat dilacak;
+9. blueprint tetap merupakan PLAN sampai benar-benar dieksekusi;
+10. Writing System dapat menerima blueprint tanpa harus menebak fakta.
+
+
+================================================================================
+2. POSISI DALAM NARRATOR
+================================================================================
+
+NARRATOR
+│
+├── STORY FLOW
+│   ├── STORY DESIGN
+│   ├── STORY LOGIC
+│   └── STORY VALIDATION
+│
+└── WRITING
+    ├── WRITING DESIGN
+    ├── NARRATIVE RENDERING
+    └── WRITING VALIDATION
+
+
+URUTAN NORMAL:
+
+UNIVERSE DATA
+        ↓
+STORY DESIGN
+        ↓
+STORY LOGIC
+        ↓
+STORY VALIDATION
+        ↓
+WRITING DESIGN
+        ↓
+NARRATIVE RENDERING
+        ↓
+WRITING VALIDATION
+
+
+Story Validation hanya dilakukan setelah Story Design menghasilkan blueprint
+dan Story Logic menyelesaikan pemeriksaan logika yang diperlukan.
+
+
+================================================================================
+3. TUJUAN VALIDASI
+================================================================================
+
+Story Validation memastikan blueprint:
+
+- utuh;
+- dapat ditelusuri;
+- tidak ambigu pada bagian kritis;
+- tidak memiliki dependensi yang hilang;
+- tidak membawa konflik yang belum diselesaikan;
+- tidak membutuhkan asumsi baru dari Writing;
+- tidak mengandung perubahan Canon yang belum memiliki dasar;
+- siap digunakan sebagai input Writing.
+
+
+================================================================================
+4. INPUT VALIDASI
+================================================================================
+
+Input utama:
+
+- Story Blueprint;
+- hasil Story Design;
+- hasil Story Logic;
+- Actor Data;
+- Relationship Data;
+- Object Data;
+- State;
+- Knowledge;
+- Behavior;
+- Timeline;
+- History;
+- aturan Universe yang relevan;
+- hasil pemeriksaan sebelumnya.
+
+
+Story Validation harus menggunakan data terbaru yang tersedia pada saat
+validasi.
+
+
+================================================================================
+5. SUMBER KEBENARAN
+================================================================================
+
+Story Validation tidak menjadi sumber kebenaran atas:
+
+- Actor;
+- Relationship;
+- Object;
+- Knowledge;
+- State;
+- Behavior;
+- Timeline;
+- Canon.
+
+
+Validasi hanya memeriksa apakah blueprint sesuai dengan sumber kebenaran
+tersebut.
+
+Apabila blueprint bertentangan dengan sumber kebenaran, blueprint harus
+ditandai dan dikembalikan ke tahap yang sesuai.
+
+
+================================================================================
+6. PRINSIP FINAL GATE
+================================================================================
+
+Story Validation merupakan gerbang.
+
+Blueprint yang:
+
+- lengkap;
+- konsisten;
+- lolos pemeriksaan;
+- tidak memiliki blocker;
+- memiliki informasi yang cukup untuk Writing;
+
+dapat diteruskan.
+
+Blueprint yang belum memenuhi kondisi tersebut tidak boleh diteruskan
+sebagai blueprint final.
+
+
+================================================================================
+7. VALIDASI IDENTITAS
+================================================================================
+
+Semua actor dan object yang mempunyai fungsi penting dalam blueprint harus
+memiliki referensi identitas yang dapat diselesaikan.
+
+Pemeriksaan:
+
+- CHARACTER_ID;
+- OBJECT_ID;
+- relationship reference;
+- lokasi;
+- event reference;
+- entity reference lainnya.
+
+
+Nama atau sebutan yang tidak dapat dipastikan identitasnya pada bagian
+kritis harus ditandai.
+
+Writing tidak boleh dipaksa menebak identitas.
+
+
+================================================================================
+8. VALIDASI KELENGKAPAN ACTOR
+================================================================================
+
+Setiap actor yang memiliki fungsi penting dalam alur harus memiliki informasi
+minimum yang diperlukan untuk menjalankan bagian tersebut.
+
+Informasi minimum dapat mencakup:
+
+- identity;
+- current state;
+- relevant knowledge;
+- relevant behavior;
+- location;
+- relationship yang relevan;
+- availability.
+
+
+Validation tidak mengharuskan seluruh profile actor terisi.
+
+Hanya informasi yang relevan terhadap blueprint yang wajib tersedia.
+
+
+================================================================================
+9. VALIDASI RELATIONSHIP
+================================================================================
+
+Jika relationship memengaruhi alur, relationship tersebut harus dapat
+diidentifikasi dan status yang relevan harus tersedia.
+
+Pemeriksaan:
+
+- identity relationship;
+- actor pair;
+- current status;
+- temporal status;
+- relevant history;
+- perubahan yang direncanakan.
+
+
+Relationship yang ambigu pada bagian penting menyebabkan validation issue.
+
+
+================================================================================
+10. VALIDASI OBJECT
+================================================================================
+
+Jika object memengaruhi alur, object tersebut harus dapat diidentifikasi.
+
+Pemeriksaan:
+
+- OBJECT_ID;
+- current state;
+- owner apabila relevan;
+- holder apabila relevan;
+- user apabila relevan;
+- wearer apabila relevan;
+- location;
+- history;
+- status lainnya yang diperlukan.
+
+
+Writing tidak boleh harus menciptakan identity object baru hanya untuk
+menyelesaikan blueprint.
+
+
+================================================================================
+11. VALIDASI STATE
+================================================================================
+
+Semua perubahan state yang merupakan bagian penting dari blueprint harus
+memiliki:
+
+- keadaan awal;
+- event atau trigger;
+- waktu;
+- keadaan baru.
+
+
+State yang tidak mempunyai jalur perubahan yang jelas harus ditandai.
+
+
+================================================================================
+12. VALIDASI KNOWLEDGE
+================================================================================
+
+Validation harus memastikan batas pengetahuan actor tetap eksplisit.
+
+Untuk setiap informasi penting yang memengaruhi tindakan actor, harus jelas:
+
+- actor yang mengetahui;
+- actor yang tidak mengetahui;
+- actor yang salah memahami apabila relevan;
+- bagaimana informasi diperoleh;
+- kapan informasi tersedia.
+
+
+Writing tidak boleh menambahkan pengetahuan actor yang belum tersedia.
+
+
+================================================================================
+13. VALIDASI BEHAVIOR
+================================================================================
+
+Validation memastikan tindakan yang direncanakan memiliki hubungan yang
+dapat diterima dengan behavior actor.
+
+Validation tidak menuntut tindakan harus identik dengan pola behavior.
+
+Validation hanya memastikan tidak ada konflik yang belum dijelaskan antara:
+
+- behavior;
+- state;
+- knowledge;
+- action;
+- decision.
+
+
+================================================================================
+14. VALIDASI EVENT SEQUENCE
+================================================================================
+
+Urutan event harus dapat dibaca dan diikuti oleh Writing.
+
+Setiap event penting harus memiliki:
+
+- event identity atau reference;
+- posisi temporal;
+- hubungan dengan event lain;
+- fungsi dalam alur.
+
+
+Event tidak boleh memiliki posisi yang tidak dapat ditentukan apabila
+ketidakpastian tersebut memengaruhi logika cerita.
+
+
+================================================================================
+15. VALIDASI DEPENDENCY
+================================================================================
+
+Semua dependency penting harus sudah tersedia atau dijelaskan dalam
+blueprint.
+
+Validation harus mendeteksi dependency yang:
+
+- hilang;
+- tidak tersedia;
+- tidak memiliki prerequisite;
+- bergantung pada event yang belum terjadi;
+- bergantung pada informasi yang belum tersedia.
+
+
+Writing tidak boleh menyelesaikan dependency logis sendiri.
+
+
+================================================================================
+16. VALIDASI KAUSALITAS
+================================================================================
+
+Hasil pemeriksaan kausal dari Story Logic harus sudah berada pada status
+yang dapat diterima.
+
+Tidak boleh terdapat:
+
+- causal gap unresolved;
+- cause yang muncul setelah effect;
+- effect tanpa dasar;
+- perubahan yang tidak memiliki trigger yang diketahui.
+
+
+Jika causal issue masih terbuka, blueprint kembali ke Story Design.
+
+
+================================================================================
+17. VALIDASI TIMELINE
+================================================================================
+
+Blueprint harus mempunyai penempatan waktu yang cukup untuk ditulis.
+
+Minimal harus dapat ditentukan:
+
+- Universe Date;
+- rentang waktu relevan;
+- urutan event;
+- perubahan penting;
+- posisi state transition.
+
+
+Writing tidak boleh mengarang waktu hanya untuk menghubungkan event.
+
+
+================================================================================
+18. VALIDASI LOCATION
+================================================================================
+
+Setiap perpindahan lokasi yang penting harus dapat ditelusuri.
+
+Validation memastikan:
+
+- lokasi awal tersedia;
+- lokasi berikutnya dapat dicapai menurut logika blueprint;
+- perpindahan berada pada timeline yang sesuai;
+- actor dan object berada pada lokasi yang konsisten.
+
+
+================================================================================
+19. VALIDASI AVAILABILITY
+================================================================================
+
+Actor dan object yang dibutuhkan harus tersedia pada waktu yang diperlukan.
+
+Availability harus konsisten terhadap:
+
+- location;
+- current state;
+- previous event;
+- ownership;
+- possession;
+- usage;
+- commitment terhadap event lain.
+
+
+================================================================================
+20. VALIDASI INFORMASI
+================================================================================
+
+Validation harus membedakan:
+
+- fakta Universe;
+- fakta yang baru direncanakan;
+- informasi yang diketahui actor;
+- informasi yang diketahui pembaca;
+- informasi yang belum diungkap.
+
+
+Tidak boleh ada informasi Canon baru yang muncul hanya karena Writing
+membutuhkan detail.
+
+
+================================================================================
+21. VALIDASI REFERENSI
+================================================================================
+
+Semua referensi kritis harus dapat dipahami tanpa menciptakan identitas baru.
+
+Referensi dapat berupa:
+
+- actor;
+- object;
+- relationship;
+- location;
+- event;
+- state;
+- waktu.
+
+
+Referensi yang masih ambigu harus ditandai jika ambiguitas tersebut dapat
+mengubah makna cerita.
+
+
+================================================================================
+22. VALIDASI AMBIGUITAS
+================================================================================
+
+Ambiguitas dibagi menjadi:
+
+SAFE AMBIGUITY
+    Tidak mengubah struktur atau makna alur.
+
+UNSAFE AMBIGUITY
+    Dapat menghasilkan lebih dari satu interpretasi yang memengaruhi fakta,
+    identitas, tindakan, atau urutan event.
+
+
+SAFE AMBIGUITY dapat diteruskan apabila tidak mengganggu Writing.
+
+UNSAFE AMBIGUITY harus diselesaikan sebelum Writing.
+
+
+================================================================================
+23. VALIDASI PERUBAHAN
+================================================================================
+
+Setiap perubahan yang direncanakan terhadap Universe harus dapat diklasifikasi.
+
+Perubahan dapat menyentuh:
+
+- actor;
+- relationship;
+- object;
+- state;
+- knowledge;
+- location;
+- ownership;
+- possession;
+- status.
+
+
+Untuk setiap perubahan penting harus tersedia:
+
+- entity;
+- previous state;
+- intended change;
+- trigger;
+- temporal position.
+
+
+Validation tidak melakukan commit perubahan Canon.
+
+
+================================================================================
+24. VALIDASI CHANGE BOUNDARY
+================================================================================
+
+Story Blueprint harus membedakan:
+
+PRE-EXISTING DATA
+    data yang sudah merupakan Canon.
+
+PLANNED CHANGE
+    perubahan yang dirancang untuk terjadi dalam cerita.
+
+RESULTING STATE
+    keadaan yang diharapkan setelah event.
+
+
+Ketiganya tidak boleh dicampur.
+
+
+================================================================================
+25. VALIDASI CANON
+================================================================================
+
+Validation harus memastikan blueprint tidak memperlakukan rencana sebagai
+Canon.
+
+Blueprint tidak boleh mengklaim bahwa sebuah perubahan telah terjadi
+sebelum event tersebut benar-benar dieksekusi dan diproses.
+
+
+================================================================================
+26. VALIDASI HISTORY
+================================================================================
+
+History harus tetap kompatibel dengan blueprint.
+
+Blueprint tidak boleh menghasilkan keadaan yang bertentangan dengan
+history yang telah tersimpan.
+
+Jika blueprint memang merencanakan perubahan terhadap keadaan historis,
+perubahan tersebut harus terjadi setelah titik temporal yang tepat dan tidak
+menghapus riwayat sebelumnya.
+
+
+================================================================================
+27. VALIDASI KONTINUITAS ANTAR-EVENT
+================================================================================
+
+Keadaan setelah satu event harus dapat menjadi input yang sah untuk event
+berikutnya.
+
+Validation harus memeriksa chain:
+
+STATE A
+  ↓
+EVENT
+  ↓
+STATE B
+  ↓
+EVENT
+  ↓
+STATE C
+
+
+Tidak boleh terdapat perubahan state yang hilang di tengah chain.
+
+
+================================================================================
+28. VALIDASI MULTI-ACTOR
+================================================================================
+
+Jika terdapat banyak actor, validation harus memastikan:
+
+- setiap actor teridentifikasi;
+- posisi masing-masing jelas;
+- knowledge masing-masing konsisten;
+- state masing-masing konsisten;
+- relationship relevan tersedia;
+- tindakan masing-masing dapat dipetakan;
+- tidak terjadi pertukaran identity.
+
+
+Kehadiran actor dalam blueprint tidak otomatis berarti actor mengetahui
+semua hal yang terjadi.
+
+
+================================================================================
+29. VALIDASI MULTI-OBJECT
+================================================================================
+
+Jika terdapat banyak object, validation harus memastikan:
+
+- setiap object mempunyai identity;
+- object tidak tertukar;
+- object tidak terduplikasi;
+- ownership konsisten;
+- possession konsisten;
+- location konsisten;
+- state konsisten.
+
+
+================================================================================
+30. VALIDASI PARALLEL EVENT
+================================================================================
+
+Event yang berjalan paralel harus mempunyai hubungan temporal yang cukup
+jelas.
+
+Validation memeriksa:
+
+- overlap;
+- actor availability;
+- object availability;
+- information propagation;
+- location;
+- consequence.
+
+
+Event paralel tidak boleh menciptakan keadaan yang saling tidak mungkin.
+
+
+================================================================================
+31. VALIDASI INTERNAL BLUEPRINT
+================================================================================
+
+Blueprint harus konsisten dengan dirinya sendiri.
+
+Tidak boleh terdapat:
+
+- event yang hilang;
+- actor yang tiba-tiba muncul tanpa dasar;
+- object yang berubah identity;
+- perubahan state tanpa event;
+- knowledge yang muncul tanpa acquisition;
+- lokasi yang berubah tanpa perpindahan;
+- relationship yang berubah tanpa trigger;
+- consequence yang terjadi sebelum cause.
+
+
+================================================================================
+32. VALIDASI LINTAS SISTEM
+================================================================================
+
+Validation harus memastikan integrasi minimum:
+
+Actor
+↔ State
+
+Actor
+↔ Knowledge
+
+Actor
+↔ Behavior
+
+Actor
+↔ Relationship
+
+Actor
+↔ Object
+
+Relationship
+↔ Timeline
+
+Object
+↔ State
+
+Object
+↔ Location
+
+Event
+↔ Timeline
+
+Event
+↔ State
+
+Event
+↔ Knowledge
+
+
+Setiap integrasi yang digunakan oleh blueprint harus tetap konsisten.
+
+
+================================================================================
+33. VALIDASI KELENGKAPAN WRITING INPUT
+================================================================================
+
+Blueprint harus menyediakan informasi yang cukup bagi Writing Design.
+
+Writing harus menerima minimal:
+
+- focus;
+- subject;
+- initial condition;
+- event sequence;
+- temporal flow;
+- actor involvement;
+- relevant relationship;
+- relevant object;
+- knowledge boundaries;
+- state changes;
+- location changes;
+- ending condition.
+
+
+Detail bahasa tidak termasuk dalam input Story Flow.
+
+
+================================================================================
+34. NO CREATIVE GAP
+================================================================================
+
+Story Validation harus mengidentifikasi bagian yang membutuhkan Writing
+untuk membuat fakta baru.
+
+Writing boleh mengisi:
+
+- pilihan kata;
+- ekspresi;
+- transisi bahasa;
+- bentuk dialog;
+- deskripsi;
+- struktur kalimat;
+
+tetapi tidak boleh diminta mengisi:
+
+- identity;
+- ownership;
+- relationship;
+- knowledge;
+- state;
+- event;
+- location;
+- causal connection.
+
+
+Jika Writing membutuhkan salah satu hal tersebut, blueprint belum siap.
+
+
+================================================================================
+35. NO HIDDEN DECISION
+================================================================================
+
+Blueprint tidak boleh menyerahkan keputusan faktual penting kepada Writing.
+
+Writing tidak boleh menentukan sendiri:
+
+- siapa yang melakukan tindakan;
+- object mana yang digunakan;
+- siapa owner;
+- siapa mengetahui;
+- hubungan antar-actor;
+- hasil event;
+- perubahan state.
+
+
+Keputusan faktual harus sudah ditetapkan dalam Story Flow atau berasal
+dari data Universe.
+
+
+================================================================================
+36. NO CANON LEAK
+================================================================================
+
+Story Validation harus mencegah detail rancangan sementara bocor menjadi
+Canon sebelum waktunya.
+
+Rencana tetap berstatus:
+
+PLAN
+
+sampai benar-benar terjadi dalam proses produksi dan diproses oleh sistem
+Universe.
+
+
+================================================================================
+37. REVISION BOUNDARY
+================================================================================
+
+Jika validation menemukan masalah:
+
+VALIDATION
+    ↓
+ISSUE
+    ↓
+tentukan pemilik masalah
+    ↓
+kembalikan ke tahap yang sesuai
+
+
+Pemetaan umum:
+
+Masalah struktur alur
+→ STORY DESIGN
+
+Masalah kelayakan logika
+→ STORY LOGIC
+
+Masalah data actor
+→ ACTOR SYSTEM
+
+Masalah relationship
+→ RELATIONSHIP SYSTEM
+
+Masalah object
+→ OBJECT SYSTEM
+
+Masalah state
+→ STATE SYSTEM
+
+Masalah writing
+→ WRITING SYSTEM
+
+
+Validation tidak boleh memperbaiki semuanya sendiri.
+
+
+================================================================================
+38. VALIDATION RESULT
+================================================================================
+
+Hasil validasi minimal mempunyai salah satu status:
+
+READY
+    Blueprint siap diteruskan ke Writing.
+
+REVISION_REQUIRED
+    Blueprint memiliki masalah yang harus diperbaiki.
+
+BLOCKED
+    Blueprint memiliki masalah fundamental dan tidak dapat diteruskan.
+
+
+Tidak ada status READY apabila masih terdapat blocker.
+
+
+================================================================================
+39. ISSUE CLASSIFICATION
+================================================================================
+
+Setiap issue dapat diklasifikasikan:
+
+COMPLETENESS
+    Informasi penting belum tersedia.
+
+CONSISTENCY
+    Informasi bertentangan.
+
+IDENTITY
+    Referensi entity bermasalah.
+
+TEMPORAL
+    Posisi waktu bermasalah.
+
+CAUSAL
+    Hubungan sebab-akibat bermasalah.
+
+KNOWLEDGE
+    Batas pengetahuan bermasalah.
+
+RELATIONSHIP
+    Relationship bermasalah.
+
+OBJECT
+    Object bermasalah.
+
+STATE
+    State bermasalah.
+
+INTEGRATION
+    Sistem yang terlibat tidak konsisten.
+
+EXECUTION
+    Blueprint belum cukup siap untuk ditulis.
+
+
+================================================================================
+40. SEVERITY
+================================================================================
+
+INFO
+    Catatan tanpa hambatan eksekusi.
+
+WARNING
+    Perlu perhatian tetapi tidak menghalangi Writing.
+
+ERROR
+    Perlu diperbaiki sebelum READY.
+
+BLOCKER
+    Mencegah blueprint diteruskan.
+
+
+Blueprint hanya dapat berstatus READY apabila tidak terdapat ERROR atau
+BLOCKER yang belum terselesaikan.
+
+
+================================================================================
+41. VALIDATION RECORD
+================================================================================
+
+Hasil validation harus dapat menyimpan:
+
+VALIDATION_ID
+STORY_ID
+VALIDATION_DATE
+VALIDATION_STATUS
+LOGIC_STATUS
+ISSUE_COUNT
+BLOCKER_COUNT
+ERROR_COUNT
+WARNING_COUNT
+INPUT_VERSION
+VALIDATOR
+NOTES
+
+
+Record validation adalah catatan proses.
+
+Record validation bukan bagian dari Canon cerita.
+
+
+================================================================================
+42. REVALIDATION
+================================================================================
+
+Jika blueprint diperbaiki:
+
+1. blueprint menerima revisi;
+2. validation dijalankan kembali;
+3. issue lama diperiksa;
+4. issue baru dicari;
+5. status diperbarui.
+
+
+Validation baru tidak boleh menganggap hasil validation lama masih berlaku
+apabila blueprint telah berubah.
+
+
+================================================================================
+43. DEPENDENCY FREEZE
+================================================================================
+
+Sebelum blueprint diteruskan ke Writing, dependency penting harus berada
+dalam kondisi yang dapat diandalkan.
+
+Dependency yang masih berubah atau belum memiliki dasar cukup harus ditandai.
+
+Blueprint tidak boleh dianggap READY jika keberhasilannya bergantung pada
+fakta yang belum tersedia.
+
+
+================================================================================
+44. EXECUTION CONTRACT
+================================================================================
+
+Ketika blueprint berstatus READY, Writing System menerima kontrak bahwa:
+
+1. event yang telah ditentukan tidak boleh diubah tanpa kembali ke Story Flow;
+2. actor yang telah ditentukan tidak boleh diganti;
+3. object yang telah ditentukan tidak boleh diganti;
+4. relationship yang telah ditentukan tidak boleh diganti;
+5. knowledge boundary tidak boleh dilampaui;
+6. state transition tidak boleh diubah;
+7. timeline tidak boleh diubah;
+8. fakta Universe tidak boleh ditambahkan secara diam-diam.
+
+
+Writing bebas menentukan cara penyampaian selama tidak melanggar kontrak
+tersebut.
+
+
+================================================================================
+45. RETURN PATH DARI WRITING
+================================================================================
+
+Jika Writing menemukan kebutuhan faktual baru:
+
+WRITING
+    ↓
+ISSUE
+    ↓
+STORY VALIDATION
+    ↓
+STORY LOGIC / STORY DESIGN
+    ↓
+REVALIDATION
+    ↓
+WRITING KEMBALI
+
+
+Writing tidak menyelesaikan masalah faktual secara diam-diam.
+
+
+================================================================================
+46. VALIDASI READINESS
+================================================================================
+
+Blueprint siap diteruskan apabila:
+
+[ ] Story Design selesai
+[ ] Story Logic selesai
+[ ] Tidak ada unresolved critical issue
+[ ] Semua actor penting teridentifikasi
+[ ] Semua object penting teridentifikasi
+[ ] Semua relationship penting teridentifikasi
+[ ] State penting tersedia
+[ ] Knowledge boundary jelas
+[ ] Timeline cukup jelas
+[ ] Location cukup jelas
+[ ] Event sequence lengkap
+[ ] Dependencies tersedia
+[ ] Causality dapat ditelusuri
+[ ] History kompatibel
+[ ] Perubahan dapat ditempatkan pada timeline
+[ ] Referensi kritis tidak ambigu
+[ ] Tidak terdapat hidden factual decisions
+[ ] Tidak terdapat unsupported assumption
+[ ] Tidak terdapat Canon leak
+[ ] Writing input lengkap
+[ ] Execution contract dapat dibentuk
+
+
+================================================================================
+47. READY CRITERIA
+================================================================================
+
+Status READY hanya boleh diberikan apabila:
+
+1. seluruh blocker selesai;
+2. seluruh error selesai;
+3. Story Logic telah menghasilkan hasil yang dapat diterima;
+4. informasi minimum untuk Writing tersedia;
+5. tidak terdapat keputusan faktual yang masih diserahkan kepada Writing;
+6. perubahan yang direncanakan dapat ditelusuri;
+7. blueprint tetap konsisten dengan Universe;
+8. Writing dapat memulai tanpa mengarang fakta dasar.
+
+
+================================================================================
+48. REVISION CRITERIA
+================================================================================
+
+Status REVISION_REQUIRED diberikan apabila:
+
+- blueprint masih dapat diperbaiki;
+- masalah tidak bersifat fundamental;
+- sumber data tersedia;
+- struktur cerita masih dapat dipertahankan setelah revisi.
+
+
+Revision harus diarahkan ke sistem atau tahap yang benar.
+
+
+================================================================================
+49. BLOCK CRITERIA
+================================================================================
+
+Status BLOCKED diberikan apabila blueprint:
+
+- memiliki identity conflict fundamental;
+- memiliki temporal conflict fundamental;
+- membutuhkan fakta yang tidak tersedia;
+- membutuhkan perubahan Canon yang tidak memiliki dasar;
+- tidak dapat menentukan actor/object pada bagian kritis;
+- memiliki causal contradiction fundamental;
+- bergantung pada asumsi yang tidak sah;
+- tidak dapat memberikan input minimum kepada Writing.
+
+
+================================================================================
+50. TIDAK MENGHUKUM KREATIVITAS
+================================================================================
+
+Validation tidak menilai apakah cerita:
+
+- menarik;
+- dramatis;
+- emosional;
+- indah;
+- unik;
+- lucu;
+- sedih;
+- kompleks.
+
+Validation hanya menentukan apakah blueprint:
+
+- sah;
+- konsisten;
+- lengkap;
+- dapat dilacak;
+- siap ditulis.
+
+
+Penilaian kualitas kreatif dilakukan oleh proses Narrator yang relevan,
+bukan oleh Story Validation.
+
+
+================================================================================
+51. PEMISAHAN DARI WRITING QUALITY
+================================================================================
+
+Story Validation tidak menilai:
+
+- grammar;
+- word choice;
+- sentence rhythm;
+- paragraph rhythm;
+- literary style;
+- dialogue quality;
+- descriptive quality;
+- readability.
+
+
+Semua itu berada di Writing System.
+
+
+================================================================================
+52. PEMISAHAN DARI STORY DESIGN
+================================================================================
+
+Story Validation tidak menciptakan struktur alur baru.
+
+Jika blueprint dianggap terlalu lemah, terlalu kompleks, atau tidak efektif
+secara naratif tetapi masih logis, masalah tersebut bukan alasan otomatis
+untuk mengubah blueprint di Validation.
+
+Perbaikan struktur kembali ke Story Design.
+
+
+================================================================================
+53. PEMISAHAN DARI STORY LOGIC
+================================================================================
+
+Story Logic menentukan:
+
+"APAKAH INI DAPAT TERJADI?"
+
+
+Story Validation menentukan:
+
+"APAKAH HASIL PEMERIKSAAN INI SUDAH CUKUP LENGKAP DAN AMAN UNTUK DITULIS?"
+
+
+Jika masalah merupakan persoalan kelayakan logika, kembalikan ke Story Logic.
+
+Jika masalah merupakan persoalan kesiapan eksekusi, selesaikan di Validation.
+
+
+================================================================================
+54. FINAL HANDOFF
+================================================================================
+
+Jika READY:
+
+STORY VALIDATION
+        ↓
+FINAL BLUEPRINT
+        ↓
+WRITING DESIGN
+
+
+Final Blueprint harus diperlakukan oleh Writing sebagai:
+
+"FAKTA CERITA YANG HARUS DIPERTAHANKAN"
+
+sedangkan cara penyampaiannya tetap menjadi kewenangan Writing.
+
+
+================================================================================
+55. ATURAN UTAMA
+================================================================================
+
+1. Story Validation adalah final gate Story Flow.
+
+2. Validation memeriksa readiness, bukan menulis.
+
+3. Validation tidak menciptakan Canon.
+
+4. Validation tidak menggantikan Story Design.
+
+5. Validation tidak menggantikan Story Logic.
+
+6. Semua actor penting harus dapat diidentifikasi.
+
+7. Semua object penting harus dapat diidentifikasi.
+
+8. Semua relationship penting harus dapat diidentifikasi.
+
+9. Semua perubahan penting harus dapat ditelusuri.
+
+10. Timeline harus cukup jelas untuk execution.
+
+11. Knowledge boundary harus jelas.
+
+12. State transition harus jelas.
+
+13. Dependency harus tersedia.
+
+14. Causality harus sudah dapat dipertanggungjawabkan.
+
+15. Writing tidak boleh diberi tugas untuk mengisi fakta dasar.
+
+16. Ambiguitas kritis harus diselesaikan sebelum Writing.
+
+17. Unsupported assumption tidak boleh dilewatkan.
+
+18. PLAN tetap berbeda dari CANON.
+
+19. Masalah factual dikembalikan ke sistem yang memiliki kewenangan.
+
+20. Masalah writing dikembalikan ke Writing System.
+
+21. READY berarti blueprint siap dieksekusi, bukan berarti cerita pasti
+    bagus secara artistik.
+
+22. Story Validation harus menjaga agar Writing menerima alur yang jelas,
+    lengkap, konsisten, dan dapat dipertanggungjawabkan.
+
+
+================================================================================
+END OF STORY VALIDATION
+================================================================================
