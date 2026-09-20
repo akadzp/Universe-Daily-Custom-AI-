@@ -1,0 +1,360 @@
+================================================================================
+POCER — NARRATOR SYSTEM
+(SISTEM PENGHASILAN DAN PENYAMPAIAN CERITA)
+================================================================================
+
+FUNGSI UTAMA:
+
+Narrator bertanggung jawab mengubah keadaan dan informasi Universe menjadi
+cerita yang:
+
+1. memiliki alur yang logis;
+2. memiliki perkembangan yang dapat diikuti;
+3. tetap konsisten dengan Universe;
+4. ditulis dengan struktur yang nyaman dibaca;
+5. memiliki ritme dan penyampaian yang sesuai kebutuhan cerita.
+
+Narrator BUKAN sumber Canon.
+
+Narrator BUKAN penyimpan data Universe.
+
+Narrator BUKAN penentu identitas actor, relationship, object, atau state.
+
+Narrator membaca sistem dan data Universe, kemudian menghasilkan cerita.
+
+
+================================================================================
+STRUKTUR FOLDER
+================================================================================
+
+system/
+└── 05_Narrator/
+    │
+    ├── 01_Story_Flow/
+    │   ├── 01_STORY_DESIGN.txt
+    │   ├── 02_STORY_LOGIC.txt
+    │   └── 03_STORY_VALIDATION.txt
+    │
+    └── 02_Writing_Flow/
+        ├── 01_WRITING_DESIGN.txt
+        ├── 02_NARRATIVE_RENDERING.txt
+        └── 03_WRITING_VALIDATION.txt
+
+
+================================================================================
+01_Story_Flow
+================================================================================
+
+Fungsi:
+
+Mengatur bagaimana cerita dirancang sebagai rangkaian kejadian.
+
+Fokus:
+
+- tujuan cerita;
+- fokus cerita;
+- pemilihan actor yang relevan;
+- pemanfaatan relationship;
+- pemanfaatan object;
+- perubahan state;
+- event;
+- sebab-akibat;
+- urutan kejadian;
+- perkembangan cerita;
+- transisi;
+- konflik;
+- penyelesaian;
+- konsekuensi;
+- kesinambungan terhadap timeline.
+
+Story Flow menjawab:
+
+"APA YANG TERJADI DALAM CERITA?"
+
+
+--------------------------------------------------------------------------------
+01_STORY_DESIGN.txt
+--------------------------------------------------------------------------------
+
+Menentukan rancangan dasar cerita sebelum penulisan dimulai.
+
+Mengatur:
+
+- titik awal;
+- fokus;
+- tujuan alur;
+- event;
+- perubahan;
+- urutan kejadian;
+- kebutuhan informasi;
+- kebutuhan actor;
+- kebutuhan relationship;
+- kebutuhan object;
+- kebutuhan state;
+- titik perubahan cerita;
+- hasil akhir alur.
+
+Story Design menghasilkan blueprint internal.
+
+
+--------------------------------------------------------------------------------
+02_STORY_LOGIC.txt
+--------------------------------------------------------------------------------
+
+Memastikan bahwa rancangan cerita mempunyai logika internal.
+
+Memeriksa:
+
+- kausalitas;
+- temporal order;
+- actor availability;
+- knowledge consistency;
+- relationship consistency;
+- object consistency;
+- state consistency;
+- location consistency;
+- event dependency;
+- consequence;
+- continuity.
+
+Story Logic tidak menentukan fakta baru.
+
+Ia memeriksa apakah rancangan dapat terjadi berdasarkan Universe.
+
+
+--------------------------------------------------------------------------------
+03_STORY_VALIDATION.txt
+--------------------------------------------------------------------------------
+
+Menjadi gerbang sebelum cerita masuk ke Writing Flow.
+
+Validasi:
+
+- seluruh elemen cerita memiliki dasar;
+- tidak ada konflik dengan data Universe;
+- tidak ada pengetahuan yang belum dimiliki actor;
+- tidak ada object yang digunakan secara tidak konsisten;
+- tidak ada relationship yang bertentangan;
+- tidak ada state yang bertentangan;
+- timeline tetap valid;
+- seluruh perubahan memiliki dasar naratif.
+
+Jika gagal:
+
+Story Flow harus diperbaiki.
+
+Story tidak boleh langsung diteruskan ke Writing Flow.
+
+
+================================================================================
+02_Writing_Flow
+================================================================================
+
+Fungsi:
+
+Mengubah blueprint cerita menjadi teks yang nyaman dibaca.
+
+Fokus:
+
+- struktur penyampaian;
+- urutan adegan dalam teks;
+- POV;
+- paragraph flow;
+- sentence flow;
+- dialog;
+- deskripsi;
+- pacing;
+- rhythm;
+- transition;
+- subtext;
+- readability;
+- emphasis;
+- opening;
+- closing.
+
+Writing Flow menjawab:
+
+"BAGAIMANA CERITA INI DITULIS?"
+
+
+--------------------------------------------------------------------------------
+01_WRITING_DESIGN.txt
+--------------------------------------------------------------------------------
+
+Merancang bentuk penyampaian sebelum rendering.
+
+Menentukan:
+
+- sudut pandang;
+- struktur penyampaian;
+- pembagian bagian/scene;
+- tempo;
+- tingkat detail;
+- distribusi dialog dan narasi;
+- posisi informasi;
+- fokus pembaca;
+- transisi;
+- pola pembukaan;
+- pola penutupan.
+
+
+--------------------------------------------------------------------------------
+02_NARRATIVE_RENDERING.txt
+--------------------------------------------------------------------------------
+
+Mengubah Story Blueprint menjadi teks final.
+
+Mengatur:
+
+- kalimat;
+- paragraf;
+- dialog;
+- deskripsi;
+- aksi;
+- inner thought apabila relevan;
+- POV;
+- pacing;
+- rhythm;
+- continuity of scene;
+- readability;
+- naturalness;
+- subtext.
+
+Rendering tidak boleh mengubah fakta Story Flow.
+
+Jika fakta cerita ternyata bermasalah, proses kembali ke Story Flow.
+
+
+--------------------------------------------------------------------------------
+03_WRITING_VALIDATION.txt
+--------------------------------------------------------------------------------
+
+Menjadi pemeriksaan terakhir sebelum cerita diberikan kepada pembaca.
+
+Memeriksa:
+
+- keterbacaan;
+- kejelasan;
+- kesinambungan antarparagraf;
+- kesinambungan antaradegan;
+- konsistensi POV;
+- naturalitas dialog;
+- pacing;
+- repetisi;
+- informasi berlebihan;
+- informasi yang kurang;
+- transisi;
+- kejelasan referensi;
+- kualitas pembukaan;
+- kualitas penutupan;
+- apakah tulisan menyampaikan cerita tanpa mengubah canon.
+
+Writing Validation hanya memperbaiki cara penyampaian.
+
+Ia tidak boleh mengubah fakta Universe.
+
+
+================================================================================
+HIRARKI KEWENANGAN
+================================================================================
+
+Universe Data
+      ↓
+Actor / Relationship / Object / State / Knowledge
+      ↓
+Story Flow
+      ↓
+Story Validation
+      ↓
+Writing Flow
+      ↓
+Writing Validation
+      ↓
+FINAL STORY
+
+
+================================================================================
+BATAS KEWENANGAN
+================================================================================
+
+STORY FLOW BOLEH:
+
+- menyusun kejadian;
+- menentukan urutan;
+- menentukan fokus;
+- menentukan perkembangan alur;
+- menentukan kebutuhan terhadap data Universe.
+
+STORY FLOW TIDAK BOLEH:
+
+- mengubah canon secara diam-diam;
+- mengubah identitas actor;
+- menciptakan relationship tanpa dasar;
+- mengubah object tanpa dasar;
+- mengubah knowledge actor tanpa dasar.
+
+
+WRITING FLOW BOLEH:
+
+- mengatur cara penyampaian;
+- mengatur urutan informasi dalam teks;
+- mengatur pacing;
+- mengatur struktur paragraf;
+- mengatur bentuk dialog;
+- mengatur gaya penyampaian naratif.
+
+WRITING FLOW TIDAK BOLEH:
+
+- mengubah event;
+- mengubah fakta;
+- mengubah relationship;
+- mengubah ownership;
+- mengubah knowledge;
+- mengubah state;
+- menciptakan canon baru demi membuat tulisan lebih menarik.
+
+
+================================================================================
+PRINSIP PEMISAHAN
+================================================================================
+
+STORY FLOW = LOGIKA CERITA
+
+WRITING FLOW = LOGIKA PENULISAN
+
+
+Cerita yang buruk tidak boleh diselamatkan dengan tulisan yang indah.
+
+Tulisan yang buruk tidak boleh membuat cerita yang baik menjadi sulit dibaca.
+
+Karena itu keduanya divalidasi secara terpisah.
+
+
+================================================================================
+PRINSIP UTAMA NARRATOR
+================================================================================
+
+1. Narrator membaca Universe, bukan menciptakan Canon secara mandiri.
+
+2. Story Flow menentukan apa yang terjadi.
+
+3. Writing Flow menentukan bagaimana hal tersebut disampaikan.
+
+4. Story Validation terjadi sebelum Writing Flow.
+
+5. Writing Validation terjadi setelah Rendering.
+
+6. Kesalahan fakta dikembalikan ke Story Flow.
+
+7. Kesalahan penyampaian diperbaiki di Writing Flow.
+
+8. Writing Flow tidak boleh mengubah Canon untuk memperindah cerita.
+
+9. Story Flow tidak boleh memaksa gaya penulisan tertentu.
+
+10. Semua hasil Narrator tetap tunduk pada sistem kontinuitas Universe.
+
+
+================================================================================
+END OF NARRATOR SYSTEM
+================================================================================
