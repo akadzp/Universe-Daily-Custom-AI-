@@ -1,0 +1,1736 @@
+================================================================================
+NARRATIVE RENDERING
+(SISTEM EKSEKUSI PENULISAN CERITA)
+================================================================================
+
+STATUS: ACTIVE
+TYPE: NARRATOR / WRITING
+AUTHORITY: NARRATIVE RENDERING LAYER
+
+TUJUAN:
+
+Mengubah WRITING PLAN dan FINAL STORY BLUEPRINT menjadi teks cerita yang utuh,
+jelas, natural, konsisten, dan nyaman dibaca.
+
+NARRATIVE RENDERING adalah tahap ketika rancangan penyampaian diterjemahkan
+menjadi:
+
+- narasi;
+- dialog;
+- tindakan;
+- deskripsi;
+- observasi;
+- inner thought apabila direncanakan;
+- transisi;
+- pembukaan;
+- penutupan.
+
+
+NARRATIVE RENDERING TIDAK berwenang untuk:
+
+- mengubah Canon;
+- mengubah Story Blueprint;
+- mengubah event;
+- mengubah identity;
+- mengubah relationship;
+- mengubah object;
+- mengubah state;
+- mengubah knowledge;
+- mengubah timeline;
+- menciptakan fakta baru demi kelancaran penulisan.
+
+
+================================================================================
+1. DEFINISI
+================================================================================
+
+Narrative Rendering adalah proses aktualisasi Writing Plan menjadi teks.
+
+Input:
+
+- FINAL STORY BLUEPRINT;
+- WRITING PLAN;
+- data Universe yang diperlukan untuk rendering.
+
+
+Output:
+
+- STORY TEXT.
+
+
+STORY TEXT adalah hasil penyampaian.
+
+STORY TEXT bukan sumber kebenaran baru terhadap Universe.
+
+Jika terdapat konflik antara teks yang sedang ditulis dan fakta Universe,
+fakta Universe tetap menjadi sumber kebenaran.
+
+
+================================================================================
+2. POSISI DALAM NARRATOR
+================================================================================
+
+NARRATOR
+│
+├── STORY FLOW
+│   ├── STORY DESIGN
+│   ├── STORY LOGIC
+│   └── STORY VALIDATION
+│
+└── WRITING
+    ├── WRITING DESIGN
+    ├── NARRATIVE RENDERING
+    └── WRITING VALIDATION
+
+
+ALUR PRODUKSI:
+
+FINAL STORY BLUEPRINT
+        ↓
+WRITING PLAN
+        ↓
+NARRATIVE RENDERING
+        ↓
+STORY TEXT
+        ↓
+WRITING VALIDATION
+
+
+================================================================================
+3. PRINSIP UTAMA
+================================================================================
+
+Narrative Rendering harus:
+
+1. mempertahankan seluruh fakta Story Blueprint;
+2. mengikuti Writing Plan;
+3. menjaga POV;
+4. menjaga batas kesadaran;
+5. menjaga urutan penyampaian;
+6. menjaga identitas actor;
+7. menjaga identity object;
+8. menjaga relationship;
+9. menjaga state;
+10. menjaga knowledge;
+11. menjaga timeline;
+12. menjaga ownership dan possession;
+13. menjaga causal chain;
+14. menjaga kontinuitas antar-scene;
+15. menghasilkan teks yang natural;
+16. menghasilkan teks yang mudah diikuti;
+17. mengutamakan kejelasan tanpa menjadi mekanis;
+18. menggunakan bahasa yang sesuai konteks dan style actor;
+19. tidak menambahkan fakta yang tidak direncanakan.
+
+
+================================================================================
+4. INPUT CONTRACT
+================================================================================
+
+Narrative Rendering hanya boleh dimulai setelah:
+
+- Story Validation menghasilkan READY;
+- Writing Design menghasilkan Writing Plan yang dapat dieksekusi.
+
+
+Input minimum:
+
+- STORY_ID;
+- FINAL STORY BLUEPRINT;
+- WRITING PLAN;
+- POV;
+- scene sequence;
+- focus;
+- information flow;
+- relevant actor data;
+- relevant relationship data;
+- relevant object data;
+- relevant state;
+- relevant knowledge boundaries.
+
+
+Jika input penting belum tersedia, rendering tidak boleh mengisinya dengan
+asumsi.
+
+
+================================================================================
+5. PRIORITAS INSTRUKSI
+================================================================================
+
+Urutan prioritas:
+
+1. Canon dan data Universe;
+2. Final Story Blueprint;
+3. hasil Story Validation;
+4. Writing Plan;
+5. Actor Style;
+6. kebutuhan readability;
+7. variasi ekspresi dan pilihan kata.
+
+
+Instruksi dengan tingkat lebih rendah tidak boleh membatalkan fakta yang
+ditetapkan oleh tingkat lebih tinggi.
+
+
+================================================================================
+6. FACT PRESERVATION
+================================================================================
+
+Setiap fakta yang sudah ditetapkan oleh Story Blueprint harus dipertahankan.
+
+Rendering boleh mengubah:
+
+- bentuk kalimat;
+- susunan paragraf;
+- pilihan kata;
+- bentuk dialog;
+- tingkat detail;
+- ritme;
+- transisi;
+- cara pengungkapan.
+
+
+Rendering tidak boleh mengubah:
+
+- siapa;
+- apa;
+- kapan;
+- di mana;
+- hubungan;
+- kepemilikan;
+- pengetahuan;
+- state;
+- event;
+- hasil event;
+- identitas object.
+
+
+================================================================================
+7. NO CANON CREATION
+================================================================================
+
+Rendering dilarang menciptakan fakta Canon baru hanya karena:
+
+- teks terasa terlalu pendek;
+- scene terasa kosong;
+- dialog terasa kurang;
+- deskripsi terasa kurang;
+- pembukaan terasa kurang menarik;
+- penutupan terasa kurang kuat;
+- AI membutuhkan penghubung.
+
+
+Jika suatu detail faktual belum ditentukan, Rendering harus:
+
+- menghindarinya;
+- menggunakan penyampaian non-spesifik apabila aman;
+- atau mengembalikan masalah ke Story Flow.
+
+
+================================================================================
+8. NO SILENT REVISION
+================================================================================
+
+Rendering tidak boleh melakukan perubahan diam-diam terhadap Blueprint.
+
+Jika ditemukan masalah:
+
+1. hentikan bagian yang terdampak;
+2. identifikasi masalah;
+3. tentukan apakah masalah berasal dari Story Flow atau Writing;
+4. kembalikan ke tahap yang tepat.
+
+
+Rendering tidak boleh menyelesaikan masalah faktual dengan cara mengubah
+blueprint tanpa jejak.
+
+
+================================================================================
+9. POV EXECUTION
+================================================================================
+
+Rendering harus mengikuti POV yang ditetapkan Writing Plan.
+
+Semua informasi yang diberikan dalam narasi harus sesuai dengan batas POV.
+
+Narrator tidak boleh:
+
+- mengetahui pikiran actor yang tidak sedang berada dalam POV;
+- mengetahui observasi yang tidak tersedia;
+- melihat lokasi yang tidak dapat diamati;
+- mengetahui percakapan yang tidak dapat diketahui oleh POV.
+
+
+Jika POV berpindah, perpindahan harus mengikuti Writing Plan.
+
+
+================================================================================
+10. CONSCIOUSNESS BOUNDARY
+================================================================================
+
+Rendering harus membedakan:
+
+- fakta Universe;
+- fakta yang diketahui POV;
+- fakta yang belum diketahui POV;
+- informasi yang hanya tersedia kepada pembaca;
+- informasi yang sengaja belum disampaikan.
+
+
+Pengetahuan narrator tidak boleh bocor ke kesadaran actor tanpa dasar.
+
+
+================================================================================
+11. IDENTITAS ACTOR
+================================================================================
+
+Nama, sebutan, identitas, dan referensi actor harus konsisten.
+
+Rendering tidak boleh:
+
+- mengganti identitas;
+- menggabungkan actor;
+- membedakan actor yang sama;
+- menggunakan alias yang membingungkan tanpa kebutuhan.
+
+
+Jika actor memiliki style tertentu, style tersebut harus dipertahankan sesuai
+Actor System.
+
+
+================================================================================
+12. KONTINUITAS ACTOR
+================================================================================
+
+Selama rendering berlangsung, keadaan actor harus tetap mengikuti Blueprint.
+
+Khususnya:
+
+- lokasi;
+- kondisi;
+- knowledge;
+- relationship;
+- tujuan;
+- tindakan;
+- keputusan.
+
+
+Perubahan yang terjadi dalam scene harus muncul pada posisi yang benar.
+
+
+================================================================================
+13. KNOWLEDGE EXECUTION
+================================================================================
+
+Actor hanya boleh mengucapkan, berpikir, atau bertindak berdasarkan:
+
+- knowledge yang dimiliki;
+- observasi saat ini;
+- informasi yang baru diperoleh;
+- inferensi yang sah.
+
+
+Rendering dilarang memasukkan pengetahuan Universe yang belum dimiliki actor
+ke dalam:
+
+- dialog;
+- inner thought;
+- tindakan;
+- keputusan;
+- reaksi.
+
+
+================================================================================
+14. BEHAVIOR EXECUTION
+================================================================================
+
+Behavior actor harus diterjemahkan secara natural ke dalam tindakan.
+
+Behavior adalah kecenderungan, bukan skrip kaku.
+
+Rendering boleh menghasilkan variasi tindakan selama:
+
+- tidak bertentangan dengan Blueprint;
+- tidak bertentangan dengan behavior;
+- tetap masuk akal terhadap state dan knowledge.
+
+
+================================================================================
+15. RELATIONSHIP EXECUTION
+================================================================================
+
+Cara actor berinteraksi harus mencerminkan relationship yang berlaku pada
+waktu tersebut.
+
+Rendering harus menjaga:
+
+- status relationship;
+- tingkat kedekatan;
+- perubahan yang telah terjadi;
+- batas sosial;
+- informasi yang diketahui masing-masing pihak.
+
+
+Relationship tidak boleh berubah hanya karena dialog membutuhkan dinamika yang
+lebih menarik.
+
+
+================================================================================
+16. OBJECT EXECUTION
+================================================================================
+
+Setiap object yang muncul harus tetap merujuk kepada object yang benar.
+
+Rendering harus menjaga:
+
+- identity;
+- category;
+- attribute;
+- owner;
+- holder;
+- user;
+- wearer;
+- state;
+- location.
+
+
+Nama atau sebutan object boleh disesuaikan dengan naturalitas bahasa selama
+referensinya tetap menunjuk object yang benar.
+
+
+================================================================================
+17. OWNERSHIP DAN POSSESSION
+================================================================================
+
+Rendering harus mempertahankan perbedaan:
+
+- owner;
+- holder;
+- user;
+- wearer;
+- access.
+
+
+Narasi tidak boleh menyamakan satu status dengan status lain.
+
+Perpindahan possession atau penggunaan harus mengikuti Blueprint.
+
+
+================================================================================
+18. STATE EXECUTION
+================================================================================
+
+State actor dan object harus mengikuti perkembangan event.
+
+Jika event menghasilkan perubahan:
+
+STATE SEBELUM
+        ↓
+EVENT
+        ↓
+STATE SESUDAH
+
+
+Rendering harus menyampaikan perubahan pada posisi temporal yang benar.
+
+Rendering tidak boleh menampilkan hasil state sebelum penyebabnya terjadi.
+
+
+================================================================================
+19. TEMPORAL EXECUTION
+================================================================================
+
+Rendering harus menjaga:
+
+- urutan waktu;
+- durasi;
+- transisi waktu;
+- simultaneity;
+- flashback;
+- lompatan waktu;
+- posisi event.
+
+
+Presentation order boleh berbeda dari event order jika telah ditentukan oleh
+Writing Plan.
+
+Namun hubungan fakta tetap harus dapat dipahami.
+
+
+================================================================================
+20. LOCATION EXECUTION
+================================================================================
+
+Rendering harus menjaga orientasi lokasi.
+
+Ketika lokasi relevan, pembaca harus dapat mengikuti:
+
+- siapa berada di mana;
+- perubahan lokasi;
+- perpindahan;
+- hubungan antar lokasi;
+- posisi actor atau object yang relevan.
+
+
+Rendering tidak boleh memindahkan actor atau object tanpa dasar Blueprint.
+
+
+================================================================================
+21. SCENE EXECUTION
+================================================================================
+
+Setiap scene harus menjalankan fungsi yang telah ditentukan.
+
+Scene harus memiliki:
+
+- entry;
+- development;
+- relevant event;
+- transition atau exit.
+
+
+Rendering tidak boleh memperbesar scene dengan menambahkan event baru.
+
+
+================================================================================
+22. SCENE CONTINUITY
+================================================================================
+
+Keadaan pada akhir scene harus sesuai dengan keadaan pada awal scene berikutnya.
+
+Rendering harus mempertahankan:
+
+- lokasi;
+- actor;
+- object;
+- state;
+- relationship;
+- knowledge;
+- waktu.
+
+
+Tidak boleh ada state reset yang tidak dijelaskan.
+
+
+================================================================================
+23. ACTION RENDERING
+================================================================================
+
+Action harus ditulis secara:
+
+- jelas;
+- berurutan;
+- mudah divisualisasikan;
+- sesuai state;
+- sesuai kemampuan actor;
+- sesuai waktu.
+
+
+Action penting dapat memperoleh detail lebih besar sesuai Writing Plan.
+
+Action transisional dapat ditulis lebih ringkas.
+
+
+================================================================================
+24. DIALOGUE RENDERING
+================================================================================
+
+Dialog harus:
+
+- sesuai actor;
+- sesuai relationship;
+- sesuai knowledge;
+- sesuai style;
+- sesuai context;
+- memiliki fungsi.
+
+
+Dialog tidak boleh digunakan sebagai kendaraan untuk memasukkan fakta yang
+belum diketahui actor.
+
+
+================================================================================
+25. DIALOGUE NATURALNESS
+================================================================================
+
+Dialog harus terasa sebagai komunikasi, bukan kumpulan penjelasan sistem.
+
+Hindari:
+
+- penjelasan yang tidak diperlukan;
+- pengulangan fakta;
+- respons yang terlalu sempurna;
+- dialog yang hanya bertugas menjelaskan kepada pembaca.
+
+
+Kejelasan harus dicapai melalui perpaduan:
+
+- dialog;
+- action;
+- context;
+- observation;
+- information flow.
+
+
+================================================================================
+26. DIALOGUE CONSISTENCY
+================================================================================
+
+Setiap actor harus mempertahankan:
+
+- pilihan bahasa;
+- tingkat formalitas;
+- ritme bicara;
+- kecenderungan verbal;
+- cara merespons;
+- ciri ekspresi;
+
+
+sesuai Actor Style.
+
+
+================================================================================
+27. INNER THOUGHT EXECUTION
+================================================================================
+
+Inner thought hanya digunakan apabila Writing Plan mengizinkannya.
+
+Inner thought harus:
+
+- sesuai knowledge;
+- sesuai POV;
+- sesuai state;
+- sesuai behavior;
+- tidak menjadi exposition dump;
+- tidak memberikan informasi yang belum diketahui actor.
+
+
+Inner thought harus terasa sebagai proses mental actor, bukan suara sistem.
+
+
+================================================================================
+28. DESKRIPSI
+================================================================================
+
+Deskripsi harus mendukung:
+
+- orientasi;
+- tindakan;
+- suasana;
+- karakterisasi;
+- object;
+- lingkungan;
+- fokus pembaca.
+
+
+Deskripsi tidak boleh mengarang atribut yang bertentangan dengan Universe.
+
+
+================================================================================
+29. SENSORIAL RENDERING
+================================================================================
+
+Informasi sensorik harus mengikuti:
+
+- POV;
+- lokasi;
+- keadaan;
+- kemampuan persepsi;
+- konteks.
+
+
+Tidak semua scene membutuhkan seluruh bentuk sensorik.
+
+Pilih informasi sensorik yang memiliki fungsi.
+
+
+================================================================================
+30. EXPOSITION
+================================================================================
+
+Eksposisi digunakan secukupnya.
+
+Rendering harus menghindari:
+
+- penjelasan panjang yang tidak perlu;
+- data yang tidak relevan;
+- pengulangan informasi;
+- penjelasan yang bertentangan dengan POV.
+
+
+Eksposisi tidak boleh digunakan untuk menutupi gap Story Flow.
+
+
+================================================================================
+31. SHOW AND TELL
+================================================================================
+
+Rendering harus menggunakan kombinasi:
+
+- showing;
+- telling;
+- dialogue;
+- action;
+- observation.
+
+
+Tidak ada larangan absolut terhadap telling.
+
+Pemilihannya mengikuti Writing Plan dan kebutuhan readability.
+
+
+================================================================================
+32. PACE
+================================================================================
+
+Rendering harus mengikuti pacing yang dirancang.
+
+Pacing mikro dapat berubah sesuai kebutuhan kalimat selama tidak mengubah
+temporal facts.
+
+Bagian penting dapat diberi ruang lebih besar.
+
+Bagian transisi dapat dipadatkan.
+
+
+================================================================================
+33. PARAGRAPH CONTROL
+================================================================================
+
+Paragraf harus memiliki hubungan yang jelas dengan fokus.
+
+Hindari:
+
+- paragraf terlalu padat;
+- paragraf terlalu terfragmentasi;
+- perubahan fokus tanpa transisi;
+- penggabungan beberapa fungsi yang saling mengaburkan.
+
+
+Paragraph break harus membantu pembaca memahami aliran cerita.
+
+
+================================================================================
+34. SENTENCE CONTROL
+================================================================================
+
+Kalimat harus:
+
+- jelas;
+- grammatical;
+- natural;
+- sesuai tone;
+- sesuai context;
+- bervariasi secukupnya.
+
+
+Variasi kalimat tidak boleh mengorbankan kejelasan.
+
+
+================================================================================
+35. RHYTHM
+================================================================================
+
+Rendering harus menciptakan rhythm yang sesuai dengan Writing Plan.
+
+Rhythm dapat dibentuk melalui:
+
+- panjang kalimat;
+- struktur kalimat;
+- dialog;
+- jeda;
+- paragraphing;
+- pergantian action dan observation.
+
+
+Rhythm adalah aspek penyampaian, bukan perubahan tempo waktu Universe.
+
+
+================================================================================
+36. TRANSITION
+================================================================================
+
+Transisi harus membuat perpindahan terasa natural.
+
+Transisi dapat menghubungkan:
+
+- action;
+- scene;
+- waktu;
+- lokasi;
+- focus;
+- POV.
+
+
+Transisi tidak boleh menambahkan fakta yang tidak ditentukan.
+
+
+================================================================================
+37. REFERENCE RESOLUTION
+================================================================================
+
+Rendering harus memilih sebutan yang cukup jelas bagi actor, object, lokasi,
+dan event.
+
+Jika penggunaan nama atau pronoun berpotensi membingungkan:
+
+- gunakan referensi yang lebih jelas;
+- pertahankan identity;
+- jangan menciptakan identity baru.
+
+
+================================================================================
+38. PRONOUN CONTROL
+================================================================================
+
+Pronoun harus digunakan dengan mempertimbangkan:
+
+- jumlah actor;
+- gender apabila relevan terhadap bahasa;
+- kedekatan referensi;
+- kemungkinan ambiguity.
+
+
+Kejelasan referensi lebih penting daripada memaksakan variasi sebutan.
+
+
+================================================================================
+39. INFORMATION FLOW
+================================================================================
+
+Informasi harus diperkenalkan mengikuti Writing Plan.
+
+Rendering tidak boleh:
+
+- membocorkan informasi terlalu dini;
+- menyembunyikan informasi yang wajib tersedia untuk pemahaman;
+- memberikan informasi kepada actor sebelum waktunya;
+- menciptakan mystery palsu.
+
+
+================================================================================
+40. SUBTEXT
+================================================================================
+
+Jika Writing Plan menggunakan subtext, Rendering dapat menyampaikan makna
+melalui:
+
+- pilihan kata;
+- jeda;
+- tindakan;
+- omission;
+- reaksi;
+- perubahan fokus.
+
+
+Subtext tidak boleh bertentangan dengan fakta atau knowledge.
+
+
+================================================================================
+41. EMOTION RENDERING
+================================================================================
+
+Rendering menyampaikan emotional state melalui teknik yang sesuai dengan
+Writing Plan dan Actor System.
+
+Dapat menggunakan:
+
+- tindakan;
+- dialog;
+- respons fisik;
+- inner thought;
+- perhatian;
+- ritme;
+- silence;
+- perubahan behavior.
+
+
+Rendering tidak boleh menetapkan emotional state baru tanpa dasar.
+
+
+================================================================================
+42. NATURALITY
+================================================================================
+
+Naturalitas harus dijaga pada:
+
+- aliran scene;
+- dialog;
+- reaksi;
+- transisi;
+- description;
+- information delivery.
+
+
+Tulisan tidak boleh terasa seperti output database yang sekadar diterjemahkan
+menjadi kalimat.
+
+
+================================================================================
+43. READER ORIENTATION
+================================================================================
+
+Pada titik ketika orientasi diperlukan, rendering harus memberi pembaca
+informasi yang cukup untuk memahami:
+
+- siapa yang sedang diamati;
+- di mana;
+- kapan;
+- apa yang sedang berlangsung;
+- apa yang relevan.
+
+
+Orientasi tidak harus diberikan dalam satu blok penjelasan.
+
+
+================================================================================
+44. COGNITIVE LOAD
+================================================================================
+
+Rendering harus menghindari beban informasi yang tidak perlu.
+
+Apabila banyak:
+
+- actor;
+- object;
+- lokasi;
+- waktu;
+- informasi baru;
+
+muncul berdekatan, penyampaian harus ditata agar pembaca tetap mampu
+mengikuti.
+
+
+================================================================================
+45. REPETITION
+================================================================================
+
+Rendering harus mengurangi pengulangan yang tidak memiliki fungsi.
+
+Pengulangan boleh dipertahankan jika digunakan untuk:
+
+- emphasis;
+- rhythm;
+- orientation;
+- characterization;
+- continuity.
+
+
+================================================================================
+46. NARRATIVE ECONOMY
+================================================================================
+
+Setiap kalimat, paragraf, atau dialog sebaiknya memberikan fungsi.
+
+Fungsi dapat berupa:
+
+- progression;
+- characterization;
+- information;
+- atmosphere;
+- relationship;
+- action;
+- transition;
+- consequence.
+
+
+Rendering harus menghindari filler yang tidak dibutuhkan.
+
+
+================================================================================
+47. OPENING EXECUTION
+================================================================================
+
+Opening harus mengikuti Opening Plan.
+
+Opening harus:
+
+- langsung mengarahkan perhatian;
+- cukup jelas untuk mengorientasikan pembaca;
+- sesuai POV;
+- tidak menggunakan informasi yang belum tersedia;
+- tidak menambahkan event baru.
+
+
+Opening tidak wajib menggunakan satu formula tetap.
+
+
+================================================================================
+48. CLOSING EXECUTION
+================================================================================
+
+Closing harus mengikuti Closing Plan.
+
+Closing harus:
+
+- konsisten dengan ending state;
+- menyelesaikan fungsi alur;
+- menjaga keterhubungan dengan timeline;
+- tidak menambahkan fakta baru;
+- tidak memaksa moral atau kesimpulan yang tidak dirancang.
+
+
+================================================================================
+49. SCENE EXIT EXECUTION
+================================================================================
+
+Scene harus berhenti pada kondisi yang telah direncanakan.
+
+Jangan memperpanjang scene hanya karena masih dapat menambahkan:
+
+- dialog;
+- description;
+- reaction;
+- explanation.
+
+
+Scene berakhir ketika fungsi scene telah tercapai atau ketika Writing Plan
+menentukan perpindahan.
+
+
+================================================================================
+50. NON-LINEAR RENDERING
+================================================================================
+
+Jika Writing Plan menggunakan presentasi non-linear:
+
+- temporal marker harus cukup;
+- POV harus jelas;
+- hubungan antara present dan non-present harus dapat dipahami;
+- fakta tidak boleh berubah.
+
+
+Rendering tidak boleh membuat pembaca menyimpulkan fakta yang salah karena
+transisi yang tidak jelas.
+
+
+================================================================================
+51. FLASHBACK EXECUTION
+================================================================================
+
+Flashback hanya digunakan apabila direncanakan.
+
+Flashback harus menjaga:
+
+- identitas actor;
+- waktu;
+- state saat flashback;
+- knowledge pada waktu tersebut;
+- relationship pada waktu tersebut;
+- object pada waktu tersebut.
+
+
+Keadaan masa kini tidak boleh dibawa ke masa lalu tanpa dasar.
+
+
+================================================================================
+52. INFORMATION ACCURACY
+================================================================================
+
+Setiap fakta yang muncul dalam teks harus dapat ditelusuri ke:
+
+- Universe Canon;
+- Story Blueprint;
+- valid inference yang diperbolehkan oleh konteks.
+
+
+Jika tidak dapat ditelusuri, fakta tersebut harus dianggap berisiko dan tidak
+boleh ditambahkan secara bebas.
+
+
+================================================================================
+53. INFERENCE CONTROL
+================================================================================
+
+Rendering boleh melakukan inference pada tingkat penyampaian jika:
+
+- tidak mengubah fakta;
+- tidak menciptakan state baru;
+- tidak menciptakan relationship baru;
+- tidak menciptakan knowledge baru;
+- tidak menciptakan object baru.
+
+
+Inference yang mengubah fakta harus dikembalikan ke Story Flow.
+
+
+================================================================================
+54. UNKNOWN PRESERVATION
+================================================================================
+
+Informasi yang UNKNOWN dalam Universe harus tetap UNKNOWN kecuali Story
+Blueprint menetapkan event yang secara sah membuat informasi tersebut diketahui.
+
+Rendering tidak boleh mengubah UNKNOWN menjadi fakta hanya untuk meningkatkan
+kelengkapan teks.
+
+
+================================================================================
+55. AMBIGUITY CONTROL
+================================================================================
+
+Ambiguitas yang telah disetujui oleh Writing Plan dapat dipertahankan apabila
+tidak mengganggu pemahaman.
+
+Ambiguitas yang berpotensi mengubah:
+
+- identity;
+- event;
+- ownership;
+- knowledge;
+- state;
+- causal interpretation;
+
+harus dihindari atau dikembalikan ke Story Flow.
+
+
+================================================================================
+56. CONTINUITY DURING RENDERING
+================================================================================
+
+Rendering harus melakukan continuity check secara internal selama penulisan.
+
+Setelah setiap unit penting, periksa:
+
+- actor;
+- object;
+- location;
+- time;
+- state;
+- knowledge;
+- relationship.
+
+
+Jika terjadi drift dari Blueprint, rendering harus dikoreksi sebelum
+dilanjutkan.
+
+
+================================================================================
+57. STATE TRACKING DURING RENDERING
+================================================================================
+
+Narrative Rendering harus mempertahankan state saat berpindah dari:
+
+scene ke scene;
+
+paragraph ke paragraph;
+
+event ke event.
+
+
+Perubahan yang sudah terjadi tidak boleh dilupakan.
+
+Keadaan yang belum terjadi tidak boleh diperlakukan sebagai sudah terjadi.
+
+
+================================================================================
+58. OBJECT TRACKING DURING RENDERING
+================================================================================
+
+Jika object menjadi relevan berulang kali, rendering harus menjaga
+identitasnya tetap sama.
+
+Perubahan sebutan tidak boleh menciptakan object baru.
+
+Object yang berbeda tidak boleh digabung karena nama yang serupa.
+
+
+================================================================================
+59. ACTOR TRACKING DURING RENDERING
+================================================================================
+
+Actor yang muncul berulang kali harus tetap mempertahankan:
+
+- identity;
+- location;
+- knowledge;
+- state;
+- relationship;
+- behavior.
+
+
+Pronoun atau variasi nama tidak boleh memutus identity continuity.
+
+
+================================================================================
+60. SCENE STATE CHECK
+================================================================================
+
+Pada akhir setiap scene, rendering harus dapat menentukan keadaan:
+
+- actor;
+- object;
+- location;
+- knowledge;
+- relationship;
+- story progress.
+
+
+Keadaan tersebut harus menjadi input yang konsisten untuk scene berikutnya.
+
+
+================================================================================
+61. FAILED RENDERING
+================================================================================
+
+Jika rendering tidak dapat melanjutkan tanpa membuat fakta baru atau
+mengubah Blueprint:
+
+STATUS = RENDERING_BLOCKED
+
+
+Proses harus:
+
+1. menghentikan bagian bermasalah;
+2. mengidentifikasi penyebab;
+3. menentukan apakah masalah berasal dari Writing Plan atau Story Flow;
+4. mengembalikan proses ke tahap yang sesuai.
+
+
+================================================================================
+62. NO FORCED WRITING
+================================================================================
+
+Rendering tidak boleh memaksakan teks ketika:
+
+- referensi tidak jelas;
+- event tidak lengkap;
+- state bertentangan;
+- POV tidak jelas;
+- knowledge boundary dilanggar;
+- object identity ambigu;
+- relationship tidak dapat ditentukan.
+
+
+Lebih baik menghentikan rendering daripada menciptakan fakta baru.
+
+
+================================================================================
+63. FLEXIBLE LANGUAGE
+================================================================================
+
+Rendering memiliki kebebasan untuk memilih:
+
+- kata;
+- ungkapan;
+- struktur kalimat;
+- bentuk dialog;
+- paragraph break;
+- transisi mikro.
+
+
+Kebebasan ini berlaku pada LEVEL PENYAMPAIAN, bukan LEVEL CANON.
+
+
+================================================================================
+64. STYLE INTEGRATION
+================================================================================
+
+Rendering harus mengintegrasikan:
+
+- actor style;
+- tone;
+- narrative distance;
+- POV;
+- writing plan;
+- readability.
+
+
+Actor style harus tetap terlihat tanpa memaksakan stereotype yang tidak
+didukung oleh data actor.
+
+
+================================================================================
+65. DIALOGUE AND ACTION BALANCE
+================================================================================
+
+Rendering harus menyeimbangkan:
+
+- dialog;
+- action;
+- observation;
+- description;
+- thought.
+
+
+Keseimbangan mengikuti Writing Plan.
+
+Tidak ada rasio universal.
+
+
+================================================================================
+66. DESCRIPTION AND ACTION BALANCE
+================================================================================
+
+Deskripsi tidak boleh menghambat action yang penting.
+
+Action tidak boleh membuat pembaca kehilangan orientasi ketika deskripsi
+dibutuhkan.
+
+Rendering memilih tingkat detail sesuai fungsi.
+
+
+================================================================================
+67. SCENE INTENSITY
+================================================================================
+
+Rendering mengikuti intensity yang telah ditetapkan Writing Plan.
+
+Intensitas dapat meningkat atau menurun secara natural sesuai perkembangan
+scene.
+
+Intensitas bahasa tidak boleh mengubah skala event Universe.
+
+
+================================================================================
+68. MICRO-EXPRESSION
+================================================================================
+
+Micro-expression hanya digunakan jika:
+
+- didukung actor/state;
+- sesuai Writing Plan;
+- memiliki fungsi.
+
+
+Tidak ada kewajiban memasukkan micro-expression pada setiap cerita.
+
+
+================================================================================
+69. SILENCE DAN PAUSE
+================================================================================
+
+Silence dan pause dapat digunakan sebagai alat penyampaian apabila sesuai
+dengan context.
+
+Keduanya tidak boleh digunakan untuk menambahkan emosi atau tindakan yang
+tidak didukung data actor.
+
+
+================================================================================
+70. READER TRUST
+================================================================================
+
+Narrative Rendering harus menjaga kepercayaan pembaca dengan:
+
+- tidak memalsukan fakta;
+- tidak menciptakan contradiction;
+- tidak menggunakan informasi yang tidak tersedia secara menyesatkan;
+- tidak memindahkan event tanpa penanda;
+- tidak mengubah identitas.
+
+
+================================================================================
+71. NO META-NARRATION
+================================================================================
+
+Rendering tidak boleh membahas:
+
+- system;
+- Blueprint;
+- Writing Plan;
+- Canon;
+- proses AI;
+- aturan internal;
+
+kecuali memang secara eksplisit menjadi bagian dari format cerita yang
+ditentukan oleh sistem lain.
+
+
+================================================================================
+72. NO PROCESS LEAK
+================================================================================
+
+Tahap internal seperti:
+
+- Story Design;
+- Story Logic;
+- Story Validation;
+- Writing Design;
+
+tidak boleh muncul dalam STORY TEXT.
+
+
+================================================================================
+73. OUTPUT FORMAT
+================================================================================
+
+Output utama Narrative Rendering adalah STORY TEXT.
+
+Jika format produksi menentukan metadata tertentu, metadata tersebut harus
+dipisahkan secara jelas dari cerita.
+
+Narrative Rendering tidak boleh mencampurkan diagnostic log ke dalam STORY
+TEXT.
+
+
+================================================================================
+74. RENDERING COMPLETION
+================================================================================
+
+Rendering dianggap selesai apabila:
+
+1. seluruh scene yang direncanakan telah ditulis;
+2. event sequence telah tersampaikan;
+3. ending state telah tercapai;
+4. tidak ada scene yang terputus tanpa alasan;
+5. tidak ada fakta yang berubah;
+6. tidak ada unresolved rendering issue;
+7. STORY TEXT siap masuk Writing Validation.
+
+
+================================================================================
+75. RENDERING SELF-CHECK
+================================================================================
+
+Sebelum menyerahkan hasil ke Writing Validation:
+
+[ ] Semua event utama telah dirender
+[ ] Tidak ada event baru yang diciptakan
+[ ] Semua actor sesuai identity
+[ ] Semua object sesuai identity
+[ ] Relationship tetap konsisten
+[ ] Knowledge boundary terjaga
+[ ] State transition terjaga
+[ ] Timeline terjaga
+[ ] Location terjaga
+[ ] Ownership/possession terjaga
+[ ] POV konsisten
+[ ] Presentation order sesuai Writing Plan
+[ ] Dialog sesuai actor style
+[ ] Inner thought sesuai knowledge
+[ ] Tidak ada Canon baru
+[ ] Tidak ada unsupported assumption
+[ ] Tidak ada unresolved ambiguity kritis
+[ ] Tidak ada process leak
+[ ] STORY TEXT lengkap
+
+
+================================================================================
+76. HUBUNGAN DENGAN WRITING DESIGN
+================================================================================
+
+WRITING DESIGN:
+
+    menentukan bagaimana teks seharusnya disampaikan.
+
+
+NARRATIVE RENDERING:
+
+    melaksanakan rancangan tersebut menjadi teks.
+
+
+Rendering boleh menyesuaikan detail mikro jika diperlukan untuk naturalitas,
+tetapi tidak boleh mengubah kontrak faktual.
+
+
+================================================================================
+77. HUBUNGAN DENGAN WRITING VALIDATION
+================================================================================
+
+Narrative Rendering menghasilkan STORY TEXT.
+
+Writing Validation kemudian memeriksa:
+
+- fidelity terhadap Writing Plan;
+- fidelity terhadap Story Blueprint;
+- kualitas penyampaian;
+- readability;
+- consistency;
+- naturalness;
+- style.
+
+
+Jika kesalahan murni penulisan ditemukan:
+
+→ kembali ke Narrative Rendering.
+
+
+Jika kesalahan faktual ditemukan:
+
+→ kembali ke Story Flow.
+
+
+================================================================================
+78. HUBUNGAN DENGAN STORY FLOW
+================================================================================
+
+Jika selama rendering ditemukan:
+
+- event yang tidak mungkin;
+- identity conflict;
+- state conflict;
+- relationship conflict;
+- object conflict;
+- knowledge conflict;
+- temporal conflict;
+
+maka masalah dikembalikan ke:
+
+STORY LOGIC
+atau
+STORY DESIGN
+
+sesuai jenis masalah.
+
+
+Narrative Rendering tidak boleh menyelesaikannya dengan mengubah teks secara
+diam-diam.
+
+
+================================================================================
+79. REVISION BOUNDARY
+================================================================================
+
+Masalah penyampaian:
+
+→ Narrative Rendering.
+
+
+Masalah Writing Plan:
+
+→ Writing Design.
+
+
+Masalah kesiapan Blueprint:
+
+→ Story Validation.
+
+
+Masalah logika:
+
+→ Story Logic.
+
+
+Masalah struktur cerita:
+
+→ Story Design.
+
+
+Masalah fakta Actor:
+
+→ Actor System.
+
+
+Masalah Relationship:
+
+→ Relationship System.
+
+
+Masalah Object:
+
+→ Object System.
+
+
+================================================================================
+80. PRINCIPLE OF NATURAL EXECUTION
+================================================================================
+
+Narrative Rendering harus membuat cerita terasa ditulis oleh penulis yang
+memahami seluruh konteks cerita, bukan seperti:
+
+- database yang dibacakan;
+- daftar event;
+- laporan sistem;
+- urutan metadata.
+
+
+Informasi tetap berasal dari sistem.
+
+Penyampaiannya harus terasa sebagai cerita.
+
+
+================================================================================
+81. PRINCIPLE OF READABILITY FIRST
+================================================================================
+
+Jika terdapat beberapa cara yang sama-sama valid untuk menyampaikan fakta,
+pilih cara yang:
+
+- lebih jelas;
+- lebih natural;
+- lebih mudah diikuti;
+- lebih ringan secara kognitif;
+- lebih sesuai dengan tone;
+- lebih sesuai dengan POV.
+
+
+Tidak boleh memilih bentuk yang lebih sulit hanya demi terlihat kompleks.
+
+
+================================================================================
+82. PRINCIPLE OF RESTRAINT
+================================================================================
+
+Narrative Rendering harus menahan diri dari:
+
+- menjelaskan sesuatu yang sudah jelas;
+- mengulang informasi yang tidak perlu;
+- menambahkan metafora berlebihan;
+- menambah reaksi yang tidak dibutuhkan;
+- menambah event baru;
+- menambah lore yang tidak diperlukan;
+- menambah detail faktual yang tidak tersedia.
+
+
+================================================================================
+83. PRINCIPLE OF SPECIFICITY
+================================================================================
+
+Gunakan tingkat spesifikasi yang cukup untuk membuat teks jelas.
+
+Jangan mengubah detail UNKNOWN menjadi spesifik hanya untuk membuat kalimat
+terlihat lebih hidup.
+
+
+================================================================================
+84. PRINCIPLE OF CONTEXT
+================================================================================
+
+Makna sebuah kalimat harus mempertahankan context dari:
+
+- scene;
+- actor;
+- relationship;
+- object;
+- state;
+- knowledge.
+
+
+Kalimat yang secara lokal terlihat benar tetapi menghasilkan makna global
+yang salah harus diperbaiki.
+
+
+================================================================================
+85. PRINCIPLE OF CONTINUOUS AWARENESS
+================================================================================
+
+Narrative Rendering harus mempertahankan awareness terhadap seluruh keadaan
+cerita selama proses penulisan.
+
+Jangan memperlakukan setiap paragraph sebagai unit terpisah.
+
+Setiap bagian harus memahami keadaan yang terbentuk dari bagian sebelumnya.
+
+
+================================================================================
+86. PRINCIPLE OF END-STATE FIDELITY
+================================================================================
+
+Teks akhir harus berakhir pada keadaan yang sesuai dengan FINAL STORY
+BLUEPRINT.
+
+Rendering tidak boleh mengubah:
+
+- hasil event;
+- status relationship;
+- ownership;
+- location;
+- knowledge;
+- state;
+
+hanya karena ending terasa lebih dramatis jika berbeda.
+
+
+================================================================================
+87. PRINCIPLE OF FUTURE COMPATIBILITY
+================================================================================
+
+Narrative Rendering harus menghindari detail penyampaian yang secara tidak
+sengaja mengunci masa depan Universe pada fakta yang belum ditetapkan.
+
+Teks harus cukup spesifik untuk cerita saat ini, tetapi tidak menciptakan
+Canon tambahan yang tidak dibutuhkan.
+
+
+================================================================================
+88. FINAL RENDERING GATE
+================================================================================
+
+Story Text hanya boleh diteruskan ke Writing Validation apabila:
+
+[ ] Rendering selesai
+[ ] Writing Plan dijalankan
+[ ] Story Blueprint dipertahankan
+[ ] Tidak ada Canon baru
+[ ] Tidak ada factual drift
+[ ] Tidak ada identity drift
+[ ] Tidak ada temporal drift
+[ ] Tidak ada state drift
+[ ] Tidak ada knowledge drift
+[ ] Tidak ada object drift
+[ ] Tidak ada relationship drift
+[ ] Tidak ada unresolved rendering blocker
+[ ] POV konsisten
+[ ] Referensi jelas
+[ ] Scene continuity terjaga
+[ ] Story Text terbaca secara natural
+[ ] Story Text siap divalidasi
+
+
+================================================================================
+89. ATURAN UTAMA
+================================================================================
+
+1. Narrative Rendering adalah tahap penulisan aktual.
+
+2. Story Blueprint adalah sumber kebenaran alur.
+
+3. Writing Plan adalah sumber kebenaran bentuk penyampaian.
+
+4. Rendering tidak boleh menciptakan Canon.
+
+5. Rendering tidak boleh mengubah event.
+
+6. Rendering tidak boleh mengubah identity.
+
+7. Rendering tidak boleh mengubah relationship.
+
+8. Rendering tidak boleh mengubah object.
+
+9. Rendering tidak boleh mengubah state.
+
+10. Rendering tidak boleh mengubah knowledge.
+
+11. Rendering tidak boleh mengubah timeline.
+
+12. Rendering tidak boleh mengubah ownership atau possession.
+
+13. POV harus dipatuhi.
+
+14. Knowledge boundary harus dipatuhi.
+
+15. Actor style harus dipatuhi.
+
+16. Dialog harus natural dan relevan.
+
+17. Description harus fungsional.
+
+18. Pacing harus mendukung cerita.
+
+19. Readability harus dijaga.
+
+20. Naturalness harus dijaga.
+
+21. UNKNOWN tetap UNKNOWN sampai ada dasar sah untuk perubahan.
+
+22. Ambiguitas kritis tidak boleh diselesaikan dengan asumsi.
+
+23. Masalah logika dikembalikan ke Story Flow.
+
+24. Masalah desain penulisan dikembalikan ke Writing Design.
+
+25. Rendering harus menghasilkan teks, bukan laporan sistem.
+
+26. Kualitas bahasa boleh fleksibel.
+
+27. Fakta Universe tidak boleh fleksibel.
+
+28. Setiap kalimat bebas secara bentuk tetapi terikat secara fakta.
+
+29. Hasil Rendering wajib melewati Writing Validation.
+
+
+================================================================================
+END OF NARRATIVE RENDERING
+================================================================================
