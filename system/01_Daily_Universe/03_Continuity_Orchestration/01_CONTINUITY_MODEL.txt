@@ -1,0 +1,769 @@
+================================================================================
+CONTINUITY MODEL
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / CONTINUITY ORCHESTRATION
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Continuity Model adalah model dasar yang digunakan Daily Universe untuk
+menjaga kesinambungan Universe melalui perubahan waktu.
+
+Model ini menjelaskan bagaimana keadaan, kejadian, proses, consequence, dan
+data domain lain dapat tetap terhubung ketika Universe bergerak dari satu
+periode ke periode berikutnya.
+
+Continuity Model bukan definisi Character Continuity.
+
+Continuity Model bukan definisi Relationship Continuity.
+
+Continuity Model bukan definisi Object Continuity.
+
+Continuity Model bukan definisi Knowledge Continuity.
+
+Continuity Model adalah kerangka orkestrasi temporal yang digunakan untuk
+menghubungkan continuity antar-system.
+
+
+================================================================================
+02. CORE PRINCIPLE
+================================================================================
+
+Continuity berarti:
+
+SESUATU YANG BERLAKU PADA SUATU WAKTU
+HARUS TETAP MEMPUNYAI HUBUNGAN YANG SAH
+DENGAN POSISI WAKTU BERIKUTNYA.
+
+Hubungan tersebut dapat berupa:
+
+- tetap berlaku;
+- berubah;
+- berakhir;
+- berkembang;
+- tertunda;
+- terputus;
+- dilanjutkan;
+- unresolved;
+- menjadi history.
+
+Continuity tidak berarti semua hal harus tetap sama.
+
+Continuity berarti perubahan tetap mempunyai hubungan yang dapat ditelusuri.
+
+
+================================================================================
+03. CONTINUITY VS STATIC PERSISTENCE
+================================================================================
+
+Continuity bukan sekadar menyimpan data dari periode sebelumnya.
+
+STATIC PERSISTENCE
+→ data tetap ada.
+
+CONTINUITY
+→ keberadaan, perubahan, dan hubungan temporal data tetap dapat dipahami dari
+  satu periode ke periode berikutnya.
+
+Sebuah data dapat tetap tersimpan tetapi tidak lagi berlaku.
+
+Sebuah data dapat berubah tetapi tetap memiliki continuity.
+
+Sebuah data dapat berakhir tetapi tetap mempunyai history.
+
+
+================================================================================
+04. TEMPORAL FOUNDATION
+================================================================================
+
+Continuity selalu bergantung pada Universe Time.
+
+Struktur umum:
+
+PREVIOUS TEMPORAL POSITION
+        ↓
+PREVIOUS VALID CONDITION
+        ↓
+EVENT / CHANGE / TIME PROGRESSION
+        ↓
+CURRENT TEMPORAL POSITION
+        ↓
+CURRENT VALID CONDITION
+        ↓
+NEXT TEMPORAL POSITION
+
+Jika posisi waktu tidak dapat ditentukan secara memadai, continuity harus
+mempertahankan ketidakpastian.
+
+
+================================================================================
+05. CONTINUITY OBJECT
+================================================================================
+
+Unit yang dibawa oleh continuity orchestration disebut Continuity Item.
+
+Continuity Item dapat berupa:
+
+- state reference;
+- actor condition;
+- relationship condition;
+- object condition;
+- knowledge-related condition;
+- location condition;
+- process;
+- consequence;
+- unresolved condition;
+- temporal condition;
+- domain transition;
+- event-related context.
+
+Continuity Item tetap menjadi milik domain asalnya.
+
+
+================================================================================
+06. IDENTITY
+================================================================================
+
+Continuity harus mempertahankan identity dari sesuatu yang sedang diteruskan.
+
+Identity diperlukan untuk membedakan:
+
+- kelanjutan;
+- perubahan;
+- duplikasi;
+- item baru;
+- item yang telah berakhir.
+
+Pergantian periode tidak boleh secara otomatis menghasilkan identity baru.
+
+
+================================================================================
+07. SOURCE
+================================================================================
+
+Setiap Continuity Item harus memiliki source yang dapat ditelusuri.
+
+Source dapat berupa:
+
+- previous period;
+- event;
+- consequence;
+- process;
+- domain owner;
+- temporal transition;
+- validated change.
+
+Continuity tidak boleh menciptakan source baru hanya untuk membuat sebuah item
+dapat diteruskan.
+
+
+================================================================================
+08. CURRENT VALIDITY
+================================================================================
+
+Sebelum sebuah item diteruskan, sistem harus menentukan apakah item tersebut
+masih memiliki validity pada current temporal position.
+
+Status validity dapat berupa:
+
+- valid;
+- changed;
+- expired;
+- suspended;
+- unresolved;
+- unknown.
+
+Status tersebut bukan definisi domain.
+
+Status tersebut merupakan klasifikasi orchestration temporal.
+
+
+================================================================================
+09. CONTINUITY TRANSITION
+================================================================================
+
+Continuity dapat menghasilkan transition.
+
+Bentuk umum:
+
+CONTINUE
+→ item tetap berlaku.
+
+CHANGE
+→ item berubah.
+
+END
+→ item tidak lagi berlaku tetapi tetap menjadi history.
+
+SUSPEND
+→ item sementara tidak aktif.
+
+RESUME
+→ item dilanjutkan.
+
+UNRESOLVED
+→ status belum dapat ditentukan.
+
+NEW
+→ item baru muncul berdasarkan event atau mekanisme yang sah.
+
+Continuity transition harus memiliki source yang dapat ditelusuri.
+
+
+================================================================================
+10. CONTINUE
+================================================================================
+
+CONTINUE berarti item yang sama tetap mempunyai keberlakuan pada periode baru.
+
+Continue bukan duplicate creation.
+
+Reference terhadap item tetap mempertahankan identity asal.
+
+
+================================================================================
+11. CHANGE
+================================================================================
+
+CHANGE berarti kondisi item berubah.
+
+Perubahan harus memiliki:
+
+- source;
+- temporal position;
+- reason atau causal basis apabila relevan;
+- domain owner;
+- resulting state.
+
+Daily Universe mengorkestrasi waktunya.
+
+Domain owner menentukan isi perubahan.
+
+
+================================================================================
+12. END
+================================================================================
+
+END berarti item tidak lagi berlaku pada current temporal position.
+
+Ending harus mempunyai dasar.
+
+Ending tidak berarti item dihapus dari history.
+
+History tetap diperlukan untuk continuity dan traceability.
+
+
+================================================================================
+13. SUSPEND
+================================================================================
+
+SUSPEND berarti item sementara tidak aktif tetapi belum berakhir.
+
+Suspension tidak menghapus identity.
+
+Suspension tidak menghapus history.
+
+Suspension tidak boleh diperlakukan sebagai completion.
+
+
+================================================================================
+14. RESUME
+================================================================================
+
+RESUME berarti item yang sebelumnya suspended, paused, atau interrupted kembali
+berlanjut.
+
+Resume harus mempertahankan:
+
+- identity;
+- history;
+- previous status;
+- temporal position;
+- remaining dependency.
+
+
+================================================================================
+15. UNRESOLVED
+================================================================================
+
+UNRESOLVED berarti continuity item masih relevan tetapi belum dapat ditentukan
+perkembangannya secara sah.
+
+Unresolved bukan:
+
+- completed;
+- ended;
+- cancelled;
+- actualized.
+
+Unresolved harus dapat dibawa ke periode berikutnya apabila masih relevan.
+
+
+================================================================================
+16. NEW ITEM
+================================================================================
+
+Item baru hanya dapat muncul jika terdapat dasar yang sah.
+
+Dasar dapat berupa:
+
+- Actual Event;
+- domain transition;
+- consequence;
+- valid process initiation;
+- system-defined mechanism.
+
+Continuity tidak boleh membuat item baru hanya untuk mengisi gap.
+
+
+================================================================================
+17. DOMAIN OWNERSHIP
+================================================================================
+
+Continuity orchestration tidak mengambil alih domain ownership.
+
+Pola umum:
+
+DAILY UNIVERSE
+→ membaca continuity context
+→ mendeteksi temporal transition
+→ mengidentifikasi domain impact
+→ menyerahkan perubahan kepada domain owner
+→ menerima hasil
+→ memperbarui temporal continuity context.
+
+Domain owner tetap berwenang terhadap isi dan validitas domain.
+
+
+================================================================================
+18. DOMAIN HANDOFF
+================================================================================
+
+Setiap perubahan lintas-domain harus mempunyai handoff yang jelas.
+
+Handoff minimal harus menunjukkan:
+
+- source;
+- target domain;
+- temporal position;
+- requested transition;
+- required dependency;
+- result;
+- validation status.
+
+Daily Universe tidak boleh menganggap handoff berhasil tanpa hasil yang sah.
+
+
+================================================================================
+19. NO DUPLICATE DOMAIN MODEL
+================================================================================
+
+Daily Universe tidak boleh membuat salinan alternatif dari:
+
+- Character Data;
+- Relationship Data;
+- Object Data;
+- Knowledge Data;
+- State Data;
+- domain data lain.
+
+Continuity Context dapat menyimpan reference atau operational representation,
+tetapi tidak boleh menjadi Canon kedua.
+
+
+================================================================================
+20. CONTINUITY REFERENCE VS DOMAIN DATA
+================================================================================
+
+Continuity Reference adalah referensi terhadap data yang dimiliki domain owner.
+
+Domain Data adalah data Canon sebenarnya.
+
+Continuity Reference dapat digunakan untuk:
+
+- mengetahui item yang harus dibawa;
+- mengetahui source;
+- mengetahui temporal position;
+- menghubungkan transition.
+
+Continuity Reference tidak menggantikan Domain Data.
+
+
+================================================================================
+21. TEMPORAL CARRYOVER
+================================================================================
+
+Carryover adalah salah satu mekanisme penerapan Continuity Model.
+
+Pola:
+
+PREVIOUS PERIOD
+↓
+IDENTIFY CONTINUITY ITEM
+↓
+CHECK VALIDITY
+↓
+CHECK CHANGE
+↓
+DOMAIN HANDOFF
+↓
+RESULT
+↓
+CURRENT PERIOD CONTEXT
+
+Carryover tidak berarti seluruh data previous period dipindahkan.
+
+
+================================================================================
+22. EVENT-DRIVEN CONTINUITY
+================================================================================
+
+Continuity dapat dipicu oleh event.
+
+Pola:
+
+EVENT
+↓
+IMPACT
+↓
+TRANSITION
+↓
+DOMAIN HANDOFF
+↓
+NEW CURRENT CONDITION
+
+Event tidak boleh menghasilkan transition pada domain apabila hubungan
+temporalnya tidak sah.
+
+
+================================================================================
+23. TIME-DRIVEN CONTINUITY
+================================================================================
+
+Perubahan waktu sendiri dapat menyebabkan perubahan continuity apabila aturan
+Universe mengharuskannya.
+
+Contohnya termasuk:
+
+- periode berakhir;
+- duration selesai;
+- deadline tercapai;
+- future position menjadi present;
+- present position menjadi past.
+
+Time-driven transition tetap harus mempunyai dasar pada aturan temporal.
+
+
+================================================================================
+24. CONDITIONAL CONTINUITY
+================================================================================
+
+Continuity dapat bergantung pada kondisi.
+
+Jika condition:
+
+TRUE
+→ transition dapat dijalankan.
+
+FALSE
+→ transition tidak terjadi.
+
+UNKNOWN
+→ transition tidak boleh dipaksakan.
+
+Condition tetap mengikuti domain owner apabila berasal dari domain lain.
+
+
+================================================================================
+25. DEPENDENCY GRAPH
+================================================================================
+
+Continuity dapat memiliki dependency antar-item.
+
+Dependency digunakan untuk menentukan urutan transition.
+
+Jika Item A harus berubah sebelum Item B dapat berubah, hubungan tersebut
+harus dipertahankan.
+
+System tidak boleh mengurutkan ulang transition hanya untuk mempercepat
+proses.
+
+
+================================================================================
+26. PARALLEL CONTINUITY
+================================================================================
+
+Beberapa Continuity Item dapat berkembang secara paralel.
+
+Parallel continuity tidak boleh digabung hanya karena terjadi pada periode
+yang sama.
+
+Setiap item tetap mempunyai identity dan dependency sendiri.
+
+
+================================================================================
+27. CONTINUITY OF UNRESOLVED
+================================================================================
+
+Unresolved information dapat menjadi bagian dari continuity apabila masih
+relevan.
+
+Unresolved harus:
+
+- tetap dikenali;
+- tetap memiliki identity jika diperlukan;
+- tetap memiliki source;
+- mempertahankan temporal context;
+- dapat diperiksa kembali pada periode berikutnya.
+
+
+================================================================================
+28. CONTINUITY OF HISTORY
+================================================================================
+
+Continuity selalu menjaga dua hal sekaligus:
+
+CURRENT VALID CONDITION
+dan
+HISTORICAL TRACE.
+
+Keadaan saat ini tidak boleh menghapus bukti bahwa keadaan sebelumnya pernah
+berlaku.
+
+Perubahan tidak boleh menghilangkan history tanpa mekanisme revision yang sah.
+
+
+================================================================================
+29. HISTORY VS CURRENT STATE
+================================================================================
+
+History menjawab:
+
+“Apa yang telah terjadi?”
+
+Current State menjawab:
+
+“Apa yang berlaku sekarang?”
+
+Continuity menjaga hubungan antara keduanya.
+
+History tidak boleh digunakan sebagai Current State secara otomatis.
+
+Current State tidak boleh menghapus History.
+
+
+================================================================================
+30. FUTURE CONTINUITY
+================================================================================
+
+Future information dapat menjadi continuity item tanpa menjadi Actual.
+
+Plan, Prediction, Possibility, Hypothesis, dan Imagination tetap membawa status
+temporal masing-masing.
+
+Ketika waktu bergerak maju, item tersebut dievaluasi kembali.
+
+Actualization hanya terjadi melalui event aktual yang sah.
+
+
+================================================================================
+31. NARRATIVE INDEPENDENCE
+================================================================================
+
+Continuity tidak bergantung pada apakah sesuatu sedang diceritakan.
+
+Item yang tidak muncul dalam Daily Story tetap dapat memiliki continuity.
+
+Item yang muncul dalam Daily Story tidak otomatis mendapatkan continuity
+tambahan hanya karena telah ditulis.
+
+
+================================================================================
+32. STORY CONTINUITY VS UNIVERSE CONTINUITY
+================================================================================
+
+Universe Continuity adalah kesinambungan kehidupan Universe.
+
+Story Continuity adalah kesinambungan penyajian atau isi cerita.
+
+Keduanya tidak sama.
+
+Daily Universe bertanggung jawab terhadap Universe Continuity.
+
+Narrator bertanggung jawab terhadap Story Continuity dalam penyajian.
+
+Story tidak menjadi sumber utama Universe Continuity.
+
+
+================================================================================
+33. NO STORY-DRIVEN CHANGE
+================================================================================
+
+Continuity tidak boleh berubah hanya karena:
+
+- cerita membutuhkan perkembangan;
+- cerita membutuhkan konflik;
+- cerita membutuhkan resolution;
+- cerita membutuhkan karakter tertentu;
+- narrator membutuhkan event tertentu;
+- ending membutuhkan closure.
+
+Perubahan harus berasal dari Universe process yang sah.
+
+
+================================================================================
+34. CONTINUITY CONFLICT
+================================================================================
+
+Conflict terjadi apabila continuity item tidak dapat diteruskan tanpa
+bertentangan dengan data atau aturan temporal yang sah.
+
+Conflict harus diklasifikasikan sebagai:
+
+- data conflict;
+- temporal conflict;
+- domain conflict;
+- causal conflict;
+- identity conflict;
+- dependency conflict;
+- ownership conflict.
+
+
+================================================================================
+35. CONFLICT ROUTING
+================================================================================
+
+Jika conflict terjadi:
+
+TEMPORAL CONFLICT
+→ Temporal Validation.
+
+DOMAIN CONFLICT
+→ domain owner.
+
+CAUSAL CONFLICT
+→ Daily Universe causal validation.
+
+IDENTITY CONFLICT
+→ system owner terkait.
+
+OWNERSHIP CONFLICT
+→ architecture-level resolution.
+
+Daily Universe tidak boleh menyelesaikan semua conflict sendiri.
+
+
+================================================================================
+36. CONTINUITY VALIDATION
+================================================================================
+
+Sebelum transition diterapkan, system harus dapat memeriksa:
+
+- identity;
+- source;
+- temporal position;
+- current validity;
+- dependency;
+- domain owner;
+- transition type;
+- history;
+- resulting condition.
+
+
+================================================================================
+37. CONTINUITY STATUS
+================================================================================
+
+Continuity operation dapat menghasilkan:
+
+VALID
+→ transition sah.
+
+REVIEW_REQUIRED
+→ terdapat uncertainty yang masih dapat dipertahankan.
+
+REVISION_REQUIRED
+→ transition tidak dapat diterapkan tanpa koreksi.
+
+BLOCKED
+→ continuity tidak dapat dilanjutkan secara sah.
+
+
+================================================================================
+38. NO SILENT REPAIR
+================================================================================
+
+Continuity tidak boleh:
+
+- mengubah data domain secara diam-diam;
+- menghapus history;
+- mengubah identity;
+- menghilangkan dependency;
+- menghapus unresolved condition;
+- membuat event baru;
+- membuat domain data baru;
+- mengubah waktu;
+- memaksa actualization.
+
+Ketika continuity gagal, failure harus tetap terlihat.
+
+
+================================================================================
+39. LONG-TERM MODEL
+================================================================================
+
+Continuity Model harus dapat digunakan untuk Universe dengan durasi:
+
+- pendek;
+- panjang;
+- puluhan tahun;
+- ratusan tahun;
+- atau selama Universe tetap berjalan.
+
+Model tidak boleh bergantung pada jumlah periode tertentu.
+
+Continuity ditentukan oleh hubungan antarstate dan event, bukan jumlah hari.
+
+
+================================================================================
+40. FINAL PRINCIPLE
+================================================================================
+
+CONTINUITY BUKAN:
+
+MENYALIN DATA LAMA KE DATA BARU.
+
+CONTINUITY ADALAH:
+
+MENGHUBUNGKAN KONDISI LAMA
+        ↓
+DENGAN PERUBAHAN YANG TERJADI
+        ↓
+UNTUK MENENTUKAN KONDISI YANG SAH BERIKUTNYA.
+
+Daily Universe mengatur perjalanan hubungan tersebut.
+
+System owner masing-masing tetap memiliki domainnya.
+
+Dengan demikian:
+
+ONE DOMAIN
+→ ONE OWNER
+
+ONE TEMPORAL FLOW
+→ ONE DAILY UNIVERSE ORCHESTRATOR
+
+CONTINUITY
+→ HUBUNGAN ANTARA KEDUANYA.
+
+
+================================================================================
+END OF CONTINUITY MODEL
+================================================================================
