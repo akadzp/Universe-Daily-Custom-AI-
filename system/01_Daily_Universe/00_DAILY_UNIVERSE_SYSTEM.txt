@@ -1,1 +1,555 @@
-================================================================================ DAILY UNIVERSE SYSTEM ================================================================================ STATUS -------------------------------------------------------------------------------- SYSTEM ACTIVE AUTHORITATIVE WITHIN DAILY UNIVERSE ================================================================================ 01. PURPOSE ================================================================================ Daily Universe adalah system yang mengorkestrasi perjalanan Universe melalui waktu. Daily Universe memastikan bahwa Universe dapat bergerak dari satu kondisi temporal ke kondisi berikutnya secara berkesinambungan, tanpa mengambil alih kepemilikan aturan domain yang dimiliki system lain. Daily Universe bertanggung jawab terhadap: - aliran temporal Universe; - kesinambungan antarperiode; - carry-over keadaan yang sudah ditetapkan oleh system pemiliknya; - hubungan temporal antara kejadian dan konsekuensi; - keberlanjutan proses yang masih berjalan; - pembentukan konteks untuk Daily Story; - siklus operasional Daily Story; - identitas Daily Story; - pengelolaan struktur penyimpanan Daily Story; - pembuatan folder yang diperlukan; - penamaan file; - penempatan hasil; - validasi proses Daily Universe. Daily Universe bukan pemilik definisi Character. Daily Universe bukan pemilik definisi Relationship. Daily Universe bukan pemilik definisi Object. Daily Universe bukan pemilik definisi Knowledge. Daily Universe bukan pemilik domain lain yang telah mempunyai system owner. Daily Universe adalah temporal orchestrator. ================================================================================ 02. CORE RESPONSIBILITY ================================================================================ Tanggung jawab utama Daily Universe adalah menjaga agar kehidupan Universe tetap terhubung secara temporal. Daily Universe mengatur perjalanan data dan kejadian melalui waktu tanpa mengubah makna atau aturan dasar domain yang dimiliki system lain. Daily Universe harus memastikan: - periode memiliki posisi temporal yang jelas; - kondisi sebelumnya dapat menjadi dasar periode berikutnya; - kejadian dan konsekuensi tetap terhubung; - proses yang belum selesai tetap dapat diteruskan; - perubahan dapat ditelusuri secara temporal; - Daily Story tetap berada dalam konteks Universe yang sama; - hasil produksi berada pada Instance yang benar. Daily Universe tidak menciptakan definisi baru untuk domain yang sudah memiliki system owner. ================================================================================ 03. SYSTEM OWNERSHIP ================================================================================ Setiap domain utama dalam System harus memiliki satu owner yang menjadi sumber aturan domain tersebut. Character System → owner aturan dan definisi Character. Relationship System → owner aturan dan definisi Relationship. Object System → owner aturan dan definisi Object. Knowledge yang menjadi bagian dari Character → mengikuti owner dan aturan Knowledge pada Character System. Narrator System → owner aturan transformasi Universe menjadi cerita. Daily Universe → owner aturan perjalanan temporal dan orchestration Daily Universe. Daily Universe tidak boleh mendefinisikan ulang domain yang telah mempunyai system owner. ================================================================================ 04. ORCHESTRATION VS OWNERSHIP ================================================================================ Orchestration dan ownership adalah dua fungsi yang berbeda. OWNERSHIP berarti system menentukan: - definisi suatu domain; - struktur domain; - arti domain; - aturan domain; - validitas internal domain; - batas perubahan domain. ORCHESTRATION berarti system: - membaca data yang sah; - mengatur urutan proses; - menghubungkan proses; - menentukan kapan proses temporal terjadi; - meneruskan hasil kepada system yang berwenang; - menjaga kesinambungan antarperiode. Daily Universe memiliki orchestration terhadap perjalanan temporal. Daily Universe tidak memperoleh ownership hanya karena menggunakan data dari system lain. ================================================================================ 05. DOMAIN HANDOFF ================================================================================ Apabila proses Daily Universe membutuhkan data atau perubahan pada domain yang dimiliki system lain, Daily Universe harus menggunakan aturan dan mekanisme yang dimiliki system tersebut. Pola umum: DAILY UNIVERSE → menentukan konteks temporal → memicu kebutuhan perubahan → menyerahkan perubahan kepada domain owner → domain owner memvalidasi dan menerapkan aturan domain → hasil dikembalikan ke aliran Daily Universe → Daily Universe melanjutkan perjalanan temporal. Daily Universe tidak boleh membuat aturan pengganti hanya karena domain owner tidak ditulis di dalam file Daily Universe. ================================================================================ 06. CHARACTER DOMAIN ================================================================================ Character System tetap menjadi sumber aturan Character. Daily Universe boleh: - membaca Character Data; - menggunakan Character Data dalam proses temporal; - membawa kondisi Character yang sah dari satu periode ke periode berikutnya; - mendeteksi bahwa suatu kejadian temporal memerlukan perubahan Character; - meneruskan perubahan tersebut kepada Character System; - menggunakan hasil perubahan Character sebagai dasar periode berikutnya. Daily Universe tidak boleh: - membuat definisi Character baru; - mendefinisikan personality baru; - mengganti behavior rules; - membuat Knowledge Character sendiri; - membuat State Character versi kedua; - membuat Relationship Character versi kedua; - mengganti identitas Character; - mengubah data Character tanpa dasar dan mekanisme yang sah dari Character System. ================================================================================ 07. RELATIONSHIP DOMAIN ================================================================================ Relationship System tetap menjadi sumber aturan Relationship. Daily Universe boleh: - membaca Relationship Data; - memperhitungkan Relationship dalam perjalanan temporal; - mendeteksi bahwa kejadian dapat memicu perubahan Relationship; - meneruskan perubahan kepada Relationship System; - membawa hasil perubahan Relationship ke periode berikutnya. Daily Universe tidak boleh: - membuat definisi Relationship baru; - membuat versi kedua Relationship; - menentukan makna Relationship di luar aturan Relationship System; - mengubah Relationship secara langsung tanpa mekanisme yang sah. ================================================================================ 08. OBJECT DOMAIN ================================================================================ Object System tetap menjadi sumber aturan Object. Daily Universe boleh: - membaca Object Data; - memperhitungkan keberadaan Object dalam aliran waktu; - mendeteksi kejadian yang memengaruhi Object; - meneruskan perubahan Object kepada Object System; - membawa hasil perubahan Object ke periode berikutnya. Daily Universe tidak boleh: - membuat definisi Object baru di luar mekanisme Object System; - membuat versi kedua status Object; - menentukan ownership Object secara mandiri; - mengganti aturan Object System. ================================================================================ 09. KNOWLEDGE DOMAIN ================================================================================ Knowledge tetap mengikuti system owner yang menetapkan struktur dan aturan Knowledge. Daily Universe boleh: - mengetahui bahwa suatu informasi diperoleh pada titik waktu tertentu; - menjaga posisi temporal acquisition; - meneruskan informasi sebagai bagian dari consequence atau event; - memastikan informasi tidak berpindah ke periode secara melawan aturan Knowledge. Daily Universe tidak boleh: - membuat Knowledge tanpa mekanisme domain owner; - menentukan bahwa Character mengetahui sesuatu hanya karena cerita membutuhkannya; - mengubah Knowledge secara langsung; - menyamakan informasi naratif dengan Knowledge Canon. ================================================================================ 10. OTHER DOMAINS ================================================================================ Prinsip yang sama berlaku untuk domain lain yang kemudian ditambahkan ke System. Setiap domain baru harus memiliki owner yang jelas. Daily Universe hanya boleh mengorkestrasikan domain tersebut secara temporal. Penambahan system baru tidak boleh secara otomatis memberikan kewenangan kepada Daily Universe untuk mengambil alih aturan domain tersebut. ================================================================================ 11. UNIVERSE TIME ================================================================================ Universe Time adalah waktu yang berlaku di dalam Universe. Universe Time menentukan posisi temporal dari: - keadaan; - kejadian; - perubahan; - proses; - konsekuensi; - informasi; - keberadaan actor; - keberadaan object. Daily Universe bertanggung jawab terhadap perjalanan Universe Time. Definisi internal Character, Relationship, Object, Knowledge, dan domain lain tetap mengikuti owner masing-masing. Narrative Time tidak boleh menggantikan Universe Time. ================================================================================ 12. NARRATIVE TIME ================================================================================ Narrative Time adalah urutan penyampaian informasi kepada pembaca. Narrative Time dapat berbeda dari Universe Time. Daily Universe harus mempertahankan perbedaan tersebut. Perubahan urutan penyampaian tidak boleh mengubah posisi temporal Canon. Aturan mengenai bagaimana Narrative Time digunakan dalam penyajian cerita tetap berada pada Narrator System. ================================================================================ 13. TEMPORAL STATUS ================================================================================ Informasi yang berkaitan dengan waktu harus memiliki status yang dapat dibedakan. Status dapat mencakup: - actual; - past; - present; - future; - memory; - report; - imagination; - hypothesis; - plan; - prediction; - possibility; - unknown. Daily Universe menjaga status tersebut sebagai bagian dari kesinambungan temporal. Daily Universe tidak boleh mengubah status informasi hanya karena informasi tersebut muncul dalam sebuah cerita. Kemunculan dalam narasi tidak otomatis menjadi Actual. Rencana tidak otomatis menjadi kejadian. Prediksi tidak otomatis menjadi fakta masa depan. Imajinasi tidak otomatis menjadi sejarah. Ingatan tidak otomatis menjadi fakta sejarah. ================================================================================ 14. TEMPORAL CONTINUITY ================================================================================ Daily Universe bertanggung jawab terhadap temporal continuity. Temporal continuity berarti hubungan yang sah antara: - waktu sebelumnya; - keadaan pada waktu tersebut; - kejadian; - consequence; - perubahan; - keadaan berikutnya. Daily Universe tidak memiliki versi kedua dari data Character, Relationship, Object, atau domain lain hanya untuk menjaga continuity. Daily Universe menjaga continuity dengan menggunakan data yang dimiliki system owner masing-masing. ================================================================================ 15. PREVIOUS STATE ================================================================================ Setiap periode baru harus mempertimbangkan keadaan sah dari periode sebelumnya. Apabila suatu state merupakan bagian dari domain yang dimiliki system lain, Daily Universe membaca state tersebut dan menjaga posisi temporalnya. Daily Universe tidak menentukan isi state tersebut sendiri. Perubahan state harus diterapkan melalui mekanisme dan aturan system owner. ================================================================================ 16. ONGOING PROCESS ================================================================================ Daily Universe harus mengenali proses yang masih berjalan secara temporal. Sebuah proses dapat memiliki status seperti: - completed; - ongoing; - interrupted; - suspended; - unresolved. Daily Universe bertanggung jawab mempertahankan keberadaan proses tersebut dalam aliran waktu. Makna dan struktur internal domain yang terlibat tetap ditentukan oleh system owner masing-masing. ================================================================================ 17. EVENT AND CONSEQUENCE ================================================================================ Daily Universe menjaga hubungan temporal antara event dan consequence. Pola umum: EVENT ↓ CONSEQUENCE ↓ CHANGE ↓ NEXT TEMPORAL STATE Apabila consequence memerlukan perubahan pada Character, Relationship, Object, Knowledge, atau domain lain, perubahan harus diteruskan kepada owner domain terkait. Daily Universe tidak boleh langsung membuat versi data baru untuk menggantikan domain owner. ================================================================================ 18. DAILY STORY RELATIONSHIP ================================================================================ Daily Story adalah keluaran dari proses Daily Universe. Daily Story bukan keseluruhan Universe. Daily Story hanya merepresentasikan bagian tertentu dari kehidupan Universe. Selesainya sebuah Daily Story tidak berarti: - Universe berhenti; - semua proses selesai; - semua state kembali normal; - semua consequence selesai; - semua future possibility menjadi nyata. Universe tetap berjalan melalui Daily Universe. ================================================================================ 19. NARRATOR RELATIONSHIP ================================================================================ Daily Universe menyediakan konteks temporal dan hasil orchestration kepada Narrator. Narrator bertanggung jawab terhadap: - story design; - writing design; - narrative rendering; - presentation; - readability; - narrative structure. Daily Universe tidak mengambil alih pekerjaan Narrator. Narrator tidak mengambil alih fungsi temporal orchestration Daily Universe. ================================================================================ 20. DAILY UNIVERSE CYCLE ================================================================================ Daily Universe menjalankan siklus umum: 1. INITIALIZATION 2. TEMPORAL RESOLUTION 3. CONTINUITY CARRYOVER 4. UNIVERSE PROGRESSION 5. EVENT AND CONSEQUENCE PROCESSING 6. DOMAIN HANDOFF 7. DAILY STORY CONTEXT 8. DAILY STORY PRODUCTION HANDOFF 9. INSTANCE MANAGEMENT 10. VALIDATION 11. FINALIZATION Setiap tahap hanya boleh menjalankan fungsi yang berada dalam kewenangannya. ================================================================================ 21. INSTANCE MANAGEMENT ================================================================================ Daily Universe memiliki kewenangan terhadap orchestration penyimpanan hasil Daily Story. Daily Universe menentukan: - Instance; - dataset; - year; - month; - Daily Story identifier; - filename; - destination path. Daily Universe boleh membuat folder yang diperlukan untuk menempatkan hasil. Aturan isi Character, Relationship, Object, dan domain lain tidak berubah hanya karena hasil disimpan melalui Instance Management. Kegagalan menentukan atau membuat destination yang sah menyebabkan proses belum selesai. ================================================================================ 22. IDENTIFIER INTEGRITY ================================================================================ Daily Story harus mempunyai identifier yang konsisten dengan aturan Daily Universe. Identifier harus dapat ditelusuri kepada Universe Date dan struktur Daily Story. Collision identifier harus terdeteksi. Daily Universe tidak boleh mengambil alih identifier domain lain. ================================================================================ 23. CANON PROTECTION ================================================================================ Daily Universe tidak boleh menciptakan Canon hanya karena suatu proses membutuhkan data tambahan. Daily Universe juga tidak boleh memperbaiki konflik domain dengan cara mengubah data owner secara diam-diam. Setiap perubahan harus melalui jalur domain yang sah. ================================================================================ 24. ASSUMPTION CONTROL ================================================================================ Daily Universe harus membedakan: - known; - unknown; - unresolved; - possible; - planned; - inferred; - actual. Ketiadaan informasi bukan izin untuk menciptakan fakta. Inference bukan otomatis Canon. Narrative representation bukan otomatis Canon. ================================================================================ 25. CONFLICT HANDLING ================================================================================ Jika ditemukan konflik antara: - waktu; - Character; - Relationship; - Object; - Knowledge; - State; - Location; - Event; - Causality; - Instance; - Identifier; Daily Universe harus mengidentifikasi sumber konflik dan menyerahkannya kepada system owner yang berwenang apabila konflik tersebut berada di luar domain Daily Universe. Daily Universe tidak boleh menyelesaikan konflik dengan mengambil alih domain yang bukan miliknya. Tidak boleh dilakukan silent repair. ================================================================================ 26. CROSS-SYSTEM RULE CONFLICT ================================================================================ Tidak boleh ada dua system yang memberikan definisi berbeda terhadap domain yang sama. Apabila aturan Daily Universe terlihat bertentangan dengan aturan system lain, masalah tersebut harus dianggap sebagai konflik arsitektur sampai batas kewenangan dapat ditentukan. System tidak boleh memilih salah satu aturan secara diam-diam berdasarkan kenyamanan proses. Prioritas harus ditentukan berdasarkan ownership domain dan hierarchy System. ================================================================================ 27. VALIDATION ================================================================================ Sebelum suatu siklus Daily Universe dianggap selesai, harus dilakukan validasi terhadap: - temporal integrity; - continuity integrity; - event integrity; - consequence integrity; - process integrity; - domain handoff integrity; - Daily Story integrity; - identifier integrity; - instance integrity. Validasi domain tetap mengikuti system owner masing-masing. Daily Universe hanya memvalidasi bahwa proses temporal dan handoff berjalan secara sah. ================================================================================ 28. FAILURE PRINCIPLE ================================================================================ Jika proses tidak dapat dilanjutkan secara sah, Daily Universe harus berhenti pada gate yang sesuai. Daily Universe tidak boleh: - diam-diam memperbaiki; - diam-diam menghapus; - diam-diam mengganti; - diam-diam memindahkan; - diam-diam membuat fakta; - diam-diam mengambil alih domain system lain. ================================================================================ 29. SOURCE SEPARATION ================================================================================ SYSTEM → aturan dan mekanisme. UNIVERSE → data dan Canon. INSTANCES → hasil dan data yang dihasilkan dari proses. DAILY UNIVERSE → temporal orchestration dan operasional Daily Story. NARRATOR → transformasi Universe menjadi cerita. Character, Relationship, Object, Knowledge, dan domain lain tetap memiliki system owner masing-masing. ================================================================================ 30. LONG-TERM CONTINUITY ================================================================================ Daily Universe dirancang agar mampu mengorkestrasi Universe dalam jangka panjang. Jumlah periode, jumlah Daily Story, dan usia Universe tidak boleh mengubah prinsip dasar ownership. System harus tetap dapat menjaga: - temporal sequence; - continuity; - consequence; - ongoing process; - unresolved condition; - Daily Story history; - Instance structure; tanpa menjadikan Daily Universe sebagai pemilik data domain lain. ================================================================================ 31. FINAL PRINCIPLE ================================================================================ DAILY UNIVERSE │ ▼ TEMPORAL ORCHESTRATION │ ├───────────────┬───────────────┬───────────────┐ ▼ ▼ ▼ ▼ CHARACTER RELATIONSHIP OBJECT KNOWLEDGE SYSTEM SYSTEM SYSTEM DOMAIN │ │ │ │ └───────────────┴───────────────┴───────────────┘ │ ▼ UNIVERSE FLOW │ ▼ NARRATOR │ ▼ STORY │ ▼ INSTANCE Daily Universe menjaga perjalanan temporal. System owner masing-masing menjaga aturan domain masing-masing. Tidak ada system yang mengambil alih domain system lain tanpa kewenangan arsitektural yang jelas. ================================================================================ END OF DAILY UNIVERSE SYSTEM ================================================================================ 
+================================================================================
+                           DAILY UNIVERSE SYSTEM
+================================================================================
+STATUS : SYSTEM ACTIVE
+SCOPE  : AUTHORITATIVE WITHIN DAILY UNIVERSE
+================================================================================
+
+
+[ 01 ] PURPOSE
+--------------------------------------------------------------------------------
+Daily Universe adalah system yang mengorkestrasi perjalanan Universe melalui 
+waktu. Daily Universe memastikan bahwa Universe dapat bergerak dari satu kondisi 
+temporal ke kondisi berikutnya secara berkesinambungan, tanpa mengambil alih 
+kepemilikan aturan domain yang dimiliki system lain.
+
+Daily Universe bertanggung jawab terhadap:
+  - aliran temporal Universe;
+  - kesinambungan antarperiode;
+  - carry-over keadaan yang sudah ditetapkan oleh system pemiliknya;
+  - hubungan temporal antara kejadian dan konsekuensi;
+  - keberlanjutan proses yang masih berjalan;
+  - pembentukan konteks untuk Daily Story;
+  - siklus operasional Daily Story;
+  - identitas Daily Story;
+  - pengelolaan struktur penyimpanan Daily Story;
+  - pembuatan folder yang diperlukan;
+  - penamaan file;
+  - penempatan hasil;
+  - validasi proses Daily Universe.
+
+Batasan Kepemilikan:
+  - Daily Universe BUKAN pemilik definisi Character.
+  - Daily Universe BUKAN pemilik definisi Relationship.
+  - Daily Universe BUKAN pemilik definisi Object.
+  - Daily Universe BUKAN pemilik definisi Knowledge.
+  - Daily Universe BUKAN pemilik domain lain yang telah mempunyai system owner.
+  
+Daily Universe adalah temporal orchestrator.
+
+
+[ 02 ] CORE RESPONSIBILITY
+--------------------------------------------------------------------------------
+Tanggung jawab utama Daily Universe adalah menjaga agar kehidupan Universe tetap 
+terhubung secara temporal. Daily Universe mengatur perjalanan data dan kejadian 
+melalui waktu tanpa mengubah makna atau aturan dasar domain yang dimiliki 
+system lain.
+
+Daily Universe harus memastikan:
+  - periode memiliki posisi temporal yang jelas;
+  - kondisi sebelumnya dapat menjadi dasar periode berikutnya;
+  - kejadian dan konsekuensi tetap terhubung;
+  - proses yang belum selesai tetap dapat diteruskan;
+  - perubahan dapat ditelusuri secara temporal;
+  - Daily Story tetap berada dalam konteks Universe yang sama;
+  - hasil produksi berada pada Instance yang benar.
+
+Daily Universe tidak menciptakan definisi baru untuk domain yang sudah memiliki 
+system owner.
+
+
+[ 03 ] SYSTEM OWNERSHIP
+--------------------------------------------------------------------------------
+Setiap domain utama dalam System harus memiliki satu owner yang menjadi sumber 
+aturan domain tersebut:
+  - Character System    → owner aturan dan definisi Character.
+  - Relationship System → owner aturan dan definisi Relationship.
+  - Object System       → owner aturan dan definisi Object.
+  - Knowledge           → mengikuti owner dan aturan Knowledge pada Character System.
+  - Narrator System     → owner aturan transformasi Universe menjadi cerita.
+  - Daily Universe      → owner aturan perjalanan temporal dan orchestration.
+
+Daily Universe tidak boleh mendefinisikan ulang domain yang telah mempunyai 
+system owner.
+
+
+[ 04 ] ORCHESTRATION VS OWNERSHIP
+--------------------------------------------------------------------------------
+Orchestration dan ownership adalah dua fungsi yang berbeda.
+
+OWNERSHIP berarti system menentukan:
+  - definisi suatu domain;
+  - struktur domain;
+  - arti domain;
+  - aturan domain;
+  - validitas internal domain;
+  - batas perubahan domain.
+
+ORCHESTRATION berarti system:
+  - membaca data yang sah;
+  - mengatur urutan proses;
+  - menghubungkan proses;
+  - menentukan kapan proses temporal terjadi;
+  - meneruskan hasil kepada system yang berwenang;
+  - menjaga kesinambungan antarperiode.
+
+Daily Universe memiliki orchestration terhadap perjalanan temporal. Daily 
+Universe tidak memperoleh ownership hanya karena menggunakan data dari system lain.
+
+
+[ 05 ] DOMAIN HANDOFF
+--------------------------------------------------------------------------------
+Apabila proses Daily Universe membutuhkan data atau perubahan pada domain yang 
+dimiliki system lain, Daily Universe harus menggunakan aturan dan mekanisme 
+yang dimiliki system tersebut.
+
+Pola umum:
+  1. DAILY UNIVERSE menentukan konteks temporal
+  2. Memicu kebutuhan perubahan
+  3. Menyerahkan perubahan kepada DOMAIN OWNER
+  4. Domain owner memvalidasi dan menerapkan aturan domain
+  5. Hasil dikembalikan ke aliran DAILY UNIVERSE
+  6. Daily Universe melanjutkan perjalanan temporal.
+
+Daily Universe tidak boleh membuat aturan pengganti hanya karena domain owner 
+tidak ditulis di dalam file Daily Universe.
+
+
+[ 06 ] CHARACTER DOMAIN
+--------------------------------------------------------------------------------
+Character System tetap menjadi sumber aturan Character.
+
+Daily Universe BOLEH:
+  - membaca Character Data;
+  - menggunakan Character Data dalam proses temporal;
+  - membawa kondisi Character yang sah dari satu periode ke periode berikutnya;
+  - mendeteksi bahwa suatu kejadian temporal memerlukan perubahan Character;
+  - meneruskan perubahan tersebut kepada Character System;
+  - menggunakan hasil perubahan Character sebagai dasar periode berikutnya.
+
+Daily Universe TIDAK BOLEH:
+  - membuat definisi Character baru;
+  - mendefinisikan personality baru;
+  - mengganti behavior rules;
+  - membuat Knowledge Character sendiri;
+  - membuat State Character versi kedua;
+  - membuat Relationship Character versi kedua;
+  - mengganti identitas Character;
+  - mengubah data Character tanpa dasar dan mekanisme sah dari Character System.
+
+
+[ 07 ] RELATIONSHIP DOMAIN
+--------------------------------------------------------------------------------
+Relationship System tetap menjadi sumber aturan Relationship.
+
+Daily Universe BOLEH:
+  - membaca Relationship Data;
+  - memperhitungkan Relationship dalam perjalanan temporal;
+  - mendeteksi bahwa kejadian dapat memicu perubahan Relationship;
+  - meneruskan perubahan kepada Relationship System;
+  - membawa hasil perubahan Relationship ke periode berikutnya.
+
+Daily Universe TIDAK BOLEH:
+  - membuat definisi Relationship baru;
+  - membuat versi kedua Relationship;
+  - menentukan makna Relationship di luar aturan Relationship System;
+  - mengubah Relationship secara langsung tanpa mekanisme yang sah.
+
+
+[ 08 ] OBJECT DOMAIN
+--------------------------------------------------------------------------------
+Object System tetap menjadi sumber aturan Object.
+
+Daily Universe BOLEH:
+  - membaca Object Data;
+  - memperhitungkan keberadaan Object dalam aliran waktu;
+  - mendeteksi kejadian yang memengaruhi Object;
+  - meneruskan perubahan Object kepada Object System;
+  - membawa hasil perubahan Object ke periode berikutnya.
+
+Daily Universe TIDAK BOLEH:
+  - membuat definisi Object baru di luar mekanisme Object System;
+  - membuat versi kedua status Object;
+  - menentukan ownership Object secara mandiri;
+  - mengganti aturan Object System.
+
+
+[ 09 ] KNOWLEDGE DOMAIN
+--------------------------------------------------------------------------------
+Knowledge tetap mengikuti system owner yang menetapkan struktur dan aturan Knowledge.
+
+Daily Universe BOLEH:
+  - mengetahui bahwa suatu informasi diperoleh pada titik waktu tertentu;
+  - menjaga posisi temporal acquisition;
+  - meneruskan informasi sebagai bagian dari consequence atau event;
+  - memastikan informasi tidak berpindah periode secara melawan aturan Knowledge.
+
+Daily Universe TIDAK BOLEH:
+  - membuat Knowledge tanpa mekanisme domain owner;
+  - menentukan bahwa Character mengetahui sesuatu hanya karena cerita membutuhkannya;
+  - mengubah Knowledge secara langsung;
+  - menyamakan informasi naratif dengan Knowledge Canon.
+
+
+[ 10 ] OTHER DOMAINS
+--------------------------------------------------------------------------------
+Prinsip yang sama berlaku untuk domain lain yang kemudian ditambahkan ke System. 
+Setiap domain baru harus memiliki owner yang jelas. 
+
+Daily Universe hanya boleh mengorkestrasikan domain tersebut secara temporal. 
+Penambahan system baru tidak boleh secara otomatis memberikan kewenangan 
+kepada Daily Universe untuk mengambil alih aturan domain tersebut.
+
+
+[ 11 ] UNIVERSE TIME
+--------------------------------------------------------------------------------
+Universe Time adalah waktu yang berlaku di dalam Universe. Universe Time 
+menentukan posisi temporal dari:
+  - keadaan;
+  - kejadian;
+  - perubahan;
+  - proses;
+  - konsekuensi;
+  - informasi;
+  - keberadaan actor;
+  - keberadaan object.
+
+Daily Universe bertanggung jawab terhadap perjalanan Universe Time. Definisi 
+internal Character, Relationship, Object, Knowledge, dan domain lain tetap 
+mengikuti owner masing-masing. 
+
+Narrative Time tidak boleh menggantikan Universe Time.
+
+
+[ 12 ] NARRATIVE TIME
+--------------------------------------------------------------------------------
+Narrative Time adalah urutan penyampaian informasi kepada pembaca. Narrative 
+Time dapat berbeda dari Universe Time. 
+
+Daily Universe harus mempertahankan perbedaan tersebut. Perubahan urutan 
+penyampaian tidak boleh mengubah posisi temporal Canon. Aturan mengenai 
+bagaimana Narrative Time digunakan dalam penyajian cerita tetap berada pada 
+Narrator System.
+
+
+[ 13 ] TEMPORAL STATUS
+--------------------------------------------------------------------------------
+Informasi yang berkaitan dengan waktu harus memiliki status yang dapat dibedakan. 
+Status dapat mencakup:
+  - actual
+  - past
+  - present
+  - future
+  - memory
+  - report
+  - imagination
+  - hypothesis
+  - plan
+  - prediction
+  - possibility
+  - unknown
+
+Daily Universe menjaga status tersebut sebagai bagian dari kesinambungan temporal. 
+Daily Universe tidak boleh mengubah status informasi hanya karena informasi 
+tersebut muncul dalam sebuah cerita. 
+
+Catatan Batasan:
+  - Kemunculan dalam narasi tidak otomatis menjadi Actual.
+  - Rencana tidak otomatis menjadi kejadian.
+  - Prediksi tidak otomatis menjadi fakta masa depan.
+  - Imajinasi tidak otomatis menjadi sejarah.
+  - Ingatan tidak otomatis menjadi fakta sejarah.
+
+
+[ 14 ] TEMPORAL CONTINUITY
+--------------------------------------------------------------------------------
+Daily Universe bertanggung jawab terhadap temporal continuity. Temporal 
+continuity berarti hubungan yang sah antara:
+  - waktu sebelumnya;
+  - keadaan pada waktu tersebut;
+  - kejadian;
+  - consequence;
+  - perubahan;
+  - keadaan berikutnya.
+
+Daily Universe tidak memiliki versi kedua dari data Character, Relationship, 
+Object, atau domain lain hanya untuk menjaga continuity. Daily Universe menjaga 
+continuity dengan menggunakan data yang dimiliki system owner masing-masing.
+
+
+[ 15 ] PREVIOUS STATE
+--------------------------------------------------------------------------------
+Setiap periode baru harus mempertimbangkan keadaan sah dari periode sebelumnya. 
+Apabila suatu state merupakan bagian dari domain yang dimiliki system lain, 
+Daily Universe membaca state tersebut dan menjaga posisi temporalnya. 
+
+Daily Universe tidak menentukan isi state tersebut sendiri. Perubahan state 
+harus diterapkan melalui mekanisme dan aturan system owner.
+
+
+[ 16 ] ONGOING PROCESS
+--------------------------------------------------------------------------------
+Daily Universe harus mengenali proses yang masih berjalan secara temporal. 
+Sebuah proses dapat memiliki status seperti:
+  - completed
+  - ongoing
+  - interrupted
+  - suspended
+  - unresolved
+
+Daily Universe bertanggung jawab mempertahankan keberadaan proses tersebut 
+dalam aliran waktu. Makna dan struktur internal domain yang terlibat tetap 
+ditentukan oleh system owner masing-masing.
+
+
+[ 17 ] EVENT AND CONSEQUENCE
+--------------------------------------------------------------------------------
+Daily Universe menjaga hubungan temporal antara event dan consequence.
+
+Pola umum:
+  [ EVENT ] 
+      ↓
+  [ CONSEQUENCE ] 
+      ↓
+  [ CHANGE ] 
+      ↓
+  [ NEXT TEMPORAL STATE ]
+
+Apabila consequence memerlukan perubahan pada Character, Relationship, Object, 
+Knowledge, atau domain lain, perubahan harus diteruskan kepada owner domain 
+terkait. Daily Universe tidak boleh langsung membuat versi data baru untuk 
+menggantikan domain owner.
+
+
+[ 18 ] DAILY STORY RELATIONSHIP
+--------------------------------------------------------------------------------
+Daily Story adalah keluaran dari proses Daily Universe. Daily Story BUKAN 
+keseluruhan Universe. Daily Story hanya merepresentasikan bagian tertentu 
+dari kehidupan Universe. 
+
+Selesainya sebuah Daily Story TIDAK berarti:
+  - Universe berhenti;
+  - semua proses selesai;
+  - semua state kembali normal;
+  - semua consequence selesai;
+  - semua future possibility menjadi nyata.
+
+Universe tetap berjalan melalui Daily Universe.
+
+
+[ 19 ] NARRATOR RELATIONSHIP
+--------------------------------------------------------------------------------
+Daily Universe menyediakan konteks temporal dan hasil orchestration kepada Narrator.
+
+Narrator bertanggung jawab terhadap:
+  - story design;
+  - writing design;
+  - narrative rendering;
+  - presentation;
+  - readability;
+  - narrative structure.
+
+Daily Universe tidak mengambil alih pekerjaan Narrator. Narrator tidak mengambil 
+alih fungsi temporal orchestration Daily Universe.
+
+
+[ 20 ] DAILY UNIVERSE CYCLE
+--------------------------------------------------------------------------------
+Daily Universe menjalankan siklus umum:
+  01. INITIALIZATION
+  02. TEMPORAL RESOLUTION
+  03. CONTINUITY CARRYOVER
+  04. UNIVERSE PROGRESSION
+  05. EVENT AND CONSEQUENCE PROCESSING
+  06. DOMAIN HANDOFF
+  07. DAILY STORY CONTEXT
+  08. DAILY STORY PRODUCTION HANDOFF
+  09. INSTANCE MANAGEMENT
+  10. VALIDATION
+  11. FINALIZATION
+
+Setiap tahap hanya boleh menjalankan fungsi yang berada dalam kewenangannya.
+
+
+[ 21 ] INSTANCE MANAGEMENT
+--------------------------------------------------------------------------------
+Daily Universe memiliki kewenangan terhadap orchestration penyimpanan hasil Daily Story.
+
+Daily Universe menentukan:
+  - Instance;
+  - dataset;
+  - year;
+  - month;
+  - Daily Story identifier;
+  - filename;
+  - destination path.
+
+Daily Universe boleh membuat folder yang diperlukan untuk menempatkan hasil. 
+Aturan isi Character, Relationship, Object, dan domain lain tidak berubah hanya 
+karena hasil disimpan melalui Instance Management. Kegagalan menentukan atau 
+membuat destination yang sah menyebabkan proses belum selesai.
+
+
+[ 22 ] IDENTIFIER INTEGRITY
+--------------------------------------------------------------------------------
+Daily Story harus mempunyai identifier yang konsisten dengan aturan Daily Universe. 
+Identifier harus dapat ditelusuri kepada Universe Date dan struktur Daily Story. 
+Collision identifier harus terdeteksi. 
+
+Daily Universe tidak boleh mengambil alih identifier domain lain.
+
+
+[ 23 ] CANON PROTECTION
+--------------------------------------------------------------------------------
+Daily Universe tidak boleh menciptakan Canon hanya karena suatu proses 
+membutuhkan data tambahan. Daily Universe juga tidak boleh memperbaiki 
+konflik domain dengan cara mengubah data owner secara diam-diam. 
+
+Setiap perubahan harus melalui jalur domain yang sah.
+
+
+[ 24 ] ASSUMPTION CONTROL
+--------------------------------------------------------------------------------
+Daily Universe harus membedakan:
+  - known
+  - unknown
+  - unresolved
+  - possible
+  - planned
+  - inferred
+  - actual
+
+Ketiadaan informasi bukan izin untuk menciptakan fakta. Inference bukan 
+otomatis Canon. Narrative representation bukan otomatis Canon.
+
+
+[ 25 ] CONFLICT HANDLING
+--------------------------------------------------------------------------------
+Jika ditemukan konflik antara:
+  - waktu
+  - Character
+  - Relationship
+  - Object
+  - Knowledge
+  - State
+  - Location
+  - Event
+  - Causality
+  - Instance
+  - Identifier
+
+Daily Universe harus mengidentifikasi sumber konflik dan menyerahkannya 
+kepada system owner yang berwenang apabila konflik tersebut berada di luar 
+domain Daily Universe. 
+
+Daily Universe tidak boleh menyelesaikan konflik dengan mengambil alih domain 
+yang bukan miliknya. Tidak boleh dilakukan silent repair.
+
+
+[ 26 ] CROSS-SYSTEM RULE CONFLICT
+--------------------------------------------------------------------------------
+Tidak boleh ada dua system yang memberikan definisi berbeda terhadap domain 
+yang sama. Apabila aturan Daily Universe terlihat bertentangan dengan aturan 
+system lain, masalah tersebut harus dianggap sebagai konflik arsitektur 
+sampai batas kewenangan dapat ditentukan. 
+
+System tidak boleh memilih salah satu aturan secara diam-diam berdasarkan 
+kenyamanan proses. Prioritas harus ditentukan berdasarkan ownership domain 
+dan hierarchy System.
+
+
+[ 27 ] VALIDATION
+--------------------------------------------------------------------------------
+Sebelum suatu siklus Daily Universe dianggap selesai, harus dilakukan 
+validasi terhadap:
+  - temporal integrity;
+  - continuity integrity;
+  - event integrity;
+  - consequence integrity;
+  - process integrity;
+  - domain handoff integrity;
+  - Daily Story integrity;
+  - identifier integrity;
+  - instance integrity.
+
+Validasi domain tetap mengikuti system owner masing-masing. Daily Universe 
+hanya memvalidasi bahwa proses temporal dan handoff berjalan secara sah.
+
+
+[ 28 ] FAILURE PRINCIPLE
+--------------------------------------------------------------------------------
+Jika proses tidak dapat dilanjutkan secara sah, Daily Universe harus berhenti 
+pada gate yang sesuai. 
+
+Daily Universe TIDAK BOLEH secara diam-diam:
+  - memperbaiki;
+  - menghapus;
+  - mengganti;
+  - memindahkan;
+  - membuat fakta;
+  - mengambil alih domain system lain.
+
+
+[ 29 ] SOURCE SEPARATION
+--------------------------------------------------------------------------------
+  - SYSTEM         → aturan dan mekanisme.
+  - UNIVERSE       → data dan Canon.
+  - INSTANCES      → hasil dan data yang dihasilkan dari proses.
+  - DAILY UNIVERSE → temporal orchestration dan operasional Daily Story.
+  - NARRATOR       → transformasi Universe menjadi cerita.
+
+Character, Relationship, Object, Knowledge, dan domain lain tetap memiliki 
+system owner masing-masing.
+
+
+[ 30 ] LONG-TERM CONTINUITY
+--------------------------------------------------------------------------------
+Daily Universe dirancang agar mampu mengorkestrasi Universe dalam jangka panjang. 
+Jumlah periode, jumlah Daily Story, dan usia Universe tidak boleh mengubah 
+prinsip dasar ownership. 
+
+System harus tetap dapat menjaga:
+  - temporal sequence;
+  - continuity;
+  - consequence;
+  - ongoing process;
+  - unresolved condition;
+  - Daily Story history;
+  - Instance structure;
+...tanpa menjadikan Daily Universe sebagai pemilik data domain lain.
+
+
+[ 31 ] FINAL PRINCIPLE
+--------------------------------------------------------------------------------
+
+                     DAILY UNIVERSE
+                            │
+                            ▼
+                  TEMPORAL ORCHESTRATION
+                            │
+          ┌─────────┬───────┴───────┬─────────┐
+          ▼         ▼               ▼         ▼
+      CHARACTER   RELATIONSHIP    OBJECT    KNOWLEDGE
+       SYSTEM       SYSTEM        SYSTEM     DOMAIN
+          │         │               │         │
+          └─────────┴───────┬───────┴─────────┘
+                            │
+                            ▼
+                      UNIVERSE FLOW
+                            │
+                            ▼
+                         NARRATOR
+                            │
+                            ▼
+                          STORY
+                            │
+                            ▼
+                         INSTANCE
+
+Daily Universe menjaga perjalanan temporal. System owner masing-masing 
+menjaga aturan domain masing-masing. Tidak ada system yang mengambil alih 
+domain system lain tanpa kewenangan arsitektural yang jelas.
+
+================================================================================
+                           END OF DAILY UNIVERSE SYSTEM
+================================================================================
