@@ -1,0 +1,1286 @@
+==================================================
+06_INSTANCE_INTEGRITY
+
+STATUS
+
+System Rule
+
+OWNER
+
+Daily Universe
+Instance Management
+
+SCOPE
+
+File ini mengatur integritas struktural dan operasional
+hasil penyimpanan Daily Story di dalam Instance.
+
+File ini memastikan bahwa:
+
+- Instance memiliki struktur yang valid;
+- Daily Story Dataset berada pada lokasi yang benar;
+- YEAR dan MONTH konsisten dengan Story Date;
+- filename konsisten dengan metadata;
+- file berada pada destination yang benar;
+- tidak terdapat duplicate yang tidak sah;
+- tidak terdapat orphan file yang tidak dapat diidentifikasi;
+- tidak terdapat structural collision;
+- hasil placement dapat ditelusuri;
+- kondisi legacy dapat dibedakan dari kondisi aktif;
+- storage integrity dapat diverifikasi tanpa mengubah
+  data Universe secara diam-diam.
+
+File ini TIDAK mengatur:
+
+- kebenaran temporal Universe;
+- isi Daily Story;
+- Story Design;
+- Narrative Rendering;
+- Character;
+- Relationship;
+- Object;
+- Knowledge;
+- State;
+- Location;
+- penentuan Story ID;
+- penentuan Story Date;
+- pembuatan filename;
+- aturan penempatan file.
+
+File ini memeriksa hasil dari sistem-sistem tersebut
+pada lapisan Instance.
+
+==================================================
+
+1. CORE PRINCIPLE
+   ==================================================
+
+Instance Integrity adalah pemeriksaan kesesuaian antara:
+
+DATA YANG SEHARUSNYA DISIMPAN
+
+dan
+
+STRUKTUR SERTA ARTEFAK YANG BENAR-BENAR DISIMPAN.
+
+Instance Integrity tidak menciptakan kebenaran baru.
+
+Ia hanya menentukan apakah representasi storage
+sesuai dengan aturan yang berlaku.
+
+Jika terjadi perbedaan:
+
+- jangan menebak;
+- jangan mengubah Canon;
+- jangan memperbaiki metadata secara diam-diam;
+- jangan menghapus data tanpa otorisasi;
+- identifikasi dan teruskan conflict kepada
+  owner yang tepat.
+
+==================================================
+02. STORAGE INTEGRITY
+
+Storage Integrity berarti hubungan berikut
+tetap konsisten:
+
+Instance
+→ Dataset
+→ YEAR
+→ MONTH
+→ Daily Story File
+
+serta:
+
+Daily Story Metadata
+↔ Storage Representation
+
+Integritas dianggap terjaga apabila kedua sisi
+dapat ditelusuri dan tidak bertentangan.
+
+==================================================
+03. INTEGRITY SOURCE
+
+Validasi integrity menggunakan sumber yang telah
+ditetapkan oleh system owner masing-masing.
+
+Minimal:
+
+- Instance structure;
+- Story metadata;
+- Story ID;
+- Story Date;
+- validated YEAR;
+- validated MONTH;
+- validated filename;
+- placement result.
+
+Filesystem state hanya menunjukkan
+apa yang saat ini tersimpan.
+
+Filesystem state tidak otomatis menjadi
+sumber kebenaran Universe.
+
+==================================================
+04. INSTANCE BOUNDARY
+
+Pemeriksaan integrity harus selalu dilakukan
+dalam boundary Instance yang sedang diperiksa.
+
+Sistem tidak boleh:
+
+- menggabungkan data antar Instance;
+- menganggap file pada Instance lain sebagai
+  bagian dari Instance aktif;
+- menggunakan kesamaan filename sebagai bukti
+  bahwa dua Instance berbagi Daily Story;
+- memindahkan data antar Instance sebagai
+  bagian dari integrity check biasa.
+
+==================================================
+05. DATASET BOUNDARY
+
+Daily Story Dataset merupakan boundary storage
+di dalam Instance.
+
+Integrity harus memastikan setiap Daily Story File
+berada pada Dataset yang benar.
+
+File yang ditemukan pada Dataset yang tidak sesuai
+harus ditandai sebagai:
+
+REVIEW_REQUIRED
+atau
+CONFLICT
+
+sesuai hasil pemeriksaan.
+
+==================================================
+06. STRUCTURAL INTEGRITY
+
+Struktur aktif harus mengikuti hierarchy:
+
+INSTANCE
+↓
+DAILY STORY DATASET
+↓
+YEAR
+↓
+MONTH
+↓
+DAILY STORY FILE
+
+Structural integrity gagal apabila:
+
+- level hilang;
+- level tertukar;
+- child berada pada parent yang salah;
+- file berada pada directory yang salah;
+- directory seharusnya file;
+- file seharusnya directory;
+- terdapat struktur alternatif tanpa otorisasi.
+
+==================================================
+07. DIRECTORY INTEGRITY
+
+Setiap directory aktif harus diperiksa:
+
+- existence;
+- type;
+- parent;
+- name;
+- position;
+- format;
+- relationship dengan Story Date.
+
+Directory yang namanya valid tetapi berada
+pada posisi salah tetap dianggap invalid.
+
+==================================================
+08. YEAR INTEGRITY
+
+YEAR harus memenuhi:
+
+- format YEAR valid;
+- berada di bawah Dataset yang benar;
+- nilainya sesuai dengan Story Date
+  Daily Story yang berada di dalamnya;
+- tidak terdapat file atau directory
+  yang menyamarkan posisi YEAR.
+
+YEAR yang tidak dapat dikaitkan dengan
+metadata valid harus diperiksa sebagai:
+
+ORPHAN
+atau
+LEGACY
+
+sesuai konteks.
+
+==================================================
+09. MONTH INTEGRITY
+
+MONTH harus memenuhi:
+
+- format dua digit;
+- nilai 01 sampai 12;
+- berada di bawah YEAR yang benar;
+- konsisten dengan Story Date file
+  yang ditempatkan di dalamnya.
+
+MONTH yang tidak dapat dijelaskan oleh
+storage metadata harus ditandai.
+
+==================================================
+10. FILENAME INTEGRITY
+
+Setiap Daily Story File aktif harus memiliki
+filename yang sesuai dengan aturan aktif.
+
+Minimal harus diperiksa:
+
+- TITLE component;
+- separator;
+- DS prefix;
+- DD;
+- MM;
+- YYYY;
+- extension;
+- filesystem safety;
+- consistency dengan Story metadata.
+
+Filename invalid tidak boleh dianggap valid
+hanya karena file dapat dibuka.
+
+==================================================
+11. STORY DATE INTEGRITY
+
+Jika filename memuat:
+
+DS-DDMMYYYY
+
+maka tanggal tersebut harus konsisten dengan
+Story Date resmi.
+
+Jika:
+
+FILENAME DATE ≠ STORY DATE
+
+maka:
+
+STATUS = CONFLICT
+
+Instance Integrity tidak boleh memilih salah satu
+dan mengubah yang lain secara otomatis.
+
+==================================================
+12. IDENTITY INTEGRITY
+
+Setiap Daily Story File aktif harus dapat
+ditelusuri kepada Story ID yang sesuai.
+
+Integrity harus dapat membedakan:
+
+- file yang mewakili Story yang sama;
+- duplicate representation;
+- file berbeda dengan title sama;
+- file berbeda dengan tanggal sama;
+- file legacy;
+- file tidak dikenal.
+
+Filename tidak boleh digunakan sebagai
+satu-satunya bukti identity.
+
+==================================================
+13. STORY ID UNIQUENESS
+
+Dalam boundary yang relevan,
+Story ID harus tetap dapat dibedakan
+dari Story ID lain.
+
+Jika satu identity ditemukan
+mewakili lebih dari satu active artifact
+tanpa status yang menjelaskannya:
+
+STATUS = REVIEW_REQUIRED
+atau
+STATUS = CONFLICT
+
+Integrity tidak membuat Story ID baru
+untuk memperbaiki duplicate.
+
+==================================================
+14. DUPLICATE INTEGRITY
+
+Duplicate dapat berarti:
+
+- filename sama;
+- path sama;
+- Story ID sama;
+- artifact sama;
+- content representation sama;
+- metadata sama.
+
+Tidak semua kesamaan otomatis berarti duplicate.
+
+Integrity harus memeriksa identity
+sebelum menyimpulkan duplicate.
+
+Duplicate yang confirmed harus ditandai
+dan tidak boleh dihapus otomatis.
+
+==================================================
+15. ORPHAN FILE
+
+Orphan File adalah file yang berada
+di dalam Instance structure tetapi
+tidak dapat ditelusuri kepada Daily Story
+atau metadata yang valid.
+
+Orphan file tidak boleh:
+
+- dianggap Daily Story secara otomatis;
+- diberikan Story ID baru;
+- diberi Story Date secara tebakan;
+- dipindahkan secara otomatis;
+- dihapus otomatis.
+
+STATUS:
+
+REVIEW_REQUIRED
+
+atau
+
+LEGACY / UNKNOWN
+
+sesuai informasi yang tersedia.
+
+==================================================
+16. UNKNOWN FILE
+
+File yang tidak dapat diklasifikasikan
+harus tetap dipertahankan sampai
+statusnya ditentukan melalui pemeriksaan sah.
+
+Unknown tidak berarti invalid secara otomatis.
+
+Unknown berarti identity atau role file
+belum dapat ditetapkan.
+
+==================================================
+17. LEGACY STORAGE
+
+Legacy storage adalah struktur atau file
+yang berasal dari aturan sebelumnya
+dan tidak mengikuti rule aktif.
+
+Legacy tidak boleh otomatis:
+
+- dihapus;
+- diubah;
+- dipindahkan;
+- dianggap error aktif;
+- dijadikan template untuk produksi baru.
+
+Legacy harus tetap dapat dibedakan
+dari active storage.
+
+==================================================
+18. ACTIVE STORAGE
+
+Active storage adalah struktur yang dibuat
+atau dikelola berdasarkan aturan sistem aktif.
+
+Integrity harus memisahkan:
+
+ACTIVE
+dari
+LEGACY
+dari
+UNKNOWN
+
+karena ketiganya memiliki konsekuensi berbeda.
+
+==================================================
+19. EMPTY DIRECTORY
+
+Directory kosong tidak selalu merupakan error.
+
+Namun directory kosong yang dibuat tanpa
+kebutuhan struktur yang sah dapat ditandai
+sebagai:
+
+REVIEW_REQUIRED
+
+Integrity tidak boleh menghapus directory
+hanya karena kosong.
+
+==================================================
+20. UNEXPECTED DIRECTORY
+
+Directory yang tidak termasuk hierarchy resmi
+harus ditandai sebagai:
+
+UNEXPECTED
+
+Integrity tidak boleh menganggapnya
+sebagai bagian dari Daily Story Dataset
+tanpa aturan yang sah.
+
+==================================================
+21. FILE-DIRECTORY COLLISION
+
+Jika struktur mengharapkan directory
+tetapi ditemukan file:
+
+STATUS = CONFLICT
+
+Jika struktur mengharapkan file
+tetapi ditemukan directory:
+
+STATUS = CONFLICT
+
+Integrity tidak boleh memperbaiki collision
+dengan menghapus atau mengganti objek
+secara otomatis.
+
+==================================================
+22. PATH INTEGRITY
+
+Path harus diperiksa untuk:
+
+- correct root;
+- correct Instance;
+- correct Dataset;
+- correct YEAR;
+- correct MONTH;
+- correct filename;
+- absence of traversal;
+- absence of unexpected parent;
+- absence of structural shortcut.
+
+Path harus dapat dinormalisasi
+tanpa keluar dari Instance Root.
+
+==================================================
+23. OUT-OF-BOUNDARY FILE
+
+File Daily Story yang ditemukan
+di luar Instance Root bukan bagian
+dari destination aktif Instance tersebut.
+
+Integrity tidak boleh mengadopsinya
+secara otomatis hanya karena
+filename atau metadata terlihat cocok.
+
+==================================================
+24. CROSS-INSTANCE DUPLICATE
+
+Story ID atau filename yang sama
+di Instance berbeda tidak otomatis
+merupakan storage error.
+
+Namun apabila satu Daily Story
+diklaim aktif sebagai representasi
+dalam beberapa Instance tanpa hubungan
+yang sah:
+
+STATUS = REVIEW_REQUIRED
+
+Integrity tidak boleh mengubah
+Instance assignment secara otomatis.
+
+==================================================
+25. CROSS-DATASET DUPLICATE
+
+Prinsip yang sama berlaku untuk
+beberapa Dataset dalam satu Instance.
+
+Satu artifact yang ditemukan
+di beberapa Dataset harus diperiksa
+hubungan dan statusnya.
+
+Tidak boleh langsung dianggap duplicate,
+migration, atau error tanpa identity resolution.
+
+==================================================
+26. STORY DATE / PATH CONSISTENCY
+
+Integrity wajib memeriksa:
+
+Story Date
+↓
+YEAR
+↓
+MONTH
+↓
+Filename Date
+
+Seluruh rantai harus konsisten.
+
+Jika terdapat satu mismatch:
+
+STATUS = CONFLICT
+
+Perbaikan harus dilakukan pada sumber
+yang memiliki kewenangan terhadap data tersebut.
+
+==================================================
+27. STORY ID / FILE CONSISTENCY
+
+Integrity harus mampu menelusuri:
+
+Story ID
+↔
+Daily Story Metadata
+↔
+Filename
+↔
+Destination
+
+Jika salah satu hubungan terputus:
+
+STATUS = REVIEW_REQUIRED
+
+atau
+
+CONFLICT
+
+Tidak boleh menciptakan identity baru
+untuk menutup gap tersebut.
+
+==================================================
+28. PLACEMENT RESULT CONSISTENCY
+
+Placement result yang menyatakan file telah
+berhasil ditempatkan harus konsisten
+dengan filesystem state.
+
+Jika placement record mengatakan:
+
+PLACED
+
+tetapi file tidak ditemukan
+di destination yang benar:
+
+STATUS = INTEGRITY_FAILURE
+
+Jika file ditemukan tetapi placement record
+menyatakan gagal:
+
+STATUS = REVIEW_REQUIRED
+
+==================================================
+29. POST-PLACEMENT DRIFT
+
+Storage Drift terjadi ketika storage
+berubah setelah placement tanpa proses
+resmi.
+
+Contoh kategori drift:
+
+- file renamed;
+- file moved;
+- file deleted;
+- content modified;
+- directory moved;
+- metadata relation broken.
+
+Integrity harus mendeteksi drift
+apabila dapat diverifikasi.
+
+==================================================
+30. UNAUTHORIZED CHANGE
+
+Perubahan storage yang tidak berasal
+dari proses resmi harus ditandai.
+
+Integrity tidak boleh menganggap
+perubahan manual sebagai bagian normal
+dari lifecycle Daily Story.
+
+Namun integrity juga tidak boleh
+mengasumsikan bahwa perubahan tersebut
+merupakan malicious action.
+
+Hanya fakta storage yang dicatat.
+
+==================================================
+31. CONTENT INTEGRITY BOUNDARY
+
+Instance Integrity tidak menentukan
+apakah cerita secara naratif benar.
+
+Ia hanya dapat memastikan
+bahwa artifact yang tersimpan:
+
+- berada pada lokasi benar;
+- memiliki identity yang dapat ditelusuri;
+- memiliki metadata yang konsisten;
+- dapat dibaca atau diakses sesuai
+  kebutuhan storage;
+- tidak mengalami storage corruption
+  yang terdeteksi.
+
+Kebenaran isi ditangani
+oleh Story Validation dan Narrative System.
+
+==================================================
+32. FILE READABILITY
+
+Jika environment memungkinkan,
+file aktif harus dapat dibuka
+dan dibaca sebagai file tipe yang sesuai.
+
+Jika file tidak dapat dibaca:
+
+STATUS = INTEGRITY_FAILURE
+
+Kondisi ini tidak boleh diperbaiki
+dengan membuat file baru secara otomatis
+tanpa proses yang sah.
+
+==================================================
+33. EMPTY FILE
+
+File kosong tidak otomatis invalid.
+
+Validitas bergantung pada metadata
+dan lifecycle Daily Story.
+
+Namun apabila Daily Story seharusnya
+telah selesai dan artifact kosong
+tanpa alasan yang sah:
+
+STATUS = REVIEW_REQUIRED
+atau
+INTEGRITY_FAILURE
+
+==================================================
+34. CORRUPTED FILE
+
+File yang terindikasi corrupt:
+
+- tidak boleh dianggap completed artifact;
+- tidak boleh dihapus otomatis;
+- tidak boleh ditimpa tanpa revision
+  atau recovery process;
+- harus ditandai untuk review.
+
+==================================================
+35. MULTIPLE REPRESENTATIONS
+
+Satu Daily Story dapat memiliki
+lebih dari satu representation
+hanya apabila system secara eksplisit
+mendukungnya.
+
+Jika tidak ada metadata yang menjelaskan
+hubungan antarrepresentation:
+
+STATUS = REVIEW_REQUIRED
+
+Integrity tidak boleh menyatukan
+dua artifact secara otomatis.
+
+==================================================
+36. REVISION INTEGRITY
+
+Revision harus tetap dapat ditelusuri
+kepada Story ID yang sama.
+
+Integrity harus dapat membedakan:
+
+- current revision;
+- prior revision;
+- obsolete artifact;
+- duplicate artifact.
+
+Perubahan revision tidak boleh
+menghasilkan identity baru secara otomatis.
+
+==================================================
+37. REPRODUCTION INTEGRITY
+
+Reproduction adalah representasi ulang
+yang sengaja dibuat.
+
+Apabila reproduction memang didukung:
+
+- relationship terhadap original
+  harus dapat ditelusuri;
+- reproduction tidak boleh dianggap
+  sebagai Story baru tanpa basis;
+- identity harus tetap jelas.
+
+==================================================
+38. MIGRATION INTEGRITY
+
+Setelah migration:
+
+- source state;
+- destination state;
+- Story ID;
+- Story Date;
+- filename;
+- placement state
+
+harus dapat diverifikasi.
+
+Migration yang meninggalkan
+dua active representation tanpa status
+merupakan integrity issue.
+
+==================================================
+39. NO AUTOMATIC REPAIR
+
+Instance Integrity adalah validation
+dan diagnosis layer.
+
+Secara default, integrity check
+tidak boleh:
+
+- menghapus file;
+- memindahkan file;
+- mengganti filename;
+- mengganti Story Date;
+- mengganti Story ID;
+- mengganti Instance;
+- mengganti Dataset;
+- mengedit isi Daily Story.
+
+Repair hanya boleh dilakukan oleh
+proses yang memiliki kewenangan
+dan rule yang sesuai.
+
+==================================================
+40. DOMAIN OWNER HANDOFF
+
+Jika integrity menemukan conflict
+yang menyangkut data domain:
+
+Integrity
+→ identifikasi conflict
+→ kirim kembali ke owner domain
+→ tunggu hasil resolusi
+→ validasi storage kembali
+
+Instance Management tidak mengambil
+alih domain ownership.
+
+==================================================
+41. TEMPORAL OWNER HANDOFF
+
+Jika conflict menyangkut:
+
+- Story Date;
+- Universe Time;
+- temporal status;
+- temporal ordering;
+
+Instance Integrity tidak menentukan
+solusi temporal.
+
+Conflict harus dikembalikan
+ke Temporal System / Daily Universe
+yang memiliki kewenangan.
+
+==================================================
+42. STORY OWNER HANDOFF
+
+Jika conflict menyangkut:
+
+- Story ID;
+- Story Scope;
+- Story Completion;
+- Story metadata;
+
+conflict diteruskan ke
+Daily Story subsystem.
+
+Instance Integrity hanya mempertahankan
+storage facts yang ditemukan.
+
+==================================================
+43. FILENAME OWNER HANDOFF
+
+Jika conflict berasal dari filename:
+
+- filename invalid;
+- format salah;
+- unsafe filename;
+- date mismatch;
+- naming collision;
+
+conflict diteruskan ke:
+
+04_FILE_NAMING.txt
+
+Instance Integrity tidak mengubah filename
+secara spontan.
+
+==================================================
+44. STRUCTURE OWNER HANDOFF
+
+Jika conflict menyangkut:
+
+- YEAR structure;
+- MONTH structure;
+- parent directory;
+- folder hierarchy;
+
+conflict diteruskan ke
+Instance Structure / Year-Month Structure
+yang relevan.
+
+==================================================
+45. PLACEMENT OWNER HANDOFF
+
+Jika conflict menyangkut:
+
+- wrong destination;
+- wrong path;
+- wrong Instance;
+- wrong Dataset;
+- failed placement;
+
+hasil diteruskan ke
+05_FILE_PLACEMENT.txt
+
+atau pipeline yang mengelola placement.
+
+==================================================
+46. INTEGRITY SCAN
+
+Integrity scan dapat dilakukan pada:
+
+- satu Daily Story;
+- satu MONTH;
+- satu YEAR;
+- satu Daily Story Dataset;
+- satu Instance.
+
+Scope scan harus dinyatakan
+secara eksplisit.
+
+Scan yang lebih besar
+tidak boleh diam-diam mengubah
+scope menjadi seluruh sistem.
+
+==================================================
+47. TARGETED INTEGRITY CHECK
+
+Targeted check dapat digunakan
+untuk memverifikasi satu artifact
+yang diketahui.
+
+Targeted check minimal memeriksa:
+
+- identity;
+- path;
+- filename;
+- Story Date;
+- structure;
+- placement;
+- existence.
+
+==================================================
+48. FULL INSTANCE CHECK
+
+Full Instance check memeriksa:
+
+- Instance structure;
+- Dataset structure;
+- YEAR;
+- MONTH;
+- active Daily Story files;
+- filename consistency;
+- identity traceability;
+- duplicates;
+- orphan files;
+- unexpected directories;
+- legacy structures;
+- placement consistency.
+
+Full Instance check tidak berarti
+memvalidasi isi naratif setiap cerita
+kecuali subsystem lain secara eksplisit
+dipanggil.
+
+==================================================
+49. INTEGRITY STATUS
+
+Hasil integrity dapat memiliki status:
+
+VALID
+
+Tidak ditemukan pelanggaran integrity
+yang relevan dalam scope pemeriksaan.
+
+REVIEW_REQUIRED
+
+Terdapat kondisi yang membutuhkan
+pemeriksaan manusia atau subsystem lain.
+
+CONFLICT
+
+Ditemukan dua atau lebih fakta storage
+yang saling bertentangan.
+
+ORPHAN
+
+Artifact tidak dapat ditelusuri
+kepada entity valid.
+
+LEGACY
+
+Artifact mengikuti aturan lama
+dan bukan active structure.
+
+UNKNOWN
+
+Artifact belum dapat diklasifikasikan.
+
+INTEGRITY_FAILURE
+
+Storage condition tidak memenuhi
+critical integrity requirement.
+
+BLOCKED
+
+Pemeriksaan tidak dapat dilanjutkan
+karena prasyarat gagal.
+
+==================================================
+50. SEVERITY
+
+Temuan dapat memiliki severity:
+
+INFO
+
+Tidak mengganggu integrity.
+
+WARNING
+
+Perlu dicatat tetapi belum merusak
+fungsi aktif.
+
+ERROR
+
+Terdapat pelanggaran yang perlu
+ditangani sebelum kondisi dianggap sehat.
+
+CRITICAL
+
+Integrity utama tidak dapat dipercaya
+atau terdapat conflict yang berpotensi
+menyebabkan kehilangan atau salah representasi data.
+
+==================================================
+51. INTEGRITY RESULT TRACE
+
+Setiap temuan harus dapat ditelusuri
+setidaknya kepada:
+
+- Instance;
+- Dataset;
+- path;
+- filename;
+- Story ID bila tersedia;
+- Story Date bila tersedia;
+- issue type;
+- status;
+- severity;
+- validation scope.
+
+Integrity result harus menggambarkan
+fakta yang ditemukan,
+bukan asumsi penyebab.
+
+==================================================
+52. NO ASSUMED RESOLUTION
+
+Jika sistem menemukan:
+
+A
+dan
+B
+
+yang bertentangan,
+
+sistem tidak boleh memilih A atau B
+hanya berdasarkan:
+
+- file terbaru;
+- file terbesar;
+- file terakhir ditulis;
+- filename yang lebih rapi;
+- metadata yang lebih lengkap;
+- asumsi bahwa perubahan terbaru
+  pasti benar.
+
+Pemilihan source of truth harus
+mengikuti ownership dan validation rules.
+
+==================================================
+53. HISTORICAL PRESERVATION
+
+Integrity check tidak boleh menghapus
+jejak historis.
+
+Jika ditemukan:
+
+- prior file;
+- old filename;
+- previous revision;
+- migration source;
+- legacy directory;
+
+informasi tersebut harus tetap dapat
+diperiksa apabila memang merupakan
+bagian dari history system.
+
+==================================================
+54. CONTINUITY RELATION
+
+Storage continuity tidak sama dengan
+Universe continuity.
+
+File berada di directory yang sama
+tidak berarti Universe state terus sama.
+
+Sebaliknya, perpindahan file tidak otomatis
+berarti Universe continuity berubah.
+
+Instance Integrity hanya memastikan
+storage representation.
+
+Continuity Universe ditangani
+oleh Daily Universe.
+
+==================================================
+55. CANON PROTECTION
+
+Instance Integrity tidak boleh
+menjadikan keberadaan file sebagai alasan
+untuk menciptakan Canon.
+
+Keberadaan file tidak otomatis berarti:
+
+- event terjadi;
+- character exists;
+- relationship exists;
+- object exists;
+- knowledge exists;
+- state berubah.
+
+Storage artifact merepresentasikan
+hasil system lain, bukan sumber Canon baru.
+
+==================================================
+56. INSTANCE COMPLETION RELATION
+
+Instance dianggap structurally ready
+untuk Daily Story baru apabila:
+
+- root valid;
+- Dataset valid;
+- target YEAR valid;
+- target MONTH valid;
+- destination valid;
+- tidak ada critical structural conflict;
+- filename siap;
+- placement dapat dilakukan.
+
+Instance Integrity tidak menyatakan
+isi cerita benar hanya karena storage ready.
+
+==================================================
+57. FINAL DAILY STORY STORAGE GATE
+
+Sebuah Daily Story File dianggap
+STORAGE_CONFIRMED hanya apabila:
+
+1. Instance valid.
+2. Dataset valid.
+3. YEAR valid.
+4. MONTH valid.
+5. Filename valid.
+6. Destination valid.
+7. File exists.
+8. File berada pada destination yang benar.
+9. Story identity dapat ditelusuri.
+10. Story Date konsisten.
+11. Tidak ada duplicate aktif yang tidak sah.
+12. Tidak ada critical structural conflict.
+13. Placement result dapat diverifikasi.
+
+Jika salah satu critical condition gagal:
+
+STORAGE_CONFIRMED = FALSE
+
+==================================================
+58. INSTANCE HEALTH
+
+Instance Health dapat dipandang
+sebagai kondisi agregat dari:
+
+- structural integrity;
+- file integrity;
+- identity integrity;
+- placement integrity;
+- temporal path consistency;
+- duplicate state;
+- orphan state;
+- legacy state;
+- unresolved integrity issues.
+
+Instance Health tidak boleh digunakan
+untuk memberi nilai subjektif terhadap
+kualitas cerita.
+
+==================================================
+59. FINAL PRINCIPLE
+
+Instance Integrity menjawab satu pertanyaan:
+
+"Apakah hasil penyimpanan Daily Story
+masih sesuai dengan struktur dan metadata
+yang seharusnya?"
+
+Bukan:
+
+"Apakah cerita itu benar?"
+
+Bukan:
+
+"Apakah Universe harus diubah?"
+
+Bukan:
+
+"Apakah file terbaru pasti benar?"
+
+Urutan yang benar:
+
+EXPECTED STORAGE STATE
+→ OBSERVED STORAGE STATE
+→ INTEGRITY COMPARISON
+→ ISSUE CLASSIFICATION
+→ OWNER HANDOFF
+→ VALIDATION AFTER RESOLUTION
+
+==================================================
+60. ABSOLUTE RULES
+
+1. 
+
+Instance Integrity memeriksa storage representation.
+
+2. 
+
+Instance Integrity tidak menciptakan Canon.
+
+3. 
+
+Filesystem state bukan otomatis Universe truth.
+
+4. 
+
+Filename bukan otomatis Story ID.
+
+5. 
+
+Path bukan otomatis Story Date truth.
+
+6. 
+
+Duplicate tidak boleh dihapus otomatis.
+
+7. 
+
+Orphan file tidak boleh diberi identity secara otomatis.
+
+8. 
+
+Legacy storage tidak boleh diperlakukan sebagai active
+tanpa validasi.
+
+9. 
+
+Conflict tidak boleh diselesaikan dengan tebakan.
+
+10. 
+
+Integrity check tidak boleh mengubah Story Date.
+
+11. 
+
+Integrity check tidak boleh mengubah Story ID.
+
+12. 
+
+Integrity check tidak boleh mengubah Instance assignment.
+
+13. 
+
+Integrity check tidak boleh mengubah isi Story.
+
+14. 
+
+Integrity check tidak boleh mengambil alih
+domain ownership.
+
+15. 
+
+Repair harus dilakukan oleh proses
+yang memiliki kewenangan.
+
+16. 
+
+Setiap finding harus dapat ditelusuri.
+
+17. 
+
+Critical integrity failure harus menghentikan
+status storage confirmation.
+
+18. 
+
+Storage confirmation berbeda dari Story Completion.
+
+19. 
+
+Story Completion berbeda dari Universe Continuity.
+
+20. 
+
+Instance Integrity adalah penjaga representasi storage,
+bukan penguasa Canon.
+
+==================================================
+61. FINAL ARCHITECTURAL PRINCIPLE
+
+Daily Universe menjaga aliran temporal.
+
+Daily Story menjaga lifecycle produksi cerita.
+
+Instance Management menjaga representasi penyimpanan.
+
+Instance Integrity menjaga agar representasi tersebut
+tetap konsisten dengan metadata dan struktur yang sah.
+
+Dengan demikian:
+
+UNIVERSE DATA
+→ diproses oleh system owner
+→ menghasilkan validated artifact
+→ diserahkan ke Instance Management
+→ ditempatkan ke storage
+→ diverifikasi oleh Instance Integrity
+
+Jika storage dan metadata tidak cocok,
+storage tidak boleh mengubah Universe secara diam-diam.
+
+Integrity mendeteksi,
+mengklasifikasikan,
+dan mengarahkan conflict
+kepada pihak yang memiliki kewenangan.
