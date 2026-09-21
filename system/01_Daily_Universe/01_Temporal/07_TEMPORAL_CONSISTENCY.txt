@@ -1,0 +1,637 @@
+================================================================================
+TEMPORAL CONSISTENCY
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / TEMPORAL DOMAIN
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Temporal Consistency adalah mekanisme untuk memastikan bahwa seluruh informasi
+dan proses yang berkaitan dengan waktu dapat berlangsung tanpa menghasilkan
+kontradiksi temporal.
+
+Temporal Consistency menghubungkan:
+
+- Universe Time;
+- Narrative Time;
+- Temporal Position;
+- Temporal Status;
+- Event;
+- State;
+- Knowledge;
+- Relationship;
+- Object;
+- Location;
+- Causality;
+- Daily Story;
+- History;
+- Future information.
+
+Temporal Consistency tidak menjadi owner dari domain Character, Relationship,
+Object, Knowledge, atau domain lain.
+
+Temporal Consistency memeriksa hubungan temporal antar-domain.
+
+
+================================================================================
+02. CORE PRINCIPLE
+================================================================================
+
+Informasi temporal dinyatakan konsisten apabila:
+
+- posisi waktunya dapat ditentukan atau dipertahankan sebagai unknown secara
+  sah;
+- status temporalnya tidak bertentangan dengan posisinya;
+- urutannya tidak melanggar hubungan temporal yang telah ditetapkan;
+- causal order tetap mungkin;
+- perubahan state berada pada posisi waktu yang sah;
+- Knowledge tidak tersedia sebelum acquisition yang sah;
+- event tidak terjadi sebelum kondisi yang diperlukan tanpa dasar;
+- future representation tidak mencemari Actual History;
+- narrative presentation tidak mengubah Universe Time;
+- domain owner tetap memegang kewenangannya.
+
+
+================================================================================
+03. TEMPORAL TRUTH
+================================================================================
+
+Temporal Consistency harus memisahkan:
+
+- temporal truth;
+- narrative presentation;
+- character perception;
+- character belief;
+- report;
+- memory;
+- imagination;
+- hypothesis;
+- plan;
+- prediction;
+- possibility.
+
+Penyajian, persepsi, atau kepercayaan tidak boleh digunakan sebagai pengganti
+temporal truth.
+
+
+================================================================================
+04. TEMPORAL ORDER
+================================================================================
+
+Setiap hubungan temporal yang telah ditetapkan harus dapat dipertahankan.
+
+Sistem harus mampu memeriksa:
+
+- before;
+- after;
+- during;
+- simultaneous;
+- overlapping;
+- unknown order.
+
+Kontradiksi terjadi apabila dua posisi temporal tidak mungkin berjalan bersama
+berdasarkan aturan Universe yang berlaku.
+
+
+================================================================================
+05. CAUSAL TEMPORALITY
+================================================================================
+
+Jika suatu event membutuhkan event atau kondisi lain sebagai penyebab, maka
+hubungan temporalnya harus memungkinkan.
+
+Sebab tidak boleh muncul setelah consequence apabila hubungan causal tersebut
+mewajibkan sebab terjadi terlebih dahulu.
+
+Namun urutan penyajian dapat berbeda dari urutan causal.
+
+Narrative order tidak boleh digunakan untuk membatalkan causal order.
+
+
+================================================================================
+06. EVENT CONSISTENCY
+================================================================================
+
+Setiap Actual Event harus:
+
+- memiliki temporal position yang sah;
+- mempunyai identitas yang dapat dibedakan;
+- berada dalam urutan yang konsisten;
+- tidak bertentangan dengan event lain;
+- tidak menghasilkan consequence pada waktu yang tidak mungkin.
+
+Satu event yang ditampilkan berkali-kali tidak otomatis menjadi beberapa event.
+
+
+================================================================================
+07. EVENT IDENTITY
+================================================================================
+
+Temporal Consistency harus dapat membedakan:
+
+- event baru;
+- event yang sama yang disajikan kembali;
+- event yang sama dari sudut pandang berbeda;
+- event yang sama yang muncul dalam flashback;
+- event yang sama yang muncul sebagai reference.
+
+Pengulangan representasi bukan penggandaan event Canon.
+
+
+================================================================================
+08. STATE CONSISTENCY
+================================================================================
+
+State dimiliki oleh domain owner.
+
+Temporal Consistency hanya memeriksa:
+
+- kapan state mulai berlaku;
+- kapan state berakhir;
+- apakah transisi state memiliki posisi temporal;
+- apakah dua state yang bertentangan dipaksa berlaku pada saat yang sama tanpa
+  dasar;
+- apakah state periode berikutnya mempunyai hubungan yang sah dengan keadaan
+  sebelumnya.
+
+Daily Universe tidak mendefinisikan isi state.
+
+
+================================================================================
+09. CHARACTER CONSISTENCY
+================================================================================
+
+Temporal Consistency memeriksa perjalanan temporal Character tanpa mengambil
+alih Character System.
+
+Pemeriksaan dapat mencakup:
+
+- keberadaan Character pada waktu tertentu;
+- kesinambungan identitas;
+- keberadaan berdasarkan history;
+- perpindahan kondisi;
+- hubungan temporal antara action dan reaction;
+- batas Knowledge;
+- batas availability.
+
+Aturan internal Character tetap mengikuti Character System.
+
+
+================================================================================
+10. KNOWLEDGE CONSISTENCY
+================================================================================
+
+Knowledge tidak boleh tersedia kepada Character sebelum terdapat dasar temporal
+yang memungkinkan Character memperolehnya.
+
+Temporal Consistency harus memeriksa:
+
+- acquisition time;
+- source event;
+- transmission;
+- availability;
+- recognition;
+- loss atau perubahan informasi bila domain owner mengaturnya.
+
+Knowledge content tetap mengikuti Character System.
+
+
+================================================================================
+11. RELATIONSHIP CONSISTENCY
+================================================================================
+
+Relationship tetap mengikuti Relationship System.
+
+Temporal Consistency memeriksa:
+
+- kapan Relationship mulai berlaku;
+- kapan perubahan Relationship berlaku;
+- apakah perubahan memiliki temporal position;
+- apakah relationship state bertentangan dengan event yang mendasarinya.
+
+Temporal Consistency tidak mendefinisikan Relationship.
+
+
+================================================================================
+12. OBJECT CONSISTENCY
+================================================================================
+
+Object tetap mengikuti Object System.
+
+Temporal Consistency memeriksa:
+
+- keberadaan Object pada waktu tertentu;
+- perubahan status Object;
+- perpindahan temporal;
+- hubungan possession atau location ketika informasi waktu diperlukan;
+- apakah suatu event menggunakan Object pada waktu ketika Object tersedia.
+
+Definisi Object tetap mengikuti Object System.
+
+
+================================================================================
+13. LOCATION CONSISTENCY
+================================================================================
+
+Location harus konsisten terhadap temporal position.
+
+Perubahan lokasi tidak boleh ditempatkan pada urutan waktu yang mustahil.
+
+Jika suatu event mengharuskan actor atau object berada pada lokasi tertentu,
+ketersediaan temporal lokasi tersebut harus dapat dipertanggungjawabkan.
+
+Daily Universe tidak mengambil alih ownership Location.
+
+
+================================================================================
+14. KNOWLEDGE ACQUISITION ORDER
+================================================================================
+
+Informasi tidak boleh digunakan sebagai Knowledge sebelum tersedia pada waktu
+yang sesuai.
+
+Urutan umum harus mempertahankan:
+
+SOURCE
+→ AVAILABILITY
+→ ACQUISITION
+→ USAGE
+
+Jika sistem hanya mengetahui bahwa informasi sudah dimiliki tanpa mengetahui
+kapan diperoleh, ketidakpastian waktu harus dipertahankan.
+
+
+================================================================================
+15. FUTURE CONSISTENCY
+================================================================================
+
+Plan, Prediction, Possibility, Hypothesis, dan Imagination yang berkaitan dengan
+Future tidak boleh diperlakukan sebagai Actual Event sebelum actualization
+yang sah.
+
+Ketika Current Universe Time bergerak maju, sistem harus memeriksa status
+future information sebelum memasukkannya ke historical context.
+
+
+================================================================================
+16. PAST CONSISTENCY
+================================================================================
+
+Informasi yang berkaitan dengan Past harus mempertahankan perbedaan antara:
+
+- Historical Actual;
+- Memory;
+- Report;
+- Imagination;
+- Hypothesis;
+- Unknown.
+
+Past position tidak boleh digunakan untuk menaikkan status non-actual menjadi
+Historical Actual.
+
+
+================================================================================
+17. PRESENT CONSISTENCY
+================================================================================
+
+Present harus dihitung terhadap Current Universe Time.
+
+Sesuatu yang berada pada Present harus konsisten dengan:
+
+- current state;
+- current event;
+- available knowledge;
+- current location;
+- current process;
+- temporal dependencies.
+
+Present position tidak otomatis berarti Actual.
+
+
+================================================================================
+18. NARRATIVE CONSISTENCY
+================================================================================
+
+Narrative Time dapat berbeda dari Universe Time.
+
+Temporal Consistency harus memastikan bahwa:
+
+- flashback tetap menunjuk pada waktu masa lalu;
+- flash-forward tetap menunjuk pada posisi future;
+- narrative return tidak mengubah Universe Time;
+- presentation order tidak mengubah event order;
+- disclosure order tidak mengubah acquisition order.
+
+Narrative sequence dan Universe sequence harus tetap terpisah.
+
+
+================================================================================
+19. REVEAL CONSISTENCY
+================================================================================
+
+Waktu ketika pembaca mengetahui informasi tidak boleh disamakan dengan waktu
+ketika informasi terjadi.
+
+Information Reveal Time harus dibedakan dari:
+
+- Event Time;
+- Acquisition Time;
+- Universe Time.
+
+Pengungkapan lebih awal tidak mengubah history.
+
+
+================================================================================
+20. TEMPORAL OVERLAP
+================================================================================
+
+Overlap temporal tidak otomatis merupakan contradiction.
+
+Beberapa proses, event, atau kondisi dapat berlangsung pada periode yang sama
+selama aturan domain dan causal relationship mengizinkannya.
+
+Temporal Consistency hanya menandai conflict jika overlap menghasilkan
+ketidakmungkinan.
+
+
+================================================================================
+21. TEMPORAL GAP
+================================================================================
+
+Gap informasi waktu tidak otomatis merupakan error.
+
+Jika tidak diketahui apa yang terjadi pada suatu rentang waktu, system harus
+mempertahankan rentang tersebut sebagai unknown atau unresolved.
+
+Gap tidak boleh diisi dengan kejadian buatan hanya agar continuity terlihat
+sempurna.
+
+
+================================================================================
+22. TEMPORAL CONTRADICTION
+================================================================================
+
+Temporal contradiction terjadi apabila informasi temporal yang valid tidak
+dapat berlaku bersama.
+
+Contoh kategori pemeriksaan tanpa menetapkan isi Universe:
+
+- event order conflict;
+- state overlap conflict;
+- causal order conflict;
+- knowledge availability conflict;
+- actor availability conflict;
+- object availability conflict;
+- relationship timing conflict;
+- location timing conflict;
+- future actualization conflict;
+- history conflict.
+
+
+================================================================================
+23. CONTRADICTION PRIORITY
+================================================================================
+
+Jika ditemukan konflik, sistem harus menentukan:
+
+1. data mana yang merupakan source;
+2. system owner mana yang berwenang;
+3. apakah konflik berada pada level data atau level aturan;
+4. apakah proses harus dihentikan;
+5. apakah konflik harus diteruskan ke validation atau system owner.
+
+Daily Universe tidak boleh memperbaiki konflik domain lain secara diam-diam.
+
+
+================================================================================
+24. UNKNOWN VS CONTRADICTION
+================================================================================
+
+UNKNOWN bukan contradiction.
+
+UNKNOWN berarti informasi belum cukup untuk menentukan keadaan.
+
+CONTRADICTION berarti terdapat informasi yang tidak dapat berlaku bersama.
+
+System harus membedakan keduanya.
+
+Unknown tidak boleh dipaksa menjadi contradiction.
+
+Contradiction tidak boleh disembunyikan dengan mengubah status menjadi
+Unknown tanpa dasar.
+
+
+================================================================================
+25. UNCERTAINTY PRESERVATION
+================================================================================
+
+Ketidakpastian temporal harus dipertahankan apabila belum dapat diselesaikan.
+
+Sistem tidak boleh meningkatkan ketepatan waktu hanya untuk membuat alur lebih
+rapi.
+
+Uncertainty harus tetap dapat dilacak sampai terdapat informasi baru yang sah.
+
+
+================================================================================
+26. CONTINUITY ACROSS PERIODS
+================================================================================
+
+Pergantian periode harus mempertahankan:
+
+- actual history;
+- current state yang masih berlaku;
+- ongoing process;
+- unresolved condition;
+- valid temporal relation;
+- status future information.
+
+Pergantian periode tidak menghapus history.
+
+Pergantian periode tidak otomatis mengaktualkan Future.
+
+
+================================================================================
+27. DOMAIN HANDOFF CONSISTENCY
+================================================================================
+
+Jika perubahan temporal memengaruhi domain lain:
+
+DAILY UNIVERSE
+→ mendeteksi kebutuhan perubahan
+→ menyerahkan kepada domain owner
+→ domain owner menerapkan aturan domain
+→ hasil dikembalikan
+→ Daily Universe melanjutkan temporal flow.
+
+Temporal Consistency harus memastikan handoff tersebut tidak menghasilkan
+perbedaan temporal yang tersembunyi.
+
+
+================================================================================
+28. CANON PRESERVATION
+================================================================================
+
+Canon tidak boleh berubah hanya karena:
+
+- urutan penyajian;
+- memory;
+- imagination;
+- hypothesis;
+- plan;
+- prediction;
+- possibility;
+- reader knowledge;
+- Character belief.
+
+Perubahan Canon harus berasal dari mekanisme actual Universe yang sah.
+
+
+================================================================================
+29. NO TEMPORAL RETCON BY CONVENIENCE
+================================================================================
+
+System tidak boleh memindahkan kejadian, mengubah waktu, atau mengubah
+historical order hanya untuk:
+
+- memperbaiki cerita;
+- membuat plot lebih menarik;
+- menghindari konflik;
+- memenuhi kebutuhan narasi;
+- membuat continuity terlihat rapi.
+
+Perubahan temporal yang sah harus mempunyai mekanisme revision yang jelas.
+
+
+================================================================================
+30. TEMPORAL AUDIT
+================================================================================
+
+Sebelum suatu proses temporal dinyatakan valid, system harus mampu memeriksa:
+
+- current time;
+- target time;
+- event time;
+- state transition time;
+- acquisition time;
+- relationship transition time;
+- object transition time;
+- location transition time;
+- causal order;
+- narrative order;
+- status history.
+
+Tidak semua field harus selalu diketahui.
+
+Field yang memang tidak tersedia tetap dapat berada pada Unknown.
+
+
+================================================================================
+31. VALIDATION RESULT
+================================================================================
+
+Temporal Consistency dapat menghasilkan status:
+
+VALID
+→ tidak ditemukan temporal conflict yang menghalangi proses.
+
+REVIEW_REQUIRED
+→ terdapat uncertainty atau issue yang memerlukan pemeriksaan.
+
+REVISION_REQUIRED
+→ terdapat informasi yang harus diperbaiki sebelum proses diteruskan.
+
+BLOCKED
+→ proses tidak dapat dilanjutkan secara sah.
+
+
+================================================================================
+32. SEVERITY
+================================================================================
+
+Issue temporal dapat diklasifikasikan sebagai:
+
+INFO
+→ tidak memengaruhi validity.
+
+WARNING
+→ belum menjadi contradiction tetapi memerlukan perhatian.
+
+ERROR
+→ mengganggu consistency dan membutuhkan koreksi.
+
+CRITICAL
+→ membuat proses temporal tidak dapat dilanjutkan dengan aman.
+
+
+================================================================================
+33. FAILURE PRINCIPLE
+================================================================================
+
+Apabila temporal consistency gagal, system tidak boleh:
+
+- menghapus fakta;
+- mengubah waktu secara diam-diam;
+- mengubah status;
+- mengubah event;
+- mengubah Character;
+- mengubah Relationship;
+- mengubah Object;
+- mengubah Knowledge;
+- memilih versi yang paling nyaman untuk cerita.
+
+System harus menghentikan atau mengembalikan proses ke tahap yang berwenang.
+
+
+================================================================================
+34. RELATION TO OTHER TEMPORAL FILES
+================================================================================
+
+File ini merupakan validation layer untuk domain Temporal.
+
+File ini menggunakan:
+
+- Universe Time;
+- Narrative Time;
+- Temporal Status;
+- Past / Present / Future;
+- Memory / Imagination / Hypothesis;
+- Plan / Prediction / Possibility.
+
+File ini tidak menggantikan aturan file-file tersebut.
+
+File ini juga tidak menggantikan validation milik domain owner lain.
+
+
+================================================================================
+35. FINAL PRINCIPLE
+================================================================================
+
+TEMPORAL CONSISTENCY berarti:
+
+WAKTU TETAP KONSISTEN.
+EVENT TETAP PADA POSISINYA.
+STATUS TETAP TERPISAH.
+CAUSALITY TETAP TERJAGA.
+KNOWLEDGE TIDAK MENDAHULUI AKUISISI.
+STATE TIDAK MELAWAN URUTAN WAKTU.
+FUTURE TIDAK MENJADI PAST TANPA EVENT AKTUAL.
+NARRATIVE ORDER TIDAK MENGUBAH UNIVERSE ORDER.
+DOMAIN OWNER TETAP MEMEGANG KEWENANGANNYA.
+
+Tujuan Temporal Consistency bukan membuat seluruh informasi selalu lengkap.
+
+Tujuannya adalah memastikan bahwa informasi yang ada dapat hidup bersama
+secara temporal tanpa menghasilkan kontradiksi yang tidak sah.
+
+
+================================================================================
+END OF TEMPORAL CONSISTENCY
+================================================================================
