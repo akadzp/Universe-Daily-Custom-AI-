@@ -1,0 +1,1574 @@
+==================================================
+04_INSTANCE_VALIDATION
+
+STATUS
+
+System Rule
+
+OWNER
+
+Daily Universe
+Validation
+
+SCOPE
+
+File ini mengatur validasi terhadap keseluruhan
+Instance sebagai satu lingkungan Universe
+dan storage yang terisolasi.
+
+Tujuannya adalah memastikan bahwa Instance:
+
+- memiliki struktur yang valid;
+- memiliki temporal foundation yang valid;
+- memiliki continuity yang dapat dilanjutkan;
+- memiliki Daily Story artifacts yang dapat
+  ditelusuri;
+- memiliki hubungan antar-domain yang konsisten;
+- memiliki storage representation yang konsisten;
+- tidak memiliki critical conflict yang tersembunyi;
+- tidak mencampurkan data dengan Instance lain;
+- dapat melanjutkan lifecycle Universe
+  secara aman.
+
+File ini merupakan validation layer tingkat Instance.
+
+File ini tidak mengambil alih ownership dari:
+
+- Temporal System;
+- Character System;
+- Relationship System;
+- Object System;
+- Knowledge System;
+- State System;
+- Location System;
+- Daily Story subsystem;
+- Narrator System;
+- Instance Management.
+
+==================================================
+
+1. CORE PRINCIPLE
+   ==================================================
+
+Instance Validation menjawab:
+
+"Apakah seluruh bagian Instance yang relevan
+saling konsisten dan dapat berfungsi sebagai
+satu environment Universe yang valid?"
+
+Instance Validation tidak hanya memeriksa
+keberadaan file.
+
+Ia memeriksa hubungan antara:
+
+Temporal
++
+Continuity
++
+Domain Data
++
+Daily Story
++
+Instance Structure
++
+Storage Integrity
+
+Validitas Instance tidak berarti
+seluruh Universe harus sempurna.
+
+Validitas hanya berlaku terhadap:
+
+- scope;
+- data;
+- dependency;
+- structure;
+- artifacts;
+
+yang termasuk dalam Instance
+dan validation scope yang ditentukan.
+
+==================================================
+02. INSTANCE DEFINITION
+
+Instance adalah boundary operasional
+yang memisahkan satu Universe environment
+dari Instance lain.
+
+Instance memiliki:
+
+- identity;
+- root;
+- dataset;
+- active temporal state;
+- continuity context;
+- domain context;
+- production context;
+- storage representation;
+- validation state.
+
+Instance bukan sekadar folder.
+
+Namun folder structure tetap menjadi
+representasi operasional penting
+dari Instance.
+
+==================================================
+03. INSTANCE IDENTITY
+
+Instance harus memiliki identity
+yang dapat dibedakan dari Instance lain.
+
+Validator memeriksa:
+
+- Instance identifier;
+- Instance Root;
+- Dataset membership;
+- ownership;
+- status;
+- relationship terhadap Universe data.
+
+Instance identity tidak boleh
+ditentukan berdasarkan filename
+atau Story Date saja.
+
+==================================================
+04. INSTANCE ROOT
+
+Setiap Instance harus memiliki
+root boundary yang jelas.
+
+Root digunakan sebagai batas
+untuk:
+
+- storage;
+- dataset;
+- production artifacts;
+- validation scope;
+- instance-local operations.
+
+Data di luar root tidak otomatis
+menjadi bagian Instance.
+
+Validator tidak boleh memperluas
+Instance boundary hanya karena
+file eksternal terlihat relevan.
+
+==================================================
+05. DATASET INTEGRITY
+
+Setiap Dataset harus:
+
+- berada di Instance yang benar;
+- memiliki identity yang jelas;
+- memiliki purpose yang diketahui;
+- tidak bercampur dengan Dataset lain;
+- mengikuti struktur aktif.
+
+Dataset yang tidak dapat
+diklasifikasikan harus menjadi:
+
+UNKNOWN
+atau
+REVIEW_REQUIRED
+
+==================================================
+06. INSTANCE STRUCTURE
+
+Struktur Instance harus sesuai
+dengan Instance Structure rules.
+
+Untuk Daily Story Dataset,
+struktur wajib mengikuti:
+
+INSTANCE
+↓
+DAILY STORY DATASET
+↓
+YEAR
+↓
+MONTH
+↓
+DAILY STORY FILE
+
+Structural deviation harus ditandai
+meskipun file tetap dapat dibuka.
+
+==================================================
+07. INSTANCE TEMPORAL FOUNDATION
+
+Instance harus memiliki temporal context
+yang dapat dipahami oleh Daily Universe.
+
+Validator memeriksa:
+
+- Universe Time;
+- current temporal position;
+- Story Date bila relevan;
+- temporal status;
+- active period;
+- temporal continuity.
+
+Jika temporal foundation critical
+tidak tersedia:
+
+INSTANCE STATUS = BLOCKED
+
+==================================================
+08. INSTANCE CONTINUITY FOUNDATION
+
+Instance harus memiliki continuity context
+yang dapat menghubungkan:
+
+previous condition
+→ transition
+→ current condition
+
+Continuity tidak harus selalu
+mengandung perubahan.
+
+Namun apabila perubahan terjadi,
+transition harus dapat ditelusuri.
+
+==================================================
+09. DOMAIN CONTEXT
+
+Instance dapat menggunakan
+beberapa domain sekaligus.
+
+Validator memastikan bahwa
+domain data yang digunakan
+memiliki owner yang jelas.
+
+Minimal boundary:
+
+Character
+Relationship
+Object
+Knowledge
+State
+Location
+Temporal
+Narrative
+
+Jika domain tertentu belum tersedia
+secara operasional, Instance Validation
+tidak boleh menciptakan owner baru
+secara diam-diam.
+
+==================================================
+10. DOMAIN OWNERSHIP CONSISTENCY
+
+Setiap domain harus tetap memiliki
+satu system owner.
+
+Instance Validation memeriksa
+apakah terjadi:
+
+- duplicate ownership;
+- conflicting authority;
+- silent override;
+- domain data ditulis oleh
+  subsystem yang bukan owner.
+
+Jika terjadi conflict ownership:
+
+STATUS = CRITICAL
+
+atau
+
+BLOCKED
+
+sesuai dampaknya.
+
+==================================================
+11. TEMPORAL VALIDATION INTEGRATION
+
+Instance Validation menggunakan hasil
+Temporal Validation.
+
+Jika terdapat unresolved
+critical temporal issue:
+
+Instance tidak boleh dianggap
+fully valid.
+
+Temporal validation tidak digantikan
+oleh Instance Validation.
+
+==================================================
+12. CONTINUITY VALIDATION INTEGRATION
+
+Instance Validation menggunakan hasil
+Continuity Validation.
+
+Continuity issue yang critical
+harus dipertahankan sebagai issue,
+bukan disembunyikan oleh
+Instance-level result.
+
+==================================================
+13. DAILY STORY VALIDATION INTEGRATION
+
+Daily Story yang berada dalam
+Instance harus memiliki
+validation state yang dapat
+ditelusuri.
+
+Validator memeriksa:
+
+- Story ID;
+- Story Date;
+- validation status;
+- completion status;
+- storage status;
+- relation ke Instance.
+
+Story yang critical invalid
+tidak boleh dianggap sebagai
+fully validated Instance artifact.
+
+==================================================
+14. STORAGE INTEGRITY INTEGRATION
+
+Instance Validation menggunakan
+hasil Instance Integrity untuk
+memeriksa:
+
+- path;
+- YEAR;
+- MONTH;
+- filename;
+- placement;
+- duplicate;
+- orphan;
+- legacy;
+- collision.
+
+Instance Validation tidak menggantikan
+Instance Integrity.
+
+==================================================
+15. CROSS-LAYER CONSISTENCY
+
+Instance memiliki beberapa layer:
+
+TEMPORAL
+↓
+CONTINUITY
+↓
+STORY PRODUCTION
+↓
+STORAGE
+
+Validator memeriksa apakah
+informasi penting tetap konsisten
+saat berpindah antar-layer.
+
+Misalnya:
+
+Story Date
+→ Daily Story
+→ YEAR/MONTH
+→ stored artifact
+
+Jika salah satu hubungan
+terputus:
+
+STATUS = REVIEW_REQUIRED
+atau
+CONFLICT
+
+==================================================
+16. STORY DATE CHAIN
+
+Untuk setiap stored Daily Story:
+
+Story Date
+→ validated temporal date
+→ YEAR
+→ MONTH
+→ filename date
+→ destination
+
+Seluruh chain harus konsisten.
+
+Satu mismatch critical
+dapat membuat artifact
+tidak storage-confirmed.
+
+==================================================
+17. STORY ID CHAIN
+
+Story identity harus dapat
+ditelusuri melalui:
+
+Story ID
+→ Story Metadata
+→ Story Artifact
+→ Filename
+→ Destination
+→ Instance
+
+Jika chain tidak lengkap:
+
+STATUS = REVIEW_REQUIRED
+
+Jika identity conflict:
+
+STATUS = CONFLICT
+
+==================================================
+18. ARTIFACT TRACEABILITY
+
+Setiap active Daily Story artifact
+harus dapat ditelusuri minimal kepada:
+
+- Instance;
+- Dataset;
+- Story ID;
+- Story Date;
+- Scope;
+- validation result;
+- storage result.
+
+Traceability tidak harus tertanam
+di dalam isi narrative,
+tetapi harus tersedia pada
+metadata atau system record
+yang sah.
+
+==================================================
+19. ORPHAN ARTIFACT
+
+Artifact yang tidak dapat
+dikaitkan dengan Daily Story
+yang sah harus diklasifikasikan
+sebagai:
+
+ORPHAN
+atau
+UNKNOWN
+
+Validator tidak boleh
+memberikannya Story ID baru
+secara otomatis.
+
+==================================================
+20. DUPLICATE ARTIFACT
+
+Duplicate harus diperiksa
+berdasarkan identity,
+bukan filename saja.
+
+Validator memeriksa:
+
+- Story ID;
+- artifact identity;
+- destination;
+- revision;
+- reproduction;
+- migration relation.
+
+Duplicate active yang tidak
+memiliki relation sah:
+
+STATUS = CONFLICT
+
+==================================================
+21. CROSS-STORY CONSISTENCY
+
+Daily Stories dalam satu Instance
+harus dapat hidup berdampingan
+secara temporal dan identity.
+
+Validator memeriksa:
+
+- Story Date relation;
+- Story ID uniqueness;
+- revision relation;
+- temporal order;
+- duplicate;
+- contradictory metadata.
+
+Satu story tidak boleh
+menghapus identity story lain
+secara diam-diam.
+
+==================================================
+22. CROSS-PERIOD CONSISTENCY
+
+Instance Validation memeriksa
+continuity lintas:
+
+- day;
+- month;
+- year.
+
+Boundary storage tidak boleh
+menghasilkan Universe reset.
+
+Validator memastikan bahwa:
+
+- ongoing process tidak hilang;
+- unresolved condition tidak hilang;
+- active relationship tidak reset;
+- object state tidak reset;
+- knowledge tidak reset;
+- character state tidak reset;
+
+kecuali terdapat transition
+yang sah.
+
+==================================================
+23. FUTURE CONSISTENCY
+
+Future information dalam Instance
+harus tetap memiliki status yang benar.
+
+Validator mencegah:
+
+- plan dianggap actual;
+- prediction dianggap actual;
+- possibility dianggap actual;
+- scheduled transition dianggap
+  sudah terjadi.
+
+Actualization hanya melalui
+valid Universe occurrence.
+
+==================================================
+24. PAST CONSISTENCY
+
+Historical information harus
+tetap konsisten dengan established
+history dan revision record.
+
+Validator memeriksa:
+
+- chronological order;
+- revision;
+- history relation;
+- current state;
+- temporal status.
+
+Past tidak boleh ditulis ulang
+secara diam-diam.
+
+==================================================
+25. PRESENT CONSISTENCY
+
+Current Instance State harus
+sesuai dengan current Universe Time
+dan current domain conditions.
+
+Future condition tidak boleh
+dianggap current tanpa transition.
+
+Ended condition tidak boleh
+tetap current tanpa basis.
+
+==================================================
+26. UNKNOWN PRESERVATION
+
+Instance Validation wajib
+mempertahankan Unknown.
+
+Unknown tidak boleh diubah menjadi:
+
+- false;
+- true;
+- completed;
+- cancelled;
+- unavailable;
+- nonexistent;
+
+tanpa authority.
+
+==================================================
+27. UNRESOLVED PRESERVATION
+
+Unresolved condition harus
+tetap dapat ditelusuri.
+
+Validator tidak boleh
+menutup unresolved issue
+hanya karena:
+
+- hari berganti;
+- bulan berganti;
+- tahun berganti;
+- story selesai;
+- file telah disimpan.
+
+==================================================
+28. CONFLICT AGGREGATION
+
+Instance Validation dapat
+mengagregasikan findings
+dari subsystem lain.
+
+Namun aggregation tidak berarti
+memiliki kewenangan memperbaiki
+finding tersebut.
+
+Setiap finding harus
+tetap memiliki:
+
+- source;
+- scope;
+- owner;
+- severity;
+- status.
+
+==================================================
+29. CRITICAL CONFLICT
+
+Critical conflict pada salah satu
+layer dapat memblokir Instance
+apabila conflict tersebut
+mempengaruhi:
+
+- temporal truth;
+- identity;
+- continuity;
+- storage correctness;
+- domain ownership;
+- Daily Story integrity;
+- downstream production safety.
+
+Instance-level validation
+harus menyatakan blocking condition
+secara eksplisit.
+
+==================================================
+30. NON-CRITICAL CONFLICT
+
+Tidak semua issue harus
+memblokir seluruh Instance.
+
+Validator harus membedakan:
+
+- local issue;
+- propagated issue;
+- instance-wide issue.
+
+Local issue hanya memengaruhi
+scope yang relevan apabila
+dependency tidak menyebar.
+
+==================================================
+31. DEPENDENCY PROPAGATION
+
+Instance Validation harus
+memeriksa dependency graph
+secara proporsional.
+
+Jika satu issue memengaruhi
+artifact lain:
+
+affected scope harus diperluas.
+
+Namun validator tidak boleh
+menyatakan seluruh Instance
+invalid tanpa dependency basis.
+
+==================================================
+32. DOMAIN CONFLICT
+
+Jika Character data bertentangan
+dengan Relationship data,
+atau Object data bertentangan
+dengan State data:
+
+Instance Validation tidak boleh
+memilih salah satu hanya karena
+lebih lengkap.
+
+Conflict harus diarahkan
+kepada domain owner yang relevan.
+
+==================================================
+33. CROSS-DOMAIN TEMPORAL CONSISTENCY
+
+Cross-domain relation harus
+memiliki temporal consistency.
+
+Validator memeriksa:
+
+- actor availability;
+- relationship timing;
+- object availability;
+- knowledge acquisition;
+- location;
+- state;
+- process;
+- consequence.
+
+Domain rule tetap berada
+pada domain owner.
+
+==================================================
+34. NARRATOR SEPARATION
+
+Narrator output adalah
+representation layer.
+
+Instance Validation harus memastikan
+bahwa narrative artifact tidak
+mengambil alih Universe truth.
+
+Story yang disimpan bukan
+sumber utama untuk:
+
+- Character;
+- Relationship;
+- Object;
+- Knowledge;
+- State;
+- Location;
+- Temporal truth.
+
+==================================================
+35. STORY TEXT VS UNIVERSE
+
+Jika story text berbeda dari
+validated Universe:
+
+- story dapat invalid;
+- Universe tidak otomatis invalid.
+
+Jika Universe berubah setelah story dibuat:
+
+- story dapat menjadi stale;
+- revalidation mungkin diperlukan.
+
+Dalam kedua kasus,
+Instance Validation tidak memperbaiki
+source secara diam-diam.
+
+==================================================
+36. STALE ARTIFACT
+
+Stale artifact adalah artifact
+yang sebelumnya valid tetapi
+context sumbernya berubah.
+
+Stale tidak berarti corrupted.
+
+Validator memeriksa apakah
+perubahan upstream benar-benar
+memengaruhi artifact.
+
+Jika ya:
+
+REVALIDATION_REQUIRED
+
+==================================================
+37. REVISION CONSISTENCY
+
+Revision harus menjaga:
+
+- identity;
+- history;
+- temporal relation;
+- artifact relation;
+- storage traceability.
+
+Validator memeriksa bahwa
+revision tidak menciptakan
+dua current versions tanpa
+status yang jelas.
+
+==================================================
+38. REPRODUCTION CONSISTENCY
+
+Reproduction harus dapat dibedakan
+dari original.
+
+Validator memeriksa:
+
+- identity relation;
+- source;
+- target;
+- purpose;
+- current status.
+
+Tidak boleh ada dua artifact
+yang sama-sama dianggap sebagai
+single canonical production artifact
+tanpa aturan.
+
+==================================================
+39. MIGRATION CONSISTENCY
+
+Migration harus meninggalkan
+keadaan yang dapat dijelaskan.
+
+Validator memeriksa:
+
+- old location;
+- new location;
+- identity;
+- migration state;
+- active representation;
+- duplicate relation.
+
+Migration yang tidak selesai
+harus ditandai.
+
+==================================================
+40. LEGACY CONSISTENCY
+
+Legacy structure dapat berada
+di dalam Instance tanpa menjadi
+active structure.
+
+Validator harus mampu membedakan:
+
+ACTIVE
+LEGACY
+UNKNOWN
+INVALID
+
+Legacy tidak boleh dianggap
+active hanya karena dapat dibuka.
+
+==================================================
+41. INSTANCE ISOLATION
+
+Validator wajib memastikan
+bahwa:
+
+- Character references;
+- Relationship references;
+- Object references;
+- Knowledge references;
+- Story artifacts;
+- temporal context;
+
+tidak tercampur dengan
+Instance lain tanpa explicit relation.
+
+Cross-instance reference,
+jika diperbolehkan, harus
+memiliki source dan authority.
+
+==================================================
+42. NO SILENT CROSS-INSTANCE IMPORT
+
+Data dari Instance lain
+tidak boleh masuk ke Instance aktif
+hanya karena:
+
+- filename cocok;
+- identity terlihat sama;
+- metadata terlihat mirip;
+- model memiliki memory terhadap data.
+
+Cross-instance import harus
+melalui mekanisme resmi.
+
+==================================================
+43. STORAGE CONSISTENCY
+
+Storage state harus mencerminkan
+validated metadata.
+
+Validator memeriksa:
+
+- root;
+- Dataset;
+- YEAR;
+- MONTH;
+- filename;
+- existence;
+- placement;
+- identity.
+
+Filesystem state tidak boleh
+mengubah metadata secara diam-diam.
+
+==================================================
+44. INSTANCE WRITE SAFETY
+
+Instance Validation sendiri
+tidak melakukan write repair.
+
+Jika ditemukan issue:
+
+- record finding;
+- classify;
+- route owner;
+- block affected process
+  jika diperlukan;
+- revalidate setelah resolution.
+
+Validation ≠ repair.
+
+==================================================
+45. READ-ONLY VALIDATION
+
+Secara default,
+Instance Validation bersifat
+read-only terhadap Universe data
+dan storage structure.
+
+Mutation hanya boleh dilakukan
+oleh subsystem yang secara eksplisit
+memiliki authority untuk mutation.
+
+==================================================
+46. VALIDATION SCOPE
+
+Instance Validation dapat berjalan
+pada:
+
+- one artifact;
+- one Dataset;
+- one YEAR;
+- one MONTH;
+- one temporal period;
+- full Instance.
+
+Scope wajib dinyatakan.
+
+==================================================
+47. TARGETED INSTANCE VALIDATION
+
+Targeted validation digunakan
+ketika hanya sebagian Instance
+terdampak perubahan.
+
+Validator memeriksa:
+
+- affected entities;
+- dependencies;
+- storage paths;
+- relevant artifacts;
+- relevant temporal range.
+
+==================================================
+48. FULL INSTANCE VALIDATION
+
+Full validation mencakup:
+
+- Instance identity;
+- root;
+- Dataset;
+- temporal foundation;
+- continuity foundation;
+- domain references;
+- Daily Stories;
+- storage;
+- identity;
+- duplicates;
+- orphan artifacts;
+- unresolved issues;
+- legacy state;
+- cross-period consistency;
+- critical conflicts.
+
+Full validation tetap
+tidak mengambil alih domain-specific
+deep validation yang dilakukan
+oleh owner masing-masing.
+
+==================================================
+49. VALIDATION ORDER
+
+Urutan minimum:
+
+1. VALIDATE INSTANCE IDENTITY
+2. VALIDATE INSTANCE ROOT
+3. VALIDATE DATASET STRUCTURE
+4. VALIDATE TEMPORAL FOUNDATION
+5. VALIDATE CONTINUITY FOUNDATION
+6. VALIDATE DOMAIN OWNERSHIP
+7. VALIDATE DAILY STORY ARTIFACTS
+8. VALIDATE STORAGE INTEGRITY
+9. VALIDATE CROSS-LAYER CONSISTENCY
+10. VALIDATE CROSS-PERIOD CONSISTENCY
+11. VALIDATE CROSS-INSTANCE ISOLATION
+12. AGGREGATE FINDINGS
+13. DETERMINE INSTANCE STATUS
+
+==================================================
+50. FINDING CLASSIFICATION
+
+Finding dapat berupa:
+
+STRUCTURAL
+
+Masalah struktur Instance.
+
+TEMPORAL
+
+Masalah waktu atau temporal relation.
+
+CONTINUITY
+
+Masalah kesinambungan antarperiode.
+
+IDENTITY
+
+Masalah entity atau artifact identity.
+
+DOMAIN
+
+Masalah cross-domain consistency.
+
+STORY
+
+Masalah Daily Story artifact.
+
+STORAGE
+
+Masalah file atau destination.
+
+OWNERSHIP
+
+Masalah system ownership.
+
+ISOLATION
+
+Masalah boundary Instance.
+
+LIFECYCLE
+
+Masalah lifecycle state.
+
+==================================================
+51. SEVERITY
+
+Severity:
+
+INFO
+
+Tidak memengaruhi operational validity.
+
+WARNING
+
+Perlu diperhatikan tetapi tidak
+menghalangi proses utama.
+
+ERROR
+
+Memerlukan resolusi sebelum
+scope terkait dinyatakan valid.
+
+CRITICAL
+
+Mengancam integrity dasar
+Instance atau menghasilkan
+representasi yang tidak dapat dipercaya.
+
+==================================================
+52. INSTANCE STATUS
+
+Final Instance status dapat berupa:
+
+VALID
+
+Tidak ada critical issue
+dalam scope.
+
+VALID_WITH_WARNINGS
+
+Instance dapat beroperasi,
+tetapi memiliki warning
+yang harus tetap ditelusuri.
+
+REVIEW_REQUIRED
+
+Terdapat issue yang membutuhkan
+pemeriksaan lebih lanjut.
+
+REVISION_REQUIRED
+
+Data atau artifact perlu direvisi.
+
+BLOCKED
+
+Instance tidak boleh melanjutkan
+operasi tertentu.
+
+INVALID
+
+Instance tidak memenuhi
+critical requirements dalam scope.
+
+==================================================
+53. BLOCKING CONDITIONS
+
+Instance dapat BLOCKED apabila:
+
+- Instance identity tidak valid;
+- Instance Root tidak dapat dipercaya;
+- temporal foundation critical invalid;
+- continuity foundation critical invalid;
+- domain ownership conflict critical;
+- critical storage corruption;
+- critical Story identity conflict;
+- critical cross-layer inconsistency;
+- required subsystem result blocked.
+
+==================================================
+54. LOCAL VS INSTANCE-WIDE FAILURE
+
+Tidak semua failure pada
+satu artifact berarti seluruh
+Instance INVALID.
+
+Validator harus menentukan:
+
+LOCAL
+
+Masalah terbatas pada satu entity,
+artifact, atau scope.
+
+PROPAGATED
+
+Masalah memengaruhi dependency tertentu.
+
+INSTANCE-WIDE
+
+Masalah memengaruhi boundary utama
+Instance.
+
+Status akhir harus mengikuti
+dampak aktual.
+
+==================================================
+55. DOWNSTREAM GATE
+
+Instance Validation harus menentukan
+apakah operasi berikut dapat dilanjutkan:
+
+- Daily Cycle;
+- Daily Story production;
+- Story handoff;
+- storage placement;
+- next temporal period;
+- continuity carryover.
+
+Tidak semua issue harus menghentikan
+semua operasi.
+
+Gate harus mengikuti affected scope.
+
+==================================================
+56. DAILY CYCLE HANDOFF
+
+Sebelum Daily Universe memulai
+period berikutnya,
+Instance Validation dapat memastikan:
+
+- previous period finalized;
+- carryover valid;
+- unresolved context preserved;
+- temporal position valid;
+- storage result tidak merusak
+  continuity.
+
+==================================================
+57. DAILY STORY HANDOFF
+
+Sebelum Daily Story production
+dapat berjalan:
+
+- Instance must have valid temporal context;
+- relevant continuity valid;
+- required domain references available;
+- production scope resolvable.
+
+Story production tidak boleh
+berjalan menggunakan
+instance context yang critical invalid.
+
+==================================================
+58. STORAGE HANDOFF
+
+Sebelum final storage:
+
+- story validation harus valid;
+- destination harus valid;
+- instance structure harus valid;
+- naming harus valid;
+- placement gate harus terbuka.
+
+Instance Validation tidak melakukan
+file placement.
+
+==================================================
+59. FINAL INSTANCE HEALTH
+
+Instance Health merupakan
+hasil agregasi:
+
+- structural state;
+- temporal state;
+- continuity state;
+- story state;
+- storage state;
+- identity state;
+- isolation state;
+- unresolved critical findings.
+
+Health bukan rating kualitas Universe.
+
+Health hanya menggambarkan
+operational integrity.
+
+==================================================
+60. TRACEABILITY
+
+Setiap Instance Validation result
+harus dapat ditelusuri kepada:
+
+- Instance ID;
+- validation scope;
+- validation time;
+- relevant temporal position;
+- relevant Dataset;
+- relevant artifact;
+- finding;
+- severity;
+- status;
+- owner routing.
+
+==================================================
+61. VALIDATION TIME
+
+Validation time adalah waktu
+operasional pemeriksaan.
+
+Validation time bukan Universe Time.
+
+Jika validation dilakukan
+terhadap historical period,
+historical temporal context
+tetap harus dipertahankan.
+
+==================================================
+62. HISTORICAL VALIDATION
+
+Instance dapat divalidasi
+terhadap periode masa lalu.
+
+Validator harus mempertahankan
+konteks historis yang relevan.
+
+Current state tidak boleh
+menggantikan historical state
+hanya karena validation dijalankan
+hari ini.
+
+==================================================
+63. FUTURE VALIDATION
+
+Future context dapat divalidasi
+hanya sebagai:
+
+- plan;
+- prediction;
+- possibility;
+- scheduled condition;
+- unresolved future condition.
+
+Future validation tidak
+mengubah future menjadi actual.
+
+==================================================
+64. REVALIDATION
+
+Instance harus direvalidasi apabila
+terdapat perubahan yang memengaruhi:
+
+- temporal foundation;
+- continuity;
+- domain authority;
+- Story metadata;
+- Daily Story artifact;
+- storage;
+- Instance structure;
+- migration;
+- revision.
+
+Revalidation dapat targeted
+atau full sesuai dependency.
+
+==================================================
+65. NO AUTO-REPAIR
+
+Instance Validation tidak boleh:
+
+- mengubah Story Date;
+- mengubah Story ID;
+- mengubah Character;
+- mengubah Relationship;
+- mengubah Object;
+- mengubah Knowledge;
+- mengubah State;
+- mengubah Location;
+- memindahkan file;
+- mengganti filename;
+- menghapus duplicate;
+- menutup unresolved;
+- mengubah Canon.
+
+Validation hanya:
+
+DETECT
+→ CLASSIFY
+→ ROUTE
+→ BLOCK IF NEEDED
+→ REVALIDATE
+
+==================================================
+66. CONFLICT HANDLING
+
+Jika dua subsystem menghasilkan
+hasil yang bertentangan:
+
+1. identifikasi domain;
+2. identifikasi authority;
+3. identifikasi temporal scope;
+4. identifikasi affected scope;
+5. klasifikasikan conflict;
+6. route kepada owner;
+7. block jika critical;
+8. revalidate setelah resolution.
+
+Tidak boleh dilakukan
+silent source selection.
+
+==================================================
+67. INSTANCE VALIDITY VS UNIVERSE TRUTH
+
+Instance VALID berarti
+representasi operasional dan
+storage dalam scope dapat dipercaya.
+
+Instance VALID tidak berarti
+seluruh Universe secara absolut
+telah terbukti benar.
+
+Universe truth tetap berasal
+dari domain owner dan temporal system.
+
+==================================================
+68. INSTANCE VALIDITY VS STORY QUALITY
+
+Instance Validation tidak menilai:
+
+- kreativitas;
+- daya tarik;
+- gaya;
+- kualitas sastra;
+- emotional impact.
+
+Instance Validation hanya menilai
+integrity dan operational consistency.
+
+==================================================
+69. INSTANCE VALIDITY VS CANON
+
+Instance VALID tidak membuat
+semua informasi di dalam
+artifact menjadi Canon.
+
+Artifact tetap memiliki
+status masing-masing.
+
+==================================================
+70. FINAL INSTANCE GATE
+
+Instance dapat dinyatakan:
+
+INSTANCE_VALID
+
+apabila:
+
+1. Instance identity valid.
+2. Root valid.
+3. Dataset structure valid.
+4. Temporal foundation valid.
+5. Continuity foundation valid.
+6. Domain ownership tidak conflict.
+7. Critical Daily Story artifacts valid.
+8. Storage integrity valid.
+9. Cross-layer relation valid.
+10. Cross-period relation valid.
+11. Instance isolation valid.
+12. Tidak ada critical unresolved issue.
+13. Downstream gate dapat dibuka.
+
+==================================================
+71. FINAL INSTANCE RESULT
+
+Output minimal:
+
+INSTANCE_ID
+INSTANCE_SCOPE
+VALIDATION_SCOPE
+TEMPORAL_STATUS
+CONTINUITY_STATUS
+DOMAIN_STATUS
+STORY_STATUS
+STORAGE_STATUS
+ISOLATION_STATUS
+FINDINGS
+SEVERITY
+FINAL_STATUS
+BLOCKING_ISSUES
+OWNER_ROUTING
+REVALIDATION_REQUIRED
+DOWNSTREAM_ALLOWED
+
+==================================================
+72. ABSOLUTE RULES
+
+1. 
+
+Instance Validation memeriksa keseluruhan
+operational consistency dalam scope.
+
+2. 
+
+Instance Validation bukan owner
+dari domain data.
+
+3. 
+
+Filesystem bukan sumber Canon.
+
+4. 
+
+Story bukan sumber Canon otomatis.
+
+5. 
+
+Instance tidak boleh mengambil data
+dari Instance lain secara diam-diam.
+
+6. 
+
+Critical conflict tidak boleh disembunyikan.
+
+7. 
+
+Local issue tidak otomatis membuat
+seluruh Instance invalid.
+
+8. 
+
+Instance boundary harus tetap jelas.
+
+9. 
+
+Temporal boundary tidak berarti
+Universe reset.
+
+10. 
+
+Storage boundary tidak berarti
+continuity reset.
+
+11. 
+
+Unknown harus tetap unknown.
+
+12. 
+
+Unresolved harus tetap unresolved
+sampai resolusi sah.
+
+13. 
+
+Conflict tidak boleh diselesaikan
+dengan tebakan.
+
+14. 
+
+Validation tidak sama dengan repair.
+
+15. 
+
+Repair harus dilakukan oleh
+owner yang relevan.
+
+16. 
+
+Validation result harus dapat
+ditelusuri.
+
+17. 
+
+Revalidation wajib dilakukan
+setelah perubahan yang relevan.
+
+18. 
+
+Instance Validity tidak sama
+dengan Story Quality.
+
+19. 
+
+Instance Validity tidak sama
+dengan Canon Validity.
+
+20. 
+
+Instance Validation hanya menyatakan
+apa yang dapat dipercaya dalam scope
+pemeriksaan.
+
+==================================================
+73. FINAL ARCHITECTURAL PRINCIPLE
+
+Instance adalah environment tempat
+waktu, continuity, domain data,
+Daily Story, dan storage beroperasi
+secara terisolasi.
+
+Instance Validation memastikan
+bahwa semua layer tersebut
+tetap terhubung tanpa mengambil
+alih kewenangan satu sama lain.
+
+Urutan:
+
+INSTANCE
+→ TEMPORAL FOUNDATION
+→ CONTINUITY FOUNDATION
+→ DOMAIN REFERENCES
+→ DAILY STORY
+→ STORAGE
+→ CROSS-LAYER VALIDATION
+→ INSTANCE STATUS
+
+Jika ditemukan masalah:
+
+DETECT
+→ CLASSIFY
+→ ROUTE TO OWNER
+→ BLOCK AFFECTED PROCESS IF REQUIRED
+→ RESOLVE THROUGH AUTHORIZED SYSTEM
+→ REVALIDATE
+
+Bukan:
+
+CONFLICT
+→ AUTO-REPAIR
+→ HIDE CONFLICT
+→ DECLARE VALID
+
+Instance yang sehat bukan Instance
+yang tidak pernah memiliki conflict.
+
+Instance yang sehat adalah Instance
+yang setiap conflict-nya dapat
+diidentifikasi, dibatasi scope-nya,
+ditelusuri sumbernya, dan diproses
+melalui sistem yang memiliki
+kewenangan untuk menyelesaikannya.
