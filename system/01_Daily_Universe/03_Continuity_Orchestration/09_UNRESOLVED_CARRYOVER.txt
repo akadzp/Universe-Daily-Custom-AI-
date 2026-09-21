@@ -1,0 +1,746 @@
+================================================================================
+UNRESOLVED CARRYOVER
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / CONTINUITY ORCHESTRATION
+ROLE : TEMPORAL UNRESOLVED CONTINUITY
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Unresolved Carryover adalah mekanisme untuk mempertahankan kondisi, pertanyaan,
+proses, transition, dependency, atau informasi yang belum mendapatkan
+penyelesaian atau kepastian yang sah ketika Universe berpindah dari satu
+periode ke periode berikutnya.
+
+Tujuan utamanya adalah mencegah system:
+
+- menghapus ketidakpastian;
+- menganggap sesuatu selesai tanpa dasar;
+- mengubah unknown menjadi fact;
+- mengubah unresolved menjadi actual;
+- menghilangkan masalah hanya karena periode berganti;
+- menciptakan resolution demi kebutuhan cerita.
+
+Unresolved adalah status yang sah ketika Universe memang belum memiliki
+resolution yang cukup.
+
+
+================================================================================
+02. CORE PRINCIPLE
+================================================================================
+
+UNRESOLVED
+≠
+COMPLETED
+
+UNRESOLVED
+≠
+FAILED
+
+UNRESOLVED
+≠
+CANCELLED
+
+UNRESOLVED
+≠
+UNKNOWN
+
+Unresolved berarti:
+
+“Hal tersebut diketahui masih relevan atau masih membutuhkan penyelesaian,
+tetapi hasil atau keadaan akhirnya belum dapat ditentukan secara sah.”
+
+Unknown berarti:
+
+“Informasi yang dibutuhkan untuk menentukan keadaan tersebut belum diketahui.”
+
+
+================================================================================
+03. PURPOSE OF PRESERVATION
+================================================================================
+
+Unresolved Carryover menjaga agar:
+
+CURRENT PERIOD
+↓
+UNRESOLVED CONDITION
+↓
+PERIOD FINALIZATION
+↓
+NEXT PERIOD
+↓
+RE-EVALUATION
+
+Informasi unresolved tidak hilang hanya karena Daily Story selesai atau tanggal
+berubah.
+
+
+================================================================================
+04. UNRESOLVED ITEM
+================================================================================
+
+Unresolved Item dapat berupa:
+
+- unresolved event;
+- unresolved consequence;
+- unresolved process;
+- unresolved state transition;
+- unresolved relationship transition;
+- unresolved object transition;
+- unresolved knowledge acquisition;
+- unresolved location transition;
+- unresolved dependency;
+- unresolved temporal position;
+- unresolved identity;
+- unresolved domain handoff.
+
+Unresolved Item tetap mengikuti domain owner masing-masing.
+
+
+================================================================================
+05. IDENTITY
+================================================================================
+
+Unresolved Item harus mempunyai identity atau reference yang memungkinkan
+continuity apabila item tersebut perlu dilacak lintas periode.
+
+Identity harus tetap dipertahankan selama item yang sama masih unresolved.
+
+Periode baru tidak boleh menghasilkan unresolved item baru jika yang terjadi
+sebenarnya adalah kelanjutan item yang sama.
+
+
+================================================================================
+06. SOURCE
+================================================================================
+
+Setiap Unresolved Item harus memiliki source atau reference yang menjelaskan
+mengapa item tersebut berada dalam status unresolved.
+
+Source dapat berupa:
+
+- event;
+- process;
+- consequence;
+- domain transition;
+- temporal conflict;
+- missing dependency;
+- incomplete information;
+- domain owner result;
+- validation result.
+
+Jika source tidak diketahui, status dapat berada pada Unknown dan tidak boleh
+dipalsukan.
+
+
+================================================================================
+07. REASON FOR UNRESOLVED
+================================================================================
+
+Alasan unresolved harus dapat dibedakan apabila relevan.
+
+Kategori dapat mencakup:
+
+- missing information;
+- pending dependency;
+- domain decision pending;
+- temporal uncertainty;
+- conflicting information;
+- incomplete process;
+- pending event;
+- pending handoff;
+- unknown outcome.
+
+Kategori ini digunakan untuk orchestration dan bukan untuk mengambil alih
+domain owner.
+
+
+================================================================================
+08. UNRESOLVED STATUS
+================================================================================
+
+Unresolved Item dapat memiliki operational status:
+
+ACTIVE
+→ masih perlu dipantau.
+
+WAITING
+→ menunggu dependency atau result.
+
+BLOCKED
+→ tidak dapat bergerak karena constraint.
+
+REVIEW_REQUIRED
+→ membutuhkan pemeriksaan.
+
+UNRESOLVED
+→ hasil utama belum diketahui.
+
+RESOLVED
+→ telah memperoleh resolution yang sah.
+
+CLOSED
+→ monitoring tidak lagi diperlukan berdasarkan mekanisme yang sah.
+
+
+================================================================================
+09. WAITING
+================================================================================
+
+WAITING menunjukkan bahwa resolution bergantung pada sesuatu yang belum
+tersedia.
+
+Waiting tidak berarti failure.
+
+Waiting tidak berarti cancellation.
+
+Dependency yang ditunggu harus dapat diidentifikasi apabila diketahui.
+
+
+================================================================================
+10. BLOCKED
+================================================================================
+
+BLOCKED menunjukkan bahwa proses resolution tidak dapat dilanjutkan karena
+constraint tertentu.
+
+Blocked tidak berarti item sudah selesai.
+
+Item dapat menjadi unblocked apabila condition berubah secara sah.
+
+
+================================================================================
+11. RESOLUTION
+================================================================================
+
+Resolution terjadi ketika system yang berwenang telah menghasilkan hasil yang
+cukup untuk menentukan keadaan item.
+
+Resolution harus mempertahankan:
+
+- previous unresolved state;
+- resolution source;
+- effective time;
+- resulting state;
+- domain owner;
+- impact terhadap continuity.
+
+
+================================================================================
+12. RESOLUTION OWNERSHIP
+================================================================================
+
+Daily Universe tidak boleh menjadi owner resolution apabila resolution berada
+di domain system lain.
+
+Pola:
+
+UNRESOLVED
+↓
+DOMAIN OR TEMPORAL HANDOFF
+↓
+OWNER RESOLUTION
+↓
+RESULT
+↓
+DAILY UNIVERSE CONTINUITY
+
+Daily Universe hanya mengatur perjalanan resolution melalui waktu.
+
+
+================================================================================
+13. NO FORCED RESOLUTION
+================================================================================
+
+Unresolved tidak boleh diselesaikan hanya karena:
+
+- Daily Story membutuhkan ending;
+- Narrator membutuhkan informasi;
+- periode harus ditutup;
+- cerita membutuhkan kepastian;
+- system membutuhkan data lengkap;
+- Character harus segera mengambil keputusan.
+
+Resolution harus berasal dari dasar yang sah.
+
+
+================================================================================
+14. NO SILENT DELETION
+================================================================================
+
+Unresolved item tidak boleh dihapus hanya karena:
+
+- tidak dibahas;
+- tidak menjadi focus;
+- telah melewati beberapa periode;
+- sulit ditangani;
+- belum ada jawaban.
+
+Unresolved dapat terus dibawa selama memang masih relevan.
+
+
+================================================================================
+15. RELEVANCE
+================================================================================
+
+Unresolved Item harus memiliki relevance yang dapat dievaluasi.
+
+Relevance dapat:
+
+- tetap aktif;
+- berkurang;
+- berubah;
+- berakhir;
+- menjadi tidak applicable.
+
+Berakhirnya relevance harus mempunyai dasar.
+
+Tidak adanya pembahasan dalam Daily Story bukan dasar untuk menghapus
+relevance.
+
+
+================================================================================
+16. UNRESOLVED VS UNKNOWN
+================================================================================
+
+UNRESOLVED:
+
+System mengetahui bahwa terdapat sesuatu yang belum selesai atau belum
+terselesaikan.
+
+UNKNOWN:
+
+System belum mengetahui informasi yang dibutuhkan untuk menentukan keadaan.
+
+Keduanya dapat hadir bersamaan.
+
+Namun keduanya harus tetap dapat dibedakan.
+
+
+================================================================================
+17. UNKNOWN WITHIN UNRESOLVED
+================================================================================
+
+Sebuah Unresolved Item dapat memiliki sub-information yang Unknown.
+
+Contohnya secara struktural:
+
+UNRESOLVED PROCESS
+↓
+STATUS KNOWN
+↓
+COMPLETION TIME UNKNOWN
+
+Dalam kondisi tersebut:
+
+Process
+→ Unresolved.
+
+Completion Time
+→ Unknown.
+
+System tidak boleh mengubah seluruh item menjadi Unknown hanya karena satu
+komponennya belum diketahui.
+
+
+================================================================================
+18. TEMPORAL POSITION
+================================================================================
+
+Unresolved Item harus tetap memiliki temporal context apabila context tersebut
+diketahui.
+
+Context dapat mencakup:
+
+- source time;
+- current time;
+- expected evaluation time;
+- unresolved interval;
+- next review point.
+
+Jika posisi tertentu tidak diketahui, status tersebut dipertahankan sebagai
+Unknown.
+
+
+================================================================================
+19. UNRESOLVED FUTURE
+================================================================================
+
+Unresolved future condition tidak otomatis menjadi:
+
+- Plan;
+- Prediction;
+- Possibility;
+- Actual Event.
+
+Status asli harus dipertahankan sampai terdapat dasar baru.
+
+
+================================================================================
+20. UNRESOLVED PAST
+================================================================================
+
+Unresolved historical information tidak otomatis menjadi Historical Actual.
+
+Masa lalu yang belum terselesaikan tetap berada dalam status yang belum
+terselesaikan.
+
+
+================================================================================
+21. UNRESOLVED PRESENT
+================================================================================
+
+Unresolved current condition menunjukkan bahwa Universe sedang berada pada
+situasi yang belum dapat ditentukan secara lengkap.
+
+System tidak boleh membuat Current State baru hanya untuk menghilangkan
+uncertainty.
+
+
+================================================================================
+22. DOMAIN-SPECIFIC UNRESOLVED
+================================================================================
+
+Unresolved yang berkaitan dengan Character:
+
+→ Character System tetap owner.
+
+Unresolved yang berkaitan dengan Relationship:
+
+→ Relationship System tetap owner.
+
+Unresolved yang berkaitan dengan Object:
+
+→ Object System tetap owner.
+
+Unresolved yang berkaitan dengan Knowledge:
+
+→ Character System atau Knowledge owner tetap berwenang.
+
+Daily Universe hanya mengatur temporal continuity dan routing.
+
+
+================================================================================
+23. DOMAIN HANDOFF
+================================================================================
+
+Jika resolution membutuhkan domain system lain:
+
+DAILY UNIVERSE
+→ identify unresolved item
+→ identify required domain
+→ provide temporal context
+→ send handoff
+→ receive domain result
+→ validate temporal result
+→ update continuity.
+
+
+================================================================================
+24. HANDOFF RESULT
+================================================================================
+
+Handoff dapat menghasilkan:
+
+RESOLVED
+→ resolution telah diberikan.
+
+ACCEPTED
+→ domain menerima request tetapi belum memberi final resolution.
+
+REJECTED
+→ domain menolak request.
+
+BLOCKED
+→ domain tidak dapat melanjutkan.
+
+REQUIRES_INPUT
+→ data tambahan dibutuhkan.
+
+UNRESOLVED
+→ hasil masih belum dapat ditentukan.
+
+UNKNOWN
+→ result belum diketahui.
+
+
+================================================================================
+25. RESOLUTION TRANSITION
+================================================================================
+
+Perubahan umum:
+
+UNRESOLVED
+→ RESOLVED
+
+UNRESOLVED
+→ CLOSED
+
+UNRESOLVED
+→ BLOCKED
+
+UNRESOLVED
+→ CONTINUE
+
+UNRESOLVED
+→ CANCELLED
+
+Transition harus memiliki dasar yang sah.
+
+
+================================================================================
+26. RESOLUTION HISTORY
+================================================================================
+
+History unresolved harus dipertahankan.
+
+History harus dapat menunjukkan:
+
+- kapan item menjadi unresolved;
+- mengapa menjadi unresolved;
+- periode mana yang membawa item;
+- perubahan status;
+- resolution;
+- downstream impact.
+
+
+================================================================================
+27. CROSS-PERIOD CARRYOVER
+================================================================================
+
+Pada period boundary:
+
+UNRESOLVED ITEM
+↓
+RELEVANCE CHECK
+↓
+TEMPORAL CHECK
+↓
+DEPENDENCY CHECK
+↓
+NEXT PERIOD UNRESOLVED CONTEXT
+
+Item tetap mempunyai identity yang sama apabila merupakan continuity yang sama.
+
+
+================================================================================
+28. AGING
+================================================================================
+
+Lamanya unresolved status tidak otomatis menghasilkan resolution.
+
+Item dapat unresolved dalam banyak periode.
+
+System tidak boleh menganggap:
+
+“sudah terlalu lama”
+
+sebagai alasan untuk membuat hasil.
+
+
+================================================================================
+29. ESCALATION
+================================================================================
+
+Unresolved Item dapat memerlukan escalation apabila:
+
+- dependency terlalu lama tidak tersedia;
+- conflict menjadi critical;
+- resolution diperlukan untuk proses downstream;
+- temporal contradiction berkembang;
+- domain owner membutuhkan intervention.
+
+Escalation bukan resolution.
+
+
+================================================================================
+30. PRIORITY
+================================================================================
+
+Unresolved Item dapat mempunyai priority operasional jika system membutuhkan
+pengurutan penyelesaian.
+
+Priority tidak mengubah factual status.
+
+Priority tinggi tidak berarti item lebih benar atau lebih penting sebagai Canon.
+
+
+================================================================================
+31. DAILY STORY INDEPENDENCE
+================================================================================
+
+Daily Story tidak wajib menyelesaikan unresolved item.
+
+Daily Story dapat berakhir sementara unresolved item masih berjalan.
+
+Tidak adanya resolution dalam cerita tidak mengubah Universe status.
+
+
+================================================================================
+32. NARRATIVE INDEPENDENCE
+================================================================================
+
+Narrator tidak boleh:
+
+- mengubah unresolved menjadi resolved;
+- menghapus unresolved;
+- membuat resolution;
+- membuat fakta untuk menjawab unresolved;
+
+hanya demi narrative closure.
+
+
+================================================================================
+33. NO ASSUMPTION
+================================================================================
+
+Unresolved tidak boleh diselesaikan dengan:
+
+- inference tanpa dasar;
+- convenience;
+- probabilistic guess yang diperlakukan sebagai fact;
+- narrative expectation;
+- Character expectation;
+- reader expectation.
+
+Inference dapat tetap menjadi inference sesuai statusnya.
+
+
+================================================================================
+34. CONFLICT
+================================================================================
+
+Unresolved item dapat menjadi conflict apabila terdapat dua result yang tidak
+dapat berlaku bersama.
+
+Conflict harus tetap dipisahkan dari uncertainty.
+
+Jika conflict belum terselesaikan, item tetap unresolved dan conflict dicatat.
+
+
+================================================================================
+35. DUPLICATE PREVENTION
+================================================================================
+
+System harus membedakan:
+
+- unresolved item yang sama;
+- unresolved item baru;
+- resolution dari item lama;
+- unresolved consequence yang berbeda tetapi berasal dari source yang sama.
+
+Periode berganti tidak menghasilkan duplicate unresolved item.
+
+
+================================================================================
+36. VALIDATION
+================================================================================
+
+Unresolved Carryover harus divalidasi terhadap:
+
+- identity;
+- source;
+- temporal position;
+- relevance;
+- dependency;
+- domain owner;
+- status;
+- previous period;
+- current period;
+- resolution state;
+- conflict.
+
+
+================================================================================
+37. VALIDATION RESULT
+================================================================================
+
+VALID
+→ unresolved item dapat dibawa.
+
+REVIEW_REQUIRED
+→ masih terdapat ketidakpastian yang membutuhkan perhatian.
+
+REVISION_REQUIRED
+→ data atau routing membutuhkan koreksi.
+
+BLOCKED
+→ continuity unresolved tidak dapat dilanjutkan secara sah.
+
+
+================================================================================
+38. FAILURE PRINCIPLE
+================================================================================
+
+Jika unresolved continuity gagal diproses, system tidak boleh:
+
+- mengarang resolution;
+- menghapus item;
+- mengubah status tanpa dasar;
+- mengubah domain owner;
+- membuat duplicate;
+- mengubah waktu secara diam-diam.
+
+Status terakhir yang sah harus dipertahankan.
+
+
+================================================================================
+39. RELATION TO DAY FINALIZATION
+================================================================================
+
+Day Finalization harus mengenali unresolved item yang masih aktif.
+
+Finalization tidak menutup unresolved hanya karena periode selesai.
+
+Unresolved yang masih relevan menjadi input bagi Continuity Carryover.
+
+
+================================================================================
+40. RELATION TO DAILY STORY
+================================================================================
+
+Daily Story dapat:
+
+- membahas unresolved;
+- tidak membahas unresolved;
+- hanya memperlihatkan sebagian unresolved;
+- mengungkap consequence tanpa resolution.
+
+Narasi tidak mengubah status unresolved.
+
+
+================================================================================
+41. FINAL PRINCIPLE
+================================================================================
+
+UNRESOLVED ADALAH STATUS SAH.
+
+Tidak semua sesuatu harus langsung mempunyai jawaban.
+
+Universe yang berjalan panjang membutuhkan kemampuan untuk mempertahankan:
+
+- pertanyaan;
+- proses;
+- dependency;
+- conflict;
+- ketidakpastian;
+- pending resolution;
+
+tanpa mengubahnya menjadi fakta palsu.
+
+Continuity yang baik bukan Universe yang selalu memiliki jawaban.
+
+Continuity yang baik adalah Universe yang tidak kehilangan sesuatu hanya karena
+jawabannya belum tersedia.
+
+
+================================================================================
+END OF UNRESOLVED CARRYOVER
+================================================================================
