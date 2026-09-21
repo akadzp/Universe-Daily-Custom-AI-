@@ -1,0 +1,985 @@
+==================================================
+04_FILE_NAMING
+
+STATUS
+
+System Rule
+
+OWNER
+
+Daily Universe
+Instance Management
+
+SCOPE
+
+File ini mengatur aturan penamaan file Daily Story.
+
+File ini menentukan:
+
+- identitas nama file;
+- hubungan nama file dengan Story ID;
+- hubungan nama file dengan Story Date;
+- struktur nama file;
+- validasi nama file;
+- collision;
+- duplicate;
+- revision;
+- reproduction;
+- extension;
+- sanitasi nama;
+- konsistensi antara nama file dan metadata Daily Story.
+
+File ini TIDAK mengatur:
+
+- penentuan Story Date;
+- penentuan Story ID;
+- isi cerita;
+- struktur YEAR;
+- struktur MONTH;
+- lokasi akhir file;
+- penulisan file;
+- produksi narasi.
+
+Aturan Story Date berada pada sistem Daily Story dan Temporal.
+Aturan identitas Story ID berada pada Daily Story.
+Aturan struktur direktori berada pada Instance Management.
+Aturan penempatan file berada pada 05_FILE_PLACEMENT.txt.
+
+==================================================
+
+1. CORE PRINCIPLE
+   ==================================================
+
+Nama file adalah representasi identitas dan metadata
+operasional Daily Story.
+
+Nama file harus dapat ditelusuri kembali kepada
+Daily Story yang benar.
+
+Nama file tidak boleh menjadi sumber kebenaran
+untuk Story Date atau Story ID.
+
+Metadata menentukan nama file.
+
+Nama file merepresentasikan metadata.
+
+==================================================
+02. SOURCE OF TRUTH
+
+Sumber kebenaran untuk komponen nama file adalah:
+
+Daily Story Metadata
+→ Story ID
+→ Story Date
+→ Title
+→ File Naming Rule
+→ Filename
+
+Nama file tidak boleh digunakan untuk menentukan secara
+sepihak:
+
+- Story Date;
+- Story ID;
+- Universe Time;
+- Canon;
+- Story Scope;
+- event;
+- character state;
+- relationship;
+- object;
+- knowledge.
+
+Jika filename dan metadata tidak konsisten,
+metadata tidak boleh diubah hanya untuk menyesuaikan filename.
+
+==================================================
+03. DAILY STORY FILE IDENTITY
+
+Setiap Daily Story File harus merepresentasikan
+satu entitas Daily Story yang dapat diidentifikasi.
+
+Identitas minimal harus dapat ditelusuri melalui:
+
+- Instance;
+- Daily Story Dataset;
+- Story Date;
+- Story ID;
+- filename.
+
+Filename sendiri tidak menggantikan Story ID.
+
+Satu file tidak boleh dianggap identik hanya karena
+memiliki judul yang sama.
+
+==================================================
+04. OFFICIAL FILENAME STRUCTURE
+
+Format nama file Daily Story aktif:
+
+JUDUL - STORY_DATE_IDENTIFIER.txt
+
+Representasi identifier tanggal menggunakan pola:
+
+DS-DDMMYYYY
+
+Sehingga struktur umum:
+
+Judul - DS-DDMMYYYY.txt
+
+Format tersebut adalah bagian dari aturan operasional
+Daily Story File Naming.
+
+==================================================
+05. STORY DATE IDENTIFIER
+
+Bagian:
+
+DS-DDMMYYYY
+
+harus merepresentasikan Story Date Daily Story.
+
+Ketentuan:
+
+- DS merupakan prefix Daily Story;
+- DD merupakan dua digit hari;
+- MM merupakan dua digit bulan;
+- YYYY merupakan empat digit tahun;
+- tidak menggunakan separator tambahan di dalam identifier;
+- seluruh nilai harus berasal dari Story Date tervalidasi.
+
+Identifier tanggal tidak boleh berasal dari:
+
+- waktu produksi;
+- waktu AI execution;
+- waktu file creation;
+- waktu upload;
+- waktu commit;
+- waktu publikasi;
+- tanggal revisi.
+
+==================================================
+06. STORY DATE CONSISTENCY
+
+Tanggal yang direpresentasikan dalam:
+
+DS-DDMMYYYY
+
+harus sama dengan Story Date resmi.
+
+Ketidaksesuaian antara:
+
+Story Date
+dan
+DS-DDMMYYYY
+
+merupakan filename inconsistency.
+
+Kondisi tersebut tidak boleh diselesaikan dengan
+mengubah Story Date secara otomatis.
+
+==================================================
+07. TITLE COMPONENT
+
+Komponen TITLE merupakan judul Daily Story
+yang telah ditetapkan untuk file tersebut.
+
+TITLE tidak boleh mengubah:
+
+- Story ID;
+- Story Date;
+- Universe Time;
+- folder YEAR;
+- folder MONTH.
+
+TITLE adalah komponen deskriptif file.
+
+TITLE bukan sumber kebenaran temporal.
+
+==================================================
+08. TITLE REQUIREMENT
+
+TITLE harus:
+
+- berasal dari metadata Daily Story;
+- mewakili Daily Story yang sama;
+- dapat digunakan sebagai nama file yang valid;
+- tidak mengandung struktur directory;
+- tidak mengubah identifier tanggal;
+- tidak menambahkan metadata palsu.
+
+TITLE tidak boleh dibuat dengan memasukkan
+informasi yang tidak dimiliki Daily Story.
+
+==================================================
+09. TITLE AND STORY ID
+
+TITLE dan Story ID adalah dua konsep berbeda.
+
+TITLE:
+
+- bersifat deskriptif;
+- dapat berubah melalui revisi yang sah;
+- ditujukan untuk keterbacaan manusia.
+
+STORY ID:
+
+- merupakan identitas produksi;
+- harus tetap dapat dilacak;
+- tidak boleh berubah hanya karena TITLE berubah.
+
+Perubahan TITLE bukan perubahan identitas Daily Story.
+
+==================================================
+10. TITLE AND STORY DATE
+
+TITLE tidak boleh memuat tanggal yang bertentangan
+dengan Story Date resmi.
+
+Apabila title secara tekstual mengandung informasi temporal
+yang bertentangan dengan metadata:
+
+STATUS = REVIEW_REQUIRED
+atau
+STATUS = BLOCKED
+
+sesuai tingkat konflik.
+
+Sistem tidak boleh menyimpulkan Story Date dari title
+untuk memperbaiki metadata.
+
+==================================================
+11. CHARACTER SAFETY OF TITLE
+
+TITLE harus diperlakukan sebagai metadata file,
+bukan sebagai tempat penyimpanan Canon.
+
+Nama karakter, lokasi, objek, atau informasi lain
+yang muncul dalam title tidak otomatis menjadi data Canon.
+
+Filename hanya merepresentasikan Daily Story yang sudah ada.
+
+==================================================
+12. INVALID PATH CHARACTERS
+
+TITLE harus diproses agar dapat digunakan secara aman
+sebagai bagian filename.
+
+Karakter atau pola yang secara struktural tidak valid
+untuk filesystem target harus ditangani melalui
+mekanisme filename normalization.
+
+Normalisasi tidak boleh mengubah identitas Daily Story
+secara material.
+
+Apabila normalisasi menyebabkan ambiguitas atau
+kehilangan informasi penting:
+
+STATUS = REVIEW_REQUIRED
+
+==================================================
+13. DIRECTORY SEPARATOR PROTECTION
+
+TITLE tidak boleh menghasilkan struktur directory baru.
+
+Karakter yang dapat ditafsirkan sebagai:
+
+- directory separator;
+- parent traversal;
+- absolute path;
+- relative path injection;
+- directory control
+
+harus dinormalisasi, ditolak, atau diblokir sesuai
+mekanisme keamanan Instance Management.
+
+TITLE hanya boleh berfungsi sebagai filename component.
+
+==================================================
+14. PATH TRAVERSAL PROTECTION
+
+Filename generation tidak boleh memungkinkan TITLE
+mengakses path di luar destination Instance yang telah
+divalidasi.
+
+Sistem harus menolak pola yang mencoba:
+
+- keluar dari Instance Root;
+- memasuki parent directory;
+- menentukan absolute path;
+- mengarahkan file ke lokasi tidak sah.
+
+Filename tidak boleh memiliki kewenangan menentukan
+destination root.
+
+==================================================
+15. FILE EXTENSION
+
+Daily Story aktif menggunakan extension:
+
+.txt
+
+Extension merupakan bagian tetap dari jenis file Daily Story.
+
+Extension tidak boleh ditentukan dari:
+
+- TITLE;
+- Story ID;
+- Story Date;
+- platform;
+- production time.
+
+TITLE yang mengandung extension tidak boleh menghasilkan
+extension ganda secara otomatis.
+
+==================================================
+16. CASE AND FORMAT CONSISTENCY
+
+Format filename harus konsisten di seluruh Daily Story Dataset.
+
+Aturan aktif:
+
+- prefix identifier menggunakan "DS";
+- separator antara TITLE dan identifier menggunakan "-";
+- identifier menggunakan huruf kapital;
+- tanggal menggunakan angka;
+- extension menggunakan ".txt".
+
+Sistem tidak boleh membuat variasi format secara spontan.
+
+==================================================
+17. TITLE NORMALIZATION
+
+Normalisasi TITLE hanya diperbolehkan untuk kebutuhan
+filesystem dan format.
+
+Normalisasi dapat meliputi:
+
+- penghapusan karakter yang tidak valid;
+- penggantian separator yang berbahaya;
+- pemangkasan whitespace yang tidak diperlukan;
+- pencegahan nama kosong;
+- pengendalian panjang filename.
+
+Normalisasi tidak boleh:
+
+- mengubah Story ID;
+- mengubah Story Date;
+- mengubah Canon;
+- mengubah isi Daily Story;
+- mengubah makna menjadi informasi baru.
+
+==================================================
+18. EMPTY TITLE
+
+Apabila TITLE tidak tersedia:
+
+Sistem tidak boleh mengarang title secara diam-diam.
+
+Kondisi harus diproses sesuai Story Metadata completeness.
+
+STATUS dapat menjadi:
+
+REVIEW_REQUIRED
+atau
+BLOCKED
+
+Tidak boleh membuat filename dengan title acak.
+
+==================================================
+19. DUPLICATE TITLE
+
+TITLE yang sama tidak berarti Daily Story yang sama.
+
+Dua Daily Story dapat memiliki TITLE yang sama
+apabila identitas produksinya berbeda.
+
+Sistem tidak boleh menganggap duplicate berdasarkan TITLE saja.
+
+Identity check harus menggunakan metadata dan Story ID.
+
+==================================================
+20. FILENAME COLLISION
+
+Apabila filename yang akan dibuat telah ada:
+
+sistem harus memverifikasi:
+
+- Story ID;
+- Story Date;
+- Instance;
+- Dataset;
+- status file;
+- revision status.
+
+Jika file tersebut merupakan representasi Daily Story
+yang sama, proses harus diperlakukan sebagai
+reprocessing atau idempotent operation.
+
+Jika file mewakili entitas berbeda:
+
+STATUS = CONFLICT
+
+Sistem tidak boleh menimpa file secara diam-diam.
+
+==================================================
+21. DUPLICATE FILE PROTECTION
+
+Sistem dilarang membuat dua file yang memiliki:
+
+- destination sama;
+- filename sama;
+- identitas Daily Story yang sama.
+
+Duplicate creation harus dicegah sebelum file ditulis.
+
+==================================================
+22. SAME DATE
+
+Beberapa Daily Story pada Story Date yang sama
+tidak boleh diasumsikan sebagai satu cerita.
+
+Setiap Daily Story tetap memiliki identitas sendiri.
+
+Filename harus tetap dapat membedakan file
+apabila metadata menentukan bahwa terdapat lebih dari
+satu Daily Story pada tanggal tersebut.
+
+Jika format filename utama menghasilkan collision
+karena TITLE yang sama dan tanggal yang sama,
+collision harus ditangani melalui mekanisme identity/revision
+yang sah.
+
+Sistem tidak boleh menghapus identitas Story ID
+hanya untuk mempertahankan format filename.
+
+==================================================
+23. STORY ID SEPARATION
+
+Story ID dan filename identifier tidak harus
+menjadi string yang sama.
+
+"DS-DDMMYYYY" merupakan identifier tanggal operasional
+dalam filename.
+
+Story ID tetap merupakan identitas produksi
+yang dikelola oleh:
+
+04_STORY_ID.txt
+
+Filename tidak boleh digunakan untuk menggantikan
+Story ID apabila sistem membutuhkan identity resolution.
+
+==================================================
+24. DATE COLLISION
+
+"DS-DDMMYYYY" secara alami merepresentasikan tanggal,
+bukan jaminan uniqueness global.
+
+Karena itu:
+
+DS-DDMMYYYY
+tidak boleh dianggap sebagai satu-satunya bukti
+keunikan Story ID.
+
+Keunikan Daily Story ditangani oleh sistem Story ID
+dan metadata produksi.
+
+==================================================
+25. REVISION
+
+Revision merupakan perubahan terhadap file
+yang masih mewakili Daily Story yang sama.
+
+Revision harus mempertahankan keterlacakan
+terhadap Story ID asli.
+
+Perubahan TITLE akibat revision tidak boleh
+mengubah identitas Story ID.
+
+Perubahan Story Date tidak boleh dianggap
+sebagai revision sederhana apabila mengubah
+identitas temporal Daily Story.
+
+==================================================
+26. REVISION FILENAME
+
+Filename revision harus tetap mengikuti
+format filename aktif kecuali terdapat aturan revision
+yang secara eksplisit ditentukan oleh Instance Management.
+
+Sistem tidak boleh menambahkan suffix revision
+secara spontan.
+
+Tidak boleh menciptakan variasi seperti:
+
+- random number;
+- timestamp execution;
+- hash tanpa aturan;
+- nomor urut acak.
+
+Identifier tambahan hanya boleh digunakan jika
+sistem memiliki aturan resmi untuk itu.
+
+==================================================
+27. REPRODUCTION
+
+Reproduction adalah pembuatan kembali representasi
+Daily Story yang sama tanpa mengubah identitas produksinya.
+
+Reproduction tidak boleh menghasilkan Story ID baru
+secara otomatis.
+
+Filename harus tetap dapat dikaitkan
+dengan Daily Story yang sama.
+
+==================================================
+28. MIGRATION
+
+Apabila file dipindahkan melalui migrasi resmi:
+
+- Story ID harus dipertahankan;
+- Story Date harus dipertahankan;
+- filename identity tidak boleh berubah tanpa alasan resmi;
+- metadata harus tetap dapat ditelusuri;
+- path baru harus divalidasi.
+
+Migration bukan alasan untuk mengubah identitas
+Daily Story.
+
+==================================================
+29. FILE RENAME
+
+Rename hanya sah apabila dilakukan melalui
+proses Instance Management yang tervalidasi.
+
+Rename tidak boleh digunakan untuk:
+
+- mengubah Story Date;
+- mengubah Story ID;
+- mengubah Canon;
+- menghindari collision;
+- menyembunyikan conflict.
+
+Jika title berubah secara resmi,
+filename dapat diregenerasi sesuai aturan aktif.
+
+==================================================
+30. STORY DATE CHANGE
+
+Apabila Story Date berubah secara sah:
+
+- "DS-DDMMYYYY" harus berubah mengikuti Story Date baru;
+- destination YEAR dapat berubah;
+- destination MONTH dapat berubah;
+- file placement harus dievaluasi ulang.
+
+Perubahan tersebut bukan sekadar cosmetic rename.
+
+File lama tidak boleh dihapus otomatis
+tanpa mekanisme revision/migration/invalidation yang sah.
+
+==================================================
+31. PRODUCTION TIME
+
+Production time hanya merupakan metadata operasional.
+
+Production time tidak boleh masuk ke filename
+sebagai pengganti Story Date.
+
+File name tidak boleh berubah hanya karena
+Daily Story diproduksi ulang pada waktu berbeda.
+
+==================================================
+32. FILE CREATION TIME
+
+Filesystem creation time tidak menentukan
+Daily Story identity.
+
+Creation time tidak boleh digunakan untuk:
+
+- mengganti Story Date;
+- membuat YEAR;
+- membuat MONTH;
+- menghasilkan DS identifier;
+- membedakan Canon.
+
+Metadata filesystem hanya merupakan metadata teknis.
+
+==================================================
+33. INSTANCE RELATION
+
+Filename hanya valid dalam Instance dan Dataset
+yang menjadi parent destination.
+
+Filename yang sama pada Instance berbeda
+tidak otomatis berarti duplicate.
+
+Identity resolution harus mempertimbangkan
+Instance dan Dataset.
+
+==================================================
+34. DATASET RELATION
+
+Filename dalam satu Dataset harus mengikuti
+format aktif yang sama.
+
+Dataset tidak boleh memiliki format filename
+berbeda secara spontan tanpa aturan migrasi
+atau versioning yang sah.
+
+==================================================
+35. FILE NAME VERSIONING
+
+Perubahan aturan filename pada masa depan
+harus diperlakukan sebagai perubahan system rule.
+
+Sistem tidak boleh mengubah seluruh filename historis
+secara otomatis hanya karena aturan baru muncul.
+
+Historical files tetap diperlakukan sebagai legacy
+hingga migrasi resmi dilakukan.
+
+==================================================
+36. LEGACY FILENAME
+
+Filename lama yang menggunakan format berbeda:
+
+- tidak boleh langsung dianggap invalid Canon;
+- tidak boleh dihapus otomatis;
+- tidak boleh diubah tanpa validasi;
+- harus dapat diidentifikasi sebagai legacy
+  apabila memang diperlukan.
+
+Legacy handling berada pada Instance Integrity
+dan migration process.
+
+==================================================
+37. HUMAN READABILITY
+
+Filename Daily Story harus tetap dapat dibaca manusia.
+
+TITLE memberikan konteks deskriptif.
+
+DS-DDMMYYYY memberikan identitas temporal yang konsisten.
+
+Namun keterbacaan manusia tidak boleh mengalahkan
+integritas metadata.
+
+==================================================
+38. MACHINE PARSING
+
+Filename harus cukup terstruktur untuk memungkinkan
+validasi otomatis.
+
+Parser filename harus dapat memeriksa:
+
+- separator;
+- prefix;
+- tanggal;
+- extension;
+- title component;
+- struktur dasar.
+
+Parser tidak boleh menganggap parsing filename
+sebagai pengganti pembacaan metadata resmi.
+
+==================================================
+39. FILENAME PARSING LIMIT
+
+Hasil parsing filename hanya merupakan informasi
+pendukung.
+
+Apabila filename menghasilkan informasi yang berbeda
+dari metadata:
+
+metadata dan filename harus dianggap inconsistent.
+
+Sistem tidak boleh memilih filename sebagai kebenaran
+hanya karena filename lebih mudah dibaca.
+
+==================================================
+40. TITLE CHARACTER PRESERVATION
+
+Normalisasi title harus seminimal mungkin.
+
+Jika karakter valid dapat dipertahankan tanpa
+mengganggu filesystem safety dan format:
+karakter tersebut harus dipertahankan.
+
+Normalisasi tidak boleh menyebabkan perubahan identitas
+atau makna yang tidak perlu.
+
+==================================================
+41. LENGTH CONTROL
+
+Filename harus berada dalam batas filesystem
+dan lingkungan penyimpanan yang digunakan.
+
+Jika TITLE terlalu panjang:
+
+- TITLE dapat dinormalisasi atau dipendekkan
+  melalui mekanisme resmi;
+- Story ID tetap dipertahankan;
+- Story Date tetap dipertahankan;
+- destination tetap ditentukan secara terpisah.
+
+Pemendekan title tidak boleh dilakukan dengan
+menghilangkan identifier penting.
+
+==================================================
+42. SAFETY PRIORITY
+
+Urutan prioritas filename generation:
+
+1. Filesystem safety
+2. Metadata integrity
+3. Identity integrity
+4. Temporal consistency
+5. Format consistency
+6. Human readability
+
+Tidak ada tahap yang boleh mengorbankan
+identity atau temporal integrity
+demi keterbacaan.
+
+==================================================
+43. FILE CREATION GATE
+
+Filename dianggap READY hanya apabila:
+
+- Story ID valid;
+- Story Date valid;
+- TITLE tersedia atau telah diproses secara sah;
+- DS-DDMMYYYY sesuai Story Date;
+- extension valid;
+- filename aman;
+- tidak ada path traversal;
+- tidak ada unresolved naming conflict;
+- tidak ada duplicate destination;
+- filename dapat ditempatkan dalam destination valid.
+
+==================================================
+44. RELATION TO FOLDER STRUCTURE
+
+Filename hanya menentukan nama file.
+
+YEAR dan MONTH ditentukan berdasarkan Story Date
+melalui:
+
+01_INSTANCE_STRUCTURE.txt
+03_YEAR_MONTH_STRUCTURE.txt
+
+Filename tidak boleh menentukan YEAR atau MONTH.
+
+==================================================
+45. RELATION TO FILE PLACEMENT
+
+Setelah filename berhasil dibentuk,
+proses berikutnya adalah file placement.
+
+Aturan penempatan file berada pada:
+
+05_FILE_PLACEMENT.txt
+
+Filename generation harus selesai dan tervalidasi
+sebelum file placement dilakukan.
+
+==================================================
+46. NO CANON MUTATION
+
+Filename generation tidak boleh:
+
+- membuat Character;
+- membuat Relationship;
+- membuat Object;
+- membuat Knowledge;
+- mengubah State;
+- mengubah Location;
+- membuat Event;
+- membuat Consequence;
+- membuat Process;
+- mengubah Canon.
+
+Nama file hanyalah representasi operasional
+dari data yang telah ada.
+
+==================================================
+47. NO STORY GENERATION
+
+Filename system tidak memiliki kewenangan
+untuk menentukan isi Daily Story.
+
+Apabila TITLE belum ada karena Story belum selesai:
+filename system harus menunggu metadata yang diperlukan.
+
+Sistem tidak boleh membuat cerita hanya untuk
+mendapatkan title.
+
+==================================================
+48. STATUS RESULT
+
+Hasil filename processing dapat memiliki status:
+
+VALID
+
+Filename sesuai metadata dan aturan.
+
+READY
+
+Filename siap digunakan untuk placement.
+
+NORMALIZED
+
+TITLE telah dinormalisasi tanpa mengubah identity.
+
+ALREADY_EXISTS
+
+Filename telah tersedia dan mewakili entitas yang sama.
+
+CONFLICT
+
+Filename bertabrakan dengan entitas lain.
+
+REVIEW_REQUIRED
+
+Terdapat kondisi yang membutuhkan pemeriksaan.
+
+BLOCKED
+
+Prasyarat filename gagal.
+
+FAILED
+
+Operasi filename processing gagal.
+
+==================================================
+49. FINAL VALIDATION
+
+Sebelum filename diteruskan ke File Placement,
+sistem wajib memeriksa:
+
+- Instance;
+- Dataset;
+- Story ID;
+- Story Date;
+- TITLE;
+- DS-DDMMYYYY;
+- extension;
+- filename safety;
+- collision;
+- duplicate;
+- consistency;
+- traceability.
+
+Semua hasil harus dapat ditelusuri
+ke metadata Daily Story.
+
+==================================================
+50. ABSOLUTE RULES
+
+1. 
+
+Filename tidak pernah menjadi sumber kebenaran Story Date.
+
+2. 
+
+Story Date menentukan "DS-DDMMYYYY".
+
+3. 
+
+Format aktif adalah:
+
+Judul - DS-DDMMYYYY.txt
+
+4. 
+
+DS menggunakan huruf kapital.
+
+5. 
+
+DD menggunakan dua digit.
+
+6. 
+
+MM menggunakan dua digit.
+
+7. 
+
+YYYY menggunakan empat digit.
+
+8. 
+
+Production time tidak menentukan filename date.
+
+9. 
+
+File creation time tidak menentukan filename date.
+
+10. 
+
+TITLE tidak menentukan Story Date.
+
+11. 
+
+Filename tidak menggantikan Story ID.
+
+12. 
+
+Filename tidak boleh melakukan path traversal.
+
+13. 
+
+Filename tidak boleh menciptakan directory baru.
+
+14. 
+
+Collision tidak boleh diselesaikan dengan overwrite diam-diam.
+
+15. 
+
+Duplicate Daily Story file harus dicegah.
+
+16. 
+
+Revision tidak boleh otomatis menciptakan identitas baru.
+
+17. 
+
+Filename generation tidak boleh mengubah Canon.
+
+18. 
+
+Filename generation tidak boleh menghasilkan Story baru.
+
+19. 
+
+Metadata menentukan filename, bukan sebaliknya.
+
+20. 
+
+File placement hanya dilakukan setelah filename tervalidasi.
+
+==================================================
+51. FINAL PRINCIPLE
+
+Filename adalah representasi terkontrol dari
+Daily Story yang sudah memiliki identitas dan Story Date.
+
+Urutan yang benar:
+
+DAILY STORY METADATA
+→ STORY ID + STORY DATE + TITLE
+→ FILENAME GENERATION
+→ FILENAME VALIDATION
+→ FILE PLACEMENT
+
+Bukan:
+
+FILENAME
+→ MENEBak STORY DATE
+→ MENENTUKAN STORY ID
+→ MENCIPTAKAN DATA
+
+Dengan demikian, nama file berfungsi sebagai
+representasi operasional yang konsisten,
+bukan sebagai sumber kebenaran Universe.
