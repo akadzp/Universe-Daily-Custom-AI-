@@ -1,0 +1,673 @@
+================================================================================
+INSTANCE STRUCTURE
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / INSTANCE MANAGEMENT
+ROLE : INSTANCE STRUCTURE ORCHESTRATION
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Instance Structure adalah aturan yang menentukan struktur penyimpanan hasil
+Daily Universe di dalam Universe Instance.
+
+System ini mengatur:
+
+- identitas Instance;
+- root Instance;
+- dataset;
+- struktur directory;
+- hubungan antara Universe Date dan directory temporal;
+- pemisahan data dan hasil;
+- struktur lokasi Daily Story;
+- konsistensi path;
+- traceability hasil.
+
+Instance Structure tidak mengatur:
+
+- isi Universe;
+- Character;
+- Relationship;
+- Object;
+- Knowledge;
+- State;
+- Narrative;
+- Story Writing.
+
+Instance Structure hanya mengatur lokasi dan struktur penyimpanan hasil.
+
+
+================================================================================
+02. INSTANCE
+================================================================================
+
+Instance adalah container operasional untuk satu Universe yang berjalan sebagai
+satu kesatuan.
+
+Instance harus memiliki identity yang dapat dibedakan.
+
+Identity Instance harus tetap stabil selama Instance tersebut masih merupakan
+Universe yang sama.
+
+Perubahan nama tampilan tidak otomatis mengubah identity internal apabila
+arsitektur Instance menggunakan identifier terpisah.
+
+
+================================================================================
+03. INSTANCE IDENTITY
+================================================================================
+
+Setiap Instance harus mempunyai:
+
+- Instance identity;
+- Instance root;
+- struktur directory yang sah;
+- namespace hasil;
+- hubungan temporal dengan Universe.
+
+Instance identity tidak boleh ditentukan hanya berdasarkan nama file Daily
+Story.
+
+
+================================================================================
+04. INSTANCE ROOT
+================================================================================
+
+Instance Root adalah directory tertinggi tempat seluruh data dan hasil suatu
+Universe Instance berada.
+
+Seluruh dataset yang menjadi bagian Instance harus berada di bawah Instance
+Root.
+
+System tidak boleh menyimpan hasil Instance secara acak di luar root yang
+ditetapkan.
+
+
+================================================================================
+05. DATASET
+================================================================================
+
+Dataset adalah bagian terstruktur dari Instance yang memiliki fungsi tertentu.
+
+Setiap Dataset harus mempunyai:
+
+- identity;
+- tujuan;
+- lokasi;
+- struktur yang telah ditentukan;
+- aturan ownership.
+
+Daily Story adalah salah satu Dataset yang dapat berada di dalam Instance.
+
+
+================================================================================
+06. DATASET SEPARATION
+================================================================================
+
+Dataset yang berbeda tidak boleh digabung hanya karena menggunakan format file
+yang sama.
+
+Setiap Dataset harus mempertahankan:
+
+- fungsi;
+- namespace;
+- directory;
+- identity;
+- aturan penyimpanan.
+
+Daily Story tidak boleh disimpan pada Dataset domain lain.
+
+
+================================================================================
+07. DAILY STORY DATASET
+================================================================================
+
+Daily Story Dataset adalah lokasi khusus untuk hasil Daily Story.
+
+Dataset tersebut harus mempunyai struktur temporal yang konsisten.
+
+Struktur penyimpanan harus dapat diturunkan dari:
+
+INSTANCE
+↓
+DAILY STORY DATASET
+↓
+YEAR
+↓
+MONTH
+↓
+DAILY STORY FILE
+
+
+================================================================================
+08. TEMPORAL DIRECTORY
+================================================================================
+
+Year dan Month directory harus mengikuti Story Date yang telah divalidasi.
+
+Directory temporal tidak boleh ditentukan berdasarkan:
+
+- file creation time;
+- production time;
+- system time;
+- urutan file;
+- judul cerita.
+
+Universe Date adalah source temporal utama.
+
+
+================================================================================
+09. YEAR DIRECTORY
+================================================================================
+
+Year directory merupakan representasi filesystem dari tahun yang berasal dari
+Story Date.
+
+Year directory tidak boleh menjadi sumber utama untuk menentukan Universe Date.
+
+Jika directory year bertentangan dengan Story Date, terjadi Instance Integrity
+Issue.
+
+
+================================================================================
+10. MONTH DIRECTORY
+================================================================================
+
+Month directory merupakan representasi filesystem dari bulan yang berasal dari
+Story Date.
+
+Month directory harus berada di dalam Year directory yang sesuai.
+
+Jika Month directory tidak sesuai dengan Story Date, hasil tidak boleh
+dinyatakan correctly placed.
+
+
+================================================================================
+11. DIRECTORY CREATION
+================================================================================
+
+Jika directory yang dibutuhkan belum tersedia, Instance Management harus dapat
+membuat directory tersebut sesuai struktur yang ditetapkan.
+
+Directory creation harus:
+
+- deterministic;
+- idempotent;
+- tidak membuat duplicate path;
+- tidak mengubah existing valid data;
+- dapat divalidasi setelah dibuat.
+
+
+================================================================================
+12. IDEMPOTENT STRUCTURE
+================================================================================
+
+Menjalankan directory creation lebih dari satu kali terhadap struktur yang sama
+tidak boleh menghasilkan struktur duplicate.
+
+Jika directory sudah ada dan valid:
+
+→ gunakan directory yang sama.
+
+Jika directory ada tetapi tidak sesuai:
+
+→ tandai structural conflict.
+
+Jangan membuat directory alternatif secara acak.
+
+
+================================================================================
+13. DAILY STORY LOCATION
+================================================================================
+
+Setiap Daily Story harus mempunyai destination path yang dapat ditentukan
+sebelum file final disimpan.
+
+Destination path harus berasal dari:
+
+- Instance;
+- Daily Story Dataset;
+- Story Date;
+- filename rules.
+
+Path tidak boleh ditentukan berdasarkan isi cerita.
+
+
+================================================================================
+14. PATH RESOLUTION
+================================================================================
+
+Path Resolution menghasilkan:
+
+SOURCE INSTANCE
++
+TARGET DATASET
++
+TEMPORAL DIRECTORY
++
+FINAL FILENAME
+=
+DESTINATION PATH
+
+
+================================================================================
+15. PATH SOURCE OF TRUTH
+================================================================================
+
+Source of Truth untuk penentuan path adalah aturan Instance Management dan
+metadata production yang telah divalidasi.
+
+Nama file existing tidak boleh digunakan untuk menulis ulang aturan path secara
+diam-diam.
+
+Jika path existing berbeda dari expected path, system harus memeriksa apakah
+itu:
+
+- valid legacy structure;
+- migration case;
+- incorrect placement;
+- duplicate;
+- structural conflict.
+
+
+================================================================================
+16. DATA VS RESULT
+================================================================================
+
+Instance dapat menyimpan:
+
+- source data;
+- operational data;
+- production result;
+- history;
+- metadata.
+
+Setiap jenis data harus ditempatkan pada dataset yang sesuai.
+
+Daily Story result tidak boleh dianggap sebagai pengganti source Universe Data.
+
+
+================================================================================
+17. DOMAIN DATA SEPARATION
+================================================================================
+
+Instance Structure harus mempertahankan pemisahan antara:
+
+- Character data;
+- Relationship data;
+- Object data;
+- other Universe data;
+- Daily Story;
+- production metadata.
+
+Daily Story tidak boleh menjadi tempat penyimpanan Canon domain lain hanya
+karena informasi tersebut muncul dalam narrative.
+
+
+================================================================================
+18. INSTANCE NAME VS INSTANCE ID
+================================================================================
+
+Jika Instance menggunakan human-readable name dan internal ID, keduanya harus
+dapat dibedakan.
+
+Name:
+→ label yang dapat berubah.
+
+ID:
+→ identity yang harus stabil.
+
+Instance Structure harus mengikuti identifier yang ditetapkan architecture.
+
+
+================================================================================
+19. DATASET NAME VS DATASET ID
+================================================================================
+
+Jika Dataset memiliki name dan ID, prinsip yang sama berlaku.
+
+Perubahan nama Dataset tidak otomatis berarti perubahan identity.
+
+Path harus mengikuti active structure yang ditetapkan system.
+
+
+================================================================================
+20. PATH NORMALIZATION
+================================================================================
+
+Path harus dinormalisasi agar:
+
+- separator konsisten;
+- tidak terdapat duplicate separator yang tidak diperlukan;
+- tidak terdapat path traversal;
+- tidak terdapat nama directory yang ambigu;
+- encoding aman;
+- case handling mengikuti filesystem target.
+
+Normalization tidak boleh mengubah identity Universe.
+
+
+================================================================================
+21. INVALID PATH
+================================================================================
+
+Path dianggap invalid apabila:
+
+- menunjuk keluar dari Instance Root;
+- mengandung directory yang tidak diperbolehkan;
+- tidak sesuai dataset;
+- tidak sesuai temporal structure;
+- tidak dapat dibuat;
+- bertabrakan dengan file;
+- mempunyai struktur yang ambigu.
+
+
+================================================================================
+22. FILE VS DIRECTORY COLLISION
+================================================================================
+
+Jika path yang seharusnya menjadi directory ternyata merupakan file, system
+harus menandai structural conflict.
+
+System tidak boleh menghapus atau mengganti file tersebut secara diam-diam.
+
+
+================================================================================
+23. DIRECTORY VS DIRECTORY COLLISION
+================================================================================
+
+Jika directory sudah tersedia tetapi mempunyai identity atau fungsi berbeda,
+system harus mendeteksi collision.
+
+Directory tidak boleh dianggap valid hanya karena namanya sama.
+
+
+================================================================================
+24. EXISTING CONTENT
+================================================================================
+
+Membuat struktur directory baru tidak boleh menghapus existing content.
+
+Jika content existing ditemukan:
+
+- valid → pertahankan;
+- duplicate → tandai;
+- conflicting → tandai;
+- unknown → jangan hapus secara otomatis.
+
+
+================================================================================
+25. LONG-TERM STORAGE
+================================================================================
+
+Struktur Instance harus mampu digunakan untuk Universe jangka panjang.
+
+Jumlah:
+
+- tahun;
+- bulan;
+- Daily Story;
+- revision;
+- data;
+
+tidak boleh menyebabkan struktur kehilangan determinismenya.
+
+
+================================================================================
+26. TEMPORAL STABILITY
+================================================================================
+
+Perubahan Current Universe Time tidak boleh memindahkan Story lama ke
+directory lain.
+
+Story Date menentukan lokasi temporal Story tersebut pada saat production
+identity ditetapkan.
+
+Historical placement harus tetap stabil.
+
+
+================================================================================
+27. STORY REVISION
+================================================================================
+
+Revision terhadap Daily Story yang sama harus tetap berada pada Instance dan
+Story Date yang sesuai.
+
+Revision tidak boleh memindahkan Story ke directory temporal lain kecuali
+Story Date memang mengalami revision yang sah.
+
+
+================================================================================
+28. STORY REPRODUCTION
+================================================================================
+
+Reproduction terhadap Story yang sama menggunakan destination structure yang
+sama kecuali mekanisme versioning secara eksplisit menentukan lokasi lain.
+
+Reproduction tidak boleh menciptakan directory baru tanpa kebutuhan struktur.
+
+
+================================================================================
+29. MIGRATION
+================================================================================
+
+Jika struktur Instance perlu dipindahkan atau diubah:
+
+- migration harus mempunyai source;
+- target structure harus ditentukan;
+- identity harus dipertahankan;
+- data tidak boleh hilang;
+- path baru harus divalidasi;
+- previous location harus dapat ditelusuri apabila diperlukan.
+
+Migration bukan alasan untuk mengubah Universe Date atau Story ID.
+
+
+================================================================================
+30. LEGACY STRUCTURE
+================================================================================
+
+Jika Instance mengandung struktur lama yang tidak lagi sesuai dengan current
+rules, system harus dapat membedakan:
+
+- legacy;
+- active;
+- invalid;
+- migrated.
+
+Legacy structure tidak boleh diubah secara diam-diam hanya karena system
+menemukannya.
+
+
+================================================================================
+31. INSTANCE ACCESS BOUNDARY
+================================================================================
+
+Instance Management mempunyai kewenangan terhadap struktur penyimpanan.
+
+Kewenangan ini tidak berarti Instance Management menjadi owner terhadap isi
+Universe atau Story.
+
+Filesystem ownership dan domain ownership adalah dua hal yang berbeda.
+
+
+================================================================================
+32. DAILY UNIVERSE RELATION
+================================================================================
+
+Daily Universe menyediakan:
+
+- Instance identity;
+- Story Date;
+- Story ID;
+- Dataset requirement;
+- production status.
+
+Instance Management menentukan:
+
+- destination path;
+- directory existence;
+- directory creation;
+- file placement.
+
+
+================================================================================
+33. NARRATOR RELATION
+================================================================================
+
+Narrator menghasilkan Story Text.
+
+Narrator tidak menentukan:
+
+- Instance Root;
+- Dataset directory;
+- Year directory;
+- Month directory;
+- destination path;
+
+kecuali architecture secara eksplisit memberikan metadata tersebut sebagai
+input tanpa memberikan filesystem ownership.
+
+
+================================================================================
+34. FILE PLACEMENT BOUNDARY
+================================================================================
+
+File placement hanya boleh dilakukan setelah:
+
+- Story ID valid;
+- Story Date valid;
+- Dataset valid;
+- Instance valid;
+- destination path resolved;
+- required directories available atau berhasil dibuat.
+
+
+================================================================================
+35. PATH TRACEABILITY
+================================================================================
+
+Setiap destination path harus dapat ditelusuri:
+
+INSTANCE
+↓
+DATASET
+↓
+YEAR
+↓
+MONTH
+↓
+STORY ID
+↓
+FILENAME
+↓
+DESTINATION PATH
+
+
+================================================================================
+36. NO RANDOM PATH
+================================================================================
+
+System tidak boleh memilih destination path secara acak atau berdasarkan
+kenyamanan implementasi.
+
+Path harus deterministic berdasarkan Instance Structure.
+
+
+================================================================================
+37. NO STORY-DRIVEN PATH
+================================================================================
+
+Isi Story tidak boleh menentukan:
+
+- year directory;
+- month directory;
+- dataset;
+- Instance Root;
+- destination path.
+
+Story title hanya dapat memengaruhi filename apabila aturan filename secara
+eksplisit mengizinkannya.
+
+
+================================================================================
+38. STRUCTURE VALIDATION
+================================================================================
+
+Sebelum penyimpanan dianggap valid, system harus memeriksa:
+
+- Instance Root;
+- Dataset;
+- Year;
+- Month;
+- directory existence;
+- directory type;
+- path normalization;
+- collision;
+- destination path.
+
+
+================================================================================
+39. VALIDATION RESULT
+================================================================================
+
+VALID
+→ struktur Instance siap digunakan.
+
+REVIEW_REQUIRED
+→ terdapat structural condition yang dapat dipertahankan sementara.
+
+REVISION_REQUIRED
+→ struktur harus diperbaiki.
+
+BLOCKED
+→ hasil tidak dapat ditempatkan secara sah.
+
+
+================================================================================
+40. FAILURE PRINCIPLE
+================================================================================
+
+Jika Instance Structure gagal:
+
+- jangan membuat path alternatif secara acak;
+- jangan memindahkan file secara diam-diam;
+- jangan menghapus existing content;
+- jangan mengubah Story Date;
+- jangan mengubah Story ID;
+- jangan membuat Dataset baru tanpa authority;
+- jangan menyatakan file berhasil disimpan.
+
+
+================================================================================
+41. FINAL PRINCIPLE
+================================================================================
+
+INSTANCE STRUCTURE MENJAWAB:
+
+“DI MANA HASIL HARUS BERADA?”
+
+DAILY UNIVERSE MENJAWAB:
+
+“KAPAN DAN DALAM INSTANCE MANA HASIL ITU BERADA?”
+
+NARRATOR MENJAWAB:
+
+“APA YANG DITULIS?”
+
+Domain System menjawab:
+
+“APA DATA UNIVERSE YANG BERLAKU?”
+
+Semua lapisan harus tetap terpisah.
+
+
+================================================================================
+END OF INSTANCE STRUCTURE
+================================================================================
