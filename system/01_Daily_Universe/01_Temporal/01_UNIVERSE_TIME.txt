@@ -1,0 +1,604 @@
+================================================================================
+UNIVERSE TIME
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / TEMPORAL DOMAIN
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Universe Time adalah sistem waktu internal yang digunakan oleh Universe untuk
+menentukan posisi temporal sebenarnya dari seluruh perkembangan yang terjadi.
+
+Universe Time menjadi acuan utama untuk:
+
+- menentukan kapan suatu kondisi berlaku;
+- menentukan kapan suatu kejadian berlangsung;
+- menentukan urutan temporal antarkejadian;
+- menentukan kapan suatu perubahan mulai berlaku;
+- menentukan hubungan sebelum dan sesudah;
+- menentukan posisi suatu proses dalam perjalanan Universe;
+- menentukan tanggal Daily Story;
+- menjaga kesinambungan waktu antarperiode.
+
+Universe Time adalah waktu milik Universe.
+
+Universe Time tidak sama dengan waktu saat AI menjalankan proses.
+
+Universe Time tidak sama dengan urutan teks dalam sebuah cerita.
+
+Universe Time tidak ditentukan oleh kebutuhan narasi.
+
+
+================================================================================
+02. SYSTEM OWNERSHIP
+================================================================================
+
+Daily Universe adalah owner untuk aturan perjalanan temporal Universe.
+
+Universe Time menentukan posisi temporal.
+
+System lain dapat menggunakan Universe Time sebagai referensi, tetapi tidak
+boleh membuat sistem waktu alternatif yang bertentangan dengan Universe Time.
+
+Character System dapat menyimpan kondisi Character yang berlaku pada suatu
+waktu.
+
+Relationship System dapat menyimpan hubungan yang berlaku pada suatu waktu.
+
+Object System dapat menyimpan kondisi Object yang berlaku pada suatu waktu.
+
+Narrator dapat menyajikan waktu Universe kepada pembaca.
+
+Namun, tidak satu pun dari system tersebut boleh mengubah definisi Universe
+Time secara mandiri.
+
+
+================================================================================
+03. FUNDAMENTAL PRINCIPLE
+================================================================================
+
+Setiap keadaan, kejadian, perubahan, proses, dan informasi temporal harus
+mempunyai posisi dalam Universe Time apabila posisi waktu tersebut relevan
+terhadap keberadaannya.
+
+Universe tidak boleh memiliki keadaan temporal yang tidak dapat ditempatkan
+pada aliran waktunya apabila penempatan tersebut diperlukan untuk menjaga
+continuity.
+
+Informasi yang belum mempunyai posisi waktu yang sah tidak boleh diperlakukan
+sebagai fakta temporal yang sudah ditetapkan.
+
+
+================================================================================
+04. TEMPORAL POSITION
+================================================================================
+
+Universe Time menyediakan posisi temporal bagi suatu keadaan atau kejadian.
+
+Posisi temporal dapat memiliki tingkat ketelitian yang berbeda sesuai
+kebutuhan sistem.
+
+Tingkat ketelitian dapat mencakup:
+
+- tanggal;
+- waktu;
+- rentang waktu;
+- urutan relatif terhadap kejadian lain.
+
+Sistem tidak boleh memaksakan tingkat ketelitian yang tidak tersedia.
+
+Jika hanya tanggal yang diketahui, sistem tidak boleh menciptakan jam atau
+menit secara mandiri.
+
+Jika hanya urutan relatif yang diketahui, sistem tidak boleh membuat tanggal
+pasti tanpa dasar.
+
+
+================================================================================
+05. UNIVERSE DATE
+================================================================================
+
+Universe Date adalah tanggal yang sedang berlaku dalam Universe pada suatu
+titik proses temporal.
+
+Universe Date digunakan sebagai dasar untuk:
+
+- identitas periode;
+- penentuan Daily Story;
+- struktur penyimpanan berdasarkan tahun dan bulan;
+- hubungan dengan periode sebelumnya;
+- hubungan dengan periode berikutnya.
+
+Universe Date harus mempunyai satu interpretasi yang konsisten dalam suatu
+Universe Instance.
+
+Perubahan Universe Date berarti Universe telah berpindah ke posisi tanggal
+berikutnya atau tanggal lain yang sah menurut mekanisme temporal.
+
+
+================================================================================
+06. CURRENT UNIVERSE TIME
+================================================================================
+
+Current Universe Time adalah posisi temporal yang sedang aktif pada saat proses
+Universe berlangsung.
+
+Current Universe Time harus dapat dibedakan dari:
+
+- waktu sistem komputer;
+- waktu perangkat;
+- waktu eksekusi AI;
+- waktu pembuatan file;
+- waktu pembacaan data.
+
+Waktu eksternal hanya dapat digunakan sebagai Universe Time apabila secara
+eksplisit ditetapkan sebagai sumber waktu Universe.
+
+Sistem tidak boleh menganggap waktu eksekusi sebagai waktu Universe secara
+otomatis.
+
+
+================================================================================
+07. TEMPORAL PROGRESSION
+================================================================================
+
+Universe Time harus dapat bergerak dari posisi temporal sebelumnya menuju
+posisi temporal berikutnya.
+
+Pergerakan waktu harus mempertahankan:
+
+- urutan;
+- konsistensi;
+- kesinambungan;
+- keterlacakan.
+
+Pergerakan temporal tidak boleh menghapus fakta bahwa suatu kejadian telah
+berada pada posisi waktunya.
+
+Pergerakan ke periode berikutnya tidak berarti seluruh keadaan sebelumnya
+hilang.
+
+Pergerakan waktu membawa kondisi yang masih berlaku sesuai aturan continuity.
+
+
+================================================================================
+08. TEMPORAL ORDER
+================================================================================
+
+Universe Time harus mampu menentukan hubungan temporal:
+
+- before;
+- during;
+- after;
+- simultaneous;
+- overlapping;
+- unknown temporal order.
+
+Hubungan temporal digunakan untuk memastikan bahwa urutan kejadian dapat
+dipertanggungjawabkan.
+
+Apabila urutan dua kejadian belum diketahui, sistem harus mempertahankan status
+tersebut sebagai belum diketahui.
+
+Sistem tidak boleh membuat urutan hanya untuk menghilangkan ambiguitas.
+
+
+================================================================================
+09. TEMPORAL RANGE
+================================================================================
+
+Suatu proses atau kejadian dapat memiliki:
+
+- waktu mulai;
+- waktu selesai;
+- durasi;
+- rentang;
+- waktu yang belum lengkap.
+
+Tidak semua kejadian harus mempunyai waktu mulai dan selesai yang diketahui.
+
+Informasi temporal yang belum lengkap harus tetap dipertahankan sebagai
+informasi yang belum lengkap.
+
+Ketidaklengkapan waktu bukan izin untuk membuat detail waktu tambahan.
+
+
+================================================================================
+10. PERIOD
+================================================================================
+
+Daily Universe menggunakan periode temporal sebagai unit operasional.
+
+Periode digunakan untuk mengatur:
+
+- carry-over;
+- progression;
+- event;
+- consequence;
+- Daily Story;
+- finalization.
+
+Periode tidak boleh dipahami sebagai batas kehidupan Universe.
+
+Kehidupan Universe tetap berlangsung melampaui batas suatu periode.
+
+
+================================================================================
+11. DAILY BOUNDARY
+================================================================================
+
+Pergantian tanggal merupakan perubahan posisi Universe Time.
+
+Pergantian tanggal tidak otomatis berarti:
+
+- semua proses selesai;
+- semua state berubah;
+- semua event berhenti;
+- semua actor melakukan aktivitas baru;
+- semua pending condition hilang.
+
+Daily boundary hanya menunjukkan bahwa Universe telah memasuki tanggal
+berikutnya.
+
+Apa yang terjadi setelah pergantian tanggal ditentukan melalui mekanisme Daily
+Universe dan domain owner terkait.
+
+
+================================================================================
+12. TIME AND EVENT
+================================================================================
+
+Setiap event yang dianggap aktual dalam Universe harus mempunyai posisi
+temporal yang sesuai tingkat informasi yang tersedia.
+
+Daily Universe memastikan bahwa:
+
+- event ditempatkan pada waktu yang sah;
+- event tidak ditempatkan sebelum penyebab yang diperlukan apabila causal
+  order mensyaratkannya;
+- event tidak ditempatkan sesudah consequence yang secara temporal harus
+  mendahuluinya;
+- event tidak berpindah waktu tanpa dasar.
+
+Daily Universe tidak menentukan isi event.
+
+Isi event tetap mengikuti system dan data yang berwenang.
+
+
+================================================================================
+13. TIME AND STATE
+================================================================================
+
+State merupakan data yang dimiliki oleh domain owner terkait.
+
+Daily Universe tidak mendefinisikan isi State.
+
+Daily Universe hanya menentukan posisi temporal di mana State tersebut berlaku
+atau mengalami transisi.
+
+Perubahan State harus mempunyai titik temporal yang sah.
+
+State pada periode baru harus berasal dari kondisi yang sah pada periode
+sebelumnya ditambah perubahan yang benar-benar terjadi.
+
+
+================================================================================
+14. TIME AND KNOWLEDGE
+================================================================================
+
+Knowledge merupakan domain yang mengikuti owner-nya.
+
+Daily Universe tidak menentukan isi Knowledge.
+
+Daily Universe dapat menentukan atau membawa informasi mengenai kapan:
+
+- informasi diperoleh;
+- perubahan informasi terjadi;
+- suatu pengetahuan menjadi tersedia;
+- suatu informasi belum tersedia.
+
+Waktu perolehan tidak boleh ditempatkan lebih awal daripada sumber atau event
+yang menjadi dasar perolehan apabila hubungan temporal tersebut diperlukan.
+
+
+================================================================================
+15. TIME AND RELATIONSHIP
+================================================================================
+
+Relationship tetap mengikuti Relationship System.
+
+Daily Universe hanya mengatur posisi temporal dari kondisi Relationship dan
+perubahan yang terjadi sepanjang waktu.
+
+Sebuah perubahan Relationship harus memiliki posisi temporal yang dapat
+ditelusuri apabila waktu perubahan tersebut relevan.
+
+
+================================================================================
+16. TIME AND OBJECT
+================================================================================
+
+Object tetap mengikuti Object System.
+
+Daily Universe mengatur posisi temporal keberadaan dan perubahan Object tanpa
+mengambil alih definisi Object.
+
+Apabila Object mengalami perubahan temporal, perubahan tersebut harus berada
+pada posisi waktu yang sah.
+
+
+================================================================================
+17. TIME AND LOCATION
+================================================================================
+
+Location merupakan bagian dari keadaan Universe atau domain yang memiliki owner
+sesuai arsitektur Universe.
+
+Daily Universe menggunakan informasi Location sebagai bagian dari temporal
+context.
+
+Daily Universe tidak boleh menciptakan perpindahan lokasi hanya untuk mengisi
+kekosongan waktu.
+
+Perpindahan lokasi harus mempunyai dasar event atau mekanisme yang sah.
+
+
+================================================================================
+18. TIME RESOLUTION
+================================================================================
+
+Sistem harus menggunakan tingkat resolusi waktu minimum yang diperlukan untuk
+mempertahankan continuity.
+
+Resolusi waktu tidak boleh dibuat lebih detail daripada informasi yang tersedia
+tanpa dasar.
+
+Semakin tinggi tingkat ketelitian waktu, semakin tinggi tuntutan validasi
+terhadap sumber informasi temporal tersebut.
+
+
+================================================================================
+19. UNKNOWN TIME
+================================================================================
+
+Universe Time dapat memiliki informasi waktu yang belum diketahui.
+
+Status waktu yang tidak diketahui harus tetap dipertahankan sebagai unknown.
+
+Unknown tidak boleh diubah menjadi:
+
+- tanggal;
+- jam;
+- urutan;
+- durasi;
+- kejadian temporal tertentu;
+
+tanpa dasar baru yang sah.
+
+
+================================================================================
+20. TEMPORAL INCONSISTENCY
+================================================================================
+
+Jika ditemukan dua atau lebih informasi temporal yang tidak dapat berjalan
+bersama secara konsisten, sistem harus menandai temporal conflict.
+
+Daily Universe tidak boleh memilih salah satu secara diam-diam.
+
+Temporal conflict harus:
+
+1. dikenali;
+2. dicatat sebagai konflik;
+3. ditahan pada tahap yang terpengaruh;
+4. diarahkan ke system owner atau validation layer yang sesuai.
+
+Konflik tidak boleh diselesaikan hanya berdasarkan kenyamanan cerita.
+
+
+================================================================================
+21. TEMPORAL REVISION
+================================================================================
+
+Perubahan terhadap informasi temporal yang sudah dianggap valid tidak boleh
+dilakukan secara diam-diam.
+
+Setiap revision harus memiliki:
+
+- sumber;
+- alasan;
+- posisi perubahan;
+- dampak terhadap continuity.
+
+Perubahan terhadap data yang merupakan ownership system lain harus dilakukan
+melalui system owner tersebut.
+
+
+================================================================================
+22. HISTORICAL POSITION
+================================================================================
+
+Ketika Universe telah melewati suatu titik waktu, posisi temporal tersebut
+menjadi bagian dari history Universe.
+
+Peristiwa yang telah benar-benar terjadi tidak boleh dipindahkan ke waktu lain
+hanya karena cerita di masa berikutnya membutuhkan penempatan berbeda.
+
+Historical position harus dipertahankan kecuali terdapat mekanisme Universe
+yang secara eksplisit mengizinkan perubahan.
+
+
+================================================================================
+23. FUTURE POSITION
+================================================================================
+
+Posisi waktu yang berada setelah Current Universe Time merupakan future
+relative to current time.
+
+Future position belum menjadi actual event hanya karena posisinya telah dapat
+diketahui.
+
+Aturan mengenai plan, prediction, possibility, imagination, dan status future
+lainnya akan ditentukan pada Temporal Status system.
+
+
+================================================================================
+24. NARRATIVE SEPARATION
+================================================================================
+
+Universe Time tidak berubah hanya karena Narrator menampilkan waktu yang
+berbeda dalam penyajian.
+
+Flashback, flash-forward, non-linear presentation, dan teknik naratif lainnya
+tidak mengubah posisi sebenarnya dari Universe Time.
+
+Pengaturan penyajian waktu berada pada Narrator System.
+
+
+================================================================================
+25. SOURCE OF TEMPORAL TRUTH
+================================================================================
+
+Sumber kebenaran temporal adalah data Universe dan mekanisme temporal yang sah.
+
+Bukan:
+
+- urutan paragraf;
+- nama file;
+- urutan folder;
+- waktu file dibuat;
+- waktu AI bekerja;
+- waktu pembaca membaca cerita.
+
+Metadata file dapat membantu identifikasi dan pengelolaan, tetapi tidak
+menggantikan Universe Time.
+
+
+================================================================================
+26. FILE AND INSTANCE RELATION
+================================================================================
+
+Daily Story memiliki tanggal Universe.
+
+Tanggal tersebut harus berasal dari Universe Time yang sah.
+
+Struktur penyimpanan berdasarkan tahun dan bulan harus mengikuti Universe Date.
+
+Nama file tidak boleh menjadi sumber utama untuk menentukan Universe Time.
+
+Apabila nama file dan Universe Time bertentangan, sistem harus menandai
+instance conflict.
+
+
+================================================================================
+27. TEMPORAL IDENTITY
+================================================================================
+
+Suatu posisi temporal harus dapat dibedakan secara jelas dari posisi temporal
+lain yang berbeda.
+
+Universe tidak boleh mempunyai dua interpretasi berbeda terhadap posisi waktu
+yang sama dalam Instance yang sama tanpa dasar yang eksplisit.
+
+
+================================================================================
+28. NO INVENTED TIME
+================================================================================
+
+Daily Universe tidak boleh menciptakan:
+
+- tanggal;
+- jam;
+- durasi;
+- urutan;
+- interval;
+- titik waktu;
+
+yang belum mempunyai dasar.
+
+Ketika informasi temporal belum tersedia, sistem harus mempertahankan
+ketidakpastian tersebut atau menghentikan proses yang membutuhkannya.
+
+
+================================================================================
+29. HANDOFF TO OTHER SYSTEMS
+================================================================================
+
+Universe Time menjadi input bagi system lain.
+
+Character System, Relationship System, Object System, Narrator, dan system
+lain dapat menggunakan posisi temporal tersebut sesuai kebutuhan domainnya.
+
+Tidak ada system yang boleh mengubah Universe Time secara lokal hanya untuk
+memenuhi kebutuhan domainnya.
+
+Perubahan Universe Time hanya dapat terjadi melalui mekanisme Daily Universe.
+
+
+================================================================================
+30. VALIDATION PRINCIPLES
+================================================================================
+
+Sebelum suatu posisi temporal dianggap valid, sistem harus dapat memastikan:
+
+- posisi waktu memiliki dasar;
+- interpretasi waktu konsisten;
+- urutan temporal tidak bertentangan;
+- tingkat ketelitian tidak melebihi informasi yang tersedia;
+- perubahan waktu dapat ditelusuri;
+- hubungan dengan periode sebelumnya tetap masuk akal;
+- hubungan dengan periode berikutnya tidak menghasilkan konflik;
+- posisi waktu tidak bertentangan dengan domain owner lain.
+
+
+================================================================================
+31. RELATION TO OTHER TEMPORAL RULES
+================================================================================
+
+File ini hanya mengatur Universe Time.
+
+Aturan mengenai:
+
+- Narrative Time;
+- Temporal Status;
+- Past / Present / Future;
+- Memory;
+- Imagination;
+- Hypothesis;
+- Plan;
+- Prediction;
+- Possibility;
+- Temporal Consistency;
+
+berada pada file temporal lainnya.
+
+File ini tidak mendefinisikan ulang aturan yang berada pada file tersebut.
+
+
+================================================================================
+32. FINAL PRINCIPLE
+================================================================================
+
+Universe Time adalah garis waktu internal Universe.
+
+Ia menentukan kapan Universe berada pada suatu posisi temporal dan bagaimana
+posisi tersebut bergerak menuju posisi berikutnya.
+
+Daily Universe menjaga perjalanan waktu.
+
+System domain lain menjaga makna dan data domain masing-masing.
+
+Narrator menyajikan perjalanan tersebut kepada pembaca.
+
+Tidak ada kebutuhan naratif yang boleh mengubah Universe Time secara diam-diam.
+
+
+================================================================================
+END OF UNIVERSE TIME
+================================================================================
