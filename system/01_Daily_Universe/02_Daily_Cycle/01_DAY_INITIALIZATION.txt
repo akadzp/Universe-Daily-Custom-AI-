@@ -1,0 +1,559 @@
+================================================================================
+DAY INITIALIZATION
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / DAILY CYCLE
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Day Initialization adalah tahap awal dalam siklus Daily Universe.
+
+Tahap ini mempersiapkan Universe untuk menjalankan satu periode temporal baru.
+
+Day Initialization tidak membuat Canon baru.
+
+Day Initialization tidak membuat Character.
+
+Day Initialization tidak membuat Relationship.
+
+Day Initialization tidak membuat Object.
+
+Day Initialization tidak membuat Knowledge.
+
+Day Initialization tidak menentukan State domain lain.
+
+Fungsi utama tahap ini adalah memastikan bahwa Universe mempunyai konteks
+temporal dan operational context yang sah sebelum proses berikutnya dimulai.
+
+
+================================================================================
+02. INITIALIZATION INPUT
+================================================================================
+
+Day Initialization dapat menggunakan:
+
+- Universe Instance;
+- Universe Time;
+- Current Universe Time;
+- periode sebelumnya;
+- Daily Universe status terakhir;
+- data continuity yang tersedia;
+- proses yang masih berjalan;
+- unresolved condition;
+- data yang diperlukan untuk memulai Daily Cycle.
+
+Input harus berasal dari sumber yang sah.
+
+Input yang belum tersedia tidak boleh diisi dengan asumsi.
+
+
+================================================================================
+03. TARGET PERIOD
+================================================================================
+
+Sebelum initialization dimulai, target period harus dapat ditentukan.
+
+Target period harus memiliki:
+
+- Universe Instance yang jelas;
+- Universe Date yang jelas atau status temporal yang sah;
+- hubungan yang dapat ditentukan dengan periode sebelumnya apabila diperlukan.
+
+Target period tidak boleh dibuat hanya untuk memenuhi kebutuhan produksi
+cerita.
+
+
+================================================================================
+04. PERIOD RESOLUTION
+================================================================================
+
+Daily Universe harus menentukan apakah target period berada pada posisi temporal
+yang sah.
+
+Pemeriksaan harus mempertimbangkan:
+
+- Current Universe Time;
+- previous period;
+- temporal progression;
+- temporal consistency;
+- kemungkinan temporal conflict.
+
+Jika target period bertentangan dengan Universe Time, initialization tidak boleh
+dilanjutkan.
+
+
+================================================================================
+05. PREVIOUS PERIOD
+================================================================================
+
+Apabila terdapat periode sebelumnya yang relevan, Day Initialization harus
+menggunakannya sebagai dasar continuity.
+
+Periode sebelumnya dapat menyediakan:
+
+- kondisi yang masih berlaku;
+- process yang masih berjalan;
+- unresolved condition;
+- event consequence;
+- temporal position;
+- handoff result;
+- informasi operational lain yang masih sah.
+
+Day Initialization tidak menganggap semua isi periode sebelumnya otomatis tetap
+berlaku.
+
+Keberlanjutan ditentukan melalui mekanisme continuity dan system owner terkait.
+
+
+================================================================================
+06. FIRST PERIOD
+================================================================================
+
+Universe dapat mempunyai periode pertama tanpa periode sebelumnya di dalam
+Instance.
+
+Dalam kondisi tersebut:
+
+- previous period dapat berstatus NONE;
+- tidak boleh dibuat seolah-olah terdapat history sebelumnya;
+- initialization harus menggunakan data awal yang sah;
+- kekosongan history tidak boleh diisi dengan kejadian buatan.
+
+First Period tetap harus mempunyai Universe Time yang sah sesuai aturan temporal.
+
+
+================================================================================
+07. CURRENT UNIVERSE TIME
+================================================================================
+
+Sebelum siklus dimulai, Daily Universe harus mengetahui Current Universe Time
+atau status temporal yang sah untuk memulai proses.
+
+Current Universe Time berasal dari mekanisme Universe Time.
+
+Day Initialization tidak membuat definisi waktu alternatif.
+
+
+================================================================================
+08. TEMPORAL VALIDATION
+================================================================================
+
+Sebelum melanjutkan ke tahap berikutnya, Day Initialization harus memeriksa:
+
+- target period valid;
+- Universe Date valid;
+- temporal order valid;
+- relationship dengan previous period valid;
+- tidak terdapat temporal conflict yang menghalangi initialization.
+
+Jika pemeriksaan temporal gagal, initialization harus berhenti.
+
+
+================================================================================
+09. CONTINUITY PREPARATION
+================================================================================
+
+Day Initialization menyiapkan input untuk continuity carryover.
+
+Yang dipersiapkan dapat mencakup:
+
+- data yang masih berlaku;
+- perubahan yang belum selesai diproses;
+- ongoing process;
+- unresolved process;
+- consequence;
+- temporal boundary.
+
+Day Initialization tidak menyelesaikan perubahan tersebut.
+
+Pemrosesan carryover dilakukan pada tahap berikutnya.
+
+
+================================================================================
+10. DOMAIN DATA PREPARATION
+================================================================================
+
+Data Character, Relationship, Object, Knowledge, State, Location, dan domain
+lain tetap dimiliki oleh system owner masing-masing.
+
+Day Initialization hanya:
+
+- memastikan data tersedia untuk proses;
+- membaca metadata yang diperlukan;
+- meneruskan context;
+- menyiapkan handoff.
+
+Day Initialization tidak:
+
+- membuat data domain;
+- mengubah definisi domain;
+- membuat data duplikat;
+- mengubah data hanya karena diperlukan oleh proses.
+
+
+================================================================================
+11. DOMAIN OWNERSHIP PRESERVATION
+================================================================================
+
+Setiap data yang digunakan dalam initialization harus tetap mempertahankan
+ownership asalnya.
+
+Jika Character Data dibaca:
+
+Character System tetap owner.
+
+Jika Relationship Data dibaca:
+
+Relationship System tetap owner.
+
+Jika Object Data dibaca:
+
+Object System tetap owner.
+
+Jika Knowledge Data dibaca:
+
+Knowledge tetap mengikuti owner yang sah.
+
+Day Initialization tidak mendapatkan ownership hanya karena membaca data.
+
+
+================================================================================
+12. INITIAL STATE CONTEXT
+================================================================================
+
+Initialization harus menghasilkan context keadaan awal untuk periode tersebut.
+
+Initial State Context bukan salinan baru dari seluruh data Universe.
+
+Initial State Context adalah representasi operational mengenai:
+
+- apa yang berlaku pada awal periode;
+- apa yang masih berjalan;
+- apa yang harus diproses;
+- apa yang menunggu;
+- apa yang belum diketahui.
+
+Sumber fakta tetap berada pada Universe dan domain owner terkait.
+
+
+================================================================================
+13. ACTIVE PROCESS CONTEXT
+================================================================================
+
+Proses yang berstatus ongoing atau unresolved harus dikenali apabila masih
+relevan terhadap target period.
+
+Proses yang sudah selesai tidak boleh dibawa sebagai ongoing tanpa dasar.
+
+Proses yang tidak diketahui statusnya harus mempertahankan status uncertainty
+atau diarahkan ke validation.
+
+
+================================================================================
+14. FUTURE INFORMATION
+================================================================================
+
+Informasi mengenai Future yang terbawa dari periode sebelumnya harus
+mempertahankan Temporal Status aslinya.
+
+Day Initialization tidak boleh mengubah:
+
+- Plan menjadi Actual;
+- Prediction menjadi Actual;
+- Possibility menjadi Actual;
+- Hypothesis menjadi Actual;
+- Imagination menjadi Actual.
+
+Actualization diperiksa pada tahap Universe Progression dan Event Processing
+sesuai mekanisme temporal.
+
+
+================================================================================
+15. PAST INFORMATION
+================================================================================
+
+History dari periode sebelumnya tetap berada pada posisi Past setelah Current
+Universe Time bergerak maju.
+
+Day Initialization tidak menghapus historical position.
+
+Memory, Report, Imagination, Hypothesis, dan Actual History tetap mempertahankan
+status masing-masing.
+
+
+================================================================================
+16. PRESENT CONTEXT
+================================================================================
+
+Target period menjadi konteks Present hanya apabila sesuai dengan Current
+Universe Time.
+
+Initialization tidak boleh menetapkan Present hanya berdasarkan nama file,
+nomor folder, atau urutan produksi.
+
+
+================================================================================
+17. LOCATION CONTEXT
+================================================================================
+
+Jika proses berikutnya membutuhkan Location Context, initialization dapat
+menyediakan lokasi yang sudah sah dari data Universe atau domain owner.
+
+Initialization tidak boleh menciptakan Location untuk mengisi kekosongan.
+
+Jika lokasi yang diperlukan belum diketahui, status tetap Unknown atau proses
+berhenti sesuai kebutuhan.
+
+
+================================================================================
+18. CHARACTER AVAILABILITY
+================================================================================
+
+Jika proses berikutnya membutuhkan actor tertentu, availability temporal
+Character harus dapat diperiksa.
+
+Day Initialization tidak menciptakan Character baru hanya agar target period
+dapat dijalankan.
+
+Character availability tetap mengikuti Character System dan data Universe.
+
+
+================================================================================
+19. OBJECT AVAILABILITY
+================================================================================
+
+Jika proses berikutnya membutuhkan Object tertentu, availability temporal
+Object harus dapat diperiksa.
+
+Day Initialization tidak membuat Object baru untuk memenuhi kebutuhan proses.
+
+Object availability tetap mengikuti Object System.
+
+
+================================================================================
+20. RELATIONSHIP CONTEXT
+================================================================================
+
+Jika proses berikutnya menggunakan Relationship, initialization dapat
+menyiapkan Relationship Context berdasarkan data Relationship yang sah.
+
+Initialization tidak menciptakan Relationship baru.
+
+
+================================================================================
+21. KNOWLEDGE CONTEXT
+================================================================================
+
+Jika proses berikutnya memerlukan Knowledge Context, initialization hanya
+menggunakan Knowledge yang tersedia secara temporal.
+
+Initialization tidak memberikan Knowledge baru kepada Character.
+
+Knowledge acquisition tetap mengikuti Character System.
+
+
+================================================================================
+22. INITIALIZATION OUTPUT
+================================================================================
+
+Day Initialization menghasilkan operational context untuk periode baru.
+
+Output minimal harus dapat menentukan:
+
+- target Universe Instance;
+- target Universe Date;
+- Current Universe Time;
+- previous period reference;
+- initial temporal context;
+- continuity input;
+- ongoing process reference;
+- unresolved process reference;
+- required domain handoff;
+- initialization status.
+
+
+================================================================================
+23. INITIALIZATION STATUS
+================================================================================
+
+Initialization dapat menghasilkan:
+
+READY
+→ seluruh kebutuhan awal tersedia dan periode dapat memasuki tahap berikutnya.
+
+REVIEW_REQUIRED
+→ terdapat uncertainty yang tidak menghalangi proses tetapi harus tetap
+  diketahui.
+
+REVISION_REQUIRED
+→ terdapat data atau struktur yang perlu diperbaiki.
+
+BLOCKED
+→ periode tidak dapat dimulai secara sah.
+
+
+================================================================================
+24. FAILURE CONDITIONS
+================================================================================
+
+Initialization harus dihentikan apabila ditemukan:
+
+- Universe Date conflict;
+- invalid Current Universe Time;
+- temporal contradiction;
+- missing required source;
+- invalid Instance;
+- unresolved critical handoff;
+- domain ownership conflict;
+- duplicate period identity;
+- invalid previous period reference.
+
+
+================================================================================
+25. NO SILENT INITIALIZATION
+================================================================================
+
+Sistem tidak boleh:
+
+- mengarang previous period;
+- mengarang Universe Date;
+- mengarang Current Universe Time;
+- mengarang Character;
+- mengarang Object;
+- mengarang Relationship;
+- mengarang Knowledge;
+- mengarang State;
+- mengarang Location;
+- menghapus conflict;
+- mengubah data agar initialization terlihat valid.
+
+Jika input tidak cukup, initialization harus mempertahankan status tersebut.
+
+
+================================================================================
+26. INITIALIZATION AND DAILY STORY
+================================================================================
+
+Day Initialization tidak memulai penulisan cerita.
+
+Tahap ini hanya mempersiapkan Universe agar dapat berjalan pada target period.
+
+Daily Story diproses pada tahap Daily Story yang sesuai.
+
+Narrator tidak dipanggil hanya untuk menyelesaikan initialization.
+
+
+================================================================================
+27. INITIALIZATION AND INSTANCE
+================================================================================
+
+Day Initialization dapat memeriksa bahwa Universe Instance target tersedia.
+
+Initialization tidak menyatakan Daily Story sebagai selesai.
+
+Pembuatan folder dan file hasil merupakan tanggung jawab Instance Management
+pada tahap yang sesuai.
+
+
+================================================================================
+28. HANDOFF
+================================================================================
+
+Setelah initialization berhasil:
+
+DAY INITIALIZATION
+        ↓
+TEMPORAL CONTEXT
+        ↓
+CONTINUITY CARRYOVER
+        ↓
+DAILY PROGRESSION
+
+Jika initialization gagal:
+
+DAY INITIALIZATION
+        ↓
+VALIDATION / ERROR HANDLING
+        ↓
+STOP
+
+
+================================================================================
+29. TRACEABILITY
+================================================================================
+
+Setiap hasil initialization harus dapat ditelusuri kepada:
+
+- target period;
+- Universe Time;
+- previous period;
+- source data;
+- initialization result.
+
+Initialization result tidak boleh menjadi pengganti Canon.
+
+
+================================================================================
+30. DOMAIN SAFETY
+================================================================================
+
+Day Initialization tidak boleh menduplikasi aturan system lain.
+
+Initialization hanya menyediakan temporal dan operational context.
+
+Jika kebutuhan proses tidak dapat dipenuhi tanpa mengambil alih domain system
+lain, proses harus dihentikan dan diarahkan kepada system owner.
+
+
+================================================================================
+31. VALIDATION
+================================================================================
+
+Sebelum initialization dinyatakan READY, system harus memeriksa:
+
+- target period;
+- temporal validity;
+- previous period;
+- required source;
+- continuity input;
+- domain handoff;
+- Instance reference;
+- identity;
+- absence of critical conflict.
+
+
+================================================================================
+32. FINAL PRINCIPLE
+================================================================================
+
+DAY INITIALIZATION BUKAN MEMBUAT HARI.
+
+DAY INITIALIZATION MENYIAPKAN UNIVERSE
+UNTUK MEMASUKI SUATU PERIODE YANG SUDAH MEMILIKI
+DASAR TEMPORAL DAN DATA YANG SAH.
+
+Tidak ada domain baru yang diciptakan pada tahap ini.
+
+Tidak ada Canon baru yang dibuat hanya untuk memenuhi kebutuhan initialization.
+
+Tujuan tahap ini adalah:
+
+VALID TEMPORAL CONTEXT
+        +
+VALID PREVIOUS CONTEXT
+        +
+VALID DOMAIN INPUT
+        ↓
+READY FOR DAILY PROGRESSION
+
+
+================================================================================
+END OF DAY INITIALIZATION
+================================================================================
