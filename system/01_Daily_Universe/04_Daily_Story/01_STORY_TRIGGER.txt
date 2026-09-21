@@ -1,0 +1,645 @@
+================================================================================
+STORY TRIGGER
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / DAILY STORY
+ROLE : DAILY STORY PRODUCTION ORCHESTRATION
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Story Trigger adalah mekanisme yang menentukan apakah suatu periode Universe
+memiliki dasar yang sah untuk menghasilkan Daily Story.
+
+Story Trigger bukan mekanisme untuk menciptakan event.
+
+Story Trigger bukan mekanisme untuk menentukan isi cerita.
+
+Story Trigger bukan mekanisme Story Design.
+
+Story Trigger hanya menentukan:
+
+- apakah Daily Story perlu diproduksi;
+- apa yang menjadi dasar produksi;
+- kapan trigger berlaku;
+- apa temporal context yang harus diserahkan kepada Narrator.
+
+
+================================================================================
+02. CORE PRINCIPLE
+================================================================================
+
+Daily Story harus berasal dari Universe yang sedang berjalan.
+
+Story Trigger harus mempunyai dasar dari:
+
+- Actual Event;
+- ongoing process;
+- consequence;
+- meaningful change;
+- unresolved development;
+- relevant temporal transition;
+- valid production instruction;
+- atau mekanisme Universe lain yang secara eksplisit sah.
+
+Narrative need bukan Story Trigger yang sah.
+
+
+================================================================================
+03. STORY TRIGGER VS STORY EVENT
+================================================================================
+
+STORY TRIGGER
+→ alasan mengapa Daily Story diproduksi.
+
+STORY EVENT
+→ bagian dari Universe yang dapat menjadi materi cerita.
+
+Keduanya tidak sama.
+
+Story Trigger tidak menciptakan Story Event.
+
+Story Event harus sudah mempunyai dasar Universe yang sah.
+
+
+================================================================================
+04. STORY TRIGGER VS ACTUAL EVENT
+================================================================================
+
+Actual Event adalah kejadian Universe.
+
+Story Trigger adalah keputusan operasional bahwa suatu bagian Universe layak
+atau perlu diproses sebagai Daily Story.
+
+Satu Actual Event dapat:
+
+- menjadi Story Trigger;
+- tidak menjadi Story Trigger;
+- menjadi bagian dari beberapa perkembangan yang memicu Story Trigger.
+
+Story Trigger tidak mengubah status Actual Event.
+
+
+================================================================================
+05. TRIGGER SOURCE
+================================================================================
+
+Setiap Story Trigger harus dapat ditelusuri kepada source.
+
+Source dapat berupa:
+
+- event;
+- consequence;
+- process;
+- state transition;
+- relationship transition;
+- object transition;
+- knowledge-related development;
+- unresolved development;
+- temporal milestone;
+- explicit production instruction.
+
+Source tetap mengikuti domain owner masing-masing.
+
+
+================================================================================
+06. TRIGGER IDENTITY
+================================================================================
+
+Setiap Story Trigger yang perlu dilacak harus memiliki identity.
+
+Identity digunakan untuk:
+
+- traceability;
+- duplicate prevention;
+- relation to Daily Story;
+- source tracking;
+- validation;
+- production history.
+
+Story Trigger identity tidak sama dengan Daily Story ID.
+
+
+================================================================================
+07. TRIGGER STATUS
+================================================================================
+
+Story Trigger dapat memiliki status:
+
+PENDING
+→ trigger tersedia tetapi belum diproses.
+
+ACTIVE
+→ trigger sedang menjadi dasar produksi.
+
+PROCESSED
+→ trigger telah diproses menjadi Daily Story atau hasil produksi lain.
+
+SKIPPED
+→ trigger tidak digunakan untuk produksi pada periode tersebut berdasarkan
+  keputusan yang sah.
+
+EXPIRED
+→ trigger tidak lagi berlaku karena temporal condition berubah.
+
+UNRESOLVED
+→ status trigger belum dapat ditentukan.
+
+BLOCKED
+→ trigger tidak dapat diproses karena dependency atau conflict.
+
+
+================================================================================
+08. TRIGGER VALIDITY
+================================================================================
+
+Story Trigger harus mempunyai temporal validity.
+
+Trigger harus dapat dikaitkan dengan:
+
+- Universe Date;
+- Current Universe Time;
+- source event;
+- current context;
+- relevant period.
+
+Trigger yang berasal dari masa lalu tidak otomatis menjadi trigger aktif pada
+periode sekarang tanpa dasar yang sah.
+
+
+================================================================================
+09. TRIGGER TIMING
+================================================================================
+
+Trigger dapat terjadi:
+
+- saat event berlangsung;
+- setelah event;
+- ketika consequence menjadi relevan;
+- ketika process mencapai tahap tertentu;
+- ketika unresolved condition menjadi relevant;
+- berdasarkan production instruction yang valid.
+
+Waktu trigger tidak mengubah waktu source event.
+
+
+================================================================================
+10. TRIGGER DELAY
+================================================================================
+
+Story Trigger dapat diproses setelah source event apabila production timing
+atau temporal mechanism mengizinkannya.
+
+Perbedaan antara:
+
+SOURCE TIME
+dan
+TRIGGER TIME
+
+harus tetap dapat dilacak.
+
+Trigger delay tidak mengubah historical position source.
+
+
+================================================================================
+11. MULTIPLE TRIGGERS
+================================================================================
+
+Satu Daily Story dapat mempunyai lebih dari satu Story Trigger apabila
+berbagai source secara sah menjadi dasar produksi yang sama.
+
+Setiap trigger harus tetap dapat dibedakan.
+
+Penggabungan trigger tidak boleh menghapus source identity.
+
+
+================================================================================
+12. ONE TRIGGER, MULTIPLE STORIES
+================================================================================
+
+Satu Story Trigger dapat berhubungan dengan lebih dari satu Daily Story jika
+Universe dan production mechanism mengizinkannya.
+
+Namun setiap Daily Story harus tetap mempunyai identity sendiri.
+
+Story Trigger bukan Daily Story.
+
+
+================================================================================
+13. TRIGGER PRIORITY
+================================================================================
+
+Jika terdapat banyak Story Trigger pada periode yang sama, system dapat
+menentukan priority untuk orchestration.
+
+Priority hanya menentukan urutan atau prioritas produksi.
+
+Priority tidak menentukan:
+
+- factual importance;
+- Canon authority;
+- Character importance;
+- narrative quality.
+
+
+================================================================================
+14. TRIGGER SELECTION
+================================================================================
+
+Tidak semua perkembangan Universe harus menjadi Daily Story.
+
+Daily Universe dapat memilih atau mengarahkan trigger berdasarkan:
+
+- production instruction;
+- temporal relevance;
+- story scope;
+- unresolved development;
+- event significance;
+- continuity requirement;
+- availability of valid source.
+
+Pemilihan trigger tidak boleh mengubah Universe Data.
+
+
+================================================================================
+15. NO STORY CREATION BY GAP
+================================================================================
+
+Ketiadaan Story Trigger bukan alasan untuk menciptakan event agar Daily Story
+tetap dapat dibuat.
+
+Jika periode tidak memiliki trigger yang sah, Daily Story dapat:
+
+- tidak diproduksi;
+- menunggu trigger;
+- menghasilkan status produksi tertentu sesuai mekanisme Instance.
+
+System tidak boleh mengarang event.
+
+
+================================================================================
+16. NO FORCED DRAMA
+================================================================================
+
+Story Trigger tidak boleh dibuat hanya untuk menciptakan:
+
+- conflict;
+- twist;
+- climax;
+- emotional escalation;
+- artificial urgency;
+- artificial resolution.
+
+Universe tidak wajib menghasilkan drama setiap periode.
+
+
+================================================================================
+17. ONGOING PROCESS AS TRIGGER
+================================================================================
+
+Ongoing Process dapat menjadi Story Trigger apabila perkembangan Process pada
+periode tersebut mempunyai dasar yang relevan untuk Daily Story.
+
+Process yang tidak mengalami perkembangan relevan tidak otomatis menjadi
+trigger hanya karena Process tersebut masih aktif.
+
+
+================================================================================
+18. CONSEQUENCE AS TRIGGER
+================================================================================
+
+Consequence dapat menjadi Story Trigger ketika:
+
+- consequence mulai muncul;
+- consequence berkembang;
+- consequence mencapai perubahan penting;
+- consequence menghasilkan perkembangan baru;
+- consequence menjadi relevant terhadap Daily Story.
+
+Consequence tetap mengikuti Event / Consequence System.
+
+
+================================================================================
+19. UNRESOLVED AS TRIGGER
+================================================================================
+
+Unresolved condition dapat menjadi Story Trigger apabila terdapat perkembangan
+temporal atau informasi baru yang membuat unresolved tersebut relevan terhadap
+Story Production.
+
+Unresolved tidak menjadi trigger hanya karena unresolved tersebut sudah lama
+ada.
+
+
+================================================================================
+20. FUTURE INFORMATION AS TRIGGER
+================================================================================
+
+Plan, Prediction, Possibility, Hypothesis, dan Imagination dapat menjadi
+Story Trigger hanya untuk tujuan merepresentasikan informasi non-actual
+tersebut sebagai bagian dari cerita.
+
+Kemunculannya sebagai trigger tidak mengubah status menjadi Actual.
+
+Future representation harus tetap mempertahankan Temporal Status.
+
+
+================================================================================
+21. DOMAIN CHANGE AS TRIGGER
+================================================================================
+
+Perubahan pada:
+
+- Character;
+- Relationship;
+- Object;
+- Knowledge;
+- State;
+- Location;
+
+dapat menjadi Story Trigger apabila perubahan tersebut telah divalidasi oleh
+domain owner dan relevan terhadap Story Production.
+
+Daily Universe tidak membuat perubahan domain hanya karena membutuhkan
+trigger.
+
+
+================================================================================
+22. TRIGGER AND NARRATOR
+================================================================================
+
+Setelah trigger valid:
+
+DAILY UNIVERSE
+→ menentukan trigger context
+→ menyerahkan kepada Narrator.
+
+NARRATOR
+→ melakukan Story Design
+→ melakukan Writing Design
+→ melakukan Narrative Rendering
+→ melakukan Writing Validation.
+
+Narrator tidak boleh mengubah trigger menjadi sumber Canon baru.
+
+
+================================================================================
+23. STORY DESIGN BOUNDARY
+================================================================================
+
+Story Trigger tidak menentukan:
+
+- POV;
+- scene structure;
+- dialogue;
+- narrative order;
+- prose style;
+- pacing;
+- description;
+- ending;
+- wording.
+
+Semua tersebut menjadi tanggung jawab Narrator System.
+
+
+================================================================================
+24. STORY SCOPE INPUT
+================================================================================
+
+Story Trigger dapat memberikan:
+
+- source reference;
+- temporal position;
+- relevant domain references;
+- production date;
+- relevant consequence;
+- relevant process;
+- unresolved condition;
+- required context.
+
+Story Scope sendiri ditentukan oleh mekanisme Daily Story dan Narrator yang
+sesuai.
+
+
+================================================================================
+25. CHARACTER KNOWLEDGE BOUNDARY
+================================================================================
+
+Story Trigger tidak memberikan Knowledge tambahan kepada Character.
+
+Narrator menerima context yang tersedia untuk cerita.
+
+Character Knowledge tetap mengikuti Character System.
+
+Trigger context tidak boleh bocor menjadi Character Knowledge.
+
+
+================================================================================
+26. READER KNOWLEDGE
+================================================================================
+
+Informasi yang menjadi trigger tidak otomatis berarti pembaca harus mengetahui
+semua source information.
+
+Narrator menentukan penyajian berdasarkan aturan Narrator System.
+
+Trigger hanya menentukan source dan production context.
+
+
+================================================================================
+27. TRIGGER DUPLICATION
+================================================================================
+
+System harus dapat mendeteksi duplicate Story Trigger.
+
+Duplicate dapat terjadi apabila:
+
+- source sama;
+- temporal position sama;
+- trigger type sama;
+- trigger identity sama.
+
+Duplicate tidak boleh menghasilkan produksi yang tidak sengaja terulang.
+
+
+================================================================================
+28. TRIGGER CANCELLATION
+================================================================================
+
+Story Trigger dapat dibatalkan apabila source atau production condition tidak
+lagi valid.
+
+Cancellation tidak menghapus source event.
+
+Cancellation harus dapat ditelusuri.
+
+
+================================================================================
+29. TRIGGER EXPIRATION
+================================================================================
+
+Trigger dapat expired apabila:
+
+- temporal window berakhir;
+- source tidak lagi relevan;
+- dependency tidak terpenuhi dalam batas yang ditentukan;
+- production condition berubah.
+
+Expiration bukan penghapusan source Universe.
+
+
+================================================================================
+30. TRIGGER DEPENDENCY
+================================================================================
+
+Story Trigger dapat bergantung pada:
+
+- source event;
+- process;
+- consequence;
+- domain result;
+- validation;
+- Universe Date;
+- Instance;
+- production instruction.
+
+Dependency harus tersedia sebelum trigger dinyatakan READY.
+
+
+================================================================================
+31. TRIGGER HANDOFF
+================================================================================
+
+Handoff dari Daily Universe ke Narrator minimal harus menyediakan:
+
+- Story Trigger ID;
+- Universe Instance;
+- Universe Date;
+- trigger source;
+- temporal position;
+- relevant domain references;
+- continuity context;
+- production status;
+- restrictions;
+- validation status.
+
+
+================================================================================
+32. NO IMPLIED STORY CONTENT
+================================================================================
+
+Story Trigger tidak boleh diperlakukan sebagai Story Blueprint.
+
+Trigger hanya menentukan bahwa terdapat dasar produksi.
+
+Narrator tetap harus melakukan Story Design sesuai aturan Narrator System.
+
+
+================================================================================
+33. STORY ID SEPARATION
+================================================================================
+
+Story Trigger ID dan Daily Story ID harus tetap berbeda.
+
+Trigger ID mengidentifikasi alasan atau source produksi.
+
+Daily Story ID mengidentifikasi hasil Daily Story.
+
+Keduanya harus dapat dihubungkan.
+
+
+================================================================================
+34. INSTANCE RELATION
+================================================================================
+
+Story Trigger tidak menentukan filename.
+
+Filename, folder, dan destination path mengikuti Instance Management.
+
+Trigger hanya menyediakan identity dan production context yang diperlukan.
+
+
+================================================================================
+35. VALIDATION
+================================================================================
+
+Story Trigger harus divalidasi terhadap:
+
+- Universe Time;
+- Temporal Status;
+- source event;
+- consequence;
+- ongoing process;
+- unresolved condition;
+- domain result;
+- production instruction;
+- duplicate status;
+- dependency;
+- Daily Story identity.
+
+
+================================================================================
+36. VALIDATION RESULT
+================================================================================
+
+VALID
+→ trigger sah dan dapat diserahkan.
+
+REVIEW_REQUIRED
+→ terdapat uncertainty yang masih dapat dipertahankan.
+
+REVISION_REQUIRED
+→ trigger atau source context membutuhkan koreksi.
+
+BLOCKED
+→ trigger tidak dapat digunakan secara sah.
+
+
+================================================================================
+37. FAILURE PRINCIPLE
+================================================================================
+
+Jika Story Trigger gagal, system tidak boleh:
+
+- menciptakan event baru;
+- menciptakan Character;
+- membuat Relationship;
+- membuat Object;
+- membuat Knowledge;
+- mengubah State;
+- mengubah Location;
+- menganggap trigger valid demi menghasilkan cerita.
+
+Produksi harus berhenti atau menggunakan trigger lain yang sah.
+
+
+================================================================================
+38. FINAL PRINCIPLE
+================================================================================
+
+STORY TRIGGER BUKAN:
+
+“ALASAN UNTUK MEMBUAT CERITA.”
+
+STORY TRIGGER ADALAH:
+
+“DASAR UNIVERSE YANG MENYATAKAN
+BAHWA SUATU BAGIAN KEHIDUPAN UNIVERSE
+DAPAT ATAU PERLU DIOLAH MENJADI DAILY STORY.”
+
+Universe berjalan terlebih dahulu.
+
+Trigger mengenali kebutuhan produksi.
+
+Narrator kemudian membentuk cerita.
+
+
+================================================================================
+END OF STORY TRIGGER
+================================================================================
