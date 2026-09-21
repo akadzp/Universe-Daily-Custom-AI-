@@ -1,0 +1,863 @@
+================================================================================
+KNOWLEDGE CARRYOVER
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / CONTINUITY ORCHESTRATION
+ROLE : TEMPORAL KNOWLEDGE CARRYOVER
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Knowledge Carryover adalah mekanisme untuk menjaga kesinambungan temporal
+informasi yang diketahui, tersedia, diperoleh, berubah, hilang, atau menjadi
+tidak tersedia sepanjang perjalanan Universe.
+
+Knowledge Carryover memastikan bahwa:
+
+- informasi tidak muncul pada Character sebelum tersedia secara temporal;
+- informasi yang sudah diperoleh tidak hilang hanya karena periode berganti;
+- perubahan Knowledge memiliki source dan temporal position;
+- Knowledge tetap mengikuti owner domain;
+- informasi yang hanya merupakan report, memory, imagination, hypothesis,
+  plan, prediction, atau possibility tidak otomatis menjadi Knowledge Canon;
+- perubahan Knowledge dapat dibawa ke periode berikutnya tanpa menciptakan
+  duplicate Knowledge.
+
+
+================================================================================
+02. OWNERSHIP
+================================================================================
+
+Daily Universe bukan owner isi Knowledge.
+
+Knowledge Character tetap mengikuti Character System dan aturan Knowledge yang
+dimiliki system tersebut.
+
+Character System menentukan:
+
+- apa yang diketahui Character;
+- struktur Knowledge;
+- status Knowledge;
+- aturan acquisition;
+- aturan perubahan;
+- aturan kehilangan atau perubahan Knowledge;
+- hubungan Knowledge dengan Character.
+
+Daily Universe mengatur:
+
+- temporal availability;
+- acquisition timing;
+- propagation timing;
+- carryover;
+- temporal dependency;
+- cross-period continuity;
+- temporal handoff.
+
+
+================================================================================
+03. CORE PRINCIPLE
+================================================================================
+
+Knowledge harus mempunyai hubungan temporal yang dapat ditelusuri.
+
+Pola dasar:
+
+SOURCE
+↓
+AVAILABILITY
+↓
+ACQUISITION
+↓
+KNOWLEDGE STATE
+↓
+USAGE
+↓
+POTENTIAL CHANGE
+
+Knowledge tidak boleh muncul tanpa source apabila source diperlukan.
+
+Informasi tidak boleh dianggap diketahui hanya karena informasi tersebut
+tersedia di dalam Universe.
+
+
+================================================================================
+04. KNOWLEDGE REFERENCE
+================================================================================
+
+Daily Universe menggunakan reference terhadap Knowledge yang dimiliki domain
+owner.
+
+Reference dapat mengidentifikasi:
+
+- subject Character;
+- Knowledge reference;
+- source;
+- source type;
+- temporal position;
+- availability;
+- acquisition;
+- current status;
+- relevant transition.
+
+Reference bukan salinan kedua dari Knowledge Canon.
+
+
+================================================================================
+05. INFORMATION AVAILABILITY
+================================================================================
+
+Availability adalah kondisi ketika suatu informasi telah tersedia di dalam
+Universe atau lingkungan yang memungkinkan information acquisition.
+
+Availability tidak sama dengan:
+
+- Character Knowledge;
+- Character awareness;
+- Character belief;
+- Character understanding;
+- Character acceptance.
+
+Sebuah informasi dapat tersedia tetapi belum diketahui Character.
+
+
+================================================================================
+06. SOURCE
+================================================================================
+
+Knowledge dapat memiliki source yang berasal dari:
+
+- Actual Event;
+- Observation;
+- Communication;
+- Document;
+- Object-related information;
+- Relationship-related information;
+- Character interaction;
+- system-defined information source;
+- other valid information source.
+
+Source harus mempunyai temporal position yang memungkinkan information
+availability.
+
+
+================================================================================
+07. SOURCE TIME
+================================================================================
+
+Source Time adalah waktu ketika informasi tersedia melalui source.
+
+Source Time tidak otomatis sama dengan:
+
+- Acquisition Time;
+- Disclosure Time;
+- Processing Time;
+- Story Writing Time;
+- File Creation Time.
+
+Perbedaan waktu harus dipertahankan apabila relevan.
+
+
+================================================================================
+08. ACQUISITION
+================================================================================
+
+Acquisition adalah proses ketika Character benar-benar memperoleh informasi
+menurut aturan Character System.
+
+Acquisition harus memiliki temporal relation terhadap source.
+
+Pola umum:
+
+SOURCE
+↓
+AVAILABLE
+↓
+ACQUISITION
+↓
+KNOWLEDGE
+
+
+================================================================================
+09. NO PREMATURE KNOWLEDGE
+================================================================================
+
+Character tidak boleh menggunakan Knowledge sebelum Knowledge tersebut tersedia
+menurut aturan acquisition yang berlaku.
+
+Daily Universe harus menjaga temporal order.
+
+Narator tidak boleh memberikan Knowledge kepada Character hanya karena
+pembaca sudah mengetahui informasi tersebut.
+
+
+================================================================================
+10. NO RETROACTIVE KNOWLEDGE
+================================================================================
+
+Informasi yang diperoleh pada waktu tertentu tidak boleh dianggap telah
+diketahui Character pada waktu sebelumnya.
+
+Narrative flashback tidak memberikan Knowledge secara retroaktif.
+
+Information disclosure kepada pembaca tidak memberikan Knowledge kepada
+Character.
+
+
+================================================================================
+11. READER KNOWLEDGE VS CHARACTER KNOWLEDGE
+================================================================================
+
+Reader Knowledge dan Character Knowledge adalah dua hal yang berbeda.
+
+Reader dapat mengetahui:
+
+- event;
+- object;
+- relationship;
+- information;
+
+sebelum Character mengetahuinya.
+
+Perbedaan tersebut tidak mengubah Character Knowledge.
+
+
+================================================================================
+12. CHARACTER AWARENESS
+================================================================================
+
+Awareness tidak otomatis sama dengan Knowledge Canon.
+
+Character dapat:
+
+- melihat sesuatu;
+- mendengar sesuatu;
+- menerima informasi;
+- memperhatikan sesuatu;
+
+tanpa otomatis memahami atau menyimpan informasi tersebut sebagai Knowledge.
+
+Penentuan Knowledge tetap mengikuti Character System.
+
+
+================================================================================
+13. KNOWLEDGE CHANGE
+================================================================================
+
+Knowledge dapat berubah karena:
+
+- acquisition;
+- correction;
+- clarification;
+- loss;
+- invalidation;
+- revision;
+- new information;
+- domain event.
+
+Daily Universe hanya mengatur temporal transition dan handoff.
+
+Character System menentukan hasil Knowledge.
+
+
+================================================================================
+14. KNOWLEDGE CONTINUATION
+================================================================================
+
+Knowledge yang masih berlaku pada period boundary dapat dibawa ke periode
+berikutnya.
+
+Continuation tidak berarti:
+
+- membuat Knowledge baru;
+- memperoleh Knowledge ulang;
+- mengulangi acquisition.
+
+Identity atau reference Knowledge tetap dipertahankan.
+
+
+================================================================================
+15. KNOWLEDGE LOSS
+================================================================================
+
+Jika Character kehilangan Knowledge sesuai aturan domain, perubahan harus
+diproses melalui Character System.
+
+Daily Universe hanya membawa:
+
+- source;
+- effective time;
+- temporal context;
+- result.
+
+Knowledge yang telah hilang tidak boleh muncul kembali tanpa dasar baru.
+
+
+================================================================================
+16. KNOWLEDGE CORRECTION
+================================================================================
+
+Informasi yang sebelumnya diketahui dapat dikoreksi apabila terdapat dasar
+yang sah.
+
+Correction harus membedakan:
+
+- previous Knowledge;
+- new information;
+- correction event;
+- effective time;
+- resulting Knowledge.
+
+Correction tidak menghapus history bahwa Character sebelumnya mempunyai
+informasi berbeda.
+
+
+================================================================================
+17. KNOWLEDGE CONFLICT
+================================================================================
+
+Character dapat memiliki informasi yang bertentangan dengan fakta Universe.
+
+Conflict tersebut tidak otomatis merupakan data error.
+
+Daily Universe harus mempertahankan perbedaan antara:
+
+- Universe Fact;
+- Character Knowledge;
+- Character Belief;
+- Report;
+- Memory;
+- Hypothesis.
+
+Character Knowledge tidak menentukan Canon Universe.
+
+
+================================================================================
+18. BELIEF VS KNOWLEDGE
+================================================================================
+
+Belief tidak otomatis merupakan Knowledge yang valid.
+
+Character dapat percaya pada informasi yang:
+
+- benar;
+- salah;
+- belum diverifikasi;
+- berasal dari report;
+- berasal dari memory;
+- berasal dari inference.
+
+Status internal Character tetap mengikuti Character System.
+
+
+================================================================================
+19. REPORT VS KNOWLEDGE
+================================================================================
+
+Ketika Character menerima Report, yang dapat menjadi Knowledge adalah fakta
+bahwa report tersebut diterima atau isi report apabila Character System
+menganggap acquisition tersebut sah.
+
+Isi report tidak otomatis menjadi Actual Universe Fact.
+
+
+================================================================================
+20. MEMORY VS KNOWLEDGE
+================================================================================
+
+Memory dapat menjadi bagian dari Character Knowledge apabila Character System
+menentukannya demikian.
+
+Namun:
+
+MEMORY
+tidak otomatis berarti
+HISTORICAL FACT.
+
+Daily Universe menjaga temporal relation antara memory access dan event time.
+
+
+================================================================================
+21. IMAGINATION VS KNOWLEDGE
+================================================================================
+
+Imagination tidak otomatis menjadi Knowledge.
+
+Character dapat membayangkan sesuatu tanpa memperoleh informasi aktual.
+
+Narrative representation of imagination tidak mengubah Knowledge.
+
+
+================================================================================
+22. HYPOTHESIS VS KNOWLEDGE
+================================================================================
+
+Hypothesis adalah hasil atau proses penalaran yang sedang dipertimbangkan.
+
+Hypothesis tidak otomatis menjadi Knowledge.
+
+Jika hypothesis kemudian diverifikasi, perubahan Knowledge harus melalui
+mekanisme domain owner.
+
+
+================================================================================
+23. PLAN / PREDICTION / POSSIBILITY VS KNOWLEDGE
+================================================================================
+
+Character dapat mengetahui bahwa suatu Plan, Prediction, atau Possibility ada.
+
+Namun informasi:
+
+“Ada sebuah rencana”
+
+berbeda dari:
+
+“Rencana tersebut pasti terjadi.”
+
+Knowledge yang diperoleh harus mempertahankan status informasi yang sebenarnya.
+
+
+================================================================================
+24. KNOWLEDGE PROPAGATION
+================================================================================
+
+Informasi dapat berpindah dari satu Actor atau sumber ke Actor lain.
+
+Propagation harus mempunyai:
+
+- source;
+- recipient;
+- transmission event;
+- transmission time;
+- acquisition condition;
+- domain validation.
+
+Informasi tidak berpindah secara otomatis hanya karena Character berada pada
+lokasi atau scene yang sama.
+
+
+================================================================================
+25. KNOWLEDGE AVAILABILITY
+================================================================================
+
+Availability dapat berbeda menurut:
+
+- Character;
+- location;
+- access;
+- time;
+- communication;
+- object;
+- relationship;
+- event.
+
+Daily Universe mengatur temporal aspect.
+
+Domain owner menentukan apakah availability benar-benar menghasilkan
+Knowledge.
+
+
+================================================================================
+26. KNOWLEDGE ACCESS
+================================================================================
+
+Access terhadap suatu sumber tidak otomatis berarti Knowledge acquisition.
+
+Character dapat mempunyai akses tetapi belum memperoleh, memahami, atau
+menggunakan informasi.
+
+Perbedaan ini harus tetap dipertahankan.
+
+
+================================================================================
+27. ACQUISITION DEPENDENCY
+================================================================================
+
+Knowledge acquisition dapat bergantung pada:
+
+- event;
+- observation;
+- communication;
+- language or comprehension condition;
+- object availability;
+- Character state;
+- location;
+- relationship;
+- access;
+- other domain condition.
+
+Daily Universe menjaga temporal dependency.
+
+Domain owner menentukan validitas acquisition.
+
+
+================================================================================
+28. MULTIPLE SOURCE
+================================================================================
+
+Satu Knowledge dapat diperoleh melalui beberapa source.
+
+Setiap source yang relevan harus dapat ditelusuri apabila diperlukan untuk
+continuity.
+
+Satu source dapat menghasilkan Knowledge untuk beberapa Character tanpa
+menciptakan satu Knowledge object yang sama secara otomatis di semua Character.
+
+
+================================================================================
+29. KNOWLEDGE IDENTITY
+================================================================================
+
+Jika Knowledge domain menggunakan identity atau reference tertentu, identity
+tersebut harus dipertahankan selama continuity.
+
+Periode baru tidak boleh membuat duplicate Knowledge hanya karena Character
+tetap mengetahui informasi yang sama.
+
+
+================================================================================
+30. CROSS-PERIOD CARRYOVER
+================================================================================
+
+Pada period boundary:
+
+CURRENT KNOWLEDGE CONTEXT
+↓
+TEMPORAL EVALUATION
+↓
+CONTINUE / CHANGE / LOSE / UNRESOLVED / UNKNOWN
+↓
+CHARACTER SYSTEM HANDOFF
+↓
+VALIDATED KNOWLEDGE CONTEXT
+↓
+NEXT PERIOD
+
+
+================================================================================
+31. KNOWLEDGE CHANGE REQUEST
+================================================================================
+
+Jika event mengharuskan perubahan Knowledge:
+
+DAILY UNIVERSE
+→ menentukan source event;
+→ menentukan temporal position;
+→ menentukan acquisition context;
+→ membuat handoff;
+
+CHARACTER SYSTEM
+→ memutuskan apakah Knowledge berubah dan bagaimana;
+
+DAILY UNIVERSE
+→ menggunakan result untuk continuity.
+
+
+================================================================================
+32. HANDOFF RESULT
+================================================================================
+
+Knowledge-related handoff dapat menghasilkan:
+
+APPLIED
+→ perubahan Knowledge benar-benar diterapkan.
+
+ACCEPTED
+→ request diterima tetapi belum diterapkan.
+
+REJECTED
+→ perubahan ditolak.
+
+BLOCKED
+→ dependency atau aturan menghalangi.
+
+REQUIRES_INPUT
+→ informasi tambahan diperlukan.
+
+UNRESOLVED
+→ hasil belum dapat ditentukan.
+
+UNKNOWN
+→ hasil belum diketahui.
+
+
+================================================================================
+33. EFFECTIVE TIME
+================================================================================
+
+Effective Time menunjukkan kapan perubahan Knowledge mulai berlaku.
+
+Effective Time tidak otomatis sama dengan:
+
+- source time;
+- acquisition request time;
+- processing time;
+- story writing time.
+
+Jika Character memperoleh informasi pada waktu tertentu, Knowledge tidak boleh
+diposisikan lebih awal tanpa dasar.
+
+
+================================================================================
+34. KNOWLEDGE HISTORY
+================================================================================
+
+History harus dapat mempertahankan perubahan penting:
+
+- acquisition;
+- correction;
+- loss;
+- invalidation;
+- revision;
+- new source;
+- transition.
+
+Current Knowledge tidak boleh menghapus history yang relevan.
+
+
+================================================================================
+35. KNOWLEDGE VALIDITY
+================================================================================
+
+Knowledge dapat memiliki status temporal yang berbeda dari factual truth.
+
+Character dapat mengetahui sesuatu yang:
+
+- benar;
+- salah;
+- outdated;
+- uncertain;
+- reported;
+- hypothetical.
+
+Factual truth tetap mengikuti Universe Canon.
+
+Character Knowledge tetap mengikuti Character System.
+
+
+================================================================================
+36. NARRATIVE SEPARATION
+================================================================================
+
+Narrator dapat memperlihatkan informasi kepada pembaca tanpa memberikan
+informasi tersebut kepada Character.
+
+Flashback tidak memberikan Knowledge baru secara otomatis.
+
+Flash-forward tidak memberikan Knowledge masa kini secara otomatis.
+
+Narrative disclosure tidak sama dengan acquisition.
+
+
+================================================================================
+37. NO STORY-BASED KNOWLEDGE
+================================================================================
+
+Character tidak boleh memperoleh Knowledge hanya karena:
+
+- cerita membutuhkan Character mengetahui sesuatu;
+- scene akan lebih mudah;
+- dialog membutuhkan jawaban;
+- plot membutuhkan keputusan;
+- pembaca sudah mengetahui informasi;
+- narrator ingin mempercepat cerita.
+
+Knowledge acquisition harus mempunyai dasar yang sah.
+
+
+================================================================================
+38. NO KNOWLEDGE LEAK
+================================================================================
+
+Knowledge tidak boleh bocor antar-Character tanpa mekanisme transmission atau
+acquisition yang sah.
+
+Keberadaan information dalam Universe tidak berarti semua Character mengetahui
+informasi tersebut.
+
+
+================================================================================
+39. NO RETROACTIVE LEAK
+================================================================================
+
+Informasi yang diketahui Character pada waktu tertentu tidak boleh dianggap
+telah diketahui Character pada waktu sebelumnya tanpa dasar.
+
+Flashback narration tidak boleh menciptakan retroactive Knowledge.
+
+
+================================================================================
+40. UNKNOWN KNOWLEDGE
+================================================================================
+
+Jika system tidak dapat menentukan apakah Character mengetahui suatu informasi,
+status harus tetap Unknown.
+
+Unknown tidak boleh dipaksa menjadi:
+
+- known;
+- unknown-to-character;
+- acquired;
+- remembered;
+
+tanpa dasar.
+
+
+================================================================================
+41. CONFLICT DETECTION
+================================================================================
+
+Knowledge Carryover harus dapat mendeteksi:
+
+- acquisition before source;
+- acquisition before availability;
+- duplicate acquisition;
+- impossible transmission;
+- knowledge leakage;
+- temporal conflict;
+- Character identity mismatch;
+- contradictory domain result;
+- invalid effective time.
+
+
+================================================================================
+42. CONFLICT HANDLING
+================================================================================
+
+Jika ditemukan conflict:
+
+1. identifikasi Character;
+2. identifikasi Knowledge reference;
+3. identifikasi source;
+4. identifikasi acquisition time;
+5. pertahankan last valid Knowledge state;
+6. arahkan kepada Character System atau Temporal Validation.
+
+Tidak boleh dilakukan silent repair.
+
+
+================================================================================
+43. DOMAIN OWNERSHIP PRESERVATION
+================================================================================
+
+Daily Universe tidak boleh:
+
+- membuat Knowledge definition kedua;
+- membuat Character Knowledge database kedua;
+- menetapkan Knowledge secara langsung;
+- menghapus Knowledge secara langsung;
+- mengubah Knowledge hanya untuk kebutuhan cerita;
+- membuat Knowledge shared secara otomatis antar-Character.
+
+
+================================================================================
+44. DAILY STORY INDEPENDENCE
+================================================================================
+
+Daily Story tidak menentukan apa yang diketahui Character.
+
+Daily Story hanya menggunakan Knowledge Context yang tersedia secara sah.
+
+Tidak dibahas dalam cerita tidak berarti Character melupakan Knowledge.
+
+
+================================================================================
+45. NARRATOR INDEPENDENCE
+================================================================================
+
+Narrator tidak boleh:
+
+- memberikan Character pengetahuan yang belum diperoleh;
+- menghapus Knowledge agar dialog lebih menarik;
+- membuat Character mengetahui informasi hanya karena pembaca mengetahuinya;
+- mempercepat acquisition hanya demi pacing.
+
+
+================================================================================
+46. VALIDATION
+================================================================================
+
+Knowledge Carryover harus divalidasi terhadap:
+
+- Character System;
+- Character identity;
+- Knowledge reference;
+- Universe Time;
+- source;
+- source time;
+- availability;
+- acquisition;
+- effective time;
+- event;
+- communication;
+- domain result;
+- temporal consistency.
+
+
+================================================================================
+47. VALIDATION RESULT
+================================================================================
+
+VALID
+→ Knowledge continuity sah.
+
+REVIEW_REQUIRED
+→ terdapat uncertainty yang belum menghalangi proses.
+
+REVISION_REQUIRED
+→ acquisition atau transition membutuhkan koreksi.
+
+BLOCKED
+→ Knowledge continuity tidak dapat diteruskan secara sah.
+
+
+================================================================================
+48. FAILURE PRINCIPLE
+================================================================================
+
+Jika Knowledge Carryover gagal, system tidak boleh:
+
+- memberi Knowledge baru;
+- menghapus Knowledge lama;
+- memindahkan acquisition time;
+- menganggap report sebagai fact;
+- menganggap memory sebagai history;
+- membocorkan Knowledge antar-Character;
+- memilih hasil yang paling nyaman untuk cerita.
+
+Pertahankan keadaan Knowledge terakhir yang sah.
+
+
+================================================================================
+49. FINAL PRINCIPLE
+================================================================================
+
+KNOWLEDGE CARRYOVER BUKAN:
+
+MEMBUAT CHARACTER MENGETAHUI SESUATU SETIAP HARI.
+
+KNOWLEDGE CARRYOVER ADALAH:
+
+MEMASTIKAN INFORMASI YANG SUDAH DIPEROLEH
+TETAP MEMPUNYAI POSISI TEMPORAL YANG BENAR
+DAN TIDAK MUNCUL SEBELUM WAKTUNYA.
+
+CHARACTER SYSTEM MENENTUKAN:
+
+APA YANG DIKETAHUI CHARACTER.
+
+DAILY UNIVERSE MENJAGA:
+
+KAPAN INFORMASI TERSEDIA,
+KAPAN INFORMASI DAPAT DIPEROLEH,
+DAN BAGAIMANA PERUBAHAN KNOWLEDGE BERLANJUT MELALUI WAKTU.
+
+
+================================================================================
+END OF KNOWLEDGE CARRYOVER
+================================================================================
