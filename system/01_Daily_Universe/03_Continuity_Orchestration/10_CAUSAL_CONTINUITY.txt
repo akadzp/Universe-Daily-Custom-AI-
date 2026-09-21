@@ -1,0 +1,887 @@
+================================================================================
+CAUSAL CONTINUITY
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / CONTINUITY ORCHESTRATION
+ROLE : TEMPORAL CAUSAL ORCHESTRATION
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Causal Continuity adalah mekanisme untuk menjaga agar hubungan sebab-akibat
+dalam Universe tetap terhubung melalui waktu.
+
+Causal Continuity memastikan bahwa:
+
+- suatu consequence memiliki dasar;
+- suatu event tidak bergantung pada hasil yang belum dapat terjadi;
+- perubahan tetap mempunyai hubungan dengan source;
+- dependency lintas periode tetap dapat ditelusuri;
+- consequence yang tertunda tidak kehilangan source;
+- chain of events tetap konsisten;
+- perubahan lintas domain tidak kehilangan hubungan causal.
+
+Causal Continuity tidak mendefinisikan isi Character, Relationship, Object,
+Knowledge, State, Location, atau domain lain.
+
+Causal Continuity hanya mengorkestrasi hubungan temporal dan causal.
+
+
+================================================================================
+02. CORE PRINCIPLE
+================================================================================
+
+CAUSAL CONTINUITY berarti:
+
+SESUATU YANG TERJADI
+→ mempunyai dasar yang dapat ditelusuri
+→ menghasilkan perubahan atau consequence
+→ perubahan tersebut tetap terhubung dengan source
+→ hubungan tersebut dapat diteruskan melalui waktu.
+
+Tidak semua event membutuhkan satu penyebab tunggal.
+
+Tidak semua consequence terjadi langsung.
+
+Namun setiap hubungan causal yang dinyatakan oleh Universe harus mempunyai
+dasar yang dapat ditelusuri.
+
+
+================================================================================
+03. CAUSAL SOURCE
+================================================================================
+
+Causal Source adalah event, condition, process, state transition, atau
+mekanisme lain yang menjadi dasar terjadinya suatu perubahan.
+
+Source harus dapat dibedakan dari:
+
+- consequence;
+- narrative presentation;
+- character belief;
+- prediction;
+- possibility;
+- hypothesis;
+- plan.
+
+Narative need bukan causal source.
+
+
+================================================================================
+04. CAUSAL TARGET
+================================================================================
+
+Causal Target adalah event, transition, consequence, atau perubahan yang
+dihubungkan kepada source.
+
+Target harus dapat ditelusuri kembali kepada source apabila hubungan causal
+tersebut relevan terhadap continuity.
+
+
+================================================================================
+05. CAUSAL LINK
+================================================================================
+
+Causal Link menghubungkan:
+
+SOURCE
+↓
+CAUSAL RELATION
+↓
+TARGET
+
+Causal Link harus mempertahankan:
+
+- source identity;
+- target identity;
+- temporal position;
+- dependency;
+- causal status.
+
+
+================================================================================
+06. CAUSAL ORDER
+================================================================================
+
+Jika source harus terjadi sebelum target, maka:
+
+SOURCE TIME
+≤
+TARGET TIME
+
+Urutan yang tepat bergantung pada jenis hubungan causal.
+
+Causal order tidak boleh dilanggar hanya karena narrative order berbeda.
+
+
+================================================================================
+07. TEMPORAL POSSIBILITY
+================================================================================
+
+Sebelum sebuah causal relation diproses, system harus memastikan bahwa
+hubungan tersebut secara temporal memungkinkan.
+
+Jika target memerlukan source yang belum terjadi, target tidak boleh dianggap
+telah terjadi kecuali Universe memiliki mekanisme yang secara sah
+mengizinkannya.
+
+
+================================================================================
+08. DIRECT CAUSATION
+================================================================================
+
+Direct Causation menunjukkan hubungan ketika satu source secara langsung
+menghasilkan target menurut aturan Universe.
+
+Directness harus mempunyai dasar.
+
+Kedekatan waktu saja tidak cukup untuk menentukan bahwa hubungan causal adalah
+direct.
+
+
+================================================================================
+09. INDIRECT CAUSATION
+================================================================================
+
+Satu event dapat menjadi penyebab melalui beberapa perantara.
+
+Struktur dapat berupa:
+
+SOURCE
+↓
+INTERMEDIATE EVENT
+↓
+INTERMEDIATE CONSEQUENCE
+↓
+TARGET
+
+Setiap tahap harus mempunyai identity dan temporal position sendiri.
+
+System tidak boleh menghapus intermediate step jika step tersebut diperlukan
+untuk memahami continuity.
+
+
+================================================================================
+10. CONDITIONAL CAUSATION
+================================================================================
+
+Suatu target dapat bergantung pada condition tertentu.
+
+Struktur:
+
+SOURCE
+↓
+CONDITION
+↓
+TARGET
+
+Jika condition:
+
+TRUE
+→ target dapat diproses.
+
+FALSE
+→ target tidak terjadi melalui causal path tersebut.
+
+UNKNOWN
+→ target tidak boleh dipaksakan menjadi Actual.
+
+
+================================================================================
+11. MULTIPLE CAUSES
+================================================================================
+
+Satu target dapat bergantung pada beberapa source.
+
+Semua source yang diwajibkan harus dapat dipenuhi sesuai causal rule.
+
+Jika salah satu mandatory source belum tersedia, target tidak boleh diproses
+sebagai Actual.
+
+
+================================================================================
+12. ALTERNATIVE CAUSES
+================================================================================
+
+Satu target dapat mempunyai beberapa possible causal paths.
+
+Kemungkinan causal path tidak berarti seluruh path benar-benar terjadi.
+
+Hanya path yang didukung event dan kondisi aktual yang menjadi bagian dari
+Actual history.
+
+
+================================================================================
+13. CAUSAL DEPENDENCY
+================================================================================
+
+Causal dependency harus dapat dibedakan dari temporal coincidence.
+
+Dua event dapat terjadi berdekatan tanpa hubungan causal.
+
+Kesamaan waktu atau lokasi tidak otomatis membuat causal relationship.
+
+
+================================================================================
+14. CORRELATION VS CAUSATION
+================================================================================
+
+Daily Universe tidak boleh menganggap dua event memiliki hubungan sebab-akibat
+hanya karena:
+
+- terjadi pada waktu yang sama;
+- terjadi pada lokasi yang sama;
+- melibatkan actor yang sama;
+- muncul dalam Daily Story yang sama;
+- ditulis berurutan oleh Narrator.
+
+Causal relation harus mempunyai dasar yang sah.
+
+
+================================================================================
+15. CONSEQUENCE DELAY
+================================================================================
+
+Consequence dapat terjadi setelah source dengan jeda waktu.
+
+Hubungan causal harus tetap dipertahankan walaupun:
+
+- hari berganti;
+- bulan berganti;
+- Daily Story berbeda;
+- source tidak lagi menjadi focus;
+- consequence baru terlihat kemudian.
+
+Causal delay tidak memutus causal continuity.
+
+
+================================================================================
+16. CROSS-PERIOD CAUSATION
+================================================================================
+
+Source pada satu periode dapat menghasilkan target pada periode berikutnya.
+
+Pola:
+
+PERIOD N
+SOURCE
+↓
+CONDITION / PROCESS
+↓
+PERIOD N+1
+TARGET
+
+Daily Universe harus mempertahankan source reference dan causal link sepanjang
+periode tersebut.
+
+
+================================================================================
+17. CROSS-STORY CAUSATION
+================================================================================
+
+Source dan target dapat muncul dalam Daily Story yang berbeda.
+
+Ketiadaan source dari Daily Story target tidak berarti hubungan causal hilang.
+
+Daily Story hanya merupakan representasi sebagian dari Universe.
+
+
+================================================================================
+18. CROSS-DOMAIN CAUSATION
+================================================================================
+
+Source pada satu domain dapat menghasilkan perubahan pada domain lain.
+
+Contoh struktur secara abstrak:
+
+EVENT
+↓
+DOMAIN IMPACT
+↓
+DOMAIN HANDOFF
+↓
+DOMAIN RESULT
+↓
+CONSEQUENCE
+
+Daily Universe menjaga causal orchestration.
+
+Domain owner tetap menentukan isi perubahan domain.
+
+
+================================================================================
+19. CHARACTER CAUSATION
+================================================================================
+
+Jika Character menjadi source atau target:
+
+Character System tetap menjadi owner Character data.
+
+Daily Universe hanya mengatur:
+
+- event time;
+- causal relationship;
+- dependency;
+- handoff;
+- continuity.
+
+Daily Universe tidak menetapkan personality, behavior, Knowledge, State, atau
+atribut Character untuk memenuhi causal chain.
+
+
+================================================================================
+20. RELATIONSHIP CAUSATION
+================================================================================
+
+Jika Relationship menjadi source atau target:
+
+Relationship System tetap menjadi owner Relationship.
+
+Daily Universe mengatur temporal causal link dan handoff.
+
+
+================================================================================
+21. OBJECT CAUSATION
+================================================================================
+
+Jika Object menjadi source atau target:
+
+Object System tetap menjadi owner Object.
+
+Daily Universe menjaga causal position dan handoff.
+
+
+================================================================================
+22. KNOWLEDGE CAUSATION
+================================================================================
+
+Jika event menyebabkan Character memperoleh Knowledge:
+
+EVENT
+↓
+INFORMATION AVAILABILITY
+↓
+ACQUISITION
+↓
+KNOWLEDGE RESULT
+
+Daily Universe menjaga temporal sequence.
+
+Character System menentukan apakah acquisition benar-benar menghasilkan
+Knowledge.
+
+
+================================================================================
+23. STATE CAUSATION
+================================================================================
+
+Jika event menyebabkan State change:
+
+EVENT / CONDITION
+↓
+STATE CHANGE REQUEST
+↓
+DOMAIN OWNER
+↓
+VALIDATED STATE
+↓
+CURRENT TEMPORAL CONTEXT
+
+Daily Universe tidak menentukan nilai State.
+
+
+================================================================================
+24. LOCATION CAUSATION
+================================================================================
+
+Jika event menyebabkan perubahan Location:
+
+SOURCE EVENT
+↓
+MOVEMENT / TRANSITION
+↓
+LOCATION RESULT
+
+Location result tetap mengikuti owner domain terkait.
+
+
+================================================================================
+25. PROCESS CAUSATION
+================================================================================
+
+Event atau consequence dapat:
+
+- memulai Process;
+- melanjutkan Process;
+- menginterupsi Process;
+- menghentikan Process;
+- mengubah dependency Process.
+
+Process tetap mempunyai identity sendiri.
+
+Causal relation tidak menggantikan Process identity.
+
+
+================================================================================
+26. CAUSAL CHAIN
+================================================================================
+
+Causal chain adalah rangkaian hubungan:
+
+A
+↓
+B
+↓
+C
+↓
+D
+
+Setiap hubungan harus dapat ditelusuri.
+
+Jika salah satu link tidak mempunyai dasar, chain tidak boleh diperlakukan
+sebagai seluruh chain yang valid.
+
+
+================================================================================
+27. CAUSAL TREE
+================================================================================
+
+Satu source dapat menghasilkan beberapa branch:
+
+SOURCE
+├── CONSEQUENCE A
+├── CONSEQUENCE B
+└── CONSEQUENCE C
+
+Setiap branch mempunyai status dan temporal progression sendiri.
+
+Satu branch yang gagal tidak otomatis membatalkan branch lain kecuali memang
+terdapat dependency bersama.
+
+
+================================================================================
+28. CAUSAL MERGE
+================================================================================
+
+Beberapa causal path dapat bertemu pada satu target.
+
+System harus mempertahankan seluruh source yang memang diperlukan.
+
+Penggabungan causal path tidak boleh menghapus identity source.
+
+
+================================================================================
+29. CAUSAL LOOP
+================================================================================
+
+Causal loop adalah hubungan ketika suatu event secara langsung atau tidak
+langsung menjadi penyebab dirinya sendiri.
+
+Causal loop tidak boleh diterima secara otomatis.
+
+Jika Universe memang memiliki mekanisme yang secara eksplisit memungkinkan
+causal loop, mekanisme tersebut harus mendefinisikan cara validasinya.
+
+Tanpa mekanisme tersebut, causal loop harus dianggap sebagai potential causal
+conflict.
+
+
+================================================================================
+30. RETROACTIVE CAUSATION
+================================================================================
+
+Daily Universe tidak boleh membuat cause pada masa lalu hanya karena target
+masa kini atau masa depan membutuhkannya.
+
+Pola berikut tidak boleh dibuat secara diam-diam:
+
+TARGET EXISTS
+↓
+CREATE PAST SOURCE
+↓
+JUSTIFY TARGET
+
+Source harus sudah memiliki dasar temporal yang sah.
+
+
+================================================================================
+31. CAUSAL GAP
+================================================================================
+
+Causal Gap terjadi ketika target mempunyai consequence atau perubahan tetapi
+source yang diperlukan tidak dapat ditemukan.
+
+Causal Gap harus diklasifikasikan sebagai:
+
+- UNKNOWN;
+- UNRESOLVED;
+- CONFLICT;
+- BLOCKED;
+
+sesuai kondisi.
+
+
+================================================================================
+32. CAUSAL GAP HANDLING
+================================================================================
+
+Jika Causal Gap ditemukan, system tidak boleh:
+
+- menciptakan source;
+- mengarang event;
+- memindahkan event;
+- mengubah history;
+- memilih penyebab paling masuk akal sebagai fakta.
+
+System harus mempertahankan gap dan mengarahkan proses ke validation atau
+domain owner yang berwenang.
+
+
+================================================================================
+33. NEGATIVE CAUSATION
+================================================================================
+
+Tidak terjadinya suatu event dapat mempunyai dampak apabila Universe memiliki
+dasar yang menghubungkan absence tersebut dengan consequence.
+
+Namun:
+
+“event tidak terjadi”
+
+tidak otomatis menjadi causal source.
+
+Causal relation terhadap absence harus mempunyai dasar yang sah.
+
+
+================================================================================
+34. CAUSAL PRECONDITION
+================================================================================
+
+Precondition harus dibedakan dari cause.
+
+PRECONDITION
+→ kondisi yang harus tersedia agar event dapat terjadi.
+
+CAUSE
+→ sesuatu yang menghasilkan atau memicu event.
+
+Satu kondisi dapat menjadi precondition tanpa menjadi direct cause.
+
+
+================================================================================
+35. INTENTION VS CAUSE
+================================================================================
+
+Intention tidak otomatis menjadi cause.
+
+Plan tidak otomatis menjadi cause.
+
+Prediction tidak otomatis menjadi cause.
+
+Actual action, condition, atau event yang benar-benar menghasilkan perubahan
+yang menjadi causal source harus dibedakan dari niat atau rencana.
+
+
+================================================================================
+36. DECISION VS CAUSE
+================================================================================
+
+Decision dapat menjadi causal source hanya apabila decision tersebut benar-
+benar menghasilkan action atau transition yang memiliki dampak.
+
+Decision yang tidak pernah dijalankan tidak boleh diperlakukan sebagai
+Actual Event hanya karena telah dibuat.
+
+
+================================================================================
+37. NARRATIVE CAUSALITY
+================================================================================
+
+Narasi dapat menyajikan consequence sebelum cause.
+
+Namun Universe tetap mempertahankan causal order sebenarnya.
+
+Narrative order tidak menjadi causal source.
+
+Narrative emphasis tidak mengubah causal relationship.
+
+
+================================================================================
+38. READER INFERENCE
+================================================================================
+
+Kesimpulan pembaca tidak menjadi causal fact Universe.
+
+Narrator tidak boleh mengubah sebuah kemungkinan causal relation menjadi
+Canon hanya karena hubungan tersebut terlihat logis dari teks.
+
+
+================================================================================
+39. CHARACTER INFERENCE
+================================================================================
+
+Inference Character tidak otomatis menjadi causal truth.
+
+Character dapat mengira bahwa A menyebabkan B.
+
+Universe harus tetap mempertahankan perbedaan antara:
+
+- Character belief;
+- actual causal relation;
+- unknown causality.
+
+
+================================================================================
+40. PREDICTION AND CAUSATION
+================================================================================
+
+Prediction mengenai suatu event tidak menyebabkan event tersebut terjadi.
+
+Prediction hanya menjadi informasi mengenai future.
+
+Jika event kemudian terjadi, causal relation harus ditentukan berdasarkan
+kejadian sebenarnya.
+
+
+================================================================================
+41. POSSIBILITY AND CAUSATION
+================================================================================
+
+Possibility dapat memiliki causal path sebagai kemungkinan.
+
+Namun possible causal path tidak menjadi actual causal history sebelum
+kejadian dan condition yang diperlukan benar-benar terjadi.
+
+
+================================================================================
+42. CAUSAL STATUS
+================================================================================
+
+Causal relation dapat memiliki status:
+
+VALID
+→ hubungan causal didukung.
+
+PENDING
+→ dependency belum lengkap.
+
+UNRESOLVED
+→ hubungan belum dapat dipastikan.
+
+REJECTED
+→ hubungan tidak berlaku.
+
+CONFLICT
+→ hubungan bertentangan dengan data atau aturan sah.
+
+UNKNOWN
+→ informasi terlalu terbatas.
+
+
+================================================================================
+43. CAUSAL HISTORY
+================================================================================
+
+Causal history harus dapat menelusuri:
+
+- source;
+- target;
+- causal link;
+- temporal position;
+- dependency;
+- intermediate steps;
+- domain handoff;
+- consequence;
+- resolution.
+
+History causal tidak boleh dihapus hanya karena target telah selesai.
+
+
+================================================================================
+44. CAUSAL REVISION
+================================================================================
+
+Jika causal relation perlu direvisi:
+
+- relation lama tetap tercatat;
+- source revision harus tersedia;
+- effective time revision harus jelas;
+- downstream impact harus diperiksa;
+- related consequence harus divalidasi ulang.
+
+Revision bukan penghapusan history.
+
+
+================================================================================
+45. CAUSAL CONFLICT
+================================================================================
+
+Causal Conflict dapat berupa:
+
+- target before mandatory source;
+- source missing;
+- contradictory source;
+- circular causality;
+- impossible dependency;
+- invalid domain handoff;
+- contradictory result;
+- incompatible temporal position.
+
+
+================================================================================
+46. CONFLICT ROUTING
+================================================================================
+
+Jika conflict berkaitan dengan:
+
+TEMPORAL ORDER
+→ Temporal Consistency.
+
+DOMAIN RULE
+→ domain owner.
+
+CAUSAL STRUCTURE
+→ Causal Continuity.
+
+ARCHITECTURAL OWNERSHIP
+→ architecture-level resolution.
+
+Daily Universe tidak boleh mengambil alih domain owner untuk memperbaiki
+conflict.
+
+
+================================================================================
+47. CROSS-PERIOD VALIDATION
+================================================================================
+
+Causal relation yang melintasi periode harus diperiksa terhadap:
+
+- source period;
+- target period;
+- temporal order;
+- consequence;
+- ongoing process;
+- continuity carryover;
+- domain result.
+
+
+================================================================================
+48. CROSS-STORY VALIDATION
+================================================================================
+
+Causal relation yang melintasi Daily Story harus tetap valid meskipun:
+
+- source tidak diceritakan;
+- consequence diceritakan terlebih dahulu;
+- kedua event berada dalam file berbeda;
+- kedua event berada pada tanggal berbeda.
+
+
+================================================================================
+49. NO STORY-DRIVEN CAUSALITY
+================================================================================
+
+Daily Universe tidak boleh membuat causal relation hanya karena:
+
+- cerita membutuhkan penjelasan;
+- plot membutuhkan alasan;
+- narrator membutuhkan motivation;
+- story membutuhkan conflict;
+- ending membutuhkan cause.
+
+Causal relation harus berasal dari Universe yang sah.
+
+
+================================================================================
+50. VALIDATION
+================================================================================
+
+Causal Continuity harus divalidasi terhadap:
+
+- Universe Time;
+- Temporal Status;
+- Event identity;
+- Event occurrence;
+- source;
+- target;
+- dependency;
+- consequence;
+- domain handoff;
+- continuity;
+- history;
+- causal order.
+
+
+================================================================================
+51. VALIDATION RESULT
+================================================================================
+
+VALID
+→ causal continuity dapat digunakan.
+
+REVIEW_REQUIRED
+→ terdapat uncertainty yang belum menghalangi proses.
+
+REVISION_REQUIRED
+→ causal structure perlu diperbaiki.
+
+BLOCKED
+→ hubungan causal tidak dapat digunakan secara sah.
+
+
+================================================================================
+52. FAILURE PRINCIPLE
+================================================================================
+
+Jika causal continuity gagal, system tidak boleh:
+
+- menciptakan source;
+- menciptakan target;
+- mengubah event time;
+- menghapus dependency;
+- mengubah domain;
+- mengubah history;
+- memilih penyebab yang paling nyaman untuk cerita.
+
+System harus mempertahankan keadaan terakhir yang sah dan status conflict.
+
+
+================================================================================
+53. FINAL PRINCIPLE
+================================================================================
+
+CAUSAL CONTINUITY MENJAGA:
+
+APA YANG TERJADI
+        ↓
+MENGAPA PERUBAHAN TERJADI
+        ↓
+APA YANG DIHASILKAN
+        ↓
+KAPAN HASIL TERSEBUT TERJADI
+        ↓
+APA YANG BERLANJUT KE PERIODE BERIKUTNYA.
+
+Causal relation harus mengikuti Universe.
+
+Narrative order tidak menciptakan causality.
+
+Character belief tidak menciptakan causality.
+
+Prediction tidak menciptakan causality.
+
+Possibility tidak menciptakan causality.
+
+Daily Universe menjaga hubungan sebab-akibat,
+sementara system owner tetap menjaga domain masing-masing.
+
+
+================================================================================
+END OF CAUSAL CONTINUITY
+================================================================================
