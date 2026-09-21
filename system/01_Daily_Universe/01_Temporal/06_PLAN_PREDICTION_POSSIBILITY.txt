@@ -1,0 +1,659 @@
+================================================================================
+PLAN / PREDICTION / POSSIBILITY
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / TEMPORAL DOMAIN
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+File ini mengatur perlakuan temporal terhadap:
+
+- PLAN;
+- PREDICTION;
+- POSSIBILITY.
+
+Ketiganya berkaitan dengan keadaan atau kejadian yang belum dapat diperlakukan
+sebagai Actual Future Event.
+
+Ketiganya harus tetap dibedakan karena mempunyai makna dan tingkat kepastian
+yang berbeda.
+
+File ini menjaga agar rencana, perkiraan, dan kemungkinan tidak berubah menjadi
+Canon hanya karena telah muncul dalam cerita atau telah direncanakan oleh
+Character.
+
+
+================================================================================
+02. CORE PRINCIPLE
+================================================================================
+
+Future Position tidak berarti Future Actual.
+
+Suatu informasi mengenai masa depan dapat berstatus:
+
+- Plan;
+- Prediction;
+- Possibility;
+- Hypothesis;
+- Imagination;
+- Unknown.
+
+Plan, Prediction, dan Possibility mempunyai aturan berbeda dan tidak boleh
+dipertukarkan.
+
+
+================================================================================
+03. PLAN
+================================================================================
+
+PLAN adalah representasi mengenai tindakan, aktivitas, atau kejadian yang
+telah dimaksudkan atau direncanakan untuk dilakukan pada waktu mendatang.
+
+Plan menunjukkan intent atau preparation.
+
+Plan bukan bukti bahwa event akan terjadi.
+
+Plan bukan event aktual.
+
+Plan bukan jaminan terhadap future.
+
+
+================================================================================
+04. PLAN COMPONENT
+================================================================================
+
+Plan dapat memiliki komponen:
+
+- planned action;
+- intended subject;
+- intended time;
+- intended location;
+- intended objective;
+- preparation;
+- dependency;
+- expected outcome.
+
+Komponen yang belum diketahui harus tetap unknown.
+
+Sistem tidak boleh melengkapi komponen Plan dengan asumsi.
+
+
+================================================================================
+05. PLAN AND INTENTION
+================================================================================
+
+Plan dapat berhubungan dengan intention.
+
+Namun intention dan Plan tidak selalu identik.
+
+Intention menunjukkan kehendak untuk melakukan sesuatu.
+
+Plan menunjukkan bahwa terdapat struktur atau pengaturan yang lebih konkret
+terhadap kehendak tersebut.
+
+Kedua istilah tidak boleh disamakan secara otomatis.
+
+
+================================================================================
+06. PLAN AND ACTUAL EVENT
+================================================================================
+
+Plan tidak menjadi Actual Event hanya karena:
+
+- dibuat;
+- dicatat;
+- diumumkan;
+- disampaikan;
+- diketahui Character;
+- ditampilkan dalam cerita;
+- digunakan sebagai Story Design.
+
+Plan menjadi terlaksana hanya apabila terdapat event aktual yang benar-benar
+terjadi sesuai mekanisme Universe.
+
+
+================================================================================
+07. PLAN CANCELLATION
+================================================================================
+
+Plan dapat:
+
+- tetap aktif;
+- diubah;
+- ditunda;
+- dibatalkan;
+- gagal;
+- digantikan;
+- terlaksana sebagian;
+- terlaksana sepenuhnya.
+
+Perubahan status Plan harus dapat ditelusuri.
+
+Pembatalan Plan tidak menghasilkan Actual Event.
+
+
+================================================================================
+08. PLAN ACTUALIZATION
+================================================================================
+
+Ketika tindakan yang direncanakan benar-benar terjadi, Actual Event harus
+mempunyai identitas temporal sendiri.
+
+Hubungan antara Plan dan Actual Event harus dapat ditelusuri.
+
+Plan tetap menjadi history sebagai Plan yang pernah ada.
+
+Plan tidak boleh dihapus hanya karena telah terlaksana.
+
+
+================================================================================
+09. PREDICTION
+================================================================================
+
+PREDICTION adalah informasi mengenai sesuatu yang diperkirakan akan terjadi
+berdasarkan data, pengetahuan, pola, atau penalaran tertentu.
+
+Prediction bukan jaminan.
+
+Prediction bukan Plan.
+
+Prediction bukan Actual Future Event.
+
+
+================================================================================
+10. PREDICTION BASIS
+================================================================================
+
+Prediction dapat mempunyai basis.
+
+Basis dapat berupa:
+
+- observed condition;
+- available knowledge;
+- historical pattern;
+- current state;
+- causal reasoning;
+- external report;
+- Character inference.
+
+Basis Prediction tidak otomatis membuat Prediction benar.
+
+Prediction tetap harus mempertahankan statusnya sebagai Prediction sampai hasil
+aktual dapat diverifikasi.
+
+
+================================================================================
+11. PREDICTION ACCURACY
+================================================================================
+
+Prediction dapat:
+
+- benar;
+- salah;
+- sebagian benar;
+- tidak dapat diverifikasi;
+- menjadi tidak relevan;
+- menjadi tidak terlaksana karena kondisi berubah.
+
+Kesalahan Prediction tidak mengubah Universe menjadi inkonsisten.
+
+Yang menjadi Canon adalah apa yang benar-benar terjadi, bukan apa yang pernah
+diprediksi.
+
+
+================================================================================
+12. PREDICTION VS PLAN
+================================================================================
+
+PLAN menjawab:
+
+“Apa yang akan atau ingin dilakukan?”
+
+PREDICTION menjawab:
+
+“Apa yang diperkirakan akan terjadi?”
+
+Satu informasi dapat berhubungan dengan keduanya hanya apabila masing-masing
+status tetap dapat dibedakan.
+
+Plan tidak menjadi Prediction hanya karena seseorang memperkirakan Plan akan
+berhasil.
+
+Prediction tidak menjadi Plan hanya karena seseorang berniat membuatnya
+terjadi.
+
+
+================================================================================
+13. POSSIBILITY
+================================================================================
+
+POSSIBILITY adalah status bahwa suatu keadaan atau kejadian dapat terjadi
+tanpa ditetapkan sebagai sesuatu yang akan atau pasti terjadi.
+
+Possibility menunjukkan ruang kemungkinan.
+
+Possibility tidak menyatakan intent.
+
+Possibility tidak menyatakan prediksi.
+
+Possibility tidak menyatakan actuality.
+
+
+================================================================================
+14. POSSIBILITY CONDITIONS
+================================================================================
+
+Possibility dapat bergantung pada:
+
+- kondisi tertentu;
+- keputusan tertentu;
+- event lain;
+- perubahan state;
+- unresolved condition;
+- pilihan Character;
+- faktor temporal.
+
+Jika kondisi yang membuat possibility tersedia berubah, status possibility dapat
+berubah.
+
+Perubahan tersebut harus dapat ditelusuri.
+
+
+================================================================================
+15. POSSIBILITY BRANCH
+================================================================================
+
+Universe dapat memiliki lebih dari satu possible future tanpa berarti semua
+future tersebut merupakan Canon.
+
+Possibility branch adalah representasi ruang kemungkinan.
+
+Branch tidak menjadi bagian dari sejarah aktual hanya karena pernah
+dipertimbangkan.
+
+
+================================================================================
+16. NO BRANCH BECOMES CANON BY EXISTENCE
+================================================================================
+
+Keberadaan sebuah possibility tidak membuatnya terjadi.
+
+Keberadaan banyak possibility tidak berarti Universe memiliki banyak history
+actual.
+
+Pada setiap actual timeline, hanya kejadian yang benar-benar terealisasi yang
+menjadi Actual Canon.
+
+Possibility lainnya tetap berstatus non-actual.
+
+
+================================================================================
+17. PLAN VS POSSIBILITY
+================================================================================
+
+PLAN menunjukkan intent terhadap future action.
+
+POSSIBILITY menunjukkan bahwa suatu future event masih mungkin terjadi.
+
+Plan dapat menjadi salah satu jalur menuju possibility atau actualization.
+
+Namun plan tidak menjamin possibility dan possibility tidak membutuhkan plan.
+
+
+================================================================================
+18. PREDICTION VS POSSIBILITY
+================================================================================
+
+PREDICTION menunjukkan hasil yang diperkirakan.
+
+POSSIBILITY menunjukkan hasil yang masih dapat terjadi.
+
+Sebuah event dapat diprediksi tanpa menjadi satu-satunya kemungkinan.
+
+Sebuah possibility dapat ada tanpa pernah diprediksi.
+
+
+================================================================================
+19. FUTURE ACTUALIZATION
+================================================================================
+
+Ketika Current Universe Time bergerak menuju suatu future position, Daily
+Universe mengevaluasi:
+
+- Plan yang aktif;
+- Prediction yang masih relevan;
+- Possibility yang masih terbuka;
+- event aktual yang benar-benar terjadi.
+
+Hasil evaluasi tidak boleh ditentukan hanya berdasarkan kebutuhan cerita.
+
+
+================================================================================
+20. ACTUALIZATION RULE
+================================================================================
+
+Hanya event yang benar-benar terjadi dalam Universe yang dapat memperoleh
+status Actual.
+
+Plan yang terlaksana menghasilkan Actual Event.
+
+Prediction yang terbukti benar mengacu pada Actual Event yang terjadi.
+
+Possibility yang terealisasi menjadi Actual Event.
+
+Plan, Prediction, dan Possibility tidak menjadi Actual hanya karena waktu yang
+diperkirakan akhirnya tiba.
+
+
+================================================================================
+21. FUTURE FAILURE
+================================================================================
+
+Future expectation dapat gagal.
+
+Jika:
+
+- Plan tidak terlaksana;
+- Prediction salah;
+- Possibility tidak terjadi;
+
+sistem tidak boleh memperbaiki history untuk membuat hasil sesuai expectation.
+
+Actual history mengikuti apa yang benar-benar terjadi.
+
+
+================================================================================
+22. TEMPORAL TRANSITION
+================================================================================
+
+Ketika Current Universe Time bergerak maju:
+
+FUTURE
+→ PRESENT
+→ PAST
+
+Namun perubahan posisi ini tidak otomatis menghasilkan Actual status.
+
+Plan yang berada pada Future dan mencapai Present tetap merupakan Plan sampai
+terdapat event aktual.
+
+Prediction yang mencapai Present tanpa kejadian aktual tidak menjadi fakta.
+
+Possibility yang mencapai Present tanpa terealisasi tetap tidak menjadi Actual.
+
+
+================================================================================
+23. PLAN DEPENDENCY
+================================================================================
+
+Plan dapat bergantung pada event, kondisi, Character, Relationship, Object,
+Location, atau domain lain.
+
+Dependency harus tetap mengikuti system owner masing-masing.
+
+Daily Universe mengatur posisi temporal dependency.
+
+Daily Universe tidak membuat aturan baru untuk domain dependency.
+
+
+================================================================================
+24. PREDICTION DEPENDENCY
+================================================================================
+
+Prediction dapat bergantung pada informasi yang berubah seiring waktu.
+
+Ketika basis Prediction berubah, Prediction dapat:
+
+- diperbarui;
+- kehilangan relevansi;
+- melemah;
+- menjadi lebih kuat;
+- dibatalkan;
+- terbukti salah;
+- terbukti benar melalui Actual Event.
+
+Perubahan basis tidak mengubah history Actual secara retroaktif.
+
+
+================================================================================
+25. POSSIBILITY DEPENDENCY
+================================================================================
+
+Possibility dapat terbuka atau tertutup karena perubahan kondisi.
+
+Penutupan possibility tidak menghasilkan Actual Event.
+
+Pembukaan possibility tidak berarti event akan terjadi.
+
+Possibility harus tetap dipisahkan dari timeline Actual.
+
+
+================================================================================
+26. CHARACTER RELATION
+================================================================================
+
+Character dapat:
+
+- membuat Plan;
+- memperkirakan Future;
+- mempertimbangkan Possibility.
+
+Namun isi mental dan Knowledge Character tetap mengikuti Character System.
+
+Daily Universe hanya menjaga posisi temporal serta status keberadaan informasi
+tersebut.
+
+Character belief tidak menentukan Actual Canon.
+
+
+================================================================================
+27. NARRATIVE RELATION
+================================================================================
+
+Narrator dapat menampilkan:
+
+- Plan;
+- Prediction;
+- Possibility.
+
+Namun cara penyajian tidak boleh menaikkan statusnya menjadi Actual.
+
+Bahasa narasi tidak boleh menghapus perbedaan antara:
+
+- intention;
+- expectation;
+- possibility;
+- prediction;
+- event.
+
+
+================================================================================
+28. NO FUTURE LEAK
+================================================================================
+
+Informasi mengenai Future tidak boleh berpindah menjadi fakta Present atau Past
+hanya karena telah diketahui pembaca lebih awal.
+
+Pengetahuan pembaca bukan perubahan Universe Time.
+
+Pengetahuan Character juga tidak otomatis mengubah Actuality.
+
+
+================================================================================
+29. NO RETROACTIVE ACTUALIZATION
+================================================================================
+
+Plan, Prediction, dan Possibility tidak boleh diubah menjadi Actual secara
+retroaktif hanya untuk mempertahankan kesesuaian dengan cerita.
+
+Actual Event harus ditentukan pada waktu ketika event tersebut benar-benar
+terjadi dalam Universe.
+
+
+================================================================================
+30. STATUS HISTORY
+================================================================================
+
+Perubahan status harus mempertahankan history.
+
+Contoh pola status secara konseptual:
+
+PLAN
+→ EXECUTED
+→ ACTUAL EVENT
+
+atau:
+
+PLAN
+→ CANCELLED
+
+atau:
+
+PREDICTION
+→ VERIFIED BY EVENT
+
+atau:
+
+PREDICTION
+→ FAILED
+
+atau:
+
+POSSIBILITY
+→ REALIZED
+
+atau:
+
+POSSIBILITY
+→ CLOSED
+
+Status sebelumnya harus tetap dapat ditelusuri.
+
+
+================================================================================
+31. UNKNOWN
+================================================================================
+
+Apabila sistem belum dapat menentukan apakah sebuah future condition:
+
+- planned;
+- predicted;
+- possible;
+- actual;
+- unknown;
+
+maka sistem harus mempertahankan UNKNOWN sampai terdapat dasar yang cukup.
+
+Tidak boleh memilih status berdasarkan cerita yang paling nyaman.
+
+
+================================================================================
+32. CROSS-SYSTEM OWNERSHIP
+================================================================================
+
+Daily Universe mengatur posisi temporal dan perjalanan status future.
+
+Daily Universe tidak mengambil alih:
+
+- Character intention;
+- Character Knowledge;
+- Character behavior;
+- Relationship rules;
+- Object rules;
+- Narrative rules.
+
+Domain owner masing-masing tetap berwenang terhadap isi domainnya.
+
+
+================================================================================
+33. VALIDATION
+================================================================================
+
+Plan, Prediction, dan Possibility harus divalidasi terhadap:
+
+- Universe Time;
+- Temporal Status;
+- Current Universe Time;
+- dependency;
+- causal order;
+- domain constraints;
+- actual event occurrence;
+- continuity.
+
+Validasi harus memastikan bahwa non-actual future information tidak mencemari
+Actual Canon.
+
+
+================================================================================
+34. FAILURE PRINCIPLE
+================================================================================
+
+Jika future information tidak dapat diklasifikasikan dengan cukup dasar,
+sistem harus mempertahankan UNKNOWN atau menghentikan proses yang memerlukan
+kepastian.
+
+Jika terjadi konflik antara future representation dan Actual Canon, Actual
+Canon tidak boleh diubah secara diam-diam.
+
+
+================================================================================
+35. RELATION TO OTHER TEMPORAL FILES
+================================================================================
+
+File ini mengatur:
+
+- Plan;
+- Prediction;
+- Possibility;
+- future actualization;
+- future failure;
+- status transition menuju actual event.
+
+File ini tidak mendefinisikan ulang:
+
+- Universe Time;
+- Narrative Time;
+- Past / Present / Future;
+- Temporal Status;
+- Memory;
+- Imagination;
+- Hypothesis;
+- Temporal Consistency.
+
+Detail tersebut berada pada file temporal lainnya.
+
+
+================================================================================
+36. FINAL PRINCIPLE
+================================================================================
+
+PLAN
+→ APA YANG DIRENCANAKAN.
+
+PREDICTION
+→ APA YANG DIPERKIRAKAN AKAN TERJADI.
+
+POSSIBILITY
+→ APA YANG MASIH MUNGKIN TERJADI.
+
+ACTUAL EVENT
+→ APA YANG BENAR-BENAR TERJADI.
+
+Ketiganya tidak boleh dipertukarkan.
+
+Masa depan tidak menjadi Canon hanya karena telah direncanakan, diprediksi,
+atau dianggap mungkin.
+
+Canon mengikuti kejadian aktual.
+
+
+================================================================================
+END OF PLAN / PREDICTION / POSSIBILITY
+================================================================================
