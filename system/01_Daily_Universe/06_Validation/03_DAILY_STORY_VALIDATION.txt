@@ -1,0 +1,1820 @@
+==================================================
+03_DAILY_STORY_VALIDATION
+
+STATUS
+
+System Rule
+
+OWNER
+
+Daily Universe
+Validation
+
+SCOPE
+
+File ini mengatur validasi terhadap Daily Story
+sebagai artefak produksi.
+
+Tujuannya adalah memastikan bahwa Daily Story:
+
+- memiliki production basis yang valid;
+- memiliki Story Date yang valid;
+- memiliki Story ID yang valid;
+- memiliki scope yang konsisten;
+- menggunakan temporal context yang benar;
+- menerima Universe context yang sesuai;
+- tidak melampaui boundary informasi yang tersedia;
+- tidak menghasilkan contradiction terhadap
+  Universe data;
+- tidak mengubah Canon secara diam-diam;
+- dapat diteruskan ke storage apabila
+  production dan validation telah selesai.
+
+File ini adalah validation layer.
+
+File ini tidak menjadi pemilik:
+
+- Universe Time;
+- Character;
+- Relationship;
+- Object;
+- Knowledge;
+- State;
+- Location;
+- Story Design;
+- Narrative Rendering;
+- Instance Storage.
+
+==================================================
+
+1. CORE PRINCIPLE
+   ==================================================
+
+Daily Story Validation menjawab:
+
+"Apakah Daily Story yang dihasilkan
+sesuai dengan Universe context yang
+secara sah diberikan untuk produksi?"
+
+Validasi tidak menilai apakah cerita
+menarik, indah, dramatis, atau disukai.
+
+Validasi menilai:
+
+- factual consistency;
+- temporal consistency;
+- continuity consistency;
+- scope consistency;
+- identity consistency;
+- knowledge boundary;
+- domain consistency;
+- metadata consistency;
+- production lifecycle consistency.
+
+==================================================
+02. STORY ARTIFACT DEFINITION
+
+Daily Story Artifact merupakan hasil
+produksi cerita untuk satu Story Identity.
+
+Artifact sekurang-kurangnya memiliki
+hubungan dengan:
+
+- Instance;
+- Story Date;
+- Story ID;
+- Story Scope;
+- Story Trigger;
+- Narrative production context;
+- Story content;
+- validation state.
+
+Story Artifact tidak otomatis menjadi
+Canon baru.
+
+Isi cerita adalah representasi
+dari Universe data yang diproses.
+
+==================================================
+03. VALIDATION SOURCE
+
+Validator menggunakan sumber yang relevan:
+
+- Story Trigger;
+- Story Scope;
+- Story Date;
+- Story ID;
+- Story Handoff;
+- Temporal validation;
+- Continuity validation;
+- domain owner data;
+- Character data;
+- Relationship data;
+- Object data;
+- Knowledge data;
+- State data;
+- Location data;
+- Event data;
+- Process data;
+- Consequence data;
+- Unresolved data.
+
+Validator harus mengetahui
+source dan status masing-masing input.
+
+==================================================
+04. SOURCE STATUS
+
+Setiap input story harus dapat
+diklasifikasikan sebagai:
+
+VALIDATED
+
+Telah lolos validation yang relevan.
+
+UNRESOLVED
+
+Masih memiliki issue yang belum
+terselesaikan.
+
+UNKNOWN
+
+Belum diketahui.
+
+INVALID
+
+Tidak sah digunakan.
+
+BLOCKED
+
+Tidak boleh digunakan downstream.
+
+Narrative production tidak boleh
+memperlakukan UNKNOWN,
+UNRESOLVED, atau INVALID
+sebagai established fact.
+
+==================================================
+05. STORY PRODUCTION GATE
+
+Daily Story tidak boleh masuk
+ke tahap final validation apabila:
+
+- Story Date invalid;
+- Story ID invalid;
+- Story Scope belum siap;
+- critical temporal conflict;
+- critical continuity conflict;
+- critical identity conflict;
+- required source blocked;
+- required handoff invalid.
+
+Production readiness tidak sama
+dengan Story Completion.
+
+==================================================
+06. STORY TRIGGER VALIDATION
+
+Story harus memiliki basis produksi
+yang dapat ditelusuri kepada
+Story Trigger atau instruksi produksi
+yang sah.
+
+Validator memeriksa:
+
+- trigger identity;
+- trigger status;
+- trigger scope;
+- temporal relation;
+- relation dengan Story Date;
+- apakah trigger masih valid;
+- apakah trigger sudah diproses.
+
+Story Trigger tidak boleh
+dipalsukan setelah cerita selesai
+hanya untuk memberikan alasan
+bahwa story seharusnya ada.
+
+==================================================
+07. TRIGGER VS STORY EVENT
+
+Story Trigger bukan otomatis
+Event Universe.
+
+Validator harus membedakan:
+
+- reason for production;
+- actual Universe event;
+- story representation.
+
+Trigger tidak boleh dianggap
+sebagai Canon Event hanya karena
+digunakan untuk menghasilkan cerita.
+
+==================================================
+08. STORY SCOPE VALIDATION
+
+Story harus menggunakan
+Universe context sesuai Scope.
+
+Validator memeriksa:
+
+- primary context;
+- supporting context;
+- relevant actors;
+- relevant domains;
+- temporal range;
+- historical references;
+- future references;
+- unresolved items;
+- scope boundary.
+
+Informasi di luar scope tidak boleh
+masuk sebagai established fact
+tanpa perluasan scope yang sah.
+
+==================================================
+09. SCOPE COMPLETENESS
+
+Scope dianggap cukup apabila
+seluruh informasi yang diperlukan
+untuk memahami story context
+tersedia dan tervalidasi.
+
+Kekurangan context yang critical
+menghasilkan:
+
+BLOCKED
+
+Kekurangan context yang tidak critical
+dapat menghasilkan:
+
+REVIEW_REQUIRED
+
+Validator tidak boleh mengisi
+context yang hilang secara asumsi.
+
+==================================================
+10. SCOPE CONTAMINATION
+
+Scope contamination terjadi apabila
+informasi yang tidak menjadi bagian
+dari validated context masuk
+ke Daily Story sebagai fact.
+
+Sumber contamination dapat berupa:
+
+- informasi dari story lain;
+- memory model;
+- generic assumption;
+- future knowledge;
+- unrelated actor information;
+- unrelated object information;
+- stale state;
+- obsolete relationship;
+- external information yang tidak
+  masuk ke Universe source.
+
+Contamination harus ditandai.
+
+==================================================
+11. STORY DATE VALIDATION
+
+Story Date harus:
+
+- tersedia;
+- valid secara kalender;
+- konsisten dengan Universe Time;
+- konsisten dengan Story Scope;
+- konsisten dengan temporal context;
+- sesuai dengan production entity.
+
+Validator tidak menggunakan:
+
+- production time;
+- file creation time;
+- execution time;
+
+untuk menentukan Story Date.
+
+==================================================
+12. STORY DATE VS NARRATIVE TIME
+
+Story Date merupakan basis temporal
+Daily Story.
+
+Narrative Time mengatur urutan
+penyampaian informasi dalam cerita.
+
+Narrative Time tidak boleh
+mengubah Story Date.
+
+Flashback, flash-forward,
+atau non-linear presentation
+tidak otomatis invalid.
+
+Validator memeriksa apakah
+temporal truth tetap terjaga.
+
+==================================================
+13. STORY ID VALIDATION
+
+Story ID harus:
+
+- tersedia;
+- valid;
+- unik dalam scope identity yang relevan;
+- dapat ditelusuri;
+- konsisten dengan production metadata;
+- tidak berubah secara diam-diam.
+
+Filename tidak menggantikan
+Story ID.
+
+Story ID collision adalah
+identity issue.
+
+==================================================
+14. STORY ID VS REVISION
+
+Revision terhadap Daily Story yang sama
+harus tetap dapat ditelusuri
+kepada Story ID yang sama.
+
+Perubahan:
+
+- title;
+- wording;
+- formatting;
+- narrative rendering;
+
+tidak otomatis menghasilkan
+Story ID baru.
+
+Perubahan yang mengubah
+identity production entity
+harus diproses melalui Story ID rules.
+
+==================================================
+15. ACTOR VALIDATION
+
+Setiap Character atau Actor
+yang muncul dalam Daily Story
+harus dapat ditelusuri
+kepada actor data yang valid.
+
+Validator memeriksa:
+
+- identity;
+- availability;
+- participation;
+- relevant state;
+- relevant location;
+- relevant knowledge.
+
+Cerita tidak boleh mengidentifikasi
+actor hanya berdasarkan kemiripan
+atau inferensi yang tidak terverifikasi.
+
+==================================================
+16. UNKNOWN ACTOR
+
+Actor yang belum memiliki
+identity valid tidak boleh diberi
+identity baru hanya untuk membuat
+story lebih lengkap.
+
+Apabila actor diperlukan
+untuk memahami event tetapi identity
+tidak dapat diselesaikan:
+
+STATUS = BLOCKED
+atau
+REVIEW_REQUIRED
+
+sesuai tingkat dependency.
+
+==================================================
+17. CHARACTER DATA BOUNDARY
+
+Daily Story dapat menggunakan
+Character data yang tersedia.
+
+Daily Story Validation memastikan
+story tidak mengubah secara implisit:
+
+- identity;
+- profile;
+- personality;
+- role;
+- behavior;
+- knowledge;
+- state.
+
+Jika cerita menghasilkan informasi baru
+tentang Character yang belum ada
+di Canon, informasi tersebut tidak
+otomatis menjadi Character Canon.
+
+==================================================
+18. RELATIONSHIP VALIDATION
+
+Relationship yang digunakan
+dalam story harus sesuai dengan
+Relationship data yang berlaku
+pada Story Date.
+
+Validator memeriksa:
+
+- identity;
+- participants;
+- type;
+- status;
+- direction;
+- effective time;
+- public status bila relevan.
+
+Story tidak boleh mengubah
+Relationship hanya melalui narration.
+
+==================================================
+19. OBJECT VALIDATION
+
+Object yang digunakan
+dalam story harus dapat
+ditelusuri kepada Object data
+yang valid.
+
+Validator memeriksa:
+
+- identity;
+- existence;
+- ownership;
+- possession;
+- holder;
+- usage;
+- wearing;
+- location;
+- status;
+- temporal validity.
+
+Object baru tidak boleh dianggap
+Canon hanya karena muncul dalam
+story text.
+
+==================================================
+20. KNOWLEDGE BOUNDARY
+
+Story harus mempertahankan
+batas pengetahuan Character.
+
+Validator memeriksa:
+
+- what the Character knows;
+- when acquired;
+- source;
+- availability;
+- whether the information
+  is public or private;
+- whether the information
+  belongs to another actor.
+
+Character tidak boleh mengetahui
+sesuatu hanya karena:
+
+- narrator knows;
+- reader knows;
+- model knows;
+- information exists somewhere
+  in Universe data.
+
+==================================================
+21. KNOWLEDGE LEAKAGE
+
+Knowledge leakage terjadi ketika
+Character memperoleh informasi
+yang belum tersedia baginya
+secara temporal atau causal.
+
+Contoh kategori leakage:
+
+- future information;
+- private information;
+- undisclosed event;
+- hidden relationship;
+- unknown object;
+- unknown location.
+
+Leakage harus menjadi
+validation finding.
+
+==================================================
+22. TEMPORAL CONSISTENCY
+
+Story harus konsisten dengan:
+
+- Story Date;
+- Universe Time;
+- event timing;
+- process timing;
+- consequence timing;
+- state timing;
+- relationship timing;
+- object timing;
+- knowledge acquisition;
+- location timing.
+
+Story tidak boleh memindahkan
+Universe Event hanya demi
+kelancaran narasi.
+
+==================================================
+23. FUTURE INFORMATION CONTROL
+
+Future data harus tetap memiliki
+status:
+
+- Plan;
+- Prediction;
+- Possibility;
+- Scheduled;
+- Unknown;
+
+sesuai sumbernya.
+
+Story tidak boleh mengubah
+future information menjadi
+actual outcome hanya karena
+outcome tersebut menghasilkan
+narasi yang lebih lengkap.
+
+==================================================
+24. PAST INFORMATION CONTROL
+
+Past information harus mempertahankan
+status dan evidence.
+
+Story tidak boleh menganggap:
+
+- memory = verified fact;
+- report = confirmed fact;
+- imagination = historical event.
+
+Validator memeriksa status
+dan temporal basis.
+
+==================================================
+25. PRESENT INFORMATION CONTROL
+
+Present context tidak boleh
+menghapus uncertainty.
+
+Information yang masih:
+
+- unknown;
+- unresolved;
+- hypothetical;
+- possible;
+
+harus tetap direpresentasikan
+sesuai statusnya.
+
+==================================================
+26. EVENT VALIDATION
+
+Setiap event yang digambarkan
+sebagai actual occurrence
+harus memiliki basis Universe.
+
+Validator memeriksa:
+
+- event identity;
+- occurrence;
+- timing;
+- participants;
+- location;
+- prerequisites;
+- consequence relationship.
+
+Narative mention bukan bukti
+bahwa event baru terjadi.
+
+==================================================
+27. EVENT INVENTION
+
+Daily Story tidak boleh
+menghasilkan actual event baru
+sebagai konsekuensi dari kebutuhan
+cerita apabila event tersebut
+tidak memiliki authority
+untuk menjadi Canon.
+
+Jika production framework memang
+mengizinkan creative event proposal,
+proposal tersebut harus dipisahkan
+dari established Universe fact
+dan diproses melalui mekanisme
+Canon/Universe update yang sah.
+
+==================================================
+28. DECISION VS ACTION
+
+Validator harus membedakan:
+
+DECISION
+dari
+ACTION.
+
+Decision dapat menjadi input
+untuk future possibility atau plan.
+
+Decision tidak otomatis berarti
+Action telah terjadi.
+
+Story tidak boleh mengubah
+decision menjadi action
+tanpa actual occurrence.
+
+==================================================
+29. PROCESS VALIDATION
+
+Ongoing Process yang muncul
+dalam Daily Story harus konsisten
+dengan status pada Story Date.
+
+Validator memeriksa:
+
+- process identity;
+- start;
+- current status;
+- interruption;
+- continuation;
+- completion;
+- cancellation;
+- relevant consequences.
+
+Story tidak boleh menyelesaikan
+process hanya karena cerita
+membutuhkan ending.
+
+==================================================
+30. CONSEQUENCE VALIDATION
+
+Consequence yang ditampilkan
+harus sesuai dengan:
+
+- source event;
+- temporal position;
+- causal relation;
+- current status;
+- domain state.
+
+Future consequence tidak boleh
+ditulis sebagai actual consequence
+tanpa occurrence.
+
+==================================================
+31. UNRESOLVED VALIDATION
+
+Unresolved condition boleh muncul
+dalam story sebagai unresolved.
+
+Story tidak boleh:
+
+- memaksa resolution;
+- menghapus unresolved state;
+- menganggap unresolved = failed;
+- menganggap unresolved = completed.
+
+Resolution memerlukan basis
+Universe yang sah.
+
+==================================================
+32. LOCATION VALIDATION
+
+Location yang digunakan
+harus memiliki:
+
+- identity;
+- validity;
+- availability;
+- temporal relation.
+
+Actor atau Object tidak boleh
+muncul di location yang tidak
+tersedia baginya pada Story Date
+tanpa transition yang valid.
+
+==================================================
+33. STATE VALIDATION
+
+State yang ditampilkan
+harus konsisten dengan
+effective State pada Story Date.
+
+Validator memeriksa:
+
+- previous state;
+- transition;
+- current state;
+- event basis;
+- effective time.
+
+Story tidak boleh mengubah
+state secara diam-diam.
+
+==================================================
+34. CONTINUITY VALIDATION
+
+Daily Story harus konsisten
+dengan continuity yang telah
+divalidasi.
+
+Perubahan antara periode
+harus memiliki transition
+yang sah.
+
+Jika story mengabaikan
+continuity yang masih berlaku,
+hal tersebut dapat menjadi
+scope atau consistency issue.
+
+==================================================
+35. NARRATIVE OMISSION
+
+Tidak semua Universe information
+harus muncul dalam Daily Story.
+
+Ketiadaan informasi dalam story
+tidak berarti informasi tersebut
+tidak ada dalam Universe.
+
+Validator harus membedakan:
+
+NOT MENTIONED
+dari
+NOT EXISTING.
+
+==================================================
+36. NARRATIVE ADDITION
+
+Narrative wording dapat menambahkan:
+
+- descriptive language;
+- scene formatting;
+- dialogue presentation;
+- sensory rendering;
+
+selama tidak mengubah factual
+Universe data.
+
+Narrative embellishment tidak boleh
+menghasilkan fact baru secara
+diam-diam.
+
+==================================================
+37. CAUSAL VALIDATION
+
+Causality yang dinyatakan dalam
+story harus memiliki basis yang
+sesuai dengan Universe context.
+
+Validator membedakan:
+
+- established causal relation;
+- character inference;
+- narrator inference;
+- hypothesis;
+- possibility;
+- coincidence.
+
+Story tidak boleh mengubah
+inference menjadi established causal fact
+tanpa dasar.
+
+==================================================
+38. CHARACTER INFERENCE
+
+Character dapat memiliki dugaan
+atau pemahaman yang salah.
+
+Validator harus menjaga perbedaan:
+
+Universe Fact
+dan
+Character Belief.
+
+Narrator tidak boleh otomatis
+memperbaiki belief Character
+menjadi knowledge hanya karena
+sistem mengetahui fakta yang benar.
+
+==================================================
+39. NARRATOR KNOWLEDGE BOUNDARY
+
+Narrator memiliki access scope
+yang berbeda dari Character.
+
+Validator harus memastikan
+bahwa:
+
+- Character knowledge tetap terjaga;
+- Narrator information tidak bocor
+  ke Character;
+- reader revelation tidak otomatis
+  menjadi Character awareness.
+
+==================================================
+40. STORY SCOPE EXPANSION
+
+Jika story memerlukan informasi
+di luar Scope:
+
+Scope harus diperluas melalui
+mechanism yang sah.
+
+Validator tidak boleh menganggap
+external information sebagai valid
+hanya karena informasi tersebut
+tersedia di Universe repository.
+
+Scope adalah boundary produksi,
+bukan sekadar kemampuan akses.
+
+==================================================
+41. STORY SCOPE REDUCTION
+
+Story boleh menggunakan scope
+yang lebih kecil daripada
+available Universe context.
+
+Namun pengurangan scope
+tidak boleh menyebabkan
+story mengambil information
+yang tidak termasuk context
+yang diizinkan.
+
+==================================================
+42. CROSS-STORY CONTAMINATION
+
+Informasi dari Daily Story lain
+tidak boleh otomatis menjadi
+source Universe.
+
+Cerita lama adalah representation,
+bukan automatically authoritative
+Universe source.
+
+Jika information dari story lain
+dibutuhkan:
+
+- harus dapat ditelusuri;
+- statusnya harus diketahui;
+- source authority harus jelas.
+
+==================================================
+43. STORY TEXT VS CANON
+
+Story text adalah representation.
+
+Story text tidak otomatis:
+
+- membuat Character;
+- membuat Object;
+- membuat Relationship;
+- membuat Event;
+- membuat Knowledge;
+- membuat State;
+- membuat Location;
+- mengubah Universe Time.
+
+Setiap perubahan Canon memerlukan
+mekanisme Universe update yang sah.
+
+==================================================
+44. CANON PROPOSAL
+
+Apabila production process menemukan
+informasi yang berpotensi menjadi
+Canon baru:
+
+information tersebut harus dipisahkan
+dari established Canon.
+
+Kategori dapat berupa:
+
+- PROPOSAL;
+- UNRESOLVED;
+- UNKNOWN;
+- PENDING VALIDATION.
+
+Proposal tidak boleh dianggap
+aktif sebelum diterima oleh
+system owner yang relevan.
+
+==================================================
+45. METADATA VALIDATION
+
+Validator harus memeriksa:
+
+- Instance;
+- Dataset;
+- Story Date;
+- Story ID;
+- Story Trigger;
+- Story Scope;
+- completion status;
+- revision status;
+- handoff status.
+
+Metadata yang tidak konsisten
+dengan content atau lifecycle
+harus ditandai.
+
+==================================================
+46. TITLE VALIDATION
+
+TITLE harus:
+
+- tersedia;
+- sesuai dengan Daily Story;
+- aman untuk filename;
+- tidak mengandung claim temporal
+  yang bertentangan;
+- tidak mengubah identity.
+
+Title bukan sumber Universe fact.
+
+==================================================
+47. STORY COMPLETION VALIDATION
+
+Story tidak boleh dianggap
+COMPLETED hanya karena
+text telah dihasilkan.
+
+Completion harus mempertimbangkan:
+
+- production lifecycle;
+- story validation;
+- required metadata;
+- handoff completion;
+- storage readiness bila diwajibkan;
+- unresolved critical issue.
+
+Story Completion adalah status
+production entity, bukan penilaian
+terhadap kualitas sastra.
+
+==================================================
+48. STORY HANDOFF VALIDATION
+
+Handoff harus konsisten dengan
+context yang sebenarnya digunakan.
+
+Validator memeriksa:
+
+- Story ID;
+- Story Date;
+- Scope;
+- temporal context;
+- primary context;
+- support context;
+- domain references;
+- restrictions;
+- validation status.
+
+Narrator tidak boleh menerima
+handoff yang menyatakan data valid
+padahal source critical masih blocked.
+
+==================================================
+49. VERSION CONSISTENCY
+
+Jika Story Scope atau Handoff
+memiliki version:
+
+story yang tervalidasi harus
+menggunakan version yang jelas.
+
+Perubahan upstream setelah
+production dapat memerlukan
+revalidation.
+
+Validator harus mampu mendeteksi
+stale context apabila versioning tersedia.
+
+==================================================
+50. STALE DATA
+
+Stale data adalah data yang
+tidak lagi sesuai dengan
+Universe state yang berlaku
+pada waktu production.
+
+Stale data tidak otomatis
+berarti salah secara historis.
+
+Validator harus membedakan:
+
+historically valid
+dari
+currently applicable.
+
+==================================================
+51. REVISION IMPACT
+
+Jika upstream data direvisi
+setelah story dibuat:
+
+validator harus menentukan
+apakah revision memengaruhi:
+
+- temporal context;
+- event;
+- state;
+- relationship;
+- object;
+- knowledge;
+- location;
+- story identity;
+- story scope.
+
+Jika story terdampak:
+
+STATUS = REVISION_REQUIRED
+
+jika tidak terdampak:
+
+story dapat tetap valid.
+
+==================================================
+52. REVALIDATION
+
+Revalidation diperlukan apabila
+terjadi perubahan pada data
+yang digunakan story.
+
+Minimal dapat dipicu oleh:
+
+- Story Date change;
+- Story Scope change;
+- Story ID change;
+- Event revision;
+- State revision;
+- Relationship revision;
+- Object revision;
+- Knowledge revision;
+- Location revision;
+- temporal revision;
+- continuity revision.
+
+Revalidation harus dilakukan
+pada scope terdampak.
+
+==================================================
+53. VALIDATION SCOPE
+
+Daily Story Validation dapat
+dilakukan pada:
+
+- metadata only;
+- story context;
+- story content;
+- one scene;
+- full Daily Story;
+- Daily Story + supporting dependencies;
+- revision;
+- final artifact.
+
+Scope harus dinyatakan dengan jelas.
+
+==================================================
+54. VALIDATION ORDER
+
+Urutan minimum:
+
+1. VALIDATE STORY IDENTITY
+2. VALIDATE STORY DATE
+3. VALIDATE TRIGGER
+4. VALIDATE SCOPE
+5. VALIDATE TEMPORAL CONTEXT
+6. VALIDATE CONTINUITY
+7. VALIDATE ACTOR IDENTITY
+8. VALIDATE DOMAIN REFERENCES
+9. VALIDATE KNOWLEDGE BOUNDARIES
+10. VALIDATE EVENT / PROCESS / CONSEQUENCE
+11. VALIDATE STORY CONTENT
+12. VALIDATE METADATA
+13. VALIDATE COMPLETION STATE
+14. ISSUE FINAL RESULT
+
+==================================================
+55. CONTENT VALIDATION
+
+Content validation memeriksa
+apakah story content bertentangan
+dengan established Universe context.
+
+Validation dapat memeriksa:
+
+- facts;
+- identities;
+- actions;
+- temporal positions;
+- locations;
+- states;
+- relationships;
+- objects;
+- knowledge;
+- causal assertions;
+- continuity.
+
+Validation tidak menilai
+style sebagai factual correctness.
+
+Style validation berada pada
+Narrator Writing Validation.
+
+==================================================
+56. WRITING VS FACT VALIDATION
+
+Daily Story Validation berfokus
+pada factual and production consistency.
+
+Hal seperti:
+
+- grammar;
+- prose quality;
+- sentence rhythm;
+- literary tone;
+- dialogue naturalness;
+
+tidak menjadi domain utama
+file ini.
+
+Namun factual information
+yang disampaikan melalui
+prosa tetap harus divalidasi.
+
+==================================================
+57. STORY LOGIC CONFLICT
+
+Jika story content bertentangan
+dengan validated Universe:
+
+STATUS = REVISION_REQUIRED
+
+Story tidak boleh dianggap valid
+meskipun secara naratif
+terlihat masuk akal.
+
+==================================================
+58. CREATIVE CONTENT BOUNDARY
+
+Creative rendering diperbolehkan
+sejauh tidak mengubah established
+Universe facts.
+
+Creative content dapat mengatur:
+
+- wording;
+- pacing;
+- scene arrangement;
+- descriptive expression;
+- narrative emphasis;
+
+tetapi tidak boleh secara diam-diam
+menciptakan factual Universe state.
+
+==================================================
+59. NO ASSUMED COMPLETION
+
+Story yang memiliki missing
+critical information tidak boleh
+dinyatakan valid hanya karena
+narasi telah selesai ditulis.
+
+Text complete ≠ validation complete.
+
+==================================================
+60. NO AUTO-CANONIZATION
+
+Daily Story Validation tidak boleh
+mengubah isi story menjadi Canon
+secara otomatis.
+
+Apabila story mengandung
+informasi baru:
+
+new information tetap:
+
+- proposal;
+- unresolved;
+- unknown;
+- atau menunggu owner domain.
+
+Canonization mengikuti
+mekanisme Universe yang sesuai.
+
+==================================================
+61. NO STORY-BASED REPAIR
+
+Jika story bertentangan
+dengan Universe:
+
+validator tidak boleh mengubah
+Universe agar story menjadi benar.
+
+Sebaliknya:
+
+story harus diperbaiki,
+atau source conflict harus
+diselesaikan melalui owner
+yang tepat.
+
+==================================================
+62. VALIDATION FINDINGS
+
+Temuan dapat meliputi:
+
+- Invalid Story ID;
+- Invalid Story Date;
+- Invalid Scope;
+- Temporal Conflict;
+- Continuity Conflict;
+- Identity Conflict;
+- Knowledge Leakage;
+- Domain Mismatch;
+- Event Invention;
+- Unsupported State Change;
+- Unsupported Relationship Change;
+- Unsupported Object Change;
+- Unsupported Location Change;
+- Causal Inconsistency;
+- Metadata Inconsistency;
+- Stale Context;
+- Cross-Story Contamination;
+- Unresolved Critical Issue;
+- Storage Readiness Issue.
+
+==================================================
+63. SEVERITY
+
+Temuan dapat memiliki severity:
+
+INFO
+
+Catatan yang tidak memengaruhi validity.
+
+WARNING
+
+Ada issue yang perlu diperhatikan
+tetapi story masih dapat diproses
+sesuai scope.
+
+ERROR
+
+Story memiliki inconsistency
+yang harus diperbaiki.
+
+CRITICAL
+
+Story tidak dapat dianggap
+representasi yang aman terhadap
+Universe dalam kondisi sekarang.
+
+==================================================
+64. VALIDATION STATUS
+
+Hasil dapat berupa:
+
+VALID
+
+Story sesuai dengan seluruh
+critical requirements.
+
+REVIEW_REQUIRED
+
+Masih terdapat ambiguity atau
+non-critical issue yang membutuhkan
+pemeriksaan.
+
+REVISION_REQUIRED
+
+Story harus diperbaiki
+atau dibuat ulang.
+
+BLOCKED
+
+Story tidak boleh dilanjutkan
+karena foundation production
+tidak valid.
+
+==================================================
+65. BLOCKING CONDITIONS
+
+Daily Story dapat BLOCKED apabila:
+
+- Story ID tidak dapat diselesaikan;
+- Story Date invalid;
+- Scope critical missing;
+- critical temporal conflict;
+- critical continuity conflict;
+- Character/Actor identity critical invalid;
+- required knowledge boundary tidak dapat
+  ditentukan;
+- source Universe berada pada status blocked;
+- story mengandung contradiction
+  terhadap critical established data;
+- output storage identity tidak dapat
+  ditentukan.
+
+==================================================
+66. NON-BLOCKING CONDITIONS
+
+Story dapat tetap masuk
+REVIEW_REQUIRED apabila:
+
+- terdapat minor ambiguity;
+- detail non-critical unknown;
+- historical gap tidak memengaruhi
+  story logic;
+- style issue tidak berdampak
+  factual accuracy;
+- unresolved detail tidak mengubah
+  core story identity.
+
+REVIEW_REQUIRED bukan izin
+untuk mengubah unknown menjadi fact.
+
+==================================================
+67. OWNER ROUTING
+
+Validation issue harus diarahkan
+kepada system owner yang relevan.
+
+Temporal issue
+→ Temporal System
+
+Continuity issue
+→ Daily Universe Continuity
+
+Character issue
+→ Character System
+
+Relationship issue
+→ Relationship System
+
+Object issue
+→ Object System
+
+Knowledge issue
+→ Character Knowledge System
+
+Location issue
+→ Location owner
+
+Story Identity issue
+→ Daily Story subsystem
+
+Narrative issue
+→ Narrator System
+
+Storage issue
+→ Instance Management
+
+Daily Story Validation mengoordinasikan
+classification dan gate,
+bukan mengambil alih correction.
+
+==================================================
+68. VALIDATION AFTER REVISION
+
+Setelah story direvisi:
+
+1. revision diterima;
+2. affected scope ditentukan;
+3. relevant validation diulang;
+4. previous finding tetap dapat ditelusuri;
+5. final status dihitung kembali.
+
+Story tidak boleh kembali
+ke VALID hanya karena text telah berubah.
+
+==================================================
+69. STORY REPRODUCTION
+
+Reproduction terhadap story
+yang sama harus mempertahankan:
+
+- Story ID;
+- Story Date;
+- relevant source context;
+- revision relationship.
+
+Jika reproduction menggunakan
+context berbeda, perbedaannya
+harus dapat dilacak.
+
+==================================================
+70. FINAL STORY VALIDATION GATE
+
+Daily Story dianggap VALID
+hanya apabila:
+
+- Story Identity valid;
+- Story Date valid;
+- Trigger valid;
+- Scope valid;
+- temporal context valid;
+- continuity valid;
+- actor identities valid;
+- domain references valid;
+- knowledge boundaries valid;
+- event/process/consequence references valid;
+- no critical unsupported fact;
+- metadata valid;
+- lifecycle state valid.
+
+==================================================
+71. STORAGE HANDOFF
+
+Setelah Daily Story validation
+berhasil:
+
+Daily Story Validation
+→ Story Completion process
+→ Instance Management
+
+Storage tidak boleh dimulai
+jika story masih memiliki
+critical validation failure.
+
+Validation tidak melakukan
+file placement secara langsung.
+
+==================================================
+72. TRACEABILITY
+
+Setiap validation result harus
+dapat ditelusuri kepada:
+
+- Instance;
+- Story ID;
+- Story Date;
+- Trigger;
+- Scope;
+- source context;
+- content section bila tersedia;
+- domain reference;
+- finding;
+- severity;
+- status;
+- affected scope.
+
+==================================================
+73. STORY CONTENT TRACEABILITY
+
+Jika memungkinkan, setiap
+factual claim penting dalam
+story harus dapat dikaitkan
+kepada sumber Universe context.
+
+Tujuannya bukan membuat
+prosa penuh metadata,
+melainkan memungkinkan
+validator mengetahui:
+
+claim tersebut berasal dari mana.
+
+Jika claim tidak memiliki
+source authority yang sah:
+
+STATUS = REVIEW_REQUIRED
+atau
+REVISION_REQUIRED
+
+==================================================
+74. FACT VS REPRESENTATION
+
+Validator harus membedakan:
+
+UNIVERSE FACT
+
+Data yang telah ditetapkan.
+
+STORY REPRESENTATION
+
+Cara fact tersebut disampaikan.
+
+CHARACTER BELIEF
+
+Apa yang diyakini Character.
+
+NARRATOR PRESENTATION
+
+Cara informasi diberikan
+kepada reader.
+
+HYPOTHESIS / POSSIBILITY
+
+Informasi yang belum menjadi fact.
+
+Kelima kategori tidak boleh
+dicampur.
+
+==================================================
+75. NO MEMORY OF MODEL
+
+Model atau Narrator memory
+di luar validated Universe context
+tidak boleh digunakan sebagai
+Canon evidence.
+
+Informasi hanya valid untuk
+story apabila memiliki source
+atau status yang sah di Universe.
+
+==================================================
+76. CROSS-DAY VALIDATION
+
+Story yang mengambil context
+dari periode sebelumnya
+harus memeriksa:
+
+- prior state;
+- continuity transition;
+- historical events;
+- relationship status;
+- object status;
+- knowledge acquisition;
+- unresolved conditions.
+
+Tidak boleh mengambil
+snapshot lama yang sudah stale
+tanpa validation.
+
+==================================================
+77. CROSS-STORY VALIDATION
+
+Daily Story sebelumnya dapat
+digunakan sebagai reference
+jika system source authority
+mengizinkannya.
+
+Namun validator tetap harus
+memastikan story tersebut
+tidak menggantikan Universe source.
+
+Story lama adalah representation,
+bukan automatically Canon source.
+
+==================================================
+78. CONFLICT HANDLING
+
+Jika dua validated source
+menghasilkan conflict:
+
+validator tidak boleh memilih
+berdasarkan preference.
+
+Harus:
+
+1. identify source authority;
+2. identify temporal scope;
+3. identify version;
+4. identify affected domain;
+5. classify conflict;
+6. route to owner;
+7. block downstream jika critical.
+
+==================================================
+79. NO SILENT RESOLUTION
+
+Tidak boleh terjadi:
+
+CONFLICT
+→ hidden correction
+→ VALID
+
+Setiap resolution harus dapat
+ditelusuri dan divalidasi kembali.
+
+==================================================
+80. STORY VALIDATION RESULT
+
+Output minimal:
+
+STORY_ID
+STORY_DATE
+VALIDATION_SCOPE
+VALIDATED_SOURCES
+FINDINGS
+SEVERITY
+STATUS
+BLOCKING_ISSUES
+OWNER_ROUTING
+REVALIDATION_REQUIRED
+STORAGE_READY
+TRACEABILITY
+
+==================================================
+81. STORAGE_READY
+
+Storage Ready bukan synonym
+untuk Story Valid secara umum.
+
+Story dapat:
+
+VALID
+tetapi belum
+STORAGE_READY
+
+apabila:
+
+- filename belum siap;
+- destination belum resolved;
+- Instance structure belum ready.
+
+Storage readiness ditentukan
+oleh Instance Management setelah
+story validation selesai.
+
+==================================================
+82. COMPLETION RELATION
+
+Validation status dan Completion status
+adalah dua konsep berbeda.
+
+Possible states:
+
+VALID + NOT_COMPLETED
+
+Story telah lolos validation tetapi
+lifecycle produksi belum selesai.
+
+VALID + COMPLETED
+
+Story telah tervalidasi dan lifecycle
+production selesai.
+
+INVALID + NOT_COMPLETED
+
+Story masih memiliki issue.
+
+BLOCKED + NOT_COMPLETED
+
+Story tidak boleh diselesaikan.
+
+==================================================
+83. FINAL STORY GATE
+
+Daily Story dapat diteruskan
+sebagai completed production artifact
+hanya apabila:
+
+1. Identity valid.
+2. Date valid.
+3. Trigger valid.
+4. Scope valid.
+5. Temporal context valid.
+6. Continuity valid.
+7. Domain references valid.
+8. Knowledge boundaries valid.
+9. Story content tidak memiliki
+   critical factual conflict.
+10. Metadata valid.
+11. Revision state valid.
+12. Tidak ada blocking issue.
+
+==================================================
+84. ABSOLUTE RULES
+
+1. 
+
+Daily Story Validation memeriksa
+representasi story terhadap Universe context.
+
+2. 
+
+Story text bukan otomatis Canon.
+
+3. 
+
+Filename bukan Story ID.
+
+4. 
+
+Production time bukan Story Date.
+
+5. 
+
+Narrative Time bukan Universe Time.
+
+6. 
+
+Character knowledge tidak boleh
+melampaui knowledge boundary.
+
+7. 
+
+Future information tidak boleh
+menjadi actual fact tanpa occurrence.
+
+8. 
+
+Memory tidak otomatis menjadi fact.
+
+9. 
+
+Report tidak otomatis menjadi fact.
+
+10. 
+
+Possibility tidak otomatis menjadi fact.
+
+11. 
+
+Decision tidak otomatis menjadi action.
+
+12. 
+
+Story tidak boleh menyelesaikan
+unresolved condition tanpa basis.
+
+13. 
+
+Story tidak boleh menciptakan
+unsupported actual event.
+
+14. 
+
+Story tidak boleh mengubah
+domain state secara diam-diam.
+
+15. 
+
+Narrative omission tidak berarti
+Universe data tidak ada.
+
+16. 
+
+Story lama tidak otomatis
+menjadi Canon source.
+
+17. 
+
+Conflict tidak boleh diselesaikan
+dengan tebakan.
+
+18. 
+
+Validator tidak boleh mengubah
+Universe agar story menjadi valid.
+
+19. 
+
+Critical validation failure
+harus menahan downstream completion.
+
+20. 
+
+Setiap finding harus dapat ditelusuri.
+
+21. 
+
+Revalidation wajib dilakukan
+setelah perubahan upstream yang
+memengaruhi story.
+
+==================================================
+85. FINAL PRINCIPLE
+
+Daily Story adalah representasi
+dari Universe, bukan sumber
+kebenaran Universe.
+
+Validasi harus menjaga hubungan:
+
+UNIVERSE DATA
+→ VALIDATED STORY CONTEXT
+→ STORY PRODUCTION
+→ STORY VALIDATION
+→ COMPLETION
+→ STORAGE
+
+Bukan:
+
+STORY
+→ MENENTUKAN UNIVERSE
+→ MENGUBAH CANON
+→ DIANGGAP BENAR
+
+Daily Story Validation memastikan
+bahwa kreativitas naratif tetap berada
+di dalam batas Universe yang sah,
+tanpa menghapus ketidakpastian,
+tanpa membocorkan informasi yang belum
+diketahui Character,
+dan tanpa menjadikan hasil tulisan
+sebagai Canon secara otomatis.
