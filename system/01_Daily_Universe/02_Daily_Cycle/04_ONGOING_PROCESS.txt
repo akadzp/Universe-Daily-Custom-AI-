@@ -1,0 +1,750 @@
+================================================================================
+ONGOING PROCESS
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / DAILY CYCLE
+ROLE : TEMPORAL PROCESS ORCHESTRATION
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Ongoing Process adalah mekanisme untuk menjaga proses yang belum selesai tetap
+berlangsung secara temporal di dalam Universe.
+
+Ongoing Process digunakan ketika suatu proses:
+
+- dimulai pada satu titik waktu;
+- belum selesai pada titik waktu tersebut;
+- masih mempunyai perkembangan;
+- masih memiliki dependency;
+- masih menunggu kondisi;
+- atau masih mempunyai consequence yang belum selesai.
+
+Ongoing Process memastikan bahwa proses tidak:
+
+- hilang ketika periode berganti;
+- dianggap selesai tanpa dasar;
+- dimulai ulang tanpa dasar;
+- dibuat ulang sebagai proses baru;
+- dipaksa selesai demi kebutuhan cerita.
+
+
+================================================================================
+02. SYSTEM BOUNDARY
+================================================================================
+
+Daily Universe bertanggung jawab terhadap perjalanan temporal Process.
+
+Daily Universe tidak menjadi owner domain dari isi Process apabila Process
+berasal dari Character, Relationship, Object, Knowledge, atau domain lain.
+
+Daily Universe mengatur:
+
+- process continuity;
+- temporal progression;
+- process status transition;
+- dependency timing;
+- continuation;
+- interruption;
+- suspension;
+- completion detection;
+- carry-over.
+
+Domain owner tetap menentukan aturan internal domainnya.
+
+
+================================================================================
+03. PROCESS IDENTITY
+================================================================================
+
+Setiap Ongoing Process harus mempunyai identitas yang dapat dibedakan dari
+process lain.
+
+Process identity harus dapat digunakan untuk:
+
+- melacak awal process;
+- melacak perkembangan;
+- menghubungkan consequence;
+- menghubungkan dependency;
+- mengenali kelanjutan;
+- mencegah duplicate process.
+
+Periode baru tidak boleh menciptakan process identity baru apabila yang terjadi
+sebenarnya adalah kelanjutan process yang sama.
+
+
+================================================================================
+04. PROCESS START
+================================================================================
+
+Sebuah Process hanya dapat dianggap dimulai apabila terdapat dasar yang sah.
+
+Dasar dapat berupa:
+
+- event;
+- decision;
+- action;
+- state change;
+- domain transition;
+- external condition yang sah;
+- process dependency yang telah terpenuhi.
+
+Daily Universe tidak boleh menciptakan Process hanya karena sebuah cerita
+membutuhkannya.
+
+
+================================================================================
+05. PROCESS START TIME
+================================================================================
+
+Process harus memiliki temporal position untuk titik mulai apabila informasi
+tersebut tersedia.
+
+Start time dapat berupa:
+
+- waktu pasti;
+- waktu relatif;
+- rentang waktu;
+- unknown.
+
+Jika waktu pasti tidak tersedia, system tidak boleh menciptakan waktu pasti
+secara mandiri.
+
+
+================================================================================
+06. PROCESS STATUS
+================================================================================
+
+Process dapat memiliki status:
+
+- ACTIVE;
+- ONGOING;
+- PAUSED;
+- SUSPENDED;
+- INTERRUPTED;
+- COMPLETED;
+- CANCELLED;
+- FAILED;
+- UNRESOLVED;
+- UNKNOWN.
+
+Status digunakan untuk menentukan apakah Process harus terus diproses.
+
+Status Process tidak boleh diubah hanya karena pergantian periode.
+
+
+================================================================================
+07. ACTIVE / ONGOING
+================================================================================
+
+ACTIVE atau ONGOING menunjukkan bahwa Process masih berjalan dan mempunyai
+potensi perkembangan dalam Universe.
+
+Process yang aktif harus dapat dipertimbangkan dalam progression periode
+berikutnya apabila masih relevan.
+
+
+================================================================================
+08. PAUSED
+================================================================================
+
+PAUSED menunjukkan bahwa Process sementara tidak mengalami perkembangan aktif,
+tetapi belum selesai atau dibatalkan.
+
+Paused Process tetap memiliki identity dan history.
+
+Paused Process tidak boleh diperlakukan sebagai Completed.
+
+
+================================================================================
+09. SUSPENDED
+================================================================================
+
+SUSPENDED menunjukkan bahwa Process tidak dapat dilanjutkan untuk sementara
+karena kondisi tertentu.
+
+Suspension harus mempunyai dasar yang dapat ditelusuri apabila alasan tersebut
+diperlukan oleh continuity.
+
+SUSPENDED berbeda dari CANCELLED.
+
+
+================================================================================
+10. INTERRUPTED
+================================================================================
+
+INTERRUPTED menunjukkan bahwa Process terhenti sebelum completion.
+
+Interrupted Process belum otomatis:
+
+- selesai;
+- gagal;
+- dibatalkan.
+
+Status berikutnya harus ditentukan berdasarkan perkembangan Universe.
+
+
+================================================================================
+11. COMPLETED
+================================================================================
+
+COMPLETED menunjukkan bahwa Process telah memenuhi kondisi penyelesaian yang
+sah.
+
+Process tidak boleh menjadi Completed hanya karena:
+
+- Daily Story berakhir;
+- periode berganti;
+- narrator berhenti membahasnya;
+- pembaca tidak lagi melihatnya;
+- sistem membutuhkan closure.
+
+
+================================================================================
+12. CANCELLED
+================================================================================
+
+CANCELLED menunjukkan bahwa Process dihentikan secara sah sebelum completion.
+
+Pembatalan harus mempunyai dasar.
+
+Cancelled Process tetap menjadi bagian dari history dan tidak boleh dianggap
+tidak pernah ada.
+
+
+================================================================================
+13. FAILED
+================================================================================
+
+FAILED menunjukkan bahwa Process tidak mencapai kondisi keberhasilan atau
+penyelesaian yang ditentukan oleh aturan yang berlaku.
+
+Failure berbeda dari Cancellation.
+
+Failure tetap dapat menghasilkan consequence sesuai aturan domain dan temporal.
+
+
+================================================================================
+14. UNRESOLVED
+================================================================================
+
+UNRESOLVED digunakan ketika Process masih ada tetapi system belum memiliki
+informasi yang cukup untuk menentukan perkembangan atau status akhirnya.
+
+Unresolved bukan berarti Completed.
+
+Unresolved bukan berarti Failed.
+
+Unresolved bukan berarti Cancelled.
+
+
+================================================================================
+15. UNKNOWN
+================================================================================
+
+UNKNOWN digunakan ketika keberadaan, status, atau kondisi Process belum dapat
+ditentukan secara sah.
+
+Unknown tidak boleh dipaksa menjadi Ongoing hanya karena sebelumnya diperkirakan
+masih berjalan.
+
+
+================================================================================
+16. PROCESS DEVELOPMENT
+================================================================================
+
+Process dapat berkembang selama Universe Time bergerak.
+
+Perkembangan dapat berupa:
+
+- progress;
+- change;
+- milestone;
+- interruption;
+- dependency completion;
+- dependency failure;
+- status transition;
+- consequence;
+- continuation;
+- termination.
+
+Setiap perkembangan harus mempunyai dasar.
+
+
+================================================================================
+17. PROCESS STEP
+================================================================================
+
+Process dapat terdiri dari beberapa tahapan temporal.
+
+Tahapan Process harus mempertahankan urutan yang sah.
+
+Jika suatu step bergantung pada step sebelumnya, dependency tersebut harus
+dihormati.
+
+System tidak boleh melompati step tanpa dasar yang sah.
+
+
+================================================================================
+18. DEPENDENCY
+================================================================================
+
+Process dapat memiliki dependency terhadap:
+
+- event;
+- Character;
+- Relationship;
+- Object;
+- Knowledge;
+- State;
+- Location;
+- Process lain;
+- temporal condition.
+
+Dependency milik domain lain tetap mengikuti aturan domain owner.
+
+Daily Universe hanya mengatur kapan dependency diperlukan dan apakah
+dependency tersebut telah tersedia secara temporal.
+
+
+================================================================================
+19. BLOCKING DEPENDENCY
+================================================================================
+
+Jika Process tidak dapat melanjutkan karena dependency belum tersedia,
+Process dapat menjadi:
+
+- PAUSED;
+- SUSPENDED;
+- UNRESOLVED;
+- BLOCKED;
+
+sesuai kondisi.
+
+Daily Universe tidak boleh membuat dependency secara otomatis agar Process
+dapat berjalan.
+
+
+================================================================================
+20. PROCESS PARALLELISM
+================================================================================
+
+Lebih dari satu Process dapat berlangsung pada waktu yang sama.
+
+Parallel Process tidak boleh digabung menjadi satu Process hanya karena
+berjalan pada periode yang sama.
+
+Identity dan dependency masing-masing harus dipertahankan.
+
+
+================================================================================
+21. PROCESS OVERLAP
+================================================================================
+
+Dua atau lebih Process dapat overlap secara temporal.
+
+Overlap bukan contradiction secara otomatis.
+
+Conflict hanya terjadi apabila aturan temporal atau domain membuat Process
+tidak dapat berlangsung bersama.
+
+
+================================================================================
+22. PROCESS INTERRUPTION
+================================================================================
+
+Process dapat terinterupsi oleh:
+
+- event;
+- perubahan state;
+- perubahan dependency;
+- perubahan temporal condition;
+- domain event;
+- mekanisme Universe yang sah.
+
+Interruption tidak otomatis mengakhiri Process.
+
+Status setelah interruption harus diproses secara eksplisit.
+
+
+================================================================================
+23. PROCESS RESUMPTION
+================================================================================
+
+Process yang PAUSED, SUSPENDED, atau INTERRUPTED dapat dilanjutkan apabila
+kondisi continuation terpenuhi.
+
+Continuation harus mempertahankan:
+
+- Process identity;
+- history;
+- previous progress;
+- remaining dependency;
+- temporal position;
+- status transition.
+
+
+================================================================================
+24. PROCESS COMPLETION
+================================================================================
+
+Completion harus memiliki condition yang dapat dipertanggungjawabkan.
+
+Process dapat dinyatakan COMPLETED apabila:
+
+- completion condition terpenuhi;
+- dependency yang diwajibkan telah selesai;
+- domain owner memberikan hasil yang sah apabila diperlukan;
+- tidak terdapat conflict yang menghalangi completion.
+
+
+================================================================================
+25. PROCESS TERMINATION
+================================================================================
+
+Process dapat berakhir melalui:
+
+- completion;
+- cancellation;
+- failure;
+- termination mechanism lain yang sah.
+
+Ending Process tidak berarti seluruh consequence-nya selesai.
+
+Consequence harus tetap diproses secara terpisah.
+
+
+================================================================================
+26. PROCESS CONSEQUENCE
+================================================================================
+
+Process dapat menghasilkan consequence selama berjalan maupun setelah berakhir.
+
+Consequence harus mempunyai temporal position sendiri apabila berbeda dari
+Process event.
+
+Consequence tidak boleh dianggap bagian dari Process hanya karena terjadi
+setelahnya.
+
+
+================================================================================
+27. PROCESS HISTORY
+================================================================================
+
+History Process harus dapat menunjukkan perkembangan:
+
+- start;
+- status transition;
+- progress;
+- interruption;
+- suspension;
+- resumption;
+- completion;
+- cancellation;
+- failure;
+- termination.
+
+History tidak boleh ditulis ulang hanya untuk menghilangkan perubahan yang
+pernah terjadi.
+
+
+================================================================================
+28. CROSS-PERIOD CONTINUITY
+================================================================================
+
+Ketika Universe Date berpindah:
+
+Process yang masih berlaku harus dibawa ke periode berikutnya.
+
+Process yang telah selesai harus tetap sebagai history dan tidak dibawa sebagai
+Ongoing Process.
+
+Process yang paused atau unresolved harus mempertahankan statusnya.
+
+Pergantian periode tidak boleh mereset Process.
+
+
+================================================================================
+29. DAILY STORY INDEPENDENCE
+================================================================================
+
+Daily Story tidak menentukan apakah Process masih berjalan.
+
+Tidak dibahas dalam Daily Story bukan berarti Process selesai.
+
+Tidak muncul dalam narasi bukan berarti Process hilang.
+
+Daily Story hanya dapat merepresentasikan sebagian dari Process.
+
+
+================================================================================
+30. NARRATIVE INDEPENDENCE
+================================================================================
+
+Narrative Rendering tidak boleh:
+
+- mempercepat Process;
+- menyelesaikan Process;
+- membatalkan Process;
+- menciptakan Process baru;
+
+hanya karena kebutuhan struktur cerita.
+
+Narator dapat menyajikan perkembangan Process yang sudah sah.
+
+
+================================================================================
+31. CHARACTER PROCESS
+================================================================================
+
+Jika Process berkaitan dengan Character, Character System tetap menjadi owner
+atas data Character.
+
+Daily Universe hanya menjaga perjalanan temporal Process.
+
+Perubahan terhadap:
+
+- identity;
+- personality;
+- behavior;
+- Knowledge;
+- State;
+- Relationship;
+
+harus diproses melalui system owner terkait.
+
+
+================================================================================
+32. RELATIONSHIP PROCESS
+================================================================================
+
+Jika Process berkaitan dengan Relationship, Relationship System tetap menjadi
+owner Relationship.
+
+Daily Universe menjaga:
+
+- start time;
+- continuation;
+- temporal transition;
+- consequence timing.
+
+Daily Universe tidak mendefinisikan Relationship.
+
+
+================================================================================
+33. OBJECT PROCESS
+================================================================================
+
+Jika Process berkaitan dengan Object, Object System tetap menjadi owner Object.
+
+Daily Universe menjaga perjalanan temporal Process yang memengaruhi Object dan
+meneruskan perubahan melalui domain owner.
+
+
+================================================================================
+34. KNOWLEDGE PROCESS
+================================================================================
+
+Jika Process menghasilkan Knowledge acquisition, Daily Universe menjaga:
+
+- source event;
+- temporal order;
+- acquisition context.
+
+Isi Knowledge tetap mengikuti Character System atau domain owner yang sah.
+
+
+================================================================================
+35. PROCESS REQUEST
+================================================================================
+
+Ketika Process membutuhkan perubahan domain:
+
+PROCESS
+↓
+DETECT REQUIRED CHANGE
+↓
+DOMAIN HANDOFF
+↓
+DOMAIN VALIDATION
+↓
+RESULT
+↓
+PROCESS CONTINUATION
+
+Jika domain owner menolak perubahan atau membutuhkan data tambahan, Process
+tidak boleh dilanjutkan seolah-olah perubahan telah terjadi.
+
+
+================================================================================
+36. NO DUPLICATION
+================================================================================
+
+Process yang dibawa ke periode baru tidak boleh dibuat ulang sebagai Process
+baru apabila identity-nya sama.
+
+Duplicate detection harus mempertimbangkan:
+
+- Process ID;
+- source;
+- temporal position;
+- dependency;
+- domain;
+- status.
+
+
+================================================================================
+37. NO SILENT COMPLETION
+================================================================================
+
+Process tidak boleh menjadi Completed hanya karena:
+
+- waktu telah berlalu;
+- periode berganti;
+- Daily Story selesai;
+- narrator tidak membahasnya;
+- dependency tidak disebutkan;
+- proses terlalu lama;
+- cerita membutuhkan akhir.
+
+
+================================================================================
+38. NO SILENT CANCELLATION
+================================================================================
+
+Process tidak boleh dibatalkan tanpa dasar.
+
+Ketiadaan perkembangan tidak sama dengan cancellation.
+
+
+================================================================================
+39. NO SILENT RESTART
+================================================================================
+
+Process yang sebelumnya telah berjalan tidak boleh dimulai ulang sebagai
+Process baru hanya karena:
+
+- periode berganti;
+- cerita baru dimulai;
+- narrator kembali membahasnya;
+- data sedang diproses ulang.
+
+Kelanjutan harus mempertahankan identity asli.
+
+
+================================================================================
+40. UNKNOWN PROCESS
+================================================================================
+
+Jika system tidak dapat memastikan apakah Process ada, status tersebut harus
+tetap Unknown.
+
+System tidak boleh membuat Process hanya untuk menutup celah informasi.
+
+
+================================================================================
+41. VALIDATION
+================================================================================
+
+Ongoing Process harus divalidasi terhadap:
+
+- Universe Time;
+- Temporal Status;
+- Process identity;
+- Process status;
+- dependency;
+- event;
+- consequence;
+- domain owner;
+- previous period;
+- current period;
+- future continuation;
+- history.
+
+
+================================================================================
+42. PROCESS STATUS RESULT
+================================================================================
+
+Validasi dapat menghasilkan:
+
+VALID
+→ Process konsisten dan dapat diteruskan.
+
+REVIEW_REQUIRED
+→ terdapat uncertainty yang belum menghalangi continuation.
+
+REVISION_REQUIRED
+→ Process membutuhkan koreksi.
+
+BLOCKED
+→ Process tidak dapat diteruskan secara sah.
+
+
+================================================================================
+43. FAILURE PRINCIPLE
+================================================================================
+
+Jika Process tidak dapat diteruskan secara sah, Daily Universe harus
+mempertahankan status sebenarnya dan menghentikan atau menunda continuation
+sesuai kondisi.
+
+System tidak boleh:
+
+- mengarang progress;
+- mengarang completion;
+- menghapus history;
+- membuat Process baru;
+- mengubah domain owner;
+- mengubah fakta temporal.
+
+
+================================================================================
+44. RELATION TO NEXT DAILY CYCLE
+================================================================================
+
+Hasil Ongoing Process menjadi input bagi:
+
+- Event and Consequence;
+- Day Finalization;
+- Continuity Carryover;
+- periode berikutnya;
+- Daily Story bila Process relevan terhadap cerita.
+
+
+================================================================================
+45. FINAL PRINCIPLE
+================================================================================
+
+ONGOING PROCESS berarti:
+
+SESUATU TELAH DIMULAI
+        ↓
+BELUM SELESAI
+        ↓
+MASIH MEMILIKI STATUS DAN TEMPORAL POSITION
+        ↓
+UNIVERSE TERUS BERJALAN
+        ↓
+PROCESS DITERUSKAN ATAU DIUBAH
+SESUAI PERKEMBANGAN YANG BENAR-BENAR TERJADI.
+
+Proses tidak selesai hanya karena cerita selesai.
+
+Proses tidak hilang hanya karena tidak sedang diceritakan.
+
+Proses tidak diulang hanya karena periode baru dimulai.
+
+Continuity Process harus mengikuti kehidupan Universe,
+bukan kebutuhan struktur cerita.
+
+
+================================================================================
+END OF ONGOING PROCESS
+================================================================================
