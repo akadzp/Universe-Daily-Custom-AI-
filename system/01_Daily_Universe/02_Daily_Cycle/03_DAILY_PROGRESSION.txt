@@ -1,0 +1,756 @@
+================================================================================
+DAILY PROGRESSION
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / DAILY CYCLE
+ROLE : TEMPORAL ORCHESTRATION
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Daily Progression adalah tahap yang menjalankan perjalanan Universe setelah
+periode berhasil diinisialisasi dan continuity carry-over telah dipersiapkan.
+
+Tahap ini mengatur bagaimana Universe bergerak melalui waktu dalam periode
+yang sedang berlangsung.
+
+Daily Progression bertanggung jawab terhadap:
+
+- perkembangan temporal;
+- perkembangan proses yang sedang berjalan;
+- pemrosesan perubahan yang mempunyai dasar;
+- pemrosesan hubungan antar-event;
+- pemrosesan consequence;
+- pemicu handoff kepada domain owner;
+- pembentukan kondisi untuk tahap berikutnya.
+
+Daily Progression bukan tahap penulisan cerita.
+
+Daily Progression bukan pemilik Character, Relationship, Object, Knowledge,
+State, Location, atau domain lain.
+
+
+================================================================================
+02. ENTRY CONDITION
+================================================================================
+
+Daily Progression hanya dapat dimulai apabila:
+
+- Day Initialization berhasil;
+- target temporal valid;
+- continuity carry-over telah diproses;
+- tidak terdapat critical temporal conflict;
+- required domain input tersedia;
+- proses dapat dilanjutkan secara sah.
+
+Jika entry condition tidak terpenuhi, Daily Progression tidak boleh dimulai.
+
+
+================================================================================
+03. CORE PRINCIPLE
+================================================================================
+
+Universe tidak berkembang hanya karena sebuah cerita membutuhkan perkembangan.
+
+Perubahan harus mempunyai dasar temporal dan causal yang sah.
+
+Daily Progression memproses apa yang dapat terjadi berdasarkan:
+
+- kondisi awal periode;
+- proses yang sedang berlangsung;
+- event yang terjadi;
+- consequence;
+- keputusan yang benar-benar terjadi;
+- perubahan domain yang sah;
+- perkembangan waktu.
+
+Daily Progression tidak mengarang perubahan untuk mengisi periode.
+
+
+================================================================================
+04. TEMPORAL ADVANCEMENT
+================================================================================
+
+Daily Progression menggerakkan Current Universe Time melalui periode yang
+sedang berlangsung.
+
+Pergerakan harus mengikuti Universe Time System.
+
+Daily Progression tidak boleh:
+
+- melompati waktu tanpa dasar;
+- menciptakan waktu yang tidak diketahui sebagai fakta;
+- mengubah Universe Time untuk kebutuhan narasi;
+- mengubah urutan temporal secara diam-diam.
+
+Tingkat resolusi waktu harus mengikuti informasi yang tersedia.
+
+
+================================================================================
+05. PROGRESSION UNIT
+================================================================================
+
+Perkembangan dapat diproses sebagai:
+
+- temporal movement;
+- ongoing process;
+- event;
+- consequence;
+- state transition request;
+- domain change request;
+- unresolved development;
+- temporal boundary.
+
+Unit tersebut tidak berarti semuanya harus terjadi dalam setiap periode.
+
+Daily Progression hanya memproses unit yang benar-benar memiliki dasar.
+
+
+================================================================================
+06. EVENT OCCURRENCE
+================================================================================
+
+Actual Event hanya dapat diproses apabila event tersebut mempunyai dasar yang
+sah.
+
+Dasar dapat berasal dari:
+
+- proses yang sedang berjalan;
+- consequence sebelumnya;
+- keputusan yang benar-benar dilakukan;
+- kondisi yang memenuhi dependency;
+- event yang telah ditetapkan oleh Universe;
+- domain state yang memungkinkan event.
+
+Daily Progression tidak menciptakan Actual Event hanya karena event tersebut
+dibutuhkan agar cerita menjadi lengkap.
+
+
+================================================================================
+07. EVENT READINESS
+================================================================================
+
+Sebelum event diproses sebagai Actual Event, system harus dapat menentukan:
+
+- temporal position;
+- required condition;
+- dependency;
+- actor availability apabila relevan;
+- object availability apabila relevan;
+- location availability apabila relevan;
+- causal requirement;
+- domain owner yang terlibat.
+
+Ketidaklengkapan informasi tidak boleh diisi dengan asumsi.
+
+
+================================================================================
+08. EVENT PROCESSING
+================================================================================
+
+Ketika event mempunyai dasar yang cukup:
+
+1. event ditempatkan pada Universe Time;
+2. temporal validity diperiksa;
+3. dependency diperiksa;
+4. domain impact diidentifikasi;
+5. domain owner menerima handoff bila diperlukan;
+6. hasil domain dikembalikan;
+7. consequence diproses;
+8. continuity context diperbarui.
+
+Daily Progression tidak mengambil alih mekanisme internal domain owner.
+
+
+================================================================================
+09. DOMAIN HANDOFF
+================================================================================
+
+Jika event memerlukan perubahan pada domain lain:
+
+DAILY PROGRESSION
+→ mendeteksi domain impact
+→ membuat temporal change context
+→ menyerahkan kepada DOMAIN OWNER
+→ DOMAIN OWNER memproses sesuai aturan domain
+→ DOMAIN OWNER mengembalikan hasil
+→ DAILY PROGRESSION memasukkan hasil ke temporal flow.
+
+Daily Progression tidak boleh mengubah domain secara langsung jika domain
+tersebut memiliki mekanisme owner sendiri.
+
+
+================================================================================
+10. CHARACTER EVENT IMPACT
+================================================================================
+
+Event dapat memengaruhi Character.
+
+Daily Progression hanya menentukan:
+
+- bahwa event mempunyai dampak temporal;
+- kapan dampak tersebut terjadi;
+- bahwa perubahan perlu diproses.
+
+Character System menentukan isi dan aturan perubahan Character.
+
+Daily Progression tidak membuat:
+
+- personality;
+- behavior;
+- identity;
+- Knowledge;
+- State;
+
+sebagai pengganti Character System.
+
+
+================================================================================
+11. RELATIONSHIP EVENT IMPACT
+================================================================================
+
+Event dapat memengaruhi Relationship.
+
+Daily Progression menentukan temporal context dan change trigger.
+
+Relationship System menentukan bagaimana Relationship berubah.
+
+Daily Progression tidak membuat Relationship baru sebagai hasil langsung.
+
+
+================================================================================
+12. OBJECT EVENT IMPACT
+================================================================================
+
+Event dapat memengaruhi Object.
+
+Daily Progression menentukan:
+
+- kapan event terjadi;
+- bahwa Object terdampak;
+- kapan perubahan perlu diproses.
+
+Object System menentukan hasil perubahan Object.
+
+
+================================================================================
+13. KNOWLEDGE EVENT IMPACT
+================================================================================
+
+Event dapat menghasilkan kondisi yang memungkinkan Knowledge acquisition.
+
+Daily Progression menentukan temporal source event dan acquisition context.
+
+Knowledge tetap mengikuti domain owner.
+
+Daily Progression tidak membuat Knowledge hanya karena Character seharusnya
+mengetahui sesuatu menurut kebutuhan cerita.
+
+
+================================================================================
+14. LOCATION EVENT IMPACT
+================================================================================
+
+Event dapat menyebabkan perubahan lokasi atau availability lokasi.
+
+Daily Progression hanya mengatur temporal occurrence dan handoff.
+
+Location data dan aturan location tetap mengikuti system owner yang sah.
+
+
+================================================================================
+15. STATE TRANSITION
+================================================================================
+
+Perubahan State terjadi ketika terdapat dasar event, process, atau mekanisme
+domain yang sah.
+
+Daily Progression tidak menentukan isi State.
+
+Urutan umum:
+
+PREVIOUS STATE
+↓
+EVENT / CONDITION
+↓
+STATE CHANGE REQUEST
+↓
+DOMAIN OWNER
+↓
+VALIDATED NEW STATE
+↓
+CURRENT TEMPORAL CONTEXT
+
+
+================================================================================
+16. DECISION VS ACTION
+================================================================================
+
+Daily Progression harus membedakan:
+
+- intention;
+- decision;
+- plan;
+- action;
+- result.
+
+Decision tidak otomatis menjadi Action.
+
+Plan tidak otomatis menjadi Action.
+
+Action tidak otomatis menghasilkan Result yang direncanakan.
+
+Actual progression mengikuti apa yang benar-benar terjadi.
+
+
+================================================================================
+17. PLAN PROCESSING
+================================================================================
+
+Plan yang aktif dapat menjadi salah satu input progression.
+
+Namun Plan tidak boleh diperlakukan sebagai Actual Event.
+
+Plan harus diperiksa terhadap:
+
+- dependency;
+- current condition;
+- available actor;
+- temporal availability;
+- cancellation;
+- modification;
+- actual execution.
+
+Actual execution harus diproses sebagai event tersendiri.
+
+
+================================================================================
+18. PREDICTION PROCESSING
+================================================================================
+
+Prediction dapat digunakan sebagai informasi temporal.
+
+Prediction bukan instruksi kepada Universe.
+
+Prediction tidak menentukan event.
+
+Jika event terjadi, Actual Event ditentukan oleh occurrence nyata, bukan karena
+prediction pernah menyatakan bahwa event akan terjadi.
+
+
+================================================================================
+19. POSSIBILITY PROCESSING
+================================================================================
+
+Possibility merupakan ruang perkembangan yang masih mungkin.
+
+Possibility dapat digunakan untuk menentukan hal yang perlu dipantau atau
+diperiksa.
+
+Possibility tidak menjadi Actual Event hanya karena tersedia.
+
+Actual timeline hanya menerima event yang benar-benar terjadi.
+
+
+================================================================================
+20. ONGOING PROCESS
+================================================================================
+
+Ongoing Process harus diproses sesuai temporal progression.
+
+Setiap langkah harus mempertahankan:
+
+- process identity;
+- status;
+- dependency;
+- temporal position;
+- progress;
+- unresolved condition.
+
+Process tidak boleh dipercepat atau diselesaikan hanya karena Daily Story
+membutuhkan closure.
+
+
+================================================================================
+21. UNRESOLVED DEVELOPMENT
+================================================================================
+
+Tidak semua proses harus memiliki penyelesaian pada periode berjalan.
+
+Jika suatu condition tetap unresolved, status tersebut harus dibawa ke
+tahap berikutnya.
+
+Unresolved bukan error selama ketidakpastian tersebut memang sah.
+
+
+================================================================================
+22. CONSEQUENCE
+================================================================================
+
+Setiap Actual Event dapat menghasilkan consequence.
+
+Consequence harus dievaluasi berdasarkan:
+
+- causal relation;
+- temporal position;
+- domain impact;
+- duration;
+- dependency;
+- persistence.
+
+Consequence yang masih berlaku harus dipertahankan.
+
+
+================================================================================
+23. CONSEQUENCE DELAY
+================================================================================
+
+Consequence tidak selalu terjadi pada saat yang sama dengan event penyebab.
+
+Consequence dapat:
+
+- langsung terjadi;
+- tertunda;
+- berkembang bertahap;
+- menunggu dependency;
+- tetap unresolved.
+
+Temporal placement consequence harus mengikuti mekanisme Universe Time.
+
+
+================================================================================
+24. SIMULTANEOUS EVENTS
+================================================================================
+
+Beberapa event dapat terjadi pada posisi waktu yang sama apabila tidak
+bertentangan.
+
+Daily Progression harus dapat memproses event yang:
+
+- simultaneous;
+- overlapping;
+- sequential;
+- dependent.
+
+Simultaneous tidak berarti event yang sama.
+
+
+================================================================================
+25. PARALLEL PROCESSES
+================================================================================
+
+Universe dapat mempunyai beberapa process yang berjalan bersamaan.
+
+Daily Progression tidak boleh memaksa seluruh Universe mengikuti satu
+alur tunggal apabila terdapat proses paralel yang sah.
+
+Setiap process harus mempertahankan identity dan dependency masing-masing.
+
+
+================================================================================
+26. ABSENCE OF EVENT
+================================================================================
+
+Tidak terjadinya sebuah event juga merupakan hasil yang dapat mempunyai
+konsekuensi.
+
+Jika sebuah Plan gagal atau sebuah Possibility tidak terealisasi, Universe
+tidak boleh menganggap event tersebut terjadi hanya karena sebelumnya
+diharapkan.
+
+
+================================================================================
+27. TEMPORAL FAILURE
+================================================================================
+
+Jika sebuah event tidak dapat ditempatkan secara temporal, event tidak boleh
+diproses sebagai Actual Event.
+
+Status dapat menjadi:
+
+- unresolved;
+- blocked;
+- revision required;
+
+sesuai kondisi.
+
+
+================================================================================
+28. CAUSAL CHECK
+================================================================================
+
+Sebelum event menghasilkan perubahan, Daily Progression harus memastikan
+bahwa hubungan causal tidak menghasilkan temporal contradiction.
+
+Pola umum:
+
+CAUSE
+↓
+EVENT
+↓
+CONSEQUENCE
+↓
+CHANGE
+
+Urutan dapat lebih kompleks, tetapi tidak boleh melanggar dependency yang
+sudah sah.
+
+
+================================================================================
+29. NO RETROACTIVE CAUSATION
+================================================================================
+
+Daily Progression tidak boleh membuat event masa lalu terjadi hanya karena
+event masa kini membutuhkan penyebab.
+
+Jika causal dependency belum tersedia, proses harus ditandai sebagai conflict,
+unresolved, atau revision required sesuai kondisi.
+
+
+================================================================================
+30. FUTURE TO PRESENT TRANSITION
+================================================================================
+
+Ketika Universe Time bergerak menuju future position, Daily Progression harus
+mengevaluasi informasi future yang sebelumnya berada dalam status:
+
+- Plan;
+- Prediction;
+- Possibility;
+- Hypothesis;
+- Imagination.
+
+Perubahan posisi temporal tidak otomatis membuat informasi tersebut Actual.
+
+Actualization hanya terjadi apabila Actual Event benar-benar berlangsung.
+
+
+================================================================================
+31. PRESENT TO PAST TRANSITION
+================================================================================
+
+Ketika Universe Time melewati suatu posisi, event dan state yang telah terjadi
+masuk ke historical context.
+
+Status asli harus tetap dapat ditelusuri.
+
+Daily Progression tidak boleh mengubah historical information hanya untuk
+menyesuaikan perkembangan baru.
+
+
+================================================================================
+32. NARRATIVE SEPARATION
+================================================================================
+
+Daily Progression berjalan berdasarkan Universe Time, bukan Narrative Time.
+
+Narasi dapat menceritakan event dalam urutan berbeda.
+
+Perbedaan penyajian tidak mengubah progression Universe.
+
+Narrator tidak dapat memajukan atau memundurkan Universe Time hanya melalui
+penyajian cerita.
+
+
+================================================================================
+33. STORY INDEPENDENCE
+================================================================================
+
+Daily Progression tidak boleh mengubah Universe hanya karena Daily Story belum
+memiliki:
+
+- konflik;
+- twist;
+- climax;
+- resolution;
+- dramatic event.
+
+Universe tetap berjalan sesuai kondisi dan event yang benar-benar ada.
+
+
+================================================================================
+34. STORY SELECTION
+================================================================================
+
+Daily Story dapat memilih sebagian perkembangan Universe.
+
+Daily Progression tidak harus menjadikan seluruh perkembangan Universe sebagai
+isi satu cerita.
+
+Story selection dilakukan melalui Daily Story dan Narrator System.
+
+
+================================================================================
+35. PROGRESSION OUTPUT
+================================================================================
+
+Daily Progression menghasilkan Current Period Progression Context yang dapat
+memuat:
+
+- temporal advancement;
+- actual events;
+- processed consequences;
+- ongoing processes;
+- unresolved processes;
+- domain changes;
+- domain handoff results;
+- current state references;
+- future information status;
+- next temporal boundary.
+
+
+================================================================================
+36. STATUS
+================================================================================
+
+Daily Progression dapat menghasilkan:
+
+READY
+→ progression selesai tanpa critical conflict.
+
+REVIEW_REQUIRED
+→ terdapat uncertainty yang belum menghalangi proses.
+
+REVISION_REQUIRED
+→ diperlukan koreksi sebelum proses dapat dianggap selesai.
+
+BLOCKED
+→ Universe tidak dapat diproses lebih lanjut secara sah.
+
+
+================================================================================
+37. TRACEABILITY
+================================================================================
+
+Setiap perubahan temporal harus dapat ditelusuri kepada:
+
+- source;
+- event;
+- temporal position;
+- dependency;
+- domain owner;
+- handoff;
+- resulting change.
+
+Tidak boleh terdapat perubahan yang tidak memiliki asal yang dapat ditelusuri.
+
+
+================================================================================
+38. NO SILENT CREATION
+================================================================================
+
+Daily Progression tidak boleh menciptakan secara diam-diam:
+
+- Character;
+- Relationship;
+- Object;
+- Knowledge;
+- State;
+- Location;
+- Event;
+- Process;
+- History.
+
+Kekosongan data bukan izin untuk membuat fakta.
+
+
+================================================================================
+39. NO SILENT REPAIR
+================================================================================
+
+Jika progression menemukan conflict, sistem tidak boleh:
+
+- mengubah waktu;
+- mengubah event;
+- menghapus dependency;
+- mengubah Character;
+- mengubah Relationship;
+- mengubah Object;
+- mengubah Knowledge;
+- mengubah State;
+
+hanya untuk membuat progression dapat dilanjutkan.
+
+Conflict harus ditangani melalui mekanisme yang sesuai.
+
+
+================================================================================
+40. VALIDATION
+================================================================================
+
+Daily Progression harus divalidasi terhadap:
+
+- Universe Time;
+- Temporal Status;
+- Temporal Consistency;
+- carry-over result;
+- event identity;
+- causal order;
+- dependency;
+- domain handoff;
+- continuity;
+- actualization.
+
+Jika validation gagal, progression belum dapat dianggap selesai.
+
+
+================================================================================
+41. RELATION TO DAILY STORY
+================================================================================
+
+Daily Progression menghasilkan kondisi Universe yang menjadi dasar Daily Story.
+
+Daily Story tidak mengendalikan progression.
+
+Daily Story tidak boleh memaksa event terjadi hanya agar cerita dapat ditulis.
+
+Narasi harus mengambil dari perkembangan yang telah diproses secara sah.
+
+
+================================================================================
+42. RELATION TO NEXT PERIOD
+================================================================================
+
+Hasil Daily Progression menjadi salah satu input untuk:
+
+- consequence continuation;
+- continuity carry-over;
+- next period;
+- Daily Story;
+- finalization.
+
+Perubahan yang masih berlaku harus dapat diteruskan.
+
+
+================================================================================
+43. FINAL PRINCIPLE
+================================================================================
+
+DAILY PROGRESSION BUKAN:
+
+“MEMBUAT CERITA TERJADI.”
+
+DAILY PROGRESSION ADALAH:
+
+“MENGGERAKKAN UNIVERSE BERDASARKAN WAKTU,
+KEADAAN, EVENT, CONSEQUENCE, DAN PROSES YANG SAH.”
+
+Universe bergerak terlebih dahulu.
+
+Daily Story kemudian mengambil bagian yang relevan.
+
+Narrator kemudian menyajikannya sebagai cerita.
+
+Tidak ada kebutuhan naratif yang boleh menjadi sumber Actual Event tanpa dasar
+Universe yang sah.
+
+
+================================================================================
+END OF DAILY PROGRESSION
+================================================================================
