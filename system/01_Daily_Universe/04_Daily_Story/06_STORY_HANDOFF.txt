@@ -1,0 +1,761 @@
+================================================================================
+STORY HANDOFF
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / DAILY STORY
+ROLE : HANDOFF TO NARRATOR
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Story Handoff adalah mekanisme untuk menyerahkan context Daily Story yang telah
+disiapkan oleh Daily Universe kepada Narrator System.
+
+Story Handoff memastikan bahwa Narrator menerima:
+
+- identitas Story;
+- tanggal Universe;
+- temporal context;
+- Story Trigger;
+- Story Scope;
+- relevant continuity;
+- event;
+- consequence;
+- ongoing process;
+- unresolved condition;
+- domain references;
+- Knowledge boundary;
+- production restrictions;
+- validation status.
+
+Story Handoff bukan Story Design.
+
+Story Handoff bukan Writing Design.
+
+Story Handoff bukan Narrative Rendering.
+
+Story Handoff hanya memindahkan production context yang telah dinyatakan sah
+kepada system yang berwenang mengubahnya menjadi cerita.
+
+
+================================================================================
+02. CORE PRINCIPLE
+================================================================================
+
+Daily Universe menyediakan:
+
+APA YANG SECARA TEMPORAL DAN UNIVERSE
+BOLEH DIJADIKAN DASAR CERITA.
+
+Narrator menentukan:
+
+BAGAIMANA DASAR TERSEBUT DIBENTUK DAN DISAJIKAN
+SEBAGAI CERITA.
+
+Handoff harus menjaga batas tersebut.
+
+
+================================================================================
+03. ENTRY CONDITION
+================================================================================
+
+Story Handoff hanya dapat dilakukan apabila:
+
+- Story Trigger valid;
+- Story Scope valid;
+- Story Date valid;
+- Story ID valid;
+- temporal consistency valid;
+- required domain references valid;
+- required continuity context tersedia;
+- critical conflict tidak ada;
+- production status mengizinkan handoff.
+
+
+================================================================================
+04. HANDOFF PACKAGE
+================================================================================
+
+Handoff Package adalah context resmi yang dikirim kepada Narrator.
+
+Handoff Package minimal memiliki:
+
+- Universe Instance;
+- Story Date;
+- Story ID;
+- Story Trigger ID;
+- Story Scope ID;
+- temporal context;
+- primary context;
+- supporting context;
+- relevant event references;
+- relevant consequence references;
+- relevant process references;
+- unresolved references;
+- Actor references;
+- Relationship references;
+- Object references;
+- Knowledge boundaries;
+- Location references;
+- production restrictions;
+- validation result.
+
+
+================================================================================
+05. SOURCE OF TRUTH
+================================================================================
+
+Handoff Package bukan Canon baru.
+
+Source of Truth tetap berada pada:
+
+- Universe Data;
+- domain owner;
+- Daily Universe temporal rules;
+- validated production context.
+
+Handoff Package hanya merupakan operational representation dari source yang
+sah.
+
+Jika Handoff Package berbeda dari source, source tetap menjadi authority dan
+handoff harus diperiksa ulang.
+
+
+================================================================================
+06. IMMUTABILITY AFTER HANDOFF
+================================================================================
+
+Setelah Handoff Package dinyatakan final, context factual di dalamnya tidak
+boleh diubah secara diam-diam.
+
+Perubahan factual membutuhkan:
+
+- revision;
+- source;
+- reason;
+- validation;
+- renewed handoff.
+
+Narrator tidak boleh mengubah factual context untuk memenuhi kebutuhan cerita.
+
+
+================================================================================
+07. TEMPORAL CONTEXT
+================================================================================
+
+Handoff harus mempertahankan:
+
+- Current Universe Time;
+- Story Date;
+- relevant temporal range;
+- event time;
+- consequence time;
+- process time;
+- future information status;
+- unresolved temporal information.
+
+Narrative Time belum ditentukan oleh Handoff.
+
+Narrative Time menjadi bagian dari Narrator processing.
+
+
+================================================================================
+08. TEMPORAL STATUS PRESERVATION
+================================================================================
+
+Handoff harus mempertahankan perbedaan antara:
+
+- Actual;
+- Memory;
+- Report;
+- Imagination;
+- Hypothesis;
+- Plan;
+- Prediction;
+- Possibility;
+- Unknown.
+
+Perubahan representasi tidak boleh meningkatkan status factual information.
+
+
+================================================================================
+09. ACTOR HANDOFF
+================================================================================
+
+Actor references yang diserahkan harus tetap mengarah kepada Actor identity
+yang sah.
+
+Handoff dapat menyediakan:
+
+- Actor identity;
+- availability;
+- participation;
+- relevant state reference;
+- relevant process reference;
+- relevant relationship reference.
+
+Handoff tidak boleh membuat Actor baru.
+
+Narrator tidak boleh membuat Actor baru berdasarkan kekosongan context.
+
+
+================================================================================
+10. CHARACTER DATA BOUNDARY
+================================================================================
+
+Jika Actor merupakan Character, Handoff dapat menyediakan Character data yang
+relevan dan sah.
+
+Handoff harus mempertahankan batas antara:
+
+- Character profile;
+- Character state;
+- Character behavior;
+- Character Knowledge;
+- Character relationship;
+- Character style.
+
+Narrator tidak memperoleh izin untuk membuat data Character yang belum tersedia.
+
+
+================================================================================
+11. KNOWLEDGE BOUNDARY
+================================================================================
+
+Knowledge harus diserahkan dengan batas yang jelas.
+
+Handoff harus dapat membedakan:
+
+UNIVERSE FACT
+dan
+CHARACTER KNOWLEDGE.
+
+Informasi yang diketahui pembaca atau Narrator tidak otomatis menjadi
+Character Knowledge.
+
+Narrator harus mempertahankan Knowledge boundary.
+
+
+================================================================================
+12. RELATIONSHIP HANDOFF
+================================================================================
+
+Relationship references harus:
+
+- menggunakan Relationship identity yang sah;
+- mempertahankan temporal position;
+- mempertahankan status;
+- mempertahankan relevant transition;
+- tetap mengacu kepada Relationship System sebagai owner.
+
+Narrator tidak boleh mengubah Relationship hanya melalui cerita.
+
+
+================================================================================
+13. OBJECT HANDOFF
+================================================================================
+
+Object references harus:
+
+- menggunakan Object identity yang sah;
+- mempertahankan relevant status;
+- mempertahankan temporal position;
+- mempertahankan ownership/possession/location reference jika relevan.
+
+Narrator tidak boleh menciptakan Object untuk memenuhi scene.
+
+
+================================================================================
+14. LOCATION HANDOFF
+================================================================================
+
+Location references harus mempertahankan:
+
+- Location identity;
+- current temporal position;
+- relevant Actor/Object occupancy;
+- movement context;
+- availability jika relevan.
+
+Narrator tidak boleh memindahkan Actor atau Object hanya karena kebutuhan
+scene.
+
+
+================================================================================
+15. EVENT HANDOFF
+================================================================================
+
+Event yang masuk Handoff harus:
+
+- mempunyai identity;
+- mempunyai temporal position;
+- memiliki status yang sah;
+- dapat digunakan sebagai production context;
+- memiliki dependency yang diperlukan.
+
+Narrator tidak boleh membuat event baru dan memperlakukannya sebagai bagian
+dari Universe hanya karena Story Design membutuhkan event tersebut.
+
+
+================================================================================
+16. CONSEQUENCE HANDOFF
+================================================================================
+
+Consequence yang masuk Handoff harus mempertahankan:
+
+- source;
+- identity;
+- status;
+- temporal position;
+- dependency;
+- persistence;
+- current development.
+
+Narrator dapat memilih apakah consequence ditampilkan, tetapi tidak boleh
+mengubah statusnya hanya melalui narasi.
+
+
+================================================================================
+17. ONGOING PROCESS HANDOFF
+================================================================================
+
+Ongoing Process yang relevan harus mempertahankan:
+
+- Process identity;
+- current status;
+- progress;
+- dependency;
+- temporal position;
+- unresolved condition.
+
+Narrator tidak boleh menyelesaikan Process hanya karena cerita membutuhkan
+closure.
+
+
+================================================================================
+18. UNRESOLVED HANDOFF
+================================================================================
+
+Unresolved condition harus diserahkan dengan status unresolved.
+
+Narrator dapat:
+
+- menampilkan unresolved;
+- tidak menampilkan unresolved;
+- menggunakan unresolved sebagai contextual pressure;
+
+tetapi tidak boleh mengubahnya menjadi resolution tanpa dasar Universe.
+
+
+================================================================================
+19. FUTURE HANDOFF
+================================================================================
+
+Future information harus diserahkan dengan status aslinya:
+
+- Plan;
+- Prediction;
+- Possibility;
+- Hypothesis;
+- Imagination;
+- Unknown.
+
+Narrator tidak boleh menggunakan Future context sebagai Actual Fact hanya
+karena informasi tersebut diperlukan untuk cerita.
+
+
+================================================================================
+20. SCOPE BOUNDARY
+================================================================================
+
+Handoff hanya menyerahkan Story Scope yang telah dinyatakan valid.
+
+Narrator boleh meminta context tambahan apabila benar-benar diperlukan.
+
+Permintaan tambahan harus melalui mechanism scope expansion yang sah.
+
+Narrator tidak boleh mengambil seluruh Universe secara bebas.
+
+
+================================================================================
+21. SCOPE EXPANSION REQUEST
+================================================================================
+
+Jika Narrator menemukan bahwa context belum cukup:
+
+NARRATOR
+→ identifies missing context
+→ requests scope expansion
+→ DAILY UNIVERSE evaluates dependency
+→ additional context provided or denied
+→ revised handoff
+→ Narrator continues.
+
+Narrator tidak boleh mengisi context kosong dengan assumption lalu
+menganggapnya Canon.
+
+
+================================================================================
+22. FACTUAL RESTRICTION
+================================================================================
+
+Handoff harus memberikan batas factual yang wajib dipertahankan.
+
+Factual restriction mencakup:
+
+- identity;
+- temporal position;
+- event occurrence;
+- domain state;
+- Knowledge boundary;
+- relationship;
+- object;
+- location;
+- process;
+- consequence;
+- unresolved condition.
+
+Narrator bebas menentukan presentation selama factual restriction tidak dilanggar.
+
+
+================================================================================
+23. CREATIVE FREEDOM BOUNDARY
+================================================================================
+
+Narrator tetap memiliki creative authority di dalam batas yang diberikan
+Handoff.
+
+Creative freedom dapat digunakan untuk:
+
+- wording;
+- scene construction;
+- presentation order;
+- dialogue;
+- description;
+- pacing;
+- narrative focus;
+- literary execution;
+
+selama tidak menciptakan factual Canon baru secara diam-diam.
+
+
+================================================================================
+24. HANDOFF STATUS
+================================================================================
+
+Story Handoff dapat memiliki status:
+
+READY
+→ package lengkap dan dapat diterima Narrator.
+
+REVIEW_REQUIRED
+→ context masih mempunyai uncertainty yang dapat ditoleransi.
+
+REVISION_REQUIRED
+→ package membutuhkan perubahan sebelum handoff.
+
+BLOCKED
+→ Narrator tidak boleh menerima package sebagai valid production context.
+
+ACCEPTED
+→ Narrator telah menerima Handoff Package.
+
+
+================================================================================
+25. ACCEPTANCE VS VALIDITY
+================================================================================
+
+Narrator acceptance tidak berarti factual correctness telah berubah.
+
+ACCEPTED
+→ package diterima untuk diproses.
+
+VALID
+→ package telah melewati validation yang dibutuhkan.
+
+Keduanya harus dapat dibedakan.
+
+
+================================================================================
+26. HANDOFF VERSION
+================================================================================
+
+Setiap Handoff Package harus dapat mempunyai version atau revision reference
+apabila package mengalami perubahan.
+
+Handoff revision harus dapat dilacak.
+
+Narrator tidak boleh menggunakan package lama jika package baru telah
+ditetapkan sebagai active factual context untuk production tersebut.
+
+
+================================================================================
+27. HANDOFF HISTORY
+================================================================================
+
+History Handoff harus dapat menunjukkan:
+
+- package created;
+- package revised;
+- package sent;
+- package accepted;
+- package rejected;
+- package superseded;
+- package withdrawn.
+
+History handoff bukan Canon Universe.
+
+
+================================================================================
+28. HANDOFF WITHDRAWAL
+================================================================================
+
+Handoff dapat ditarik kembali apabila ditemukan:
+
+- temporal conflict;
+- domain conflict;
+- factual error;
+- invalid Story Scope;
+- invalid Story Date;
+- invalid Story ID;
+- source revision.
+
+Narrator tidak boleh melanjutkan menggunakan context yang telah dinyatakan
+superseded atau withdrawn.
+
+
+================================================================================
+29. SUPERSESSION
+================================================================================
+
+Handoff Package baru dapat menggantikan package lama.
+
+Jika supersession terjadi:
+
+- package lama tetap menjadi history;
+- package baru menjadi active package;
+- Narrator harus menggunakan package active;
+- factual differences harus dapat ditelusuri.
+
+
+================================================================================
+30. NARRATOR SYSTEM BOUNDARY
+================================================================================
+
+Narrator menerima Handoff Package sebagai input.
+
+Narrator bertanggung jawab terhadap:
+
+- Story Design;
+- Story Logic;
+- Story Validation sesuai Narrator;
+- Writing Design;
+- Narrative Rendering;
+- Writing Validation.
+
+Daily Universe tidak masuk ke detail:
+
+- kalimat;
+- paragraf;
+- dialogue wording;
+- prose style;
+- scene prose;
+- literary technique.
+
+
+================================================================================
+31. STORY DESIGN HANDOFF
+================================================================================
+
+Handoff kepada Narrator tidak boleh langsung dianggap sebagai Story Blueprint.
+
+Narrator tetap harus melakukan Story Design sesuai Narrator System.
+
+Handoff menyediakan source material dan factual boundary.
+
+Story Blueprint merupakan hasil Narrator process.
+
+
+================================================================================
+32. NARRATIVE RENDERING BOUNDARY
+================================================================================
+
+Story Text merupakan output Narrator.
+
+Daily Universe tidak menulis ulang Story Text hanya karena presentation style
+tidak disukai.
+
+Jika terdapat factual violation, issue dikembalikan ke source stage yang
+berwenang.
+
+Jika terdapat writing issue, issue ditangani oleh Narrator.
+
+
+================================================================================
+33. CANON PROTECTION
+================================================================================
+
+Story Handoff tidak memberikan izin kepada Narrator untuk:
+
+- menciptakan Character;
+- menciptakan Relationship;
+- menciptakan Object;
+- menciptakan Knowledge;
+- menciptakan State;
+- menciptakan Location;
+- menciptakan Event;
+- mengubah History;
+- mengubah Temporal Status.
+
+Narrator hanya menggunakan context yang sah.
+
+
+================================================================================
+34. HANDOFF COMPLETION
+================================================================================
+
+Handoff dapat dinyatakan complete apabila:
+
+- package valid;
+- package accepted;
+- required context tersedia;
+- source traceable;
+- domain ownership preserved;
+- temporal context valid;
+- factual restrictions clear;
+- Narrator dapat memulai production.
+
+
+================================================================================
+35. INSTANCE RELATION
+================================================================================
+
+Story Handoff tidak menentukan:
+
+- folder;
+- filename;
+- file extension;
+- directory creation.
+
+Instance Management bertanggung jawab terhadap penyimpanan hasil.
+
+Handoff hanya membawa production identity yang diperlukan.
+
+
+================================================================================
+36. TRACEABILITY
+================================================================================
+
+Handoff harus dapat ditelusuri melalui:
+
+UNIVERSE
+↓
+DAILY CYCLE
+↓
+STORY TRIGGER
+↓
+STORY SCOPE
+↓
+STORY DATE
+↓
+STORY ID
+↓
+STORY HANDOFF
+↓
+NARRATOR
+↓
+STORY COMPLETION
+↓
+INSTANCE
+
+
+================================================================================
+37. VALIDATION
+================================================================================
+
+Story Handoff harus divalidasi terhadap:
+
+- Story Trigger;
+- Story Scope;
+- Story Date;
+- Story ID;
+- temporal context;
+- domain references;
+- Knowledge boundary;
+- unresolved context;
+- production restrictions;
+- Narrator boundary.
+
+
+================================================================================
+38. VALIDATION RESULT
+================================================================================
+
+VALID
+→ Handoff siap.
+
+REVIEW_REQUIRED
+→ terdapat uncertainty yang masih dapat dipertahankan.
+
+REVISION_REQUIRED
+→ package membutuhkan koreksi.
+
+BLOCKED
+→ handoff tidak dapat dilakukan secara sah.
+
+
+================================================================================
+39. FAILURE PRINCIPLE
+================================================================================
+
+Jika Story Handoff gagal, system tidak boleh:
+
+- mengarang missing context;
+- membuat actor;
+- membuat event;
+- membuat object;
+- memberikan Knowledge;
+- mengubah Relationship;
+- mengubah State;
+- mengubah Location;
+- memperluas scope secara diam-diam;
+- mengubah Story Date;
+- mengganti Story ID.
+
+Proses harus berhenti atau kembali ke tahap yang berwenang.
+
+
+================================================================================
+40. FINAL PRINCIPLE
+================================================================================
+
+STORY HANDOFF ADALAH BATAS ANTARA:
+
+UNIVERSE ORCHESTRATION
+        │
+        ▼
+VALIDATED STORY CONTEXT
+        │
+        ▼
+NARRATOR
+
+Daily Universe menjamin:
+
+“INI ADALAH DATA DAN CONTEXT YANG SAH.”
+
+Narrator menentukan:
+
+“BEGINI DATA DAN CONTEXT TERSEBUT DIJADIKAN CERITA.”
+
+Handoff tidak boleh mengaburkan batas tersebut.
+
+
+================================================================================
+END OF STORY HANDOFF
+================================================================================
