@@ -1,0 +1,1150 @@
+==================================================
+05_FILE_PLACEMENT
+
+STATUS
+
+System Rule
+
+OWNER
+
+Daily Universe
+Instance Management
+
+SCOPE
+
+File ini mengatur proses penempatan file Daily Story
+ke destination path yang telah ditentukan dan divalidasi.
+
+File ini menentukan:
+
+- destination resolution;
+- hubungan Instance, Dataset, YEAR, MONTH, dan filename;
+- pre-placement validation;
+- file placement order;
+- existing destination handling;
+- collision handling;
+- duplicate prevention;
+- atomicity;
+- failed placement handling;
+- reprocessing;
+- revision;
+- migration boundary;
+- post-placement validation.
+
+File ini TIDAK mengatur:
+
+- penentuan Story Date;
+- penentuan Story ID;
+- pembuatan Story;
+- penentuan TITLE;
+- struktur YEAR/MONTH;
+- aturan filename;
+- isi file;
+- Canon;
+- Character;
+- Relationship;
+- Object;
+- Knowledge;
+- State;
+- Location.
+
+Penentuan YEAR/MONTH berada pada:
+
+03_YEAR_MONTH_STRUCTURE.txt
+
+Penentuan filename berada pada:
+
+04_FILE_NAMING.txt
+
+Struktur Instance berada pada:
+
+01_INSTANCE_STRUCTURE.txt
+
+Aturan umum pembuatan directory berada pada:
+
+02_FOLDER_CREATION.txt
+
+==================================================
+
+1. CORE PRINCIPLE
+   ==================================================
+
+File Placement hanya memindahkan atau menulis
+Daily Story File ke destination yang telah ditentukan.
+
+File Placement tidak memiliki kewenangan
+untuk menentukan destination berdasarkan tebakan.
+
+Destination harus berasal dari metadata
+dan aturan Instance Management yang telah tervalidasi.
+
+Urutan dasar:
+
+VALID STORY METADATA
+→ VALID INSTANCE
+→ VALID DATASET
+→ VALID YEAR
+→ VALID MONTH
+→ VALID FILENAME
+→ DESTINATION RESOLUTION
+→ PLACEMENT VALIDATION
+→ FILE PLACEMENT
+→ POST-PLACEMENT VALIDATION
+
+==================================================
+02. DESTINATION DEFINITION
+
+Destination adalah path final tempat Daily Story File
+harus berada.
+
+Destination terdiri dari struktur:
+
+INSTANCE
+→ DAILY STORY DATASET
+→ YEAR
+→ MONTH
+→ FILENAME
+
+Setiap komponen harus telah tervalidasi
+sebelum proses placement.
+
+==================================================
+03. DESTINATION SOURCE
+
+Destination tidak boleh ditentukan berdasarkan:
+
+- current execution directory;
+- working directory AI;
+- waktu produksi;
+- waktu file dibuat;
+- lokasi file sementara;
+- lokasi input source;
+- lokasi file sebelumnya;
+- tebakan berdasarkan title.
+
+Destination harus diturunkan dari struktur Instance
+yang telah ditetapkan.
+
+==================================================
+04. SOURCE OF TRUTH
+
+Penentuan destination menggunakan sumber berikut:
+
+INSTANCE
++
+DAILY STORY DATASET
++
+STORY DATE
++
+VALIDATED YEAR
++
+VALIDATED MONTH
++
+VALIDATED FILENAME
+
+Tidak ada komponen lain yang boleh menggantikan
+sumber tersebut tanpa aturan sistem yang sah.
+
+==================================================
+05. DESTINATION RESOLUTION
+
+Sebelum placement:
+
+1. Instance harus resolved.
+2. Daily Story Dataset harus resolved.
+3. Story Date harus valid.
+4. YEAR harus valid.
+5. MONTH harus valid.
+6. Filename harus valid.
+7. Destination Root harus valid.
+8. Final destination path harus dibentuk.
+9. Final destination path harus dinormalisasi.
+10. Final destination path harus divalidasi.
+
+Apabila salah satu tahap gagal:
+
+STATUS = BLOCKED
+atau
+STATUS = REVIEW_REQUIRED
+
+==================================================
+06. PATH ORDER
+
+Path harus mengikuti urutan struktural yang telah ditetapkan.
+
+Urutan:
+
+INSTANCE
+↓
+DAILY STORY DATASET
+↓
+YEAR
+↓
+MONTH
+↓
+DAILY STORY FILE
+
+Placement tidak boleh:
+
+- melompati Dataset;
+- menempatkan file langsung di YEAR;
+- menempatkan file langsung di Instance Root;
+- menempatkan file di MONTH yang salah;
+- membuat struktur alternatif.
+
+==================================================
+07. DESTINATION DIRECTORY
+
+Sebelum file ditempatkan,
+directory tujuan harus berada dalam keadaan valid.
+
+Minimal harus dipastikan:
+
+- Instance valid;
+- Dataset valid;
+- YEAR valid;
+- MONTH valid;
+- seluruh parent directory benar-benar directory;
+- tidak terdapat file collision pada parent path;
+- path masih berada di dalam Instance Root.
+
+Apabila parent directory belum tersedia,
+proses harus dialihkan ke Folder Creation sesuai aturan.
+
+==================================================
+08. FOLDER CREATION HANDOFF
+
+File Placement tidak membuat directory secara bebas.
+
+Jika destination parent belum tersedia:
+
+File Placement
+→ Folder Creation
+→ Year/Month Structure Validation
+→ kembali ke File Placement
+
+Placement hanya dapat dilanjutkan
+setelah parent path berada dalam keadaan valid.
+
+==================================================
+09. FILE PATH RESOLUTION
+
+Final destination harus merupakan hasil resolusi
+dari path component yang telah divalidasi.
+
+Sistem harus menghindari:
+
+- path traversal;
+- absolute path injection;
+- parent directory escape;
+- separator injection;
+- path ambiguity;
+- duplicate separators;
+- path normalization yang mengubah destination
+  secara tidak sah.
+
+==================================================
+10. INSTANCE ROOT BOUNDARY
+
+Daily Story File harus tetap berada
+di dalam Instance Root yang sah.
+
+Tidak boleh ada placement ke:
+
+- parent Instance;
+- sibling Instance;
+- filesystem root;
+- directory eksternal;
+- temporary directory sebagai destination final;
+- path yang tidak terkait dengan Instance.
+
+Temporary storage hanya boleh digunakan
+sebagai tahap operasional apabila mekanisme sistem
+memang membutuhkannya.
+
+Temporary storage bukan destination final.
+
+==================================================
+11. INSTANCE ISOLATION
+
+File Daily Story hanya boleh ditempatkan
+ke Instance yang telah ditentukan.
+
+Sistem tidak boleh memilih Instance
+berdasarkan:
+
+- filename;
+- title;
+- execution context;
+- file source location;
+- Instance lain yang memiliki struktur mirip.
+
+Kesalahan Instance harus menghasilkan conflict
+atau BLOCKED state.
+
+==================================================
+12. DATASET ISOLATION
+
+File harus ditempatkan di Dataset yang sesuai.
+
+Dataset tidak boleh ditentukan hanya berdasarkan
+extension atau filename.
+
+Daily Story File tidak boleh dipindahkan
+ke Dataset lain hanya karena destination tersebut tersedia.
+
+==================================================
+13. YEAR CONSISTENCY
+
+YEAR pada destination harus sama dengan
+YEAR yang berasal dari Story Date tervalidasi.
+
+Jika destination menunjukkan YEAR berbeda:
+
+STATUS = CONFLICT
+
+Sistem tidak boleh:
+
+- mengubah Story Date;
+- mengubah YEAR secara sepihak;
+- memindahkan file ke YEAR lain tanpa resolusi;
+- memilih YEAR yang paling dekat;
+- menggunakan YEAR dari file sebelumnya.
+
+==================================================
+14. MONTH CONSISTENCY
+
+MONTH pada destination harus sama dengan
+MONTH yang berasal dari Story Date tervalidasi.
+
+Jika destination menunjukkan MONTH berbeda:
+
+STATUS = CONFLICT
+
+Sistem tidak boleh memperbaiki konflik
+dengan mengubah metadata Daily Story secara otomatis.
+
+==================================================
+15. FILENAME CONSISTENCY
+
+Filename pada destination harus merupakan
+filename yang telah tervalidasi.
+
+Placement tidak boleh mengganti filename
+secara spontan.
+
+Apabila filename invalid:
+
+placement harus berhenti.
+
+STATUS = BLOCKED
+
+==================================================
+16. EXISTING FILE
+
+Jika destination file telah ada,
+sistem wajib menentukan apakah file tersebut:
+
+- representasi Daily Story yang sama;
+- revision dari Daily Story yang sama;
+- reproduction yang sah;
+- legacy file;
+- file dari entitas berbeda;
+- unknown file.
+
+Tidak boleh dilakukan overwrite otomatis
+hanya karena destination cocok.
+
+==================================================
+17. SAME ENTITY
+
+Jika existing file telah terbukti merupakan
+Daily Story yang sama:
+
+Placement harus bersifat idempotent.
+
+Sistem tidak boleh menciptakan duplicate file.
+
+Hasil dapat berupa:
+
+ALREADY_EXISTS
+atau
+ALREADY_PLACED
+
+sesuai status sistem.
+
+==================================================
+18. DIFFERENT ENTITY
+
+Jika destination file telah digunakan
+oleh entitas Daily Story lain:
+
+STATUS = CONFLICT
+
+Sistem tidak boleh:
+
+- menimpa file;
+- menghapus file lama;
+- memindahkan file lama secara otomatis;
+- mengubah Story ID;
+- mengubah Story Date;
+- mengubah title hanya untuk menghindari collision.
+
+Resolusi mengikuti Instance Integrity
+atau mekanisme conflict handling yang sah.
+
+==================================================
+19. DUPLICATE PREVENTION
+
+Sebelum placement final,
+sistem harus melakukan duplicate check.
+
+Duplicate check harus mempertimbangkan:
+
+- Instance;
+- Dataset;
+- Story ID;
+- Story Date;
+- filename;
+- destination path.
+
+Kesesuaian filename saja tidak cukup.
+
+==================================================
+20. SAME STORY, DIFFERENT PATH
+
+Jika Daily Story yang sama ditemukan
+pada lebih dari satu destination:
+
+STATUS = REVIEW_REQUIRED
+atau
+STATUS = CONFLICT
+
+tergantung hasil integrity validation.
+
+Sistem tidak boleh menganggap multiple copies
+sebagai keadaan normal tanpa metadata
+yang menjelaskan status tersebut.
+
+==================================================
+21. PATH UNIQUENESS
+
+Satu final destination path tidak boleh
+secara aktif merepresentasikan dua entitas
+Daily Story yang berbeda.
+
+Jika dua entitas membutuhkan path yang sama:
+
+STATUS = CONFLICT
+
+File Placement tidak memiliki kewenangan
+untuk mengubah identity kedua entitas tersebut.
+
+==================================================
+22. ATOMICITY
+
+Placement idealnya diperlakukan sebagai satu operasi
+yang menghasilkan salah satu keadaan:
+
+SUCCESS
+atau
+NO PLACEMENT
+
+Sistem tidak boleh meninggalkan keadaan ambigu
+di mana file tampak selesai ditempatkan
+tetapi hasil tidak dapat diverifikasi.
+
+Jika environment tidak mendukung atomic write,
+sistem harus menggunakan mekanisme
+temporary file + finalization yang aman.
+
+==================================================
+23. TEMPORARY FILE
+
+Temporary file dapat digunakan sebagai
+intermediate state apabila diperlukan.
+
+Temporary file:
+
+- bukan Daily Story File final;
+- bukan Canon;
+- bukan destination final;
+- tidak boleh dianggap sebagai completed output.
+
+Temporary file harus:
+
+- memiliki hubungan ke placement attempt;
+- tidak mengganggu final destination;
+- diselesaikan atau dibersihkan sesuai mekanisme;
+- tidak menggantikan final validation.
+
+==================================================
+24. WRITE COMPLETION
+
+Placement belum dianggap selesai hanya karena
+proses write mengembalikan success.
+
+Setelah write:
+
+1. destination harus diverifikasi;
+2. file harus benar-benar ada;
+3. file harus merupakan file valid;
+4. filename harus sesuai;
+5. path harus sesuai;
+6. metadata identity harus dapat ditelusuri;
+7. hasil harus dicatat.
+
+==================================================
+25. POST-PLACEMENT VALIDATION
+
+Post-placement validation minimal memeriksa:
+
+- file exists;
+- destination correct;
+- Instance correct;
+- Dataset correct;
+- YEAR correct;
+- MONTH correct;
+- filename correct;
+- file type correct;
+- identity traceability;
+- no unintended duplicate;
+- no unintended relocation.
+
+Jika salah satu critical check gagal:
+
+STATUS = FAILED
+atau
+STATUS = REVIEW_REQUIRED
+
+==================================================
+26. FILE CONTENT BOUNDARY
+
+File Placement tidak menilai kebenaran
+isi Daily Story.
+
+Namun placement harus memastikan
+file yang ditempatkan adalah artefak
+yang telah dinyatakan siap oleh proses upstream.
+
+File Placement tidak boleh:
+
+- menulis ulang isi cerita;
+- memperbaiki narasi;
+- menambah paragraph;
+- menghapus isi;
+- mengubah Canon;
+- mengubah Story Date;
+- mengubah Story ID.
+
+==================================================
+27. CONTENT VALIDATION HANDOFF
+
+Content correctness ditangani
+oleh proses produksi dan validation sebelumnya.
+
+File Placement hanya memastikan
+artefak yang sudah siap ditempatkan
+ke destination yang tepat.
+
+Apabila file belum memperoleh
+status siap dari upstream:
+
+STATUS = BLOCKED
+
+==================================================
+28. FILE INTEGRITY
+
+File yang telah ditempatkan harus tetap
+dapat dikaitkan dengan artefak yang
+telah divalidasi sebelum placement.
+
+Jika terjadi perubahan file selama
+atau segera setelah placement:
+
+STATUS = REVIEW_REQUIRED
+
+apabila perubahan tersebut tidak berasal
+dari proses resmi.
+
+==================================================
+29. READ-BACK VALIDATION
+
+Jika environment mendukung,
+sistem dapat melakukan read-back
+terhadap file setelah placement.
+
+Tujuan read-back:
+
+- memastikan file dapat dibuka;
+- memastikan file bukan zero-byte
+  kecuali memang valid;
+- memastikan file berada di destination benar;
+- memastikan output tidak corrupt.
+
+Read-back tidak digunakan untuk
+mengubah isi file secara otomatis.
+
+==================================================
+30. REPROCESSING
+
+Jika placement dijalankan ulang
+untuk Daily Story yang sama:
+
+1. resolve destination ulang;
+2. validasi path;
+3. cek existing file;
+4. identifikasi entity;
+5. gunakan file existing jika memang sama;
+6. jangan membuat duplicate.
+
+Reprocessing harus bersifat idempotent
+sejauh kondisi environment memungkinkan.
+
+==================================================
+31. FAILED PLACEMENT
+
+Jika placement gagal:
+
+- jangan menyatakan Daily Story COMPLETED;
+- jangan menganggap file sudah tersimpan;
+- jangan mengubah Story Date;
+- jangan membuat destination baru secara acak;
+- jangan membuat duplicate untuk retry
+  tanpa identity check.
+
+Error harus dikembalikan
+ke mekanisme production pipeline.
+
+==================================================
+32. PARTIAL FAILURE
+
+Jika file berhasil dibuat tetapi
+post-placement validation gagal:
+
+STATUS = REVIEW_REQUIRED
+atau
+STATUS = FAILED
+
+sesuai tingkat masalah.
+
+Sistem tidak boleh langsung
+menganggap operation sukses.
+
+==================================================
+33. RETRY
+
+Retry harus menggunakan:
+
+- Instance yang sama;
+- Dataset yang sama;
+- Story ID yang sama;
+- Story Date yang sama;
+- destination rule yang sama;
+- filename rule yang sama.
+
+Retry tidak boleh menghasilkan
+identity baru hanya karena
+attempt sebelumnya gagal.
+
+==================================================
+34. NO RANDOM RELOCATION
+
+Jika destination gagal,
+sistem tidak boleh memindahkan file
+ke lokasi alternatif secara diam-diam.
+
+Tidak boleh menggunakan:
+
+- folder backup sebagai destination final;
+- folder sementara sebagai hasil akhir;
+- bulan lain;
+- tahun lain;
+- Instance lain;
+- Dataset lain.
+
+Alternatif destination hanya boleh digunakan
+melalui aturan sistem yang eksplisit.
+
+==================================================
+35. REVISION PLACEMENT
+
+Revision terhadap Daily Story yang sama
+harus mempertahankan hubungan
+dengan Story ID yang sama.
+
+Jika revision menggunakan destination
+yang sama:
+
+- identity check wajib dilakukan;
+- overwrite hanya boleh terjadi
+  jika mekanisme revision mengizinkannya;
+- history harus dapat ditelusuri.
+
+File Placement tidak menentukan
+kapan sebuah perubahan merupakan revision.
+
+==================================================
+36. REPRODUCTION PLACEMENT
+
+Reproduction harus dibedakan dari
+Daily Story baru.
+
+Jika reproduction diarahkan ke
+destination yang sama:
+
+identity check wajib dilakukan.
+
+Jika reproduction ditujukan ke destination
+berbeda melalui proses resmi:
+
+destination baru harus divalidasi
+tanpa mengubah identitas asli
+Daily Story.
+
+==================================================
+37. MIGRATION
+
+Migration adalah proses pemindahan
+artefak yang telah ada dari satu
+destination ke destination lain
+melalui mekanisme resmi.
+
+Migration tidak boleh dilakukan
+sebagai efek samping normal
+dari Daily Story production.
+
+Migration harus menjaga:
+
+- Story ID;
+- Story Date;
+- identity;
+- traceability;
+- history.
+
+==================================================
+38. LEGACY FILE
+
+File legacy yang ditemukan pada
+destination tidak boleh:
+
+- dihapus otomatis;
+- ditimpa otomatis;
+- dianggap duplicate tanpa pemeriksaan;
+- dipindahkan tanpa migration process.
+
+Legacy handling berada pada
+Instance Integrity dan Migration.
+
+==================================================
+39. FILE SYSTEM ERROR
+
+Apabila filesystem menghasilkan error
+seperti:
+
+- permission denied;
+- read-only filesystem;
+- unavailable path;
+- storage failure;
+- name collision;
+- invalid path;
+- directory unavailable;
+
+placement harus dihentikan
+atau masuk ke REVIEW_REQUIRED
+sesuai tingkat error.
+
+Filesystem failure tidak boleh
+diatasi dengan mengganti destination
+secara acak.
+
+==================================================
+40. CONCURRENCY
+
+Jika dua proses mencoba menempatkan
+Daily Story pada destination yang sama,
+sistem harus mencegah hasil ganda
+atau collision yang tidak terkontrol.
+
+Identity check harus dilakukan
+dekat dengan waktu final placement.
+
+Apabila environment mendukung locking,
+atomic operation, atau equivalent mechanism,
+mekanisme tersebut harus digunakan
+sesuai kemampuan environment.
+
+==================================================
+41. MULTI-STORY SAFETY
+
+Beberapa Daily Story dapat diproses
+secara berurutan maupun paralel.
+
+Setiap process harus mempertahankan
+isolasi identity dan destination.
+
+Story A tidak boleh:
+
+- menimpa Story B;
+- menggunakan filename Story B;
+- menggunakan Story Date Story B;
+- menggunakan temporary path Story B;
+- mengubah placement state Story B.
+
+==================================================
+42. MULTI-INSTANCE SAFETY
+
+Pemrosesan beberapa Instance
+harus menjaga boundary masing-masing.
+
+Destination resolution harus selalu
+terikat ke Instance aktif.
+
+Tidak boleh terjadi cross-instance placement
+karena kesamaan:
+
+- Story Date;
+- title;
+- filename;
+- YEAR;
+- MONTH.
+
+==================================================
+43. TRACEABILITY
+
+Setiap placement harus dapat ditelusuri
+kepada minimal:
+
+- Instance;
+- Dataset;
+- Story ID;
+- Story Date;
+- filename;
+- destination;
+- placement status.
+
+Jika sistem memiliki execution record,
+placement attempt juga harus dapat ditelusuri.
+
+==================================================
+44. PLACEMENT RECORD
+
+Placement result setidaknya harus mampu
+menghasilkan status:
+
+READY
+
+Destination valid dan siap digunakan.
+
+PLACED
+
+File berhasil ditempatkan dan terverifikasi.
+
+ALREADY_EXISTS
+
+File sudah ada dan telah diidentifikasi
+sebagai entitas yang sama.
+
+BLOCKED
+
+Placement belum boleh dilakukan.
+
+CONFLICT
+
+Destination digunakan oleh entitas
+atau struktur yang bertentangan.
+
+REVIEW_REQUIRED
+
+Placement membutuhkan pemeriksaan.
+
+FAILED
+
+Placement tidak berhasil.
+
+==================================================
+45. COMPLETION HANDOFF
+
+File Placement tidak menentukan
+Daily Story Completion secara mandiri.
+
+Setelah placement berhasil:
+
+Placement
+→ Post-Placement Validation
+→ Placement Result
+→ Story Completion / Instance Validation
+
+Daily Story hanya boleh dinyatakan selesai
+apabila seluruh completion gate
+yang relevan telah terpenuhi.
+
+==================================================
+46. INSTANCE INTEGRITY HANDOFF
+
+Jika ditemukan:
+
+- duplicate;
+- wrong destination;
+- unexpected file;
+- legacy conflict;
+- path corruption;
+- structural inconsistency;
+
+masalah diteruskan ke:
+
+06_INSTANCE_INTEGRITY.txt
+
+File Placement tidak melakukan
+structural repair yang berada di luar scope-nya.
+
+==================================================
+47. NO CANON MUTATION
+
+File Placement tidak memiliki kewenangan
+untuk membuat atau mengubah:
+
+- Character;
+- Relationship;
+- Object;
+- Knowledge;
+- State;
+- Location;
+- Event;
+- Consequence;
+- Process;
+- Canon.
+
+Penempatan file adalah operasi storage,
+bukan operasi Universe.
+
+==================================================
+48. NO TEMPORAL MUTATION
+
+File Placement tidak boleh mengubah:
+
+- Universe Time;
+- Story Date;
+- Past/Present/Future status;
+- Temporal Status;
+- event time;
+- process time;
+- consequence time.
+
+Jika destination tidak cocok dengan temporal metadata,
+placement harus berhenti.
+
+==================================================
+49. NO FILENAME REPAIR
+
+Jika filename invalid,
+File Placement tidak boleh mengubah filename
+secara spontan.
+
+Filename harus kembali ke:
+
+04_FILE_NAMING.txt
+
+untuk diperbaiki melalui proses yang sah.
+
+==================================================
+50. NO PATH REPAIR
+
+Jika destination structure invalid,
+File Placement tidak boleh mengubah YEAR,
+MONTH, Dataset, atau Instance
+hanya untuk membuat path dapat digunakan.
+
+Path harus diperbaiki oleh komponen
+yang memiliki kewenangan terhadap struktur tersebut.
+
+==================================================
+51. PLACEMENT GATE
+
+File Placement hanya boleh dilakukan
+apabila seluruh kondisi berikut terpenuhi:
+
+- Instance valid;
+- Dataset valid;
+- Story Date valid;
+- YEAR valid;
+- MONTH valid;
+- Filename valid;
+- parent directories valid;
+- destination berada dalam Instance Root;
+- tidak ada path traversal;
+- tidak ada unresolved structural conflict;
+- file artifact telah dinyatakan siap;
+- duplicate check selesai;
+- identity check selesai;
+- destination dapat digunakan.
+
+Jika satu critical condition gagal:
+
+STATUS = BLOCKED
+
+==================================================
+52. FINAL VALIDATION
+
+Setelah placement:
+
+1. 
+
+Pastikan destination benar.
+
+2. 
+
+Pastikan file benar-benar ada.
+
+3. 
+
+Pastikan file merupakan file yang dimaksud.
+
+4. 
+
+Pastikan Instance benar.
+
+5. 
+
+Pastikan Dataset benar.
+
+6. 
+
+Pastikan YEAR benar.
+
+7. 
+
+Pastikan MONTH benar.
+
+8. 
+
+Pastikan filename benar.
+
+9. 
+
+Pastikan tidak ada duplicate unintended.
+
+10. 
+
+Pastikan identity tetap dapat ditelusuri.
+
+11. 
+
+Pastikan tidak ada perubahan metadata yang tidak sah.
+
+12. 
+
+Catat hasil placement.
+
+==================================================
+53. ABSOLUTE RULES
+
+1. 
+
+File Placement hanya menempatkan file.
+
+2. 
+
+Destination harus ditentukan sebelum placement.
+
+3. 
+
+Destination tidak boleh ditentukan dari tebakan.
+
+4. 
+
+Story Date tidak boleh diubah untuk menyesuaikan path.
+
+5. 
+
+Filename tidak boleh diubah secara spontan
+untuk menghindari collision.
+
+6. 
+
+File tidak boleh ditempatkan di luar Instance Root.
+
+7. 
+
+Parent directory harus valid sebelum placement.
+
+8. 
+
+Existing file tidak boleh di-overwrite
+tanpa mekanisme resmi.
+
+9. 
+
+Duplicate harus dicegah.
+
+10. 
+
+Retry tidak boleh menciptakan identity baru.
+
+11. 
+
+Placement failure tidak berarti completion.
+
+12. 
+
+Post-placement validation wajib dilakukan.
+
+13. 
+
+File Placement tidak menentukan isi Daily Story.
+
+14. 
+
+File Placement tidak mengubah Canon.
+
+15. 
+
+File Placement tidak mengubah temporal truth.
+
+16. 
+
+File Placement tidak menentukan Story ID.
+
+17. 
+
+File Placement tidak menentukan Story Date.
+
+18. 
+
+File Placement tidak menentukan TITLE.
+
+19. 
+
+File Placement tidak membuat struktur
+di luar kewenangannya.
+
+20. 
+
+Setiap placement harus dapat ditelusuri.
+
+==================================================
+54. FINAL PRINCIPLE
+
+File Placement adalah tahap eksekusi terakhir
+dari struktur penyimpanan sebelum hasil
+Daily Story dianggap benar-benar tersimpan.
+
+Urutan:
+
+VALIDATED DAILY STORY
+→ VALIDATED DESTINATION
+→ VALIDATED FILENAME
+→ FILE PLACEMENT
+→ POST-PLACEMENT VALIDATION
+→ STORAGE CONFIRMED
+
+Dengan demikian:
+
+Sistem produksi menentukan artefak.
+Instance Management menentukan lokasi.
+File Naming menentukan nama.
+File Placement menempatkan artefak.
+Instance Integrity memastikan hasil akhirnya benar.
+
+Tidak satu pun tahap boleh mengambil alih
+kewenangan tahap lainnya.
