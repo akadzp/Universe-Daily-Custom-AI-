@@ -1,0 +1,767 @@
+================================================================================
+RELATIONSHIP CARRYOVER
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / CONTINUITY ORCHESTRATION
+ROLE : TEMPORAL RELATIONSHIP CARRYOVER
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Relationship Carryover adalah mekanisme untuk menjaga kesinambungan temporal
+Relationship dari satu periode Universe ke periode berikutnya.
+
+Mechanism ini memastikan bahwa Relationship yang telah valid:
+
+- tetap dapat dilacak;
+- tidak hilang hanya karena periode berganti;
+- tidak dibuat ulang tanpa dasar;
+- dapat mengalami perubahan secara temporal;
+- dapat berakhir tanpa menghilangkan history;
+- tetap memiliki hubungan dengan event dan consequence yang memengaruhinya.
+
+Relationship Carryover tidak mendefinisikan Relationship.
+
+Relationship System tetap menjadi owner penuh atas domain Relationship.
+
+
+================================================================================
+02. OWNERSHIP
+================================================================================
+
+Relationship System adalah owner terhadap:
+
+- Relationship identity;
+- Relationship structure;
+- Relationship type;
+- Relationship status;
+- Relationship direction;
+- Relationship rules;
+- Relationship validity;
+- Relationship history;
+- Relationship change rules.
+
+Daily Universe hanya mengatur:
+
+- temporal position;
+- carryover;
+- timing perubahan;
+- transition orchestration;
+- cross-period continuity;
+- temporal handoff.
+
+
+================================================================================
+03. CORE PRINCIPLE
+================================================================================
+
+Relationship pada periode baru harus mempunyai hubungan temporal yang sah
+dengan Relationship pada periode sebelumnya.
+
+Hubungan temporal tersebut dapat berupa:
+
+- CONTINUE;
+- CHANGE;
+- SUSPEND;
+- RESUME;
+- END;
+- UNRESOLVED;
+- UNKNOWN.
+
+Continuity tidak berarti Relationship harus tetap sama.
+
+Perubahan Relationship adalah bagian dari continuity selama perubahan tersebut
+mempunyai dasar yang sah.
+
+
+================================================================================
+04. RELATIONSHIP REFERENCE
+================================================================================
+
+Daily Universe menggunakan reference terhadap Relationship yang dimiliki
+Relationship System.
+
+Reference harus dapat mengidentifikasi:
+
+- Relationship ID;
+- participating actors;
+- source domain;
+- previous temporal position;
+- current temporal position;
+- transition status;
+- relevant source event.
+
+
+================================================================================
+05. NO DUPLICATE RELATIONSHIP
+================================================================================
+
+Pergantian periode tidak boleh menghasilkan Relationship baru apabila yang
+sebenarnya terjadi adalah kelanjutan Relationship yang sama.
+
+Relationship identity harus dipertahankan.
+
+Daily Universe tidak boleh membuat Relationship alternatif untuk menggantikan
+Relationship yang sudah ada.
+
+
+================================================================================
+06. RELATIONSHIP CONTINUATION
+================================================================================
+
+Relationship dapat dibawa ke periode berikutnya apabila statusnya masih berlaku
+menurut Relationship System.
+
+Continuation berarti:
+
+- identity tetap;
+- participating actors tetap terhubung;
+- status temporal berlanjut;
+- history tetap tersedia.
+
+Continuation bukan pembuatan Relationship baru.
+
+
+================================================================================
+07. RELATIONSHIP CHANGE
+================================================================================
+
+Relationship dapat berubah apabila terdapat dasar yang sah.
+
+Pola umum:
+
+PREVIOUS RELATIONSHIP STATE
+↓
+EVENT / CONDITION
+↓
+TEMPORAL HANDOFF
+↓
+RELATIONSHIP SYSTEM
+↓
+VALIDATED NEW RELATIONSHIP STATE
+↓
+CURRENT TEMPORAL CONTEXT
+
+
+================================================================================
+08. CHANGE SOURCE
+================================================================================
+
+Perubahan Relationship harus dapat ditelusuri kepada source.
+
+Source dapat berupa:
+
+- Actual Event;
+- consequence;
+- validated domain transition;
+- explicit Relationship System mechanism;
+- temporal condition yang memang diizinkan oleh domain.
+
+Narrative need bukan source yang sah.
+
+
+================================================================================
+09. EFFECTIVE TIME
+================================================================================
+
+Setiap Relationship change yang mempunyai temporal effect harus mempunyai
+Effective Time apabila waktu tersebut relevan dan diketahui.
+
+Effective Time menunjukkan kapan perubahan mulai berlaku di Universe.
+
+Effective Time tidak otomatis sama dengan:
+
+- request time;
+- processing time;
+- story writing time;
+- file creation time.
+
+
+================================================================================
+10. REQUEST VS RESULT
+================================================================================
+
+Permintaan perubahan Relationship bukan berarti Relationship telah berubah.
+
+Relationship Carryover harus membedakan:
+
+REQUESTED CHANGE
+dan
+APPLIED CHANGE.
+
+Perubahan dianggap berlaku hanya setelah Relationship System memberikan result
+yang sah.
+
+
+================================================================================
+11. CONTINUATION STATUS
+================================================================================
+
+Relationship yang dibawa ke periode baru dapat memiliki status orchestration:
+
+CARRY_FORWARD
+→ Relationship tetap berlaku.
+
+CHANGE_REQUIRED
+→ terdapat perubahan yang harus diproses.
+
+ENDED
+→ Relationship telah berakhir.
+
+SUSPENDED
+→ Relationship sementara tidak aktif sesuai aturan domain.
+
+UNRESOLVED
+→ status belum dapat ditentukan.
+
+UNKNOWN
+→ informasi tidak cukup.
+
+
+================================================================================
+12. SUSPENSION
+================================================================================
+
+Relationship dapat memiliki kondisi suspension apabila Relationship System
+mengizinkannya.
+
+Daily Universe hanya membawa status tersebut melalui waktu.
+
+Suspension bukan termination.
+
+Suspension bukan deletion.
+
+Suspension tidak menghapus history.
+
+
+================================================================================
+13. RESUMPTION
+================================================================================
+
+Relationship yang sebelumnya suspended dapat kembali aktif apabila terdapat
+dasar yang sah.
+
+Resume harus mempertahankan:
+
+- Relationship identity;
+- history;
+- participating actors;
+- previous status;
+- transition source;
+- effective time.
+
+
+================================================================================
+14. ENDING
+================================================================================
+
+Relationship dapat berakhir apabila terdapat dasar yang sah dari Relationship
+System atau event Universe yang menghasilkan perubahan yang diterima oleh
+Relationship System.
+
+Ending:
+
+- menghentikan current applicability;
+- tidak menghapus historical Relationship;
+- harus mempertahankan identity;
+- tetap dapat ditelusuri dari history.
+
+
+================================================================================
+15. UNRESOLVED RELATIONSHIP
+================================================================================
+
+UNRESOLVED digunakan apabila Relationship masih relevan tetapi status
+berikutnya belum dapat ditentukan.
+
+Unresolved bukan:
+
+- ended;
+- cancelled;
+- changed;
+- deleted.
+
+Unresolved harus dipertahankan apabila masih relevan terhadap future
+continuity.
+
+
+================================================================================
+16. UNKNOWN RELATIONSHIP
+================================================================================
+
+UNKNOWN berarti informasi yang diperlukan untuk menentukan Relationship atau
+transition belum tersedia secara cukup.
+
+Unknown tidak boleh dipaksa menjadi:
+
+- active;
+- inactive;
+- changed;
+- ended.
+
+
+================================================================================
+17. ACTOR CONTINUITY
+================================================================================
+
+Relationship continuity bergantung pada identity Actor yang terlibat.
+
+Daily Universe harus memastikan bahwa perubahan temporal Relationship mengarah
+kepada Actor reference yang benar.
+
+Actor Carryover tetap mengikuti Character System.
+
+Relationship Carryover tidak boleh membuat Actor baru hanya untuk mempertahankan
+Relationship.
+
+
+================================================================================
+18. EVENT IMPACT
+================================================================================
+
+Actual Event dapat memengaruhi Relationship.
+
+Daily Universe harus dapat menentukan:
+
+- source event;
+- event time;
+- affected Relationship;
+- temporal impact;
+- required Relationship handoff.
+
+Relationship System menentukan apakah Relationship benar-benar berubah dan
+bagaimana bentuk perubahan tersebut.
+
+
+================================================================================
+19. CONSEQUENCE IMPACT
+================================================================================
+
+Consequence juga dapat memengaruhi Relationship.
+
+Daily Universe mengatur:
+
+- consequence timing;
+- Relationship reference;
+- cross-period continuation.
+
+Relationship System menentukan hasil domain Relationship.
+
+
+================================================================================
+20. RELATIONSHIP HISTORY
+================================================================================
+
+History Relationship harus tetap dapat membedakan:
+
+- initial validity;
+- continuation;
+- change;
+- suspension;
+- resumption;
+- ending;
+- revision.
+
+Daily Universe tidak membuat duplicate history.
+
+Relationship System tetap menjadi sumber history Relationship.
+
+
+================================================================================
+21. TEMPORAL OVERLAP
+================================================================================
+
+Relationship states atau transitions yang overlap secara temporal tidak
+otomatis merupakan conflict.
+
+Conflict ditentukan berdasarkan aturan Relationship System dan temporal
+consistency.
+
+Daily Universe tidak boleh menyimpulkan conflict hanya karena dua temporal
+references overlap.
+
+
+================================================================================
+22. CONCURRENT CHANGES
+================================================================================
+
+Lebih dari satu event dapat berpotensi memengaruhi Relationship dalam periode
+yang sama.
+
+Daily Universe harus memeriksa:
+
+- ordering;
+- dependency;
+- causal relation;
+- effective time;
+- compatibility.
+
+Jika urutan atau hasil tidak dapat ditentukan, system harus menandai conflict
+atau unresolved.
+
+
+================================================================================
+23. CHANGE DEPENDENCY
+================================================================================
+
+Relationship change dapat bergantung pada:
+
+- Actor availability;
+- event;
+- consequence;
+- Character state;
+- other Relationship;
+- Object;
+- Knowledge;
+- Location;
+- Process;
+- temporal condition.
+
+Dependency domain tetap mengikuti owner masing-masing.
+
+Daily Universe hanya mengatur temporal dependency dan handoff.
+
+
+================================================================================
+24. NO ASSUMED RELATIONSHIP CHANGE
+================================================================================
+
+Relationship tidak boleh berubah hanya karena:
+
+- waktu berlalu;
+- Character tidak bertemu;
+- Character tidak muncul dalam story;
+- Narrator tidak membahas Relationship;
+- cerita membutuhkan perkembangan;
+- pembaca mengharapkan perubahan.
+
+Perubahan harus memiliki dasar yang sah.
+
+
+================================================================================
+25. NO STORY-BASED ENDING
+================================================================================
+
+Daily Story tidak boleh mengakhiri Relationship hanya karena:
+
+- cerita selesai;
+- scene selesai;
+- Daily Story berpindah focus;
+- narration berhenti membahas Relationship.
+
+Relationship tetap berjalan menurut Universe.
+
+
+================================================================================
+26. NARRATIVE SEPARATION
+================================================================================
+
+Narrative representation tidak mengubah Relationship secara otomatis.
+
+Flashback dapat menampilkan Relationship state masa lalu.
+
+Flash-forward dapat membahas Relationship future sesuai Temporal Status.
+
+Tidak satu pun teknik penyajian mengubah current Relationship secara langsung.
+
+
+================================================================================
+27. CHARACTER KNOWLEDGE SEPARATION
+================================================================================
+
+Perubahan Relationship tidak otomatis berarti semua Character mengetahui
+perubahan tersebut.
+
+Knowledge Character tetap mengikuti Character System.
+
+Relationship Carryover hanya mengatur Relationship sebagai fakta domain dan
+posisi temporalnya.
+
+
+================================================================================
+28. PUBLIC STATUS SEPARATION
+================================================================================
+
+Apabila Relationship memiliki public status atau tingkat keterlihatan yang
+didefinisikan oleh Relationship System, perubahan temporal terhadap
+Relationship harus tetap dibedakan dari informasi tentang siapa yang
+mengetahui Relationship tersebut.
+
+Relationship Carryover tidak menentukan Knowledge Character.
+
+
+================================================================================
+29. HANDOFF
+================================================================================
+
+Relationship change handoff minimal harus memuat:
+
+- Relationship ID;
+- source event atau condition;
+- previous Relationship reference;
+- requested transition;
+- temporal position;
+- effective time apabila diketahui;
+- dependency;
+- required result.
+
+
+================================================================================
+30. HANDOFF RESULT
+================================================================================
+
+Relationship System dapat mengembalikan:
+
+APPLIED
+→ perubahan Relationship telah diterapkan.
+
+ACCEPTED
+→ request diterima tetapi belum diterapkan.
+
+REJECTED
+→ request ditolak.
+
+BLOCKED
+→ dependency atau aturan menghalangi perubahan.
+
+REQUIRES_INPUT
+→ data tambahan diperlukan.
+
+UNRESOLVED
+→ hasil belum dapat ditentukan.
+
+UNKNOWN
+→ hasil belum diketahui.
+
+
+================================================================================
+31. EFFECTIVE STATE
+================================================================================
+
+Relationship state yang diminta bukan otomatis Relationship state yang berlaku.
+
+Daily Universe harus menggunakan hasil Relationship System untuk menentukan
+temporal continuity berikutnya.
+
+REQUESTED
+≠
+EFFECTIVE
+
+
+================================================================================
+32. CROSS-PERIOD CARRYOVER
+================================================================================
+
+Pada period boundary:
+
+CURRENT RELATIONSHIP
+↓
+TEMPORAL EVALUATION
+↓
+CONTINUE / CHANGE / SUSPEND / END / UNRESOLVED
+↓
+DOMAIN HANDOFF
+↓
+VALIDATED RESULT
+↓
+NEXT PERIOD RELATIONSHIP CONTEXT
+
+
+================================================================================
+33. DOMAIN OWNERSHIP PRESERVATION
+================================================================================
+
+Daily Universe tidak boleh:
+
+- membuat Relationship definition baru;
+- mengubah Relationship type;
+- membuat Relationship state kedua;
+- mengganti Relationship identity;
+- menghapus Relationship history;
+- membuat rule Relationship sendiri.
+
+
+================================================================================
+34. DUPLICATE PREVENTION
+================================================================================
+
+Duplicate Relationship harus dapat dideteksi berdasarkan:
+
+- Relationship ID;
+- participating actors;
+- temporal identity;
+- source;
+- transition;
+- domain ownership.
+
+Return atau reactivation tidak otomatis menghasilkan Relationship baru.
+
+
+================================================================================
+35. CONFLICT DETECTION
+================================================================================
+
+Relationship Carryover harus dapat mendeteksi:
+
+- unknown Relationship ID;
+- unknown Actor reference;
+- identity conflict;
+- contradictory transition;
+- invalid effective time;
+- concurrent incompatible change;
+- domain ownership conflict;
+- temporal conflict;
+- duplicate change.
+
+
+================================================================================
+36. CONFLICT HANDLING
+================================================================================
+
+Jika terdapat conflict:
+
+1. identifikasi source;
+2. identifikasi Relationship System;
+3. pertahankan last valid state;
+4. tandai transition yang bermasalah;
+5. arahkan ke domain owner atau temporal validation.
+
+Tidak boleh dilakukan silent repair.
+
+
+================================================================================
+37. NEXT PERIOD CONTEXT
+================================================================================
+
+Relationship Carryover menghasilkan temporal reference yang dapat digunakan
+oleh periode berikutnya.
+
+Context minimal dapat menunjukkan:
+
+- Relationship ID;
+- current status;
+- effective time;
+- previous transition;
+- active dependency;
+- unresolved condition;
+- domain result;
+- next evaluation requirement.
+
+
+================================================================================
+38. DAILY STORY INDEPENDENCE
+================================================================================
+
+Daily Story dapat:
+
+- tidak menyebut Relationship;
+- hanya menyebut sebagian Relationship;
+- menyajikan Relationship masa lalu;
+- menyajikan Relationship yang sedang berlaku.
+
+Ketiadaan Relationship dari Daily Story tidak mengubah Relationship Universe.
+
+
+================================================================================
+39. NARRATOR INDEPENDENCE
+================================================================================
+
+Narrator tidak boleh mengubah Relationship untuk:
+
+- menciptakan konflik;
+- menciptakan romance;
+- mengakhiri hubungan;
+- mempercepat perkembangan;
+- memberikan closure.
+
+Narator hanya merepresentasikan Relationship yang telah tersedia secara sah.
+
+
+================================================================================
+40. VALIDATION
+================================================================================
+
+Relationship Carryover harus divalidasi terhadap:
+
+- Relationship System;
+- Relationship ID;
+- Actor identity;
+- Universe Time;
+- previous period;
+- current period;
+- event source;
+- consequence;
+- effective time;
+- dependency;
+- domain result;
+- temporal consistency.
+
+
+================================================================================
+41. VALIDATION RESULT
+================================================================================
+
+VALID
+→ Relationship continuity dapat diteruskan.
+
+REVIEW_REQUIRED
+→ terdapat uncertainty yang belum menghalangi proses.
+
+REVISION_REQUIRED
+→ transition atau reference membutuhkan koreksi.
+
+BLOCKED
+→ Relationship continuity tidak dapat diteruskan secara sah.
+
+
+================================================================================
+42. FAILURE PRINCIPLE
+================================================================================
+
+Jika Relationship Carryover gagal, system tidak boleh:
+
+- membuat Relationship baru;
+- mengganti Relationship ID;
+- memaksa perubahan;
+- menghapus history;
+- mengubah Actor;
+- mengubah Knowledge Character;
+- memilih hasil yang paling nyaman untuk cerita.
+
+Sistem harus mempertahankan keadaan Relationship yang terakhir sah.
+
+
+================================================================================
+43. FINAL PRINCIPLE
+================================================================================
+
+RELATIONSHIP CARRYOVER BUKAN:
+
+MEMBUAT ULANG HUBUNGAN SETIAP HARI.
+
+RELATIONSHIP CARRYOVER ADALAH:
+
+MEMASTIKAN RELATIONSHIP YANG DIMILIKI RELATIONSHIP SYSTEM
+TETAP TERHUBUNG DENGAN PERJALANAN TEMPORAL UNIVERSE.
+
+RELATIONSHIP SYSTEM MENENTUKAN:
+
+APA RELATIONSHIP TERSEBUT
+DAN APA ATURAN YANG BERLAKU PADANYA.
+
+DAILY UNIVERSE MENENTUKAN:
+
+KAPAN KONDISI RELATIONSHIP BERLAKU,
+KAPAN PERUBAHAN HARUS DIPROSES,
+DAN BAGAIMANA HASILNYA DIBAWA KE PERIODE BERIKUTNYA.
+
+
+================================================================================
+END OF RELATIONSHIP CARRYOVER
+================================================================================
