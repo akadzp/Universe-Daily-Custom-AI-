@@ -1,0 +1,495 @@
+================================================================================
+NARRATIVE TIME
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / TEMPORAL DOMAIN
+APPLICATION : NARRATIVE CONTEXT
+COORDINATION : NARRATOR SYSTEM
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Narrative Time adalah urutan temporal yang digunakan ketika informasi Universe
+disajikan melalui sebuah cerita.
+
+Narrative Time menentukan:
+
+- kapan suatu informasi diperlihatkan kepada pembaca;
+- dalam urutan apa informasi temporal disajikan;
+- apakah cerita mengikuti urutan waktu Universe atau tidak;
+- bagaimana perpindahan antara periode temporal dapat berlangsung;
+- bagaimana informasi dari waktu berbeda tetap dapat dipisahkan.
+
+Narrative Time tidak menggantikan Universe Time.
+
+Narrative Time tidak mengubah posisi temporal kejadian dalam Universe.
+
+
+================================================================================
+02. SYSTEM BOUNDARY
+================================================================================
+
+Daily Universe mendefinisikan hubungan temporal antara Universe Time dan
+Narrative Time.
+
+Narrator System bertanggung jawab terhadap penerapan Narrative Time dalam
+struktur dan penyajian cerita.
+
+Daily Universe menjaga:
+
+- identitas waktu;
+- hubungan temporal;
+- posisi kejadian;
+- batas antara waktu Universe dan urutan penyajian.
+
+Narrator menentukan bagaimana informasi tersebut disajikan kepada pembaca.
+
+
+================================================================================
+03. UNIVERSE TIME VS NARRATIVE TIME
+================================================================================
+
+UNIVERSE TIME
+→ posisi waktu sebenarnya di dalam Universe.
+
+NARRATIVE TIME
+→ urutan waktu ketika informasi tentang Universe disajikan kepada pembaca.
+
+Kedua sistem harus dapat berjalan berbeda tanpa dianggap sebagai konflik.
+
+Perbedaan urutan penyajian tidak mengubah posisi kejadian dalam Universe.
+
+
+================================================================================
+04. NARRATIVE ORDER
+================================================================================
+
+Cerita dapat menyajikan informasi:
+
+- secara kronologis;
+- tidak kronologis;
+- melalui perpindahan temporal;
+- melalui pengungkapan informasi masa lalu;
+- melalui pengungkapan informasi mengenai masa depan;
+- melalui urutan presentasi yang berbeda dari urutan kejadian.
+
+Narasi tetap harus mempertahankan posisi temporal asli setiap informasi.
+
+
+================================================================================
+05. TEMPORAL PRESENTATION
+================================================================================
+
+Ketika sebuah informasi disajikan, sistem harus dapat membedakan:
+
+- waktu kejadian;
+- waktu yang sedang disajikan;
+- waktu ketika karakter memperoleh informasi;
+- waktu ketika pembaca menerima informasi.
+
+Keempatnya tidak boleh dianggap selalu sama.
+
+
+================================================================================
+06. CURRENT NARRATIVE POSITION
+================================================================================
+
+Current Narrative Position adalah posisi waktu yang sedang direpresentasikan
+dalam penyajian cerita.
+
+Current Narrative Position tidak otomatis sama dengan Current Universe Time.
+
+Perubahan Current Narrative Position hanya mengubah urutan penyajian.
+
+Perubahan tersebut tidak memindahkan Universe ke waktu lain.
+
+
+================================================================================
+07. CHRONOLOGICAL NARRATION
+================================================================================
+
+Narasi dapat mengikuti urutan kronologis Universe.
+
+Dalam kondisi ini:
+
+Narrative Time
+=
+Universe Time
+
+untuk bagian cerita yang sedang disajikan, selama tidak terdapat teknik
+penyajian yang menyebabkan perbedaan urutan.
+
+
+================================================================================
+08. NON-CHRONOLOGICAL NARRATION
+================================================================================
+
+Narasi dapat menyajikan kejadian tidak sesuai urutan Universe Time.
+
+Dalam kondisi tersebut, setiap bagian narasi tetap harus dapat dikaitkan dengan
+posisi Universe Time yang sebenarnya.
+
+Perbedaan urutan tidak boleh menyebabkan perubahan terhadap:
+
+- sejarah;
+- kejadian;
+- state;
+- relationship;
+- object;
+- knowledge;
+- causal order.
+
+
+================================================================================
+09. FLASHBACK
+================================================================================
+
+Flashback adalah penyajian informasi yang memiliki posisi Universe Time lebih
+awal daripada posisi temporal yang sedang menjadi konteks utama narasi.
+
+Flashback hanya mengubah urutan penyajian.
+
+Flashback tidak:
+
+- memundurkan Universe Time;
+- menghapus perkembangan setelahnya;
+- membuat Universe kembali ke keadaan masa lalu;
+- mengubah kejadian masa lalu menjadi kejadian baru.
+
+Informasi dalam flashback tetap harus mempertahankan temporal position aslinya.
+
+
+================================================================================
+10. FLASH-FORWARD
+================================================================================
+
+Flash-forward adalah penyajian informasi yang memiliki posisi Universe Time
+lebih lanjut daripada posisi temporal yang sedang menjadi konteks utama
+narasi.
+
+Flash-forward tidak otomatis berarti kejadian tersebut sudah terjadi.
+
+Status informasi masa depan harus mengikuti Temporal Status System.
+
+Flash-forward dapat merepresentasikan:
+
+- actual future;
+- predicted future;
+- possible future;
+- planned future;
+- imagined future;
+- hypothetical future;
+
+sesuai status yang sah.
+
+Narasi tidak boleh mengubah status tersebut hanya karena informasi ditampilkan
+lebih awal.
+
+
+================================================================================
+11. TEMPORAL RETURN
+================================================================================
+
+Setelah penyajian berpindah ke waktu lain, narasi dapat kembali ke posisi
+temporal sebelumnya.
+
+Perpindahan kembali tersebut hanya berlaku untuk Narrative Time.
+
+Universe Time tetap berada pada posisi temporal yang sebenarnya.
+
+
+================================================================================
+12. MULTIPLE TEMPORAL POSITIONS
+================================================================================
+
+Sebuah Daily Story dapat memuat lebih dari satu posisi temporal.
+
+Setiap posisi temporal harus dapat dibedakan secara internal.
+
+Perpindahan antara posisi temporal tidak boleh menghasilkan pencampuran fakta
+dari satu waktu dengan fakta dari waktu lain.
+
+
+================================================================================
+13. TEMPORAL CONTEXT
+================================================================================
+
+Setiap bagian cerita yang menggunakan waktu yang berbeda harus memiliki
+temporal context yang dapat ditentukan.
+
+Temporal context sekurang-kurangnya harus dapat menjawab:
+
+- pada waktu Universe mana informasi tersebut berada;
+- apakah informasi tersebut sedang terjadi;
+- apakah informasi tersebut merupakan ingatan;
+- apakah informasi tersebut merupakan kemungkinan;
+- apakah informasi tersebut merupakan rencana;
+- apakah informasi tersebut merupakan prediksi;
+- apakah informasi tersebut merupakan bentuk informasi lain yang diatur oleh
+  Temporal Status System.
+
+
+================================================================================
+14. READER ORDER VS UNIVERSE ORDER
+================================================================================
+
+Urutan yang diketahui pembaca tidak selalu sama dengan urutan kejadian di
+Universe.
+
+Sistem harus menjaga dua konsep:
+
+READER ORDER
+→ urutan informasi diterima pembaca.
+
+UNIVERSE ORDER
+→ urutan posisi kejadian dalam Universe.
+
+Perbedaan keduanya tidak boleh dianggap sebagai temporal contradiction.
+
+
+================================================================================
+15. INFORMATION REVEAL TIME
+================================================================================
+
+Waktu ketika pembaca mengetahui sebuah informasi berbeda dari waktu ketika
+informasi tersebut terjadi atau menjadi benar di dalam Universe.
+
+Informasi yang baru diperlihatkan kepada pembaca tidak otomatis merupakan
+informasi yang baru terjadi di Universe.
+
+Information Reveal Time harus dipisahkan dari Event Time.
+
+
+================================================================================
+16. CHARACTER KNOWLEDGE BOUNDARY
+================================================================================
+
+Perubahan Narrative Time tidak boleh memberikan pengetahuan kepada Character
+secara retroaktif.
+
+Karakter hanya dapat menggunakan informasi yang berada dalam Knowledge domain
+mereka sesuai aturan Character System.
+
+Pembaca dapat mengetahui suatu fakta sebelum karakter mengetahuinya tanpa
+mengubah Knowledge Character.
+
+Narrative disclosure bukan Knowledge acquisition.
+
+
+================================================================================
+17. CAUSAL ORDER
+================================================================================
+
+Narrative Time dapat berbeda dari causal order.
+
+Namun causal order tetap harus dipertahankan.
+
+Penyajian consequence sebelum penyebabnya diperbolehkan sebagai struktur
+naratif selama hubungan temporal dan causal dapat dipertahankan.
+
+Narasi tidak boleh membuat consequence menjadi penyebab hanya karena
+consequence ditampilkan lebih dahulu.
+
+
+================================================================================
+18. STATE PRESERVATION
+================================================================================
+
+Ketika narasi berpindah dari satu waktu ke waktu lain, state yang berlaku pada
+waktu tersebut harus tetap terkait dengan temporal position yang benar.
+
+State dari masa lalu tidak boleh diterapkan pada masa kini hanya karena
+bagian cerita sedang melakukan flashback.
+
+State masa depan tidak boleh diperlakukan sebagai state masa kini tanpa dasar.
+
+
+================================================================================
+19. EVENT IDENTITY
+================================================================================
+
+Satu kejadian tetap merupakan kejadian yang sama meskipun ditampilkan beberapa
+kali atau dari urutan penyajian berbeda.
+
+Penyajian ulang tidak otomatis menghasilkan event baru.
+
+Narrative repetition tidak boleh menghasilkan duplicate Canon Event.
+
+
+================================================================================
+20. TEMPORAL DUPLICATION
+================================================================================
+
+Sistem harus dapat membedakan:
+
+- event yang benar-benar berbeda;
+- event yang sama yang diceritakan ulang;
+- event yang sama yang dilihat dari sudut berbeda;
+- event yang sama yang muncul pada lebih dari satu bagian cerita.
+
+Narrative duplication tidak boleh dianggap sebagai temporal duplication.
+
+
+================================================================================
+21. UNKNOWN TEMPORAL CONTEXT
+================================================================================
+
+Apabila posisi temporal sebuah informasi belum diketahui, statusnya harus tetap
+unknown.
+
+Narrative presentation tidak boleh digunakan untuk menciptakan tanggal atau
+urutan yang belum tersedia.
+
+Ketidakjelasan temporal harus dipertahankan sampai terdapat dasar yang cukup.
+
+
+================================================================================
+22. TEMPORAL TRANSITION
+================================================================================
+
+Perpindahan Narrative Time harus dapat dikenali sebagai transition.
+
+Transition harus menjaga:
+
+- titik waktu sebelum perpindahan;
+- titik waktu setelah perpindahan;
+- identitas bagian yang sedang disajikan;
+- status temporal informasi.
+
+Transition tidak boleh mengubah Universe Time.
+
+
+================================================================================
+23. DATE AND STORY IDENTITY
+================================================================================
+
+Daily Story memiliki Universe Date yang berasal dari Universe Time.
+
+Narrative Time boleh berpindah ke waktu lain di dalam cerita tersebut, tetapi
+Universe Date utama Daily Story tetap merupakan identitas temporal produksi
+cerita.
+
+Perpindahan Narrative Time tidak boleh mengganti Daily Story ID.
+
+
+================================================================================
+24. RELATION TO DAILY UNIVERSE
+================================================================================
+
+Daily Universe menjaga hubungan antara Narrative Time dan Universe Time.
+
+Daily Universe tidak menentukan gaya penyajian.
+
+Narrator menggunakan aturan Narrative Time untuk menentukan cara temporal
+disusun dalam cerita.
+
+Apabila penyajian Narrator menyebabkan konflik dengan posisi temporal Universe,
+masalah tersebut harus diarahkan kembali ke pemeriksaan temporal.
+
+
+================================================================================
+25. RELATION TO TEMPORAL STATUS
+================================================================================
+
+Narrative Time hanya menentukan urutan penyajian.
+
+Temporal Status menentukan status realitas atau epistemik dari informasi
+tersebut.
+
+Keduanya tidak boleh digabungkan.
+
+Suatu informasi dapat disajikan lebih awal tanpa menjadi actual lebih awal.
+
+Suatu informasi dapat disajikan mengenai masa depan tanpa menjadi kejadian yang
+sudah terjadi.
+
+
+================================================================================
+26. NO TEMPORAL REWRITING
+================================================================================
+
+Narrative Time tidak boleh:
+
+- memindahkan event;
+- mengubah tanggal event;
+- mengubah causal order;
+- mengubah sejarah;
+- mengubah state;
+- mengubah relationship;
+- mengubah object;
+- mengubah knowledge;
+- menciptakan future event hanya karena telah disajikan.
+
+Narrative Time hanya mengatur urutan penyampaian.
+
+
+================================================================================
+27. TEMPORAL AMBIGUITY
+================================================================================
+
+Ambiguitas temporal dapat dipertahankan apabila memang menjadi bagian dari
+informasi yang tersedia.
+
+Namun ambiguity tidak boleh membuat sistem menggabungkan dua posisi waktu
+yang berbeda menjadi satu.
+
+Jika dua posisi waktu tidak dapat dibedakan, sistem harus menandainya sebagai
+ambiguous sampai tersedia informasi yang cukup.
+
+
+================================================================================
+28. VALIDATION
+================================================================================
+
+Narrative Time harus dapat divalidasi terhadap:
+
+- Universe Time;
+- temporal position;
+- event identity;
+- causal order;
+- character knowledge boundary;
+- state continuity;
+- temporal status;
+- Daily Story identity.
+
+Validasi memastikan bahwa perubahan urutan penyajian tidak menghasilkan
+perubahan terhadap Canon.
+
+
+================================================================================
+29. FAILURE PRINCIPLE
+================================================================================
+
+Jika Narrative Time tidak dapat disusun tanpa menghasilkan temporal conflict,
+sistem tidak boleh menyelesaikan konflik dengan mengubah fakta Universe.
+
+Proses harus dihentikan atau dikembalikan kepada tahap yang sesuai untuk
+penyelesaian temporal.
+
+
+================================================================================
+30. FINAL PRINCIPLE
+================================================================================
+
+Universe Time menentukan:
+
+KAPAN SESUATU BERADA DI DALAM UNIVERSE.
+
+Narrative Time menentukan:
+
+KAPAN INFORMASI TENTANG HAL TERSEBUT DISAJIKAN KEPADA PEMBACA.
+
+Urutan penyajian dapat berubah.
+
+Waktu Universe tidak boleh berubah hanya karena urutan penyajian berubah.
+
+
+================================================================================
+END OF NARRATIVE TIME
+================================================================================
