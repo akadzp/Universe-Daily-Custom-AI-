@@ -1,0 +1,79 @@
+system/
+└── 02_Daily_Page/
+    │
+    ├── dokumentasi.txt
+    ├── 00_DAILY_PAGE_SYSTEM.txt
+    │
+    ├── 01_Global/
+    │   ├── 01_PAGE_DEFINITION.txt
+    │   ├── 02_PAGE_PRINCIPLES.txt
+    │   ├── 03_PAGE_OWNERSHIP.txt
+    │   ├── 04_PAGE_HIERARCHY.txt
+    │   ├── 05_PAGE_IDENTITY.txt
+    │   └── 06_PAGE_REGISTRY.txt
+    │
+    ├── 02_Temporal/
+    │   ├── 01_PAGE_REFERENCE_DATE.txt
+    │   ├── 02_PAGE_STORY_TIME.txt
+    │   ├── 03_PAGE_TEMPORAL_SCOPE.txt
+    │   ├── 04_PAST_PRESENT_FUTURE.txt
+    │   ├── 05_TEMPORAL_RELATION_TO_UNIVERSE.txt
+    │   └── 06_TEMPORAL_VALIDATION.txt
+    │
+    ├── 03_Scope/
+    │   ├── 01_PAGE_SCOPE.txt
+    │   ├── 02_UNIVERSE_DATA_SELECTION.txt
+    │   ├── 03_RELEVANCE_RULES.txt
+    │   ├── 04_SCOPE_INDEPENDENCE.txt
+    │   ├── 05_SCOPE_EXPANSION_REDUCTION.txt
+    │   └── 06_SCOPE_VALIDATION.txt
+    │
+    ├── 04_Production/
+    │   ├── 01_PAGE_PRODUCTION_TRIGGER.txt
+    │   ├── 02_INDEPENDENT_PRODUCTION.txt
+    │   ├── 03_STORY_DESIGN_HANDOFF.txt
+    │   ├── 04_PAGE_STORY_ID.txt
+    │   ├── 05_PAGE_STORY_COMPLETION.txt
+    │   └── 06_PAGE_PRODUCTION_VALIDATION.txt
+    │
+    ├── 05_Page_Hierarchy/
+    │   ├── 01_PARENT_PAGE.txt
+    │   ├── 02_CHILD_PAGE.txt
+    │   ├── 03_PAGE_BRANCHING.txt
+    │   ├── 04_PARENT_CHILD_RELATION.txt
+    │   ├── 05_SCOPE_INHERITANCE.txt
+    │   └── 06_BRANCH_VALIDATION.txt
+    │
+    ├── 06_Cross_Page/
+    │   ├── 01_PAGE_TO_PAGE_RELATION.txt
+    │   ├── 02_SHARED_UNIVERSE_CONTEXT.txt
+    │   ├── 03_CROSS_PAGE_REFERENCE.txt
+    │   ├── 04_CROSS_PAGE_CONSISTENCY.txt
+    │   ├── 05_CROSS_PAGE_CONFLICT.txt
+    │   └── 06_CROSS_PAGE_VALIDATION.txt
+    │
+    ├── 07_Universe_Relation/
+    │   ├── 01_UNIVERSE_ACCESS.txt
+    │   ├── 02_UNIVERSE_TIME_DEPENDENCY.txt
+    │   ├── 03_CANON_BOUNDARY.txt
+    │   ├── 04_UNIVERSE_FACT_VS_PAGE_STORY.txt
+    │   ├── 05_PAGE_TO_UNIVERSE_BOUNDARY.txt
+    │   └── 06_UNIVERSE_RELATION_VALIDATION.txt
+    │
+    ├── 08_Story/
+    │   ├── 01_PAGE_STORY_DEFINITION.txt
+    │   ├── 02_PAGE_STORY_CONTEXT.txt
+    │   ├── 03_PAGE_STORY_TEMPORAL_RANGE.txt
+    │   ├── 04_PAGE_STORY_CONTENT_BOUNDARY.txt
+    │   ├── 05_PAGE_STORY_CONTINUITY.txt
+    │   └── 06_PAGE_STORY_VALIDATION.txt
+    │
+    └── 09_Validation/
+        ├── 01_PAGE_TEMPORAL_VALIDATION.txt
+        ├── 02_PAGE_SCOPE_VALIDATION.txt
+        ├── 03_PAGE_PRODUCTION_VALIDATION.txt
+        ├── 04_PAGE_HIERARCHY_VALIDATION.txt
+        ├── 05_CROSS_PAGE_VALIDATION.txt
+        ├── 06_PAGE_STORY_VALIDATION.txt
+        ├── 07_PAGE_UNIVERSE_VALIDATION.txt
+        └── 08_FINAL_DAILY_PAGE_GATE.txt
