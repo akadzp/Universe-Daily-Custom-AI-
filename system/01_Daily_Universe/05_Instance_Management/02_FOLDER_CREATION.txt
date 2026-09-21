@@ -1,0 +1,730 @@
+================================================================================
+FOLDER CREATION
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / INSTANCE MANAGEMENT
+ROLE : AUTOMATED DIRECTORY CREATION
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Folder Creation adalah mekanisme untuk membuat directory yang diperlukan
+agar hasil Daily Universe dapat ditempatkan pada struktur Instance yang benar.
+
+System ini memastikan bahwa:
+
+- directory yang diperlukan dapat dibuat secara otomatis;
+- path yang dibuat mengikuti Instance Structure;
+- directory creation bersifat deterministic;
+- directory yang sudah tersedia tidak dibuat ulang;
+- existing content tidak dirusak;
+- structural conflict dapat dideteksi;
+- hasil hanya dapat disimpan setelah directory target valid.
+
+
+================================================================================
+02. CORE PRINCIPLE
+================================================================================
+
+Folder Creation tidak menentukan ke mana sebuah Story seharusnya berada.
+
+Destination ditentukan terlebih dahulu oleh Instance Structure.
+
+Folder Creation hanya menjalankan:
+
+VALID DESTINATION PATH
+        ↓
+CHECK EXISTING STRUCTURE
+        ↓
+CREATE MISSING DIRECTORIES
+        ↓
+VERIFY RESULT
+        ↓
+READY FOR FILE PLACEMENT
+
+
+================================================================================
+03. INPUT
+================================================================================
+
+Folder Creation dapat menerima:
+
+- Instance Root;
+- Dataset;
+- Year;
+- Month;
+- resolved destination path;
+- structural metadata;
+- validation result.
+
+Input harus berasal dari Instance Management yang telah melakukan resolution.
+
+Folder Creation tidak boleh membuat nilai Year atau Month sendiri.
+
+
+================================================================================
+04. PRECONDITION
+================================================================================
+
+Folder Creation hanya boleh dimulai apabila:
+
+- Instance valid;
+- Dataset valid;
+- Story Date valid;
+- Year valid;
+- Month valid;
+- destination path telah di-resolve;
+- path berada di dalam Instance Root;
+- tidak terdapat critical structural conflict.
+
+
+================================================================================
+05. INSTANCE ROOT
+================================================================================
+
+Instance Root adalah batas tertinggi yang boleh digunakan oleh Folder Creation.
+
+Folder Creation tidak boleh:
+
+- membuat directory di luar Instance Root;
+- menerima relative path yang keluar dari root;
+- melakukan path traversal;
+- menggunakan root alternatif tanpa authority.
+
+
+================================================================================
+06. DESTINATION PATH
+================================================================================
+
+Destination Path harus berasal dari:
+
+INSTANCE ROOT
++
+DATASET
++
+YEAR
++
+MONTH
++
+TARGET LOCATION
+
+Folder Creation tidak boleh mengubah destination path yang telah di-resolve
+kecuali terdapat revision yang sah.
+
+
+================================================================================
+07. DIRECTORY CHECK
+================================================================================
+
+Sebelum membuat directory, system harus memeriksa setiap component path.
+
+Setiap component dapat berstatus:
+
+EXISTS
+→ directory telah tersedia dan valid.
+
+MISSING
+→ directory belum tersedia dan harus dibuat.
+
+FILE_COLLISION
+→ path yang dibutuhkan merupakan file.
+
+CONFLICT
+→ directory tersedia tetapi tidak sesuai struktur yang diharapkan.
+
+UNKNOWN
+→ status filesystem belum dapat dipastikan.
+
+
+================================================================================
+08. EXISTING DIRECTORY
+================================================================================
+
+Jika directory yang dibutuhkan telah tersedia dan valid:
+
+→ jangan membuat directory baru.
+
+Directory yang sudah valid harus digunakan kembali.
+
+Folder Creation harus bersifat idempotent.
+
+
+================================================================================
+09. MISSING DIRECTORY
+================================================================================
+
+Jika directory yang dibutuhkan belum tersedia:
+
+→ directory dibuat sesuai path yang telah ditentukan.
+
+Creation harus dilakukan hanya pada component yang memang diperlukan.
+
+System tidak boleh membuat struktur tambahan yang tidak diperlukan.
+
+
+================================================================================
+10. DIRECTORY CREATION ORDER
+================================================================================
+
+Directory harus dibuat dari parent menuju child.
+
+Urutan umum:
+
+INSTANCE ROOT
+↓
+DATASET
+↓
+YEAR
+↓
+MONTH
+↓
+TARGET DIRECTORY
+
+
+================================================================================
+11. PARENT REQUIREMENT
+================================================================================
+
+Child directory tidak boleh dibuat sebelum parent directory tersedia atau
+berhasil dibuat.
+
+Jika parent gagal dibuat:
+
+- child tidak boleh dibuat;
+- proses harus berhenti;
+- error harus dipertahankan.
+
+
+================================================================================
+12. IDEMPOTENCY
+================================================================================
+
+Menjalankan Folder Creation berulang kali dengan destination yang sama harus
+menghasilkan struktur filesystem yang sama.
+
+Tidak boleh terjadi:
+
+- duplicate directory;
+- alternate directory;
+- duplicate year;
+- duplicate month;
+- duplicate dataset.
+
+Jika struktur sudah ada dan valid, tidak ada creation baru yang diperlukan.
+
+
+================================================================================
+13. DIRECTORY NAMING
+================================================================================
+
+Nama directory harus mengikuti:
+
+- Dataset naming rules;
+- Year structure;
+- Month structure;
+- Instance Structure.
+
+Folder Creation tidak boleh mengubah nama directory agar terlihat lebih nyaman
+bagi pengguna atau AI.
+
+
+================================================================================
+14. YEAR DIRECTORY CREATION
+================================================================================
+
+Year directory dibuat berdasarkan Year yang berasal dari Story Date yang valid.
+
+Year directory:
+
+- harus berada di Dataset yang benar;
+- harus mempunyai format yang ditetapkan;
+- tidak boleh berasal dari production time.
+
+
+================================================================================
+15. MONTH DIRECTORY CREATION
+================================================================================
+
+Month directory dibuat berdasarkan Month yang berasal dari Story Date.
+
+Month directory:
+
+- harus berada di Year yang benar;
+- harus menggunakan format yang ditetapkan;
+- tidak boleh ditentukan berdasarkan waktu file dibuat.
+
+
+================================================================================
+16. STORY TITLE IN FOLDER CREATION
+================================================================================
+
+Story Title tidak digunakan untuk menentukan Year atau Month directory.
+
+Story Title hanya boleh memengaruhi filename apabila Filename Rules
+mengizinkannya.
+
+Folder Creation tidak membuat subfolder berdasarkan Story Title kecuali
+Instance Structure secara eksplisit menetapkannya.
+
+
+================================================================================
+17. FILE VS DIRECTORY COLLISION
+================================================================================
+
+Jika directory yang diperlukan ternyata merupakan file:
+
+FILE_COLLISION
+→ proses berhenti.
+
+System tidak boleh:
+
+- menghapus file;
+- mengganti file dengan directory;
+- memindahkan file secara diam-diam;
+- membuat directory alternatif.
+
+
+================================================================================
+18. DIRECTORY CONFLICT
+================================================================================
+
+Jika directory tersedia tetapi memiliki struktur atau metadata yang tidak
+sesuai:
+
+CONFLICT
+→ proses berhenti atau diarahkan ke structural validation.
+
+System tidak boleh menganggap directory valid hanya karena nama directory-nya
+benar.
+
+
+================================================================================
+19. EXISTING CONTENT
+================================================================================
+
+Folder Creation tidak boleh menghapus atau mengubah existing content.
+
+Jika directory target sudah memiliki:
+
+- file;
+- subdirectory;
+- metadata;
+- legacy content;
+
+semua harus dipertahankan.
+
+Penilaian terhadap content dilakukan oleh validation atau migration mechanism.
+
+
+================================================================================
+20. LEGACY DIRECTORY
+================================================================================
+
+Jika directory berasal dari struktur lama:
+
+- jangan hapus secara otomatis;
+- jangan rename secara otomatis;
+- jangan anggap active tanpa validation;
+- jangan campurkan dengan struktur baru.
+
+Legacy handling mengikuti migration atau architecture resolution.
+
+
+================================================================================
+21. PERMISSION FAILURE
+================================================================================
+
+Jika directory tidak dapat dibuat karena:
+
+- permission;
+- filesystem error;
+- unavailable path;
+- locked resource;
+- storage failure;
+
+Folder Creation harus:
+
+- mencatat failure;
+- mempertahankan expected destination;
+- menghentikan proses dependent;
+- tidak membuat path alternatif tanpa authority.
+
+
+================================================================================
+22. PARTIAL CREATION
+================================================================================
+
+Jika sebagian directory berhasil dibuat tetapi langkah berikutnya gagal:
+
+System harus mempertahankan directory yang telah berhasil dibuat.
+
+System tidak boleh menghapus directory tersebut secara otomatis hanya karena
+subsequent creation gagal.
+
+Status proses harus menunjukkan partial completion.
+
+
+================================================================================
+23. RETRY
+================================================================================
+
+Folder Creation dapat dijalankan ulang setelah failure.
+
+Retry harus menggunakan destination path yang sama selama metadata belum berubah.
+
+Retry tidak boleh menciptakan duplicate directory.
+
+
+================================================================================
+24. PATH STABILITY
+================================================================================
+
+Selama Instance Structure dan Story Date tidak berubah:
+
+destination path harus tetap sama.
+
+Folder Creation tidak boleh menghasilkan path berbeda pada retry.
+
+
+================================================================================
+25. MULTIPLE STORIES
+================================================================================
+
+Beberapa Daily Story pada Year dan Month yang sama harus menggunakan directory
+yang sama apabila Instance Structure menetapkannya demikian.
+
+System tidak boleh membuat directory baru untuk setiap Story apabila directory
+temporal sudah tersedia.
+
+
+================================================================================
+26. MULTIPLE MONTHS
+================================================================================
+
+Jika Story Date berpindah ke month berbeda:
+
+- Year yang sama dapat digunakan jika sesuai;
+- Month directory berbeda harus digunakan;
+- directory yang belum ada harus dibuat.
+
+Folder Creation tidak memindahkan Story lama ke month baru.
+
+
+================================================================================
+27. YEAR TRANSITION
+================================================================================
+
+Jika Story Date berpindah ke year berbeda:
+
+- Year directory baru harus dibuat apabila belum ada;
+- Month directory di dalamnya harus dibuat apabila belum ada.
+
+Directory tahun sebelumnya tetap dipertahankan.
+
+
+================================================================================
+28. NO BACKFILL ASSUMPTION
+================================================================================
+
+Folder Creation tidak boleh membuat struktur tanggal untuk periode yang belum
+mempunyai production requirement hanya karena system sedang membuat directory
+baru.
+
+Buat hanya struktur yang diperlukan oleh destination path yang sedang diproses.
+
+
+================================================================================
+29. NO EMPTY STRUCTURE EXPANSION
+================================================================================
+
+System tidak boleh membuat:
+
+- seluruh 12 month directory;
+- seluruh year directory;
+- seluruh future structure;
+
+apabila hanya satu directory diperlukan.
+
+Folder Creation bersifat demand-driven.
+
+
+================================================================================
+30. MULTI-INSTANCE SAFETY
+================================================================================
+
+Instance yang berbeda harus mempunyai root yang berbeda sesuai Instance
+Management.
+
+Folder Creation tidak boleh mencampurkan:
+
+- Dataset;
+- Year;
+- Month;
+- Story;
+
+antara dua Instance yang berbeda.
+
+
+================================================================================
+31. INSTANCE IDENTITY
+================================================================================
+
+Folder Creation harus memverifikasi bahwa destination berada pada Instance
+yang benar.
+
+Nama Instance yang mirip tidak cukup untuk menentukan identity.
+
+
+================================================================================
+32. DATASET SAFETY
+================================================================================
+
+Dataset harus diverifikasi sebelum directory dibuat.
+
+System tidak boleh membuat Dataset baru hanya karena Dataset yang diminta
+belum tersedia, kecuali architecture secara eksplisit memberikan authority
+untuk Dataset creation.
+
+
+================================================================================
+33. DIRECTORY SECURITY
+================================================================================
+
+Path yang digunakan Folder Creation tidak boleh:
+
+- keluar dari Instance Root;
+- menggunakan traversal;
+- menunjuk ke system directory;
+- menunjuk ke user-private area;
+- menggunakan path yang tidak tervalidasi.
+
+Path validation harus dilakukan sebelum creation.
+
+
+================================================================================
+34. DIRECTORY TRACEABILITY
+================================================================================
+
+Setiap Folder Creation operation harus dapat ditelusuri melalui:
+
+- Instance;
+- Dataset;
+- Year;
+- Month;
+- destination path;
+- creation status;
+- validation status.
+
+
+================================================================================
+35. CREATION RESULT
+================================================================================
+
+Hasil Folder Creation dapat berupa:
+
+ALREADY_EXISTS
+→ seluruh directory yang dibutuhkan sudah tersedia dan valid.
+
+CREATED
+→ directory yang dibutuhkan berhasil dibuat.
+
+PARTIALLY_CREATED
+→ sebagian berhasil, sebagian gagal.
+
+FAILED
+→ directory tidak dapat dibuat.
+
+CONFLICT
+→ struktur existing bertentangan.
+
+BLOCKED
+→ proses tidak dapat dilanjutkan secara sah.
+
+
+================================================================================
+36. POST-CREATION VALIDATION
+================================================================================
+
+Setelah creation:
+
+System harus memastikan:
+
+- parent directory ada;
+- child directory ada;
+- type benar-benar directory;
+- path benar;
+- path masih berada di Instance Root;
+- tidak terdapat collision yang tidak terselesaikan.
+
+
+================================================================================
+37. FILE PLACEMENT GATE
+================================================================================
+
+File tidak boleh ditulis sebelum Folder Creation menghasilkan:
+
+ALREADY_EXISTS
+atau
+CREATED
+
+dan post-creation validation berhasil.
+
+PARTIALLY_CREATED, FAILED, CONFLICT, atau BLOCKED
+→ tidak boleh dilanjutkan ke file placement.
+
+
+================================================================================
+38. NO FILE WRITING
+================================================================================
+
+Folder Creation hanya membuat directory.
+
+Folder Creation tidak bertanggung jawab terhadap:
+
+- Story Text;
+- filename generation;
+- file writing;
+- file content;
+- file revision.
+
+Fungsi tersebut berada pada tahap Instance Management berikutnya.
+
+
+================================================================================
+39. NO STORY LOGIC
+================================================================================
+
+Folder Creation tidak membaca isi cerita untuk menentukan struktur directory.
+
+Tidak ada:
+
+- plot-based folder;
+- character-based folder;
+- scene-based folder;
+- narrative-based directory;
+- emotion-based directory.
+
+Filesystem structure mengikuti Instance Structure.
+
+
+================================================================================
+40. NO CANON MUTATION
+================================================================================
+
+Folder Creation tidak boleh mengubah:
+
+- Universe Time;
+- Story Date;
+- Story ID;
+- Character;
+- Relationship;
+- Object;
+- Knowledge;
+- State;
+- Location;
+- Event;
+- Process.
+
+Filesystem operation tidak mengubah Universe Canon.
+
+
+================================================================================
+41. STRUCTURAL CONFLICT
+================================================================================
+
+Jika directory tidak sesuai dengan expected structure:
+
+System harus mempertahankan existing structure dan menandai conflict.
+
+Resolution harus dilakukan melalui:
+
+- structural revision;
+- migration;
+- manual correction;
+- architecture-level decision;
+
+sesuai kewenangan.
+
+
+================================================================================
+42. VALIDATION
+================================================================================
+
+Folder Creation harus divalidasi terhadap:
+
+- Instance Structure;
+- Instance Root;
+- Dataset;
+- Story Date;
+- Year;
+- Month;
+- destination path;
+- filesystem state;
+- directory type;
+- collision;
+- permission.
+
+
+================================================================================
+43. VALIDATION RESULT
+================================================================================
+
+VALID
+→ folder structure siap digunakan.
+
+REVIEW_REQUIRED
+→ terdapat kondisi yang tidak menghalangi creation tetapi perlu diperiksa.
+
+REVISION_REQUIRED
+→ struktur membutuhkan koreksi.
+
+BLOCKED
+→ folder tidak dapat dibuat atau digunakan secara sah.
+
+
+================================================================================
+44. FAILURE PRINCIPLE
+================================================================================
+
+Jika Folder Creation gagal, system tidak boleh:
+
+- memilih folder lain secara acak;
+- mengubah Year;
+- mengubah Month;
+- mengubah Story Date;
+- membuat Dataset baru;
+- menghapus existing file;
+- memindahkan existing content;
+- menyatakan destination siap.
+
+
+================================================================================
+45. FINAL PRINCIPLE
+================================================================================
+
+FOLDER CREATION MENJAWAB:
+
+“APAKAH FOLDER YANG DIPERLUKAN SUDAH ADA?”
+
+Jika belum:
+
+“BUAT FOLDER YANG MEMANG DIPERLUKAN.”
+
+Bukan:
+
+“BUAT STRUKTUR APA PUN YANG MEMUNGKINKAN FILE DISIMPAN.”
+
+Struktur selalu berasal dari Instance Management.
+
+Folder Creation hanya memastikan struktur tersebut benar-benar tersedia.
+
+
+================================================================================
+END OF FOLDER CREATION
+================================================================================
