@@ -1,0 +1,681 @@
+================================================================================
+TEMPORAL STATUS
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / TEMPORAL DOMAIN
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Temporal Status adalah sistem klasifikasi yang menentukan status suatu
+informasi, kejadian, kondisi, atau representasi yang mempunyai hubungan dengan
+waktu.
+
+Temporal Status digunakan untuk menjaga perbedaan antara:
+
+- kapan sesuatu ditempatkan dalam Universe Time;
+- apa status keberadaan informasi tersebut;
+- apakah informasi tersebut merupakan kejadian aktual;
+- apakah informasi tersebut merupakan isi pikiran, ingatan, kemungkinan,
+  rencana, prediksi, atau bentuk informasi lain.
+
+Temporal Status bekerja bersama Universe Time.
+
+Temporal Status tidak menggantikan Universe Time.
+
+
+================================================================================
+02. CORE PRINCIPLE
+================================================================================
+
+Posisi waktu dan status informasi adalah dua hal berbeda.
+
+Sesuatu dapat mempunyai posisi masa lalu tanpa otomatis menjadi fakta historis.
+
+Sesuatu dapat berada pada konteks masa kini tanpa otomatis menjadi kejadian
+aktual.
+
+Sesuatu dapat memiliki posisi masa depan tanpa otomatis menjadi kejadian yang
+pasti akan terjadi.
+
+Karena itu:
+
+TEMPORAL POSITION
+dan
+TEMPORAL STATUS
+
+harus dapat disimpan, dibaca, dan divalidasi secara terpisah.
+
+
+================================================================================
+03. STATUS DIMENSIONS
+================================================================================
+
+Temporal Status tidak boleh diperlakukan sebagai satu label tunggal yang
+menggabungkan semua informasi temporal.
+
+Setidaknya terdapat dua dimensi utama:
+
+A. TEMPORAL POSITION
+B. INFORMATION / REALITY STATUS
+
+Temporal Position menjawab:
+
+“Kapan informasi atau kejadian tersebut ditempatkan?”
+
+Information / Reality Status menjawab:
+
+“Dalam status apa informasi atau kejadian tersebut berada?”
+
+
+================================================================================
+04. TEMPORAL POSITION
+================================================================================
+
+Temporal Position mengikuti aturan Universe Time.
+
+Posisi temporal dapat berada pada:
+
+- past;
+- present;
+- future;
+- unknown temporal position.
+
+Past, Present, dan Future hanya menunjukkan posisi relatif terhadap Current
+Universe Time.
+
+Ketiganya tidak menentukan apakah suatu informasi benar, salah, mungkin,
+direncanakan, dibayangkan, atau aktual.
+
+
+================================================================================
+05. ACTUAL
+================================================================================
+
+ACTUAL menunjukkan bahwa suatu kejadian, kondisi, atau fakta telah ditetapkan
+sebagai bagian nyata dari Universe pada posisi temporal tertentu.
+
+Actual merupakan status Canon yang sah apabila telah memenuhi mekanisme
+validasi Universe.
+
+Actual tidak ditentukan hanya karena sesuatu ditulis dalam cerita.
+
+Actual tidak ditentukan hanya karena sebuah karakter percaya terhadapnya.
+
+Actual tidak ditentukan hanya karena sebuah informasi disebut sebagai fakta
+oleh suatu sumber.
+
+
+================================================================================
+06. IMAGINED
+================================================================================
+
+IMAGINED menunjukkan bahwa informasi berada dalam ranah imajinasi.
+
+Informasi yang Imagined bukan kejadian aktual hanya karena disajikan dengan
+detail.
+
+Imagined tidak boleh mengubah:
+
+- history;
+- state;
+- relationship;
+- object;
+- knowledge;
+- event;
+- timeline;
+
+kecuali terdapat mekanisme lain yang secara sah menjadikan hasil imajinasi
+tersebut sebagai kejadian aktual yang terpisah.
+
+
+================================================================================
+07. HYPOTHETICAL
+================================================================================
+
+HYPOTHETICAL menunjukkan kondisi, kejadian, atau keadaan yang dipertimbangkan
+sebagai kemungkinan untuk tujuan penalaran atau eksplorasi.
+
+Hypothetical bukan Actual.
+
+Hypothetical tidak boleh dimasukkan ke history sebagai kejadian.
+
+Hypothetical tidak boleh menghasilkan perubahan Canon hanya karena telah
+digunakan dalam Story Design atau Narrative Rendering.
+
+
+================================================================================
+08. MEMORY
+================================================================================
+
+MEMORY menunjukkan bahwa informasi hadir sebagai ingatan.
+
+Memory adalah representasi informasi dalam ingatan, bukan otomatis bukti bahwa
+isi ingatan tersebut identik dengan fakta historis.
+
+Memory dapat mempunyai hubungan dengan masa lalu.
+
+Namun:
+
+MEMORY
+tidak otomatis sama dengan
+PAST ACTUAL.
+
+Kebenaran historis tetap mengikuti data dan validasi Universe.
+
+
+================================================================================
+09. REPORT
+================================================================================
+
+REPORT menunjukkan bahwa informasi diterima melalui penyampaian atau pelaporan
+oleh suatu sumber.
+
+Report tidak otomatis menjadi Actual.
+
+Report harus mempertahankan status sebagai report sampai status faktualnya
+ditentukan melalui mekanisme yang sah.
+
+Perbedaan antara isi report dan fakta Universe harus dapat dipertahankan.
+
+
+================================================================================
+10. PLAN
+================================================================================
+
+PLAN menunjukkan bahwa suatu tindakan atau kejadian dimaksudkan, direncanakan,
+atau ditetapkan sebagai rencana untuk future position.
+
+PLAN bukan Actual.
+
+PLAN tidak menjamin bahwa kejadian akan terlaksana.
+
+PLAN dapat berubah, dibatalkan, ditunda, atau tidak pernah terlaksana.
+
+Ketika suatu plan benar-benar diwujudkan melalui event aktual, event aktual
+tersebut harus memperoleh identitas dan statusnya sendiri.
+
+
+================================================================================
+11. PREDICTION
+================================================================================
+
+PREDICTION menunjukkan informasi mengenai sesuatu yang diperkirakan akan
+terjadi.
+
+Prediction bukan Actual.
+
+Prediction bukan jaminan Future Actual.
+
+Prediction harus tetap diperlakukan sebagai prediction sampai peristiwa masa
+depan benar-benar terjadi dan memperoleh status aktual melalui mekanisme
+Universe.
+
+
+================================================================================
+12. POSSIBILITY
+================================================================================
+
+POSSIBILITY menunjukkan sesuatu yang mungkin terjadi atau mungkin berlaku.
+
+Possibility bukan Actual.
+
+Possibility bukan Plan.
+
+Possibility bukan Prediction.
+
+Possibility tidak boleh diperlakukan sebagai keadaan Universe yang sudah
+terjadi.
+
+
+================================================================================
+13. UNKNOWN
+================================================================================
+
+UNKNOWN digunakan ketika status suatu informasi belum dapat ditentukan secara
+sah.
+
+Unknown tidak boleh dipaksa menjadi:
+
+- Actual;
+- Imagined;
+- Hypothetical;
+- Memory;
+- Report;
+- Plan;
+- Prediction;
+- Possibility.
+
+Unknown harus tetap dipertahankan sampai terdapat dasar yang cukup.
+
+
+================================================================================
+14. STATUS SEPARATION
+================================================================================
+
+Status berikut tidak boleh disamakan:
+
+ACTUAL
+≠
+IMAGINED
+
+ACTUAL
+≠
+HYPOTHETICAL
+
+ACTUAL
+≠
+MEMORY
+
+ACTUAL
+≠
+REPORT
+
+ACTUAL
+≠
+PLAN
+
+ACTUAL
+≠
+PREDICTION
+
+ACTUAL
+≠
+POSSIBILITY
+
+
+MEMORY
+≠
+PAST ACTUAL
+
+PLAN
+≠
+FUTURE ACTUAL
+
+PREDICTION
+≠
+FUTURE ACTUAL
+
+POSSIBILITY
+≠
+FUTURE ACTUAL
+
+REPORT
+≠
+FACT
+
+IMAGINATION
+≠
+EVENT
+
+
+================================================================================
+15. COMBINATION WITH TEMPORAL POSITION
+================================================================================
+
+Temporal Position dan Temporal Status dapat dikombinasikan.
+
+Kombinasi tersebut harus tetap dibaca sebagai dua dimensi berbeda.
+
+Struktur konseptual:
+
+TEMPORAL POSITION
++
+TEMPORAL STATUS
+
+Contoh bentuk klasifikasi yang valid secara konseptual:
+
+PAST + ACTUAL
+PAST + MEMORY
+PAST + REPORT
+PAST + IMAGINED
+PAST + HYPOTHETICAL
+
+PRESENT + ACTUAL
+PRESENT + IMAGINED
+PRESENT + HYPOTHETICAL
+PRESENT + REPORT
+
+FUTURE + PLAN
+FUTURE + PREDICTION
+FUTURE + POSSIBILITY
+FUTURE + HYPOTHETICAL
+FUTURE + IMAGINED
+
+Daftar kombinasi bukan daftar Canon.
+
+Validitas kombinasi harus mengikuti konteks dan aturan temporal.
+
+
+================================================================================
+16. STATUS TRANSITION
+================================================================================
+
+Temporal Status dapat berubah apabila terdapat dasar yang sah.
+
+Perubahan status harus dapat ditelusuri.
+
+Perubahan harus mempertahankan history status sebelumnya.
+
+Status tidak boleh berubah hanya karena:
+
+- kebutuhan cerita;
+- kebutuhan dramatis;
+- kebutuhan continuity;
+- kebutuhan penamaan;
+- kebutuhan penyimpanan file.
+
+Perubahan status harus berasal dari mekanisme Universe atau system owner yang
+berwenang.
+
+
+================================================================================
+17. FUTURE ACTUALIZATION
+================================================================================
+
+Future yang memiliki status Plan, Prediction, Possibility, atau Hypothetical
+belum menjadi Actual.
+
+Jika suatu kejadian future benar-benar terjadi, maka event aktual tersebut
+harus memperoleh status Actual pada posisi Universe Time ketika kejadian
+tersebut benar-benar terjadi.
+
+Perubahan status tidak menghapus status sebelumnya.
+
+History harus tetap dapat menunjukkan bahwa sebelumnya informasi tersebut
+berstatus non-actual.
+
+
+================================================================================
+18. PAST CONFIRMATION
+================================================================================
+
+Ketika Universe telah melewati suatu waktu, kejadian aktual pada waktu
+tersebut dapat menjadi bagian dari historical Canon.
+
+Namun informasi masa lalu yang hanya berstatus:
+
+- Memory;
+- Report;
+- Imagined;
+- Hypothetical;
+- Unknown;
+
+tidak otomatis menjadi Historical Actual.
+
+Pemeriksaan terhadap history harus mempertahankan perbedaan tersebut.
+
+
+================================================================================
+19. PRESENT STATUS
+================================================================================
+
+Present menunjukkan posisi waktu relatif terhadap Current Universe Time.
+
+Present tidak berarti Actual secara otomatis.
+
+Informasi pada present dapat tetap berstatus:
+
+- Imagined;
+- Hypothetical;
+- Report;
+- Unknown;
+
+sesuai kondisi sebenarnya.
+
+
+================================================================================
+20. FUTURE STATUS
+================================================================================
+
+Future menunjukkan posisi temporal setelah Current Universe Time.
+
+Future dapat berisi:
+
+- Plan;
+- Prediction;
+- Possibility;
+- Hypothetical;
+- Imagined;
+- Unknown;
+- Actual hanya apabila mekanisme Universe secara eksplisit menetapkan bahwa
+  informasi tersebut telah mempunyai status Actual tanpa melanggar temporal
+  continuity.
+
+Future Actual tidak boleh digunakan secara sembarangan untuk membatalkan
+ketidakpastian yang memang masih ada.
+
+
+================================================================================
+21. CHARACTER THOUGHT
+================================================================================
+
+Pikiran, imajinasi, pertimbangan, hipotesis, atau simulasi internal Character
+tidak otomatis menjadi kejadian Universe.
+
+Character dapat merepresentasikan:
+
+- masa lalu;
+- masa kini;
+- masa depan;
+- kemungkinan;
+
+di dalam proses internalnya tanpa mengubah Canon.
+
+Status Knowledge Character tetap mengikuti Character System.
+
+Narrative representation of thought tidak sama dengan Universe Event.
+
+
+================================================================================
+22. CHARACTER BELIEF
+================================================================================
+
+Kepercayaan Character terhadap suatu informasi tidak menentukan Temporal Status
+informasi tersebut.
+
+BELIEF
+tidak otomatis berarti
+ACTUAL.
+
+Character dapat mempercayai sesuatu yang:
+
+- benar;
+- salah;
+- belum diketahui;
+- hanya dilaporkan;
+- mungkin;
+- imagined;
+- hypothetical.
+
+Penentuan Knowledge Character tetap mengikuti Character System.
+
+
+================================================================================
+23. REPORT AND BELIEF
+================================================================================
+
+Apabila Character mengetahui sebuah Report, yang menjadi Knowledge Character
+adalah fakta bahwa report tersebut diterima sesuai aturan Character System.
+
+Isi report tetap memiliki Temporal Status sendiri.
+
+Penerimaan informasi tidak otomatis mengubah Report menjadi Actual.
+
+
+================================================================================
+24. NARRATIVE REPRESENTATION
+================================================================================
+
+Cara suatu informasi ditulis tidak menentukan Temporal Status.
+
+Detail narasi tidak mengubah:
+
+- memory menjadi fact;
+- imagination menjadi event;
+- prediction menjadi certainty;
+- plan menjadi completion;
+- possibility menjadi actuality.
+
+Narator harus mempertahankan status yang diberikan oleh Universe.
+
+
+================================================================================
+25. NO STATUS ESCALATION
+================================================================================
+
+Informasi tidak boleh naik status secara otomatis.
+
+Tidak diperbolehkan:
+
+IMAGINED
+→ ACTUAL
+
+PLAN
+→ ACTUAL
+
+PREDICTION
+→ ACTUAL
+
+POSSIBILITY
+→ ACTUAL
+
+REPORT
+→ ACTUAL
+
+MEMORY
+→ ACTUAL
+
+tanpa dasar dan mekanisme yang sah.
+
+
+================================================================================
+26. NO STATUS COLLAPSE
+================================================================================
+
+System tidak boleh menghapus perbedaan antarstatus hanya untuk menyederhanakan
+proses.
+
+Semua status yang diperlukan untuk menjaga temporal integrity harus tetap dapat
+ditelusuri.
+
+
+================================================================================
+27. UNKNOWN AND AMBIGUITY
+================================================================================
+
+Jika status tidak dapat ditentukan, gunakan UNKNOWN.
+
+Jika terdapat lebih dari satu interpretasi yang masih mungkin dan belum dapat
+diselesaikan, ambiguity harus dipertahankan sampai tersedia informasi yang
+cukup.
+
+Ambiguity tidak boleh diselesaikan dengan memilih status yang paling nyaman
+untuk cerita.
+
+
+================================================================================
+28. DOMAIN OWNERSHIP
+================================================================================
+
+Temporal Status adalah tanggung jawab Daily Universe pada aspek temporal.
+
+Namun isi domain tetap dimiliki oleh system owner masing-masing.
+
+Character System tetap menentukan Knowledge Character.
+
+Relationship System tetap menentukan Relationship.
+
+Object System tetap menentukan Object.
+
+Narrator tetap menentukan bentuk penyajian.
+
+Daily Universe menentukan bagaimana status temporal tersebut ditempatkan dan
+dipertahankan dalam perjalanan waktu.
+
+
+================================================================================
+29. VALIDATION
+================================================================================
+
+Temporal Status harus divalidasi terhadap:
+
+- Universe Time;
+- event identity;
+- event occurrence;
+- causal order;
+- Character Knowledge;
+- state continuity;
+- narrative representation;
+- future transition;
+- historical consistency.
+
+Validasi harus memastikan bahwa status tidak berubah tanpa dasar.
+
+
+================================================================================
+30. FAILURE PRINCIPLE
+================================================================================
+
+Apabila status informasi tidak dapat ditentukan dengan cukup dasar, sistem
+harus menggunakan UNKNOWN atau menghentikan proses yang bergantung pada
+kepastian status tersebut.
+
+Sistem tidak boleh memilih status secara diam-diam.
+
+
+================================================================================
+31. RELATION TO OTHER TEMPORAL FILES
+================================================================================
+
+File ini mengatur status informasi dan kejadian dalam konteks temporal.
+
+File ini tidak mendefinisikan:
+
+- Universe Time;
+- Narrative Time;
+- mekanisme Past / Present / Future secara rinci;
+- Memory, Imagination, dan Hypothesis secara rinci;
+- Plan, Prediction, dan Possibility secara rinci;
+- Temporal Consistency secara rinci.
+
+Detail tersebut berada pada file Temporal yang sesuai.
+
+File lain wajib mengikuti prinsip status pada file ini.
+
+
+================================================================================
+32. FINAL PRINCIPLE
+================================================================================
+
+WAKTU MENJAWAB:
+
+“KAPAN?”
+
+TEMPORAL STATUS MENJAWAB:
+
+“DALAM STATUS APA?”
+
+Kedua pertanyaan tersebut harus tetap terpisah.
+
+Informasi yang muncul dalam cerita tidak otomatis menjadi kejadian.
+
+Informasi mengenai masa depan tidak otomatis menjadi kepastian.
+
+Informasi mengenai masa lalu tidak otomatis menjadi fakta sejarah.
+
+Informasi dalam pikiran tidak otomatis menjadi event Universe.
+
+Hanya perubahan yang memiliki dasar dan status yang sah yang dapat memengaruhi
+Canon Universe.
+
+
+================================================================================
+END OF TEMPORAL STATUS
+================================================================================
