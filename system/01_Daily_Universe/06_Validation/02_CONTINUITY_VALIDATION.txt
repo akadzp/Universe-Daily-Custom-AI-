@@ -1,0 +1,1390 @@
+==================================================
+02_CONTINUITY_VALIDATION
+
+STATUS
+
+System Rule
+
+OWNER
+
+Daily Universe
+Validation
+
+SCOPE
+
+File ini mengatur validasi continuity pada Daily Universe.
+
+Tujuannya adalah memastikan bahwa hubungan antara:
+
+- kondisi sebelumnya;
+- perubahan yang terjadi;
+- kondisi saat ini;
+- proses yang masih berjalan;
+- kondisi yang belum selesai;
+- konsekuensi;
+- hubungan temporal lintas periode;
+
+tetap konsisten ketika Universe bergerak
+dari satu periode ke periode berikutnya.
+
+File ini adalah validation layer.
+
+File ini TIDAK menjadi pemilik domain
+Character, Relationship, Object, Knowledge,
+State, Location, atau domain lain.
+
+File ini memeriksa continuity,
+bukan menciptakan continuity baru.
+
+==================================================
+
+1. CORE PRINCIPLE
+   ==================================================
+
+Continuity Validation menjawab:
+
+"Apakah kondisi Universe saat ini
+dapat ditelusuri secara konsisten
+dari kondisi sebelumnya melalui
+perubahan yang memiliki dasar?"
+
+Continuity bukan berarti:
+
+Previous State = Current State
+
+Continuity berarti:
+
+Previous Condition
+→ valid transition
+→ Current Condition
+
+Perubahan dapat terjadi.
+
+Ketiadaan perubahan juga dapat terjadi.
+
+Keduanya harus mempunyai basis
+yang dapat diverifikasi.
+
+==================================================
+02. CONTINUITY SOURCE
+
+Validator menggunakan:
+
+- previous period state;
+- current period state;
+- domain carryover;
+- events;
+- consequences;
+- ongoing processes;
+- unresolved conditions;
+- temporal validation;
+- domain owner results;
+- transition records;
+- history;
+- effective time;
+- continuity references.
+
+Validator tidak boleh mengisi
+missing continuity dengan asumsi.
+
+==================================================
+03. CONTINUITY IDENTITY
+
+Setiap continuity item harus dapat
+diidentifikasi dengan jelas.
+
+Identity dapat berasal dari:
+
+- domain entity;
+- event;
+- process;
+- consequence;
+- unresolved condition;
+- state transition;
+- temporal transition.
+
+Validator harus mampu membedakan:
+
+- continuation;
+- change;
+- end;
+- suspension;
+- resumption;
+- transformation;
+- new item.
+
+==================================================
+04. CONTINUITY CHAIN
+
+Continuity chain harus mempertahankan hubungan:
+
+PRIOR CONDITION
+↓
+TRANSITION / NON-CHANGE
+↓
+CURRENT CONDITION
+
+Jika transition tidak dapat dijelaskan:
+
+STATUS = REVIEW_REQUIRED
+atau
+REVISION_REQUIRED
+
+sesuai tingkat masalah.
+
+==================================================
+05. PREVIOUS CONDITION
+
+Previous condition harus berasal dari
+periode atau temporal position
+yang benar-benar mendahului current condition.
+
+Validator memeriksa:
+
+- identity;
+- effective period;
+- validity;
+- status;
+- source;
+- relationship dengan current condition.
+
+Previous condition tidak boleh
+dibuat hanya karena current condition
+membutuhkannya.
+
+==================================================
+06. CURRENT CONDITION
+
+Current condition harus memiliki
+effective temporal position yang valid.
+
+Validator memeriksa:
+
+- kapan berlaku;
+- domain/entity terkait;
+- status;
+- source;
+- relation terhadap previous condition.
+
+Current condition tidak boleh
+dianggap continuation hanya
+karena entity-nya sama.
+
+==================================================
+07. TRANSITION
+
+Transition adalah hubungan antara
+previous condition dan current condition.
+
+Transition dapat berupa:
+
+- CONTINUE;
+- CHANGE;
+- END;
+- SUSPEND;
+- RESUME;
+- TRANSFORM;
+- REPLACE;
+- NEW;
+- UNRESOLVED;
+- UNKNOWN.
+
+Validator memeriksa apakah
+transition yang dinyatakan
+sesuai dengan evidence yang tersedia.
+
+==================================================
+08. CONTINUE VALIDATION
+
+CONTINUE hanya valid apabila:
+
+- identity tetap sama;
+- condition masih berlaku;
+- tidak terdapat event atau transition
+  yang mengakhiri condition;
+- tidak terdapat domain update
+  yang menggantikan condition;
+- effective time tetap konsisten.
+
+CONTINUE bukan default.
+
+Kondisi harus benar-benar
+memenuhi syarat continuation.
+
+==================================================
+09. CHANGE VALIDATION
+
+CHANGE harus memiliki basis
+yang memungkinkan perubahan.
+
+Basis dapat berupa:
+
+- event;
+- consequence;
+- explicit domain transition;
+- temporal condition;
+- process result;
+- authorized update.
+
+Jika current condition berbeda
+tanpa dasar yang dapat ditelusuri:
+
+STATUS = REVIEW_REQUIRED
+
+==================================================
+10. END VALIDATION
+
+END harus memiliki:
+
+- effective time;
+- condition yang diakhiri;
+- basis termination;
+- affected continuity references.
+
+END tidak boleh disimpulkan
+hanya karena condition tidak muncul
+pada current period.
+
+Absence of record ≠ automatic end.
+
+==================================================
+11. SUSPENSION VALIDATION
+
+SUSPEND berarti continuity belum berakhir
+tetapi untuk sementara tidak aktif
+atau tidak berjalan.
+
+Validator memeriksa:
+
+- basis suspension;
+- effective time;
+- expected continuation condition;
+- relationship terhadap current period.
+
+SUSPEND tidak boleh diperlakukan
+sebagai END.
+
+==================================================
+12. RESUME VALIDATION
+
+RESUME harus memiliki:
+
+- prior suspended condition;
+- continuity identity yang sama;
+- valid resume condition;
+- effective time.
+
+RESUME tidak boleh membuat
+entity continuity baru jika
+identity sebelumnya masih berlaku.
+
+==================================================
+13. TRANSFORMATION VALIDATION
+
+TRANSFORM terjadi apabila continuity
+berubah bentuk tetapi hubungan historis
+masih dapat ditelusuri.
+
+Validator harus dapat membedakan
+TRANSFORM dari:
+
+- END + NEW;
+- CHANGE;
+- REPLACEMENT.
+
+Klasifikasi harus mengikuti
+domain rule dan temporal evidence.
+
+==================================================
+14. REPLACEMENT VALIDATION
+
+REPLACEMENT menunjukkan bahwa
+condition lama digantikan oleh
+condition baru.
+
+Validator memeriksa:
+
+- predecessor;
+- replacement;
+- effective time;
+- identity relation;
+- termination of prior condition.
+
+Replacement tidak boleh menyebabkan
+history predecessor hilang.
+
+==================================================
+15. NEW VALIDATION
+
+NEW berarti kondisi atau entity
+muncul tanpa continuity predecessor
+yang valid pada scope tersebut.
+
+Validator memeriksa apakah
+NEW memang benar-benar baru.
+
+Tidak boleh menggunakan NEW hanya
+karena previous data tidak ditemukan.
+
+Missing history ≠ NEW.
+
+==================================================
+16. UNRESOLVED CONTINUITY
+
+UNRESOLVED digunakan apabila
+hubungan continuity belum dapat
+ditentukan secara aman.
+
+Contoh penyebab secara abstrak:
+
+- missing transition evidence;
+- conflicting source;
+- unclear effective time;
+- incomplete domain response;
+- unresolved dependency.
+
+UNRESOLVED tidak boleh dipaksa
+menjadi CONTINUE atau CHANGE.
+
+==================================================
+17. UNKNOWN CONTINUITY
+
+UNKNOWN berarti informasi continuity
+belum diketahui.
+
+UNRESOLVED dan UNKNOWN harus tetap
+dibedakan.
+
+UNKNOWN:
+fakta continuity belum diketahui.
+
+UNRESOLVED:
+terdapat issue yang sedang menunggu
+resolusi.
+
+==================================================
+18. DOMAIN OWNERSHIP
+
+Continuity Validator hanya memeriksa
+continuity terhadap domain data
+yang diberikan.
+
+Domain owner tetap menentukan:
+
+- arti entity;
+- domain state;
+- domain transition;
+- identity;
+- lifecycle;
+- validity.
+
+Daily Universe mengatur temporal orchestration.
+
+Validator memastikan bahwa hasil
+carryover tersebut tidak bertentangan
+secara continuity.
+
+==================================================
+19. CHARACTER CONTINUITY
+
+Untuk Character-related continuity,
+validator memeriksa:
+
+- identity consistency;
+- temporal availability;
+- state continuity;
+- relevant knowledge continuity;
+- participation continuity.
+
+Validator tidak menentukan
+personality, profile, behavior,
+atau identity Character.
+
+==================================================
+20. RELATIONSHIP CONTINUITY
+
+Untuk Relationship continuity,
+validator memeriksa:
+
+- relationship identity;
+- prior status;
+- transition;
+- current status;
+- effective time;
+- actor continuity.
+
+Validator tidak menentukan
+jenis Relationship atau makna
+Relationship tersebut.
+
+==================================================
+21. OBJECT CONTINUITY
+
+Untuk Object continuity,
+validator memeriksa:
+
+- object identity;
+- prior state;
+- current state;
+- ownership;
+- possession;
+- location;
+- usage;
+- transfer;
+- lifecycle.
+
+Validator tidak menciptakan
+Object atau mengubah ownership
+secara langsung.
+
+==================================================
+22. KNOWLEDGE CONTINUITY
+
+Knowledge continuity harus memeriksa:
+
+- knowledge state sebelumnya;
+- acquisition timing;
+- current availability;
+- correction;
+- loss;
+- propagation;
+- source.
+
+Validator harus mencegah
+knowledge muncul kembali atau hilang
+tanpa dasar yang sah.
+
+==================================================
+23. STATE CONTINUITY
+
+State continuity harus mempertahankan:
+
+- previous state;
+- transition;
+- effective time;
+- current state;
+- history.
+
+State tidak boleh dianggap
+otomatis tetap sama hanya karena
+tidak ada explicit update.
+
+Namun absence of change juga
+tidak boleh otomatis berarti
+State berubah.
+
+==================================================
+24. LOCATION CONTINUITY
+
+Location continuity memeriksa:
+
+- previous location;
+- transition;
+- movement;
+- arrival;
+- departure;
+- current location;
+- temporal overlap.
+
+Validator tidak membuat
+movement hanya untuk menjelaskan
+perbedaan lokasi.
+
+==================================================
+25. PROCESS CONTINUITY
+
+Ongoing Process continuity harus
+mempertahankan:
+
+- process identity;
+- start;
+- active interval;
+- interruption;
+- resumption;
+- completion;
+- cancellation;
+- current status.
+
+Process tidak boleh:
+
+- reset tanpa reason;
+- selesai tanpa basis;
+- dimulai ulang sebagai process baru
+  tanpa identity resolution.
+
+==================================================
+26. CONSEQUENCE CONTINUITY
+
+Consequence yang belum selesai
+harus tetap dapat ditelusuri
+dari sumbernya.
+
+Validator memeriksa:
+
+- source event;
+- consequence identity;
+- status;
+- effective time;
+- cross-period continuation.
+
+Consequence tidak boleh menghilang
+hanya karena memasuki periode baru.
+
+==================================================
+27. UNRESOLVED CONTINUITY
+
+Unresolved item harus dipertahankan
+hingga:
+
+- resolved;
+- cancelled;
+- completed;
+- transformed;
+- formally closed.
+
+Validator tidak boleh menutup
+unresolved item hanya karena
+periodenya berganti.
+
+==================================================
+28. CROSS-PERIOD CONTINUITY
+
+Perubahan periode tidak otomatis
+mengakhiri continuity.
+
+Daily boundary,
+month boundary,
+year boundary,
+atau storage boundary
+tidak boleh dianggap sebagai
+reset Universe.
+
+Validator wajib memeriksa
+continuity yang melewati boundary.
+
+==================================================
+29. DOMAIN CARRYOVER CONSISTENCY
+
+Hasil continuity harus konsisten
+dengan domain carryover.
+
+Jika Daily Universe menyatakan:
+
+CARRY_FORWARD
+
+namun domain owner menyatakan:
+
+REJECTED
+atau
+ENDED
+
+terdapat consistency issue.
+
+Validator tidak boleh memilih
+salah satu secara diam-diam.
+
+==================================================
+30. CARRYOVER STATUS
+
+Validator mengenali status:
+
+CARRY_FORWARD
+COMPLETED
+CANCELLED
+SUSPENDED
+TRANSFORMED
+UNRESOLVED
+NOT_APPLICABLE
+
+Status tersebut harus sesuai
+dengan transition evidence.
+
+==================================================
+31. CONTINUITY WITHOUT CHANGE
+
+Tidak semua periode menghasilkan
+perubahan.
+
+Jika previous condition tetap berlaku
+dan tidak ada terminating atau
+changing event:
+
+CONTINUE dapat valid.
+
+Namun validasi tetap diperlukan.
+
+Ketiadaan event tidak boleh
+digunakan sebagai satu-satunya
+alasan untuk menyatakan
+semua kondisi tetap sama.
+
+==================================================
+32. CHANGE WITHOUT STORY
+
+Continuity dapat berubah
+meskipun tidak ada Daily Story
+yang diproduksi.
+
+Story tidak menentukan
+apakah Universe berubah.
+
+Validator harus memisahkan:
+
+Universe Continuity
+dari
+Story Production.
+
+==================================================
+33. STORY WITHOUT CONTINUITY CHANGE
+
+Daily Story dapat diproduksi
+meskipun perubahan continuity
+tidak besar atau tidak ada,
+selama terdapat story basis
+yang valid.
+
+Story presence tidak membuktikan
+bahwa continuity berubah.
+
+==================================================
+34. NARRATIVE INDEPENDENCE
+
+Narasi tidak boleh menjadi sumber
+penentuan continuity.
+
+Jika story menyajikan perubahan,
+validator tetap harus memverifikasi
+perubahan terhadap Universe data.
+
+Jika Universe berubah tetapi
+tidak dinarasikan, continuity
+tetap berlaku.
+
+==================================================
+35. STATE VS EVENT
+
+Validator harus membedakan:
+
+EVENT
+dan
+STATE.
+
+Event adalah occurrence.
+
+State adalah condition
+yang berlaku selama interval.
+
+Event tidak otomatis menjadi
+permanent State.
+
+State tidak otomatis berarti
+Event baru terjadi.
+
+==================================================
+36. EVENT TO STATE TRANSITION
+
+Jika Event menghasilkan perubahan State:
+
+EVENT
+→ transition
+→ new State
+
+Validator memeriksa:
+
+- event timing;
+- state effective time;
+- affected entity;
+- transition validity.
+
+Tidak boleh ada state change
+tanpa temporal basis
+jika domain rule mensyaratkannya.
+
+==================================================
+37. STATE TO STATE CONTINUITY
+
+Perbandingan previous state
+dan current state harus mempertahankan
+identity dan effective time.
+
+Jika state berbeda:
+
+validator mencari transition basis.
+
+Jika state sama:
+
+validator memastikan bahwa
+continuation tidak melanggar
+event atau domain update yang ada.
+
+==================================================
+38. CAUSAL CONTINUITY
+
+Continuity change dapat memiliki
+hubungan causal.
+
+Validator memeriksa:
+
+- causal source;
+- transition;
+- effective time;
+- current condition.
+
+Causal relation harus berasal
+dari causal system atau domain evidence.
+
+Validator tidak menciptakan
+causal link hanya untuk menjelaskan
+gap continuity.
+
+==================================================
+39. TEMPORAL CONTINUITY
+
+Continuity harus konsisten dengan
+temporal validation.
+
+Tidak boleh:
+
+- current condition berlaku sebelum
+  predecessor selesai apabila dependency
+  melarang overlap;
+- transition muncul sebelum basisnya;
+- END terjadi setelah RESUME tanpa
+  intervening sequence;
+- future condition diperlakukan
+  sebagai current tanpa actualization.
+
+==================================================
+40. HISTORY INTEGRITY
+
+Current condition tidak boleh
+menghapus previous condition
+dari history.
+
+Continuity history harus mampu
+menunjukkan:
+
+- predecessor;
+- transition;
+- successor;
+- effective time;
+- status.
+
+History hanya dapat berubah
+melalui revision yang sah.
+
+==================================================
+41. NO RETROACTIVE CONTINUITY
+
+Current data tidak boleh otomatis
+menulis ulang previous continuity.
+
+Jika current evidence bertentangan
+dengan history:
+
+STATUS = REVIEW_REQUIRED
+atau
+REVISION_REQUIRED
+
+sesuai mekanisme yang sah.
+
+==================================================
+42. NO IMPLIED TRANSITION
+
+Perbedaan antara dua record
+tidak otomatis membuktikan
+transition tertentu.
+
+Contoh kategori yang tidak boleh
+disimpulkan tanpa evidence:
+
+- absence → departure;
+- missing → destroyed;
+- unknown → false;
+- unchanged record → unchanged state;
+- different record → new entity.
+
+Validator harus mempertahankan
+uncertainty jika evidence tidak cukup.
+
+==================================================
+43. IDENTITY CONSISTENCY
+
+Continuity hanya dapat dilakukan
+apabila predecessor dan successor
+merujuk kepada entity yang sama
+atau memiliki explicit relation
+yang valid.
+
+Similarity tidak cukup.
+
+Nama yang sama,
+atribut yang sama,
+atau posisi yang sama
+tidak selalu membuktikan identity.
+
+==================================================
+44. DUPLICATE CONTINUITY
+
+Validator harus mendeteksi
+kemungkinan continuity duplicate.
+
+Dua record tidak boleh dianggap
+sebagai dua kondisi terpisah
+jika sebenarnya merupakan
+representasi ulang entity yang sama.
+
+Namun validator juga tidak boleh
+menggabungkan dua entity hanya
+karena terlihat serupa.
+
+Identity resolution diperlukan.
+
+==================================================
+45. PARALLEL CONTINUITY
+
+Satu entity dapat memiliki
+lebih dari satu continuity dimension
+secara bersamaan selama domain rules
+mengizinkannya.
+
+Validator harus memisahkan:
+
+- state continuity;
+- relationship continuity;
+- knowledge continuity;
+- object continuity;
+- process continuity;
+- location continuity.
+
+Kesamaan waktu tidak berarti
+semua continuity adalah satu data.
+
+==================================================
+46. DEPENDENCY CONTINUITY
+
+Jika Continuity A bergantung
+pada Continuity B:
+
+A tidak boleh dianggap valid
+apabila B berada pada state
+yang tidak memungkinkan A.
+
+Validator harus memeriksa
+dependency order dan effective time.
+
+==================================================
+47. CONDITIONAL CONTINUITY
+
+Sebagian continuity dapat
+bergantung pada kondisi tertentu.
+
+Kondisi harus dipertahankan
+sebagai:
+
+- satisfied;
+- unsatisfied;
+- unknown;
+- unresolved.
+
+Validator tidak boleh menganggap
+conditional branch menjadi actual
+tanpa condition fulfillment.
+
+==================================================
+48. FUTURE CONTINUITY
+
+Future continuity dapat berisi:
+
+- Plan;
+- Prediction;
+- Possibility;
+- Scheduled transition;
+- Expected continuation.
+
+Future continuity tidak boleh
+diperlakukan sebagai actual continuity
+sebelum occurrence atau transition
+yang sah terjadi.
+
+==================================================
+49. PAST CONTINUITY
+
+Past continuity tetap harus
+mempertahankan history.
+
+Jika suatu condition diketahui
+berlaku di masa lalu,
+status temporal dan evidence-nya
+tetap harus dipertahankan.
+
+Past record tidak boleh
+dimodifikasi hanya agar
+current state menjadi lebih sederhana.
+
+==================================================
+50. PRESENT CONTINUITY
+
+Current condition harus sesuai
+dengan effective time.
+
+Kondisi future tidak boleh
+dinyatakan sebagai current
+tanpa transition yang sah.
+
+Kondisi past yang sudah ended
+tidak boleh tetap current
+tanpa evidence continuation.
+
+==================================================
+51. UNKNOWN CONTINUITY PROPAGATION
+
+Jika predecessor tidak diketahui
+tetapi successor memiliki
+informasi yang valid:
+
+validator tidak boleh
+mengarang predecessor.
+
+UNKNOWN harus tetap dipertahankan
+pada bagian chain yang belum diketahui.
+
+==================================================
+52. CONFLICT PROPAGATION
+
+Satu continuity conflict dapat
+mempengaruhi downstream entities.
+
+Validator harus menentukan
+affected scope.
+
+Namun propagation tidak berarti
+semua Universe otomatis invalid.
+
+Hanya dependency yang benar-benar
+terpengaruh yang perlu ditinjau.
+
+==================================================
+53. VALIDATION SCOPE
+
+Validation scope dapat berupa:
+
+- satu continuity item;
+- satu entity;
+- satu domain;
+- satu period transition;
+- beberapa periode;
+- satu Daily Story;
+- seluruh Instance;
+- dependency chain.
+
+Scope harus dinyatakan
+sebelum result diterbitkan.
+
+==================================================
+54. CONTINUITY VALIDATION ORDER
+
+Urutan minimal:
+
+1. IDENTIFY ENTITY
+2. IDENTIFY PREVIOUS CONDITION
+3. IDENTIFY CURRENT CONDITION
+4. IDENTIFY TRANSITION
+5. CHECK EFFECTIVE TIME
+6. CHECK DOMAIN OWNER RESULT
+7. CHECK EVENT / PROCESS / CONSEQUENCE
+8. CHECK DEPENDENCY
+9. CHECK HISTORY
+10. CHECK CROSS-PERIOD RELATION
+11. CLASSIFY ISSUE
+12. ISSUE FINAL STATUS
+
+==================================================
+55. VALIDATION FINDINGS
+
+Temuan dapat mencakup:
+
+- Missing predecessor;
+- Missing transition;
+- Invalid transition;
+- Invalid effective time;
+- Identity mismatch;
+- Domain conflict;
+- Temporal conflict;
+- Duplicate continuity;
+- Broken dependency;
+- Orphan continuity;
+- Unexpected reset;
+- Unsupported new condition;
+- Unresolved continuity.
+
+==================================================
+56. SEVERITY
+
+Temuan dapat memiliki severity:
+
+INFO
+
+Tidak memengaruhi continuity validity.
+
+WARNING
+
+Perlu diperhatikan tetapi continuity
+masih dapat diproses.
+
+ERROR
+
+Continuity tidak dapat dianggap
+valid tanpa resolusi.
+
+CRITICAL
+
+Continuity chain utama tidak dapat
+dipercaya atau menghasilkan
+kontradiksi fundamental.
+
+==================================================
+57. VALIDATION STATUS
+
+Hasil dapat berupa:
+
+VALID
+
+Continuity konsisten dan dapat
+ditelusuri.
+
+REVIEW_REQUIRED
+
+Terdapat ambiguity atau issue
+yang masih membutuhkan pemeriksaan.
+
+REVISION_REQUIRED
+
+Data continuity harus direvisi
+oleh owner yang relevan.
+
+BLOCKED
+
+Continuity tidak dapat diteruskan
+secara aman.
+
+==================================================
+58. BLOCKING CONDITIONS
+
+Validation dapat menghasilkan BLOCKED
+apabila:
+
+- identity tidak dapat diselesaikan;
+- previous/current condition
+  saling bertentangan secara critical;
+- transition temporal mustahil;
+- domain owner menolak carryover
+  dan tidak ada alternatif sah;
+- critical dependency rusak;
+- history tidak dapat dipetakan;
+- continuity result akan menyebabkan
+  downstream state tidak aman.
+
+==================================================
+59. NO AUTO-CORRECTION
+
+Continuity Validator tidak boleh:
+
+- mengubah Character;
+- mengubah Relationship;
+- mengubah Object;
+- mengubah Knowledge;
+- mengubah State;
+- mengubah Location;
+- membuat Event;
+- membuat Process;
+- membuat Consequence;
+- memindahkan temporal position;
+- menutup unresolved condition;
+- menciptakan transition fiktif.
+
+Validator hanya mengidentifikasi
+dan mengklasifikasikan.
+
+==================================================
+60. OWNER ROUTING
+
+Continuity issue harus diarahkan
+kepada owner yang relevan.
+
+Character continuity
+→ Character System
+
+Relationship continuity
+→ Relationship System
+
+Object continuity
+→ Object System
+
+Knowledge continuity
+→ Character Knowledge System
+
+State continuity
+→ State owner / Character System
+
+Location continuity
+→ Location owner
+
+Temporal issue
+→ Temporal System
+
+Story issue
+→ Daily Story subsystem
+
+Storage issue
+→ Instance Management
+
+Daily Universe mengoordinasikan
+timing dan carryover,
+bukan mengambil alih domain owner.
+
+==================================================
+61. REVALIDATION
+
+Revalidation diperlukan apabila:
+
+- predecessor berubah;
+- current condition berubah;
+- transition berubah;
+- effective time berubah;
+- domain owner mengubah result;
+- event berubah;
+- consequence berubah;
+- process berubah;
+- relationship berubah;
+- object state berubah;
+- knowledge acquisition berubah;
+- location berubah.
+
+Revalidation harus menjangkau
+scope yang terdampak.
+
+==================================================
+62. HISTORY PRESERVATION
+
+Validation tidak boleh menghapus
+previous continuity finding.
+
+Jika continuity direvisi,
+hasil sebelumnya tetap harus
+dapat ditelusuri.
+
+Revision harus memperlihatkan:
+
+- previous state;
+- transition;
+- revised state;
+- revision timing;
+- scope affected.
+
+==================================================
+63. CONTINUITY VS STORAGE
+
+File berada di folder yang sama
+tidak membuktikan continuity.
+
+File berpindah folder juga
+tidak otomatis memutus continuity.
+
+Continuity adalah hubungan
+Universe/domain data,
+bukan hubungan filesystem.
+
+==================================================
+64. CONTINUITY VS NARRATIVE
+
+Narrative continuity dan Universe continuity
+harus dibedakan.
+
+Narrative dapat melompat waktu,
+menghilangkan detail,
+atau menyajikan informasi
+secara non-linear.
+
+Hal tersebut tidak boleh
+mengubah continuity Universe.
+
+==================================================
+65. DAILY STORY RELATION
+
+Daily Story dapat:
+
+- menampilkan continuation;
+- menampilkan change;
+- menampilkan unresolved condition;
+- tidak menampilkan continuity tertentu.
+
+Story coverage bukan ukuran
+validitas continuity.
+
+Universe continuity tetap berlaku
+di luar story coverage.
+
+==================================================
+66. FINAL CONTINUITY GATE
+
+Continuity dianggap VALID untuk
+downstream processing apabila:
+
+- identity valid;
+- predecessor dapat dipetakan
+  atau secara sah dinyatakan unknown;
+- current condition valid;
+- transition valid;
+- effective time valid;
+- domain owner result valid;
+- dependency valid;
+- history tidak memiliki
+  critical contradiction;
+- cross-period relation valid;
+- tidak terdapat unresolved
+  critical continuity issue.
+
+==================================================
+67. CONTINUITY RESULT TRACE
+
+Setiap validation result harus
+dapat ditelusuri kepada:
+
+- continuity item;
+- entity;
+- previous condition;
+- current condition;
+- transition;
+- effective time;
+- relevant domain;
+- relevant source;
+- validation scope;
+- finding;
+- severity;
+- status.
+
+==================================================
+68. ABSOLUTE RULES
+
+1. 
+
+Continuity bukan berarti semua kondisi tetap sama.
+
+2. 
+
+Perubahan juga dapat menjadi continuity
+apabila transition-nya valid.
+
+3. 
+
+Previous condition tidak boleh diciptakan
+untuk mengisi gap.
+
+4. 
+
+Current condition tidak otomatis
+merupakan continuation.
+
+5. 
+
+Absence of record tidak otomatis berarti END.
+
+6. 
+
+Missing history tidak otomatis berarti NEW.
+
+7. 
+
+UNRESOLVED tidak boleh dipaksa menjadi RESOLVED.
+
+8. 
+
+UNKNOWN tidak boleh dipaksa menjadi known.
+
+9. 
+
+Transition harus memiliki basis.
+
+10. 
+
+Effective time harus konsisten.
+
+11. 
+
+Identity harus dipastikan sebelum
+continuity disimpulkan.
+
+12. 
+
+Domain owner tetap memiliki
+kewenangan atas domain data.
+
+13. 
+
+Story tidak menentukan Universe continuity.
+
+14. 
+
+Storage tidak menentukan Universe continuity.
+
+15. 
+
+Validator tidak boleh mengubah
+Canon untuk menyelesaikan conflict.
+
+16. 
+
+Validator tidak boleh menciptakan
+transition untuk membuat chain terlihat lengkap.
+
+17. 
+
+Cross-period transition harus tervalidasi.
+
+18. 
+
+Critical continuity conflict
+harus menahan downstream processing.
+
+19. 
+
+Setiap finding harus dapat ditelusuri.
+
+20. 
+
+Revalidation wajib dilakukan
+setelah perubahan continuity yang relevan.
+
+==================================================
+69. FINAL PRINCIPLE
+
+Continuity Validation menjaga agar
+Universe tidak terputus secara logis
+ketika waktu bergerak dari satu
+periode ke periode berikutnya.
+
+Urutan yang benar:
+
+PREVIOUS CONDITION
+→ VALIDATED TRANSITION
+→ CURRENT CONDITION
+→ CONTINUITY VALIDATION
+→ FINDING / STATUS
+→ DOMAIN RESOLUTION
+→ REVALIDATION
+
+Bukan:
+
+MISSING DATA
+→ ASSUME CONTINUATION
+atau
+MISSING DATA
+→ ASSUME CHANGE
+
+Continuity harus dapat ditelusuri,
+perubahan harus memiliki dasar,
+dan ketidakpastian harus tetap
+direpresentasikan sebagai
+ketidakpastian sampai terdapat
+informasi yang sah untuk menyelesaikannya.
