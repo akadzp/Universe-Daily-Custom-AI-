@@ -1,0 +1,675 @@
+================================================================================
+STORY DATE
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / DAILY STORY
+ROLE : DAILY STORY TEMPORAL IDENTITY
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Story Date adalah mekanisme yang menentukan tanggal Universe yang menjadi
+identitas temporal utama sebuah Daily Story.
+
+Story Date digunakan untuk:
+
+- mengidentifikasi tanggal Universe Daily Story;
+- menghubungkan Daily Story dengan Universe Time;
+- menentukan hubungan dengan periode sebelumnya dan berikutnya;
+- menjadi dasar temporal untuk Daily Story ID;
+- menjadi dasar struktur penyimpanan berdasarkan tahun dan bulan;
+- menjaga traceability antara Daily Story dan Universe.
+
+Story Date bukan Narrative Time.
+
+Story Date bukan waktu ketika file dibuat.
+
+Story Date bukan waktu ketika AI menjalankan produksi.
+
+Story Date tidak menentukan seluruh waktu yang dapat muncul dalam cerita.
+
+
+================================================================================
+02. CORE PRINCIPLE
+================================================================================
+
+Setiap Daily Story harus mempunyai satu primary Universe Date yang sah.
+
+Primary Universe Date berasal dari Universe Time.
+
+Story Date tidak boleh ditentukan berdasarkan:
+
+- waktu penulisan;
+- waktu upload;
+- waktu file dibuat;
+- waktu pembaca membaca;
+- waktu AI memproses;
+- urutan cerita yang tidak mewakili Universe Time.
+
+
+================================================================================
+03. STORY DATE VS UNIVERSE DATE
+================================================================================
+
+Untuk Daily Story:
+
+STORY DATE
+=
+UNIVERSE DATE UTAMA YANG MENJADI IDENTITAS STORY.
+
+Universe Date adalah sumber temporal truth.
+
+Story Date adalah representasi operasional tanggal tersebut pada Daily Story.
+
+Keduanya harus menunjuk pada tanggal Universe yang sama.
+
+
+================================================================================
+04. SINGLE PRIMARY DATE
+================================================================================
+
+Satu Daily Story harus mempunyai satu primary Story Date.
+
+Daily Story tetap dapat memuat:
+
+- Past;
+- Present;
+- Future;
+- flashback;
+- flash-forward;
+- memory;
+- imagination;
+- hypothesis;
+- plan;
+- prediction;
+- possibility;
+
+selama seluruh informasi tersebut tetap memiliki temporal position dan status
+yang benar.
+
+Kemunculan waktu lain tidak mengganti primary Story Date.
+
+
+================================================================================
+05. STORY DATE AND TEMPORAL RANGE
+================================================================================
+
+Story Date tidak berarti seluruh kejadian dalam cerita harus terjadi tepat
+pada satu titik waktu.
+
+Daily Story dapat mencakup temporal range apabila production mechanism dan
+Narrator mengizinkannya.
+
+Namun primary Story Date tetap menjadi identitas Daily Story.
+
+Temporal range harus tetap dapat ditelusuri ke Universe Time.
+
+
+================================================================================
+06. STORY DATE AND NARRATIVE TIME
+================================================================================
+
+Narrative Time dapat berpindah:
+
+PRIMARY STORY DATE
+↓
+PAST
+↓
+PRIMARY STORY DATE
+↓
+FUTURE
+↓
+PRIMARY STORY DATE
+
+Perpindahan Narrative Time tidak mengubah Story Date.
+
+Story Date tetap mengikuti Universe Date utama yang ditetapkan untuk Daily
+Story.
+
+
+================================================================================
+07. STORY DATE AND FLASHBACK
+================================================================================
+
+Flashback dapat menampilkan kejadian yang berada sebelum Story Date.
+
+Flashback tidak mengubah Story Date.
+
+Flashback juga tidak membuat Daily Story baru secara otomatis.
+
+Jika event masa lalu menjadi subject produksi terpisah, event tersebut dapat
+memiliki Daily Story lain dengan Story Date yang sesuai.
+
+
+================================================================================
+08. STORY DATE AND FLASH-FORWARD
+================================================================================
+
+Flash-forward dapat menampilkan posisi future relatif terhadap Story Date.
+
+Flash-forward tidak mengubah Story Date.
+
+Status future tetap mengikuti Temporal Status System.
+
+Future representation tidak menjadi Actual hanya karena muncul dalam Daily
+Story.
+
+
+================================================================================
+09. STORY DATE AND MEMORY
+================================================================================
+
+Memory dapat merujuk pada masa lalu.
+
+Story Date tetap menunjukkan kapan Daily Story utama berlangsung dalam
+Universe.
+
+Memory access time harus dibedakan dari event time apabila perbedaan tersebut
+relevan.
+
+
+================================================================================
+10. STORY DATE AND IMAGINATION
+================================================================================
+
+Imagination dapat menggunakan berbagai posisi waktu.
+
+Story Date tidak berubah karena Character membayangkan waktu lain.
+
+Imagined time tidak menjadi Story Date.
+
+
+================================================================================
+11. STORY DATE AND HYPOTHESIS
+================================================================================
+
+Hypothesis mengenai waktu lain tidak mengubah Story Date.
+
+Hypothetical temporal position tetap merupakan representasi dan harus
+mempertahankan statusnya.
+
+
+================================================================================
+12. STORY DATE AND FUTURE INFORMATION
+================================================================================
+
+Plan, Prediction, Possibility, dan informasi Future lainnya tidak mengubah
+Story Date.
+
+Story Date tetap merupakan tanggal Universe yang menjadi identity utama Daily
+Story.
+
+
+================================================================================
+13. STORY DATE SELECTION
+================================================================================
+
+Story Date harus ditentukan sebelum Daily Story mencapai tahap production
+completion.
+
+Source penentuan Story Date dapat berasal dari:
+
+- Daily Universe current period;
+- valid production instruction;
+- valid Story Trigger;
+- Universe Instance temporal context.
+
+Story Date tidak boleh dibuat hanya untuk menghasilkan file dengan nama
+tanggal tertentu.
+
+
+================================================================================
+14. STORY DATE VALIDITY
+================================================================================
+
+Story Date dianggap valid apabila:
+
+- dapat ditelusuri ke Universe Time;
+- berada dalam Universe Instance yang benar;
+- tidak bertentangan dengan temporal continuity;
+- tidak bertentangan dengan previous period;
+- tidak menghasilkan duplicate Daily Story identity;
+- sesuai dengan Story Trigger dan Story Scope.
+
+
+================================================================================
+15. STORY DATE AND PREVIOUS PERIOD
+================================================================================
+
+Story Date harus dapat ditempatkan relatif terhadap periode sebelumnya.
+
+Jika Daily Story merupakan lanjutan dari Universe progression, Story Date harus
+sesuai dengan posisi temporal yang sedang diproses.
+
+Story Date tidak boleh dibuat mundur atau maju hanya untuk menyesuaikan isi
+cerita.
+
+
+================================================================================
+16. STORY DATE AND NEXT PERIOD
+================================================================================
+
+Story Date harus mempunyai hubungan temporal yang dapat ditentukan dengan
+periode berikutnya.
+
+Konteks future tidak boleh diperlakukan sebagai next Story Date secara
+otomatis.
+
+Next Story Date ditentukan oleh Universe Time dan Daily Cycle.
+
+
+================================================================================
+17. FIRST STORY DATE
+================================================================================
+
+Daily Story pertama dalam suatu Universe Instance harus mempunyai Story Date
+yang sah.
+
+Ketiadaan Daily Story sebelumnya tidak memberikan izin untuk membuat tanggal
+secara asumsi.
+
+Universe Time tetap menjadi sumber tanggal.
+
+
+================================================================================
+18. MISSING STORY DATE
+================================================================================
+
+Jika Story Date tidak dapat ditentukan secara sah:
+
+- Story Date harus berstatus UNKNOWN;
+- Daily Story tidak boleh dinyatakan final;
+- filename yang memerlukan tanggal tidak boleh dibuat seolah-olah valid;
+- Instance placement tidak boleh dianggap selesai.
+
+
+================================================================================
+19. INVALID STORY DATE
+================================================================================
+
+Story Date dianggap invalid apabila:
+
+- tidak sesuai Universe Time;
+- bertentangan dengan temporal order;
+- tidak sesuai Instance;
+- menggunakan tanggal yang belum sah;
+- menyebabkan duplicate identity;
+- berasal dari file metadata yang bertentangan dengan Universe Data.
+
+
+================================================================================
+20. STORY DATE CONFLICT
+================================================================================
+
+Apabila dua sumber memberikan Story Date yang berbeda, system harus
+mengidentifikasi:
+
+- sumber temporal utama;
+- source domain;
+- production context;
+- apakah terdapat revision;
+- apakah terdapat temporal conflict.
+
+System tidak boleh memilih tanggal hanya berdasarkan:
+
+- nama file;
+- nama folder;
+- waktu file dibuat;
+- urutan daftar file;
+- kebutuhan cerita.
+
+
+================================================================================
+21. STORY DATE REVISION
+================================================================================
+
+Story Date yang telah ditetapkan tidak boleh diubah secara diam-diam.
+
+Revision harus memiliki:
+
+- previous Story Date;
+- new Story Date;
+- reason;
+- source;
+- temporal impact;
+- affected Story ID;
+- validation result.
+
+
+================================================================================
+22. STORY DATE AND STORY ID
+================================================================================
+
+Daily Story ID harus dapat diturunkan secara konsisten dari Story Date sesuai
+aturan Story ID.
+
+Story Date dan Story ID adalah dua informasi yang berbeda:
+
+STORY DATE
+→ tanggal Universe.
+
+STORY ID
+→ identifier Daily Story.
+
+Keduanya harus dapat saling diverifikasi.
+
+
+================================================================================
+23. STORY DATE AND FILE NAME
+================================================================================
+
+Filename Daily Story menggunakan tanggal yang telah ditentukan oleh Story Date
+sesuai aturan Instance Management.
+
+Filename bukan sumber kebenaran tanggal.
+
+Jika filename tidak sesuai Story Date, terjadi Instance Integrity Issue.
+
+
+================================================================================
+24. STORY DATE AND YEAR / MONTH
+================================================================================
+
+Year dan Month folder mengikuti Story Date yang valid.
+
+Pola konseptual:
+
+STORY DATE
+↓
+YEAR
+↓
+MONTH
+↓
+DAILY STORY FILE
+
+
+================================================================================
+25. DATE FORMAT
+================================================================================
+
+Format tanggal internal harus mengikuti standard yang ditetapkan oleh Daily
+Universe.
+
+Perubahan format penyimpanan tidak boleh mengubah nilai temporal.
+
+Representation format dan temporal value harus dapat dibedakan.
+
+
+================================================================================
+26. TIMEZONE
+================================================================================
+
+Jika Universe menggunakan timezone tertentu, Story Date harus mengikuti
+timezone Universe yang telah ditetapkan.
+
+Waktu eksternal tidak boleh mengubah Story Date hanya karena perbedaan
+timezone apabila Universe memiliki timezone internal yang berbeda.
+
+Timezone harus ditentukan pada level Universe, bukan secara acak pada setiap
+Daily Story.
+
+
+================================================================================
+27. STORY DATE AND PRODUCTION TIME
+================================================================================
+
+Production Time adalah waktu ketika Daily Story diproses.
+
+Production Time tidak sama dengan Story Date.
+
+Story dapat diproduksi setelah tanggal Universe yang menjadi Story Date telah
+berlalu.
+
+Production delay tidak mengubah Story Date.
+
+
+================================================================================
+28. STORY DATE AND FILE CREATION TIME
+================================================================================
+
+File creation time hanya merupakan metadata filesystem.
+
+File creation time tidak menentukan Story Date.
+
+Jika file dibuat pada waktu berbeda dari Story Date, Story Date tetap
+mengikuti Universe Time.
+
+
+================================================================================
+29. STORY DATE AND REPRODUCTION
+================================================================================
+
+Jika Daily Story perlu diproduksi ulang, Story Date tetap sama selama produksi
+ulang tersebut merepresentasikan Universe Date yang sama.
+
+Reproduction tidak otomatis menciptakan Story Date baru.
+
+Perubahan terhadap Story Date hanya melalui revision mechanism yang sah.
+
+
+================================================================================
+30. STORY DATE AND DUPLICATE PRODUCTION
+================================================================================
+
+Produksi ulang dengan Story Date yang sama harus dapat dibedakan dari
+duplicate Daily Story yang tidak disengaja.
+
+System harus memeriksa:
+
+- Story ID;
+- Instance;
+- production status;
+- revision status;
+- existing file;
+- version information apabila tersedia.
+
+
+================================================================================
+31. STORY DATE AND MULTIPLE DAILY STORIES
+================================================================================
+
+Apabila production mechanism mengizinkan lebih dari satu Daily Story pada
+tanggal Universe yang sama, masing-masing Story harus mempunyai identifier
+yang membedakan.
+
+Story Date tetap sama.
+
+Daily Story ID tidak boleh duplicate.
+
+
+================================================================================
+32. STORY DATE AND STORY SCOPE
+================================================================================
+
+Story Scope harus menggunakan Story Date sebagai primary temporal reference.
+
+Temporal context lain dapat berada di dalam scope tanpa mengganti primary Story
+Date.
+
+
+================================================================================
+33. STORY DATE AND STORY TRIGGER
+================================================================================
+
+Story Trigger harus mempunyai hubungan temporal yang valid dengan Story Date.
+
+Trigger yang sudah terlalu jauh dari Story Date tidak boleh digunakan tanpa
+mekanisme yang sah.
+
+Trigger Time dan Story Date tetap merupakan informasi yang berbeda.
+
+
+================================================================================
+34. STORY DATE AND NARRATOR
+================================================================================
+
+Narrator menerima Story Date sebagai salah satu factual temporal boundary.
+
+Narrator boleh menentukan cara Story Date direpresentasikan kepada pembaca.
+
+Narrator tidak boleh mengubah Story Date hanya untuk kebutuhan narrative
+structure.
+
+
+================================================================================
+35. STORY DATE AND CANON
+================================================================================
+
+Story Date tidak menciptakan Canon baru.
+
+Story Date hanya mengidentifikasi kapan Daily Story ditempatkan dalam Universe.
+
+Canon tetap berasal dari Universe Data dan event yang sah.
+
+
+================================================================================
+36. NO DATE INFERENCE
+================================================================================
+
+System tidak boleh menciptakan Story Date berdasarkan:
+
+- judul cerita;
+- isi cerita;
+- nama karakter;
+- lokasi;
+- waktu produksi;
+- metadata file;
+- urutan folder;
+- asumsi pembuat cerita.
+
+
+================================================================================
+37. DATE TRACEABILITY
+================================================================================
+
+Story Date harus dapat ditelusuri melalui:
+
+STORY DATE
+↓
+UNIVERSE DATE
+↓
+UNIVERSE TIME
+↓
+DAILY UNIVERSE PERIOD
+
+
+================================================================================
+38. DATE INTEGRITY
+================================================================================
+
+Story Date harus tetap konsisten pada seluruh production chain:
+
+DAILY UNIVERSE
+↓
+STORY TRIGGER
+↓
+STORY SCOPE
+↓
+STORY DATE
+↓
+STORY ID
+↓
+NARRATOR
+↓
+DAILY STORY
+↓
+INSTANCE
+
+
+================================================================================
+39. VALIDATION
+================================================================================
+
+Story Date harus divalidasi terhadap:
+
+- Universe Time;
+- Current Universe Time;
+- Universe Date;
+- Story Trigger;
+- Story Scope;
+- Story ID;
+- Instance;
+- Year;
+- Month;
+- temporal consistency;
+- duplicate identity.
+
+
+================================================================================
+40. VALIDATION RESULT
+================================================================================
+
+VALID
+→ Story Date sah dan dapat digunakan.
+
+REVIEW_REQUIRED
+→ terdapat uncertainty yang belum menghalangi proses.
+
+REVISION_REQUIRED
+→ Story Date atau source membutuhkan koreksi.
+
+BLOCKED
+→ Story Date tidak dapat digunakan secara sah.
+
+
+================================================================================
+41. FAILURE PRINCIPLE
+================================================================================
+
+Jika Story Date tidak valid atau tidak diketahui, system tidak boleh:
+
+- mengarang tanggal;
+- menggunakan waktu produksi sebagai tanggal Universe;
+- menggunakan filename sebagai source of truth;
+- memindahkan Story Date demi cerita;
+- membuat folder tanggal secara asal;
+- membuat Story ID palsu.
+
+Proses harus berhenti sampai temporal identity dapat ditentukan secara sah.
+
+
+================================================================================
+42. FINAL PRINCIPLE
+================================================================================
+
+STORY DATE ADALAH:
+
+TANGGAL UNIVERSE YANG MENJADI IDENTITAS UTAMA
+SEBUAH DAILY STORY.
+
+Story dapat membahas waktu lain.
+
+Narrative Time dapat berpindah.
+
+Flashback dapat terjadi.
+
+Flash-forward dapat terjadi.
+
+Memory dapat muncul.
+
+Imagination dapat muncul.
+
+Future dapat dibahas.
+
+Namun:
+
+STORY DATE TETAP MENGIKUTI UNIVERSE TIME.
+
+Filename mengikuti Story Date.
+
+Folder Year dan Month mengikuti Story Date.
+
+Story ID dapat diturunkan dari Story Date.
+
+Tidak ada metadata produksi yang boleh menggantikan Universe Time.
+
+
+================================================================================
+END OF STORY DATE
+================================================================================
