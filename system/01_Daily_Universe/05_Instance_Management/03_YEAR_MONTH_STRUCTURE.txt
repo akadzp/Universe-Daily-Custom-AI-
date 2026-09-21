@@ -1,0 +1,817 @@
+==================================================
+03_YEAR_MONTH_STRUCTURE
+
+STATUS
+
+System Rule
+
+OWNER
+
+Daily Universe
+Instance Management
+
+SCOPE
+
+File ini mengatur struktur direktori YEAR dan MONTH di dalam
+Daily Story Dataset.
+
+File ini menentukan:
+
+- bagaimana YEAR ditentukan;
+- bagaimana MONTH ditentukan;
+- bagaimana hubungan YEAR dan MONTH dengan Story Date;
+- bagaimana perpindahan tahun dan bulan ditangani;
+- bagaimana konsistensi struktur YEAR/MONTH dipastikan.
+
+File ini TIDAK mengatur:
+
+- penentuan Story Date;
+- Story ID;
+- penamaan file;
+- isi Daily Story;
+- penulisan file;
+- produksi narasi;
+- perubahan Canon;
+- definisi temporal Universe.
+
+Aturan penentuan waktu berada pada sistem Temporal.
+Aturan Story Date berada pada Daily Story.
+Aturan struktur direktori umum berada pada Instance Management.
+
+==================================================
+
+1. PRINCIPLE
+   ==================================================
+
+Struktur YEAR dan MONTH harus selalu merepresentasikan
+Story Date yang telah dinyatakan valid.
+
+YEAR dan MONTH adalah representasi struktur penyimpanan,
+bukan sumber penentuan tanggal.
+
+Struktur direktori tidak boleh menentukan Story Date.
+
+Story Date menentukan YEAR dan MONTH.
+
+==================================================
+02. SOURCE OF TRUTH
+
+Sumber kebenaran untuk YEAR dan MONTH adalah:
+
+Story Date
+→ Temporal validation
+→ YEAR
+→ MONTH
+
+Production time, execution time, file creation time,
+waktu AI berjalan, atau waktu sistem eksternal TIDAK
+boleh digunakan untuk menentukan YEAR atau MONTH Daily Story.
+
+Apabila Story Date belum valid, YEAR dan MONTH tidak boleh
+ditentukan secara final.
+
+==================================================
+03. YEAR DEFINITION
+
+YEAR adalah direktori yang merepresentasikan tahun kalender
+dari Story Date.
+
+Representasi YEAR harus:
+
+- menggunakan empat digit;
+- berasal langsung dari Story Date;
+- hanya memiliki satu nilai untuk satu Story Date;
+- tidak boleh dihasilkan melalui pembulatan;
+- tidak boleh diubah berdasarkan waktu produksi;
+- tidak boleh dibuat berdasarkan judul cerita;
+- tidak boleh dibuat berdasarkan Story ID kecuali Story Date
+  telah terlebih dahulu menentukan nilainya.
+
+YEAR merupakan bagian dari struktur penyimpanan,
+bukan entitas temporal baru.
+
+==================================================
+04. MONTH DEFINITION
+
+MONTH adalah direktori yang merepresentasikan bulan kalender
+dari Story Date.
+
+Representasi MONTH harus:
+
+- menggunakan dua digit;
+- memiliki nilai 01 sampai 12;
+- berasal langsung dari Story Date;
+- tidak boleh menggunakan nama bulan;
+- tidak boleh menggunakan singkatan nama bulan;
+- tidak boleh menggunakan angka tanpa padding;
+- tidak boleh ditentukan berdasarkan tanggal produksi.
+
+MONTH berada di dalam YEAR yang berasal dari Story Date yang sama.
+
+==================================================
+05. HIERARCHICAL RELATION
+
+Struktur hubungan wajib:
+
+INSTANCE
+→ DAILY STORY DATASET
+→ YEAR
+→ MONTH
+→ DAILY STORY FILE
+
+YEAR tidak boleh berdiri sebagai representasi bulan.
+
+MONTH tidak boleh berada langsung di bawah Instance Root.
+
+MONTH selalu menjadi child dari YEAR yang sesuai.
+
+YEAR dan MONTH tidak boleh dipertukarkan.
+
+==================================================
+06. DATE DERIVATION
+
+Untuk setiap Daily Story:
+
+1. Story Date harus telah ditentukan.
+2. Story Date harus lolos validasi temporal.
+3. Tahun diambil dari komponen tahun Story Date.
+4. Bulan diambil dari komponen bulan Story Date.
+5. YEAR dibentuk dari nilai tahun yang telah tervalidasi.
+6. MONTH dibentuk dari nilai bulan yang telah tervalidasi.
+7. Struktur direktori diverifikasi terhadap Story Date.
+
+Tidak boleh ada langkah yang menentukan Story Date
+dari YEAR atau MONTH.
+
+==================================================
+07. VALIDITY REQUIREMENT
+
+YEAR dan MONTH hanya boleh digunakan sebagai tujuan
+penyimpanan apabila seluruh kondisi berikut terpenuhi:
+
+- Story Date tersedia;
+- Story Date memiliki format yang dapat diproses;
+- Story Date valid secara kalender;
+- Story Date tidak berada dalam konflik temporal;
+- YEAR dapat ditentukan secara tunggal;
+- MONTH dapat ditentukan secara tunggal.
+
+Apabila salah satu syarat gagal:
+
+STATUS = BLOCKED
+
+Tidak boleh membuat struktur berdasarkan tebakan.
+
+==================================================
+08. YEAR DIRECTORY CREATION
+
+YEAR hanya dibuat apabila:
+
+- Story Date valid;
+- Instance valid;
+- Daily Story Dataset valid;
+- destination root valid;
+- YEAR belum tersedia.
+
+Apabila YEAR telah tersedia dan merupakan direktori valid,
+YEAR harus digunakan kembali.
+
+Sistem tidak boleh membuat YEAR duplikat
+untuk nilai tahun yang sama dalam Instance dan Dataset yang sama.
+
+==================================================
+09. MONTH DIRECTORY CREATION
+
+MONTH hanya dibuat apabila:
+
+- YEAR yang menjadi parent valid;
+- Story Date valid;
+- nilai MONTH valid;
+- MONTH belum tersedia.
+
+Apabila MONTH telah tersedia dan merupakan direktori valid,
+MONTH harus digunakan kembali.
+
+Sistem tidak boleh membuat MONTH duplikat
+di dalam YEAR yang sama.
+
+==================================================
+10. IDEMPOTENCY
+
+Operasi pembuatan YEAR dan MONTH harus idempotent.
+
+Pengulangan operasi terhadap destination yang sama
+tidak boleh:
+
+- membuat direktori baru;
+- menggandakan YEAR;
+- menggandakan MONTH;
+- menghapus direktori yang sudah ada;
+- memindahkan direktori;
+- mengganti struktur yang valid.
+
+Operasi yang diulang harus menghasilkan keadaan struktural
+yang sama.
+
+==================================================
+11. YEAR BOUNDARY
+
+Perpindahan dari satu tahun ke tahun lain diperlakukan
+sebagai perubahan struktur YEAR.
+
+Apabila Story Date berada pada YEAR yang berbeda dari
+periode sebelumnya:
+
+- YEAR baru harus ditentukan;
+- keberadaan YEAR baru harus diverifikasi;
+- YEAR lama tidak boleh diubah;
+- MONTH ditentukan ulang berdasarkan Story Date baru.
+
+Daily Universe tidak boleh memindahkan Daily Story lama
+ke YEAR baru hanya karena proses berikutnya telah masuk
+ke tahun berbeda.
+
+==================================================
+12. MONTH BOUNDARY
+
+Perpindahan dari satu bulan ke bulan lain dalam YEAR yang sama
+diperlakukan sebagai perubahan struktur MONTH.
+
+Apabila Story Date berada pada MONTH yang berbeda:
+
+- YEAR tetap mengikuti tahun Story Date;
+- MONTH baru harus ditentukan;
+- MONTH baru harus diverifikasi;
+- MONTH lama tidak boleh diubah;
+- struktur MONTH tidak boleh digabung secara otomatis.
+
+==================================================
+13. YEAR AND MONTH TRANSITION
+
+Apabila perubahan temporal melewati batas tahun dan bulan:
+
+Story Date baru
+→ YEAR baru
+→ MONTH baru
+
+Perubahan tersebut tidak boleh diproses sebagai sekadar
+penambahan angka pada direktori sebelumnya.
+
+Struktur baru harus selalu dihitung dari Story Date tervalidasi.
+
+==================================================
+14. SAME YEAR
+
+Beberapa Daily Story dalam tahun yang sama harus berada
+di bawah YEAR yang sama selama:
+
+- Instance sama;
+- Daily Story Dataset sama;
+- YEAR berasal dari Story Date yang sama secara kalender.
+
+Tidak boleh dibuat YEAR terpisah hanya karena:
+
+- Story ID berbeda;
+- Trigger berbeda;
+- judul berbeda;
+- Narrator berbeda;
+- waktu produksi berbeda.
+
+==================================================
+15. SAME MONTH
+
+Beberapa Daily Story dalam YEAR dan MONTH yang sama
+harus menggunakan direktori MONTH yang sama selama:
+
+- Instance sama;
+- Daily Story Dataset sama;
+- Story Date berada pada YEAR yang sama;
+- Story Date berada pada MONTH yang sama.
+
+Perbedaan Story ID atau judul tidak menjadi alasan
+untuk membuat MONTH baru.
+
+==================================================
+16. MULTIPLE STORIES ON ONE DATE
+
+Apabila terdapat lebih dari satu Daily Story dengan
+Story Date yang sama:
+
+- YEAR harus sama;
+- MONTH harus sama;
+- struktur YEAR tidak boleh digandakan;
+- struktur MONTH tidak boleh digandakan.
+
+Perbedaan antarstory ditangani oleh identitas dan
+penamaan file, bukan melalui YEAR/MONTH baru.
+
+==================================================
+17. INSTANCE ISOLATION
+
+YEAR dan MONTH hanya berlaku di dalam Instance dan Dataset
+tempat struktur tersebut berada.
+
+YEAR atau MONTH dari satu Instance tidak boleh digunakan
+sebagai representasi struktur Instance lain.
+
+Tidak boleh terjadi:
+
+- shared directory antar Instance;
+- perpindahan file lintas Instance tanpa proses migrasi resmi;
+- penggabungan YEAR antar Instance;
+- penggabungan MONTH antar Instance.
+
+==================================================
+18. DATASET ISOLATION
+
+YEAR dan MONTH juga terikat pada Dataset.
+
+YEAR yang sama pada Dataset berbeda tetap merupakan
+bagian dari struktur terpisah.
+
+Tidak boleh menggunakan keberadaan YEAR/MONTH di Dataset lain
+sebagai bukti bahwa struktur Dataset saat ini telah valid.
+
+==================================================
+19. PATH CONSISTENCY
+
+Untuk Daily Story yang sama, YEAR dan MONTH pada destination path
+harus konsisten dengan Story Date.
+
+Ketidaksesuaian berikut dianggap sebagai structural conflict:
+
+- YEAR tidak sama dengan YEAR Story Date;
+- MONTH tidak sama dengan MONTH Story Date;
+- MONTH berada di bawah YEAR yang salah;
+- YEAR atau MONTH memiliki format yang tidak sesuai;
+- struktur destination tidak mengikuti hierarchy yang ditentukan.
+
+Conflict tidak boleh diperbaiki dengan mengganti Story Date
+secara otomatis.
+
+==================================================
+20. DIRECTORY FORMAT VALIDATION
+
+YEAR VALID apabila:
+
+- berada pada posisi YEAR yang benar;
+- menggunakan representasi empat digit;
+- nilainya sesuai dengan Story Date.
+
+MONTH VALID apabila:
+
+- berada di dalam YEAR yang benar;
+- menggunakan dua digit;
+- berada pada rentang 01-12;
+- nilainya sesuai dengan Story Date.
+
+Direktori yang memiliki format tidak sesuai
+tidak boleh dianggap valid hanya karena namanya menyerupai
+tahun atau bulan.
+
+==================================================
+21. EXISTING DIRECTORY
+
+Apabila YEAR atau MONTH telah tersedia:
+
+Sistem harus terlebih dahulu memverifikasi:
+
+- bahwa path benar;
+- bahwa objek tersebut benar-benar directory;
+- bahwa formatnya valid;
+- bahwa posisinya benar;
+- bahwa nilainya konsisten dengan Story Date.
+
+Directory yang tidak memenuhi validasi tidak boleh
+langsung digunakan kembali.
+
+==================================================
+22. FILE COLLISION
+
+Apabila path yang seharusnya menjadi YEAR atau MONTH
+ternyata merupakan file:
+
+STATUS = CONFLICT
+
+Sistem tidak boleh:
+
+- menghapus file;
+- mengganti file menjadi directory;
+- memindahkan file secara otomatis;
+- menimpa file;
+- menggunakan path tersebut sebagai directory.
+
+Penyelesaian harus dilakukan melalui mekanisme
+conflict handling yang sah.
+
+==================================================
+23. EMPTY DIRECTORY RULE
+
+Sistem tidak boleh membuat YEAR atau MONTH hanya untuk:
+
+- memperluas struktur masa depan;
+- membuat kalender kosong;
+- mengantisipasi produksi;
+- menciptakan placeholder tanpa kebutuhan valid;
+- mengisi tahun atau bulan yang belum diperlukan.
+
+Pembuatan directory harus memiliki kebutuhan operasional
+yang sah dari Story Date yang sedang diproses.
+
+==================================================
+24. MISSING PARENT
+
+Apabila YEAR belum ada:
+
+1. validasi Story Date;
+2. validasi destination;
+3. buat YEAR;
+4. validasi YEAR;
+5. lanjutkan proses MONTH.
+
+Apabila YEAR sudah ada tetapi MONTH belum ada:
+
+1. validasi YEAR;
+2. buat MONTH;
+3. validasi MONTH.
+
+Child directory tidak boleh dibuat sebelum parent yang diperlukan
+berada dalam keadaan valid.
+
+==================================================
+25. DIRECTORY CREATION ORDER
+
+Urutan struktural wajib:
+
+Instance
+↓
+Daily Story Dataset
+↓
+YEAR
+↓
+MONTH
+↓
+Daily Story File
+
+Tidak boleh melompati level yang diperlukan.
+
+YEAR dan MONTH tidak boleh dibuat melalui asumsi bahwa
+parent akan tersedia kemudian.
+
+==================================================
+26. PRESERVATION
+
+Pembuatan YEAR atau MONTH tidak boleh mengubah isi yang
+telah ada di dalam directory tersebut.
+
+Operasi ini tidak boleh:
+
+- menghapus file;
+- mengganti nama file;
+- memindahkan file;
+- mengubah isi file;
+- melakukan cleanup otomatis;
+- menghapus struktur historis.
+
+Fokus file ini hanya pembentukan dan validasi struktur.
+
+==================================================
+27. REPROCESSING
+
+Apabila proses Daily Story dihentikan lalu dijalankan kembali:
+
+- YEAR harus dihitung ulang dari Story Date;
+- MONTH harus dihitung ulang dari Story Date;
+- directory yang valid harus digunakan kembali;
+- directory baru hanya dibuat jika memang belum ada;
+- struktur yang valid tidak boleh digandakan.
+
+Reprocessing tidak boleh menghasilkan struktur baru
+untuk target yang sama.
+
+==================================================
+28. REVISION
+
+Revisi Daily Story tidak secara otomatis membuat YEAR atau MONTH baru
+selama Story Date tetap sama.
+
+Apabila Story Date resmi berubah melalui mekanisme temporal
+yang sah, destination YEAR dan MONTH harus dihitung ulang.
+
+Perubahan Story Date tidak boleh dilakukan hanya untuk
+menyesuaikan dengan struktur directory yang sudah terlanjur ada.
+
+==================================================
+29. STORY DATE CHANGE
+
+Apabila Story Date berubah:
+
+YEAR dan MONTH harus mengikuti Story Date baru.
+
+Daily Universe tidak boleh:
+
+- mempertahankan YEAR lama hanya karena sudah tersedia;
+- mempertahankan MONTH lama hanya karena file sebelumnya
+  berada di sana;
+- mengubah Story Date agar sesuai dengan path lama.
+
+Story Date tetap menjadi sumber kebenaran.
+
+==================================================
+30. RELATION TO FILE NAMING
+
+YEAR/MONTH hanya menentukan lokasi struktural.
+
+YEAR dan MONTH tidak menentukan:
+
+- judul;
+- Story ID;
+- ekstensi file;
+- format nama file lengkap.
+
+Aturan tersebut berada pada:
+
+04_FILE_NAMING.txt
+
+==================================================
+31. RELATION TO FILE PLACEMENT
+
+YEAR dan MONTH menghasilkan bagian destination path.
+
+Validasi apakah file benar-benar ditempatkan
+pada destination yang benar berada pada:
+
+05_FILE_PLACEMENT.txt
+
+File ini tidak melakukan penempatan file.
+
+==================================================
+32. RELATION TO FOLDER CREATION
+
+Aturan umum operasi pembuatan directory berada pada:
+
+02_FOLDER_CREATION.txt
+
+File ini hanya menentukan logika struktural YEAR/MONTH,
+termasuk kapan directory dibutuhkan dan bagaimana
+validitasnya ditentukan berdasarkan Story Date.
+
+==================================================
+33. RELATION TO INSTANCE STRUCTURE
+
+Struktur YEAR/MONTH harus tetap berada di dalam struktur
+Instance dan Daily Story Dataset yang telah ditentukan oleh:
+
+01_INSTANCE_STRUCTURE.txt
+
+File ini tidak boleh membuat struktur alternatif.
+
+==================================================
+34. TEMPORAL OWNERSHIP
+
+Daily Universe tidak memiliki hak untuk menentukan makna
+historis, aktual, prediktif, atau status temporal suatu tanggal.
+
+Daily Universe menerima Story Date yang telah ditentukan
+melalui sistem temporal yang sah.
+
+Daily Universe kemudian mengubah tanggal tersebut menjadi
+struktur penyimpanan YEAR/MONTH.
+
+Dengan demikian:
+
+Temporal System
+→ menentukan temporal truth
+
+Daily Story
+→ menentukan Story Date untuk produksi
+
+Instance Management
+→ merepresentasikan Story Date ke struktur directory
+
+==================================================
+35. NO INFERENCE
+
+Sistem tidak boleh menebak YEAR atau MONTH apabila:
+
+- Story Date ambigu;
+- format tanggal tidak lengkap;
+- nilai tanggal konflik;
+- sumber tanggal tidak valid;
+- terdapat lebih dari satu kandidat tanggal tanpa resolusi.
+
+Dalam kondisi tersebut:
+
+STATUS = BLOCKED
+atau
+STATUS = REVIEW_REQUIRED
+
+sesuai hasil validasi yang berlaku.
+
+==================================================
+36. NO REPAIR BY PATH
+
+Path tidak boleh digunakan untuk memperbaiki
+data temporal yang salah.
+
+Jika ditemukan:
+
+Story Date ≠ YEAR/MONTH
+
+maka sistem harus memperlakukan kondisi tersebut
+sebagai inconsistency.
+
+Sistem tidak boleh diam-diam mengubah salah satunya
+agar keduanya terlihat konsisten.
+
+==================================================
+37. TEMPORAL CONTINUITY
+
+Perubahan YEAR atau MONTH tidak berarti:
+
+- Universe di-reset;
+- continuity di-reset;
+- character state di-reset;
+- relationship di-reset;
+- object state di-reset;
+- knowledge di-reset;
+- ongoing process di-reset.
+
+YEAR dan MONTH hanya merupakan boundary penyimpanan.
+
+Continuity tetap mengikuti sistem Daily Universe
+dan domain owner masing-masing.
+
+==================================================
+38. LEGACY STRUCTURE
+
+Apabila ditemukan YEAR atau MONTH lama dengan struktur
+yang berbeda dari aturan aktif:
+
+- struktur lama tidak boleh dihapus otomatis;
+- struktur lama tidak boleh dianggap valid tanpa pemeriksaan;
+- struktur lama tidak boleh menjadi alasan untuk membuat
+  aturan baru secara diam-diam.
+
+Legacy handling berada pada mekanisme migrasi atau
+instance integrity.
+
+==================================================
+39. STATUS RESULT
+
+Hasil evaluasi struktur YEAR/MONTH dapat memiliki status:
+
+VALID
+
+YEAR dan MONTH sesuai Story Date dan hierarchy.
+
+READY
+
+Semua prasyarat terpenuhi dan struktur siap digunakan.
+
+CREATED
+
+Directory yang diperlukan berhasil dibuat.
+
+ALREADY_EXISTS
+
+Directory telah tersedia dan lolos validasi.
+
+REVIEW_REQUIRED
+
+Terdapat kondisi yang membutuhkan pemeriksaan lebih lanjut.
+
+CONFLICT
+
+Struktur yang tersedia bertentangan dengan destination
+yang seharusnya.
+
+BLOCKED
+
+Struktur tidak boleh dilanjutkan karena prasyarat gagal.
+
+FAILED
+
+Operasi struktural gagal dijalankan.
+
+==================================================
+40. FINAL STRUCTURAL GATE
+
+YEAR/MONTH dianggap siap digunakan hanya apabila:
+
+- Story Date valid;
+- YEAR valid;
+- MONTH valid;
+- YEAR merupakan child yang benar dari Dataset;
+- MONTH merupakan child yang benar dari YEAR;
+- format YEAR valid;
+- format MONTH valid;
+- tidak terdapat file collision;
+- tidak terdapat structural conflict;
+- destination Instance valid;
+- tidak terdapat unresolved structural error.
+
+Hanya setelah seluruh kondisi terpenuhi,
+proses dapat dilanjutkan menuju file placement.
+
+==================================================
+41. ABSOLUTE RULES
+
+1. 
+
+Story Date adalah sumber kebenaran YEAR dan MONTH.
+
+2. 
+
+YEAR selalu berada di bawah Daily Story Dataset.
+
+3. 
+
+MONTH selalu berada di bawah YEAR.
+
+4. 
+
+YEAR menggunakan empat digit.
+
+5. 
+
+MONTH menggunakan dua digit.
+
+6. 
+
+YEAR dan MONTH tidak boleh ditentukan dari waktu produksi.
+
+7. 
+
+YEAR dan MONTH tidak boleh ditentukan dari judul cerita.
+
+8. 
+
+YEAR dan MONTH tidak boleh ditentukan dari Story ID.
+
+9. 
+
+Directory yang valid harus digunakan kembali.
+
+10. 
+
+Directory tidak boleh digandakan untuk target struktural
+yang sama.
+
+11. 
+
+File tidak boleh digunakan sebagai pengganti directory.
+
+12. 
+
+Missing parent harus diselesaikan sebelum child dibuat.
+
+13. 
+
+Struktur yang salah tidak boleh diperbaiki melalui
+perubahan diam-diam pada Story Date.
+
+14. 
+
+Pembuatan YEAR/MONTH tidak boleh mengubah Canon.
+
+15. 
+
+Pembuatan YEAR/MONTH tidak boleh mengubah isi Daily Story.
+
+16. 
+
+YEAR/MONTH tidak memiliki kewenangan untuk mengubah
+Temporal System.
+
+17. 
+
+YEAR/MONTH hanya merepresentasikan struktur penyimpanan.
+
+18. 
+
+Setiap konflik struktural harus dapat ditelusuri
+dan tidak boleh disembunyikan.
+
+==================================================
+42. FINAL PRINCIPLE
+
+YEAR dan MONTH adalah lapisan representasi penyimpanan
+dari Story Date.
+
+Mereka tidak menciptakan waktu,
+tidak menentukan waktu,
+dan tidak mengubah waktu.
+
+Aturan inti:
+
+STORY DATE
+→ menentukan
+YEAR + MONTH
+→ menentukan
+DIRECTORY STRUCTURE
+→ menjadi dasar
+FILE PLACEMENT
+
+Struktur penyimpanan harus mengikuti Universe,
+bukan Universe yang dipaksa mengikuti struktur penyimpanan.
