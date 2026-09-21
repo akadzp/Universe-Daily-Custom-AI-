@@ -1,0 +1,58 @@
+system/
+└── 01_DAILY_UNIVERSE/
+    │
+    ├── dokumentasi.txt
+    │
+    ├── 00_DAILY_UNIVERSE_SYSTEM.txt
+    │
+    ├── 01_Temporal/
+    │   ├── 01_UNIVERSE_TIME.txt
+    │   ├── 02_NARRATIVE_TIME.txt
+    │   ├── 03_TEMPORAL_STATUS.txt
+    │   ├── 04_PAST_PRESENT_FUTURE.txt
+    │   ├── 05_MEMORY_IMAGINATION_HYPOTHESIS.txt
+    │   ├── 06_PLAN_PREDICTION_POSSIBILITY.txt
+    │   └── 07_TEMPORAL_CONSISTENCY.txt
+    │
+    ├── 02_Daily_Cycle/
+    │   ├── 01_DAY_INITIALIZATION.txt
+    │   ├── 02_CONTINUITY_CARRYOVER.txt
+    │   ├── 03_DAILY_PROGRESSION.txt
+    │   ├── 04_ONGOING_PROCESS.txt
+    │   ├── 05_EVENT_CONSEQUENCE.txt
+    │   └── 06_DAY_FINALIZATION.txt
+    │
+    ├── 03_Continuity_Orchestration/
+    │   ├── 01_CONTINUITY_MODEL.txt
+    │   ├── 02_DOMAIN_CARRYOVER.txt
+    │   ├── 03_STATE_CARRYOVER.txt
+    │   ├── 04_ACTOR_CARRYOVER.txt
+    │   ├── 05_RELATIONSHIP_CARRYOVER.txt
+    │   ├── 06_OBJECT_CARRYOVER.txt
+    │   ├── 07_KNOWLEDGE_CARRYOVER.txt
+    │   ├── 08_LOCATION_CARRYOVER.txt
+    │   ├── 09_UNRESOLVED_CARRYOVER.txt
+    │   └── 10_CAUSAL_CONTINUITY.txt
+    │
+    ├── 04_Daily_Story/
+    │   ├── 01_STORY_TRIGGER.txt
+    │   ├── 02_STORY_SCOPE.txt
+    │   ├── 03_STORY_DATE.txt
+    │   ├── 04_STORY_ID.txt
+    │   ├── 05_STORY_COMPLETION.txt
+    │   └── 06_STORY_HANDOFF.txt
+    │
+    ├── 05_Instance_Management/
+    │   ├── 01_INSTANCE_STRUCTURE.txt
+    │   ├── 02_FOLDER_CREATION.txt
+    │   ├── 03_YEAR_MONTH_STRUCTURE.txt
+    │   ├── 04_FILE_NAMING.txt
+    │   ├── 05_FILE_PLACEMENT.txt
+    │   └── 06_INSTANCE_INTEGRITY.txt
+    │
+    └── 06_Validation/
+        ├── 01_TEMPORAL_VALIDATION.txt
+        ├── 02_CONTINUITY_VALIDATION.txt
+        ├── 03_DAILY_STORY_VALIDATION.txt
+        ├── 04_INSTANCE_VALIDATION.txt
+        └── 05_FINAL_DAILY_UNIVERSE_GATE.txt
