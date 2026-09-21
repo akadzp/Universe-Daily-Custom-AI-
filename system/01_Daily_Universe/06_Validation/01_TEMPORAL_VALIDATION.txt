@@ -1,0 +1,1480 @@
+==================================================
+01_TEMPORAL_VALIDATION
+
+STATUS
+
+System Rule
+
+OWNER
+
+Daily Universe
+Validation
+
+SCOPE
+
+File ini mengatur validasi temporal pada seluruh
+proses Daily Universe yang membutuhkan pemeriksaan
+terhadap waktu, urutan temporal, posisi temporal,
+dan konsistensi hubungan antarperiode.
+
+File ini berfungsi sebagai validation layer.
+
+File ini TIDAK menjadi sumber utama
+kebenaran temporal.
+
+File ini tidak menentukan secara kreatif
+apa yang seharusnya terjadi.
+
+File ini memeriksa apakah informasi temporal
+yang diberikan kepadanya:
+
+- valid;
+- konsisten;
+- dapat diurutkan;
+- tidak bertentangan;
+- dapat dilanjutkan ke proses berikutnya.
+
+File ini TIDAK mengatur:
+
+- definisi dasar Universe Time;
+- definisi Narrative Time;
+- Temporal Status;
+- Past/Present/Future;
+- Memory, Imagination, Hypothesis;
+- Plan, Prediction, Possibility;
+- pembuatan Event;
+- pembuatan State;
+- pembuatan Character;
+- pembuatan Relationship;
+- pembuatan Object;
+- pembuatan Knowledge;
+- produksi Story;
+- penamaan file;
+- struktur Instance.
+
+Aturan temporal utama berada pada folder:
+
+01_Temporal/
+
+Validator ini menggunakan aturan tersebut
+sebagai basis pemeriksaan.
+
+==================================================
+
+1. CORE PRINCIPLE
+   ==================================================
+
+Temporal Validation bertujuan menentukan:
+
+"Apakah informasi temporal yang sedang diproses
+dapat dianggap konsisten dengan aturan temporal
+dan data yang telah tersedia?"
+
+Validator tidak:
+
+- menciptakan waktu;
+- memilih fakta berdasarkan preferensi;
+- memperbaiki konflik secara diam-diam;
+- mengubah history;
+- mengubah Story Date tanpa otorisasi;
+- mengubah domain data;
+- mengubah Canon hanya agar hasil valid.
+
+Validator menghasilkan status,
+bukan kebenaran baru.
+
+==================================================
+02. VALIDATION SOURCE
+
+Temporal validation menggunakan:
+
+- Universe Time;
+- Story Date;
+- temporal position;
+- temporal order;
+- temporal status;
+- event timing;
+- state timing;
+- relationship timing;
+- object timing;
+- knowledge timing;
+- process timing;
+- consequence timing;
+- narrative timing;
+- continuity information;
+- prior validated temporal data.
+
+Setiap sumber harus memiliki status
+dan provenance yang dapat ditelusuri.
+
+==================================================
+03. SOURCE OF TEMPORAL TRUTH
+
+Validator harus membedakan:
+
+TEMPORAL SOURCE
+dan
+TEMPORAL REPRESENTATION.
+
+Temporal source adalah data temporal
+yang telah ditetapkan oleh sistem
+yang memiliki kewenangan.
+
+Temporal representation adalah cara data tersebut
+muncul dalam:
+
+- file;
+- metadata;
+- narrative;
+- report;
+- filename;
+- handoff;
+- instance structure.
+
+Representation tidak boleh mengalahkan
+temporal source hanya karena lebih mudah dibaca.
+
+==================================================
+04. VALIDATION ORDER
+
+Urutan pemeriksaan temporal secara umum:
+
+1. IDENTIFY TEMPORAL INPUT
+2. IDENTIFY SOURCE
+3. VALIDATE FORMAT
+4. VALIDATE TEMPORAL POSITION
+5. VALIDATE TEMPORAL STATUS
+6. VALIDATE TEMPORAL ORDER
+7. VALIDATE DEPENDENCY
+8. VALIDATE CROSS-DOMAIN CONSISTENCY
+9. VALIDATE CONTINUITY
+10. VALIDATE NARRATIVE SEPARATION
+11. CLASSIFY FINDINGS
+12. ISSUE FINAL VALIDATION STATUS
+
+Validator tidak boleh melewati pemeriksaan
+yang diperlukan untuk menutupi conflict.
+
+==================================================
+05. TEMPORAL INPUT IDENTIFICATION
+
+Setiap informasi yang mengandung unsur waktu
+harus diidentifikasi terlebih dahulu.
+
+Temporal input dapat berupa:
+
+- tanggal;
+- waktu;
+- periode;
+- urutan;
+- durasi;
+- before/after relation;
+- temporal interval;
+- current position;
+- future position;
+- past position;
+- event occurrence;
+- start;
+- end;
+- transition;
+- schedule;
+- memory reference;
+- plan;
+- prediction;
+- possibility;
+- narrative reveal time.
+
+Jika input temporal tidak dapat diklasifikasikan:
+
+STATUS = REVIEW_REQUIRED
+atau
+STATUS = BLOCKED
+
+==================================================
+06. TEMPORAL IDENTITY
+
+Setiap temporal reference harus dapat dibedakan
+antara:
+
+- time point;
+- time range;
+- period;
+- event time;
+- state time;
+- knowledge acquisition time;
+- narrative reveal time;
+- production time;
+- storage time.
+
+Perbedaan tersebut harus dipertahankan.
+
+Tidak boleh menggabungkan beberapa jenis waktu
+hanya karena nilai tanggal atau jam terlihat sama.
+
+==================================================
+07. FORMAT VALIDATION
+
+Sebelum hubungan temporal diperiksa,
+format informasi temporal harus valid.
+
+Validator memeriksa:
+
+- struktur tanggal;
+- struktur waktu;
+- validitas kalender;
+- representasi periode;
+- completeness;
+- timezone bila relevan;
+- boundary;
+- precision;
+- ambiguity.
+
+Format invalid:
+
+STATUS = BLOCKED
+
+Format yang valid tetapi tidak lengkap:
+
+STATUS = REVIEW_REQUIRED
+
+jika ketidaklengkapan memengaruhi hasil temporal.
+
+==================================================
+08. UNIVERSE DATE
+
+Universe Date harus berasal dari
+Universe Time yang sah.
+
+Validator memeriksa:
+
+- tanggal tersedia;
+- tanggal valid;
+- temporal position dapat ditentukan;
+- tidak bertentangan dengan current Universe Time;
+- relation dengan event atau state konsisten.
+
+Validator tidak boleh menciptakan
+Universe Date yang tidak tersedia.
+
+==================================================
+09. CURRENT UNIVERSE TIME
+
+Current Universe Time merupakan reference position
+untuk menentukan:
+
+- past;
+- present;
+- future.
+
+Validator memeriksa apakah current position
+tersedia dan valid sebelum melakukan klasifikasi
+yang bergantung kepadanya.
+
+Jika current temporal reference tidak tersedia:
+
+STATUS = BLOCKED
+
+untuk validasi yang membutuhkan reference tersebut.
+
+==================================================
+10. STORY DATE
+
+Story Date harus diperlakukan sebagai
+tanggal Universe yang menjadi basis
+Daily Story.
+
+Validator memeriksa:
+
+- Story Date tersedia;
+- Story Date valid;
+- Story Date dapat ditempatkan
+  dalam Universe Time;
+- Story Date tidak bertentangan
+  dengan metadata temporal terkait.
+
+Story Date tidak boleh diubah
+untuk menyesuaikan kebutuhan storage.
+
+==================================================
+11. NARRATIVE TIME SEPARATION
+
+Validator harus memisahkan:
+
+Universe Time
+dari
+Narrative Time.
+
+Narrative order tidak boleh digunakan
+untuk menyimpulkan chronological order
+tanpa pemeriksaan tambahan.
+
+Flashback atau flash-forward
+tidak otomatis merupakan temporal conflict.
+
+Conflict baru terjadi apabila
+presentation order menyebabkan
+ketidaksesuaian dengan established temporal data.
+
+==================================================
+12. PRODUCTION TIME
+
+Production time bukan Universe Time.
+
+Validator harus memastikan bahwa:
+
+- waktu AI bekerja;
+- waktu sistem menjalankan task;
+- waktu file dibuat;
+- waktu file disimpan;
+
+tidak menggantikan Universe Time atau Story Date.
+
+==================================================
+13. STORAGE TIME
+
+Filesystem timestamps adalah metadata teknis.
+
+Validator tidak boleh menggunakan:
+
+- file creation time;
+- modification time;
+- upload time;
+- commit time
+
+sebagai sumber temporal Universe
+kecuali terdapat aturan eksplisit
+yang memang mendefinisikan hubungan tersebut.
+
+Secara default:
+
+STORAGE TIME ≠ UNIVERSE TIME
+
+==================================================
+14. PAST / PRESENT / FUTURE
+
+Validator menggunakan Current Universe Time
+untuk memeriksa posisi:
+
+PAST
+
+terjadi sebelum reference time.
+
+PRESENT
+
+berada pada reference temporal position
+atau interval yang mencakup reference.
+
+FUTURE
+
+berada setelah reference time.
+
+Validator tidak menyimpulkan
+actuality hanya dari posisi temporal.
+
+==================================================
+15. TEMPORAL STATUS SEPARATION
+
+Temporal position berbeda dari
+Temporal Status.
+
+Contoh kategori status yang harus tetap dibedakan:
+
+- Actual;
+- Memory;
+- Report;
+- Imagined;
+- Hypothetical;
+- Plan;
+- Prediction;
+- Possibility;
+- Unknown.
+
+Validator harus memastikan:
+
+FUTURE ≠ ACTUAL
+PAST ≠ AUTOMATICALLY TRUE
+PLAN ≠ EVENT
+PREDICTION ≠ EVENT
+POSSIBILITY ≠ EVENT
+MEMORY ≠ HISTORICAL FACT
+REPORT ≠ VERIFIED FACT
+
+==================================================
+16. STATUS-POSITION COMPATIBILITY
+
+Validator memeriksa apakah
+temporal position dan status
+dapat hidup berdampingan secara sah.
+
+Ketidaksesuaian harus diklasifikasikan,
+bukan dihapus.
+
+Status tidak boleh dinaikkan
+menjadi ACTUAL hanya karena
+waktu yang dikaitkan dengannya
+telah berlalu.
+
+==================================================
+17. TEMPORAL ORDER
+
+Validator memeriksa hubungan:
+
+- before;
+- after;
+- simultaneous;
+- overlapping;
+- during;
+- starts;
+- ends.
+
+Order harus konsisten dengan
+temporal references yang tersedia.
+
+Jika A dinyatakan terjadi setelah B,
+tetapi data temporal menetapkan A sebelum B:
+
+STATUS = CONFLICT
+
+==================================================
+18. EVENT ORDER
+
+Untuk setiap Event yang memiliki
+temporal relation, validator memeriksa:
+
+- start;
+- occurrence;
+- end;
+- causal predecessor;
+- temporal predecessor;
+- consequence timing.
+
+Event tidak boleh ditempatkan
+di waktu yang bertentangan
+dengan precondition yang telah tervalidasi.
+
+==================================================
+19. STATE TIMING
+
+State memiliki effective time.
+
+Validator memeriksa:
+
+- kapan State mulai berlaku;
+- kapan State berakhir;
+- perubahan State;
+- hubungan State dengan Event;
+- hubungan State dengan continuity.
+
+State tidak boleh diterapkan
+sebelum kondisi temporal yang
+menjadi dasarnya terjadi,
+kecuali system rule memang mengizinkan
+effective time yang berbeda.
+
+==================================================
+20. PROCESS TIMING
+
+Ongoing Process harus memiliki
+temporal relationship yang konsisten:
+
+- start;
+- active interval;
+- interruption;
+- continuation;
+- completion;
+- cancellation.
+
+Process yang dinyatakan selesai
+sebelum dimulai:
+
+STATUS = CRITICAL
+
+atau
+
+BLOCKED
+
+sesuai konteks.
+
+==================================================
+21. CONSEQUENCE TIMING
+
+Consequence harus tetap berada
+setelah Event atau kondisi yang
+menjadi sumbernya, kecuali hubungan
+temporal yang sah mendefinisikan
+effective relation berbeda.
+
+Validator memeriksa:
+
+- source event;
+- consequence activation;
+- delay;
+- duration;
+- completion.
+
+Tidak boleh ada consequence
+yang muncul tanpa temporal basis
+jika causal rule mensyaratkannya.
+
+==================================================
+22. KNOWLEDGE TIMING
+
+Knowledge Acquisition Time harus
+dibedakan dari Event Time.
+
+Character tidak boleh memperoleh
+Knowledge sebelum terdapat
+jalur acquisition yang valid.
+
+Validator memeriksa:
+
+Event
+→ availability
+→ acquisition
+→ knowledge state
+
+Knowledge yang muncul terlalu awal
+merupakan potential temporal violation.
+
+==================================================
+23. RELATIONSHIP TIMING
+
+Relationship status memiliki
+temporal validity.
+
+Validator memeriksa:
+
+- start;
+- current status;
+- transition;
+- end;
+- suspension;
+- resumption.
+
+Perubahan Relationship tidak boleh
+diletakkan sebelum event atau transition
+yang menjadi dasarnya apabila dependency
+tersebut telah ditetapkan.
+
+==================================================
+24. OBJECT TIMING
+
+Object state juga memiliki
+temporal validity.
+
+Validator memeriksa:
+
+- creation;
+- ownership;
+- possession;
+- transfer;
+- usage;
+- movement;
+- damage;
+- destruction;
+- current availability.
+
+Object tidak boleh digunakan
+sebelum keberadaannya atau
+availability-nya valid secara temporal.
+
+==================================================
+25. LOCATION TIMING
+
+Location relation harus konsisten
+dengan temporal order.
+
+Validator dapat memeriksa:
+
+- arrival;
+- departure;
+- presence;
+- movement;
+- occupancy;
+- transition.
+
+Character atau Object tidak boleh
+secara temporal berada pada keadaan
+yang saling eksklusif tanpa mekanisme
+yang menjelaskan overlap atau transition.
+
+==================================================
+26. CROSS-DOMAIN TEMPORAL VALIDATION
+
+Apabila satu Event memengaruhi
+beberapa domain, validator harus memastikan
+temporal ordering antar-domain konsisten.
+
+Contoh domain yang dapat saling terhubung:
+
+- Character;
+- Relationship;
+- Object;
+- Knowledge;
+- State;
+- Location;
+- Process;
+- Consequence.
+
+Validator tidak mengambil alih aturan
+domain tersebut.
+
+Validator hanya memeriksa
+hubungan waktunya.
+
+==================================================
+27. TEMPORAL DEPENDENCY
+
+Jika A secara temporal bergantung pada B:
+
+B harus memiliki temporal position
+yang memungkinkan A terjadi.
+
+Dependency dapat berupa:
+
+- prerequisite;
+- trigger;
+- availability;
+- transition;
+- acquisition;
+- consequence;
+- completion.
+
+Jika dependency tidak dapat dipenuhi:
+
+STATUS = REVIEW_REQUIRED
+atau
+BLOCKED
+
+==================================================
+28. TEMPORAL CAUSALITY
+
+Causality dan temporal order
+berhubungan tetapi tidak identik.
+
+Validator harus memastikan bahwa
+sebab tidak secara temporal muncul
+setelah akibat jika aturan causal relation
+memerlukan urutan sebelumnya.
+
+Validator tidak boleh menciptakan causal link
+hanya karena dua event berdekatan secara waktu.
+
+==================================================
+29. SIMULTANEITY
+
+Dua atau lebih event dapat
+terjadi pada temporal position yang sama.
+
+Simultaneity tidak boleh diperlakukan
+sebagai contradiction hanya karena
+event tidak memiliki urutan satu sama lain.
+
+Validator harus membedakan:
+
+SIMULTANEOUS
+dari
+UNKNOWN ORDER
+
+Keduanya tidak identik.
+
+==================================================
+30. OVERLAPPING INTERVAL
+
+Dua interval dapat overlap
+apabila definisi temporal masing-masing
+mengizinkan.
+
+Overlap tidak otomatis berarti conflict.
+
+Validator memeriksa:
+
+- boundary;
+- affected actor;
+- affected object;
+- location;
+- process;
+- state.
+
+Jika resource atau identity yang sama
+membutuhkan exclusive occupancy,
+overlap dapat menjadi conflict.
+
+==================================================
+31. TEMPORAL GAP
+
+Gap dalam timeline tidak otomatis merupakan error.
+
+Unknown period harus tetap dapat
+direpresentasikan sebagai unknown
+apabila informasi memang tidak tersedia.
+
+Validator tidak boleh mengisi gap
+dengan peristiwa buatan.
+
+==================================================
+32. TEMPORAL OVERCOMPLETION
+
+Sistem tidak boleh menganggap
+timeline lengkap hanya karena
+sejumlah event telah diketahui.
+
+Jika sebagian periode tetap unknown:
+
+UNKNOWN harus dipertahankan.
+
+Validation tidak boleh menciptakan
+event tambahan untuk mengisi
+timeline kosong.
+
+==================================================
+33. CROSS-DAY VALIDATION
+
+Perpindahan antarhari harus diperiksa
+melalui:
+
+- previous period;
+- current period;
+- next temporal boundary;
+- ongoing process;
+- unresolved condition;
+- state continuity;
+- event continuation;
+- consequence continuation.
+
+Perubahan tanggal tidak boleh
+secara otomatis menghasilkan
+reset kondisi Universe.
+
+==================================================
+34. CROSS-MONTH VALIDATION
+
+Perubahan month boundary hanya
+merupakan temporal boundary.
+
+Validator harus memastikan bahwa:
+
+- event tidak hilang;
+- process tidak reset;
+- state tidak reset;
+- relationship tidak reset;
+- object tidak reset;
+- knowledge tidak reset.
+
+Storage boundary tidak boleh
+dianggap sebagai Universe reset.
+
+==================================================
+35. CROSS-YEAR VALIDATION
+
+Prinsip yang sama berlaku untuk
+YEAR boundary.
+
+Pergantian tahun bukan alasan
+untuk menghapus unresolved condition,
+ongoing process, relationship,
+knowledge, object state, atau
+character state.
+
+==================================================
+36. FUTURE VALIDATION
+
+Informasi future harus mempertahankan
+statusnya.
+
+Validator harus mencegah:
+
+- plan → actual;
+- prediction → actual;
+- possibility → actual;
+
+tanpa occurrence yang valid.
+
+Future position tidak sama
+dengan certainty.
+
+==================================================
+37. PAST VALIDATION
+
+Informasi yang berada di masa lalu
+tetap harus mempertahankan statusnya.
+
+Memory tentang masa lalu
+bukan otomatis historical fact.
+
+Report tentang masa lalu
+bukan otomatis verified event.
+
+Validator tidak boleh melakukan
+retroactive actualization hanya
+karena tanggal tersebut telah lewat.
+
+==================================================
+38. PRESENT VALIDATION
+
+Present bukan berarti semua informasi
+menjadi actual.
+
+Sesuatu dapat berada pada present
+sebagai:
+
+- plan;
+- possibility;
+- prediction;
+- uncertainty;
+- unresolved condition.
+
+Temporal position dan actuality
+harus tetap dipisahkan.
+
+==================================================
+39. RETROACTIVE CHANGE
+
+Perubahan yang menyebabkan
+informasi masa lalu berubah
+harus diperlakukan sebagai
+temporal revision.
+
+Validator harus mendeteksi
+apabila sebuah perubahan baru
+bertentangan dengan established history.
+
+Validator tidak boleh secara otomatis
+melakukan retroactive rewrite.
+
+==================================================
+40. TEMPORAL RETCON
+
+Jika data baru menyebabkan
+past timeline tidak lagi konsisten:
+
+STATUS = CONFLICT
+atau
+REVIEW_REQUIRED
+
+Resolusi harus mengikuti
+mekanisme revision yang sah.
+
+Validator tidak boleh mengubah
+history hanya agar timeline menjadi valid.
+
+==================================================
+41. UNKNOWN VS CONFLICT
+
+UNKNOWN berarti:
+
+informasi belum diketahui
+atau tidak tersedia.
+
+CONFLICT berarti:
+
+terdapat informasi yang diketahui
+tetapi tidak dapat hidup bersama
+dalam aturan temporal yang sama.
+
+Keduanya tidak boleh disamakan.
+
+==================================================
+42. AMBIGUITY
+
+Ambiguous temporal information
+harus tetap dianggap ambiguous
+sampai terdapat dasar resolusi.
+
+Validator tidak boleh memilih
+satu interpretasi secara diam-diam.
+
+==================================================
+43. PRECISION LOSS
+
+Jika informasi awal memiliki
+precision tertentu lalu representasi
+berikutnya kehilangan precision:
+
+validator harus menilai apakah
+kehilangan tersebut masih aman.
+
+Perbedaan antara:
+
+exact;
+approximate;
+range;
+unknown
+
+harus dipertahankan.
+
+Precision yang hilang tidak boleh
+diganti dengan nilai pasti yang dibuat.
+
+==================================================
+44. TEMPORAL REVISION
+
+Revision temporal harus memiliki:
+
+- source;
+- previous value;
+- new value;
+- effective time;
+- reason atau basis yang tersedia;
+- affected references;
+- impact scope.
+
+Validator memeriksa apakah revision
+dapat diterapkan tanpa merusak
+temporal continuity.
+
+==================================================
+45. SOURCE CONFLICT
+
+Jika dua sumber memberikan
+informasi temporal berbeda:
+
+Validator tidak boleh memilih
+berdasarkan:
+
+- sumber terbaru;
+- sumber lebih panjang;
+- sumber lebih detail;
+- filename lebih rapi;
+- narrative lebih meyakinkan.
+
+Prioritas ditentukan oleh
+system ownership dan source authority.
+
+Jika authority tidak dapat ditentukan:
+
+STATUS = REVIEW_REQUIRED
+
+==================================================
+46. NARRATIVE CONFLICT
+
+Jika Narrative Time menunjukkan urutan
+yang berbeda dari Universe Time:
+
+validator pertama-tama memeriksa
+apakah perbedaan tersebut hanya
+merupakan presentation order.
+
+Jika ya:
+
+VALID
+
+Jika perbedaan mengubah temporal fact:
+
+CONFLICT
+
+Narrative order tidak boleh
+mengubah temporal truth.
+
+==================================================
+47. DAILY STORY VALIDATION
+
+Daily Story harus memiliki
+temporal foundation yang valid:
+
+- Story Date;
+- temporal context;
+- relevant event timing;
+- relevant process timing;
+- relevant consequence timing;
+- relevant unresolved temporal state.
+
+Story tidak boleh menggunakan
+temporal context yang belum tervalidasi
+sebagai established fact.
+
+==================================================
+48. STORY HANDOFF VALIDATION
+
+Sebelum Daily Universe menyerahkan
+context kepada Narrator:
+
+validator harus memastikan:
+
+- Story Date valid;
+- temporal context valid;
+- scope tidak melanggar temporal boundary;
+- past/present/future distinction tetap;
+- unknown tetap unknown;
+- status tetap status;
+- event order konsisten;
+- future information tidak bocor
+  sebagai actual fact;
+- narrative time tidak mengubah
+  Universe Time.
+
+==================================================
+49. INSTANCE RELATION
+
+Temporal validation harus memastikan
+hubungan:
+
+Story Date
+→ YEAR
+→ MONTH
+
+tetap konsisten.
+
+Jika storage path tidak sesuai
+dengan Story Date:
+
+STATUS = CONFLICT
+
+Validator tidak mengubah temporal data
+untuk memperbaiki path.
+
+==================================================
+50. TEMPORAL TRACEABILITY
+
+Setiap temporal finding harus dapat
+ditelusuri kepada:
+
+- temporal source;
+- temporal object;
+- affected entity;
+- previous temporal position;
+- current temporal position;
+- relevant relation;
+- validation rule;
+- result.
+
+Temuan tanpa source harus dianggap
+tidak lengkap.
+
+==================================================
+51. VALIDATION SEVERITY
+
+Temuan temporal dapat memiliki:
+
+INFO
+
+Tidak ada violation yang bermakna.
+
+WARNING
+
+Terdapat kondisi yang perlu diperhatikan
+tetapi belum membatalkan proses.
+
+ERROR
+
+Terdapat temporal inconsistency
+yang harus diselesaikan.
+
+CRITICAL
+
+Temporal foundation tidak dapat dipercaya
+atau terdapat contradiction utama
+yang membuat proses tidak aman dilanjutkan.
+
+==================================================
+52. VALIDATION STATUS
+
+Hasil akhir temporal validation dapat berupa:
+
+VALID
+
+Semua pemeriksaan yang relevan lolos.
+
+REVIEW_REQUIRED
+
+Terdapat ambiguity, missing information,
+atau issue yang masih dapat diperiksa
+tanpa langsung menghentikan seluruh proses.
+
+REVISION_REQUIRED
+
+Data perlu direvisi melalui owner
+yang sah sebelum proses dapat dilanjutkan.
+
+BLOCKED
+
+Informasi tidak cukup atau terlalu bertentangan
+untuk melanjutkan proses secara aman.
+
+==================================================
+53. BLOCKING CONDITIONS
+
+Kondisi berikut dapat menghasilkan BLOCKED:
+
+- Story Date invalid;
+- Universe Time tidak tersedia
+  untuk validasi yang membutuhkannya;
+- temporal input tidak dapat diinterpretasikan;
+- critical temporal contradiction;
+- dependency temporal mustahil;
+- identity temporal tidak dapat diselesaikan;
+- conflict membuat downstream process tidak aman.
+
+Validator harus membedakan BLOCKED
+dari sekadar WARNING.
+
+==================================================
+54. NON-BLOCKING CONDITIONS
+
+Kondisi berikut dapat tetap memungkinkan
+proses berjalan dengan REVIEW_REQUIRED:
+
+- precision terbatas;
+- historical gap;
+- unknown interval;
+- unresolved temporal reference;
+- ambiguous but non-critical relation;
+- narrative ordering difference
+  yang masih dapat dijelaskan.
+
+REVIEW_REQUIRED bukan izin untuk
+mengarang nilai yang hilang.
+
+==================================================
+55. NO AUTO-CORRECTION
+
+Validator tidak boleh:
+
+- mengubah tanggal;
+- mengubah waktu;
+- memindahkan event;
+- mengubah status actual;
+- mengubah history;
+- mengubah Story Date;
+- mengubah process timing;
+- mengubah consequence timing;
+- mengubah Character data;
+- mengubah Relationship;
+- mengubah Object;
+- mengubah Knowledge.
+
+Validator hanya menghasilkan
+finding dan status.
+
+==================================================
+56. OWNER ROUTING
+
+Jika validation failure terjadi,
+temuan harus diarahkan kepada
+owner yang relevan.
+
+Contoh kategori routing:
+
+Universe Time
+→ Temporal System
+
+Character timing
+→ Character System
+
+Relationship timing
+→ Relationship System
+
+Object timing
+→ Object System
+
+Knowledge timing
+→ Character Knowledge System
+
+Location timing
+→ Location owner
+
+Story Date
+→ Daily Story / Temporal owner
+
+Narrative Time
+→ Narrator system
+
+Storage date/path
+→ Instance Management
+
+Daily Universe tidak boleh mengambil
+alih domain correction.
+
+==================================================
+57. VALIDATION AFTER RESOLUTION
+
+Setelah conflict atau revision diselesaikan:
+
+1. data baru diterima;
+2. temporal validation dijalankan kembali;
+3. previous finding tidak dihapus
+   tanpa trace;
+4. result baru dibandingkan;
+5. status akhir diperbarui.
+
+Resolusi yang belum diverifikasi
+tidak boleh dianggap valid.
+
+==================================================
+58. REVALIDATION
+
+Revalidation diperlukan apabila:
+
+- Story Date berubah;
+- Universe Time berubah;
+- Event time berubah;
+- process timing berubah;
+- consequence timing berubah;
+- temporal status berubah;
+- source authority berubah;
+- history direvisi;
+- domain handoff menghasilkan
+  temporal change.
+
+Revalidation hanya dilakukan
+pada scope yang terdampak
+jika dependency graph memungkinkan.
+
+==================================================
+59. VALIDATION SCOPE
+
+Temporal validation harus memiliki
+scope yang jelas.
+
+Scope dapat mencakup:
+
+- single temporal item;
+- single event;
+- single Daily Story;
+- single period;
+- multiple periods;
+- single Instance;
+- affected dependency chain.
+
+Validator tidak boleh menganggap
+seluruh Universe invalid hanya karena
+satu temporal item mengalami issue,
+kecuali dependency memang menyebar
+ke scope tersebut.
+
+==================================================
+60. TEMPORAL DEPENDENCY PROPAGATION
+
+Jika satu temporal change memengaruhi
+entity lain:
+
+validator harus menentukan
+affected scope.
+
+Propagation dapat menyentuh:
+
+- Event;
+- Consequence;
+- State;
+- Process;
+- Relationship;
+- Object;
+- Knowledge;
+- Location;
+- Daily Story context.
+
+Propagation bukan automatic rewriting.
+
+Yang berubah adalah validation scope,
+bukan Canon tanpa proses resmi.
+
+==================================================
+61. HISTORY PRESERVATION
+
+Validation tidak boleh menghapus
+previous temporal condition.
+
+Apabila temporal revision terjadi,
+history harus tetap dapat menunjukkan:
+
+- kondisi sebelumnya;
+- revision;
+- kondisi baru;
+- effective timing;
+- affected scope.
+
+==================================================
+62. TEMPORAL CONSISTENCY VS STORY QUALITY
+
+Temporal consistency berbeda dari
+story quality.
+
+Story yang secara naratif buruk
+dapat tetap temporal-consistent.
+
+Story yang menarik secara naratif
+dapat tetap temporal-invalid.
+
+Validator ini hanya menilai
+dimensi temporal.
+
+==================================================
+63. TEMPORAL CONSISTENCY VS CANON
+
+Temporal validator tidak menciptakan Canon.
+
+Validator hanya memeriksa
+data yang sudah dianggap sebagai
+input Universe atau production context.
+
+Validation result tidak otomatis
+menjadi Canon.
+
+==================================================
+64. TEMPORAL VALIDATION GATE
+
+Sebelum Daily Universe melanjutkan
+ke proses yang membutuhkan
+temporal certainty:
+
+seluruh critical temporal checks
+harus berada pada status VALID.
+
+Jika terdapat:
+
+ERROR
+atau
+CRITICAL
+
+yang belum resolved:
+
+proses terkait harus dihentikan
+atau ditahan sesuai scope.
+
+==================================================
+65. FINAL VALIDATION RESULT
+
+Hasil akhir minimal harus mampu
+menyatakan:
+
+- what was validated;
+- validation scope;
+- temporal sources;
+- detected issues;
+- severity;
+- affected entities;
+- status;
+- required owner;
+- whether downstream processing is allowed.
+
+==================================================
+66. ABSOLUTE RULES
+
+1. 
+
+Temporal Validation memeriksa, bukan menciptakan,
+temporal truth.
+
+2. 
+
+Validator bukan sumber utama Universe Time.
+
+3. 
+
+Production time bukan Universe Time.
+
+4. 
+
+Storage time bukan Universe Time.
+
+5. 
+
+Narrative Time bukan Universe Time.
+
+6. 
+
+Past tidak otomatis berarti Actual.
+
+7. 
+
+Present tidak otomatis berarti Actual.
+
+8. 
+
+Future tidak otomatis berarti Actual.
+
+9. 
+
+Plan tidak otomatis menjadi Event.
+
+10. 
+
+Prediction tidak otomatis menjadi Event.
+
+11. 
+
+Possibility tidak otomatis menjadi Event.
+
+12. 
+
+Memory tidak otomatis menjadi Historical Fact.
+
+13. 
+
+Report tidak otomatis menjadi Verified Fact.
+
+14. 
+
+Unknown tidak boleh diisi dengan tebakan.
+
+15. 
+
+Ambiguity tidak boleh diselesaikan secara diam-diam.
+
+16. 
+
+Conflict tidak boleh ditutup dengan memilih
+sumber secara arbitrer.
+
+17. 
+
+Validator tidak boleh mengubah Canon
+untuk membuat data terlihat valid.
+
+18. 
+
+Validator tidak boleh memperbaiki
+domain yang bukan miliknya.
+
+19. 
+
+Temporal revision harus dapat ditelusuri.
+
+20. 
+
+Revalidation wajib dilakukan
+setelah temporal change yang relevan.
+
+21. 
+
+Critical temporal conflict harus
+menghentikan downstream processing
+sampai terselesaikan.
+
+22. 
+
+Validation result harus dapat ditelusuri
+kepada source dan scope.
+
+==================================================
+67. FINAL PRINCIPLE
+
+Temporal Validation menjaga agar
+perjalanan Universe melalui waktu
+tetap dapat dipercaya tanpa mengambil
+alih kewenangan sistem yang menentukan
+isi Universe.
+
+Urutan yang benar:
+
+TEMPORAL DATA
+→ TEMPORAL RULES
+→ VALIDATION
+→ FINDING
+→ STATUS
+→ OWNER RESOLUTION
+→ REVALIDATION
+
+Bukan:
+
+CONFLICT
+→ GUESS
+→ AUTO-CORRECT
+→ TREAT AS FACT
+
+Temporal Validation memastikan
+bahwa Daily Universe dapat bergerak
+melintasi waktu tanpa kehilangan
+urutan, status, hubungan, atau
+batas antara fakta dan informasi
+yang belum menjadi fakta.
