@@ -1,0 +1,735 @@
+================================================================================
+STORY SCOPE
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / DAILY STORY
+ROLE : DAILY STORY SCOPE ORCHESTRATION
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Story Scope adalah mekanisme untuk menentukan batas bagian Universe yang
+disediakan sebagai context untuk satu Daily Story.
+
+Story Scope menentukan:
+
+- bagian Universe yang relevan;
+- temporal range yang digunakan;
+- event yang tersedia sebagai story material;
+- process yang relevan;
+- consequence yang relevan;
+- unresolved condition yang relevan;
+- Actor reference yang diperlukan;
+- Relationship reference yang diperlukan;
+- Object reference yang diperlukan;
+- Knowledge context yang sah;
+- Location context yang diperlukan.
+
+Story Scope tidak menulis cerita.
+
+Story Scope tidak menentukan gaya penulisan.
+
+Story Scope tidak menggantikan Story Design milik Narrator.
+
+
+================================================================================
+02. CORE PRINCIPLE
+================================================================================
+
+Daily Story adalah representasi sebagian dari Universe.
+
+Karena itu:
+
+UNIVERSE
+→ jauh lebih besar daripada
+DAILY STORY.
+
+Story Scope berfungsi menentukan batas context yang diberikan kepada proses
+produksi cerita.
+
+Tidak semua data Universe harus masuk ke setiap Daily Story.
+
+
+================================================================================
+03. SCOPE VS UNIVERSE
+================================================================================
+
+Universe adalah keseluruhan keadaan dan perkembangan yang berlaku.
+
+Story Scope adalah subset yang relevan untuk Daily Story tertentu.
+
+Story Scope tidak membuat Universe menjadi lebih kecil.
+
+Story Scope hanya menentukan bagian Universe yang digunakan dalam production
+context.
+
+
+================================================================================
+04. SCOPE VS STORY DESIGN
+================================================================================
+
+STORY SCOPE
+→ menentukan batas data dan context yang tersedia untuk Daily Story.
+
+STORY DESIGN
+→ menentukan bagaimana context tersebut diolah menjadi struktur cerita.
+
+Story Scope tidak menentukan:
+
+- plot;
+- POV;
+- scene;
+- dialogue;
+- narrative order;
+- pacing;
+- ending;
+- prose.
+
+Hal tersebut mengikuti Narrator System.
+
+
+================================================================================
+05. SCOPE DATE
+================================================================================
+
+Story Scope harus memiliki hubungan yang jelas dengan Universe Date Daily Story.
+
+Universe Date menjadi reference utama.
+
+Scope dapat mencakup temporal context di luar tanggal utama apabila dibutuhkan
+untuk memahami:
+
+- history;
+- ongoing process;
+- consequence;
+- future status;
+- temporal dependency.
+
+Perluasan temporal context tidak mengubah Daily Story Date.
+
+
+================================================================================
+06. SCOPE TEMPORAL RANGE
+================================================================================
+
+Story Scope dapat memiliki:
+
+- single temporal position;
+- temporal interval;
+- multiple temporal references;
+- previous-period context;
+- future context;
+- unresolved temporal context.
+
+Setiap bagian harus tetap mempertahankan Universe Time aslinya.
+
+
+================================================================================
+07. PRIMARY STORY CONTEXT
+================================================================================
+
+Story Scope harus dapat mengidentifikasi context utama yang menjadi dasar
+Daily Story.
+
+Primary Story Context dapat berasal dari:
+
+- Story Trigger;
+- Actual Event;
+- Process;
+- Consequence;
+- valid domain transition;
+- unresolved development;
+- production instruction.
+
+Primary Context tidak boleh diciptakan hanya untuk membuat cerita dapat
+berjalan.
+
+
+================================================================================
+08. SUPPORTING CONTEXT
+================================================================================
+
+Selain primary context, Story Scope dapat menyediakan supporting context yang
+dibutuhkan agar primary context dapat dipahami.
+
+Supporting context dapat meliputi:
+
+- previous event;
+- consequence;
+- state reference;
+- relationship reference;
+- object reference;
+- knowledge reference;
+- location reference;
+- process dependency;
+- historical context.
+
+Supporting context harus mempunyai relevansi yang dapat ditelusuri.
+
+
+================================================================================
+09. RELEVANCE
+================================================================================
+
+Setiap item yang dimasukkan ke Story Scope harus mempunyai alasan relevansi.
+
+Relevance dapat berasal dari:
+
+- causal dependency;
+- temporal dependency;
+- event dependency;
+- actor participation;
+- relationship context;
+- object dependency;
+- knowledge dependency;
+- location dependency;
+- continuity requirement;
+- production instruction.
+
+Item tidak boleh masuk hanya karena tersedia dalam Universe.
+
+
+================================================================================
+10. MINIMUM SUFFICIENT SCOPE
+================================================================================
+
+Story Scope harus berusaha menyediakan context minimum yang cukup untuk
+memahami dan memproses Daily Story.
+
+Scope tidak boleh:
+
+- terlalu sempit sehingga context penting hilang;
+- terlalu luas sehingga seluruh Universe diperlakukan sebagai story material.
+
+Kecukupan ditentukan berdasarkan dependency dan kebutuhan production context.
+
+
+================================================================================
+11. SCOPE EXPANSION
+================================================================================
+
+Scope dapat diperluas apabila proses membutuhkan data tambahan yang mempunyai
+dependency sah.
+
+Expansion harus mempunyai source atau reason yang dapat ditelusuri.
+
+Scope expansion tidak boleh digunakan untuk mengambil seluruh Universe tanpa
+kebutuhan.
+
+
+================================================================================
+12. SCOPE REDUCTION
+================================================================================
+
+Scope dapat dipersempit apabila data tertentu ternyata tidak relevan terhadap
+Daily Story.
+
+Pengurangan scope tidak menghapus data dari Universe.
+
+Data hanya tidak disertakan sebagai story context.
+
+
+================================================================================
+13. EVENT SCOPE
+================================================================================
+
+Event yang termasuk dalam Story Scope harus:
+
+- memiliki identity;
+- memiliki temporal position;
+- memiliki status yang sah;
+- relevan terhadap Daily Story;
+- tidak memiliki unresolved conflict yang menghalangi penggunaannya.
+
+Event yang tidak masuk scope tetap menjadi bagian dari Universe.
+
+
+================================================================================
+14. PROCESS SCOPE
+================================================================================
+
+Process dapat masuk Story Scope apabila:
+
+- menjadi source Story Trigger;
+- memengaruhi event;
+- menjadi dependency;
+- menghasilkan consequence;
+- relevan terhadap continuity;
+- diperlukan untuk memahami keadaan yang sedang diceritakan.
+
+Process yang masuk scope tetap mempertahankan Process identity.
+
+
+================================================================================
+15. CONSEQUENCE SCOPE
+================================================================================
+
+Consequence dapat masuk Story Scope apabila:
+
+- berasal dari event yang relevan;
+- sedang aktif;
+- memengaruhi keadaan story;
+- menjadi bagian dari causal chain;
+- memengaruhi actor atau domain yang relevan.
+
+Consequence yang berada di luar scope tetap berjalan di Universe apabila
+masih aktif.
+
+
+================================================================================
+16. UNRESOLVED SCOPE
+================================================================================
+
+Unresolved condition dapat dimasukkan ke Story Scope apabila relevan terhadap
+cerita.
+
+Memasukkan unresolved ke scope tidak memberikan izin untuk menyelesaikannya
+secara naratif.
+
+Status unresolved tetap dipertahankan.
+
+
+================================================================================
+17. ACTOR SCOPE
+================================================================================
+
+Actor dapat dimasukkan ke Story Scope apabila:
+
+- menjadi participant;
+- menjadi subject;
+- menjadi causal dependency;
+- menjadi relationship dependency;
+- menjadi source atau recipient informasi;
+- diperlukan untuk memahami event atau process.
+
+Actor yang tidak masuk scope tetap ada di Universe sesuai Character System.
+
+Story Scope tidak menghapus Actor dari Universe.
+
+
+================================================================================
+18. CHARACTER DATA BOUNDARY
+================================================================================
+
+Jika Character masuk Story Scope, hanya Character data yang relevan dan sah
+yang boleh menjadi story context.
+
+Story Scope tidak membuat Character profile baru.
+
+Character identity, role, behavior, knowledge, state, style, dan domain lain
+tetap berasal dari Character System.
+
+
+================================================================================
+19. KNOWLEDGE SCOPE
+================================================================================
+
+Story Scope dapat menyediakan Knowledge Context yang diperlukan untuk story.
+
+Knowledge Context harus dibedakan berdasarkan:
+
+- Universe fact;
+- Character Knowledge;
+- report;
+- memory;
+- imagination;
+- hypothesis;
+- plan;
+- prediction;
+- possibility.
+
+Story Scope tidak boleh menggabungkan semua bentuk informasi tersebut sebagai
+satu factual layer.
+
+
+================================================================================
+20. CHARACTER KNOWLEDGE BOUNDARY
+================================================================================
+
+Knowledge yang masuk ke Story Scope tidak otomatis menjadi Knowledge seluruh
+Character.
+
+Story Scope harus mempertahankan batas:
+
+- what exists in Universe;
+- what the Character knows;
+- what the reader may eventually know.
+
+Narrator menerima context, tetapi Character Knowledge tetap mengikuti
+Character System.
+
+
+================================================================================
+21. RELATIONSHIP SCOPE
+================================================================================
+
+Relationship dapat masuk Story Scope apabila:
+
+- menjadi bagian dari event;
+- memengaruhi actor action;
+- menjadi causal dependency;
+- relevan terhadap process;
+- relevan terhadap consequence.
+
+Relationship yang masuk scope tetap menggunakan Relationship identity dan data
+dari Relationship System.
+
+
+================================================================================
+22. OBJECT SCOPE
+================================================================================
+
+Object dapat masuk Story Scope apabila:
+
+- terlibat dalam event;
+- digunakan;
+- menjadi dependency;
+- menjadi consequence;
+- memengaruhi state;
+- diperlukan untuk continuity.
+
+Object yang masuk scope tetap mengikuti Object System.
+
+
+================================================================================
+23. LOCATION SCOPE
+================================================================================
+
+Location dapat masuk Story Scope apabila:
+
+- menjadi lokasi event;
+- menjadi current location;
+- menjadi origin atau destination;
+- menjadi dependency;
+- diperlukan untuk memahami actor availability.
+
+Location tidak boleh dibuat hanya untuk memenuhi kebutuhan scene.
+
+
+================================================================================
+24. HISTORY CONTEXT
+================================================================================
+
+Story Scope dapat mencakup bagian dari history apabila history dibutuhkan
+untuk memahami kondisi sekarang.
+
+History yang dimasukkan tetap memiliki temporal position dan status aslinya.
+
+History context bukan izin untuk menambahkan kejadian masa lalu.
+
+
+================================================================================
+25. FUTURE CONTEXT
+================================================================================
+
+Future context dapat dimasukkan apabila diperlukan.
+
+Status future harus tetap dipertahankan:
+
+- Plan;
+- Prediction;
+- Possibility;
+- Hypothesis;
+- Imagination;
+- Unknown.
+
+Future context tidak menjadi Actual hanya karena masuk Story Scope.
+
+
+================================================================================
+26. NARRATIVE TIME SEPARATION
+================================================================================
+
+Story Scope bekerja menggunakan Universe Time sebagai source of temporal truth.
+
+Narrator dapat kemudian mengatur Narrative Time.
+
+Story Scope tidak mengubah temporal order hanya karena sebuah item akan
+disajikan lebih awal atau lebih lambat.
+
+
+================================================================================
+27. SCOPE DEPENDENCY
+================================================================================
+
+Setiap item dalam Story Scope dapat memiliki dependency.
+
+Dependency harus dapat ditelusuri.
+
+Jika primary context membutuhkan supporting context, supporting context harus
+tersedia sebelum scope dinyatakan complete.
+
+Dependency yang belum tersedia harus tetap unresolved atau menyebabkan
+revision/block sesuai tingkat pengaruhnya.
+
+
+================================================================================
+28. SCOPE COMPLETENESS
+================================================================================
+
+Scope dianggap complete apabila:
+
+- primary context tersedia;
+- required supporting context tersedia;
+- temporal context cukup;
+- actor dependency tersedia;
+- domain references valid;
+- critical Knowledge boundary tersedia;
+- conflict yang menghalangi telah ditangani;
+- unresolved condition telah ditandai.
+
+
+================================================================================
+29. SCOPE OVEREXPANSION
+================================================================================
+
+Scope dianggap overexpanded apabila context yang dimasukkan:
+
+- tidak relevan;
+- tidak memiliki dependency;
+- tidak dibutuhkan untuk memahami story;
+- menambahkan seluruh Universe tanpa alasan;
+- meningkatkan risiko factual contamination.
+
+Overexpanded scope harus dapat dipersempit tanpa mengubah Universe.
+
+
+================================================================================
+30. SCOPE CONTAMINATION
+================================================================================
+
+Scope Contamination terjadi apabila informasi yang seharusnya berada di luar
+context:
+
+- masuk tanpa dependency;
+- berubah status menjadi factual context;
+- mengubah story secara tidak sah;
+- memberikan Knowledge kepada Character tanpa acquisition;
+- membawa future representation sebagai Actual.
+
+Scope contamination harus ditandai.
+
+
+================================================================================
+31. NO CANON CREATION
+================================================================================
+
+Story Scope tidak boleh menciptakan:
+
+- Character;
+- Relationship;
+- Object;
+- Knowledge;
+- State;
+- Location;
+- Event;
+- Process;
+- Consequence;
+
+hanya untuk melengkapi scope.
+
+Jika data yang diperlukan tidak tersedia, scope harus tetap incomplete atau
+process harus dihentikan.
+
+
+================================================================================
+32. NO STORY-DRIVEN EXPANSION
+================================================================================
+
+Story Scope tidak boleh diperluas hanya karena Narrator:
+
+- membutuhkan konflik;
+- membutuhkan actor tambahan;
+- membutuhkan object;
+- membutuhkan history;
+- membutuhkan explanation;
+- membutuhkan ending.
+
+Expansion harus mempunyai dependency Universe yang sah.
+
+
+================================================================================
+33. SCOPE IMMUTABILITY
+================================================================================
+
+Setelah Story Scope dinyatakan final untuk handoff, perubahan terhadap scope
+harus memiliki alasan dan traceability.
+
+Perubahan scope tidak boleh dilakukan secara diam-diam.
+
+Jika perubahan materially memengaruhi story structure, scope harus kembali ke
+tahap yang sesuai sebelum Narrative Rendering.
+
+
+================================================================================
+34. SCOPE HANDOFF
+================================================================================
+
+Handoff dari Daily Universe kepada Narrator minimal harus mengandung:
+
+- Story Scope ID;
+- Story Trigger ID;
+- Universe Instance;
+- Universe Date;
+- temporal range;
+- primary context;
+- supporting context;
+- actor references;
+- relationship references;
+- object references;
+- Knowledge boundary;
+- location references;
+- unresolved context;
+- validation status.
+
+
+================================================================================
+35. NARRATOR BOUNDARY
+================================================================================
+
+Narrator menerima Story Scope sebagai factual production boundary.
+
+Narrator dapat menentukan bagaimana context tersebut:
+
+- diurutkan;
+- dipersempit untuk scene;
+- difokuskan;
+- dipresentasikan;
+- disusun menjadi cerita.
+
+Narrator tidak boleh menggunakan scope sebagai alasan untuk membuat Canon baru.
+
+
+================================================================================
+36. DAILY STORY INDEPENDENCE
+================================================================================
+
+Story Scope tidak menentukan bahwa seluruh context yang tersedia harus muncul
+dalam cerita.
+
+Narrator dapat memilih bagian yang relevan sesuai Story Design.
+
+Tidak ditampilkannya suatu scoped item tidak menghapus item tersebut dari
+Universe.
+
+
+================================================================================
+37. STORY SCOPE IDENTITY
+================================================================================
+
+Setiap Story Scope harus dapat dibedakan dari:
+
+- Universe Instance;
+- Story Trigger;
+- Daily Story ID;
+- Story Blueprint;
+- Narrative Plan.
+
+Story Scope adalah production context, bukan cerita.
+
+
+================================================================================
+38. DUPLICATE PREVENTION
+================================================================================
+
+Scope harus dapat mendeteksi duplicate reference.
+
+Duplicate reference tidak boleh membuat:
+
+- duplicate Actor;
+- duplicate Relationship;
+- duplicate Object;
+- duplicate Event;
+- duplicate Process;
+- duplicate Knowledge.
+
+Reference harus menunjuk kepada identity domain yang sama apabila memang item
+yang sama.
+
+
+================================================================================
+39. VALIDATION
+================================================================================
+
+Story Scope harus divalidasi terhadap:
+
+- Story Trigger;
+- Universe Time;
+- Temporal Status;
+- Event;
+- Process;
+- Consequence;
+- Character;
+- Relationship;
+- Object;
+- Knowledge;
+- Location;
+- Continuity;
+- Dependency;
+- Narrative boundary.
+
+
+================================================================================
+40. VALIDATION RESULT
+================================================================================
+
+VALID
+→ Story Scope lengkap dan dapat diserahkan.
+
+REVIEW_REQUIRED
+→ terdapat uncertainty yang tidak menghalangi handoff.
+
+REVISION_REQUIRED
+→ scope membutuhkan perubahan.
+
+BLOCKED
+→ scope tidak dapat dibentuk secara sah.
+
+
+================================================================================
+41. FAILURE PRINCIPLE
+================================================================================
+
+Jika Story Scope gagal, system tidak boleh:
+
+- menciptakan data;
+- memperluas scope dengan asumsi;
+- memberi Knowledge tambahan;
+- membuat Actor baru;
+- membuat Object baru;
+- menyelesaikan unresolved;
+- mengubah temporal position;
+- memilih context berdasarkan kebutuhan drama.
+
+Process harus berhenti atau dikembalikan ke tahap yang sesuai.
+
+
+================================================================================
+42. FINAL PRINCIPLE
+================================================================================
+
+STORY SCOPE BUKAN:
+
+“SELURUH UNIVERSE UNTUK CERITA.”
+
+STORY SCOPE ADALAH:
+
+“BAGIAN UNIVERSE YANG SAH, RELEVAN,
+DAN CUKUP UNTUK MENJADI DASAR PRODUKSI
+SATU DAILY STORY.”
+
+Universe tetap lebih besar daripada cerita.
+
+Narrator kemudian menentukan bagaimana bagian tersebut diolah menjadi
+cerita.
+
+
+================================================================================
+END OF STORY SCOPE
+================================================================================
