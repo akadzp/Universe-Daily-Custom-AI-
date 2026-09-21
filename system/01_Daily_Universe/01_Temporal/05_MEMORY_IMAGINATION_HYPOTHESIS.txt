@@ -1,0 +1,511 @@
+================================================================================
+MEMORY / IMAGINATION / HYPOTHESIS
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / TEMPORAL DOMAIN
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+File ini mengatur perlakuan temporal terhadap:
+
+- MEMORY;
+- IMAGINATION;
+- HYPOTHESIS.
+
+Ketiganya merupakan bentuk representasi informasi dan tidak boleh secara
+otomatis diperlakukan sebagai kejadian aktual Universe.
+
+Aturan ini menjaga agar proses mental, representasi informasi, dan penalaran
+kemungkinan tidak mengubah Canon tanpa dasar yang sah.
+
+
+================================================================================
+02. CORE PRINCIPLE
+================================================================================
+
+Memory, Imagination, dan Hypothesis bukan sinonim dari Actual Event.
+
+Kemunculan salah satu bentuk tersebut dalam:
+
+- pikiran Character;
+- dialog;
+- narasi;
+- Story Design;
+- Narrative Rendering;
+- perencanaan;
+
+tidak otomatis menghasilkan perubahan terhadap Universe.
+
+
+================================================================================
+03. MEMORY
+================================================================================
+
+Memory adalah representasi informasi mengenai sesuatu yang diingat.
+
+Memory memiliki hubungan dengan masa lalu atau informasi yang dianggap telah
+dialami, diketahui, atau disimpan sebelumnya.
+
+Memory merupakan bentuk representasi.
+
+Memory tidak otomatis merupakan Historical Fact.
+
+Memory tidak otomatis memiliki tingkat akurasi yang sama dengan Canon History.
+
+
+================================================================================
+04. MEMORY TIME
+================================================================================
+
+Memory dapat mempunyai lebih dari satu posisi waktu:
+
+- waktu kejadian yang diingat;
+- waktu ketika memory terbentuk;
+- waktu ketika memory diakses;
+- waktu ketika memory disampaikan.
+
+Keempat posisi tersebut harus dapat dibedakan apabila perbedaan tersebut
+relevan terhadap continuity.
+
+
+================================================================================
+05. MEMORY VS HISTORY
+================================================================================
+
+Memory dan Historical Canon adalah dua domain informasi yang berbeda.
+
+Historical Canon menjawab:
+
+“Peristiwa apa yang benar-benar tercatat sebagai bagian dari sejarah Universe?”
+
+Memory menjawab:
+
+“Apa yang direpresentasikan sebagai sesuatu yang diingat?”
+
+Keduanya tidak boleh digabungkan tanpa validasi.
+
+
+================================================================================
+06. MEMORY ACCURACY
+================================================================================
+
+Memory dapat:
+
+- akurat;
+- tidak lengkap;
+- memiliki ketidakpastian;
+- salah;
+- memiliki interpretasi personal;
+- belum dapat diverifikasi.
+
+Daily Universe tidak boleh mengubah isi memory menjadi historical fact hanya
+karena memory disampaikan dengan keyakinan.
+
+
+================================================================================
+07. MEMORY ACCESS
+================================================================================
+
+Ketika memory ditampilkan dalam cerita, yang terjadi adalah pengungkapan
+representasi memory.
+
+Peristiwa yang sedang direpresentasikan tidak terjadi kembali hanya karena
+memory sedang diakses.
+
+Pengungkapan memory tidak membuat event historis baru.
+
+
+================================================================================
+08. MEMORY AND CHARACTER KNOWLEDGE
+================================================================================
+
+Memory yang dimiliki Character berkaitan dengan Knowledge Character.
+
+Daily Universe tidak boleh membuat atau mengubah Knowledge Character secara
+langsung.
+
+Apabila suatu memory memengaruhi tindakan Character, perubahan tersebut harus
+tetap mengikuti aturan Character System.
+
+
+================================================================================
+09. IMAGINATION
+================================================================================
+
+Imagination adalah representasi mental atau naratif mengenai sesuatu yang
+tidak sedang diperlakukan sebagai kejadian aktual Universe.
+
+Imagination dapat berkaitan dengan:
+
+- masa lalu;
+- masa kini;
+- masa depan;
+- keadaan alternatif;
+- kemungkinan;
+- kondisi yang tidak terjadi.
+
+Imagination tidak menjadi Canon hanya karena direpresentasikan secara detail.
+
+
+================================================================================
+10. IMAGINED PAST
+================================================================================
+
+Imagination dapat menggunakan bentuk masa lalu.
+
+Posisi tersebut tidak menjadikan informasi sebagai Historical Actual.
+
+Past dalam imajinasi tetap berada pada status Imagined.
+
+
+================================================================================
+11. IMAGINED PRESENT
+================================================================================
+
+Imagination dapat merepresentasikan keadaan seolah-olah sedang terjadi pada
+Present.
+
+Hal tersebut tidak mengubah Current Universe State.
+
+Present dalam imajinasi tetap berada dalam ranah representasi.
+
+
+================================================================================
+12. IMAGINED FUTURE
+================================================================================
+
+Imagination dapat merepresentasikan masa depan.
+
+Future yang dibayangkan tidak otomatis menjadi:
+
+- Plan;
+- Prediction;
+- Possibility;
+- Actual Future.
+
+Status tetap Imagination sampai terdapat perubahan status melalui mekanisme
+yang sah.
+
+
+================================================================================
+13. HYPOTHESIS
+================================================================================
+
+Hypothesis adalah konstruksi yang digunakan untuk mempertimbangkan suatu
+hubungan, kondisi, atau kemungkinan berdasarkan informasi yang tersedia.
+
+Hypothesis digunakan untuk reasoning.
+
+Hypothesis bukan Actual Event.
+
+Hypothesis bukan bukti bahwa kondisi yang dipertimbangkan benar-benar berlaku.
+
+
+================================================================================
+14. HYPOTHESIS TIME
+================================================================================
+
+Hypothesis dapat membahas:
+
+- Past;
+- Present;
+- Future;
+- hubungan temporal alternatif;
+- causal possibility.
+
+Posisi waktu yang dibahas dalam hypothesis tidak mengubah posisi temporal
+Universe.
+
+
+================================================================================
+15. HYPOTHESIS VS POSSIBILITY
+================================================================================
+
+Hypothesis dan Possibility harus tetap dibedakan.
+
+HYPOTHESIS
+→ sebuah konstruksi penalaran yang sedang dipertimbangkan.
+
+POSSIBILITY
+→ status bahwa suatu keadaan atau kejadian mungkin terjadi.
+
+Sebuah hypothesis dapat membahas possibility tanpa menjadikan hasil hypothesis
+sebagai possibility yang sudah ditetapkan.
+
+Status tersebut harus diperlakukan sesuai mekanisme temporal yang berlaku.
+
+
+================================================================================
+16. NO CANON CREATION
+================================================================================
+
+Memory, Imagination, dan Hypothesis tidak boleh menciptakan:
+
+- Character;
+- Relationship;
+- Object;
+- Knowledge;
+- State;
+- Location;
+- Event;
+- History;
+
+hanya karena informasi tersebut dibutuhkan untuk membuat representasi mental
+atau naratif.
+
+Jika representasi membutuhkan suatu fakta yang belum tersedia, statusnya
+harus tetap non-canon atau proses harus dihentikan sesuai validation.
+
+
+================================================================================
+17. NO RETROACTIVE CREATION
+================================================================================
+
+Memory tidak boleh digunakan untuk menciptakan sejarah baru secara retroaktif
+hanya karena sebuah cerita membutuhkan masa lalu.
+
+Suatu kejadian masa lalu harus sudah memiliki dasar sebagai bagian dari
+Universe sebelum dapat diperlakukan sebagai Historical Actual.
+
+Memory dapat menjadi informasi yang perlu diverifikasi, bukan pengganti
+history.
+
+
+================================================================================
+18. NO RETROACTIVE KNOWLEDGE
+================================================================================
+
+Memory atau Imagination yang muncul dalam cerita tidak otomatis memberikan
+Knowledge baru kepada Character lain.
+
+Akses pembaca terhadap informasi juga tidak otomatis memberikan Knowledge
+kepada Character.
+
+Knowledge acquisition mengikuti Character System.
+
+
+================================================================================
+19. NO TEMPORAL MOVEMENT
+================================================================================
+
+Memory tidak memindahkan Universe kembali ke masa lalu.
+
+Imagination tidak memindahkan Universe ke waktu alternatif.
+
+Hypothesis tidak memindahkan Universe ke hasil yang sedang diuji.
+
+Ketiganya hanya merepresentasikan atau mempertimbangkan informasi.
+
+
+================================================================================
+20. REPRESENTATION BOUNDARY
+================================================================================
+
+Ketika Memory, Imagination, atau Hypothesis ditampilkan dalam cerita, batas
+antara representasi dan Universe Event harus tetap dapat dipertahankan.
+
+Narrative detail tidak mengubah status temporal.
+
+Kedalaman deskripsi tidak meningkatkan tingkat factuality.
+
+
+================================================================================
+21. MULTIPLE LAYERS
+================================================================================
+
+Sebuah informasi dapat mempunyai lebih dari satu lapisan yang perlu dipisahkan.
+
+System harus dapat membedakan:
+
+- event yang diingat;
+- memory tentang event;
+- karakter yang sedang mengingat;
+- waktu ketika memory diakses;
+- narasi yang menampilkan memory.
+
+Hal yang sama berlaku untuk Imagination dan Hypothesis.
+
+Lapisan representasi tidak boleh disamakan dengan event yang direpresentasikan.
+
+
+================================================================================
+22. MEMORY CONFLICT
+================================================================================
+
+Jika memory bertentangan dengan Historical Canon, sistem tidak boleh diam-diam
+mengubah Historical Canon.
+
+Konflik harus tetap terlihat.
+
+Status memory dan status history harus dipertahankan secara terpisah sampai
+konflik mendapatkan resolusi yang sah.
+
+
+================================================================================
+23. HYPOTHESIS CONFLICT
+================================================================================
+
+Jika hypothesis menghasilkan kesimpulan yang bertentangan dengan fakta Canon,
+hypothesis tidak boleh menggantikan Canon.
+
+Hypothesis hanya merupakan hasil penalaran yang sedang diuji atau
+dipertimbangkan.
+
+
+================================================================================
+24. IMAGINATION CONFLICT
+================================================================================
+
+Jika imagination menggambarkan keadaan yang berbeda dari Canon, Canon tetap
+berlaku.
+
+Perbedaan tersebut tidak dianggap sebagai temporal contradiction selama
+statusnya memang Imagination.
+
+
+================================================================================
+25. STATUS PRESERVATION
+================================================================================
+
+Status Memory, Imagination, atau Hypothesis harus tetap dipertahankan ketika
+informasi tersebut:
+
+- dipindahkan antar tahap produksi;
+- dibaca oleh system lain;
+- digunakan Story Design;
+- digunakan Narrative Rendering;
+- disimpan sebagai bagian dari hasil produksi.
+
+Perpindahan sistem tidak otomatis meningkatkan status menjadi Actual.
+
+
+================================================================================
+26. TRANSITION OUT OF REPRESENTATION
+================================================================================
+
+Memory, Imagination, atau Hypothesis hanya dapat menghasilkan perubahan Canon
+apabila terdapat proses nyata yang terpisah dan sah.
+
+Representasi itu sendiri bukan perubahan Canon.
+
+Apabila setelah proses representasi terjadi event aktual, event aktual harus
+mempunyai identitas temporal dan statusnya sendiri.
+
+
+================================================================================
+27. DOMAIN OWNERSHIP
+================================================================================
+
+Daily Universe mengatur perlakuan temporal terhadap Memory, Imagination, dan
+Hypothesis.
+
+Daily Universe tidak mengambil alih:
+
+- Character Knowledge;
+- Character Psychology;
+- Character Behavior;
+- Narrative Style;
+- Narrative Rendering.
+
+Aturan internal Character tetap mengikuti Character System.
+
+Aturan penyajian tetap mengikuti Narrator System.
+
+
+================================================================================
+28. VALIDATION
+================================================================================
+
+Memory, Imagination, dan Hypothesis harus divalidasi terhadap:
+
+- Universe Time;
+- Temporal Status;
+- Character Knowledge;
+- historical Canon;
+- causal order;
+- event identity;
+- narrative representation.
+
+Validasi harus memastikan bahwa representasi tidak berubah menjadi Canon tanpa
+dasar.
+
+
+================================================================================
+29. FAILURE PRINCIPLE
+================================================================================
+
+Jika sistem tidak dapat menentukan apakah informasi merupakan:
+
+- Memory;
+- Imagination;
+- Hypothesis;
+- atau Actual;
+
+status tidak boleh dipaksakan.
+
+Gunakan status yang belum ditentukan sesuai Temporal Status System atau hentikan
+proses yang membutuhkan kepastian.
+
+
+================================================================================
+30. RELATION TO OTHER TEMPORAL FILES
+================================================================================
+
+File ini mengatur:
+
+- Memory;
+- Imagination;
+- Hypothesis.
+
+File ini tidak mendefinisikan ulang:
+
+- Universe Time;
+- Narrative Time;
+- Past / Present / Future;
+- Temporal Status;
+- Plan;
+- Prediction;
+- Possibility;
+- Temporal Consistency.
+
+File ini harus dipahami bersama file temporal lainnya.
+
+
+================================================================================
+31. FINAL PRINCIPLE
+================================================================================
+
+MEMORY
+→ representasi tentang sesuatu yang diingat.
+
+IMAGINATION
+→ representasi tentang sesuatu yang dibayangkan.
+
+HYPOTHESIS
+→ konstruksi sesuatu yang sedang dipertimbangkan atau diuji.
+
+NONE OF THEM
+→ otomatis menjadi Actual Event.
+
+Representasi tidak sama dengan realitas Universe.
+
+Pemikiran tidak sama dengan kejadian.
+
+Ingatan tidak sama dengan sejarah.
+
+Hipotesis tidak sama dengan fakta.
+
+Daily Universe harus menjaga batas tersebut sepanjang seluruh perjalanan
+temporal Universe.
+
+
+================================================================================
+END OF MEMORY / IMAGINATION / HYPOTHESIS
+================================================================================
