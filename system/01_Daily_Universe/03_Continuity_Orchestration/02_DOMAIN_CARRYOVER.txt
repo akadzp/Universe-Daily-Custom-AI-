@@ -1,0 +1,750 @@
+================================================================================
+DOMAIN CARRYOVER
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / CONTINUITY ORCHESTRATION
+ROLE : CROSS-SYSTEM TEMPORAL HANDOFF
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Domain Carryover adalah mekanisme untuk membawa perubahan dan kondisi temporal
+antarperiode melalui system owner masing-masing.
+
+Mekanisme ini digunakan ketika perkembangan Universe pada satu periode
+berdampak terhadap data yang dimiliki oleh system lain.
+
+Domain Carryover memastikan bahwa:
+
+- Daily Universe tidak mengambil alih domain lain;
+- perubahan temporal mempunyai jalur handoff yang jelas;
+- domain owner tetap menjadi sumber kebenaran domain;
+- hasil perubahan dapat dikembalikan ke temporal flow;
+- continuity tetap dapat berlangsung lintas periode.
+
+
+================================================================================
+02. CORE PRINCIPLE
+================================================================================
+
+Daily Universe mengorkestrasi.
+
+Domain Owner memutuskan dan menerapkan.
+
+Pola dasar:
+
+TEMPORAL EVENT / TRANSITION
+        ↓
+DOMAIN IMPACT DETECTED
+        ↓
+DOMAIN HANDOFF
+        ↓
+DOMAIN OWNER VALIDATION
+        ↓
+DOMAIN CHANGE
+        ↓
+DOMAIN RESULT
+        ↓
+DAILY UNIVERSE CONTINUITY
+        ↓
+NEXT TEMPORAL CONTEXT
+
+
+================================================================================
+03. DOMAIN OWNERSHIP
+================================================================================
+
+Setiap domain harus mempunyai satu owner yang jelas.
+
+Daily Universe tidak menjadi owner hanya karena domain tersebut terlibat dalam
+event atau continuity.
+
+Domain owner mempertahankan kewenangan terhadap:
+
+- definisi;
+- struktur;
+- aturan;
+- validitas;
+- perubahan;
+- history;
+- identity;
+
+dari domain masing-masing.
+
+
+================================================================================
+04. CARRYOVER REFERENCE
+================================================================================
+
+Domain Carryover menggunakan reference terhadap domain data.
+
+Reference harus dapat mengidentifikasi:
+
+- domain;
+- domain item;
+- source;
+- temporal position;
+- requested transition;
+- reason for handoff;
+- current status;
+- dependency.
+
+Reference bukan pengganti domain data.
+
+
+================================================================================
+05. HANDOFF REQUEST
+================================================================================
+
+Handoff Request adalah permintaan kepada domain owner untuk memproses dampak
+temporal.
+
+Handoff Request minimal harus dapat menunjukkan:
+
+- source event atau transition;
+- Universe Time;
+- target temporal position;
+- affected domain;
+- affected item;
+- requested type of transition;
+- dependency;
+- continuity context.
+
+Handoff Request tidak boleh memaksakan hasil domain.
+
+
+================================================================================
+06. HANDOFF RESULT
+================================================================================
+
+Domain owner harus menghasilkan result yang dapat dibaca oleh Daily Universe.
+
+Result dapat menunjukkan:
+
+- ACCEPTED;
+- APPLIED;
+- REJECTED;
+- BLOCKED;
+- REQUIRES_INPUT;
+- UNRESOLVED;
+- UNKNOWN.
+
+Result harus mempertahankan source dan temporal context yang relevan.
+
+
+================================================================================
+07. ACCEPTANCE VS APPLICATION
+================================================================================
+
+ACCEPTED berarti domain owner menerima bahwa request dapat diproses.
+
+APPLIED berarti perubahan domain telah benar-benar diterapkan.
+
+Keduanya tidak boleh dianggap sama.
+
+Daily Universe tidak boleh memperlakukan ACCEPTED sebagai APPLIED tanpa
+konfirmasi yang sah.
+
+
+================================================================================
+08. REJECTED
+================================================================================
+
+REJECTED berarti domain owner menolak perubahan yang diminta.
+
+Penolakan harus dipertahankan sebagai result.
+
+Daily Universe tidak boleh menganggap perubahan tetap terjadi hanya karena
+perubahan tersebut diperlukan oleh alur.
+
+
+================================================================================
+09. BLOCKED
+================================================================================
+
+BLOCKED berarti domain owner atau dependency yang diperlukan tidak memungkinkan
+perubahan diproses.
+
+Blocked handoff bukan successful transition.
+
+Daily Universe harus mempertahankan status tersebut sampai terdapat resolusi
+yang sah.
+
+
+================================================================================
+10. REQUIRES_INPUT
+================================================================================
+
+REQUIRES_INPUT berarti domain owner membutuhkan data atau kondisi tambahan
+sebelum dapat memproses perubahan.
+
+Daily Universe tidak boleh mengisi data yang kurang dengan asumsi.
+
+Handoff dapat ditunda sampai input tersedia.
+
+
+================================================================================
+11. UNRESOLVED
+================================================================================
+
+UNRESOLVED berarti domain owner belum dapat menentukan hasil akhir.
+
+Daily Universe harus mempertahankan unresolved state dan temporal context.
+
+Unresolved tidak boleh dinaikkan menjadi Applied.
+
+
+================================================================================
+12. UNKNOWN
+================================================================================
+
+UNKNOWN digunakan apabila hasil atau keadaan belum dapat diketahui secara sah.
+
+Unknown harus tetap dipisahkan dari Rejected dan Unresolved.
+
+
+================================================================================
+13. TEMPORAL POSITION
+================================================================================
+
+Setiap handoff harus memiliki temporal context.
+
+Temporal context menentukan:
+
+- kapan source terjadi;
+- kapan perubahan diminta;
+- kapan perubahan seharusnya berlaku;
+- kapan result berlaku.
+
+Daily Universe tidak boleh menggeser waktu perubahan hanya untuk memenuhi
+urutan proses.
+
+
+================================================================================
+14. EFFECTIVE TIME
+================================================================================
+
+Effective Time adalah waktu ketika perubahan domain benar-benar mulai berlaku
+di Universe.
+
+Effective Time tidak selalu sama dengan:
+
+- request time;
+- processing time;
+- approval time;
+- file creation time.
+
+System harus membedakan waktu tersebut apabila perbedaannya relevan.
+
+
+================================================================================
+15. REQUEST TIME
+================================================================================
+
+Request Time adalah waktu ketika Daily Universe membuat atau meneruskan
+Handoff Request.
+
+Request Time bukan bukti bahwa domain change telah terjadi.
+
+
+================================================================================
+16. PROCESSING TIME
+================================================================================
+
+Processing Time adalah waktu operasional ketika domain owner menangani
+request.
+
+Processing Time bukan otomatis Effective Time Universe.
+
+
+================================================================================
+17. HISTORY PRESERVATION
+================================================================================
+
+Domain Carryover harus mempertahankan history handoff.
+
+History harus dapat menunjukkan:
+
+- request;
+- result;
+- application;
+- rejection;
+- blocking;
+- revision;
+- subsequent resolution.
+
+History handoff tidak boleh dihapus hanya karena request akhirnya berhasil.
+
+
+================================================================================
+18. ONE DOMAIN, ONE OWNER
+================================================================================
+
+Daily Universe tidak boleh membuat:
+
+- Character state kedua;
+- Relationship state kedua;
+- Object state kedua;
+- Knowledge state kedua;
+- atau domain state alternatif lain;
+
+hanya untuk mempertahankan continuity.
+
+Jika domain owner sudah menyediakan mekanisme perubahan, mekanisme tersebut
+harus digunakan.
+
+
+================================================================================
+19. CHARACTER HANDOFF
+================================================================================
+
+Character-related carryover harus diteruskan kepada Character System.
+
+Daily Universe menyediakan:
+
+- temporal context;
+- source event;
+- required transition context;
+- continuity reference.
+
+Character System menentukan apakah dan bagaimana Character berubah.
+
+Daily Universe menerima result tanpa mengambil alih keputusan domain.
+
+
+================================================================================
+20. RELATIONSHIP HANDOFF
+================================================================================
+
+Relationship-related carryover harus diteruskan kepada Relationship System.
+
+Daily Universe menyediakan temporal context dan causal source.
+
+Relationship System menentukan validitas dan hasil perubahan Relationship.
+
+
+================================================================================
+21. OBJECT HANDOFF
+================================================================================
+
+Object-related carryover harus diteruskan kepada Object System.
+
+Daily Universe menyediakan:
+
+- temporal context;
+- event source;
+- affected object reference;
+- requested transition.
+
+Object System menentukan perubahan Object.
+
+
+================================================================================
+22. KNOWLEDGE HANDOFF
+================================================================================
+
+Knowledge-related carryover harus mengikuti Character System atau system owner
+Knowledge yang sah.
+
+Daily Universe menyediakan:
+
+- source event;
+- temporal order;
+- availability context;
+- acquisition context.
+
+Domain owner menentukan apakah Knowledge benar-benar diperoleh, tersedia,
+berubah, atau tetap tidak diketahui.
+
+
+================================================================================
+23. STATE HANDOFF
+================================================================================
+
+State-related change harus diteruskan kepada owner State.
+
+Daily Universe tidak membuat state value sendiri.
+
+Daily Universe hanya menentukan:
+
+- perubahan dipicu oleh apa;
+- kapan perubahan terjadi;
+- kapan result harus berlaku;
+- bagaimana result dibawa ke periode berikutnya.
+
+
+================================================================================
+24. LOCATION HANDOFF
+================================================================================
+
+Location-related change harus diteruskan kepada system owner yang menangani
+Location.
+
+Daily Universe menyediakan temporal context dan source.
+
+Daily Universe tidak membuat lokasi baru hanya untuk menyelesaikan handoff.
+
+
+================================================================================
+25. OTHER DOMAIN HANDOFF
+================================================================================
+
+Domain lain yang kemudian ditambahkan ke System harus mengikuti prinsip yang
+sama:
+
+DAILY UNIVERSE
+→ temporal orchestration.
+
+DOMAIN OWNER
+→ domain authority.
+
+Penambahan domain baru tidak boleh membuat Daily Universe otomatis mengambil
+alih ownership.
+
+
+================================================================================
+26. HANDOFF DEPENDENCY
+================================================================================
+
+Satu handoff dapat bergantung pada:
+
+- event lain;
+- domain result;
+- process;
+- object availability;
+- actor availability;
+- relationship condition;
+- temporal condition;
+- another handoff.
+
+Dependency harus dapat ditelusuri.
+
+Jika dependency belum tersedia, handoff tidak boleh dianggap berhasil.
+
+
+================================================================================
+27. HANDOFF ORDER
+================================================================================
+
+Jika beberapa domain change saling bergantung, urutan handoff harus mengikuti
+dependency.
+
+Handoff tidak boleh diproses secara acak hanya karena semuanya berada pada
+periode yang sama.
+
+
+================================================================================
+28. PARALLEL HANDOFF
+================================================================================
+
+Handoff yang tidak saling bergantung dapat diproses secara paralel.
+
+Parallel processing tidak berarti hasil dapat digabung menjadi satu domain.
+
+Setiap handoff tetap memiliki identity dan result sendiri.
+
+
+================================================================================
+29. HANDOFF COLLISION
+================================================================================
+
+Jika dua handoff memengaruhi domain item yang sama pada waktu yang sama,
+system harus memeriksa apakah:
+
+- keduanya kompatibel;
+- salah satunya merupakan continuation;
+- keduanya merupakan perubahan berbeda;
+- terdapat ordering requirement;
+- terdapat conflict.
+
+Daily Universe tidak boleh memilih satu secara diam-diam.
+
+
+================================================================================
+30. Handoff Result TO CONTINUITY
+================================================================================
+
+Hanya hasil yang sah yang boleh digunakan untuk memperbarui temporal
+continuity.
+
+Pola:
+
+DOMAIN RESULT
+↓
+VALIDATE
+↓
+REGISTER TEMPORAL RESULT
+↓
+UPDATE CONTINUITY CONTEXT
+
+
+================================================================================
+31. NO ASSUMED SUCCESS
+================================================================================
+
+Tidak boleh diasumsikan bahwa:
+
+- request = applied;
+- plan = completed;
+- approval = execution;
+- prediction = occurrence;
+- possibility = actualization.
+
+Status result harus berasal dari process yang sah.
+
+
+================================================================================
+32. NO RETROACTIVE APPLICATION
+================================================================================
+
+Domain change tidak boleh diterapkan pada waktu sebelumnya hanya karena
+processing dilakukan kemudian.
+
+Effective Time harus mengikuti temporal rules.
+
+Processing delay tidak mengubah historical position kecuali domain owner dan
+temporal mechanism secara sah menetapkannya.
+
+
+================================================================================
+33. FAILED HANDOFF
+================================================================================
+
+Jika handoff gagal:
+
+- domain result harus dipertahankan;
+- perubahan tidak boleh dianggap applied;
+- consequence yang bergantung padanya harus diproses sesuai dependency;
+- continuity dapat menjadi unresolved, blocked, atau revision required.
+
+Failure bukan izin untuk membuat versi perubahan yang berbeda secara diam-diam.
+
+
+================================================================================
+34. HANDOFF REVISION
+================================================================================
+
+Jika hasil domain perlu direvisi:
+
+- result sebelumnya tetap menjadi history;
+- revision harus mempunyai source;
+- effective time revision harus jelas;
+- dampak terhadap continuity harus ditentukan;
+- downstream dependency harus diperiksa.
+
+
+================================================================================
+35. TEMPORAL IMPACT
+================================================================================
+
+Setiap handoff yang berhasil dapat mempunyai dampak temporal.
+
+Dampak harus dapat diklasifikasikan sebagai:
+
+- immediate;
+- delayed;
+- persistent;
+- conditional;
+- unresolved.
+
+Klasifikasi ini mengatur orkestrasi temporal, bukan definisi domain.
+
+
+================================================================================
+36. DOMAIN RESULT HISTORY
+================================================================================
+
+History domain tetap berada di domain owner.
+
+Daily Universe menyimpan atau membawa reference terhadap result yang diperlukan
+untuk temporal orchestration.
+
+Daily Universe tidak boleh menjadi database Canon kedua.
+
+
+================================================================================
+37. CARRYOVER TO NEXT PERIOD
+================================================================================
+
+Jika domain change tetap berlaku setelah periode selesai:
+
+CURRENT DOMAIN RESULT
+↓
+TEMPORAL CONTINUITY
+↓
+NEXT PERIOD CONTEXT
+↓
+CARRYOVER
+
+Domain data tetap berada di owner.
+
+Yang diteruskan Daily Universe adalah temporal reference dan continuity context.
+
+
+================================================================================
+38. DOMAIN CONFLICT
+================================================================================
+
+Jika domain owner menolak perubahan karena bertentangan dengan aturan domain,
+Daily Universe harus menghormati result tersebut.
+
+Daily Universe tidak boleh memaksa perubahan melalui jalur lain.
+
+
+================================================================================
+39. OWNERSHIP CONFLICT
+================================================================================
+
+Jika dua system mengklaim ownership terhadap domain yang sama, itu merupakan
+architecture conflict.
+
+Daily Universe tidak boleh menyelesaikannya sendiri.
+
+Proses harus diarahkan ke architecture-level resolution.
+
+
+================================================================================
+40. TEMPORAL CONFLICT
+================================================================================
+
+Jika domain result menyebabkan conflict terhadap Universe Time:
+
+- result tetap dipertahankan;
+- conflict ditandai;
+- temporal validation dijalankan;
+- process dihentikan jika diperlukan.
+
+Domain result tidak boleh diubah diam-diam hanya untuk menghapus conflict.
+
+
+================================================================================
+41. NARRATOR HANDOFF
+================================================================================
+
+Narrator dapat menerima hasil domain yang telah divalidasi dan ditempatkan
+secara temporal.
+
+Narrator tidak mengubah domain result.
+
+Narrative representation tidak menjadi pengganti domain application.
+
+
+================================================================================
+42. DAILY STORY HANDOFF
+================================================================================
+
+Daily Story dapat menggunakan hasil domain yang telah:
+
+- validated;
+- temporally positioned;
+- available to the story;
+- within character knowledge boundary.
+
+Story generation tidak boleh memaksa domain change menjadi Applied.
+
+
+================================================================================
+43. VALIDATION
+================================================================================
+
+Setiap Domain Carryover harus divalidasi terhadap:
+
+- source;
+- domain owner;
+- target item;
+- temporal position;
+- request status;
+- result status;
+- effective time;
+- dependency;
+- conflict;
+- continuity.
+
+
+================================================================================
+44. VALIDATION RESULT
+================================================================================
+
+VALID
+→ handoff dan result dapat digunakan.
+
+REVIEW_REQUIRED
+→ masih terdapat uncertainty yang dapat dipertahankan.
+
+REVISION_REQUIRED
+→ result atau request membutuhkan koreksi.
+
+BLOCKED
+→ handoff tidak dapat diterapkan secara sah.
+
+
+================================================================================
+45. FAILURE PRINCIPLE
+================================================================================
+
+Domain Carryover tidak boleh:
+
+- mengubah domain owner;
+- membuat domain data kedua;
+- menganggap request berhasil tanpa result;
+- memindahkan effective time secara diam-diam;
+- menghapus failed handoff;
+- menghapus history;
+- membuat data pengganti;
+- memaksa domain owner menerima perubahan.
+
+
+================================================================================
+46. TRACEABILITY
+================================================================================
+
+Setiap carryover harus dapat ditelusuri:
+
+REQUEST
+→ DOMAIN OWNER
+→ RESULT
+→ EFFECTIVE TIME
+→ TEMPORAL CONTEXT
+→ NEXT PERIOD
+
+
+================================================================================
+47. FINAL PRINCIPLE
+================================================================================
+
+DAILY UNIVERSE
+TIDAK MENJADI PEMILIK DOMAIN.
+
+DAILY UNIVERSE
+MENJADI PENGHUBUNG TEMPORAL ANTAR-DOMAIN.
+
+Domain owner menentukan:
+
+APA YANG BERUBAH.
+
+Daily Universe menentukan dan menjaga:
+
+KAPAN PERUBAHAN ITU MASUK KE DALAM ALIRAN UNIVERSE
+DAN BAGAIMANA HASILNYA DIBAWA KE PERIODE BERIKUTNYA.
+
+Dengan demikian:
+
+ONE DOMAIN
+→ ONE OWNER
+
+ONE TEMPORAL FLOW
+→ DAILY UNIVERSE
+
+ONE CHANGE
+→ ONE EXPLICIT HANDOFF
+
+
+================================================================================
+END OF DOMAIN CARRYOVER
+================================================================================
