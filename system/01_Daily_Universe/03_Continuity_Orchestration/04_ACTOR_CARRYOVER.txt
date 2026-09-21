@@ -1,0 +1,745 @@
+================================================================================
+ACTOR CARRYOVER
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / CONTINUITY ORCHESTRATION
+ROLE : TEMPORAL ACTOR CARRYOVER
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Actor Carryover adalah mekanisme untuk menjaga kesinambungan temporal
+keberadaan dan keterlibatan Actor dari satu periode Universe ke periode
+berikutnya.
+
+Actor Carryover memastikan bahwa Actor yang telah ada di dalam Universe tidak
+secara otomatis:
+
+- hilang ketika periode berganti;
+- muncul kembali sebagai Actor baru;
+- kehilangan identity;
+- berubah domain hanya karena perpindahan waktu;
+- dibuat ulang untuk memenuhi kebutuhan cerita.
+
+Actor Carryover hanya mengatur perjalanan temporal Actor.
+
+Character System tetap menjadi owner terhadap Character data dan aturan
+Character.
+
+
+================================================================================
+02. ACTOR VS CHARACTER
+================================================================================
+
+Dalam konteks Daily Universe:
+
+ACTOR
+→ entitas yang dapat berpartisipasi dalam kejadian Universe.
+
+CHARACTER
+→ domain yang memiliki identitas, atribut, behavior, knowledge, state, role,
+  style, dan aturan Character.
+
+Actor Carryover tidak membuat definisi Character baru.
+
+Jika Actor merupakan Character, seluruh aturan internal Character tetap
+mengikuti Character System.
+
+Actor Carryover hanya mengatur:
+
+- keberadaan temporal;
+- availability;
+- participation context;
+- appearance continuity;
+- temporal transition.
+
+
+================================================================================
+03. OWNERSHIP
+================================================================================
+
+Daily Universe bukan owner Character.
+
+Character System tetap menentukan:
+
+- identity;
+- personality;
+- behavior;
+- knowledge;
+- state;
+- role;
+- style;
+- character continuity.
+
+Daily Universe hanya mengatur kapan Actor tersebut:
+
+- tersedia;
+- tidak tersedia;
+- berpartisipasi;
+- tidak berpartisipasi;
+- mengalami perpindahan temporal;
+- menjadi subject dari event;
+- menjadi participant dari event.
+
+
+================================================================================
+04. ACTOR IDENTITY
+================================================================================
+
+Actor identity harus dipertahankan lintas periode.
+
+Pergantian periode tidak boleh membuat identity baru hanya karena:
+
+- Actor tidak muncul pada Daily Story;
+- Actor tidak aktif dalam suatu event;
+- Actor berada di lokasi lain;
+- Actor tidak menjadi focus;
+- cerita berpindah ke Actor lain.
+
+Identity change hanya dapat terjadi melalui mekanisme yang sah dari domain
+owner.
+
+
+================================================================================
+05. ACTOR REFERENCE
+================================================================================
+
+Daily Universe harus menggunakan reference terhadap Actor yang berasal dari
+source domain.
+
+Reference harus dapat mengidentifikasi:
+
+- Actor;
+- source domain;
+- temporal context;
+- availability;
+- participation;
+- relevant transition.
+
+
+================================================================================
+06. ACTOR AVAILABILITY
+================================================================================
+
+Availability menunjukkan apakah Actor dapat berpartisipasi dalam suatu event
+pada posisi temporal tertentu.
+
+Availability harus dibedakan dari:
+
+- existence;
+- presence in story;
+- story focus;
+- character importance.
+
+Actor dapat tetap ada di Universe tanpa tersedia untuk suatu event tertentu.
+
+
+================================================================================
+07. ACTOR EXISTENCE
+================================================================================
+
+Keberadaan Actor mengikuti data dan aturan Universe yang sah.
+
+Daily Universe tidak boleh:
+
+- menghapus Actor karena tidak muncul;
+- membuat Actor karena cerita membutuhkan participant;
+- menganggap Actor baru muncul ketika pertama kali disebut Narrator.
+
+Actor existence dan story appearance adalah dua hal yang berbeda.
+
+
+================================================================================
+08. ACTOR PARTICIPATION
+================================================================================
+
+Actor participation menunjukkan keterlibatan Actor dalam event atau process
+tertentu.
+
+Participation dapat:
+
+- dimulai;
+- berlanjut;
+- berakhir;
+- ditunda;
+- dibatalkan;
+- tidak terjadi.
+
+Participation tidak mengubah Character identity.
+
+
+================================================================================
+09. PARTICIPATION IDENTITY
+================================================================================
+
+Participation harus dapat dibedakan dari Actor identity.
+
+Satu Actor dapat mempunyai banyak participation terhadap event atau process
+yang berbeda.
+
+Berakhirnya satu participation tidak berarti Actor berhenti ada di Universe.
+
+
+================================================================================
+10. ACTOR CARRY-FORWARD
+================================================================================
+
+Actor dapat dibawa ke periode berikutnya apabila:
+
+- Actor masih berada dalam Universe;
+- Actor tetap valid menurut Character System;
+- terdapat relevance temporal;
+- terdapat ongoing participation;
+- terdapat process atau consequence yang melibatkan Actor;
+- atau Actor tetap menjadi bagian dari continuity Universe.
+
+Carry-forward tidak berarti Actor harus muncul dalam Daily Story berikutnya.
+
+
+================================================================================
+11. NO STORY-BASED DISAPPEARANCE
+================================================================================
+
+Actor tidak boleh dianggap hilang hanya karena:
+
+- tidak muncul dalam Daily Story;
+- tidak disebut Narrator;
+- tidak menjadi POV;
+- tidak menjadi focus;
+- tidak berinteraksi pada periode tersebut.
+
+Story absence bukan Actor absence.
+
+
+================================================================================
+12. NO STORY-BASED CREATION
+================================================================================
+
+Narrative need bukan dasar untuk membuat Actor baru.
+
+Apabila event membutuhkan Actor tetapi Character Data tidak menyediakan Actor
+yang valid, proses tidak boleh mengarang Actor tersebut untuk memenuhi event.
+
+
+================================================================================
+13. TEMPORAL AVAILABILITY
+================================================================================
+
+Availability Actor dapat berubah berdasarkan:
+
+- temporal position;
+- location;
+- state;
+- process;
+- domain condition;
+- event;
+- other validated dependency.
+
+Daily Universe mengatur hubungan temporalnya.
+
+Isi domain condition tetap mengikuti domain owner.
+
+
+================================================================================
+14. AVAILABILITY TRANSITION
+================================================================================
+
+Availability dapat berubah menjadi:
+
+- AVAILABLE;
+- UNAVAILABLE;
+- LIMITED;
+- PENDING;
+- UNKNOWN.
+
+Perubahan harus memiliki dasar temporal dan causal apabila diperlukan.
+
+
+================================================================================
+15. AVAILABLE
+================================================================================
+
+AVAILABLE berarti Actor dapat secara temporal dipertimbangkan untuk event atau
+process tertentu.
+
+Available tidak berarti Actor wajib berpartisipasi.
+
+
+================================================================================
+16. UNAVAILABLE
+================================================================================
+
+UNAVAILABLE berarti Actor tidak dapat berpartisipasi dalam context tertentu.
+
+Unavailability harus mempunyai dasar yang dapat ditelusuri jika basis tersebut
+diperlukan oleh continuity.
+
+Unavailability tidak selalu berarti Actor tidak ada di Universe.
+
+
+================================================================================
+17. LIMITED
+================================================================================
+
+LIMITED berarti Actor hanya tersedia pada kondisi, waktu, atau context tertentu.
+
+Constraint tetap mengikuti domain yang menjadi sumbernya.
+
+
+================================================================================
+18. PENDING AVAILABILITY
+================================================================================
+
+PENDING berarti availability belum dapat dipastikan.
+
+Pending tidak boleh diperlakukan sebagai Available hanya untuk menjalankan
+event.
+
+
+================================================================================
+19. UNKNOWN AVAILABILITY
+================================================================================
+
+UNKNOWN berarti system tidak mempunyai informasi cukup untuk menentukan
+availability.
+
+Unknown tidak boleh dipaksakan menjadi Available atau Unavailable.
+
+
+================================================================================
+20. ACTOR LOCATION RELATION
+================================================================================
+
+Location dapat memengaruhi availability Actor.
+
+Namun Location tetap mengikuti domain owner yang sah.
+
+Daily Universe hanya menggunakan Location sebagai temporal dependency untuk
+menentukan apakah participation dapat berjalan.
+
+
+================================================================================
+21. ACTOR STATE RELATION
+================================================================================
+
+State dapat memengaruhi availability atau participation.
+
+State tetap dimiliki domain owner.
+
+Daily Universe tidak membuat State baru hanya untuk menjelaskan mengapa Actor
+tersedia atau tidak tersedia.
+
+
+================================================================================
+22. ACTOR PROCESS RELATION
+================================================================================
+
+Actor dapat terlibat dalam Process yang berlangsung lintas periode.
+
+Process identity tetap dipertahankan.
+
+Berakhirnya satu periode tidak mengakhiri Process hanya karena Actor tidak
+dibahas dalam Daily Story.
+
+
+================================================================================
+23. ACTOR EVENT RELATION
+================================================================================
+
+Jika Actor berpartisipasi dalam Actual Event:
+
+- event identity harus dapat ditelusuri;
+- Actor reference harus valid;
+- temporal position harus sesuai;
+- availability harus memungkinkan;
+- domain impact harus melalui owner terkait.
+
+Event participation tidak otomatis mengubah Character data.
+
+
+================================================================================
+24. ACTOR CONSEQUENCE
+================================================================================
+
+Event dapat menghasilkan consequence yang melibatkan Actor.
+
+Daily Universe mengatur:
+
+- source event;
+- temporal position;
+- consequence timing;
+- carryover.
+
+Perubahan Character akibat consequence diproses melalui Character System.
+
+
+================================================================================
+25. ACTOR TEMPORAL TRANSITION
+================================================================================
+
+Actor dapat berpindah dari:
+
+AVAILABLE
+→ UNAVAILABLE
+
+UNAVAILABLE
+→ AVAILABLE
+
+PENDING
+→ AVAILABLE
+
+PENDING
+→ UNAVAILABLE
+
+sesuai hasil domain dan temporal validation.
+
+Transition history harus dapat ditelusuri apabila relevan.
+
+
+================================================================================
+26. ACTOR CONTINUITY
+================================================================================
+
+Actor Continuity berarti:
+
+IDENTITY TETAP TERHUBUNG
++
+TEMPORAL EXISTENCE TETAP TERLACAK
++
+PARTICIPATION TETAP DAPAT DITELUSURI
++
+PERUBAHAN TERJADI MELALUI EVENT ATAU DOMAIN TRANSITION YANG SAH.
+
+Actor Continuity bukan berarti Actor harus selalu tampil.
+
+
+================================================================================
+27. MULTIPLE APPEARANCES
+================================================================================
+
+Satu Actor dapat muncul dalam beberapa event atau Daily Story tanpa membuat
+Actor baru.
+
+Reference harus tetap mengarah kepada identity yang sama apabila memang Actor
+yang sama.
+
+
+================================================================================
+28. ABSENCE PERIOD
+================================================================================
+
+Actor dapat tidak berpartisipasi selama satu atau lebih periode.
+
+Absence period harus dibedakan dari:
+
+- disappearance;
+- deletion;
+- termination;
+- non-existence.
+
+Tidak adanya participation bukan bukti bahwa Actor tidak ada.
+
+
+================================================================================
+29. RETURN
+================================================================================
+
+Actor yang kembali berpartisipasi setelah periode absence tetap menggunakan
+identity yang sama apabila tidak ada perubahan identitas yang sah.
+
+Return tidak menghasilkan Actor baru.
+
+
+================================================================================
+30. ACTOR REPLACEMENT
+================================================================================
+
+Actor replacement hanya dapat terjadi jika mekanisme Universe dan domain owner
+mengizinkannya.
+
+Replacement tidak boleh dilakukan hanya karena Actor tidak tersedia.
+
+Identity Actor lama harus tetap dapat dilacak dalam history.
+
+
+================================================================================
+31. ACTOR TERMINATION
+================================================================================
+
+Jika Actor benar-benar berhenti menjadi bagian dari Universe, termination harus
+memiliki dasar yang sah.
+
+Termination tidak boleh disimpulkan hanya dari:
+
+- tidak muncul dalam cerita;
+- tidak aktif;
+- tidak menjadi focus;
+- tidak terlihat selama beberapa periode.
+
+
+================================================================================
+32. DOMAIN HANDOFF
+================================================================================
+
+Jika perubahan Actor membutuhkan perubahan pada Character domain:
+
+DAILY UNIVERSE
+→ menentukan temporal transition
+→ mengirim handoff
+→ CHARACTER SYSTEM memproses
+→ CHARACTER SYSTEM mengembalikan result
+→ DAILY UNIVERSE melanjutkan temporal flow.
+
+Daily Universe tidak boleh mengubah Character Data secara langsung apabila
+Character System mempunyai mekanisme owner.
+
+
+================================================================================
+33. CHARACTER IDENTITY PROTECTION
+================================================================================
+
+Actor Carryover tidak boleh mengubah:
+
+- CHARACTER_ID;
+- identity;
+- personal profile;
+- personality;
+- behavior;
+- Knowledge;
+- State;
+- role;
+
+hanya karena periode berubah.
+
+Perubahan tersebut mengikuti Character System.
+
+
+================================================================================
+34. KNOWLEDGE BOUNDARY
+================================================================================
+
+Actor Carryover tidak memberikan Knowledge baru.
+
+Apabila Actor mengetahui sesuatu akibat event pada periode tersebut, acquisition
+harus diproses melalui Character System.
+
+Temporal placement dapat disediakan oleh Daily Universe.
+
+
+================================================================================
+35. RELATIONSHIP BOUNDARY
+================================================================================
+
+Actor Carryover tidak membuat atau mengubah Relationship.
+
+Jika Actor participation menghasilkan perubahan Relationship, perubahan
+diteruskan kepada Relationship System.
+
+
+================================================================================
+36. OBJECT BOUNDARY
+================================================================================
+
+Actor Carryover tidak mengubah Object ownership, possession, use, atau status
+lain.
+
+Jika event melibatkan Object, perubahan diteruskan kepada Object System.
+
+
+================================================================================
+37. DAILY STORY INDEPENDENCE
+================================================================================
+
+Daily Story tidak menentukan keberadaan Actor.
+
+Daily Story hanya dapat memilih Actor tertentu sebagai focus atau participant
+berdasarkan context yang sudah tersedia.
+
+
+================================================================================
+38. NARRATIVE INDEPENDENCE
+================================================================================
+
+Narrative need tidak boleh menentukan:
+
+- Actor creation;
+- Actor deletion;
+- Actor replacement;
+- Actor disappearance;
+- Actor return.
+
+Narrator hanya menyajikan Actor berdasarkan Universe Data yang sah.
+
+
+================================================================================
+39. CROSS-PERIOD CARRYOVER
+================================================================================
+
+Pada akhir periode:
+
+ACTOR CONTEXT
+↓
+AVAILABILITY CHECK
+↓
+PARTICIPATION CHECK
+↓
+ONGOING PROCESS CHECK
+↓
+DOMAIN IMPACT CHECK
+↓
+NEXT PERIOD ACTOR CONTEXT
+
+Hanya informasi yang masih relevan yang diteruskan.
+
+
+================================================================================
+40. DUPLICATE PREVENTION
+================================================================================
+
+Daily Universe harus mencegah:
+
+- duplicate Actor reference;
+- duplicate participation;
+- duplicate return;
+- duplicate reactivation.
+
+Identity harus digunakan sebagai primary reference.
+
+
+================================================================================
+41. CONFLICT DETECTION
+================================================================================
+
+Actor Carryover harus mendeteksi:
+
+- unknown identity;
+- duplicate identity;
+- impossible availability;
+- conflicting location;
+- conflicting participation;
+- invalid temporal transition;
+- domain ownership conflict;
+- Character System conflict.
+
+
+================================================================================
+42. UNKNOWN VS UNAVAILABLE
+================================================================================
+
+UNKNOWN berarti availability belum diketahui.
+
+UNAVAILABLE berarti availability telah diketahui tidak tersedia.
+
+Keduanya tidak boleh dipertukarkan.
+
+
+================================================================================
+43. HISTORY
+================================================================================
+
+Actor history harus tetap dapat membedakan:
+
+- existence;
+- participation;
+- absence;
+- availability;
+- return;
+- termination;
+- major temporal transition.
+
+History Character tetap berada pada Character System.
+
+Daily Universe hanya menyimpan atau membawa reference yang dibutuhkan untuk
+temporal orchestration.
+
+
+================================================================================
+44. VALIDATION
+================================================================================
+
+Actor Carryover harus divalidasi terhadap:
+
+- Character identity;
+- Universe Time;
+- previous period;
+- current period;
+- availability;
+- participation;
+- location context;
+- process;
+- consequence;
+- domain handoff;
+- duplicate prevention.
+
+
+================================================================================
+45. VALIDATION RESULT
+================================================================================
+
+VALID
+→ Actor continuity dapat diteruskan.
+
+REVIEW_REQUIRED
+→ terdapat uncertainty yang tidak menghalangi proses.
+
+REVISION_REQUIRED
+→ actor transition atau reference membutuhkan koreksi.
+
+BLOCKED
+→ Actor continuity tidak dapat diteruskan secara sah.
+
+
+================================================================================
+46. FAILURE PRINCIPLE
+================================================================================
+
+Jika Actor Carryover gagal, system tidak boleh:
+
+- membuat Actor baru;
+- mengganti identity;
+- menghapus Actor;
+- memberi Knowledge;
+- membuat Relationship;
+- membuat Object;
+- memaksa availability;
+- mengubah Character Data;
+- menghapus history.
+
+Sistem harus mempertahankan keadaan terakhir yang sah.
+
+
+================================================================================
+47. FINAL PRINCIPLE
+================================================================================
+
+ACTOR CARRYOVER BUKAN:
+
+MEMBUAT ULANG KARAKTER SETIAP HARI.
+
+ACTOR CARRYOVER ADALAH:
+
+MEMASTIKAN ACTOR YANG SUDAH ADA
+TETAP TERHUBUNG DENGAN PERJALANAN UNIVERSE
+DARI SATU PERIODE KE PERIODE BERIKUTNYA.
+
+CHARACTER SYSTEM MENENTUKAN:
+
+SIAPA ACTOR TERSEBUT
+DAN APA ATURAN YANG BERLAKU PADANYA.
+
+DAILY UNIVERSE MENENTUKAN:
+
+KAPAN ACTOR TERSEDIA,
+KAPAN ACTOR TERLIBAT,
+DAN BAGAIMANA KETERLIBATANNYA BERLANJUT MELALUI WAKTU.
+
+
+================================================================================
+END OF ACTOR CARRYOVER
+================================================================================
