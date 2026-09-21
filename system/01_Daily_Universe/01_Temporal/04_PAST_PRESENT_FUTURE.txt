@@ -1,0 +1,526 @@
+================================================================================
+PAST / PRESENT / FUTURE
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / TEMPORAL DOMAIN
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Past, Present, dan Future adalah klasifikasi posisi temporal relatif terhadap
+Current Universe Time.
+
+Ketiganya menjawab:
+
+“Di mana posisi suatu informasi, kejadian, kondisi, atau proses terhadap waktu
+Universe yang sedang berlaku?”
+
+Past, Present, dan Future bukan klasifikasi kebenaran.
+
+Past, Present, dan Future bukan Temporal Status.
+
+Past, Present, dan Future tidak menentukan apakah sesuatu:
+
+- actual;
+- imagined;
+- hypothetical;
+- remembered;
+- reported;
+- planned;
+- predicted;
+- possible;
+- unknown.
+
+Penentuan status tersebut mengikuti Temporal Status System.
+
+
+================================================================================
+02. REFERENCE POINT
+================================================================================
+
+Past, Present, dan Future harus selalu ditentukan terhadap Reference Time.
+
+Reference Time utama adalah Current Universe Time.
+
+Tanpa Reference Time yang jelas, sistem tidak boleh menentukan bahwa sesuatu
+berada pada Past, Present, atau Future secara relatif.
+
+
+================================================================================
+03. PAST
+================================================================================
+
+PAST adalah posisi temporal yang berada sebelum Current Universe Time.
+
+Sesuatu termasuk Past apabila posisi temporalnya telah dilewati oleh Universe.
+
+Past merupakan posisi waktu, bukan bukti bahwa sesuatu benar-benar terjadi.
+
+Past dapat berisi informasi dengan status yang berbeda.
+
+Past juga dapat mempunyai:
+
+- waktu pasti;
+- waktu perkiraan;
+- rentang waktu;
+- urutan relatif;
+- waktu yang belum diketahui secara lengkap.
+
+
+================================================================================
+04. PRESENT
+================================================================================
+
+PRESENT adalah posisi temporal yang sedang berimpit dengan Current Universe
+Time menurut resolusi waktu yang digunakan oleh Universe.
+
+Present menunjukkan bahwa sesuatu berada pada waktu yang sedang aktif.
+
+Present bukan sinonim dengan Actual.
+
+Informasi pada Present dapat tetap mempunyai status temporal lain sesuai
+aturan Temporal Status.
+
+
+================================================================================
+05. FUTURE
+================================================================================
+
+FUTURE adalah posisi temporal yang berada setelah Current Universe Time.
+
+Future menunjukkan posisi waktu yang belum dicapai oleh aliran waktu Universe
+dari sudut pandang Current Universe Time.
+
+Future bukan sinonim dengan:
+
+- Plan;
+- Prediction;
+- Possibility;
+- Certainty.
+
+Status Future tetap mengikuti Temporal Status System.
+
+
+================================================================================
+06. RELATIVE NATURE
+================================================================================
+
+Past, Present, dan Future bersifat relatif terhadap Current Universe Time.
+
+Ketika Current Universe Time berubah, klasifikasi relatif dapat berubah.
+
+Sebuah posisi yang sebelumnya Future dapat kemudian menjadi Present.
+
+Setelah Universe melewati posisi tersebut, posisi tersebut menjadi Past.
+
+Perubahan klasifikasi relatif tidak mengubah identitas kejadian atau informasi
+yang berada pada posisi tersebut.
+
+
+================================================================================
+07. TEMPORAL TRANSITION
+================================================================================
+
+Perubahan relatif mengikuti pola umum:
+
+FUTURE
+→ PRESENT
+→ PAST
+
+Perpindahan tersebut adalah perpindahan posisi relatif terhadap Current
+Universe Time.
+
+Perpindahan posisi tidak secara otomatis mengubah Temporal Status.
+
+Perubahan status harus mengikuti mekanisme Temporal Status.
+
+
+================================================================================
+08. PAST DOES NOT MEAN FACT
+================================================================================
+
+Sesuatu yang berada pada Past tidak otomatis menjadi Historical Actual.
+
+Past dapat berisi:
+
+- Actual;
+- Memory;
+- Report;
+- Imagined;
+- Hypothetical;
+- Unknown;
+
+sesuai status yang sah.
+
+Karena itu:
+
+PAST
+≠
+ACTUAL HISTORY
+
+
+================================================================================
+09. PRESENT DOES NOT MEAN ACTUAL
+================================================================================
+
+Sesuatu yang berada pada Present tidak otomatis merupakan Actual Event.
+
+Present hanya menentukan posisi waktu relatif.
+
+Status aktual atau non-aktual tetap mengikuti Temporal Status.
+
+
+================================================================================
+10. FUTURE DOES NOT MEAN CERTAINTY
+================================================================================
+
+Sesuatu yang berada pada Future tidak otomatis akan terjadi.
+
+Future dapat mempunyai status:
+
+- Plan;
+- Prediction;
+- Possibility;
+- Hypothetical;
+- Imagined;
+- Unknown;
+
+atau status lain yang sah menurut Temporal Status System.
+
+Future harus tetap diperlakukan sesuai statusnya.
+
+
+================================================================================
+11. TEMPORAL STATUS SEPARATION
+================================================================================
+
+Past, Present, dan Future harus selalu dipisahkan dari Temporal Status.
+
+Struktur konsep:
+
+TEMPORAL POSITION
+→ Past / Present / Future
+
+TEMPORAL STATUS
+→ Actual / Memory / Report / Imagination / Hypothesis / Plan /
+  Prediction / Possibility / Unknown
+
+Satu tidak boleh digunakan sebagai pengganti yang lain.
+
+
+================================================================================
+12. FUTURE ACTUALIZATION
+================================================================================
+
+Ketika Current Universe Time mencapai suatu Future position, sistem harus
+mengevaluasi status informasi atau kejadian yang berada pada posisi tersebut.
+
+Apabila event benar-benar terjadi, event tersebut dapat memperoleh Actual
+status melalui mekanisme yang sah.
+
+Jika event tidak terjadi, status sebelumnya tidak boleh diperlakukan sebagai
+Actual hanya karena waktunya telah tercapai.
+
+Future yang menjadi Present tidak otomatis menjadi Actual.
+
+
+================================================================================
+13. PAST HISTORICAL POSITION
+================================================================================
+
+Setelah Current Universe Time melewati suatu posisi, posisi tersebut menjadi
+Past.
+
+Perubahan menjadi Past tidak mengubah isi kejadian.
+
+Perubahan menjadi Past tidak menghapus status sebelumnya.
+
+History harus tetap mempertahankan perbedaan antara:
+
+- kejadian aktual;
+- ingatan;
+- laporan;
+- imajinasi;
+- hipotesis;
+- informasi yang belum diketahui.
+
+
+================================================================================
+14. PRESENT BOUNDARY
+================================================================================
+
+Present mempunyai batas sesuai tingkat resolusi waktu yang berlaku.
+
+System tidak boleh menciptakan tingkat ketelitian yang lebih tinggi daripada
+informasi yang tersedia.
+
+Jika Universe hanya memiliki resolusi tanggal, Present ditentukan pada level
+tanggal.
+
+Jika Universe memiliki resolusi waktu yang lebih rinci, Present dapat
+ditentukan pada level tersebut sesuai aturan Universe Time.
+
+
+================================================================================
+15. TEMPORAL INTERVAL
+================================================================================
+
+Sesuatu dapat mencakup lebih dari satu posisi temporal.
+
+Suatu proses atau kondisi dapat:
+
+- dimulai pada Past;
+- berlanjut melalui Present;
+- memiliki kelanjutan ke Future.
+
+Dalam kasus tersebut, sistem tidak boleh memaksa seluruh proses menjadi hanya
+Past, Present, atau Future.
+
+Posisi temporal harus dapat direpresentasikan sebagai rentang atau bagian
+temporal yang sesuai.
+
+
+================================================================================
+16. OVERLAPPING PERIOD
+================================================================================
+
+Dua atau lebih proses dapat mempunyai periode yang saling overlap.
+
+Overlap temporal tidak otomatis merupakan konflik.
+
+Conflict hanya terjadi apabila terdapat aturan temporal atau causal yang
+membuat dua kondisi tersebut tidak dapat berlangsung bersama.
+
+Daily Universe harus membedakan overlap yang sah dari contradiction.
+
+
+================================================================================
+17. BEFORE AND AFTER
+================================================================================
+
+Past dan Future dapat digunakan untuk menentukan hubungan:
+
+BEFORE
+AFTER
+
+Namun hubungan tersebut harus tetap mengacu pada posisi Universe Time.
+
+Urutan penyajian cerita tidak boleh mengubah hubungan temporal tersebut.
+
+
+================================================================================
+18. PRESENT AS REFERENCE, NOT RESET
+================================================================================
+
+Current Universe Time adalah reference point.
+
+Pergantian Current Universe Time tidak menghapus Past.
+
+Pergantian Current Universe Time tidak membuat seluruh Future menjadi Actual.
+
+Pergantian Current Universe Time tidak mereset kondisi Universe.
+
+
+================================================================================
+19. NARRATIVE APPLICATION
+================================================================================
+
+Narrator dapat menyajikan Past, Present, dan Future dalam urutan apa pun yang
+diperbolehkan oleh Narrative Time.
+
+Perubahan penyajian tidak mengubah posisi temporal.
+
+Flashback tetap Past.
+
+Flash-forward tetap Future.
+
+Present tetap mengacu pada posisi Universe yang menjadi reference point pada
+bagian cerita tersebut.
+
+Detail mekanisme penyajian berada pada Narrator System.
+
+
+================================================================================
+20. CHARACTER PERCEPTION
+================================================================================
+
+Character dapat memikirkan, mengingat, membayangkan, memperkirakan, atau
+membicarakan Past, Present, dan Future.
+
+Persepsi Character tidak mengubah temporal position Universe.
+
+Knowledge Character tetap mengikuti Character System.
+
+Pikiran Character mengenai Future tidak otomatis mengubah Future menjadi
+Actual.
+
+
+================================================================================
+21. TEMPORAL REFERENCE CHAIN
+================================================================================
+
+Setiap penentuan Past, Present, atau Future harus dapat ditelusuri kepada:
+
+REFERENCE TIME
+↓
+CURRENT UNIVERSE TIME
+↓
+TARGET TEMPORAL POSITION
+↓
+RELATIVE CLASSIFICATION
+
+Tanpa reference yang sah, klasifikasi relatif tidak boleh dipaksakan.
+
+
+================================================================================
+22. UNKNOWN TEMPORAL POSITION
+================================================================================
+
+Jika posisi waktu suatu informasi tidak dapat ditentukan relatif terhadap
+Current Universe Time, sistem harus mempertahankan posisi tersebut sebagai
+Unknown.
+
+Unknown tidak boleh dipaksakan menjadi Past, Present, atau Future.
+
+
+================================================================================
+23. TEMPORAL AMBIGUITY
+================================================================================
+
+Jika sebuah informasi memiliki lebih dari satu kemungkinan posisi temporal dan
+belum dapat dipastikan, ambiguity harus dipertahankan.
+
+Sistem tidak boleh memilih Past, Present, atau Future hanya untuk memperoleh
+alur yang lebih mudah.
+
+
+================================================================================
+24. CROSS-DAY CONTINUITY
+================================================================================
+
+Pergantian Universe Date dapat menyebabkan:
+
+Future → Present
+
+dan kemudian:
+
+Present → Past
+
+Namun perubahan klasifikasi tersebut harus dipandang sebagai konsekuensi dari
+pergerakan Current Universe Time.
+
+Data domain tidak boleh direset hanya karena klasifikasi relatif berubah.
+
+
+================================================================================
+25. DOMAIN INDEPENDENCE
+================================================================================
+
+Character, Relationship, Object, Knowledge, dan domain lain mempertahankan
+aturan domain masing-masing.
+
+Past, Present, dan Future hanya menyediakan konteks temporal.
+
+Daily Universe tidak boleh menggunakan klasifikasi temporal sebagai alasan untuk
+mengambil alih aturan domain lain.
+
+
+================================================================================
+26. VALIDATION
+================================================================================
+
+Penentuan Past, Present, atau Future harus divalidasi terhadap:
+
+- Current Universe Time;
+- target temporal position;
+- Universe Date;
+- temporal resolution;
+- temporal interval;
+- temporal status;
+- continuity;
+- causal order;
+- domain constraints.
+
+Validasi harus memastikan bahwa klasifikasi relatif tetap benar terhadap
+reference time.
+
+
+================================================================================
+27. FAILURE PRINCIPLE
+================================================================================
+
+Jika reference time tidak tersedia, sistem tidak boleh menentukan Past,
+Present, atau Future.
+
+Jika target temporal position tidak diketahui secara memadai, sistem harus
+mempertahankan Unknown atau menghentikan proses yang memerlukan kepastian.
+
+Jika terdapat conflict terhadap Universe Time, conflict harus diarahkan ke
+Temporal Consistency.
+
+
+================================================================================
+28. RELATION TO OTHER TEMPORAL FILES
+================================================================================
+
+File ini hanya mendefinisikan:
+
+- Past;
+- Present;
+- Future;
+- hubungan ketiganya dengan Current Universe Time;
+- perubahan relatif ketika waktu Universe bergerak.
+
+File ini tidak mendefinisikan secara rinci:
+
+- Universe Time;
+- Narrative Time;
+- Temporal Status;
+- Memory;
+- Imagination;
+- Hypothesis;
+- Plan;
+- Prediction;
+- Possibility;
+- Temporal Consistency.
+
+Aturan tersebut berada pada file temporal masing-masing.
+
+
+================================================================================
+29. FINAL PRINCIPLE
+================================================================================
+
+PAST
+=
+SEBELUM CURRENT UNIVERSE TIME
+
+PRESENT
+=
+BERIMPIT DENGAN CURRENT UNIVERSE TIME
+
+FUTURE
+=
+SETELAH CURRENT UNIVERSE TIME
+
+Ketiganya hanya menjawab posisi temporal.
+
+Ketiganya tidak menjawab apakah sesuatu benar, salah, direncanakan,
+dibayangkan, diprediksi, mungkin, atau aktual.
+
+POSISI WAKTU
+dan
+STATUS INFORMASI
+
+harus selalu tetap terpisah.
+
+
+================================================================================
+END OF PAST / PRESENT / FUTURE
+================================================================================
