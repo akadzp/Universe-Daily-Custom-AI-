@@ -1,0 +1,932 @@
+================================================================================
+OBJECT CARRYOVER
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / CONTINUITY ORCHESTRATION
+ROLE : TEMPORAL OBJECT CARRYOVER
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Object Carryover adalah mekanisme untuk menjaga kesinambungan temporal Object
+dari satu periode Universe ke periode berikutnya.
+
+Mechanism ini memastikan bahwa Object yang telah valid:
+
+- tetap dapat dilacak;
+- tidak dibuat ulang hanya karena periode berganti;
+- tetap memiliki identity yang sama;
+- dapat mengalami perubahan melalui event yang sah;
+- dapat berpindah kondisi, lokasi, ownership, possession, usage, atau status
+  lain sesuai aturan Object System;
+- dapat berakhir tanpa menghilangkan history;
+- tetap dapat diproses pada periode berikutnya apabila masih relevan.
+
+Object Carryover tidak mendefinisikan Object.
+
+Object System tetap menjadi owner penuh atas domain Object.
+
+
+================================================================================
+02. OWNERSHIP
+================================================================================
+
+Object System adalah owner terhadap:
+
+- Object identity;
+- Object type;
+- Object category;
+- Object attributes;
+- Object status;
+- ownership;
+- possession;
+- holder;
+- usage;
+- wearing;
+- location;
+- Object relationships;
+- Object history;
+- Object change rules.
+
+Daily Universe hanya mengatur:
+
+- temporal position;
+- temporal continuity;
+- timing perubahan;
+- carryover;
+- transition orchestration;
+- cross-period continuity;
+- temporal handoff.
+
+
+================================================================================
+03. CORE PRINCIPLE
+================================================================================
+
+Object pada periode baru harus mempunyai hubungan temporal yang sah dengan
+Object pada periode sebelumnya.
+
+Hubungan tersebut dapat berupa:
+
+- CONTINUE;
+- CHANGE;
+- MOVE;
+- TRANSFER;
+- SUSPEND;
+- RESUME;
+- END;
+- UNRESOLVED;
+- UNKNOWN.
+
+Continuity tidak berarti kondisi Object harus tetap sama.
+
+Perubahan Object tetap merupakan continuity selama perubahan tersebut mempunyai
+dasar yang sah dan diproses melalui Object System.
+
+
+================================================================================
+04. OBJECT REFERENCE
+================================================================================
+
+Daily Universe menggunakan reference terhadap Object yang dimiliki Object
+System.
+
+Reference harus dapat mengidentifikasi:
+
+- Object ID;
+- source domain;
+- temporal position;
+- current status reference;
+- relevant actor reference apabila diperlukan;
+- source event;
+- transition status.
+
+
+================================================================================
+05. NO DUPLICATE OBJECT
+================================================================================
+
+Pergantian periode tidak boleh menghasilkan Object baru apabila yang sebenarnya
+terjadi adalah kelanjutan Object yang sama.
+
+Object identity harus dipertahankan.
+
+Daily Universe tidak boleh membuat Object alternatif untuk menggantikan Object
+yang telah ada.
+
+
+================================================================================
+06. OBJECT CONTINUATION
+================================================================================
+
+Object dapat dibawa ke periode berikutnya apabila masih merupakan bagian yang
+sah dari Universe.
+
+Continuation berarti:
+
+- Object identity tetap;
+- domain ownership tetap;
+- temporal existence berlanjut;
+- current condition tetap dapat ditelusuri.
+
+Continuation bukan pembuatan Object baru.
+
+
+================================================================================
+07. OBJECT CHANGE
+================================================================================
+
+Object dapat berubah apabila terdapat dasar yang sah.
+
+Pola umum:
+
+PREVIOUS OBJECT CONDITION
+↓
+EVENT / CONDITION
+↓
+TEMPORAL HANDOFF
+↓
+OBJECT SYSTEM
+↓
+VALIDATED NEW OBJECT CONDITION
+↓
+CURRENT TEMPORAL CONTEXT
+
+Daily Universe mengatur hubungan temporal.
+
+Object System menentukan isi dan validitas perubahan Object.
+
+
+================================================================================
+08. CHANGE SOURCE
+================================================================================
+
+Perubahan Object harus dapat ditelusuri kepada source.
+
+Source dapat berupa:
+
+- Actual Event;
+- consequence;
+- validated Object System mechanism;
+- ownership transition;
+- possession transition;
+- location transition;
+- usage transition;
+- temporal condition yang diizinkan oleh Object System.
+
+Narrative need bukan source yang sah.
+
+
+================================================================================
+09. EFFECTIVE TIME
+================================================================================
+
+Setiap Object change yang mempunyai temporal effect harus mempunyai Effective
+Time apabila waktu tersebut diketahui atau diperlukan.
+
+Effective Time menunjukkan kapan perubahan mulai berlaku di Universe.
+
+Effective Time tidak otomatis sama dengan:
+
+- request time;
+- processing time;
+- story writing time;
+- file creation time.
+
+
+================================================================================
+10. REQUEST VS RESULT
+================================================================================
+
+Permintaan perubahan Object bukan bukti bahwa Object telah berubah.
+
+Object Carryover harus membedakan:
+
+REQUESTED CHANGE
+dan
+APPLIED CHANGE.
+
+Perubahan dianggap berlaku hanya setelah Object System memberikan result yang
+sah.
+
+
+================================================================================
+11. OBJECT CONTINUATION STATUS
+================================================================================
+
+Object yang diperiksa pada period boundary dapat memperoleh status:
+
+CARRY_FORWARD
+→ Object tetap berlaku.
+
+CHANGE_REQUIRED
+→ terdapat perubahan yang harus diproses.
+
+MOVED
+→ Object telah mengalami perubahan lokasi atau temporal placement yang sah.
+
+TRANSFERRED
+→ ownership atau holder telah berubah sesuai Object System.
+
+ENDED
+→ Object tidak lagi aktif dalam Universe menurut aturan Object System.
+
+SUSPENDED
+→ Object sementara berada pada status non-active sesuai aturan domain.
+
+UNRESOLVED
+→ kondisi belum dapat ditentukan.
+
+UNKNOWN
+→ informasi tidak cukup.
+
+
+================================================================================
+12. OBJECT EXISTENCE
+================================================================================
+
+Object existence tidak ditentukan oleh kemunculannya dalam Daily Story.
+
+Object tetap dapat ada di Universe walaupun:
+
+- tidak menjadi focus;
+- tidak disebut Narrator;
+- tidak digunakan dalam cerita;
+- tidak muncul pada periode tertentu.
+
+Story absence bukan Object absence.
+
+
+================================================================================
+13. OBJECT AVAILABILITY
+================================================================================
+
+Availability Object dapat dipengaruhi oleh:
+
+- location;
+- holder;
+- possession;
+- ownership;
+- status;
+- usage;
+- event;
+- process;
+- temporal condition.
+
+Daily Universe hanya mengatur temporal relationship dari faktor tersebut.
+
+Object System menentukan arti dan aturan internal masing-masing faktor.
+
+
+================================================================================
+14. OBJECT LOCATION
+================================================================================
+
+Object location tetap mengikuti Object System.
+
+Jika Object berpindah lokasi karena Actual Event:
+
+Daily Universe
+→ menentukan source event dan temporal position.
+
+Object System
+→ menentukan perubahan location dan validitasnya.
+
+Daily Universe tidak membuat lokasi Object secara mandiri.
+
+
+================================================================================
+15. OBJECT OWNERSHIP
+================================================================================
+
+Ownership tetap mengikuti Object System.
+
+Jika ownership berubah:
+
+- perubahan harus memiliki source;
+- temporal position harus tersedia;
+- Object System harus memproses perubahan;
+- result harus diterima sebelum perubahan dianggap berlaku.
+
+Daily Universe tidak menentukan siapa owner Object.
+
+
+================================================================================
+16. OBJECT POSSESSION
+================================================================================
+
+Possession tetap mengikuti Object System.
+
+Daily Universe hanya menjaga timing perubahan possession.
+
+Possession change harus dapat ditelusuri kepada:
+
+- event;
+- transfer;
+- domain action;
+- atau mekanisme Object System yang sah.
+
+
+================================================================================
+17. OBJECT HOLDER
+================================================================================
+
+Holder merupakan domain Object.
+
+Jika holder berubah, Daily Universe:
+
+- mengenali temporal transition;
+- meneruskan handoff;
+- menjaga effective time;
+- membawa result ke periode berikutnya.
+
+Daily Universe tidak menetapkan holder baru secara langsung.
+
+
+================================================================================
+18. OBJECT USAGE
+================================================================================
+
+Usage tetap mengikuti Object System.
+
+Penggunaan Object dalam suatu event harus mempunyai temporal availability yang
+sesuai.
+
+Daily Universe memeriksa:
+
+- Object tersedia pada waktu event;
+- usage tidak melanggar temporal order;
+- perubahan usage dapat diteruskan melalui domain owner.
+
+
+================================================================================
+19. OBJECT WEARING
+================================================================================
+
+Wearing merupakan bagian dari Object System.
+
+Daily Universe hanya menjaga temporal relationship antara Object, Actor, dan
+event apabila wearing digunakan dalam proses Universe.
+
+Daily Universe tidak membuat aturan wearing sendiri.
+
+
+================================================================================
+20. DIGITAL OBJECT
+================================================================================
+
+Object digital mengikuti Object System yang sama dalam hal temporal
+orchestration.
+
+Daily Universe menjaga:
+
+- existence;
+- availability;
+- creation time;
+- change time;
+- access timing;
+- status transition;
+
+sesuai data yang disediakan oleh Object System.
+
+Daily Universe tidak membuat domain digital object alternatif.
+
+
+================================================================================
+21. PHYSICAL OBJECT
+================================================================================
+
+Object fisik mengikuti Object System yang sama dalam hal temporal
+orchestration.
+
+Perubahan lokasi, possession, ownership, damage, atau status lainnya tetap
+diproses oleh Object System.
+
+
+================================================================================
+22. OBJECT-OBJECT RELATION
+================================================================================
+
+Jika sebuah Object mempunyai hubungan dengan Object lain, hubungan tersebut
+tetap mengikuti Object System.
+
+Daily Universe hanya memastikan hubungan temporalnya tidak terputus tanpa
+dasar.
+
+
+================================================================================
+23. ACTOR-OBJECT RELATION
+================================================================================
+
+Jika Object berhubungan dengan Actor:
+
+- Actor identity mengikuti Character System;
+- Object identity mengikuti Object System;
+- temporal relation diorkestrasi oleh Daily Universe.
+
+Perubahan ownership, possession, holder, usage, atau wearing tetap mengikuti
+Object System.
+
+
+================================================================================
+24. EVENT IMPACT
+================================================================================
+
+Actual Event dapat memengaruhi Object.
+
+Daily Universe harus menentukan:
+
+- source event;
+- event time;
+- Object reference;
+- temporal impact;
+- required Object handoff.
+
+Object System menentukan perubahan aktual.
+
+
+================================================================================
+25. CONSEQUENCE IMPACT
+================================================================================
+
+Consequence dapat memengaruhi Object.
+
+Daily Universe mengatur:
+
+- consequence timing;
+- Object reference;
+- cross-period continuation.
+
+Object System menentukan result domain.
+
+
+================================================================================
+26. OBJECT PROCESS
+================================================================================
+
+Object dapat menjadi bagian dari Process yang berjalan lintas periode.
+
+Process identity tetap dipertahankan.
+
+Object tidak boleh dibuat ulang pada setiap periode hanya karena masih terlibat
+dalam Process yang sama.
+
+
+================================================================================
+27. OBJECT STATUS TRANSITION
+================================================================================
+
+Jika Object System menghasilkan perubahan status, Daily Universe menjaga
+perjalanan temporal transition tersebut.
+
+Pola umum:
+
+PREVIOUS STATUS
+↓
+SOURCE EVENT / CONDITION
+↓
+OBJECT SYSTEM
+↓
+NEW STATUS
+↓
+EFFECTIVE TIME
+↓
+NEXT PERIOD CONTEXT
+
+
+================================================================================
+28. OBJECT END
+================================================================================
+
+Object dapat berhenti berlaku sebagai Object aktif apabila Object System
+menetapkan kondisi yang sah.
+
+Ending dapat berkaitan dengan mekanisme domain seperti:
+
+- destruction;
+- loss;
+- expiration;
+- deletion;
+- invalidation;
+- retirement;
+
+sesuai Object System.
+
+Daily Universe hanya menjaga temporal transition dan history reference.
+
+
+================================================================================
+29. OBJECT HISTORY
+================================================================================
+
+History Object harus tetap dapat membedakan:
+
+- creation;
+- existence;
+- ownership;
+- possession;
+- location;
+- usage;
+- state change;
+- transfer;
+- loss;
+- damage;
+- destruction;
+- other domain transitions.
+
+History Object tetap berada pada Object System.
+
+Daily Universe hanya membawa reference yang dibutuhkan untuk continuity.
+
+
+================================================================================
+30. TEMPORAL OVERLAP
+================================================================================
+
+Object dapat mempunyai beberapa relationship atau process yang overlap secara
+temporal apabila Object System mengizinkannya.
+
+Overlap bukan contradiction secara otomatis.
+
+Conflict harus diperiksa berdasarkan:
+
+- Object System;
+- temporal consistency;
+- event dependency.
+
+
+================================================================================
+31. CONCURRENT CHANGES
+================================================================================
+
+Lebih dari satu event dapat memengaruhi Object pada periode yang sama.
+
+Daily Universe harus memeriksa:
+
+- ordering;
+- dependency;
+- source;
+- effective time;
+- compatibility.
+
+Jika urutan tidak dapat ditentukan, system harus menandai conflict atau
+unresolved.
+
+
+================================================================================
+32. CHANGE DEPENDENCY
+================================================================================
+
+Object change dapat bergantung pada:
+
+- Actor;
+- Relationship;
+- Knowledge;
+- State;
+- Location;
+- Process;
+- Event;
+- another Object;
+- temporal condition.
+
+Dependency domain tetap mengikuti system owner.
+
+Daily Universe hanya mengatur temporal dependency dan handoff.
+
+
+================================================================================
+33. NO ASSUMED OBJECT CHANGE
+================================================================================
+
+Object tidak boleh berubah hanya karena:
+
+- periode berganti;
+- Object tidak disebut;
+- Object tidak digunakan;
+- cerita membutuhkan Object dalam kondisi tertentu;
+- Narrator membutuhkan detail;
+- pembaca mengharapkan perubahan.
+
+Perubahan harus mempunyai dasar yang sah.
+
+
+================================================================================
+34. NO STORY-BASED OBJECT CREATION
+================================================================================
+
+Narrative need tidak menjadi dasar untuk membuat Object baru.
+
+Jika sebuah cerita membutuhkan Object yang belum tersedia dalam Universe,
+proses harus mengikuti mekanisme Object System.
+
+Daily Universe tidak boleh menciptakan Object untuk memenuhi kebutuhan
+Narrator.
+
+
+================================================================================
+35. NARRATIVE SEPARATION
+================================================================================
+
+Narrative representation tidak mengubah Object secara otomatis.
+
+Flashback dapat menampilkan kondisi Object masa lalu.
+
+Flash-forward dapat menampilkan kondisi Object future sesuai Temporal Status.
+
+Penyajian tidak mengubah current Object data.
+
+
+================================================================================
+36. REQUESTED VS EFFECTIVE OBJECT STATE
+================================================================================
+
+Requested Object State atau Requested Object Change bukan Effective Object
+State.
+
+Effective Object State hanya berlaku setelah Object System memberikan result
+yang sah.
+
+Daily Universe harus mempertahankan perbedaan tersebut.
+
+
+================================================================================
+37. HANDOFF
+================================================================================
+
+Object change handoff minimal harus memuat:
+
+- Object ID;
+- source event atau condition;
+- previous Object reference;
+- requested transition;
+- temporal position;
+- effective time apabila diketahui;
+- dependency;
+- required result.
+
+
+================================================================================
+38. HANDOFF RESULT
+================================================================================
+
+Object System dapat mengembalikan:
+
+APPLIED
+→ perubahan telah benar-benar diterapkan.
+
+ACCEPTED
+→ request diterima tetapi belum diterapkan.
+
+REJECTED
+→ request ditolak.
+
+BLOCKED
+→ dependency atau aturan menghalangi.
+
+REQUIRES_INPUT
+→ data tambahan diperlukan.
+
+UNRESOLVED
+→ hasil belum dapat ditentukan.
+
+UNKNOWN
+→ hasil belum diketahui.
+
+
+================================================================================
+39. EFFECTIVE TIME INTEGRITY
+================================================================================
+
+Effective Time harus tetap konsisten dengan Universe Time.
+
+Processing yang terjadi setelah Effective Time tidak berarti perubahan baru
+terjadi pada waktu processing.
+
+File creation time bukan Effective Time.
+
+
+================================================================================
+40. CROSS-PERIOD CARRYOVER
+================================================================================
+
+Pada period boundary:
+
+CURRENT OBJECT CONTEXT
+↓
+TEMPORAL EVALUATION
+↓
+CONTINUE / CHANGE / MOVE / TRANSFER / END / UNRESOLVED
+↓
+OBJECT SYSTEM HANDOFF
+↓
+VALIDATED RESULT
+↓
+NEXT PERIOD OBJECT CONTEXT
+
+
+================================================================================
+41. DOMAIN OWNERSHIP PRESERVATION
+================================================================================
+
+Daily Universe tidak boleh:
+
+- membuat Object definition baru;
+- membuat Object state kedua;
+- membuat ownership versi kedua;
+- membuat possession versi kedua;
+- mengganti Object ID;
+- menghapus Object history;
+- membuat Object rule sendiri.
+
+
+================================================================================
+42. DUPLICATE PREVENTION
+================================================================================
+
+Duplicate Object harus dapat dideteksi berdasarkan:
+
+- Object ID;
+- source;
+- temporal identity;
+- domain ownership;
+- relationship;
+- transition.
+
+Return, reappearance, atau reuse tidak otomatis berarti Object baru.
+
+
+================================================================================
+43. CONFLICT DETECTION
+================================================================================
+
+Object Carryover harus dapat mendeteksi:
+
+- unknown Object ID;
+- duplicate Object;
+- identity conflict;
+- invalid location timing;
+- invalid ownership timing;
+- invalid possession timing;
+- contradictory status;
+- impossible transition;
+- concurrent incompatible change;
+- domain conflict;
+- temporal conflict.
+
+
+================================================================================
+44. CONFLICT HANDLING
+================================================================================
+
+Jika terdapat conflict:
+
+1. identifikasi Object source;
+2. identifikasi Object System;
+3. pertahankan last valid condition;
+4. tandai transition bermasalah;
+5. arahkan ke domain owner atau temporal validation.
+
+Tidak boleh dilakukan silent repair.
+
+
+================================================================================
+45. NEXT PERIOD CONTEXT
+================================================================================
+
+Object Carryover menghasilkan temporal reference untuk periode berikutnya.
+
+Context minimal dapat menunjukkan:
+
+- Object ID;
+- current domain status reference;
+- effective time;
+- previous transition;
+- current location reference bila relevan;
+- current ownership reference bila relevan;
+- current possession reference bila relevan;
+- unresolved condition;
+- domain result;
+- next evaluation requirement.
+
+
+================================================================================
+46. DAILY STORY INDEPENDENCE
+================================================================================
+
+Daily Story dapat:
+
+- tidak menyebut Object;
+- menggunakan Object;
+- menampilkan Object masa lalu;
+- menampilkan Object future;
+- hanya menampilkan sebagian kondisi Object.
+
+Ketiadaan Object dari Daily Story tidak mengubah Object Universe.
+
+
+================================================================================
+47. NARRATOR INDEPENDENCE
+================================================================================
+
+Narrator tidak boleh:
+
+- membuat Object demi kebutuhan scene;
+- memindahkan Object demi plot;
+- mengganti ownership demi cerita;
+- membuat Object hilang demi ending;
+- menyelesaikan Object process demi closure.
+
+Narrator hanya merepresentasikan Object yang tersedia secara sah.
+
+
+================================================================================
+48. VALIDATION
+================================================================================
+
+Object Carryover harus divalidasi terhadap:
+
+- Object System;
+- Object ID;
+- Universe Time;
+- previous period;
+- current period;
+- event source;
+- consequence;
+- location;
+- ownership;
+- possession;
+- usage;
+- effective time;
+- domain result;
+- temporal consistency.
+
+
+================================================================================
+49. VALIDATION RESULT
+================================================================================
+
+VALID
+→ Object continuity dapat diteruskan.
+
+REVIEW_REQUIRED
+→ terdapat uncertainty yang belum menghalangi proses.
+
+REVISION_REQUIRED
+→ transition atau reference membutuhkan koreksi.
+
+BLOCKED
+→ Object continuity tidak dapat diteruskan secara sah.
+
+
+================================================================================
+50. FAILURE PRINCIPLE
+================================================================================
+
+Jika Object Carryover gagal, system tidak boleh:
+
+- membuat Object baru;
+- mengganti Object ID;
+- mengubah ownership;
+- mengubah possession;
+- mengubah location;
+- menghapus history;
+- memaksa Object availability;
+- memilih hasil yang paling nyaman untuk cerita.
+
+System harus mempertahankan kondisi Object terakhir yang sah.
+
+
+================================================================================
+51. FINAL PRINCIPLE
+================================================================================
+
+OBJECT CARRYOVER BUKAN:
+
+MEMBUAT ULANG OBJECT SETIAP PERIODE.
+
+OBJECT CARRYOVER ADALAH:
+
+MEMASTIKAN OBJECT YANG DIMILIKI OBJECT SYSTEM
+TETAP TERHUBUNG DENGAN PERJALANAN TEMPORAL UNIVERSE.
+
+OBJECT SYSTEM MENENTUKAN:
+
+APA OBJECT TERSEBUT
+DAN APA ATURAN YANG BERLAKU PADANYA.
+
+DAILY UNIVERSE MENENTUKAN:
+
+KAPAN KONDISI OBJECT BERLAKU,
+KAPAN PERUBAHAN HARUS DIPROSES,
+DAN BAGAIMANA HASILNYA DIBAWA KE PERIODE BERIKUTNYA.
+
+
+================================================================================
+END OF OBJECT CARRYOVER
+================================================================================
