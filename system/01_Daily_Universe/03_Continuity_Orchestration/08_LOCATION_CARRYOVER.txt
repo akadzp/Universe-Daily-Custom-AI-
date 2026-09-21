@@ -1,0 +1,822 @@
+================================================================================
+LOCATION CARRYOVER
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / CONTINUITY ORCHESTRATION
+ROLE : TEMPORAL LOCATION CARRYOVER
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Location Carryover adalah mekanisme untuk menjaga kesinambungan temporal
+Location yang digunakan atau ditempati oleh Actor, Object, Process, Event,
+atau domain lain dari satu periode Universe ke periode berikutnya.
+
+Location Carryover mengatur:
+
+- temporal position Location;
+- location reference;
+- continuity;
+- perpindahan;
+- arrival;
+- departure;
+- availability;
+- occupancy context;
+- cross-period continuation;
+- temporal handoff.
+
+Location Carryover tidak mendefinisikan apa itu Location.
+
+Definisi dan aturan internal Location tetap mengikuti system owner Location
+atau domain yang berwenang.
+
+
+================================================================================
+02. OWNERSHIP
+================================================================================
+
+Daily Universe bukan owner definisi Location.
+
+System owner Location tetap menentukan:
+
+- identity Location;
+- struktur Location;
+- hierarchy;
+- attributes;
+- validity;
+- availability;
+- relationship antar-Location;
+- aturan perpindahan;
+- aturan occupancy apabila tersedia;
+- history Location.
+
+Daily Universe mengatur:
+
+- posisi temporal;
+- perubahan temporal;
+- carryover;
+- transition timing;
+- temporal dependency;
+- cross-period continuity.
+
+
+================================================================================
+03. CORE PRINCIPLE
+================================================================================
+
+Location pada periode baru harus mempunyai hubungan temporal yang sah dengan
+Location context pada periode sebelumnya.
+
+Hubungan tersebut dapat berupa:
+
+- CONTINUE;
+- MOVE;
+- ARRIVE;
+- DEPART;
+- CHANGE;
+- UNRESOLVED;
+- UNKNOWN.
+
+Pergantian periode tidak otomatis menyebabkan perpindahan Location.
+
+
+================================================================================
+04. LOCATION REFERENCE
+================================================================================
+
+Daily Universe menggunakan reference terhadap Location yang dimiliki system
+owner.
+
+Reference dapat mengidentifikasi:
+
+- Location ID;
+- source domain;
+- temporal position;
+- current status;
+- relevant Actor;
+- relevant Object;
+- relevant Process;
+- source event;
+- transition.
+
+
+================================================================================
+05. LOCATION IDENTITY
+================================================================================
+
+Location identity harus dipertahankan lintas periode.
+
+Periode baru tidak boleh membuat Location baru apabila yang sebenarnya terjadi
+adalah kelanjutan Location yang sama.
+
+Story appearance bukan Location creation.
+
+
+================================================================================
+06. LOCATION CONTINUATION
+================================================================================
+
+Location dapat diteruskan ke periode berikutnya apabila Location tersebut masih
+menjadi bagian dari context temporal yang sah.
+
+Continuation berarti:
+
+- Location reference tetap;
+- temporal relevance berlanjut;
+- occupancy atau usage dapat tetap berlangsung apabila domain mengizinkannya.
+
+Continuation bukan pembuatan Location baru.
+
+
+================================================================================
+07. LOCATION PRESENCE
+================================================================================
+
+Presence pada suatu Location harus dibedakan dari:
+
+- existence of Location;
+- story appearance;
+- actor focus;
+- object focus;
+- occupancy;
+- availability.
+
+Sebuah Location dapat tetap ada walaupun tidak digunakan atau tidak disebut
+dalam Daily Story.
+
+
+================================================================================
+08. LOCATION OCCUPANCY
+================================================================================
+
+Occupancy menunjukkan bahwa Actor, Object, Process, atau entity lain berada
+pada Location dalam temporal context tertentu.
+
+Occupancy tidak mengubah identity Location.
+
+Aturan occupancy mengikuti domain owner yang berwenang.
+
+Daily Universe hanya menjaga:
+
+- kapan occupancy mulai;
+- kapan occupancy berakhir;
+- continuity;
+- temporal overlap.
+
+
+================================================================================
+09. ACTOR LOCATION
+================================================================================
+
+Jika Actor berpindah Location:
+
+ACTOR EVENT
+↓
+TEMPORAL POSITION
+↓
+LOCATION HANDOFF
+↓
+DOMAIN OWNER
+↓
+VALIDATED LOCATION RESULT
+↓
+CURRENT ACTOR LOCATION CONTEXT
+
+Character identity tetap mengikuti Character System.
+
+Daily Universe tidak memindahkan Actor tanpa dasar event atau mekanisme yang
+sah.
+
+
+================================================================================
+10. OBJECT LOCATION
+================================================================================
+
+Jika Object berpindah Location:
+
+OBJECT EVENT
+↓
+TEMPORAL POSITION
+↓
+OBJECT SYSTEM
+↓
+VALIDATED LOCATION RESULT
+↓
+CURRENT OBJECT LOCATION CONTEXT
+
+Object ownership tetap mengikuti Object System.
+
+Daily Universe hanya mengatur timing perpindahan.
+
+
+================================================================================
+11. MOVE
+================================================================================
+
+MOVE adalah perubahan Location yang melibatkan perpindahan temporal dari satu
+Location ke Location lain.
+
+Move harus memiliki:
+
+- source Location apabila diketahui;
+- destination Location;
+- event atau mechanism;
+- temporal position;
+- actor/object/process yang berpindah apabila relevan.
+
+Daily Universe tidak boleh mengarang detail perpindahan yang tidak tersedia.
+
+
+================================================================================
+12. DEPARTURE
+================================================================================
+
+DEPARTURE menunjukkan bahwa sebuah entity tidak lagi berada pada Location
+setelah titik temporal tertentu.
+
+Departure tidak otomatis berarti entity telah tiba di Location lain.
+
+Arrival harus mempunyai status tersendiri apabila memang terjadi.
+
+
+================================================================================
+13. ARRIVAL
+================================================================================
+
+ARRIVAL menunjukkan bahwa entity telah mencapai Location tertentu pada posisi
+temporal tertentu.
+
+Arrival harus dapat dihubungkan dengan:
+
+- source movement;
+- event;
+- travel process;
+- domain transition;
+- atau mechanism lain yang sah.
+
+
+================================================================================
+14. MOVE WITHOUT KNOWN PATH
+================================================================================
+
+Jika source Location dan destination Location diketahui tetapi jalur atau proses
+perpindahan tidak diketahui, system tidak boleh menciptakan jalur.
+
+Yang dapat disimpan hanya bagian temporal yang benar-benar diketahui.
+
+
+================================================================================
+15. LOCATION TRANSITION
+================================================================================
+
+Location transition dapat berupa:
+
+CURRENT LOCATION
+↓
+DEPARTURE
+↓
+TRANSIT
+↓
+ARRIVAL
+↓
+NEW CURRENT LOCATION
+
+Tidak semua tahap harus diketahui.
+
+Unknown stage harus tetap unknown apabila memang tidak tersedia.
+
+
+================================================================================
+16. TRANSIT
+================================================================================
+
+Transit adalah periode ketika perpindahan sedang berlangsung.
+
+Transit dapat menjadi Process lintas periode.
+
+Jika transit masih aktif saat period boundary, transit harus dipertahankan
+sebagai ongoing process atau domain state yang sesuai.
+
+
+================================================================================
+17. LOCATION AVAILABILITY
+================================================================================
+
+Location Availability menunjukkan apakah Location dapat digunakan atau
+ditempati pada waktu tertentu.
+
+Availability tidak boleh diasumsikan hanya karena Location exists.
+
+Availability dapat bergantung pada:
+
+- temporal condition;
+- event;
+- domain state;
+- occupancy;
+- access;
+- process;
+- other validated condition.
+
+
+================================================================================
+18. LOCATION OCCUPANCY CONFLICT
+================================================================================
+
+Lebih dari satu entity dapat berada pada Location yang sama jika aturan domain
+mengizinkannya.
+
+Overlap occupancy bukan contradiction secara otomatis.
+
+Conflict hanya terjadi jika:
+
+- capacity;
+- access rule;
+- exclusion rule;
+- temporal rule;
+
+membuat occupancy tersebut tidak dapat berlaku bersama.
+
+
+================================================================================
+19. SIMULTANEOUS LOCATION
+================================================================================
+
+Actor atau Object dapat mempunyai location yang sama pada waktu yang sama
+apabila data dan aturan domain mengizinkannya.
+
+Daily Universe tidak boleh menandai conflict hanya karena beberapa entity
+memiliki Location yang sama.
+
+
+================================================================================
+20. LOCATION DEPENDENCY
+================================================================================
+
+Location transition dapat bergantung pada:
+
+- Actor availability;
+- Object availability;
+- Process;
+- Event;
+- Relationship;
+- State;
+- Knowledge;
+- transportation process;
+- temporal condition.
+
+Dependency tetap mengikuti domain owner masing-masing.
+
+Daily Universe hanya mengatur temporal relationship antar-dependency.
+
+
+================================================================================
+21. LOCATION CHANGE SOURCE
+================================================================================
+
+Location change harus memiliki source yang dapat ditelusuri.
+
+Source dapat berupa:
+
+- Actual Event;
+- Process completion;
+- Movement;
+- transfer;
+- domain mechanism;
+- temporal rule yang memang sah.
+
+Narrative need bukan source yang sah.
+
+
+================================================================================
+22. EFFECTIVE TIME
+================================================================================
+
+Setiap Location change harus memiliki Effective Time apabila waktu tersebut
+diketahui atau diperlukan.
+
+Effective Time adalah waktu ketika Location change benar-benar berlaku di
+Universe.
+
+Effective Time tidak otomatis sama dengan:
+
+- request time;
+- processing time;
+- story writing time;
+- file creation time.
+
+
+================================================================================
+23. REQUEST VS EFFECTIVE LOCATION
+================================================================================
+
+Permintaan perpindahan bukan bukti bahwa perpindahan telah terjadi.
+
+System harus membedakan:
+
+REQUESTED MOVE
+dan
+EFFECTIVE MOVE.
+
+Entity tetap berada pada Location terakhir yang sah sampai perubahan benar-benar
+diterapkan.
+
+
+================================================================================
+24. CROSS-PERIOD MOVE
+================================================================================
+
+Perpindahan dapat melintasi lebih dari satu periode.
+
+Contoh struktur temporal:
+
+DEPARTURE
+↓
+TRANSIT
+↓
+NEXT PERIOD
+↓
+TRANSIT
+↓
+ARRIVAL
+
+Selama belum ada Arrival yang sah, system tidak boleh menganggap entity telah
+mencapai destination.
+
+
+================================================================================
+25. LOCATION CONTINUITY
+================================================================================
+
+Location continuity berarti:
+
+- identity Location tetap;
+- location reference dapat ditelusuri;
+- occupancy tetap pada temporal position yang tepat;
+- movement tidak menghilangkan history;
+- current location memiliki dasar yang sah.
+
+
+================================================================================
+26. ABSENCE FROM LOCATION
+================================================================================
+
+Jika Actor atau Object tidak lagi berada pada Location tertentu, hal tersebut
+harus dibedakan dari:
+
+- Location deletion;
+- entity deletion;
+- entity disappearance;
+- Location destruction.
+
+Departure hanya menunjukkan perubahan temporal terhadap presence.
+
+
+================================================================================
+27. NO STORY-BASED MOVEMENT
+================================================================================
+
+Actor atau Object tidak boleh dipindahkan karena:
+
+- cerita membutuhkan scene tertentu;
+- narrator membutuhkan pertemuan;
+- cerita membutuhkan perubahan suasana;
+- Plot membutuhkan Character tertentu berada di lokasi tertentu;
+- ending membutuhkan lokasi tertentu.
+
+Perpindahan harus memiliki dasar Universe yang sah.
+
+
+================================================================================
+28. NO AUTOMATIC DAILY MOVEMENT
+================================================================================
+
+Pergantian tanggal tidak berarti:
+
+- Actor berpindah Location;
+- Object berpindah Location;
+- Process berpindah Location;
+- occupancy berubah.
+
+Location tetap berlaku sampai terdapat perubahan yang sah.
+
+
+================================================================================
+29. NARRATIVE SEPARATION
+================================================================================
+
+Flashback, flash-forward, dan non-linear presentation tidak mengubah current
+Location Universe.
+
+Narrator dapat menampilkan Location masa lalu atau future.
+
+Current Location tetap mengikuti Universe Time.
+
+
+================================================================================
+30. LOCATION AND CHARACTER KNOWLEDGE
+================================================================================
+
+Mengetahui bahwa suatu Location exists tidak sama dengan mengetahui posisi
+Actor atau Object pada Location tersebut.
+
+Character Knowledge tetap mengikuti Character System.
+
+Daily Universe hanya menyediakan temporal fact yang sah.
+
+
+================================================================================
+31. LOCATION AND RELATIONSHIP
+================================================================================
+
+Location bersama tidak otomatis menciptakan Relationship.
+
+Perubahan Relationship akibat pertemuan atau kejadian di suatu Location harus
+diproses melalui Relationship System.
+
+
+================================================================================
+32. LOCATION AND OBJECT
+================================================================================
+
+Object yang berada pada suatu Location tidak otomatis menjadi:
+
+- owned;
+- possessed;
+- used;
+- worn;
+
+oleh Actor yang berada di Location tersebut.
+
+Ownership, possession, usage, dan wearing tetap mengikuti Object System.
+
+
+================================================================================
+33. LOCATION HISTORY
+================================================================================
+
+Location-related history harus dapat membedakan:
+
+- creation;
+- availability;
+- occupancy;
+- departure;
+- arrival;
+- movement;
+- closure;
+- destruction;
+- other domain transitions.
+
+History Location tetap menjadi milik system owner.
+
+Daily Universe hanya membawa reference yang dibutuhkan untuk continuity.
+
+
+================================================================================
+34. UNKNOWN LOCATION
+================================================================================
+
+UNKNOWN berarti system tidak mengetahui Location.
+
+Unknown berbeda dari:
+
+- no location;
+- unavailable;
+- transit;
+- deleted.
+
+Unknown tidak boleh dipaksa menjadi Location tertentu.
+
+
+================================================================================
+35. UNRESOLVED LOCATION
+================================================================================
+
+UNRESOLVED berarti terdapat Location-related question atau transition yang
+belum dapat diselesaikan.
+
+Unresolved harus dipertahankan jika masih relevan.
+
+
+================================================================================
+36. CROSS-PERIOD CARRYOVER
+================================================================================
+
+Pada period boundary:
+
+CURRENT LOCATION CONTEXT
+↓
+TEMPORAL EVALUATION
+↓
+CONTINUE / MOVE / DEPART / ARRIVE / UNRESOLVED / UNKNOWN
+↓
+DOMAIN HANDOFF
+↓
+VALIDATED RESULT
+↓
+NEXT PERIOD LOCATION CONTEXT
+
+
+================================================================================
+37. DOMAIN OWNERSHIP PRESERVATION
+================================================================================
+
+Daily Universe tidak boleh:
+
+- membuat Location definition kedua;
+- membuat Location identity baru tanpa domain mechanism;
+- memindahkan Actor secara langsung;
+- memindahkan Object secara langsung;
+- mengganti ownership Object;
+- mengubah Character Data;
+- membuat Relationship baru;
+- membuat Knowledge baru.
+
+
+================================================================================
+38. DUPLICATE PREVENTION
+================================================================================
+
+Duplicate Location atau duplicate location transition harus dapat dideteksi
+berdasarkan:
+
+- Location ID;
+- source;
+- temporal position;
+- domain owner;
+- transition identity.
+
+
+================================================================================
+39. CONFLICT DETECTION
+================================================================================
+
+Location Carryover harus dapat mendeteksi:
+
+- unknown Location ID;
+- impossible movement;
+- invalid arrival;
+- invalid departure;
+- conflicting simultaneous location;
+- invalid occupancy;
+- contradictory effective time;
+- duplicate transition;
+- domain conflict;
+- temporal conflict.
+
+
+================================================================================
+40. CONFLICT HANDLING
+================================================================================
+
+Jika conflict ditemukan:
+
+1. identifikasi Location source;
+2. identifikasi affected entity;
+3. identifikasi domain owner;
+4. pertahankan last valid Location;
+5. tandai transition bermasalah;
+6. arahkan ke domain owner atau Temporal Validation.
+
+Tidak boleh dilakukan silent repair.
+
+
+================================================================================
+41. NEXT PERIOD CONTEXT
+================================================================================
+
+Location Carryover menghasilkan temporal reference yang dapat digunakan oleh
+periode berikutnya.
+
+Context minimal dapat menunjukkan:
+
+- affected entity;
+- Location ID;
+- current status;
+- previous Location;
+- current Location;
+- transit status;
+- effective time;
+- unresolved condition;
+- domain result;
+- next evaluation requirement.
+
+
+================================================================================
+42. DAILY STORY INDEPENDENCE
+================================================================================
+
+Daily Story dapat:
+
+- tidak menyebut Location;
+- menggunakan Location;
+- menampilkan Location masa lalu;
+- menampilkan Location future;
+- hanya menggunakan sebagian Location context.
+
+Tidak disebut dalam Daily Story tidak berarti Location tidak ada.
+
+
+================================================================================
+43. NARRATOR INDEPENDENCE
+================================================================================
+
+Narrator tidak boleh memindahkan Actor atau Object hanya demi:
+
+- membuat scene;
+- mempertemukan Character;
+- mengubah suasana;
+- membuat konflik;
+- menyelesaikan cerita.
+
+
+================================================================================
+44. VALIDATION
+================================================================================
+
+Location Carryover harus divalidasi terhadap:
+
+- Location System;
+- Location ID;
+- Actor reference;
+- Object reference;
+- Universe Time;
+- previous period;
+- current period;
+- event source;
+- movement process;
+- occupancy;
+- effective time;
+- domain result;
+- temporal consistency.
+
+
+================================================================================
+45. VALIDATION RESULT
+================================================================================
+
+VALID
+→ Location continuity dapat diteruskan.
+
+REVIEW_REQUIRED
+→ terdapat uncertainty yang belum menghalangi proses.
+
+REVISION_REQUIRED
+→ transition atau reference membutuhkan koreksi.
+
+BLOCKED
+→ Location continuity tidak dapat diteruskan secara sah.
+
+
+================================================================================
+46. FAILURE PRINCIPLE
+================================================================================
+
+Jika Location Carryover gagal, system tidak boleh:
+
+- membuat Location baru;
+- memindahkan entity secara paksa;
+- memilih destination;
+- menghapus Location history;
+- mengubah Actor;
+- mengubah Object;
+- membuat Relationship;
+- memilih lokasi yang paling nyaman untuk cerita.
+
+System harus mempertahankan last valid Location context.
+
+
+================================================================================
+47. FINAL PRINCIPLE
+================================================================================
+
+LOCATION CARRYOVER BUKAN:
+
+MEMINDAHKAN SEMUA ENTITY SETIAP HARI.
+
+LOCATION CARRYOVER ADALAH:
+
+MEMASTIKAN LOCATION DAN PRESENCE ENTITY
+TETAP MEMILIKI POSISI TEMPORAL YANG BENAR
+DAN SETIAP PERPINDAHAN TERJADI MELALUI MEKANISME YANG SAH.
+
+LOCATION OWNER MENENTUKAN:
+
+APA LOCATION TERSEBUT
+DAN APA ATURAN YANG BERLAKU PADANYA.
+
+DAILY UNIVERSE MENENTUKAN:
+
+KAPAN LOCATION BERLAKU,
+KAPAN PERPINDAHAN TERJADI,
+DAN BAGAIMANA HASILNYA DIBAWA KE PERIODE BERIKUTNYA.
+
+
+================================================================================
+END OF LOCATION CARRYOVER
+================================================================================
