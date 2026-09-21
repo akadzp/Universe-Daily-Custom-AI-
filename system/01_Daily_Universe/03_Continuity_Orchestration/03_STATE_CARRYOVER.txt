@@ -1,0 +1,722 @@
+================================================================================
+STATE CARRYOVER
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / CONTINUITY ORCHESTRATION
+ROLE : TEMPORAL STATE CARRYOVER
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+State Carryover adalah mekanisme untuk menjaga kesinambungan temporal State
+yang dimiliki oleh system owner terkait ketika Universe bergerak dari satu
+periode ke periode berikutnya.
+
+State Carryover mengatur:
+
+- identifikasi State yang relevan;
+- temporal validity;
+- perubahan State;
+- awal berlaku;
+- akhir berlaku;
+- carryover;
+- transition;
+- domain handoff;
+- history reference.
+
+State Carryover tidak mendefinisikan isi, struktur, arti, atau aturan internal
+State.
+
+Definisi dan validitas domain State tetap berada pada system owner.
+
+
+================================================================================
+02. OWNERSHIP
+================================================================================
+
+Daily Universe bukan owner definisi State.
+
+Daily Universe hanya menjadi temporal orchestrator terhadap State.
+
+System owner State tetap menentukan:
+
+- definisi State;
+- struktur State;
+- nilai State;
+- aturan validitas State;
+- aturan perubahan State;
+- aturan internal State;
+- history domain State.
+
+Daily Universe hanya menentukan bagaimana State tersebut ditempatkan dan
+dibawa melalui waktu.
+
+
+================================================================================
+03. CORE PRINCIPLE
+================================================================================
+
+State pada periode baru harus memiliki hubungan yang sah dengan State pada
+periode sebelumnya.
+
+Hubungan tersebut dapat berupa:
+
+- unchanged;
+- changed;
+- ended;
+- suspended;
+- replaced;
+- unresolved;
+- unknown.
+
+Perubahan State tidak boleh muncul tanpa source yang sah.
+
+Tidak semua State harus tetap sama.
+
+Tidak semua State harus berubah.
+
+Continuity berarti perubahan dapat ditelusuri.
+
+
+================================================================================
+04. STATE REFERENCE
+================================================================================
+
+Daily Universe menggunakan reference terhadap State yang dimiliki domain owner.
+
+Reference harus dapat mengidentifikasi:
+
+- domain;
+- owner;
+- subject;
+- State reference;
+- source;
+- temporal position;
+- current validity;
+- transition status.
+
+Reference bukan salinan Canon State.
+
+
+================================================================================
+05. TEMPORAL STATE POSITION
+================================================================================
+
+Setiap State yang relevan terhadap continuity harus dapat dikaitkan dengan:
+
+- effective time;
+- active period;
+- end time apabila tersedia;
+- current temporal position;
+- previous position apabila relevan.
+
+Tingkat ketelitian waktu tidak boleh melebihi informasi yang tersedia.
+
+
+================================================================================
+06. EFFECTIVE TIME
+================================================================================
+
+Effective Time adalah waktu ketika suatu State mulai berlaku di Universe.
+
+Effective Time tidak otomatis sama dengan:
+
+- request time;
+- processing time;
+- story writing time;
+- file creation time.
+
+Jika Effective Time belum diketahui, system tidak boleh membuat waktu secara
+mandiri.
+
+
+================================================================================
+07. STATE CONTINUATION
+================================================================================
+
+State dapat diteruskan ke periode berikutnya apabila State tersebut masih
+berlaku pada boundary periode.
+
+Continuation berarti:
+
+State tetap berlaku
++
+identity/domain ownership tetap dipertahankan
++
+temporal position berlanjut.
+
+Continuation bukan pembuatan State baru.
+
+
+================================================================================
+08. STATE CHANGE
+================================================================================
+
+Jika terjadi perubahan State:
+
+PREVIOUS STATE
+↓
+EVENT / CONDITION
+↓
+DOMAIN HANDOFF
+↓
+NEW STATE
+↓
+CURRENT TEMPORAL POSITION
+
+Daily Universe mengatur hubungan temporal tersebut.
+
+System owner menentukan isi State baru.
+
+
+================================================================================
+09. STATE END
+================================================================================
+
+State dapat berakhir apabila terdapat dasar yang sah.
+
+Ending State berarti:
+
+- State tidak lagi berlaku;
+- historical trace tetap dipertahankan;
+- State tidak boleh dibawa sebagai current state setelah effective end time.
+
+Ending tidak berarti data history dihapus.
+
+
+================================================================================
+10. STATE SUSPENSION
+================================================================================
+
+State dapat mempunyai kondisi sementara yang membuat penerapannya tidak aktif
+sesuai aturan domain.
+
+Jika domain owner menyediakan konsep suspension, Daily Universe hanya membawa
+status tersebut melalui waktu.
+
+Daily Universe tidak menciptakan suspension sebagai aturan domain baru.
+
+
+================================================================================
+11. STATE REPLACEMENT
+================================================================================
+
+Sebuah State dapat digantikan oleh State lain apabila domain owner menyatakan
+perubahan tersebut sah.
+
+Replacement harus dapat ditelusuri:
+
+PREVIOUS STATE
+→ TRANSITION SOURCE
+→ REPLACEMENT STATE
+
+
+================================================================================
+12. STATE OVERLAP
+================================================================================
+
+Dua State dapat berada pada periode yang sama apabila aturan domain mengizinkan
+keduanya.
+
+Overlap tidak otomatis merupakan contradiction.
+
+Jika dua State secara domain tidak dapat berlaku bersamaan, conflict harus
+diperiksa oleh system owner atau validation yang berwenang.
+
+
+================================================================================
+13. STATE HISTORY
+================================================================================
+
+Perubahan State harus mempertahankan history yang diperlukan.
+
+History harus dapat menunjukkan:
+
+- previous State;
+- transition source;
+- effective time;
+- resulting State;
+- end time;
+- domain owner;
+- relevant revision.
+
+Current State tidak boleh menghapus historical State.
+
+
+================================================================================
+14. EVENT-DRIVEN STATE CHANGE
+================================================================================
+
+State dapat berubah sebagai akibat dari Actual Event.
+
+Daily Universe harus memastikan:
+
+- event terjadi pada temporal position yang sah;
+- event memang mempunyai dampak terhadap State;
+- handoff dikirim kepada domain owner;
+- resulting State diterima sebelum dianggap berlaku.
+
+
+================================================================================
+15. TIME-DRIVEN STATE CHANGE
+================================================================================
+
+State dapat berubah karena berlalunya waktu apabila aturan domain memang
+mengizinkannya.
+
+Daily Universe dapat mendeteksi bahwa temporal condition telah tercapai.
+
+Namun hasil perubahan tetap mengikuti system owner State.
+
+
+================================================================================
+16. CONDITION-DRIVEN STATE CHANGE
+================================================================================
+
+Perubahan State dapat bergantung pada kondisi.
+
+Condition dapat berasal dari:
+
+- event;
+- process;
+- consequence;
+- time;
+- dependency;
+- domain data.
+
+Condition:
+
+TRUE
+→ transition dapat diproses.
+
+FALSE
+→ transition tidak terjadi.
+
+UNKNOWN
+→ transition tidak boleh dipaksakan.
+
+
+================================================================================
+17. STATE DEPENDENCY
+================================================================================
+
+State change dapat bergantung pada domain lain.
+
+Contohnya secara struktural dapat bergantung pada:
+
+- Character;
+- Relationship;
+- Object;
+- Knowledge;
+- Location;
+- Process;
+- Event.
+
+Daily Universe hanya mengatur temporal dependency dan handoff.
+
+Domain owner tetap menentukan validitas dependency dari perspektif domainnya.
+
+
+================================================================================
+18. STATE CARRYOVER DECISION
+================================================================================
+
+Setiap State reference yang diperiksa pada period boundary harus menghasilkan
+keputusan:
+
+CARRY_FORWARD
+→ masih berlaku.
+
+CHANGE_REQUIRED
+→ terdapat perubahan yang harus diproses.
+
+ENDED
+→ sudah tidak berlaku.
+
+SUSPENDED
+→ masih ada tetapi sementara tidak aktif sesuai domain.
+
+UNRESOLVED
+→ belum dapat ditentukan.
+
+UNKNOWN
+→ informasi tidak cukup.
+
+
+================================================================================
+19. CARRY_FORWARD
+================================================================================
+
+CARRY_FORWARD berarti State yang sama tetap relevan pada periode berikutnya.
+
+Tidak boleh dibuat duplicate State hanya karena periode berganti.
+
+Identity dan domain ownership tetap sama.
+
+
+================================================================================
+20. CHANGE_REQUIRED
+================================================================================
+
+CHANGE_REQUIRED berarti terdapat dasar bahwa State harus berubah.
+
+Daily Universe tidak langsung menentukan nilai State baru.
+
+Daily Universe membuat temporal handoff kepada domain owner.
+
+
+================================================================================
+21. UNRESOLVED STATE
+================================================================================
+
+Jika State belum dapat dipastikan pada boundary:
+
+- State tidak boleh dibuat;
+- State lama tidak boleh dipaksa terus berlaku;
+- State baru tidak boleh diasumsikan.
+
+Status tetap Unresolved sampai terdapat resolution yang sah.
+
+
+================================================================================
+22. UNKNOWN STATE
+================================================================================
+
+UNKNOWN berarti informasi State belum tersedia secara cukup.
+
+Unknown berbeda dari Unresolved.
+
+Unresolved menunjukkan terdapat State atau transition yang masih menunggu
+penyelesaian.
+
+Unknown menunjukkan system belum mengetahui keadaan yang diperlukan.
+
+
+================================================================================
+23. CROSS-PERIOD TRANSITION
+================================================================================
+
+Ketika periode berganti:
+
+CURRENT PERIOD STATE
+↓
+BOUNDARY EVALUATION
+↓
+CARRY_FORWARD / CHANGE / END / UNRESOLVED
+↓
+NEXT PERIOD STATE CONTEXT
+
+Transition harus dapat ditelusuri.
+
+
+================================================================================
+24. NO AUTOMATIC RESET
+================================================================================
+
+Pergantian periode tidak boleh membuat State:
+
+- kembali ke default;
+- kembali ke previous version;
+- hilang;
+- berubah menjadi Unknown;
+
+tanpa dasar yang sah.
+
+
+================================================================================
+25. NO AUTOMATIC PERSISTENCE
+================================================================================
+
+Sebaliknya, State tidak boleh dianggap terus berlaku selamanya hanya karena
+tidak ada informasi baru.
+
+Effective end, expiration, domain rule, atau actual transition harus
+diperhatikan apabila tersedia.
+
+
+================================================================================
+26. NO STORY-DRIVEN STATE CHANGE
+================================================================================
+
+Narrative need bukan dasar untuk mengubah State.
+
+Daily Story tidak boleh memaksa State menjadi:
+
+- lebih baik;
+- lebih buruk;
+- selesai;
+- stabil;
+- berubah;
+
+hanya agar cerita memiliki alur tertentu.
+
+
+================================================================================
+27. NARRATIVE SEPARATION
+================================================================================
+
+State yang ditampilkan dalam cerita harus sesuai dengan State yang berlaku pada
+Narrative Context.
+
+Flashback dapat menggunakan State masa lalu.
+
+Flash-forward dapat merepresentasikan State future sesuai Temporal Status.
+
+Penyajian tidak mengubah State Universe.
+
+
+================================================================================
+28. CHARACTER STATE
+================================================================================
+
+Jika State milik Character:
+
+Daily Universe
+→ mengatur temporal context dan handoff.
+
+Character System
+→ menentukan State Character dan aturan perubahannya.
+
+Daily Universe tidak boleh membuat Character State versi kedua.
+
+
+================================================================================
+29. RELATIONSHIP STATE
+================================================================================
+
+Jika State merupakan bagian dari Relationship:
+
+Daily Universe
+→ mengatur temporal position.
+
+Relationship System
+→ menentukan state dan perubahan Relationship.
+
+
+================================================================================
+30. OBJECT STATE
+================================================================================
+
+Jika State merupakan bagian dari Object:
+
+Daily Universe
+→ mengatur temporal position dan carryover.
+
+Object System
+→ menentukan status dan perubahan Object.
+
+
+================================================================================
+31. OTHER DOMAIN STATE
+================================================================================
+
+Jika domain lain memiliki State sendiri, domain tersebut tetap menjadi owner.
+
+Daily Universe mengikuti prinsip:
+
+ONE DOMAIN
+→ ONE STATE OWNER.
+
+
+================================================================================
+32. HANDOFF
+================================================================================
+
+State change handoff minimal harus memuat:
+
+- source event atau condition;
+- target State reference;
+- temporal position;
+- requested transition;
+- dependency;
+- previous State reference;
+- required effective time.
+
+Domain owner menghasilkan result.
+
+
+================================================================================
+33. HANDOFF RESULT
+================================================================================
+
+Result dapat berupa:
+
+APPLIED
+→ State change telah benar-benar diterapkan.
+
+ACCEPTED
+→ request diterima tetapi belum diterapkan.
+
+REJECTED
+→ request ditolak.
+
+BLOCKED
+→ dependency atau aturan menghalangi penerapan.
+
+REQUIRES_INPUT
+→ data tambahan diperlukan.
+
+UNRESOLVED
+→ hasil belum dapat ditentukan.
+
+UNKNOWN
+→ hasil belum diketahui.
+
+
+================================================================================
+34. EFFECTIVE STATE VS REQUESTED STATE
+================================================================================
+
+Requested State bukan Effective State.
+
+State yang diminta belum menjadi State Universe sampai domain owner menyatakan
+perubahan benar-benar berlaku.
+
+Daily Universe harus mempertahankan perbedaan tersebut.
+
+
+================================================================================
+35. CONFLICT DETECTION
+================================================================================
+
+State Carryover harus mendeteksi:
+
+- overlapping incompatible state;
+- invalid effective time;
+- missing source;
+- missing owner;
+- impossible transition;
+- duplicate transition;
+- contradictory domain result;
+- temporal conflict.
+
+
+================================================================================
+36. CONFLICT HANDLING
+================================================================================
+
+Jika terjadi conflict:
+
+1. identifikasi source;
+2. identifikasi domain owner;
+3. pertahankan State terakhir yang sah;
+4. tandai transition yang bermasalah;
+5. arahkan ke validation atau domain owner.
+
+Tidak boleh dilakukan silent repair.
+
+
+================================================================================
+37. DOMAIN HISTORY
+================================================================================
+
+Domain owner tetap menyimpan history State.
+
+Daily Universe hanya membawa reference yang diperlukan untuk continuity.
+
+Daily Universe tidak menjadi database history State kedua.
+
+
+================================================================================
+38. CURRENT STATE CONTEXT
+================================================================================
+
+Pada akhir carryover, Daily Universe membutuhkan reference terhadap State yang
+berlaku pada Current Universe Time.
+
+Context minimal dapat menunjukkan:
+
+- State reference;
+- domain owner;
+- effective time;
+- previous State;
+- current status;
+- unresolved condition;
+- transition result.
+
+
+================================================================================
+39. VALIDATION
+================================================================================
+
+State Carryover harus divalidasi terhadap:
+
+- Universe Time;
+- Temporal Status;
+- previous State;
+- transition source;
+- effective time;
+- domain owner;
+- dependency;
+- handoff result;
+- continuity;
+- conflict.
+
+
+================================================================================
+40. VALIDATION RESULT
+================================================================================
+
+VALID
+→ State continuity dapat diteruskan.
+
+REVIEW_REQUIRED
+→ terdapat uncertainty yang belum menghalangi proses.
+
+REVISION_REQUIRED
+→ transition membutuhkan koreksi.
+
+BLOCKED
+→ State continuity tidak dapat dilanjutkan secara sah.
+
+
+================================================================================
+41. FAILURE PRINCIPLE
+================================================================================
+
+Jika State change tidak dapat diproses:
+
+- jangan membuat State baru;
+- jangan mengubah State lama;
+- jangan menghapus history;
+- jangan menganggap request berhasil;
+- jangan mengambil alih domain owner.
+
+Pertahankan keadaan terakhir yang sah dan status masalahnya.
+
+
+================================================================================
+42. FINAL PRINCIPLE
+================================================================================
+
+STATE CARRYOVER BUKAN:
+
+MEMBUAT STATE BARU UNTUK SETIAP HARI.
+
+STATE CARRYOVER ADALAH:
+
+MEMASTIKAN STATE YANG DIMILIKI DOMAIN OWNER
+MEMILIKI POSISI TEMPORAL YANG BENAR
+DAN DAPAT BERLANJUT, BERUBAH, ATAU BERAKHIR
+SECARA SAH DARI SATU PERIODE KE PERIODE BERIKUTNYA.
+
+Daily Universe mengatur:
+
+KAPAN STATE BERLAKU
+DAN BAGAIMANA TRANSISINYA DIBAWA MELALUI WAKTU.
+
+DOMAIN OWNER MENENTUKAN:
+
+APA STATE TERSEBUT
+DAN APA MAKNA PERUBAHANNYA.
+
+
+================================================================================
+END OF STATE CARRYOVER
+================================================================================
