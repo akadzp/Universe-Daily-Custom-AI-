@@ -1,0 +1,665 @@
+================================================================================
+STORY ID
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / DAILY STORY
+ROLE : DAILY STORY IDENTITY MANAGEMENT
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Story ID adalah identitas unik untuk satu Daily Story dalam suatu Universe
+Instance.
+
+Story ID digunakan untuk:
+
+- mengidentifikasi Daily Story;
+- membedakan satu Daily Story dari Daily Story lain;
+- menghubungkan Daily Story dengan Story Date;
+- menghubungkan Daily Story dengan Story Trigger;
+- menghubungkan Daily Story dengan Story Scope;
+- menghubungkan Daily Story dengan hasil Narrator;
+- menghubungkan Daily Story dengan Instance;
+- mencegah duplicate production;
+- menjaga traceability sepanjang umur Universe.
+
+Story ID bukan Story Date.
+
+Story ID bukan Story Trigger ID.
+
+Story ID bukan filename.
+
+Story ID bukan judul cerita.
+
+
+================================================================================
+02. CORE PRINCIPLE
+================================================================================
+
+Setiap Daily Story yang dianggap sebagai production entity harus mempunyai
+satu Story ID yang dapat ditentukan secara konsisten.
+
+Story ID harus:
+
+- unik;
+- stabil;
+- dapat ditelusuri;
+- tidak ambigu;
+- dapat diverifikasi;
+- tidak bergantung pada isi narasi;
+- tidak bergantung pada judul;
+- tidak bergantung pada waktu file dibuat.
+
+
+================================================================================
+03. IDENTITY SEPARATION
+================================================================================
+
+System harus membedakan:
+
+UNIVERSE INSTANCE
+→ Universe yang menjadi tempat Story berada.
+
+STORY DATE
+→ tanggal Universe yang menjadi identitas temporal utama Story.
+
+STORY TRIGGER ID
+→ identitas alasan atau source produksi.
+
+STORY SCOPE ID
+→ identitas production context.
+
+STORY ID
+→ identitas Daily Story itu sendiri.
+
+FILENAME
+→ representasi filesystem dari hasil Story.
+
+Judul
+→ label manusiawi untuk hasil Story.
+
+Tidak satu pun boleh menggantikan fungsi Story ID.
+
+
+================================================================================
+04. ID SOURCE
+================================================================================
+
+Story ID harus ditentukan berdasarkan aturan identitas Daily Story yang
+berlaku pada Universe Instance.
+
+Story ID tidak boleh dibuat berdasarkan:
+
+- isi cerita;
+- kualitas cerita;
+- nama Character;
+- jumlah halaman;
+- jumlah scene;
+- judul;
+- waktu produksi;
+- nomor file filesystem;
+- urutan file yang terlihat secara manual.
+
+
+================================================================================
+05. UNIVERSE INSTANCE BOUNDARY
+================================================================================
+
+Story ID harus mempunyai konteks Universe Instance yang jelas.
+
+Identitas Story pada satu Instance tidak boleh secara diam-diam digunakan
+sebagai identitas Story pada Instance lain jika mekanisme Instance memiliki
+namespace yang berbeda.
+
+Instance adalah bagian dari identitas operasional Story.
+
+
+================================================================================
+06. DATE RELATION
+================================================================================
+
+Story ID harus mempunyai hubungan yang dapat diverifikasi dengan Story Date.
+
+Story Date merupakan sumber temporal.
+
+Story ID merupakan identifier.
+
+Perubahan Story Date tidak boleh terjadi hanya karena format Story ID berubah.
+
+Story ID tidak boleh menjadi sumber utama untuk menentukan Universe Date.
+
+
+================================================================================
+07. FORMAT
+================================================================================
+
+Format Story ID harus ditetapkan secara sistematis dan konsisten.
+
+Format harus:
+
+- dapat diparse;
+- dapat divalidasi;
+- tidak ambigu;
+- stabil;
+- kompatibel dengan Instance Management;
+- kompatibel dengan long-term storage.
+
+Format tidak boleh mengandung informasi yang bersifat sementara dan mudah
+berubah apabila informasi tersebut tidak diperlukan untuk identity.
+
+
+================================================================================
+08. DETERMINISTIC ID
+================================================================================
+
+Jika aturan Universe menentukan bahwa Story ID dapat diturunkan secara
+deterministik dari metadata tertentu, hasil derivasi harus selalu konsisten.
+
+Input derivation minimal harus berasal dari data yang memang merupakan bagian
+dari identity Story.
+
+Perubahan pada metadata non-identity tidak boleh menghasilkan Story ID baru.
+
+
+================================================================================
+09. UNIQUENESS
+================================================================================
+
+Tidak boleh ada dua Daily Story dalam namespace yang sama yang mempunyai Story
+ID yang sama untuk dua production entity yang berbeda.
+
+Collision harus selalu dideteksi sebelum finalization.
+
+Collision tidak boleh diselesaikan dengan mengganti ID secara acak.
+
+
+================================================================================
+10. COLLISION HANDLING
+================================================================================
+
+Jika Story ID collision ditemukan:
+
+1. identifikasi seluruh Story yang menggunakan ID;
+2. identifikasi Instance;
+3. verifikasi Story Date;
+4. verifikasi production identity;
+5. tentukan apakah merupakan duplicate, revision, atau identity conflict;
+6. hentikan proses yang terdampak sampai masalah terselesaikan.
+
+System tidak boleh memilih salah satu Story secara diam-diam.
+
+
+================================================================================
+11. DUPLICATE STORY
+================================================================================
+
+Duplicate Story adalah kondisi ketika satu production entity dianggap sebagai
+lebih dari satu Daily Story.
+
+Duplicate dapat dideteksi melalui hubungan:
+
+- Instance;
+- Story ID;
+- Story Date;
+- Story Trigger;
+- production record;
+- revision status.
+
+Duplicate production tidak boleh menghasilkan dua Canon Story tanpa dasar
+yang sah.
+
+
+================================================================================
+12. STORY ID VS REVISION
+================================================================================
+
+Perubahan isi Daily Story tidak otomatis menghasilkan Story ID baru.
+
+Apabila system mendukung revision terhadap Story yang sama:
+
+Story ID
+→ tetap.
+
+Revision identity
+→ berubah sesuai mekanisme revision.
+
+Revision harus dapat ditelusuri kepada Story ID yang sama.
+
+
+================================================================================
+13. REPRODUCTION
+================================================================================
+
+Produksi ulang Daily Story yang sama harus mempertahankan Story ID apabila
+tetap merepresentasikan production entity yang sama.
+
+Reproduction tidak boleh menciptakan Story ID baru hanya karena:
+
+- file dibuat ulang;
+- narrator dijalankan kembali;
+- rendering diulang;
+- validation diulang.
+
+
+================================================================================
+14. NEW STORY VS REPRODUCTION
+================================================================================
+
+System harus membedakan:
+
+NEW STORY
+→ production entity baru.
+
+REPRODUCTION
+→ produksi ulang entity yang sama.
+
+REVISION
+→ perubahan terhadap entity yang sama.
+
+DUPLICATE
+→ entity yang seharusnya sama tetapi dibuat lebih dari satu tanpa dasar.
+
+
+================================================================================
+15. STORY ID IMMUTABILITY
+================================================================================
+
+Setelah Story ID ditetapkan dan Story masuk ke production flow, Story ID tidak
+boleh diubah secara diam-diam.
+
+Perubahan hanya diperbolehkan melalui mekanisme identity correction yang sah.
+
+Identity correction harus memiliki:
+
+- old ID;
+- new ID;
+- reason;
+- source;
+- impact;
+- validation.
+
+
+================================================================================
+16. STORY ID AND TITLE
+================================================================================
+
+Judul Daily Story tidak menentukan Story ID.
+
+Perubahan judul tidak boleh mengubah Story ID.
+
+Judul dapat berubah sesuai revision atau editorial process selama tetap
+mengacu kepada Story entity yang sama.
+
+
+================================================================================
+17. STORY ID AND FILENAME
+================================================================================
+
+Filename harus menggunakan Story ID sesuai aturan Instance Management.
+
+Namun filename bukan source of truth untuk Story ID.
+
+Jika filename dan Story ID berbeda, terjadi Instance Integrity Issue.
+
+System harus memperlakukan metadata identity dan filesystem representation
+sebagai dua layer yang dapat diverifikasi.
+
+
+================================================================================
+18. STORY ID AND FOLDER
+================================================================================
+
+Folder Year dan Month berasal dari Story Date.
+
+Story ID hanya menjadi bagian dari identity file dan production entity.
+
+Perubahan struktur folder tidak boleh mengubah Story ID.
+
+
+================================================================================
+19. STORY ID AND STORY TRIGGER
+================================================================================
+
+Story Trigger ID dan Story ID harus tetap berbeda.
+
+Story Trigger:
+
+→ menjelaskan dasar produksi.
+
+Story ID:
+
+→ mengidentifikasi hasil Daily Story.
+
+Satu trigger dapat memiliki hubungan dengan satu atau lebih production entity
+apabila system mengizinkannya.
+
+Relationship tersebut harus dapat ditelusuri.
+
+
+================================================================================
+20. STORY ID AND STORY SCOPE
+================================================================================
+
+Story Scope ID adalah identity production context.
+
+Story ID adalah identity Daily Story.
+
+Scope dapat berubah sebelum finalization tanpa otomatis menghasilkan Story ID
+baru apabila production entity masih sama.
+
+Perubahan material terhadap identity Story harus mengikuti identity validation.
+
+
+================================================================================
+21. STORY ID AND NARRATOR
+================================================================================
+
+Narrator menerima Story ID sebagai production identity.
+
+Narrator tidak boleh:
+
+- mengganti Story ID;
+- membuat Story ID baru;
+- menggunakan judul sebagai pengganti Story ID.
+
+Narrative revision tetap berada di bawah Story ID yang sama selama entity-nya
+tetap sama.
+
+
+================================================================================
+22. STORY ID AND CANON
+================================================================================
+
+Story ID tidak menciptakan Canon.
+
+Story ID hanya mengidentifikasi production entity yang merepresentasikan
+bagian tertentu dari Universe.
+
+Canon tetap berasal dari Universe Data dan perubahan yang sah.
+
+
+================================================================================
+23. STORY ID TRACEABILITY
+================================================================================
+
+Story ID harus dapat ditelusuri melalui rantai:
+
+UNIVERSE INSTANCE
+↓
+STORY DATE
+↓
+STORY TRIGGER
+↓
+STORY SCOPE
+↓
+STORY ID
+↓
+NARRATOR PRODUCTION
+↓
+INSTANCE FILE
+
+
+================================================================================
+24. STORY ID AVAILABILITY
+================================================================================
+
+Story ID harus tersedia sebelum hasil Daily Story dapat dinyatakan sebagai
+production entity final.
+
+Jika Story ID belum dapat ditentukan:
+
+- production belum final;
+- filename final belum dapat dibuat;
+- Instance placement belum dapat dinyatakan selesai.
+
+
+================================================================================
+25. INVALID STORY ID
+================================================================================
+
+Story ID dianggap invalid apabila:
+
+- kosong;
+- ambigu;
+- duplicate;
+- tidak sesuai format;
+- tidak dapat ditelusuri;
+- bertentangan dengan Instance;
+- bertentangan dengan Story Date;
+- berasal dari sumber yang tidak sah.
+
+
+================================================================================
+26. MISSING STORY ID
+================================================================================
+
+Jika Story ID belum tersedia, system tidak boleh:
+
+- membuat identifier acak;
+- menggunakan judul;
+- menggunakan timestamp produksi;
+- menggunakan nomor urut file secara manual;
+- menggunakan nama Character;
+- menggunakan nomor folder sebagai pengganti.
+
+Production harus menunggu sampai identity dapat ditentukan secara sah.
+
+
+================================================================================
+27. ID GENERATION
+================================================================================
+
+Pembuatan Story ID harus dilakukan satu kali untuk production entity baru
+setelah identity context mencukupi.
+
+Proses generation harus dapat memastikan:
+
+- uniqueness;
+- deterministic result apabila mekanisme menggunakan derivation;
+- traceability;
+- compatibility dengan Instance.
+
+
+================================================================================
+28. ID REGISTRATION
+================================================================================
+
+Story ID yang telah dibuat harus dapat diregistrasikan atau dikenali sebagai
+identity yang sedang digunakan.
+
+Registration mencegah duplicate creation.
+
+Registration harus dapat dibedakan dari finalization.
+
+Story belum menjadi final hanya karena ID telah dibuat.
+
+
+================================================================================
+29. ID LIFECYCLE
+================================================================================
+
+Lifecycle Story ID secara konseptual:
+
+UNASSIGNED
+→ ASSIGNED
+→ REGISTERED
+→ IN PRODUCTION
+→ VALIDATED
+→ FINALIZED
+
+Dalam kondisi tertentu dapat terdapat:
+
+REVISED
+→ tetap menggunakan Story ID yang sama.
+
+INVALIDATED
+→ status identity atau production membutuhkan penanganan khusus.
+
+Lifecycle tidak boleh menghapus identity history.
+
+
+================================================================================
+30. STORY ID PERSISTENCE
+================================================================================
+
+Story ID harus tetap dapat dikenali setelah:
+
+- file dipindahkan secara sah;
+- folder diubah;
+- Story direvisi;
+- Story dirender ulang;
+- validation diulang;
+- Universe berkembang ke periode berikutnya.
+
+Perubahan filesystem tidak boleh mengubah identity entity.
+
+
+================================================================================
+31. CROSS-PERIOD REFERENCE
+================================================================================
+
+Story ID dapat direferensikan oleh periode lain apabila diperlukan untuk
+continuity, history, consequence, atau production traceability.
+
+Reference terhadap Story ID tidak membuat Story baru.
+
+
+================================================================================
+32. CROSS-STORY REFERENCE
+================================================================================
+
+Daily Story dapat merujuk kepada Daily Story lain melalui Story ID.
+
+Cross-reference harus mempertahankan identity source.
+
+Reference bukan duplicate creation.
+
+
+================================================================================
+33. STORY ID AND TEMPORAL CONTINUITY
+================================================================================
+
+Story ID tetap stabil ketika Universe Time bergerak maju.
+
+Periode berikutnya tidak mengubah Story ID dari Story sebelumnya.
+
+Story ID adalah identity historical production, bukan current temporal state.
+
+
+================================================================================
+34. ID CONFLICT WITH TEMPORAL DATA
+================================================================================
+
+Jika Story ID menunjukkan satu identity tetapi:
+
+- Story Date berbeda;
+- Instance berbeda;
+- Story Scope berbeda secara incompatible;
+- production record berbeda secara incompatible;
+
+system harus menandai identity conflict.
+
+Tidak boleh diputuskan secara diam-diam.
+
+
+================================================================================
+35. ID CONFLICT WITH DOMAIN DATA
+================================================================================
+
+Jika domain data menunjukkan bahwa Story mengacu pada entity yang berbeda,
+Story ID conflict harus diarahkan ke identity validation.
+
+Daily Universe tidak boleh mengubah domain data hanya untuk mempertahankan ID.
+
+
+================================================================================
+36. NO RANDOM REASSIGNMENT
+================================================================================
+
+Story ID tidak boleh diganti secara acak setelah collision.
+
+Reassignment hanya dilakukan melalui identity correction mechanism yang
+tervalidasi.
+
+
+================================================================================
+37. VALIDATION
+================================================================================
+
+Story ID harus divalidasi terhadap:
+
+- Universe Instance;
+- Story Date;
+- Story Trigger ID;
+- Story Scope ID;
+- production identity;
+- existing Story IDs;
+- filename representation;
+- Instance path;
+- revision status;
+- duplicate status.
+
+
+================================================================================
+38. VALIDATION RESULT
+================================================================================
+
+VALID
+→ Story ID sah dan dapat digunakan.
+
+REVIEW_REQUIRED
+→ terdapat metadata yang memerlukan pemeriksaan.
+
+REVISION_REQUIRED
+→ identity atau derivation membutuhkan koreksi.
+
+BLOCKED
+→ Story ID tidak dapat digunakan secara sah.
+
+
+================================================================================
+39. FAILURE PRINCIPLE
+================================================================================
+
+Jika Story ID gagal divalidasi, system tidak boleh:
+
+- membuat ID acak;
+- memakai judul sebagai ID;
+- membuat duplicate;
+- mengubah Story Date untuk mendapatkan ID yang mudah;
+- mengubah Instance;
+- menghapus Story lama;
+- melanjutkan finalization dengan identity yang tidak jelas.
+
+
+================================================================================
+40. FINAL PRINCIPLE
+================================================================================
+
+STORY DATE
+→ KAPAN DAILY STORY BERADA DALAM UNIVERSE.
+
+STORY ID
+→ DAILY STORY YANG MANA.
+
+FILENAME
+→ DI MANA DAN DALAM BENTUK APA DAILY STORY DISIMPAN.
+
+TITLE
+→ APA NAMA YANG DITAMPILKAN KEPADA MANUSIA.
+
+Keempatnya harus dapat dibedakan.
+
+Story ID harus stabil, unik, dapat ditelusuri, dan tidak bergantung pada
+kebutuhan narasi atau metadata filesystem.
+
+
+================================================================================
+END OF STORY ID
+================================================================================
