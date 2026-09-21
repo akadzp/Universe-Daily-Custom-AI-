@@ -1,0 +1,838 @@
+================================================================================
+EVENT / CONSEQUENCE
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / DAILY CYCLE
+ROLE : TEMPORAL EVENT AND CONSEQUENCE ORCHESTRATION
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Event / Consequence adalah mekanisme untuk mengatur hubungan temporal antara
+kejadian yang benar-benar terjadi dan dampak yang muncul sebagai akibatnya.
+
+System ini memastikan bahwa:
+
+- event ditempatkan pada waktu yang sah;
+- consequence mempunyai hubungan yang dapat ditelusuri;
+- consequence tidak muncul tanpa dasar;
+- consequence tidak harus terjadi pada saat yang sama dengan event;
+- consequence dapat berlanjut ke periode berikutnya;
+- consequence dapat memicu perkembangan baru;
+- consequence tidak dicampur dengan event penyebab.
+
+Daily Universe mengorkestrasi hubungan temporal tersebut.
+
+Daily Universe tidak menjadi owner isi event atau domain yang terdampak.
+
+
+================================================================================
+02. CORE PRINCIPLE
+================================================================================
+
+EVENT
+→ sesuatu yang benar-benar terjadi dalam Universe.
+
+CONSEQUENCE
+→ perubahan, dampak, kondisi, atau proses yang muncul karena event atau
+  hubungan sebab-akibat lain yang sah.
+
+Event dan consequence adalah dua entitas konseptual yang berbeda.
+
+Satu event dapat menghasilkan:
+
+- tidak ada consequence;
+- satu consequence;
+- beberapa consequence;
+- consequence langsung;
+- consequence tertunda;
+- consequence berantai.
+
+Satu consequence dapat memiliki lebih dari satu dependency apabila causal
+structure mengizinkannya.
+
+
+================================================================================
+03. EVENT OWNERSHIP
+================================================================================
+
+Daily Universe tidak mendefinisikan isi event.
+
+Event dapat melibatkan:
+
+- Character;
+- Relationship;
+- Object;
+- Knowledge;
+- State;
+- Location;
+- Process;
+- domain lain.
+
+Isi dan validitas internal domain tetap mengikuti system owner masing-masing.
+
+Daily Universe hanya mengatur:
+
+- posisi temporal event;
+- identitas event;
+- hubungan causal;
+- consequence timing;
+- continuity.
+
+
+================================================================================
+04. EVENT IDENTITY
+================================================================================
+
+Setiap Actual Event harus dapat dibedakan dari event lain.
+
+Event identity harus digunakan untuk:
+
+- mencegah duplicate event;
+- menghubungkan consequence;
+- menghubungkan history;
+- menghubungkan future development;
+- membedakan event aktual dari representasi naratifnya.
+
+Penyajian event yang sama lebih dari satu kali tidak menghasilkan event baru.
+
+
+================================================================================
+05. EVENT TIME
+================================================================================
+
+Event aktual harus memiliki temporal position yang sah sesuai tingkat informasi
+yang tersedia.
+
+Event Time dapat berupa:
+
+- waktu pasti;
+- rentang;
+- urutan relatif;
+- unresolved temporal position.
+
+System tidak boleh menciptakan ketelitian waktu yang tidak tersedia.
+
+
+================================================================================
+06. EVENT OCCURRENCE
+================================================================================
+
+Sebuah event hanya dapat diproses sebagai Actual apabila occurrence-nya
+mempunyai dasar yang sah.
+
+Dasar dapat berasal dari:
+
+- perkembangan process;
+- consequence;
+- decision yang benar-benar menghasilkan action;
+- kondisi yang terpenuhi;
+- domain event;
+- mekanisme Universe lain yang sah.
+
+Narrative need bukan dasar occurrence.
+
+
+================================================================================
+07. EVENT PRECONDITION
+================================================================================
+
+Event dapat mempunyai precondition.
+
+Precondition dapat berupa:
+
+- temporal condition;
+- actor availability;
+- object availability;
+- location availability;
+- state;
+- relationship condition;
+- knowledge availability;
+- process dependency;
+- event dependency.
+
+Precondition harus tersedia sebelum event diproses apabila dependency tersebut
+bersifat wajib.
+
+
+================================================================================
+08. EVENT DEPENDENCY
+================================================================================
+
+Event dapat bergantung pada event lain.
+
+Dependency dapat bersifat:
+
+- sequential;
+- causal;
+- conditional;
+- temporal;
+- domain-based.
+
+Dependency harus dipertahankan.
+
+Daily Universe tidak boleh menghapus dependency untuk mempercepat event.
+
+
+================================================================================
+09. EVENT WITHOUT CONSEQUENCE
+================================================================================
+
+Tidak semua event harus menghasilkan consequence.
+
+Sebuah event dapat selesai tanpa menghasilkan perubahan yang bertahan.
+
+Daily Universe tidak boleh menciptakan consequence hanya untuk membuat alur
+terlihat berkembang.
+
+
+================================================================================
+10. CONSEQUENCE IDENTITY
+================================================================================
+
+Setiap consequence yang perlu dilacak harus mempunyai identity atau referensi
+yang dapat dibedakan.
+
+Identity digunakan untuk:
+
+- melacak consequence;
+- mencegah duplicate;
+- menentukan status;
+- membawa consequence ke periode berikutnya;
+- menghubungkan consequence dengan event source.
+
+
+================================================================================
+11. CONSEQUENCE SOURCE
+================================================================================
+
+Setiap consequence harus mempunyai source yang dapat ditelusuri.
+
+Source dapat berupa:
+
+- event;
+- process;
+- domain transition;
+- causal relationship;
+- kombinasi dependency yang sah.
+
+Consequence tidak boleh berdiri tanpa dasar apabila dianggap sebagai dampak
+aktual Universe.
+
+
+================================================================================
+12. DIRECT CONSEQUENCE
+================================================================================
+
+Direct Consequence adalah consequence yang muncul sebagai dampak langsung
+setelah event atau pada titik temporal yang sangat dekat dengannya.
+
+Kedekatan waktu tidak otomatis menentukan directness.
+
+Directness harus berasal dari causal structure yang sah.
+
+
+================================================================================
+13. DELAYED CONSEQUENCE
+================================================================================
+
+Consequence dapat muncul setelah jeda waktu.
+
+Delayed Consequence harus mempertahankan:
+
+- source event;
+- original temporal position;
+- activation condition;
+- consequence time;
+- dependency.
+
+Jeda waktu tidak memutus hubungan causal.
+
+
+================================================================================
+14. CONTINUOUS CONSEQUENCE
+================================================================================
+
+Consequence dapat menjadi kondisi yang terus berlaku selama periode tertentu.
+
+Continuous Consequence harus mempunyai:
+
+- start;
+- current status;
+- persistence;
+- end condition jika diketahui.
+
+Consequence tidak boleh dianggap selesai hanya karena Daily Story telah
+berakhir.
+
+
+================================================================================
+15. CHAINED CONSEQUENCE
+================================================================================
+
+Satu consequence dapat menjadi penyebab perkembangan berikutnya.
+
+Pola dapat berupa:
+
+EVENT
+↓
+CONSEQUENCE A
+↓
+EVENT B
+↓
+CONSEQUENCE B
+
+Setiap tahap harus mempunyai identity dan temporal position sendiri.
+
+Chained consequence tidak boleh menghasilkan circular causality yang tidak sah.
+
+
+================================================================================
+16. MULTIPLE CONSEQUENCE
+================================================================================
+
+Satu event dapat menghasilkan beberapa consequence sekaligus.
+
+Setiap consequence harus dapat dibedakan.
+
+Consequence yang berbeda tidak boleh digabung hanya karena berasal dari event
+yang sama.
+
+
+================================================================================
+17. MULTIPLE SOURCE CONSEQUENCE
+================================================================================
+
+Satu consequence dapat bergantung pada lebih dari satu source apabila hubungan
+tersebut sah.
+
+Semua source yang diperlukan harus tetap dapat ditelusuri.
+
+Hilangnya satu dependency tidak boleh diabaikan hanya demi mempertahankan
+consequence.
+
+
+================================================================================
+18. CONSEQUENCE STATUS
+================================================================================
+
+Consequence dapat memiliki status:
+
+- ACTIVE;
+- PENDING;
+- TRIGGERED;
+- DEVELOPING;
+- RESOLVED;
+- CANCELLED;
+- FAILED;
+- UNRESOLVED;
+- UNKNOWN.
+
+Status digunakan untuk mengatur perjalanan consequence melalui waktu.
+
+
+================================================================================
+19. PENDING CONSEQUENCE
+================================================================================
+
+PENDING menunjukkan bahwa consequence telah mempunyai dasar tetapi kondisi
+untuk muncul atau diproses belum terpenuhi.
+
+Pending consequence tidak boleh diperlakukan sebagai active outcome.
+
+
+================================================================================
+20. TRIGGERED CONSEQUENCE
+================================================================================
+
+TRIGGERED menunjukkan bahwa kondisi untuk memulai consequence telah terpenuhi.
+
+Triggered tidak selalu berarti consequence telah selesai.
+
+Perkembangan selanjutnya tetap harus diproses.
+
+
+================================================================================
+21. DEVELOPING CONSEQUENCE
+================================================================================
+
+DEVELOPING menunjukkan bahwa consequence sedang berlangsung dan dapat
+menghasilkan perubahan tambahan sepanjang waktu.
+
+Developing consequence harus dapat diteruskan ke periode berikutnya jika masih
+aktif.
+
+
+================================================================================
+22. RESOLVED CONSEQUENCE
+================================================================================
+
+RESOLVED menunjukkan bahwa consequence telah mencapai kondisi penyelesaian
+yang sah.
+
+Resolved tidak berarti source event hilang.
+
+Source event tetap menjadi history.
+
+
+================================================================================
+23. CANCELLED CONSEQUENCE
+================================================================================
+
+CANCELLED menunjukkan consequence dihentikan sebelum resolution berdasarkan
+mekanisme yang sah.
+
+Cancellation harus mempunyai dasar.
+
+Cancellation tidak menghapus source event.
+
+
+================================================================================
+24. FAILED CONSEQUENCE
+================================================================================
+
+FAILED menunjukkan consequence tidak mencapai hasil yang ditentukan atau
+diharapkan sesuai aturan yang berlaku.
+
+Failure tidak mengubah source event menjadi tidak pernah terjadi.
+
+
+================================================================================
+25. UNRESOLVED CONSEQUENCE
+================================================================================
+
+UNRESOLVED digunakan apabila consequence masih memiliki relevance tetapi hasil,
+status, atau dependency belum dapat ditentukan.
+
+Unresolved tidak boleh dianggap resolved.
+
+
+================================================================================
+26. CONSEQUENCE TIME
+================================================================================
+
+Consequence Time dapat berbeda dari Event Time.
+
+Consequence dapat:
+
+- terjadi segera;
+- tertunda;
+- muncul bertahap;
+- bergantung pada event lain;
+- bertahan selama beberapa periode.
+
+Perbedaan waktu tidak memutus causal relation.
+
+
+================================================================================
+27. CAUSAL ORDER
+================================================================================
+
+Secara umum:
+
+SOURCE
+↓
+EVENT
+↓
+CONSEQUENCE
+
+Namun causal structure dapat mempunyai beberapa tingkat dan dependency.
+
+Yang wajib dipertahankan adalah hubungan causal yang sah, bukan bentuk diagram
+yang selalu identik.
+
+Consequence tidak boleh diposisikan sebelum source apabila causal relationship
+mengharuskan source lebih dahulu.
+
+
+================================================================================
+28. NO RETROACTIVE CONSEQUENCE
+================================================================================
+
+Daily Universe tidak boleh menciptakan consequence di masa lalu hanya karena
+event masa kini membutuhkan dampak tersebut.
+
+Jika consequence diperlukan tetapi posisi temporalnya tidak dapat ditentukan,
+status harus tetap unresolved atau proses diarahkan ke validation.
+
+
+================================================================================
+29. NO FREE CONSEQUENCE
+================================================================================
+
+Tidak diperbolehkan membuat consequence tanpa source yang dapat ditelusuri.
+
+Kebutuhan plot, kebutuhan drama, atau kebutuhan continuity bukan source yang
+sah.
+
+
+================================================================================
+30. CONSEQUENCE AND DOMAIN CHANGE
+================================================================================
+
+Consequence dapat memerlukan perubahan pada:
+
+- Character;
+- Relationship;
+- Object;
+- Knowledge;
+- State;
+- Location;
+- Process;
+- domain lain.
+
+Daily Universe hanya:
+
+1. mengidentifikasi bahwa consequence memerlukan perubahan;
+2. menentukan temporal context;
+3. mengirimkan handoff;
+4. menerima hasil dari domain owner;
+5. menjaga hubungan temporalnya.
+
+Domain owner tetap menentukan isi perubahan.
+
+
+================================================================================
+31. CHARACTER CONSEQUENCE
+================================================================================
+
+Jika consequence memengaruhi Character:
+
+Daily Universe
+→ menentukan event, timing, dan causal context.
+
+Character System
+→ menentukan perubahan Character berdasarkan aturan domainnya.
+
+Daily Universe tidak boleh membuat State, Behavior, Personality, Knowledge,
+atau atribut Character sebagai pengganti Character System.
+
+
+================================================================================
+32. RELATIONSHIP CONSEQUENCE
+================================================================================
+
+Jika consequence memengaruhi Relationship:
+
+Daily Universe
+→ menentukan source event, timing, dan causal context.
+
+Relationship System
+→ menentukan perubahan Relationship.
+
+Daily Universe tidak boleh membuat relationship state alternatif.
+
+
+================================================================================
+33. OBJECT CONSEQUENCE
+================================================================================
+
+Jika consequence memengaruhi Object:
+
+Daily Universe
+→ menentukan source, timing, dan causal context.
+
+Object System
+→ menentukan perubahan Object.
+
+
+================================================================================
+34. KNOWLEDGE CONSEQUENCE
+================================================================================
+
+Jika consequence membuka kemungkinan Knowledge acquisition:
+
+Daily Universe
+→ menentukan source event dan acquisition timing.
+
+Knowledge owner
+→ menentukan apakah informasi tersebut benar-benar diperoleh dan bagaimana
+  statusnya.
+
+
+================================================================================
+35. LOCATION CONSEQUENCE
+================================================================================
+
+Jika consequence menghasilkan perubahan Location:
+
+Daily Universe
+→ menentukan timing dan causal context.
+
+Location owner atau domain terkait
+→ menentukan perubahan aktual.
+
+
+================================================================================
+36. PROCESS CONSEQUENCE
+================================================================================
+
+Consequence dapat:
+
+- memulai Process;
+- melanjutkan Process;
+- menginterupsi Process;
+- menangguhkan Process;
+- menyelesaikan Process;
+- membatalkan Process;
+
+apabila hubungan tersebut mempunyai dasar.
+
+Process tetap mempunyai identity sendiri.
+
+
+================================================================================
+37. CONSEQUENCE PERSISTENCE
+================================================================================
+
+Consequence yang masih aktif harus diteruskan melalui periode berikutnya.
+
+Persistence ditentukan berdasarkan:
+
+- end condition;
+- duration;
+- dependency;
+- domain result;
+- temporal status.
+
+Tidak ada automatic expiration hanya karena periode berganti.
+
+
+================================================================================
+38. CONSEQUENCE TERMINATION
+================================================================================
+
+Consequence dapat berakhir melalui:
+
+- resolution;
+- cancellation;
+- failure;
+- end condition;
+- domain event yang sah.
+
+Ending harus mempunyai dasar.
+
+Consequence yang berakhir tetap berada dalam history.
+
+
+================================================================================
+39. CONSEQUENCE HISTORY
+================================================================================
+
+History consequence harus dapat melacak:
+
+- source;
+- creation;
+- activation;
+- development;
+- status transition;
+- domain impact;
+- resolution;
+- cancellation;
+- failure;
+- termination.
+
+History tidak boleh dihapus hanya untuk menyederhanakan continuity.
+
+
+================================================================================
+40. DAILY STORY INDEPENDENCE
+================================================================================
+
+Daily Story tidak menentukan:
+
+- apakah event benar-benar terjadi;
+- apakah consequence benar-benar ada;
+- apakah consequence sudah selesai.
+
+Daily Story hanya merepresentasikan perkembangan Universe yang telah diproses.
+
+
+================================================================================
+41. NARRATIVE INDEPENDENCE
+================================================================================
+
+Narasi dapat:
+
+- menampilkan event;
+- menampilkan consequence;
+- menunda pengungkapan consequence;
+- menampilkan consequence sebelum source secara narrative order.
+
+Namun narrative order tidak boleh mengubah causal order Universe.
+
+
+================================================================================
+42. UNKNOWN AND UNCERTAINTY
+================================================================================
+
+Jika source, consequence time, atau status belum diketahui, sistem harus
+mempertahankan Unknown atau Unresolved sesuai kondisi.
+
+Ketidakpastian tidak boleh diubah menjadi Actual Consequence tanpa dasar.
+
+
+================================================================================
+43. DUPLICATE PREVENTION
+================================================================================
+
+System harus dapat membedakan:
+
+- consequence baru;
+- consequence lama yang masih berjalan;
+- consequence yang sama yang ditampilkan ulang;
+- consequence yang berbeda tetapi mempunyai source yang sama.
+
+Narrative repetition tidak menghasilkan duplicate consequence.
+
+
+================================================================================
+44. CIRCULAR CAUSALITY
+================================================================================
+
+Daily Universe harus mendeteksi circular causality yang tidak sah.
+
+Jika:
+
+A menyebabkan B
+dan B menyebabkan A
+
+maka hubungan tersebut harus diperiksa apakah memang diperbolehkan oleh
+mechanism Universe atau merupakan temporal contradiction.
+
+System tidak boleh menerima circular causality hanya karena menghasilkan plot
+yang nyaman.
+
+
+================================================================================
+45. VALIDATION
+================================================================================
+
+Event dan Consequence harus divalidasi terhadap:
+
+- Universe Time;
+- Temporal Status;
+- temporal order;
+- event identity;
+- source;
+- dependency;
+- causal order;
+- domain availability;
+- domain handoff;
+- continuity;
+- history.
+
+
+================================================================================
+46. VALIDATION RESULT
+================================================================================
+
+VALID
+→ event dan consequence konsisten.
+
+REVIEW_REQUIRED
+→ terdapat uncertainty yang masih dapat dipertahankan.
+
+REVISION_REQUIRED
+→ diperlukan koreksi sebelum proses selesai.
+
+BLOCKED
+→ hubungan event-consequence tidak dapat diproses secara sah.
+
+
+================================================================================
+47. FAILURE PRINCIPLE
+================================================================================
+
+Jika hubungan event dan consequence tidak dapat dipastikan, system harus:
+
+- mempertahankan uncertainty;
+- menahan consequence;
+- mengarahkan proses ke validation;
+- atau menghentikan progression.
+
+System tidak boleh:
+
+- menciptakan source;
+- menciptakan consequence;
+- memindahkan waktu;
+- mengubah event;
+- mengubah domain;
+- menghapus conflict.
+
+
+================================================================================
+48. RELATION TO DAY FINALIZATION
+================================================================================
+
+Sebelum Day Finalization:
+
+- event harus memiliki status yang sah;
+- active consequence harus dikenali;
+- unresolved consequence harus ditandai;
+- consequence yang perlu dibawa ke periode berikutnya harus disiapkan;
+- domain handoff yang belum selesai harus diketahui.
+
+Day Finalization tidak boleh menutup consequence yang masih aktif.
+
+
+================================================================================
+49. RELATION TO CONTINUITY CARRYOVER
+================================================================================
+
+Consequence yang masih aktif menjadi salah satu input bagi Continuity Carryover.
+
+Pola:
+
+EVENT
+↓
+CONSEQUENCE
+↓
+ACTIVE / UNRESOLVED
+↓
+CARRYOVER
+↓
+NEXT PERIOD
+
+History source event tetap dipertahankan.
+
+
+================================================================================
+50. FINAL PRINCIPLE
+================================================================================
+
+EVENT
+→ APA YANG BENAR-BENAR TERJADI.
+
+CONSEQUENCE
+→ APA YANG BERUBAH ATAU MUNCUL KARENA EVENT TERSEBUT.
+
+Daily Universe menjaga:
+
+KAPAN EVENT TERJADI
+↓
+APA YANG MENJADI CONSEQUENCE
+↓
+KAPAN CONSEQUENCE TERJADI
+↓
+BERAPA LAMA CONSEQUENCE BERLAKU
+↓
+APAKAH CONSEQUENCE MASIH BERJALAN
+↓
+APAKAH CONSEQUENCE HARUS DIBAWA KE PERIODE BERIKUTNYA.
+
+Event dan consequence tidak boleh menjadi alat untuk memenuhi kebutuhan
+narrative.
+
+Mereka harus mengikuti perjalanan Universe yang benar-benar terjadi.
+
+
+================================================================================
+END OF EVENT / CONSEQUENCE
+================================================================================
