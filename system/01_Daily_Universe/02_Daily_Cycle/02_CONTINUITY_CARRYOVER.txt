@@ -1,0 +1,649 @@
+================================================================================
+CONTINUITY CARRYOVER
+================================================================================
+
+STATUS
+--------------------------------------------------------------------------------
+SYSTEM RULE
+ACTIVE
+OWNER : DAILY UNIVERSE / DAILY CYCLE
+ROLE : TEMPORAL ORCHESTRATION
+
+
+================================================================================
+01. PURPOSE
+================================================================================
+
+Continuity Carryover adalah tahap yang meneruskan kondisi, proses, consequence,
+dan informasi temporal yang masih berlaku dari periode sebelumnya ke periode
+berikutnya.
+
+Tahap ini memastikan bahwa pergantian periode tidak menyebabkan Universe
+kehilangan kesinambungan.
+
+Continuity Carryover bukan proses untuk membuat ulang Universe.
+
+Continuity Carryover bukan proses untuk mendefinisikan Character,
+Relationship, Object, Knowledge, State, atau domain lainnya.
+
+Tahap ini hanya menentukan apa yang secara temporal masih harus tersedia atau
+tetap berlanjut pada periode baru.
+
+
+================================================================================
+02. CORE PRINCIPLE
+================================================================================
+
+Periode baru tidak dimulai dari keadaan kosong.
+
+Namun tidak semua data periode sebelumnya otomatis dibawa ke periode baru.
+
+Setiap item harus melalui pemeriksaan:
+
+- apakah masih berlaku;
+- apakah sudah selesai;
+- apakah dibatalkan;
+- apakah tertunda;
+- apakah berubah;
+- apakah unresolved;
+- apakah memang hanya berlaku pada periode sebelumnya.
+
+Carry-over harus berdasarkan status yang sah.
+
+
+================================================================================
+03. INPUT
+================================================================================
+
+Continuity Carryover dapat menggunakan:
+
+- hasil Day Initialization;
+- previous period;
+- current Universe Time;
+- actual history;
+- current valid state;
+- ongoing process;
+- unresolved process;
+- consequence;
+- temporal status;
+- domain handoff result;
+- continuity information.
+
+Semua input harus dapat ditelusuri kepada sumber yang sah.
+
+
+================================================================================
+04. CARRYOVER UNIT
+================================================================================
+
+Carry-over tidak harus dilakukan terhadap seluruh Universe sebagai satu objek.
+
+Unit carry-over dapat berupa:
+
+- state;
+- process;
+- event consequence;
+- temporal condition;
+- actor-related condition;
+- relationship-related condition;
+- object-related condition;
+- knowledge-related condition;
+- location-related condition;
+- unresolved condition.
+
+Setiap unit mempertahankan ownership domain aslinya.
+
+
+================================================================================
+05. OWNERSHIP PRESERVATION
+================================================================================
+
+Carry-over tidak mengubah system owner.
+
+Jika unit berasal dari Character System:
+
+Character System tetap menjadi owner.
+
+Jika unit berasal dari Relationship System:
+
+Relationship System tetap menjadi owner.
+
+Jika unit berasal dari Object System:
+
+Object System tetap menjadi owner.
+
+Jika unit merupakan Knowledge:
+
+Knowledge tetap mengikuti owner yang sah.
+
+Daily Universe hanya membawa unit tersebut melalui waktu.
+
+
+================================================================================
+06. CARRYOVER DECISION
+================================================================================
+
+Setiap unit yang diperiksa harus menghasilkan salah satu keadaan:
+
+CARRY_FORWARD
+→ tetap berlaku pada periode baru.
+
+COMPLETED
+→ telah selesai dan tidak diteruskan sebagai ongoing state.
+
+CANCELLED
+→ tidak lagi berlaku karena pembatalan yang sah.
+
+SUSPENDED
+→ sementara tidak aktif tetapi masih mempunyai kemungkinan dilanjutkan.
+
+TRANSFORMED
+→ bentuk atau kondisi berubah dan hasil perubahan menjadi input baru.
+
+UNRESOLVED
+→ belum cukup informasi untuk menentukan status berikutnya.
+
+NOT_APPLICABLE
+→ tidak mempunyai relevansi pada periode baru.
+
+
+================================================================================
+07. CARRY-FORWARD
+================================================================================
+
+Unit hanya boleh dibawa ke periode berikutnya jika masih berlaku menurut
+aturan domain dan temporal context.
+
+Carry-forward tidak berarti membuat salinan Canon baru.
+
+Yang dibawa adalah kelanjutan temporal dari data yang sama.
+
+
+================================================================================
+08. NO AUTOMATIC RESET
+================================================================================
+
+Pergantian periode tidak boleh menyebabkan:
+
+- state kembali ke default;
+- process kembali ke awal;
+- relationship kembali ke kondisi lama;
+- object kembali ke lokasi sebelumnya;
+- knowledge hilang;
+- unresolved condition hilang;
+- consequence terhapus;
+
+tanpa dasar yang sah.
+
+Daily Universe harus mempertahankan continuity sampai terdapat perubahan yang
+benar-benar terjadi.
+
+
+================================================================================
+09. NO AUTOMATIC PERSISTENCE
+================================================================================
+
+Sebaliknya, pergantian periode juga tidak berarti semua hal harus tetap berlaku.
+
+Data yang hanya sah pada periode sebelumnya harus dapat berakhir.
+
+Status temporal harus diperiksa sebelum carry-forward dilakukan.
+
+
+================================================================================
+10. STATE CARRYOVER
+================================================================================
+
+Daily Universe tidak mendefinisikan State.
+
+Daily Universe hanya memeriksa apakah State yang dimiliki domain owner:
+
+- masih berlaku;
+- telah berubah;
+- telah berakhir;
+- memerlukan domain update;
+- belum dapat ditentukan.
+
+Jika State berubah karena event temporal, perubahan harus diproses melalui
+system owner terkait.
+
+Hasilnya kemudian digunakan sebagai context untuk periode baru.
+
+
+================================================================================
+11. ACTOR CARRYOVER
+================================================================================
+
+Daily Universe tidak mendefinisikan Actor.
+
+Carry-over Actor hanya menjaga keberlanjutan temporal terhadap Actor yang sudah
+sah di Universe.
+
+Pemeriksaan dapat mencakup:
+
+- masih berada dalam Universe;
+- masih tersedia pada periode baru;
+- masih memiliki kondisi yang relevan;
+- memiliki proses yang belum selesai;
+- memiliki perubahan yang menunggu handoff.
+
+Pembuatan atau perubahan identitas Actor berada di Character System.
+
+
+================================================================================
+12. RELATIONSHIP CARRYOVER
+================================================================================
+
+Relationship tetap mengikuti Relationship System.
+
+Daily Universe hanya menjaga bahwa kondisi Relationship yang masih berlaku
+tetap memiliki posisi temporal pada periode baru.
+
+Jika suatu event menyebabkan perubahan Relationship, perubahan diteruskan
+melalui Relationship System.
+
+Daily Universe tidak membuat relationship state versi kedua.
+
+
+================================================================================
+13. OBJECT CARRYOVER
+================================================================================
+
+Object tetap mengikuti Object System.
+
+Carry-over memeriksa apakah Object yang relevan:
+
+- tetap ada;
+- tetap tersedia;
+- sedang berada dalam proses;
+- mengalami perubahan temporal;
+- memerlukan handoff.
+
+Object tidak dibuat ulang hanya karena memasuki periode baru.
+
+
+================================================================================
+14. KNOWLEDGE CARRYOVER
+================================================================================
+
+Knowledge tetap mengikuti owner yang sah.
+
+Daily Universe memastikan bahwa informasi yang telah diperoleh dan masih
+relevan tidak hilang dari temporal flow.
+
+Daily Universe tidak memberikan Knowledge baru hanya karena periode berganti.
+
+Perolehan Knowledge tetap membutuhkan acquisition yang sah.
+
+
+================================================================================
+15. LOCATION CARRYOVER
+================================================================================
+
+Location yang masih relevan dapat dibawa sebagai temporal context.
+
+Carry-over tidak menciptakan perpindahan lokasi.
+
+Jika suatu perpindahan telah terjadi, hasilnya dibawa sesuai data source.
+
+Jika lokasi belum diketahui, status tetap unknown.
+
+
+================================================================================
+16. CONSEQUENCE CARRYOVER
+================================================================================
+
+Consequence dari event sebelumnya harus dibawa apabila consequence tersebut
+masih aktif.
+
+Consequence dapat:
+
+- tetap berjalan;
+- memengaruhi state;
+- memengaruhi process;
+- memicu event berikutnya;
+- menunggu kondisi tertentu;
+- menjadi unresolved.
+
+Daily Universe tidak boleh menghapus consequence hanya karena tidak disebutkan
+dalam Daily Story sebelumnya.
+
+
+================================================================================
+17. ONGOING PROCESS
+================================================================================
+
+Ongoing process harus tetap memiliki status selama proses tersebut belum
+selesai.
+
+Carry-over harus mempertahankan:
+
+- process identity;
+- current status;
+- temporal position;
+- dependency;
+- unresolved condition;
+- expected continuation bila tersedia secara sah.
+
+Daily Universe tidak boleh menyatakan process selesai tanpa dasar.
+
+
+================================================================================
+18. UNRESOLVED PROCESS
+================================================================================
+
+Unresolved process harus tetap dipisahkan dari Completed Process.
+
+Ketidakpastian tidak boleh diperlakukan sebagai selesai.
+
+Jika informasi belum cukup, status tetap unresolved atau unknown sesuai konteks.
+
+
+================================================================================
+19. FUTURE INFORMATION
+================================================================================
+
+Future information yang dibawa dari periode sebelumnya harus mempertahankan
+statusnya.
+
+Carry-over tidak boleh menaikkan:
+
+- Plan → Actual;
+- Prediction → Actual;
+- Possibility → Actual;
+- Hypothesis → Actual;
+- Imagination → Actual.
+
+Actualization hanya dapat terjadi melalui event aktual yang sah.
+
+
+================================================================================
+20. HISTORICAL INFORMATION
+================================================================================
+
+History dari periode sebelumnya tetap menjadi history.
+
+Carry-over tidak memindahkan historical event menjadi current event.
+
+Carry-over hanya membawa informasi historis yang dibutuhkan untuk memahami
+continuity periode baru.
+
+
+================================================================================
+21. TEMPORAL POSITION
+================================================================================
+
+Setiap unit carry-over harus mempertahankan hubungan temporalnya dengan:
+
+- previous period;
+- current period;
+- future period apabila relevan.
+
+Jika posisi temporal unit tidak dapat dipastikan, ketidakpastian harus
+dipertahankan.
+
+
+================================================================================
+22. DEPENDENCY
+================================================================================
+
+Unit carry-over dapat bergantung pada unit lain.
+
+Dependency harus tetap dipertahankan.
+
+Jika dependency sudah tidak berlaku, unit tidak boleh diteruskan seolah-olah
+dependency masih aktif.
+
+Jika dependency belum dapat ditentukan, status harus tetap unresolved.
+
+
+================================================================================
+23. CARRYOVER ORDER
+================================================================================
+
+Carry-over harus dilakukan dengan urutan yang menjaga dependency.
+
+Secara umum:
+
+PREVIOUS PERIOD
+↓
+IDENTIFY RELEVANT CONTINUITY
+↓
+CHECK STATUS
+↓
+CHECK DEPENDENCY
+↓
+DOMAIN HANDOFF
+↓
+RECEIVE VALID RESULT
+↓
+ESTABLISH CURRENT PERIOD CONTEXT
+
+Urutan detail dapat disesuaikan dengan system lain selama ownership tetap
+terjaga.
+
+
+================================================================================
+24. DOMAIN HANDOFF
+================================================================================
+
+Jika carry-over memerlukan perubahan pada domain lain:
+
+DAILY UNIVERSE
+→ mendeteksi kebutuhan
+→ meneruskan request atau change context
+→ DOMAIN OWNER memproses
+→ DOMAIN OWNER mengembalikan hasil
+→ hasil menjadi input temporal periode baru.
+
+Daily Universe tidak boleh menerapkan perubahan domain secara langsung apabila
+domain owner memiliki mekanisme tersendiri.
+
+
+================================================================================
+25. DUPLICATE PREVENTION
+================================================================================
+
+Carry-over tidak boleh membuat duplicate:
+
+- Character;
+- Relationship;
+- Object;
+- Knowledge;
+- event;
+- process;
+- state record;
+
+hanya karena item tersebut diteruskan ke periode berikutnya.
+
+Carry-over adalah continuity, bukan duplication.
+
+
+================================================================================
+26. CONFLICT DETECTION
+================================================================================
+
+Jika informasi periode sebelumnya bertentangan dengan informasi yang sah untuk
+periode baru, sistem harus mendeteksi conflict.
+
+Conflict tidak boleh diselesaikan dengan menghapus salah satu informasi secara
+diam-diam.
+
+Conflict harus diarahkan kepada validation atau domain owner yang berwenang.
+
+
+================================================================================
+27. UNKNOWN AND UNRESOLVED
+================================================================================
+
+UNKNOWN berarti sistem tidak memiliki informasi yang cukup untuk menentukan
+keadaan.
+
+UNRESOLVED berarti terdapat proses, kondisi, atau pertanyaan yang masih
+menunggu penyelesaian.
+
+Keduanya tidak boleh dipaksa menjadi:
+
+- Completed;
+- Cancelled;
+- Actual;
+- CARRY_FORWARD;
+
+tanpa dasar.
+
+
+================================================================================
+28. TEMPORAL CONSISTENCY
+================================================================================
+
+Carry-over harus konsisten dengan:
+
+- Universe Time;
+- Temporal Status;
+- Past / Present / Future;
+- causal order;
+- actual history;
+- domain state;
+- ongoing process.
+
+Jika carry-over menghasilkan temporal contradiction, proses harus dihentikan
+atau dikembalikan ke validation.
+
+
+================================================================================
+29. CARRYOVER OUTPUT
+================================================================================
+
+Continuity Carryover menghasilkan Current Period Continuity Context.
+
+Context tersebut minimal dapat mengidentifikasi:
+
+- carried item;
+- status;
+- source period;
+- current temporal position;
+- domain owner;
+- dependency;
+- unresolved condition;
+- required next action;
+- handoff result;
+- carry-over decision.
+
+
+================================================================================
+30. STATUS
+================================================================================
+
+Carry-over dapat menghasilkan:
+
+READY
+→ seluruh carry-over yang diperlukan telah diproses.
+
+REVIEW_REQUIRED
+→ terdapat uncertainty yang masih dapat ditoleransi.
+
+REVISION_REQUIRED
+→ terdapat perubahan atau data yang harus diperbaiki.
+
+BLOCKED
+→ continuity tidak dapat diteruskan secara sah.
+
+
+================================================================================
+31. NO SILENT TRANSITION
+================================================================================
+
+Daily Universe tidak boleh:
+
+- menghapus carry-over tanpa alasan;
+- membuat carry-over yang tidak mempunyai sumber;
+- mengubah owner;
+- mengubah status untuk mempermudah proses;
+- mengubah historical fact;
+- mengaktualkan future information;
+- membuat domain data baru.
+
+Semua transition harus dapat ditelusuri.
+
+
+================================================================================
+32. RELATION TO DAILY STORY
+================================================================================
+
+Carry-over terjadi sebelum Daily Story menjadi keluaran periode baru.
+
+Daily Story menggunakan hasil continuity yang telah valid.
+
+Daily Story tidak boleh menjadi dasar untuk memutuskan secara retroaktif bahwa
+sesuatu yang sebelumnya tidak carry-forward ternyata harus dianggap masih ada,
+kecuali dilakukan melalui mekanisme perubahan yang sah.
+
+
+================================================================================
+33. RELATION TO NARRATOR
+================================================================================
+
+Narrator menerima context yang telah melewati proses carry-over.
+
+Narrator tidak menentukan apa yang seharusnya dibawa dari periode sebelumnya.
+
+Narrative need tidak boleh mengubah carry-over decision.
+
+
+================================================================================
+34. VALIDATION
+================================================================================
+
+Sebelum carry-over dinyatakan selesai, sistem harus memeriksa:
+
+- source period;
+- current period;
+- temporal position;
+- status;
+- dependency;
+- domain ownership;
+- continuity;
+- unresolved condition;
+- duplicate prevention;
+- conflict;
+- handoff result.
+
+
+================================================================================
+35. FAILURE PRINCIPLE
+================================================================================
+
+Jika carry-over tidak dapat dilakukan secara sah, Daily Universe harus:
+
+- mempertahankan informasi yang tidak pasti;
+- menandai conflict;
+- mengembalikan proses ke tahap yang sesuai;
+- atau menghentikan Daily Cycle.
+
+Sistem tidak boleh menutup celah continuity dengan asumsi.
+
+
+================================================================================
+36. FINAL PRINCIPLE
+================================================================================
+
+PERIODE BARU
+tidak dimulai dari nol.
+
+Namun:
+
+SEMUA HAL
+tidak otomatis dibawa.
+
+Yang dibawa adalah:
+
+DATA DAN PROSES YANG MASIH SAH
+MENURUT STATUS TEMPORAL DAN DOMAIN OWNER.
+
+Continuity Carryover menjaga kesinambungan,
+bukan membuat ulang Universe.
+
+
+================================================================================
+END OF CONTINUITY CARRYOVER
+================================================================================
